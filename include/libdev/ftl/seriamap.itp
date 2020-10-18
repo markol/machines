@@ -1,0 +1,45 @@
+/*
+ * S E R I A M A P . I T P 
+ * (c) Charybdis Limited, 1997. All Rights Reserved
+ */
+
+//  Definitions of inline template methods
+
+#ifdef _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+//Illegal id
+const size_t FTL_SERIALMAP_NOENTRY = FtlSerialId::invalidId().asScalar();
+
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class VALUE >
+_CODE_INLINE
+FtlSerialMap< VALUE >::FtlSerialMap()
+{
+    index_.reserve( 64 );
+	values_.reserve( 64 );
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class VALUE >
+_CODE_INLINE
+//virtual
+bool FtlSerialMap< VALUE >::contains( const FtlSerialId& id ) const
+{
+	size_t i = id.asScalar();
+	return i < index_.size() and index_[i] != FTL_SERIALMAP_NOENTRY;
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class VALUE >
+_CODE_INLINE
+//virtual
+const VALUE& FtlSerialMap< VALUE >::doSubscript( const FtlSerialId& id ) const
+{
+	PRE( contains( id ) );
+
+	return values_[ index_[ id.asScalar() ] ].second;
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+/* End SERIAMAP.ITP *************************************************/

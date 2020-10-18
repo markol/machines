@@ -1,0 +1,57 @@
+/*
+ * S E R I P M A P . I T P
+ * (c) Charybdis Limited, 1997. All Rights Reserved
+ */
+
+//  Definitions of inline template methods
+
+#ifdef _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class REF >
+_CODE_INLINE
+FtlSerialPMap< REF >::FtlSerialPMap( size_t reserveSize )
+{
+    refs_.reserve( reserveSize );
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class REF >
+_CODE_INLINE //virtual
+bool FtlSerialPMap< REF >::contains( const FtlSerialId& id ) const
+{
+    size_t index = id.asScalar();
+    return index < refs_.size() and refs_[index] != NULL;
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class REF >
+_CODE_INLINE //virtual
+void FtlSerialPMap< REF >::remove( const FtlSerialId& id )
+{
+    PRE( contains( id ) );
+
+    refs_[ id.asScalar() ] = NULL;
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class REF >
+_CODE_INLINE //virtual
+const typename FtlSerialPMap< REF >::PRef& FtlSerialPMap< REF >::doSubscript( const FtlSerialId& id ) const
+{
+    PRE( contains( id ) );
+    return (PRef&)refs_[ id.asScalar() ];
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class REF >
+_CODE_INLINE
+void FtlSerialPMap< REF >::add( const FtlSerialId& id, REF* pValue )
+{
+    PRE( not contains( id ) );
+
+    //Delegate to pair version
+    add( FtlPair< FtlSerialId, REF* >( id, pValue ) );
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+/* End SERIPMAP.ITP *************************************************/

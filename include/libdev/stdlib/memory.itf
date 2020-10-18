@@ -1,0 +1,105 @@
+/*
+ * M E M O R Y . I T F
+ * (c) Charybdis Limited, 1995. All Rights Reserved.
+ */
+
+#include <limits.h>
+
+//////////////////////////////////////////////////////////////////////
+
+#ifdef  _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+//////////////////////////////////////////////////////////////////////
+
+/*********************************************************************
+
+// the following template function is replaced by the following two
+// functions due to the fact that the Borland compiler doesn't change
+// ptrdiff_t to type long when compile with -ml or -mh.
+
+template <class T>
+_CODE_INLINE
+T* allocate( ptrdiff_t size, T * )
+{
+    set_new_handler( 0 );
+    T * tmp = (T *)( ::operator new( (size_t)( size * sizeof( T ) ) ) );
+    if( tmp == 0 )
+    {
+		cerr << "out of memory" << endl;
+		exit( 1 );
+    }
+    return tmp;
+}
+
+*********************************************************************/
+/*
+template < class T >
+_CODE_INLINE
+T* allocate( int size, T * )
+{
+    // set_new_handler( 0 );
+    T *tmp = (T*)( ::operator new( (unsigned int)( size * sizeof( T ) ) ) );
+//    T *tmp = (T*)( _NEW_ARRAY( (unsigned int), ( size * sizeof( T ) ) ) );
+    if( tmp == 0 )
+    {
+		cerr << "out of memory" << endl; 
+		exit( 1 );
+    }
+
+    return tmp;
+}
+*/
+/*
+template < class T >
+_CODE_INLINE
+T * allocate( long size, T * )
+{
+	// set_new_handler( 0 );
+    T *tmp = (T*)( ::operator new( (unsigned long)( size * sizeof( T ) ) ) );
+//    T *tmp = (T*)( _NEW_ARRAY( (unsigned long), ( size * sizeof( T ) ) ) );
+
+    if( tmp == 0 )
+    {
+		cerr << "out of memory" << endl; 
+		exit( 1 );
+    }
+
+    return tmp;
+}
+*/
+//////////////////////////////////////////////////////////////////////
+/*
+template < class T >
+_CODE_INLINE
+void deallocate( T* buffer )
+{
+    ::operator delete( buffer );
+//    _DELETE_ARRAY( buffer );
+}
+
+template < class T >
+_CODE_INLINE
+void destroy( T* pointer )
+{
+    pointer->~T();
+}
+*/
+//////////////////////////////////////////////////////////////////////
+/*
+template < class T1, class T2 >
+_CODE_INLINE
+void construct( T1 *p, const T2& value )
+{
+    new (p) T1( value );
+}
+*/
+//////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////
+
+/* End MEMORY.ITF ***************************************************/

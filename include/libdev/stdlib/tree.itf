@@ -1,0 +1,71 @@
+/*
+ * T R E E . I T F
+ * (c) Charybdis Limited, 1996. All Rights Reserved.
+ */
+
+#ifdef  _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+//////////////////////////////////////////////////////////////////////
+
+template < class K, class V, class KVtoK, class C >
+_CODE_INLINE
+bool operator ==( const rb_tree<K, V, KVtoK, C>& x, 
+                       const rb_tree<K, V, KVtoK, C>& y )
+{
+    return x.size() == y.size()
+    		and equal( x.begin(), x.end(), y.begin() );
+}
+
+template <class K, class V, class KVtoK, class C>
+_CODE_INLINE
+bool operator <( const rb_tree<K, V, KVtoK, C>& x, 
+                      const rb_tree<K, V, KVtoK, C>& y )
+{
+    return lexicographical_compare( x.begin(), x.end(), 
+    								y.begin(), y.end() );
+}
+
+
+template <class K, class V, class KVtoK, class C>
+_CODE_INLINE
+void 
+rb_tree<K, V, KVtoK, C>::rotate_left(link_type x) {
+    link_type y = right(x);
+    right(x) = left(y);
+    if (left(y) != NIL)
+        parent(left(y)) = x;
+    parent(y) = parent(x);
+    if (x == root())
+        root() = y;
+    else if (x == left(parent(x)))
+        left(parent(x)) = y;
+    else
+        right(parent(x)) = y;
+    left(y) = x;
+    parent(x) = y;
+}
+
+template <class K, class V, class KVtoK, class C>
+_CODE_INLINE
+void 
+rb_tree<K, V, KVtoK, C>::rotate_right(link_type x) {
+    link_type y = left(x);
+    left(x) = right(y);
+    if (right(y) != NIL)
+        parent(right(y)) = x;
+    parent(y) = parent(x);
+    if (x == root())
+        root() = y;
+    else if (x == right(parent(x)))
+        right(parent(x)) = y;
+    else
+        left(parent(x)) = y;
+    right(y) = x;
+    parent(x) = y;
+}
+
+/* End TREE.ITF *****************************************************/

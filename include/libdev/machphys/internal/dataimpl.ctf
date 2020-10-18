@@ -1,0 +1,46 @@
+/*
+ * D A T A I M P L . C T F
+ * (c) Charybdis Limited, 1997. All Rights Reserved
+ */
+
+#include <algorithm>
+
+template< class T >
+class DeleteValue
+{
+public:
+	void operator()( T ptr )
+	{
+		_DELETE( ptr );
+	}
+};
+
+template< class T >
+class DeleteContainerOfValues
+{
+public:
+	void operator()( const T& container1d )
+	{
+		delete1D( container1d );
+	}
+};
+
+//	Delete every entry from a 1D STL container of containers
+template< class T >
+void delete1D( const T& container1d )
+{
+	DeleteValue< typename T::value_type >	d1;
+
+	for_each( container1d.begin(), container1d.end(), d1 );
+}
+
+//	Delete every entry from a 2D STL container of containers
+template< class T >
+void delete2D( const T& container2d )
+{
+	DeleteContainerOfValues< typename T::value_type >	d1;
+
+	for_each( container2d.begin(), container2d.end(), d1 );
+}
+
+/* End DATAIMPL.CTF *************************************************/

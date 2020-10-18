@@ -1,0 +1,61 @@
+/*
+ * M E M O R Y . C T F
+ * (c) Charybdis Limited, 1995. All Rights Reserved.
+ */
+
+#include <limits.h>
+#include <stdlib.h>
+
+#include <algorithm>
+
+
+#ifndef _INLINE
+	#include "stdlib/memory.itf"
+#endif
+
+///////////////////////////////////
+/*
+template < class ForwardIter >
+void destroy( ForwardIter first, ForwardIter last )
+{
+    while( first != last )
+    {
+		// Borland bug
+		destroy( first );
+		++first;
+		// destroy( first++ );
+    }
+}
+*/
+//////////////////////////////////////////////////////////////////////
+/*
+template < class InputIter, class ForwardIter >
+ForwardIter
+uninitialized_copy( InputIter first,
+					InputIter last,
+				   	ForwardIter result )
+{
+    while( first != last )
+    	construct( result++, *first++ );
+
+    return result;
+}
+
+template < class ForwardIter, class T >
+void uninitialized_fill( ForwardIter first,
+							ForwardIter last, 
+							const T& x )
+{
+    while( first != last )
+    	construct( first++, x );
+}
+
+template < class ForwardIter, class Size, class T >
+void uninitialized_fill_n( ForwardIter first,
+							Size n,
+							const T& x )
+{
+    while( n-- )
+    	construct( first++, x );
+}
+*/

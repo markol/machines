@@ -1,0 +1,218 @@
+/*
+ * M A T H E X . I T F
+ * (c) Charybdis Limited, 1995. All Rights Reserved.
+ */
+
+#ifdef  _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+//////////////////////////////////////////////////////////////////////
+
+template < class SCALAR >
+_CODE_INLINE
+SCALAR sqr2( SCALAR x )
+{
+	x *= x;
+	return x;
+}
+
+template < class SCALAR >
+_CODE_INLINE
+SCALAR cube2( SCALAR x )
+{
+	x *= sqr( x );
+	return x;
+}
+
+///////////////////////////////////
+
+template < class SCALAR > _CODE_INLINE SCALAR mod( SCALAR a, SCALAR b ) { return a % b; }
+
+///////////////////////////////////
+
+// template < class SCALAR >
+// _CODE_INLINE
+// bool divides( SCALAR divisor, SCALAR dividend )
+// {
+// 	return mod( dividend, divisor ) == 0;
+// }
+//
+// ///////////////////////////////////
+//
+// template < class SCALAR >
+// _CODE_INLINE
+// bool isodd( SCALAR x )
+// {
+// 	return not divides( 2, x )
+// }
+//
+// template < class SCALAR >
+// _CODE_INLINE
+// bool iseven( SCALAR x )
+// {
+// 	return divides( 2, x )
+// }
+
+//////////////////////////////////////////////////////////////////////
+
+template < class SCALAR >
+bool isprime( SCALAR x )
+{
+	if( x == 0 )
+		return false;
+
+	if( x < 4 )
+		return  true;
+
+	if( isEven( x ) )
+		return  false;
+
+	for( SCALAR i=3; i*i<x; i+=2 )
+		if( divides( i, x ) )
+			return  false;
+
+	return  true;
+}
+
+///////////////////////////////////
+
+template < class SCALAR >
+SCALAR primeceil( SCALAR x )
+{
+	while( not isprime( x ) )
+		++x;
+
+	return  x;
+}
+
+///////////////////////////////////
+
+template < class SCALAR >
+SCALAR round( SCALAR x )
+{
+	if( x < 0.0 )
+		return  ceil( x - 0.5 );
+
+	return floor( x + 0.5 );
+}
+
+///////////////////////////////////
+
+template < class SCALAR >
+bool isintegerpowerof2( SCALAR x )
+{
+    const double LOG10_2 = log10( 2.0 );
+
+	SCALAR t = SCALAR( log10( x ) / LOG10_2 );
+	return isinteger( t );
+}
+
+template < class SCALAR >
+SCALAR integerpowerof2ceil( SCALAR x )
+{
+    const double LOG10_2 = log10( 2.0 );
+
+	SCALAR result = (SCALAR)ceil( log10( x ) / LOG10_2 );
+	POST( isintegerpowerof2( result ) and result >= x );
+	return result;
+}
+
+
+template < class SCALAR > _CODE_INLINE SCALAR sqr( const SCALAR &t ) { return  t * t; }
+template < class SCALAR > _CODE_INLINE SCALAR cube( const SCALAR &t ) { return  t * t * t; }
+
+//////////////////////////////////////////////////////////////////////
+
+template < class SCALAR >
+_CODE_INLINE
+bool inIntervalOO( const SCALAR &t , const SCALAR &lBound , const SCALAR &uBound )
+{
+    return  t >= lBound && t <= uBound;
+}
+
+template < class SCALAR >
+_CODE_INLINE
+bool inIntervalCC( const SCALAR &t , const SCALAR &lBound , const SCALAR &uBound )
+{
+    return  t > lBound && t < uBound;
+}
+
+template < class SCALAR >
+_CODE_INLINE
+bool inIntervalOC( const SCALAR &t , const SCALAR &lBound , const SCALAR &uBound )
+{
+    return  t >= lBound && t < uBound;
+}
+
+template < class SCALAR >
+_CODE_INLINE
+bool inIntervalCO( const SCALAR &t , const SCALAR &lBound , const SCALAR &uBound )
+{
+    return  t > lBound && t <= uBound;
+}
+
+template< class T1, class T2 >
+_CODE_INLINE
+T1 mexInterpolate( const T1& inputValue,
+  const T1& inputLimit1, const T1& inputLimit2,
+  const T2& outputLimit1, const T2& outputLimit2 )
+{
+    PRE_INFO( inputValue );
+    PRE_INFO( inputLimit1 );
+    PRE_INFO( inputLimit2 );
+    PRE_INFO( outputLimit1 );
+    PRE_INFO( outputLimit2 );
+
+    PRE( implies( inputLimit1 <= inputLimit2, inputLimit1 <= inputValue and inputValue <= inputLimit2 ) );
+    PRE( implies( inputLimit1 >= inputLimit2, inputLimit2 <= inputValue and inputValue <= inputLimit1 ) );
+    PRE( implies( inputLimit1 == inputLimit2, outputLimit1 == outputLimit2 and inputValue == inputLimit1 ) );
+
+	T1	t = ( inputValue - inputLimit1 ) / ( inputLimit2 - inputLimit1 );
+
+    ASSERT_INFO( t );
+    ASSERT( 0.0 <= t and t <= 1.0, "Input value out of range" );
+
+    //  This has been very carefully written to use the minimum
+    //  number of operators
+    T2  result = outputLimit2;
+    result *= t;
+
+    T2  r1 = outputLimit1;
+    r1 *= (1 - t );
+
+    result += r1;
+
+    POST_INFO( result );
+    POST( implies( outputLimit1 <= outputLimit2,
+       outputLimit1 - MexEpsilon::instance() <= result and
+       result <= outputLimit2 + MexEpsilon::instance() ) );
+    POST( implies( outputLimit1 >= outputLimit2,
+       outputLimit2 - MexEpsilon::instance() <= result and
+       result <= outputLimit1 + MexEpsilon::instance() ) );
+
+    return result;
+}
+
+template< class T1 >
+_CODE_INLINE
+T1 mexClamp( const T1& inputValue,
+  const T1& lowerLimit, const T1& upperLimit )
+{
+    PRE( lowerLimit <= upperLimit );
+
+    T1  result = inputValue;
+
+    if( result < lowerLimit )
+        result = lowerLimit;
+    else if( result > upperLimit )
+        result = upperLimit;
+
+    POST( lowerLimit <= result and result <= upperLimit );
+
+    return result;
+}
+
+/* End MATHEX.ITF *****************************************************/

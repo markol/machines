@@ -1,0 +1,29 @@
+/*
+ * S T R I N G . C T F
+ * (c) Charybdis Limited, 1998. All Rights Reserved.
+ *
+ */
+
+template< class T >
+void perWrite( PerOstream& o, const basic_string< T >& str )
+{
+	PER_WRITE_RAW_OBJECT( o, str.length() );
+	o.write( str.data(), str.length() );
+}
+
+template< class T >
+void perRead( PerIstream& i, basic_string< T >& str )
+{
+	size_t	length;
+
+	PER_READ_RAW_OBJECT( i, length );
+
+	char* data = _NEW_ARRAY( char, length + 1 );
+
+	i.read( data, length );
+	data[ length ] = '\0';
+
+	str = data;
+
+	_DELETE_ARRAY( data );
+}

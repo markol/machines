@@ -1,0 +1,27 @@
+/*
+ * B I D P M A P . I T P 
+ * (c) Charybdis Limited, 1997. All Rights Reserved
+ */
+
+//  Definitions of inline template methods
+
+#ifdef _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+template< class X >
+_CODE_INLINE
+X* UtlBoundedIdPMap< X >::operator[] ( UtlId id ) const
+{
+    return _STATIC_CAST( X*, entry( id ));
+}
+
+template< class X >
+_CODE_INLINE
+void UtlBoundedIdPMap< X >::add( UtlId id, X* p )
+{
+    UtlBoundedIdVoidPMap::add( id, p );
+}
+/* End BIDPMAP.ITP **************************************************/

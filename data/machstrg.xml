@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string id="1"
+	>Move (M)</string>
+<string id="2"
+	>Attack (A)</string>
+<string id="3"
+	>Construct (C)</string>
+<string id="4"
+	>Locate Minerals (L)</string>
+<string id="5"
+	>Patrol (P)</string>
+<string id="6"
+	>Research</string>
+<string id="7"
+	>Deploy (E)</string>
+<string id="8"
+	>Pick up (I)</string>
+<string id="9"
+	>Transport (T)</string>
+<string id="10"
+	>Build Machine (B)</string>
+<string id="11"
+	>Research new level of machine</string>
+<string id="12"
+	>Select Destination</string>
+<string id="13"
+	>Select target</string>
+<string id="14"
+	>Select construction to build</string>
+<string id="15"
+	>Click on location. Hold ctrl key down to change orientation.</string>
+<string id="16"
+	>Select destination</string>
+<string id="17"
+	>Select patrol destination (Hold the shift key to select multiple patrol points)</string>
+<string id="18"
+	>Technicians will automatically move to appropriate lab.</string>
+<string id="19"
+	>Select location to deploy</string>
+<string id="20"
+	>Select item to pick up</string>
+<string id="21"
+	>Select mine(s) and smelter to transport between</string>
+<string id="22"
+	>Select machine to build</string>
+<string id="23"
+	>Select new machine type to research</string>
+<string id="24"
+	>Self-destruct (Ctrl+Shift+Backspace)</string>
+<string id="25"
+	>Press again to initiate self-destruct sequence</string>
+<string id="26"
+	>Form a Squadron (F)</string>
+<string id="27"
+	>Select squadron number</string>
+<string id="28"
+	>Select position to drop mine</string>
+<string id="29"
+	>Drop mine (Shift+M)</string>
+<string id="30"
+	>Refill land mines (G)</string>
+<string id="31"
+	>Spy will recharge land mines at nearest garrison and return.</string>
+<string id="32"
+	>Heal (H)</string>
+<string id="33"
+	>Select target</string>
+<string id="34"
+	>Deconstruct (D)</string>
+<string id="35"
+	>Select construction to deconstruct</string>
+<string id="36"
+	>Recycle (Q)</string>
+<string id="37"
+	>Select smelter</string>
+<string id="38"
+	>Stop (S)</string>
+<string id="39"
+	>Stop</string>
+<string id="40"
+	>Stand ground (W)</string>
+<string id="41"
+	>Stand ground</string>
+<string id="42"
+	>Repair (R)</string>
+<string id="43"
+	>Select construction to repair</string>
+<string id="44"
+	>Capture (U)</string>
+<string id="45"
+	>Select construction to capture</string>
+<string id="46"
+	>Machine Initiative Setting. Currently Low (TAB)</string>
+<string id="47"
+	>Machine Initiative Setting. Currently Medium (TAB)</string>
+<string id="48"
+	>Machine Initiative Setting. Currently High (TAB)</string>
+<string id="49"
+	>Ion-Cannon Attack (I)</string>
+<string id="50"
+	>Select target</string>
+<string id="51"
+	>Nuke Attack (N) Launch cost Å500</string>
+<string id="52"
+	>Select target</string>
+<string id="53"
+	>Assemble At (B)</string>
+<string id="54"
+	>Select assembly point</string>
+<string id="55"
+	>Info : Mine not on mineral site or too close to Smelter or Pod</string>
+<string id="56"
+	>Info : Smelter too close to mine</string>
+<string id="57"
+	>Info : Uneven terrain</string>
+<string id="58"
+	>Info : Obstacles</string>
+<string id="59"
+	>Scavenge (Y)</string>
+<string id="60"
+	>Select Debris</string>
+<string id="61"
+	>Info : Can't construct in Fog of War</string>
+<string id="62"
+	>Camouflage (O)</string>
+<string id="63"
+	>Camouflage</string>
+<string id="64"
+	>Treachery (J)</string>
+<string id="65"
+	>Select Target</string>
+<string id="66"
+	>Info : 5 Bmus required to place construction</string>
+<string id="67"
+	>Info : Max units already exist</string>
+<string id="100"
+	>Airborne Unit</string>
+<string id="101"
+	>Wasp</string>
+<string id="102"
+	>Bee Bomber</string>
+<string id="110"
+	>Commander</string>
+<string id="112"
+	>Commander</string>
+<string id="113"
+	>Commandant</string>
+<string id="120"
+	>Warlord</string>
+<string id="124"
+	>Warlord</string>
+<string id="125"
+	>Assassin Warlord</string>
+<string id="130"
+	>Grunt</string>
+<string id="131"
+	>Scout</string>
+<string id="132"
+	>Grunt</string>
+<string id="133"
+	>Warrior</string>
+<string id="140"
+	>Reaper</string>
+<string id="142"
+	>Reaper</string>
+<string id="143"
+	>Wraith Reaper</string>
+<string id="150"
+	>Knight</string>
+<string id="153"
+	>Enforcer</string>
+<string id="154"
+	>Knight</string>
+<string id="155"
+	>Knight Templar</string>
+<string id="160"
+	>Assault Tank</string>
+<string id="163"
+	>Crusader</string>
+<string id="164"
+	>Goliath</string>
+<string id="170"
+	>Gorilla</string>
+<string id="175"
+	>Gorilla</string>
+<string id="180"
+	>Dozer Constructor</string>
+<string id="181"
+	>Dozer Constructor</string>
+<string id="182"
+	>Dozer Constructor</string>
+<string id="190"
+	>Builder Constructor</string>
+<string id="192"
+	>Builder Constructor</string>
+<string id="193"
+	>Builder Constructor</string>
+<string id="194"
+	>Builder Constructor</string>
+<string id="200"
+	>Mek Constructor</string>
+<string id="204"
+	>Behemoth Mek Constructor</string>
+<string id="205"
+	>Titan Mek Constructor</string>
+<string id="210"
+	>Locator</string>
+<string id="211"
+	>Locator</string>
+<string id="212"
+	>Ranger Locator</string>
+<string id="213"
+	>Prospector Locator</string>
+<string id="220"
+	>Spy</string>
+<string id="223"
+	>Spy</string>
+<string id="225"
+	>Advanced Spy</string>
+<string id="230"
+	>Technician</string>
+<string id="231"
+	>Technician</string>
+<string id="232"
+	>Technician</string>
+<string id="240"
+	>Technician</string>
+<string id="242"
+	>Engineer Technician</string>
+<string id="243"
+	>Engineer Technician</string>
+<string id="250"
+	>Technician</string>
+<string id="253"
+	>Brainbox Technician</string>
+<string id="254"
+	>Brainbox Technician</string>
+<string id="255"
+	>Brainbox Technician</string>
+<string id="260"
+	>APC</string>
+<string id="262"
+	>Shuttle APC</string>
+<string id="264"
+	>Shark APC</string>
+<string id="265"
+	>Eagle APC</string>
+<string id="270"
+	>Transporter</string>
+<string id="271"
+	>Mule Transporter</string>
+<string id="272"
+	>Ox Transporter</string>
+<string id="273"
+	>Scavenger</string>
+<string id="274"
+	>Bull Transporter</string>
+<string id="275"
+	>Rhino Transporter</string>
+<string id="300"
+	>Radar Beacon</string>
+<string id="301"
+	>Communication Beacon</string>
+<string id="303"
+	>Satellite Uplink</string>
+<string id="310"
+	>Military Factory</string>
+<string id="311"
+	>Light Infantry Factory</string>
+<string id="313"
+	>Advanced Combat Factory</string>
+<string id="314"
+	>Airborne Unit Factory</string>
+<string id="315"
+	>Heavy Assault Factory</string>
+<string id="320"
+	>Civilian Factory</string>
+<string id="321"
+	>Civilian Factory</string>
+<string id="323"
+	>Advanced Civilian Factory</string>
+<string id="325"
+	>Civilian Factory Complex</string>
+<string id="330"
+	>Garrison</string>
+<string id="331"
+	>Garrison</string>
+<string id="333"
+	>Garrison</string>
+<string id="335"
+	>Garrison</string>
+<string id="340"
+	>Mine</string>
+<string id="341"
+	>Mine</string>
+<string id="343"
+	>Extractor Mine</string>
+<string id="345"
+	>Rapid Extractor Mine</string>
+<string id="350"
+	>Turret</string>
+<string id="351"
+	>Turret</string>
+<string id="352"
+	>Defender</string>
+<string id="353"
+	>Defender</string>
+<string id="360"
+	>Sentinel</string>
+<string id="363"
+	>Ground Sentinel</string>
+<string id="364"
+	>Air Sentinel</string>
+<string id="370"
+	>Heavy Artillery</string>
+<string id="374"
+	>Leviathan Missile Launcher</string>
+<string id="380"
+	>Heavy Artillery</string>
+<string id="385"
+	>Nuclear Silo</string>
+<string id="390"
+	>Civilian Lab</string>
+<string id="391"
+	>Civilian Research Lab</string>
+<string id="393"
+	>Civilian Research Academy</string>
+<string id="400"
+	>Military Lab</string>
+<string id="401"
+	>Military Research Lab</string>
+<string id="403"
+	>Military Research Academy</string>
+<string id="410"
+	>Seeding Pod</string>
+<string id="411"
+	>Seeding Pod</string>
+<string id="413"
+	>Seeding Pod</string>
+<string id="415"
+	>Seeding Pod</string>
+<string id="420"
+	>Smelter</string>
+<string id="421"
+	>Smelter</string>
+<string id="423"
+	>Refinery Smelter</string>
+<string id="1000"
+	>Select All %1</string>
+<string id="1010"
+	>Close Navigator</string>
+<string id="1020"
+	>Aggressors</string>
+<string id="1030"
+	>Administrators</string>
+<string id="1040"
+	>Constructors</string>
+<string id="1050"
+	>Technicians</string>
+<string id="1060"
+	>Locators</string>
+<string id="1070"
+	>Carriers</string>
+<string id="1080"
+	>Pods</string>
+<string id="1090"
+	>Missile Emplacements</string>
+<string id="1100"
+	>Factories</string>
+<string id="1110"
+	>Labs</string>
+<string id="1120"
+	>Smelters/Mines</string>
+<string id="1130"
+	>Garrisons</string>
+<string id="1140"
+	>Airborne Units</string>
+<string id="1150"
+	>Commanders</string>
+<string id="1160"
+	>Warlords</string>
+<string id="1170"
+	>Grunts</string>
+<string id="1180"
+	>Reapers</string>
+<string id="1190"
+	>Assault Tanks</string>
+<string id="1200"
+	>Knights</string>
+<string id="1210"
+	>Gorillas</string>
+<string id="1220"
+	>Dozers</string>
+<string id="1230"
+	>Builders</string>
+<string id="1240"
+	>Behemoths</string>
+<string id="1250"
+	>Locators</string>
+<string id="1260"
+	>Spys</string>
+<string id="1270"
+	>Technicians</string>
+<string id="1280"
+	>Engineer Technicians</string>
+<string id="1290"
+	>Brainbox Technicians</string>
+<string id="1300"
+	>Resource Carriers</string>
+<string id="1310"
+	>APCs</string>
+<string id="1320"
+	>Turrets</string>
+<string id="1330"
+	>Sentries</string>
+<string id="1340"
+	>Launchers</string>
+<string id="1350"
+	>ICBMs</string>
+<string id="1360"
+	>Civilian Factories</string>
+<string id="1370"
+	>Military Factories</string>
+<string id="1380"
+	>Civilian Labs</string>
+<string id="1390"
+	>Military Labs</string>
+<string id="1400"
+	>Smelters</string>
+<string id="1410"
+	>Mines</string>
+<string id="1420"
+	>Beacons</string>
+<string id="1430"
+	>Pods/Beacons</string>
+<string id="1800"
+	>Machine Navigator. Toggle On/Off</string>
+<string id="1810"
+	>Construction Navigator. Toggle On/Off</string>
+<string id="1820"
+	>Squad Selector</string>
+<string id="1830"
+	>BMUs owned by player. Toggle On/Off</string>
+<string id="1840"
+	>Build %1</string>
+<string id="1850"
+	>Research %1</string>
+<string id="1860"
+	>Research %1 - with %2</string>
+<string id="1870"
+	>Build %1 - with %2</string>
+<string id="1880"
+	>%1</string>
+<string id="1890"
+	>%1 - with %2</string>
+<string id="1900"
+	>Construct %1</string>
+<string id="1910"
+	>Construct %1 - with %2</string>
+<string id="1920"
+	>%1</string>
+<string id="1930"
+	>%1 - with %2</string>
+<string id="1940"
+	>Increase %1 SW Level</string>
+<string id="1950"
+	>%1</string>
+<string id="1960"
+	>%1 - with %2</string>
+<string id="1970"
+	>SW%1</string>
+<string id="1980"
+	>ù%1</string>
+<string id="1990"
+	>Ä%1</string>
+<string id="1991"
+	>Å%1</string>
+<string id="1992"
+	>ô%1</string>
+<string id="2000"
+	>COST Å%1</string>
+<string id="2010"
+	>COST Å%1 û%2</string>
+<string id="2011"
+	>COST Å%1</string>
+<string id="2012"
+	>û%1</string>
+<string id="2020"
+	>Switch to 1st person view (NumPad 1)</string>
+<string id="2030"
+	>Select all friendly machines currently inside building</string>
+<string id="2040"
+	>Constructed %1%%</string>
+<string id="2050"
+	>Armor %1/%2</string>
+<string id="2060"
+	>Level %1</string>
+<string id="2070"
+	>HP %1/%2</string>
+<string id="2080"
+	>Switch to units map mode</string>
+<string id="2090"
+	>Switch to resource map mode</string>
+<string id="2100"
+	>Switch to show all map mode</string>
+<string id="2110"
+	>Switch map terrain on/off</string>
+<string id="2120"
+	>Normal</string>
+<string id="2130"
+	>Battle</string>
+<string id="2140"
+	>Special</string>
+<string id="2141"
+	>Custom</string>
+<string id="2150"
+	>Debris</string>
+<string id="2160"
+	>Mineral Deposit</string>
+<string id="2170"
+	>Land Mine</string>
+<string id="2180"
+	>Change to zenith camera (NumPad 2)</string>
+<string id="2190"
+	>Change to ground camera (NumPad 0)</string>
+<string id="2200"
+	>Exit</string>
+<string id="2210"
+	>¢</string>
+<string id="2220"
+	>£</string>
+<string id="2230"
+	>§</string>
+<string id="2240"
+	>§</string>
+<string id="2250"
+	>§</string>
+<string id="2260"
+	>§</string>
+<string id="2270"
+	>§</string>
+<string id="2280"
+	>•</string>
+<string id="2290"
+	>¶</string>
+<string id="2300"
+	>Ö</string>
+<string id="2310"
+	>Weapon Range</string>
+<string id="2320"
+	>Capacity</string>
+<string id="2330"
+	>Research Points</string>
+<string id="2340"
+	>Research Points</string>
+<string id="2350"
+	>Mines</string>
+<string id="2360"
+	>Locate Range</string>
+<string id="2370"
+	>Construct Rate</string>
+<string id="2380"
+	>Remaining BMUs</string>
+<string id="2390"
+	>Build Rate</string>
+<string id="2400"
+	>Show control panel</string>
+<string id="2410"
+	>Hide control panel</string>
+<string id="2420"
+	>Tasks</string>
+<string id="2430"
+	>Completed</string>
+<string id="2431"
+	>Failed</string>
+<string id="2440"
+	>Send to </string>
+<string id="2450"
+	>Send to Everyone: </string>
+<string id="2451"
+	>System Command: </string>
+<string id="2460"
+	>*System : Host has lost connection; %1 promoted to host</string>
+<string id="2470"
+	>*System : Player %1 has lost connection. Continuing without %1</string>
+<string id="2480"
+	>*System : Connection has been lost. Please exit, return to lobby and try again.</string>
+<string id="2490"
+	>*System : Waiting for other players to connect</string>
+<string id="2500"
+	>*System : %1 has lost!</string>
+<string id="2510"
+	>The multiplayer game session has been lost. Press Ok to exit Machines</string>
+<string id="2520"
+	>*System : The multiplayer game session has been lost, terminating Machines in 5 seconds</string>
+<string id="2530"
+	>%1 regards %2 as an enemy</string>
+<string id="2540"
+	>%1 regards %2 as a friend</string>
+<string id="2550"
+	>Researched %1%%</string>
+<string id="2560"
+	>Built %1%%</string>
+<string id="2570"
+	>Max units already exist</string>
+<string id="2580"
+	>Seconds remaining</string>
+<string id="2590"
+	>Minutes remaining</string>
+<string id="2600"
+	>%1 : %2 (%3 %4)</string>
+<string id="4000"
+	>Bolter</string>
+<string id="4010"
+	>Bolter</string>
+<string id="4020"
+	>Disruptor</string>
+<string id="4030"
+	>Disruptor</string>
+<string id="4040"
+	>Pulse Rifles</string>
+<string id="4050"
+	>Heavy Pulse Cannons</string>
+<string id="4060"
+	>Healing Charger and Pulse Rifle</string>
+<string id="4070"
+	>Healing SuperCharger and Heavy Pulse Cannon</string>
+<string id="4080"
+	>Healing SuperCharger and Sabre Missile Launcher</string>
+<string id="4090"
+	>Dark Shroud</string>
+<string id="4100"
+	>Plasma Rifles</string>
+<string id="4110"
+	>Plasma Rifle</string>
+<string id="4120"
+	>Plasma Cannons</string>
+<string id="4130"
+	>Heavy Plasma Cannons</string>
+<string id="4140"
+	>Heavy Plasma Cannons</string>
+<string id="4150"
+	>Treachery and Sabre Missile Launcher</string>
+<string id="4160"
+	>Virus Accelerator and Heavy Pulse Cannon</string>
+<string id="4170"
+	>Vortex Singularity</string>
+<string id="4180"
+	>Flame Thrower</string>
+<string id="4190"
+	>Flame Thrower</string>
+<string id="4200"
+	>Multi Launcher</string>
+<string id="4210"
+	>Medium Range Missile Launchers</string>
+<string id="4220"
+	>Medium Range Missile Launchers</string>
+<string id="4230"
+	>Devastator Missile Launcher</string>
+<string id="4240"
+	>Short Range Missile Launchers</string>
+<string id="4250"
+	>Long Range Missile Launchers</string>
+<string id="4260"
+	>Rapier Missile Launcher</string>
+<string id="4270"
+	>Bolters Cannons</string>
+<string id="4280"
+	>Heavy Bolters</string>
+<string id="4290"
+	>Auto Cannon</string>
+<string id="4300"
+	>Auto Cannons</string>
+<string id="4310"
+	>Leviathan Missiles</string>
+<string id="4320"
+	>Orbital Ion Cannon</string>
+<string id="4340"
+	>Homing Missile</string>
+<string id="4350"
+	>Ground Punch and Oblivion Missile Launchers</string>
+<string id="4360"
+	>Nuclear Missile</string>
+<string id="4380"
+	>Plasma Sting</string>
+<string id="4390"
+	>Missile Sting</string>
+<string id="4400"
+	>B-Bomb</string>
+<string id="5000"
+	>Medic Commander - with Healing Charger and Pulse Rifle</string>
+<string id="5001"
+	>Medic Commandant - with Healing Charger and Pulse Rifle</string>
+<string id="5002"
+	>Judas Warlord - with Treachery and Sabre Missile Launcher</string>
+<string id="5003"
+	>Surgeon Warlord - with SuperCharger and Sabre Missile Launcher</string>
+<string id="5004"
+	>Assassin Surgeon Warlord - with SuperCharger and Pulse Cannon</string>
+<string id="5005"
+	>Demon Warlord - with Virus Accelerator and Heavy Pulse Cannon</string>
+<string id="5006"
+	>Grunt - with Napalm</string>
+<string id="5007"
+	>Eradicator - with Vortex Singularity</string>
+<string id="5008"
+	>Napalm Turret</string>
+<string id="5009"
+	>Ground Sentinel</string>
+<string id="5010"
+	>Air Sentinel</string>
+<string id="5011"
+	>Leviathan Missile Launcher</string>
+<string id="6001"
+	>Rock</string>
+<string id="6002"
+	>Large Rock</string>
+<string id="6003"
+	>Boulder</string>
+<string id="6004"
+	>Relay Station Doorway</string>
+<string id="6005"
+	>Console</string>
+<string id="6006"
+	>Crane</string>
+<string id="6007"
+	>Crates</string>
+<string id="6008"
+	>Boxes</string>
+<string id="6009"
+	>Ventilation Grate</string>
+<string id="6010"
+	>Door Controls</string>
+<string id="6011"
+	>Door</string>
+<string id="6012"
+	>Wall</string>
+<string id="6013"
+	>Stockade Wall</string>
+<string id="6014"
+	>Tree</string>
+<string id="6015"
+	>Shrub</string>
+<string id="6016"
+	>Bush</string>
+<string id="6017"
+	>APC Wreckage</string>
+<string id="6018"
+	>Gate</string>
+<string id="6019"
+	>The Controller</string>
+<string id="6020"
+	>Seeding Pod</string>
+<string id="6021"
+	>Shield Generator</string>
+<string id="6022"
+	>Central Core Generator</string>
+<string id="6023"
+	>Cooling Conduit Valve</string>
+<string id="6024"
+	>Lighting Unit</string>
+<string id="6025"
+	>Pipe</string>
+<string id="6026"
+	>Shielded Door</string>
+<string id="6027"
+	>Power Conduits</string>
+<string id="6028"
+	>Enemy Controller</string>
+<string id="6029"
+	>Central Control Core</string>
+<string id="6991"
+	>Gamma</string>
+<string id="6992"
+	>Disable 1st Person</string>
+<string id="6993"
+	>Broadcast Alliances</string>
+<string id="6994"
+	>Reverse F.P. Mouse</string>
+<string id="6995"
+	>Reverse Up/Down Keys</string>
+<string id="6996"
+	>2D Selection box</string>
+<string id="6997"
+	>Screen Resolution Lock</string>
+<string id="6998"
+	>3D Driver</string>
+<string id="6999"
+	>Display Driver</string>
+<string id="7000"
+	>MAIN
+MENU</string>
+<string id="7001"
+	>SINGLE PLAYER</string>
+<string id="7002"
+	>Chat Message</string>
+<string id="7003"
+	>Enter Name</string>
+<string id="7004"
+	>Open</string>
+<string id="7005"
+	>Closed</string>
+<string id="7006"
+	>Computer</string>
+<string id="7007"
+	>HOT KEYS</string>
+<string id="7008"
+	>[New Save Game]</string>
+<string id="7009"
+	>[New Player Name]</string>
+<string id="7010"
+	>Current Status</string>
+<string id="7011"
+	>[New Game Name]</string>
+<string id="7012"
+	>Fog Of War</string>
+<string id="7013"
+	>On</string>
+<string id="7014"
+	>Off</string>
+<string id="7015"
+	>Resources</string>
+<string id="7016"
+	>High</string>
+<string id="7017"
+	>Normal</string>
+<string id="7018"
+	>Low</string>
+<string id="7019"
+	>Game Speed</string>
+<string id="7020"
+	>Music Volume</string>
+<string id="7021"
+	>SFX Volume</string>
+<string id="7022"
+	>Scroll Speed</string>
+<string id="7023"
+	>Resolution</string>
+<string id="7024"
+	>Optimization</string>
+<string id="7025"
+	>Scenario:</string>
+<string id="7026"
+	>Highest Score:</string>
+<string id="7027"
+	>Default</string>
+<string id="7028"
+	>0</string>
+<string id="7029"
+	>100</string>
+<string id="7030"
+	>500</string>
+<string id="7031"
+	>1000</string>
+<string id="7032"
+	>10000</string>
+<string id="7033"
+	>Timed</string>
+<string id="7034"
+	>Total Annihilation</string>
+<string id="7035"
+	>Destroy Pod</string>
+<string id="7036"
+	>Victory Condition</string>
+<string id="7037"
+	>Starting Resources</string>
+<string id="7038"
+	>Start Position</string>
+<string id="7039"
+	>Fixed</string>
+<string id="7040"
+	>Random</string>
+<string id="7041"
+	>Number of Players</string>
+<string id="7042"
+	>2</string>
+<string id="7043"
+	>3</string>
+<string id="7044"
+	>4</string>
+<string id="7045"
+	>Timer (5 minutes)</string>
+<string id="7046"
+	>Timer (10 minutes)</string>
+<string id="7047"
+	>Timer (15 minutes)</string>
+<string id="7048"
+	>Timer (30 minutes)</string>
+<string id="7049"
+	>Timer (45 minutes)</string>
+<string id="7050"
+	>Timer (60 minutes)</string>
+<string id="7051"
+	>Timer (90 minutes)</string>
+<string id="7052"
+	>Timer (120 minutes)</string>
+<string id="7053"
+	>Timer (180 minutes)</string>
+<string id="7054"
+	>Starting Tech-Level</string>
+<string id="7055"
+	>Low</string>
+<string id="7056"
+	>Medium</string>
+<string id="7057"
+	>High</string>
+<string id="7058"
+	>Player Color</string>
+<string id="7059"
+	>Red</string>
+<string id="7060"
+	>Green</string>
+<string id="7061"
+	>Blue</string>
+<string id="7062"
+	>Yellow</string>
+<string id="7063"
+	>Unavailable</string>
+<string id="7064"
+	>First Person:</string>
+<string id="7065"
+	>General:</string>
+<string id="7066"
+	>Current Port</string>
+<string id="7067"
+	>Baud Rate</string>
+<string id="7068"
+	>Stop Bits</string>
+<string id="7069"
+	>Parity</string>
+<string id="7070"
+	>Flow</string>
+<string id="7071"
+	>Modem Type</string>
+<string id="7072"
+	>Server Telephone Number</string>
+<string id="7073"
+	>Server IP Address</string>
+<string id="7074"
+	>Total Score:</string>
+<string id="7075"
+	>Scenarios Played:</string>
+<string id="7076"
+	>No Scenarios Played</string>
+<string id="7077"
+	>MACHINE
+KILLS</string>
+<string id="7078"
+	>CONSTRUCTION
+KILLS</string>
+<string id="7079"
+	>MACHINE
+LOSSES</string>
+<string id="7080"
+	>CONSTRUCTION
+LOSSES</string>
+<string id="7081"
+	>BMUS
+MINED</string>
+<string id="7082"
+	>MACHINES
+BUILT</string>
+<string id="7083"
+	>MILITARY
+MACHINES
+BUILT</string>
+<string id="7084"
+	>CONSTRUCTNS.
+BUILT</string>
+<string id="7085"
+	>ITEMS
+RESEARCHED</string>
+<string id="7086"
+	>RESEARCH
+POINTS</string>
+<string id="7087"
+	>PLAYER</string>
+<string id="7088"
+	>DESTROYED
+MACHINES
+BELONGING TO</string>
+<string id="7089"
+	>DESTROYED
+CONSTRUCTNS.
+BELONGING TO</string>
+<string id="7090"
+	>SCORE</string>
+<string id="7091"
+	>General</string>
+<string id="7092"
+	>Kills Table</string>
+<string id="7093"
+	>Statistics</string>
+<string id="7094"
+	>Building and Research</string>
+<string id="7095"
+	>Player</string>
+<string id="7096"
+	>Computer</string>
+<string id="7097"
+	>N/A</string>
+<string id="7098"
+	>3D Sound</string>
+<string id="7099"
+	>Menu Transitions</string>
+<string id="7100"
+	>You must enter a name in order to continue to the next screen.</string>
+<string id="7101"
+	>You must select a connection type before you can continue to the next screen.</string>
+<string id="7102"
+	>Message</string>
+<string id="7103"
+	>Open, Closed, Computer and Unavailable are not valid names. Please use a different name.</string>
+<string id="7104"
+	>*system : %1, the host, has added you into the game</string>
+<string id="7105"
+	>*system : %1, the host, has removed you from the game</string>
+<string id="7106"
+	>*system : %1, the host, has terminated game creation</string>
+<string id="7107"
+	>*system : game has started. you are not included</string>
+<string id="7108"
+	>*system : %1 has disconnected</string>
+<string id="7109"
+	>*system : %1 has connected</string>
+<string id="7110"
+	>You must enter a game name in order to create a new game.</string>
+<string id="7111"
+	>To continue to the next screen you must enter a
+[New Player Name] or select a previously-created player.</string>
+<string id="7112"
+	>To create a new player, type in the players name then press OK.</string>
+<string id="7113"
+	>Enter a [New Save Game] name or select a previously-saved game to copy over.</string>
+<string id="7114"
+	>Select a saved game.</string>
+<string id="7115"
+	>Are you sure you wish to delete this saved game?</string>
+<string id="7116"
+	>Are you sure you want to delete '%1' and all associated saved games?</string>
+<string id="7117"
+	>Game was not saved by '%1' and therefore cannot be deleted.</string>
+<string id="7118"
+	>You must select a game to join from the 'Current Games' list box.</string>
+<string id="7119"
+	>A game of this name already exists. Please specify a different name. </string>
+<string id="7120"
+	>Please enter the telephone number of the server machine</string>
+<string id="7121"
+	>Please enter the IP address of the server machine</string>
+<string id="7122"
+	>I have failed to connect. Please restart the operation.</string>
+<string id="7123"
+	>I cannot connect using the data that I have been given, please check all fields and try again.</string>
+<string id="7124"
+	>Invalid data has been detected and I cannot continue, please try again.</string>
+<string id="7125"
+	>An undefined network error has occured, please try again.</string>
+<string id="7126"
+	>I am unable to initialise direct play. Rebooting the machine may help, also ensure that DirectX is installed correctly.</string>
+<string id="7127"
+	>Memory error. Please ensure that all other applications are closed and try again.</string>
+<string id="7128"
+	>I cannot connect to the session. Please press 'Show Games' and try again.</string>
+<string id="7129"
+	>Node error</string>
+<string id="7130"
+	>Connection successfully made</string>
+<string id="7131"
+	>There are no modems available - please ensure you have modem correctly installed</string>
+<string id="7132"
+	>IPX protocol unavailable - please ensure you have IPX installed</string>
+<string id="7133"
+	>TCPIP protocol unavailable - please ensure you have TCPIP installed</string>
+<string id="7134"
+	>Serial connection unavailable - please ensure you have a valid connection</string>
+<string id="7135"
+	>Please insert Machines CD 2.</string>
+<string id="7136"
+	>At least one player must have a Machines CD in their CD-ROM drive.</string>
+<string id="7137"
+	>Are you sure you want to exit Machines?</string>
+<string id="7138"
+	>The display driver settings will not take effect until you re-run the game.</string>
+<string id="7139"
+	>The game failed to save. You probably have insufficient disk space. Try deleting old saved games.</string>
+<string id="7140"
+	>The screen resolution settings will not take effect until you re-run the game.</string>
+<string id="7141"
+	>The video driver and screen resolution settings will not take effect until you re-run the game.</string>
+<string id="7142"
+	>Your name has changed to '%1' because '%2' is already being used by another player.</string>
+<string id="7200"
+	>Connection Types</string>
+<string id="7201"
+	>Star Systems</string>
+<string id="7202"
+	>Planets</string>
+<string id="7203"
+	>Scenarios</string>
+<string id="7204"
+	>Current Games</string>
+<string id="7205"
+	>Save Game</string>
+<string id="7206"
+	>Load Game</string>
+<string id="7207"
+	>Game Types</string>
+<string id="7208"
+	>Select Player</string>
+<string id="7209"
+	>Terrain Types</string>
+<string id="7210"
+	>Settings</string>
+<string id="7211"
+	>Options</string>
+<string id="7212"
+	>Optimizations</string>
+<string id="7300"
+	>Settings</string>
+<string id="7302"
+	>OK</string>
+<string id="7303"
+	>Exit Game</string>
+<string id="7304"
+	>Briefing</string>
+<string id="7305"
+	>Restart</string>
+<string id="7306"
+	>HotKeys</string>
+<string id="7307"
+	>Save Game</string>
+<string id="7308"
+	>Campaign</string>
+<string id="7309"
+	>Skirmish</string>
+<string id="7310"
+	>Load Game</string>
+<string id="7311"
+	>Cancel</string>
+<string id="7312"
+	>Continue</string>
+<string id="7313"
+	>New</string>
+<string id="7314"
+	>Delete</string>
+<string id="7315"
+	>Hints</string>
+<string id="7316"
+	>Objectives</string>
+<string id="7317"
+	>Statistics</string>
+<string id="7318"
+	>Exit</string>
+<string id="7319"
+	>Single Player</string>
+<string id="7320"
+	>Multiplayer</string>
+<string id="7321"
+	>Options</string>
+<string id="7322"
+	>I'm Ready</string>
+<string id="7323"
+	>Start</string>
+<string id="7324"
+	>Join</string>
+<string id="7325"
+	>Create</string>
+<string id="7326"
+	>Show Games</string>
+<string id="7327"
+	>^</string>
+<string id="7328"
+	>Yes</string>
+<string id="7329"
+	>No</string>
+<string id="7330"
+	>Back To Internet</string>
+<string id="7331"
+	>Exit To Internet</string>
+<string id="8000"
+	>Corinthian System</string>
+<string id="8001"
+	>Beta</string>
+<string id="8002"
+	>Training Camp (Tutorial)</string>
+<string id="8003"
+	>The Border Colonies</string>
+<string id="8004"
+	>Midian Prime</string>
+<string id="8005"
+	>The Core System</string>
+<string id="8100"
+	>Talon Prime</string>
+<string id="8101"
+	>Dogbar Max</string>
+<string id="8102"
+	>Planet3</string>
+<string id="8103"
+	>Basic Training</string>
+<string id="8104"
+	>Advanced Training</string>
+<string id="8105"
+	>Adelphi9</string>
+<string id="8106"
+	>Gracko</string>
+<string id="8107"
+	>Midian</string>
+<string id="8108"
+	>The Home Planet</string>
+<string id="8109"
+	>Talok</string>
+<string id="8110"
+	>Talok, the moon of Talon Prime</string>
+<string id="8111"
+	>Volcanic</string>
+<string id="8200"
+	>Desert</string>
+<string id="8201"
+	>Dales</string>
+<string id="8202"
+	>Snow</string>
+<string id="8203"
+	>Fortress</string>
+<string id="8204"
+	>Moon</string>
+<string id="8205"
+	>Ice Moon</string>
+<string id="8206"
+	>Rolling Plain</string>
+<string id="8207"
+	>Interior</string>
+<string id="8208"
+	>Midian Interior</string>
+<string id="8209"
+	>Home World</string>
+<string id="8300"
+	>Contact Comm-Sat Relay Station</string>
+<string id="8301"
+	>Destroy Military Stronghold</string>
+<string id="8302"
+	>Scenario3</string>
+<string id="8303"
+	>Scenario4</string>
+<string id="8304"
+	>Scenario5</string>
+<string id="8305"
+	>Scenario6</string>
+<string id="8306"
+	>Basic Selection and Movement</string>
+<string id="8307"
+	>Building</string>
+<string id="8308"
+	>Resources</string>
+<string id="8309"
+	>Basic Combat</string>
+<string id="8310"
+	>Advanced Combat</string>
+<string id="8311"
+	>Establish Military Base</string>
+<string id="8312"
+	>Seek and Destroy</string>
+<string id="8313"
+	>Desert 1</string>
+<string id="8314"
+	>Fortress 1</string>
+<string id="8315"
+	>Fortress 2</string>
+<string id="8316"
+	>Moon 1</string>
+<string id="8317"
+	>Ice Moon Maze</string>
+<string id="8318"
+	>Central Dominance</string>
+<string id="8319"
+	>King of the Castle</string>
+<string id="8320"
+	>Mass Assault</string>
+<string id="8321"
+	>Satellite Shootout</string>
+<string id="8322"
+	>Lunar Dominance</string>
+<string id="8323"
+	>Field Test</string>
+<string id="8324"
+	>Take the Pass</string>
+<string id="8325"
+	>Reclamation of Talonthia 8</string>
+<string id="8326"
+	>Fortification of Talonthia 8</string>
+<string id="8327"
+	>Kidnapping</string>
+<string id="8328"
+	>Satellite Espionage</string>
+<string id="8329"
+	>The Finger of God</string>
+<string id="8330"
+	>Disable Satellite Force Shield</string>
+<string id="8331"
+	>Suicide Mission</string>
+<string id="8332"
+	>Final Assault</string>
+<string id="8333"
+	>The Controller</string>
+<string id="8334"
+	>Big Rumble on Home Turf</string>
+<string id="8335"
+	>Make Contact</string>
+<string id="8336"
+	>Behind Enemy Lines</string>
+<string id="8337"
+	>Contact Comm-Sat Relay Station</string>
+<string id="8338"
+	>Regain Control</string>
+<string id="8339"
+	>Eliminate Enemy Presence</string>
+<string id="8340"
+	>Research Facility</string>
+<string id="8341"
+	>Espionage and Kidnapping</string>
+<string id="8342"
+	>Protect the Controller</string>
+<string id="8343"
+	>Military Fortress</string>
+<string id="8344"
+	>Steal Ion Cannon Technology</string>
+<string id="8345"
+	>The Controller</string>
+<string id="8346"
+	>Canyon Attack</string>
+<string id="8347"
+	>Canyon Attack - Day/Night</string>
+<string id="8348"
+	>Ice Moon Mountain</string>
+<string id="8349"
+	>Island Skirmish</string>
+<string id="8350"
+	>Oasis</string>
+<string id="8351"
+	>Crater Carnage</string>
+<string id="8352"
+	>Lunar Desert</string>
+<string id="8353"
+	>The Red Planet</string>
+<string id="8354"
+	>Volcanic Stronghold</string>
+<string id="8355"
+	>Claustrophobia</string>
+<string id="8356"
+	>Island War</string>
+<string id="8357"
+	>Fortress Battle Arena</string>
+<string id="8358"
+	>Seige!</string>
+<string id="8359"
+	>Claustrophobia Battle Royale</string>
+<string id="8360"
+	>Joust</string>
+<string id="8361"
+	>Mass assault - Mayhem!</string>
+<string id="8362"
+	>Mass assault - large</string>
+<string id="8363"
+	>Mass assault - medium</string>
+<string id="8364"
+	>Mass assault - small</string>
+<string id="8365"
+	>Seige - small</string>
+<string id="8366"
+	>Seige - small - 2 players</string>
+<string id="8367"
+	>Seige - 2 players</string>
+<string id="8368"
+	>Ice Moon Maze - Day/Night</string>
+<string id="8369"
+	>Ice Moon Mountain - Day/Night</string>
+<string id="8370"
+	>Central Dominance - Day/Night</string>
+<string id="8371"
+	>King of the Castle - Day/Night</string>
+<string id="8372"
+	>Island Skirmish - Day/Night</string>
+<string id="8373"
+	>Oasis - Day/Night</string>
+<string id="9000"
+	>Moving</string>
+<string id="9001"
+	>Attacking</string>
+<string id="9002"
+	>Following</string>
+<string id="9003"
+	>Seek and Destroy</string>
+<string id="9005"
+	>Attacking</string>
+<string id="9006"
+	>Constructing</string>
+<string id="9007"
+	>Healing</string>
+<string id="9008"
+	>Locating</string>
+<string id="9009"
+	>Capturing</string>
+<string id="9010"
+	>Constructing</string>
+<string id="9011"
+	>Deploying</string>
+<string id="9012"
+	>Entering APC</string>
+<string id="9013"
+	>Moving to Lab</string>
+<string id="9014"
+	>Healing</string>
+<string id="9015"
+	>Laying Mines</string>
+<string id="9016"
+	>Locating</string>
+<string id="9017"
+	>Attacking</string>
+<string id="9018"
+	>Picking Up</string>
+<string id="9019"
+	>Commencing Ion Attack</string>
+<string id="9020"
+	>Putting Down</string>
+<string id="9021"
+	>Restocking Mines</string>
+<string id="9022"
+	>Repairing</string>
+<string id="9023"
+	>Transporting</string>
+<string id="9024"
+	>Treachery</string>
+<string id="9025"
+	>Attacking</string>
+<string id="9026"
+	>Constructing</string>
+<string id="9027"
+	>Laying Mines</string>
+<string id="9028"
+	>Locating</string>
+<string id="9029"
+	>Patrolling</string>
+<string id="9030"
+	>Entering Building</string>
+<string id="9031"
+	>Leaving Building</string>
+<string id="9032"
+	>Moving</string>
+<string id="9033"
+	>Deconstructing</string>
+<string id="9034"
+	>Recycling</string>
+<string id="9035"
+	>Deconstructing</string>
+<string id="9036"
+	>Capturing</string>
+<string id="9037"
+	>Constructing</string>
+<string id="9038"
+	>Constructing</string>
+<string id="9039"
+	>Standing Ground</string>
+<string id="9040"
+	>Repairing</string>
+<string id="9041"
+	>Evading</string>
+<string id="9042"
+	>Moving</string>
+<string id="9043"
+	>Commencing Nuke Attack</string>
+<string id="9044"
+	>Patrolling</string>
+<string id="9045"
+	>Scavenging</string>
+<string id="9046"
+	>Attacking</string>
+<string id="9047"
+	>Scavenging</string>
+<string id="10000"
+	>Dynamic Lights</string>
+<string id="10001"
+	>Vapor Trails</string>
+<string id="10020"
+	>Sky</string>
+<string id="10021"
+	>No Sky</string>
+<string id="10022"
+	>Sky without satellites</string>
+<string id="10023"
+	>Sky with satellites</string>
+</resources>

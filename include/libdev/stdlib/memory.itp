@@ -1,0 +1,261 @@
+/*
+ * M E M O R Y . I T P
+ * (c) Charybdis Limited, 1995. All Rights Reserved.
+ */
+
+#include <limits.h>
+#include "base/memchk.hpp"
+
+//////////////////////////////////////////////////////////////////////
+
+#ifdef  _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+/*
+template < class T >
+_CODE_INLINE
+allocator< T >::pointer
+allocator< T >::allocate( allocator< T >::size_type n )
+{
+
+	return ::allocate( (difference_type)n, (pointer)0 );
+}
+
+template < class T >
+_CODE_INLINE
+void
+allocator< T >::deallocate( pointer p )
+{
+	::deallocate( p );
+}
+
+//////////////////////////////////////////////////////////////////////
+
+template < class T >
+_CODE_INLINE
+allocator< T >::pointer
+allocator< T >::address( allocator< T >::reference x )
+{
+	return (pointer)&x;
+}
+
+template < class T >
+_CODE_INLINE
+allocator< T >::const_pointer
+allocator< T >::const_address(
+	allocator< T >::const_reference x )
+{
+	return (const_pointer)&x;
+}
+
+//////////////////////////////////////////////////////////////////////
+
+template < class T >
+_CODE_INLINE
+allocator< T >::size_type
+allocator< T >::init_page_size()
+{
+	return max( size_type( 1 ),
+					size_type( 4096/sizeof( T ) ) );
+}
+
+template < class T >
+_CODE_INLINE
+allocator< T >::size_type
+allocator< T >::max_size() const
+{
+	return max( size_type( 1 ),
+					size_type( UINT_MAX / sizeof( T ) ) );
+}
+*/
+//////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+/*
+
+template < class X >
+_CODE_INLINE
+auto_ptr< X >::auto_ptr( X *tPtr )
+: pData_( tPtr ),
+  owner_( tPtr != 0 )
+{
+	//* Intentionally Empty	*
+}
+
+template < class X >
+_CODE_INLINE
+auto_ptr< X >::auto_ptr( const auto_ptr& rhs )
+: owner_( rhs.owner_ )
+{
+	// NB: there's an initialisation order dependency.  release sets owner_
+	// to false.  this->owner_ *must* be initialised first.
+	pData_ = rhs.release();
+}
+
+template < class X >
+_CODE_INLINE
+auto_ptr< X >::~auto_ptr()
+{
+    if( owner_ )
+    	_DELETE(pData_);
+}
+
+template < class X >
+_CODE_INLINE
+auto_ptr< X >&
+auto_ptr< X >::operator=( const auto_ptr& rhs )
+{
+    if( (void*)&rhs != (void*)this )
+    {
+        if( owner_ )
+            _DELETE(pData_);
+        owner_ = rhs.owner_;
+        pData_ = rhs.release();
+    }
+
+    return *this;
+}
+
+template < class X >
+_CODE_INLINE
+X& auto_ptr< X >::operator *() const
+{
+	return *pData_;
+}
+
+template < class X >
+_CODE_INLINE
+X* auto_ptr< X >::operator ->() const
+{
+	return pData_;
+}
+
+template < class X >
+_CODE_INLINE
+X* auto_ptr< X >::get() const
+{
+	return pData_;
+}
+
+template < class X >
+_CODE_INLINE
+X* auto_ptr< X >::release() const
+{
+	X* tPtr = pData_;
+
+    auto_ptr< X >* nonConstThis = (auto_ptr< X >*)this;
+
+	nonConstThis->owner_ = false;
+
+	return pData_;
+}
+
+// template< class Y >
+// _CODE_INLINE
+// auto_ptr< X >::auto_ptr( const auto_ptr< Y >& rhs )
+// : owner_( rhs..owner_ ),
+//   pData_( rhs.release() )
+// {
+// }
+//
+// template< class Y >
+// _CODE_INLINE
+// auto_ptr< Y >& auto_ptr< X >::operator =( const auto_ptr< Y >& rhs )
+// {
+//     if( (void*)&rhs != (void*)this )
+//     {
+//         if( owner_ )
+//             _DELETE(pData_);
+//         owner_ = r.owner_;
+//         pData_ = r.release();
+//     }
+//
+//     return *this;
+// }
+*/
+template < class X >
+_CODE_INLINE
+auto_ptr_array< X >::auto_ptr_array( X *tPtr )
+: pData_( tPtr ),
+  owner_( tPtr != 0 )
+{
+	/* Intentionally Empty	*/
+}
+
+template < class X >
+_CODE_INLINE
+auto_ptr_array< X >::auto_ptr_array( const auto_ptr_array& rhs )
+: owner_( rhs.owner_ )
+{
+	// NB: there's an initialisation order dependency.  release sets owner_
+	// to false.  this->owner_ *must* be initialised first.
+	pData_ = rhs.release();
+}
+
+template < class X >
+_CODE_INLINE
+auto_ptr_array< X >::~auto_ptr_array()
+{
+//	IAIN_STREAM("Dtor for auto_ptr_array: o=" << owner_ << " ptr=" << pData_ << "\n");
+    if( owner_ )
+    	_DELETE_ARRAY(pData_);
+}
+
+template < class X >
+_CODE_INLINE
+auto_ptr_array< X >&
+auto_ptr_array< X >::operator=( const auto_ptr_array& rhs )
+{
+    if( (void*)&rhs != (void*)this )
+    {
+        if( owner_ )
+            _DELETE_ARRAY(pData_);
+        owner_ = rhs.owner_;
+        pData_ = rhs.release();
+    }
+
+    return *this;
+}
+
+template < class X >
+_CODE_INLINE
+X& auto_ptr_array< X >::operator *() const
+{
+	return *pData_;
+}
+
+template < class X >
+_CODE_INLINE
+X* auto_ptr_array< X >::operator ->() const
+{
+	return pData_;
+}
+
+template < class X >
+_CODE_INLINE
+X* auto_ptr_array< X >::get() const
+{
+	return pData_;
+}
+
+template < class X >
+_CODE_INLINE
+X* auto_ptr_array< X >::release() const
+{
+	X* tPtr = pData_;
+
+    auto_ptr_array< X >* nonConstThis = (auto_ptr_array< X >*)this;
+
+	nonConstThis->owner_ = false;
+
+	return pData_;
+}
+

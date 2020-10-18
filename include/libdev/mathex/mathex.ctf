@@ -1,0 +1,48 @@
+/*
+ * M A T H E X . C T F
+ * (c) Charybdis Limited, 1995, 1996, 1997, 1998. All Rights Reserved.
+ */
+
+#ifndef _INLINE
+    #include "mathex/mathex.itf"
+#endif
+
+template< class SCALAR >
+ostream &operator<<( ostream & ostr, const MexXCoord<SCALAR>& t )
+{ 	
+	ostr << t.data_;
+	return ostr;
+}
+
+template< class SCALAR >
+void perWrite( PerOstream& str, const MexXCoord<SCALAR>& t )
+{
+    str << t.data_;
+}
+
+template< class SCALAR >
+void perRead( PerIstream& str, MexXCoord<SCALAR>& t )
+{
+    str >> t.data_;
+}
+
+template< class SCALAR >
+ostream &operator<<( ostream & ostr, const MexYCoord<SCALAR>& t )
+{ 	
+	ostr << t.data_;
+	return ostr;
+}
+
+template< class SCALAR >
+void perWrite( PerOstream& str, const MexYCoord<SCALAR>& t )
+{
+    str << t.data_;
+}
+
+template< class SCALAR >
+void perRead( PerIstream& str, MexYCoord<SCALAR>& t )
+{
+    str >> t.data_;
+}
+
+/* End MATHEX.CTF *****************************************************/

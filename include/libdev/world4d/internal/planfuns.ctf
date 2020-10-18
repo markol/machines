@@ -1,0 +1,205 @@
+/*
+ * P L A N F U N S . C T F
+ * (c) Charybdis Limited, 1998. All Rights Reserved
+ */
+
+//  Definitions of non-inline template global functions
+
+template< class PLAN_TYPE >
+W4dEntityPlan::PlanState FindPlan
+(
+	const ctl_list< W4dPendingPlan< PLAN_TYPE > >& plans,
+	const PhysAbsoluteTime& time,
+	PLAN_TYPE* pPlanPtr, PhysRelativeTime* pTimeOffset,
+	uint* pNObsoletePlans
+)
+{
+	PRE( pPlanPtr != NULL );
+	PRE( pTimeOffset != NULL );
+	PRE( plans.size() != 0 );
+
+	typedef ctl_list< W4dPendingPlan< PLAN_TYPE > > Plans;
+
+	//Check first plan
+	W4dEntityPlan::PlanState state;
+	uint nObsoletePlans = 0;
+	typename Plans::const_iterator it = plans.begin();
+    PhysAbsoluteTime startTime = (*it).startTime();
+
+	if( startTime > time )
+	{
+		//Hasn't started yet
+		state = W4dEntityPlan::NOT_STARTED;
+	}
+	else
+	{
+		//Has started, so must be defined
+		state = W4dEntityPlan::DEFINED;
+
+		//Look for more plans that start at or after argument time
+		while( ++it != plans.end() )
+		{
+			PhysAbsoluteTime nextStartTime = (*it).startTime();
+			if( nextStartTime <= time )
+			{
+				startTime = nextStartTime;
+				++nObsoletePlans;
+			}
+			else
+				break;
+		}
+
+		//Go back to previous plan (the last one starting at or before time)
+		--it;
+
+		//Get refs to the plan itself and timing data
+        const W4dPendingPlan< PLAN_TYPE >& pendingPlan = *it;
+        uint nRepetitions = pendingPlan.nRepetitions();
+		PLAN_TYPE planPtr = pendingPlan.planPtr();
+        PhysRelativeTime duration = planPtr->duration();
+
+        //Work out the time offset into the plan
+        PhysRelativeTime timeOffset = time - startTime;
+
+		//See if this is more than the total duration of the plan
+		PhysRelativeTime totalDuration = duration * (nRepetitions + 1);
+
+		if( timeOffset >= totalDuration )
+		{
+			timeOffset = duration;
+			++nObsoletePlans;
+		}
+		else
+		{
+	        //If the plan is repeated, adjust the time offset for the current repetition
+	        if( nRepetitions != 0  and  duration > 0 )
+	        {
+	            uint n = (uint)( timeOffset / duration );
+
+	            if( n > nRepetitions )
+	            	n = nRepetitions;
+	            timeOffset -= n * duration;
+	        }
+		}
+
+		//Update the return arguments
+		*pPlanPtr = planPtr;
+		*pTimeOffset = timeOffset;
+	}
+
+	*pNObsoletePlans = nObsoletePlans;
+
+	return state;
+}
+
+template< class PLAN_TYPE >
+void ClearObsoletePlansAtTime
+(
+	ctl_list< W4dPendingPlan< PLAN_TYPE > >* pPlans,
+	const PhysAbsoluteTime& time
+)
+{
+	typedef W4dPendingPlan< PLAN_TYPE > PendingPlan;
+	typedef ctl_list< W4dPendingPlan< PLAN_TYPE > > PendingPlans;
+
+    //Keeping checking while list empty and haven't first one hasn't been found to
+	//be unexpired
+	bool firstExpired = true;
+	while( pPlans->size() != 0  and  firstExpired )
+	{
+		//Compute end time of first one
+		typename PendingPlans::iterator it = pPlans->begin();
+		PendingPlan& pendingPlan = *it;
+		PhysAbsoluteTime startTime = pendingPlan.startTime();
+		PhysRelativeTime duration = pendingPlan.planPtr()->duration();
+		PhysAbsoluteTime endTime = startTime + duration * (pendingPlan.nRepetitions() + 1);
+
+		//First is obsolete if ends at or before argument time, or
+		//start time for any next plan is at or before argument time.
+		if( endTime > time )
+		{
+			if( ++it != pPlans->end() )
+				firstExpired = (*it).startTime() <= time;
+			else
+				firstExpired = false;
+		}
+
+		//Delete the plan if expired
+		if( firstExpired )
+			pPlans->pop_front();
+	}
+}
+
+template< class PLAN_TYPE >
+PhysAbsoluteTime FinishAnimation
+(
+	ctl_list< W4dPendingPlan< PLAN_TYPE > >* pPlans,
+	uint animId
+)
+{
+	typedef W4dPendingPlan< PLAN_TYPE > PendingPlan;
+	typedef ctl_list< W4dPendingPlan< PLAN_TYPE > > PendingPlans;
+
+    //Look for plans matching the id
+	PhysAbsoluteTime latestFinishTime = 0.0;
+	PhysAbsoluteTime timeNow = W4dManager::instance().time();
+
+	for( typename PendingPlans::iterator it = pPlans->begin(); it != pPlans->end(); ++ it )
+	{
+		//Check id matches
+		PendingPlan& pendingPlan = *it;
+		if( pendingPlan.animId() == animId )
+		{
+			//Get duration, etc
+			PhysAbsoluteTime startTime = pendingPlan.startTime();
+			PhysRelativeTime duration = pendingPlan.planPtr()->duration();
+			uint nRepetitions = pendingPlan.nRepetitions();
+
+			//Compute the new number of reps
+			uint nNewRepetitions;
+			if( startTime > timeNow )
+				nNewRepetitions = 0;
+			else
+			{
+				nNewRepetitions = _STATIC_CAST( uint, (timeNow - startTime) / duration );
+				if( nNewRepetitions > nRepetitions )
+					nNewRepetitions = nRepetitions;
+
+				PhysAbsoluteTime newFinishTime = startTime + (nNewRepetitions + 1) * duration;
+				latestFinishTime = std::max( latestFinishTime, newFinishTime );
+			}
+
+			//Update the plan
+			pendingPlan.nRepetitions( nNewRepetitions );
+		}
+	}
+
+	return latestFinishTime;
+}
+
+template< class PLAN_TYPE >
+void ClearAnimation
+(
+	ctl_list< W4dPendingPlan< PLAN_TYPE > >* pPlans,
+	uint animId
+)
+{
+	typedef W4dPendingPlan< PLAN_TYPE > PendingPlan;
+	typedef ctl_list< W4dPendingPlan< PLAN_TYPE > > PendingPlans;
+
+    //Look for plans matching the id
+	typename PendingPlans::iterator it = pPlans->begin();
+	typename PendingPlans::iterator jt;
+
+	while(  it != pPlans->end() )
+	{
+		//Use copy of this iterator, and advance in case we delete this one
+		jt = it;
+		++it;
+
+		//Check id matches, and if so delete the plan
+		if( (*jt).animId() == animId )
+			pPlans->erase( jt );
+	}
+}
+/* End PLANFUNS.CTF **************************************************/

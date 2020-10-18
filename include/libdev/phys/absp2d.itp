@@ -1,0 +1,22 @@
+/*
+ * A B S P 2 D . I T P 
+ * (c) Charybdis Limited, 1997. All Rights Reserved
+ */
+
+//  Definitions of inline template methods
+
+#ifdef _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class P_ITEM >
+_CODE_INLINE
+size_t PhysAlignedBSPTree2d< P_ITEM >::nItems( void ) const
+{
+    return nItems_;
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+/* End ABSP2D.ITP ***************************************************/

@@ -1,0 +1,13 @@
+/*
+ * P N D P L A N . C T F 
+ * (c) Charybdis Limited, 1998. All Rights Reserved
+ */
+
+//  Definitions of non-inline template global functions
+
+template< class X >
+void globalTemplateFunction( void )
+{
+}
+
+/* End PNDPLAN.CTF **************************************************/

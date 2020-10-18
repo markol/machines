@@ -1,0 +1,158 @@
+/*
+ * A L G O R I T H M . I T F
+ * (c) Charybdis Limited, 1995. All Rights Reserved.
+ */
+
+//////////////////////////////////////////////////////////////////////
+
+#ifdef  _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+//////////////////////////////////////////////////////////////////////
+
+template < class ForwardIter1, class ForwardIter2, class BinaryPredicate >
+_CODE_INLINE ForwardIter1 search( ForwardIter1 first1,
+							ForwardIter1 last1,
+							ForwardIter2 first2,
+							ForwardIter2 last2,
+							BinaryPredicate p )
+{
+    return __search( first1, last1, first2, last2, p, distance_type( first1 ) );
+}
+
+//////////////////////////////////////////////////////////////////////
+
+template <	class ForwardIterator1, 
+			class ForwardIterator2, 
+			class T >
+_CODE_INLINE 
+void 
+__iter_swap( ForwardIterator1 a, ForwardIterator2 b, T * )
+{
+    T tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+//////////////////////////////////////////////////////////////////////
+
+template <class T>
+_CODE_INLINE 
+T __median( T a, T b, T c )
+{
+    if( a < b )
+		if( b < c )
+	    	return b;
+		else if( a < c )
+		    return c;
+		else
+		    return a;
+    else if (a < c)
+		return a;
+    else if (b < c)
+		return c;
+    else
+		return b;
+}
+
+template <class T, class Compare>
+_CODE_INLINE 
+T __median(T a, T b, T c, Compare comp )
+{
+    if( comp( a, b ) )
+		if( comp( b, c ) )
+	    	return b;
+		else if( comp( a, c ) )
+		    return c;
+		else
+		    return a;
+    else if( comp( a, c ) )
+		return a;
+    else if( comp( b, c ) )
+		return c;
+    else
+		return b;
+}
+
+template < class RandomAccessIterator, class T >
+_CODE_INLINE 
+void 
+__linear_insert(	RandomAccessIterator first, 
+			    	RandomAccessIterator last,
+			    	T * )
+{
+	T value = *last;
+    if( value < *first )
+    {
+		copy_backward( first, last, last + 1 );
+		*first = value;
+    }
+    else
+		__unguarded_linear_insert( last, value );
+}
+
+template < class RandomAccessIterator >
+_CODE_INLINE 
+void __unguarded_insertion_sort(	RandomAccessIterator first, 
+									RandomAccessIterator last )
+{
+	__unguarded_insertion_sort_aux( first, last, value_type( first ) );
+}
+
+template <class RandomAccessIterator, class Compare>
+_CODE_INLINE 
+void 
+__unguarded_insertion_sort(	RandomAccessIterator first, 
+				       		RandomAccessIterator last,
+				       		Compare comp )
+{
+    __unguarded_insertion_sort_aux( first, last, value_type( first ), comp );
+}
+
+template < class RandomAccessIterator >
+_CODE_INLINE 
+void __quick_sort_loop( RandomAccessIterator first,
+			      		RandomAccessIterator last )
+{
+    __quick_sort_loop_aux( first, last, value_type( first ) );
+}
+
+template < class RandomAccessIterator, class Compare >
+_CODE_INLINE 
+void 
+__quick_sort_loop(	RandomAccessIterator first, 
+			      	RandomAccessIterator last, 
+			      	Compare comp )
+{
+	__quick_sort_loop_aux(	first, 
+							last, 
+							value_type( first ), 
+							comp );
+}
+
+template <	class RandomAccessIterator,
+			class T, 
+			class Compare >
+_CODE_INLINE 
+void 
+__linear_insert(	RandomAccessIterator first, 
+			    	RandomAccessIterator last, 
+			    	T *,
+			    	Compare comp )
+{
+    T value = *last;
+    if( comp( value, *first ) )
+    {
+		copy_backward( first, last, last + 1 );
+		*first = value;
+    } 
+    else
+		__unguarded_linear_insert( last, value, comp );
+}
+
+/* End ALGORITHM.IPP ************************************************/
+
+

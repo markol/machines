@@ -1,0 +1,18 @@
+/*
+ * T C L A S S 1 . C T F 
+ * (c) Charybdis Limited, 1998. All Rights Reserved
+ */
+
+template< class T1, class T2 >
+void perWrite( PerOstream& ostr, const TClass1< T1, T2 >& tc )
+{
+	ostr << tc.d1_;
+	ostr << tc.d2_;
+}
+
+template< class T1, class T2 >
+void perRead( PerIstream& istr, TClass1< T1, T2 >& tc )
+{
+	istr >> tc.d1_;
+	istr >> tc.d2_;
+}

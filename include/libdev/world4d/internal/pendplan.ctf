@@ -1,0 +1,90 @@
+/*
+ * P E N D P L A N . C P P 
+ * (c) Charybdis Limited, 1998. All Rights Reserved
+ */
+
+// friend
+template< class PLAN_TYPE >
+PLAN_TYPE& w4dPendingPlanPlanPtr( W4dPendingPlan< PLAN_TYPE >& plan )
+{
+    return plan.planPtr_;
+}
+
+// friend
+template< class PLAN_TYPE >
+PhysAbsoluteTime& w4dPendingPlanStartTime( W4dPendingPlan< PLAN_TYPE >& plan )
+{
+    return plan.startTime_;
+}
+
+// friend
+template< class PLAN_TYPE >
+uint& w4dPendingPlanNRepetitions( W4dPendingPlan< PLAN_TYPE >& plan )
+{
+    return plan.nRepetitions_;
+}
+
+// friend
+template< class PLAN_TYPE >
+uint& w4dPendingPlanAnimId( W4dPendingPlan< PLAN_TYPE >& plan )
+{
+    return plan.animId_;
+}
+
+// friend
+template< class PLAN_TYPE >
+const PLAN_TYPE& w4dPendingPlanPlanPtr( const W4dPendingPlan< PLAN_TYPE >& plan )
+{
+    return plan.planPtr_;
+}
+
+// friend
+template< class PLAN_TYPE >
+const PhysAbsoluteTime& w4dPendingPlanStartTime( const W4dPendingPlan< PLAN_TYPE >& plan )
+{
+    return plan.startTime_;
+}
+
+// friend
+template< class PLAN_TYPE >
+const uint& w4dPendingPlanNRepetitions( const W4dPendingPlan< PLAN_TYPE >& plan )
+{
+    return plan.nRepetitions_;
+}
+
+// friend
+template< class PLAN_TYPE >
+const uint& w4dPendingPlanAnimId( const W4dPendingPlan< PLAN_TYPE >& plan )
+{
+    return plan.animId_;
+}
+
+template< class PLAN_TYPE >
+void perWrite( PerOstream& ostr, const W4dPendingPlan< PLAN_TYPE >& plan )
+{
+    ostr << w4dPendingPlanPlanPtr( plan );
+    ostr << w4dPendingPlanStartTime( plan );
+    ostr << w4dPendingPlanNRepetitions( plan );
+    ostr << w4dPendingPlanAnimId( plan );
+}
+
+template< class PLAN_TYPE >
+void perRead( PerIstream& istr, W4dPendingPlan< PLAN_TYPE >& plan )
+{
+    istr >> w4dPendingPlanPlanPtr( plan );
+    istr >> w4dPendingPlanStartTime( plan );
+    istr >> w4dPendingPlanNRepetitions( plan );
+    istr >> w4dPendingPlanAnimId( plan );
+}
+
+
+template< class PLAN_TYPE >
+ostream& operator <<( ostream& o, const W4dPendingPlan< PLAN_TYPE >& t )
+{
+    o << "plan " << (void*)&(*t.planPtr()) << "  ";
+    o << "start time " << t.startTime() << "  ";
+    o << "nRepetitions " << t.nRepetitions() << "  ";
+    o << "anim id " << t.animId();
+
+    return o;
+}

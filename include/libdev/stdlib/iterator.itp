@@ -1,0 +1,569 @@
+/*
+ * I T E R A T O R . I T P
+ * (c) Charybdis Limited, 1996. All Rights Reserved.
+ */
+
+/*
+	This file should only contain functions that are:
+
+	Member functions of a template class
+	Inline
+*/
+
+#ifdef  _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+template <	class BidirectionalIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>::reverse_bidirectional_iterator()
+{
+	/* Intentionally Empty	*/
+}
+
+///////////////////////////////////
+
+template <	class BidirectionalIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>::reverse_bidirectional_iterator( BidirectionalIterator x )
+: current( x )
+{
+	/* Intentionally Empty	*/
+}
+
+///////////////////////////////////
+
+template <	class BidirectionalIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+BidirectionalIterator
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>::base()
+{
+	return current;
+}
+
+///////////////////////////////////
+
+template <	class BidirectionalIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+Reference
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>::operator * () const
+{
+	BidirectionalIterator tmp = current;
+	return *--tmp;
+}
+
+///////////////////////////////////
+
+template <	class BidirectionalIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>&
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>::operator ++( PREFIX )
+{
+	--current;
+	return *this;
+}	
+
+///////////////////////////////////
+
+template <	class BidirectionalIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>::operator ++( POSTFIX )
+{
+	self tmp = *this;
+	--current;
+	return tmp;
+}
+
+///////////////////////////////////
+
+template <	class BidirectionalIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>&
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>::operator --( PREFIX )
+{
+	++current;
+	return *this;
+}
+
+///////////////////////////////////
+
+template <	class BidirectionalIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>
+reverse_bidirectional_iterator
+<
+	BidirectionalIterator,
+	T,
+	Reference,
+	Distance
+>::operator --( POSTFIX )
+{
+	self tmp = *this;
+	++current;
+	return tmp;
+}
+
+//////////////////////////////////////////////////////////////////////
+
+template <	class BidirectionalIterator,
+			class T,
+			class Reference,
+          	class Distance >
+_CODE_INLINE
+bool operator ==( 	const reverse_bidirectional_iterator<
+						BidirectionalIterator,
+						T,
+						Reference,
+						Distance >& x, 
+    				const reverse_bidirectional_iterator<	
+    					BidirectionalIterator,
+						T,
+						Reference,
+						Distance >& y )
+{
+    return x.current == y.current;
+}
+
+//////////////////////////////////////////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::reverse_iterator()
+{
+	/* Intentionally Empty	*/
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::reverse_iterator( RandomAccessIterator x )
+: current( x )
+{
+	/* Intentionally Empty	*/
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+RandomAccessIterator 
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::base()
+{
+	return current;
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+Reference 
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::operator *() const
+{
+	return *(current - 1);
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>&
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::operator ++( PREFIX )
+{
+	--current;
+	return *this;
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::operator++( POSTFIX )
+{
+	self tmp = *this;
+	--current;
+	return tmp;
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>&
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::operator --( PREFIX )
+{
+	++current;
+	return *this;
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::operator --( POSTFIX )
+{
+	self tmp = *this;
+	++current;
+	return tmp;
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::operator +( Distance n ) const
+{
+	return self( current - n );
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>&
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::operator +=( Distance n )
+{
+	current -= n;
+	return *this;
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::operator -( Distance n ) const
+{
+	return self( current + n );
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>&
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::operator -=( Distance n )
+{
+	current += n;
+	return *this;
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+Reference
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance
+>::operator []( Distance n )
+{
+	return *( *this + n );
+}
+
+template < class T >
+_CODE_INLINE
+ostream_iterator< T >::ostream_iterator( ostream& s )
+: stream( &s ),
+  string(0)
+{
+	/* Intentionally Empty	*/
+}
+
+template < class T >
+_CODE_INLINE
+ostream_iterator< T >::ostream_iterator( ostream& s, char * c )
+: stream( &s ),
+  string( c )
+{
+	/* Intentionally Empty	*/
+}
+
+template < class T >
+_CODE_INLINE
+ostream_iterator< T >&
+ostream_iterator< T >::operator *()
+{
+	return *this;
+}
+
+template < class T >
+_CODE_INLINE
+ostream_iterator< T >&
+ostream_iterator< T >::operator ++( PREFIX )
+{
+	return *this;
+} 
+
+template < class T >
+_CODE_INLINE
+ostream_iterator< T >&
+ostream_iterator< T >::operator ++( POSTFIX )
+{
+	return *this;
+} 
+
+//////////////////////////////////////////////////////////////////////
+
+template < class T, class Distance > 
+_CODE_INLINE
+istream_iterator< T, Distance >::istream_iterator()
+: stream( &cin ),
+  end_marker( false )
+{
+	/* Intentionally Empty	*/
+}
+
+template < class T, class Distance >
+_CODE_INLINE
+istream_iterator< T, Distance >::istream_iterator( istream& s )
+: stream( &s )
+{
+	read();
+}
+
+///////////////////////////////////
+
+template < class T, class Distance >
+_CODE_INLINE
+const T&
+istream_iterator< T, Distance >::operator *() const
+{
+	return value;
+}
+
+template < class T, class Distance >
+_CODE_INLINE
+istream_iterator< T, Distance >&
+istream_iterator< T, Distance >::operator ++( PREFIX )
+{ 
+	read(); 
+	return *this;
+}
+
+template < class T, class Distance >
+_CODE_INLINE
+istream_iterator< T, Distance >
+istream_iterator< T, Distance >::operator ++( POSTFIX ) 
+{
+	istream_iterator< T, Distance > tmp = *this;
+	read();
+	return tmp;
+}
+

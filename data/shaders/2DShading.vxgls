@@ -1,0 +1,27 @@
+#version 120
+
+// Input vertex data, different for all executions of this shader.
+attribute vec2 vertexPosition_screenspace;
+attribute vec2 vertexUV;
+attribute vec4 vertexColor;
+
+// Output data ; will be interpolated for each fragment.
+varying vec2 UV;
+varying vec4 fragmentColor;
+
+uniform vec2 uScreenspace;
+
+void main() {
+    
+    vec2 screenspaceGL = uScreenspace / 2;
+	// Output position of the vertex, in clip space
+	// map e.g. [0..800][0..600] to [-1..1][-1..1]
+	vec2 vertexPosition_homoneneousspace = vertexPosition_screenspace - abs(screenspaceGL); // [0..800][0..600] -> [-400..400][-300..300]
+	vertexPosition_homoneneousspace /= vec2(screenspaceGL[0],-screenspaceGL[1]);
+	gl_Position =  vec4(vertexPosition_homoneneousspace,0,1);
+	
+	// UV of the vertex. No special space for this one.
+	UV = vertexUV;
+    fragmentColor = vec4(vertexColor[2],vertexColor[1],vertexColor[0],vertexColor[3]);
+}
+

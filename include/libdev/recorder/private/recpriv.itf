@@ -1,0 +1,36 @@
+/*
+ * R E C P R I V . I T F 
+ * (c) Charybdis Limited, 1998. All Rights Reserved
+ */
+
+#ifdef  _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+template< class DATA_TYPE >
+_CODE_INLINE
+DATA_TYPE    recRecorderHandlerValue( 
+  DATA_TYPE (*getValue)(),
+  DATA_TYPE (RecRecorderPrivate::*playback)() const,
+  void (RecRecorderPrivate::*record)( DATA_TYPE ) )
+{
+    DATA_TYPE value;
+    
+	RecRecorderPrivate* pRecorder = &RecRecorderPrivate::instance();
+
+    if( RecRecorder::instance().state() == RecRecorder::PLAYING )
+    {
+        value = (pRecorder->*playback)();
+    }
+    else
+    {
+        value = getValue();
+
+        if( RecRecorder::instance().state() == RecRecorder::RECORDING )
+            (pRecorder->*record)( value );
+    }
+
+	return value;
+}

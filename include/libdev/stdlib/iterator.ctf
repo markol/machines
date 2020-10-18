@@ -1,0 +1,102 @@
+/*
+ * I T E R A T O R . C T F
+ * (c) Charybdis Limited, 1996. All Rights Reserved.
+ */
+
+/*
+	This file should only contain functions that are:
+
+	Stand alone template functions
+	Not inline
+*/
+
+#ifndef _INLINE
+	#include "stdlib/iterator.itf"
+#endif
+
+template < class InputIter, class Distance >
+void __distance( InputIter first,
+					InputIter last,
+					Distance& n, 
+					input_iterator_tag )
+{
+	while( first != last )
+		++first, ++n;
+}
+
+template < class ForwardIter, class Distance >
+void __distance( ForwardIter first,
+					ForwardIter last,
+					Distance& n, 
+					forward_iterator_tag )
+{
+	while( first != last )
+		++first, ++n;
+}
+
+template < class BidirectionalIter, class Distance >
+void __distance( BidirectionalIter first,
+					BidirectionalIter last, 
+					Distance& n,
+					bidirectional_iterator_tag )
+{
+	while( first != last )
+		++first, ++n;
+}
+
+
+//////////////////////////////////////////////////////////////////////
+
+/**************************
+
+template < class T, class Distance >
+bool operator ==(	const istream_iterator< T, Distance >& x,
+					const istream_iterator< T, Distance >& y )
+{
+	return x.stream == y.stream and x.end_marker == y.end_marker
+			or x.end_marker == false and y.end_marker == false;
+}
+
+**************************/
+
+//////////////////////////////////////////////////////////////////////
+
+template < class T >
+ostream_iterator< T >&
+ostream_iterator< T >::operator =( const T& value )
+{ 
+	*stream << value;
+	if( string )
+		*stream << string;
+
+	return *this;
+}
+
+
+///////////////////////////////////
+
+template < class T, class Distance > 
+void 
+istream_iterator< T, Distance >::read()
+{
+	end_marker = (*stream) ? true : false;
+	if( end_marker )
+		*stream >> value;
+
+	end_marker = (*stream) ? true : false;
+}
+
+///////////////////////////////////
+
+template < class T, class Distance >
+bool
+operator ==( const istream_iterator< T, Distance >& x,
+					const istream_iterator< T, Distance>& y )
+{
+    return x.stream == y.stream
+    		&& x.end_marker == y.end_marker
+    		|| x.end_marker == false
+    		&& y.end_marker == false;
+}
+
+/* End ITERATOR.CTF *************************************************/

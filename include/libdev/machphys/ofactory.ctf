@@ -1,0 +1,18 @@
+/*
+ * O F A C T O R Y . C T F
+ * (c) Charybdis Limited, 1998. All Rights Reserved
+ */
+
+template< class ID, class PART >
+void perWrite( PerOstream& ostr, const MachPhysObjectFactory< ID, PART >& factory )
+{
+    ostr << factory.root_;
+    ostr << factory.entries_;
+}
+
+template< class ID, class PART >
+void perRead( PerIstream& istr, MachPhysObjectFactory< ID, PART >& factory )
+{
+    istr >> factory.root_;
+    istr >> factory.entries_;
+}

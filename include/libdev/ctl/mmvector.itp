@@ -1,0 +1,33 @@
+/*
+ * M M V E C T O R . I T P
+ * (c) Charybdis Limited, 1996. All Rights Reserved.
+ */
+
+//////////////////////////////////////////////////////////////////////
+
+#ifdef  _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+
+//////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////
+
+template < class T >
+_CODE_INLINE
+void ctl_min_memory_vector< T >::persistAsRaw( bool flag )
+{
+    persistAsRaw_ = flag;
+}
+
+template < class T >
+_CODE_INLINE
+bool ctl_min_memory_vector< T >::persistAsRaw() const
+{
+    return persistAsRaw_;
+}
+
+/* End MMVECTOR.ITP ***************************************************/

@@ -1,0 +1,48 @@
+/*
+ * L I S T . C T F
+ * (c) Charybdis Limited, 1996. All Rights Reserved.
+ */
+
+#ifndef  _INLINE
+    #include "ctl/list.itf"
+#endif
+
+template< class T >
+void perWrite( PerOstream& ostr, const ctl_list< T >& l )
+{
+    PER_WRITE_RAW_OBJECT( ostr, l.size() );
+
+    for( typename ctl_list< T >::const_iterator i = l.begin(); i != l.end(); ++i )
+    {
+        ostr << *i;
+    }
+}
+
+template< class T >
+void perRead( PerIstream& istr, ctl_list< T >& l )
+{
+    l.erase( l.begin(), l.end() );
+    ASSERT( l.size() == 0, "List has not been properly cleared" );
+
+    size_t  size;
+    PER_READ_RAW_OBJECT( istr, size );
+
+    for( size_t i = 0; i < size; ++i )
+    {
+        T   t;
+        istr >> t;
+        l.push_back( t );
+    }
+}
+
+template< class T >
+ostream& operator <<( ostream& ostr, const ctl_list< T >& l )
+{
+    for( typename ctl_list< T >::const_iterator i = l.begin(); i != l.end(); ++i )
+    {
+        ostr << *i << std::endl;
+    }
+
+    return ostr;
+}
+

@@ -1,0 +1,531 @@
+/*
+ * I T E R A T O R . I T F
+ * (c) Charybdis Limited, 1996. All Rights Reserved.
+ */
+
+/*
+	This file should only contain functions that are:
+
+	Stand alone template functions
+	Inline
+*/
+
+#ifdef  _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+
+template < class T, class Distance >
+_CODE_INLINE
+input_iterator_tag 
+iterator_category( const input_iterator< T, Distance >& )
+{
+    return input_iterator_tag();
+}
+
+template < class T, class Distance > 
+_CODE_INLINE
+forward_iterator_tag
+iterator_category( const forward_iterator< T, Distance >& )
+{
+    return forward_iterator_tag();
+}
+
+template < class T, class Distance >
+_CODE_INLINE
+bidirectional_iterator_tag
+iterator_category( const bidirectional_iterator< T, Distance >& )
+{
+    return bidirectional_iterator_tag();
+}
+
+template < class T, class Distance >
+_CODE_INLINE
+random_access_iterator_tag
+iterator_category( const random_access_iterator< T, Distance >& )
+{
+    return random_access_iterator_tag();
+}
+
+template <class T>
+_CODE_INLINE
+random_access_iterator_tag iterator_category( const T* )
+{
+    return random_access_iterator_tag();
+}
+
+//////////////////////////////////////////////////////////////////////
+
+template < class T, class Distance > 
+_CODE_INLINE
+T *
+value_type( const input_iterator< T, Distance >& )
+{
+	return (T*)( 0 ); 
+}
+
+template < class T, class Distance > 
+_CODE_INLINE
+T *
+value_type( const forward_iterator< T, Distance >& )
+{
+    return (T*)( 0 );
+}
+
+template < class T, class Distance > 
+_CODE_INLINE
+T *
+value_type( const bidirectional_iterator< T, Distance >& )
+{
+    return (T*)( 0 );
+}
+
+template < class T, class Distance > 
+_CODE_INLINE
+T * value_type( const random_access_iterator< T, Distance >& )
+{
+    return (T*)( 0 );
+}
+
+template <class T>
+_CODE_INLINE
+T * value_type( const T * )
+{
+	return (T*)( 0 );
+}
+
+//////////////////////////////////////////////////////////////////////
+
+template < class T, class Distance > 
+_CODE_INLINE
+Distance *
+distance_type( const input_iterator< T, Distance >& )
+{
+    return (Distance*)( 0 );
+}
+
+template < class T, class Distance > 
+_CODE_INLINE
+Distance *
+distance_type( const forward_iterator< T, Distance >& )
+{
+    return (Distance*)( 0 );
+}
+
+template < class T, class Distance > 
+_CODE_INLINE
+Distance *
+distance_type( const bidirectional_iterator< T, Distance >& )
+{
+    return (Distance*)( 0 );
+}
+
+template < class T, class Distance > 
+_CODE_INLINE
+Distance* 
+distance_type( const random_access_iterator< T, Distance >& )
+{
+    return (Distance*)( 0 );
+}
+
+template < class T >
+_CODE_INLINE
+ptrdiff_t *
+distance_type( const T * )
+{
+	return (ptrdiff_t*)( 0 );
+}
+
+//////////////////////////////////////////////////////////////////////
+// MCR new stuff from stl/stl/iterator.h
+
+template < class Container >
+_CODE_INLINE
+back_insert_iterator< Container >::back_insert_iterator( Container& x )
+: container(x)
+{
+	/* itentionally empty */
+}
+
+template < class Container >
+_CODE_INLINE
+back_insert_iterator< Container >&
+back_insert_iterator< Container >::operator=( const Container::value_type& value )
+{ 
+	container.push_back(value);
+	return *this;
+}
+
+template < class Container >
+_CODE_INLINE
+back_insert_iterator< Container >&
+back_insert_iterator< Container >::operator*()
+{
+	return *this;
+}
+
+template < class Container >
+_CODE_INLINE
+back_insert_iterator< Container >&
+back_insert_iterator< Container >::operator++()
+{
+	return *this;
+}
+
+template < class Container >
+_CODE_INLINE
+back_insert_iterator< Container >&
+back_insert_iterator< Container >::operator++(int)
+{
+	return *this;
+}
+
+// MCR already defined
+/*
+template < class Container >
+_CODE_INLINE
+back_insert_iterator< Container >
+back_inserter(Container& x)
+{
+    return back_insert_iterator< Container >( x );
+}
+*/
+
+/////////////////////////////
+
+template < class Container >
+_CODE_INLINE
+front_insert_iterator< Container >::front_insert_iterator(Container& x)
+: container(x)
+{
+	/* itentionally empty */
+}
+
+template < class Container >
+_CODE_INLINE
+front_insert_iterator<Container>&
+front_insert_iterator< Container >::operator=( const Container::value_type& value )
+{ 
+	container.push_front(value);
+	return *this;
+}
+
+template < class Container >
+_CODE_INLINE
+front_insert_iterator<Container>&
+front_insert_iterator< Container >::operator*()
+{
+	return *this;
+}
+
+template < class Container >
+_CODE_INLINE
+front_insert_iterator<Container>&
+front_insert_iterator< Container >::operator++()
+{
+	return *this;
+}
+
+template < class Container >
+_CODE_INLINE
+front_insert_iterator<Container>&
+front_insert_iterator< Container >::operator++(int)
+{
+	return *this;
+}
+
+// MCR already defined
+/*
+template <class Container>
+_CODE_INLINE
+front_insert_iterator<Container> front_inserter(Container& x)
+{
+    return front_insert_iterator<Container>(x);
+}
+*/
+
+template <class Container>
+_CODE_INLINE
+insert_iterator< Container >::insert_iterator( Container& x, Container::iterator i ) 
+: container(x), iter(i)
+{
+	/* intentionally empty */
+}
+
+template <class Container>
+_CODE_INLINE
+insert_iterator<Container>&
+insert_iterator< Container >::operator=( const Container::value_type& value ) 
+{
+	iter = container.insert(iter, value);
+	++iter;
+	return *this;
+}
+
+template <class Container>
+_CODE_INLINE
+insert_iterator<Container>&
+insert_iterator< Container >::operator*()
+{
+	return *this;
+}
+
+template <class Container>
+_CODE_INLINE
+insert_iterator<Container>&
+insert_iterator< Container >::operator++()
+{
+	return *this;
+}
+
+template <class Container>
+_CODE_INLINE
+insert_iterator<Container>&
+insert_iterator< Container >::operator++(int)
+{
+	return *this;
+}
+
+// MCR already defined
+/*
+template <class Container, class Iterator>
+_CODE_INLINE
+insert_iterator<Container>
+inserter(Container& x, Iterator i)
+{
+    return insert_iterator< Container >( x, Container::iterator(i) );
+}
+*/
+
+template < class OutputIterator, class T >
+_CODE_INLINE
+raw_storage_iterator< OutputIterator, T >::raw_storage_iterator( OutputIterator x )
+: iter(x)
+{
+	/* intentionally empty */
+}
+
+template < class OutputIterator, class T >
+_CODE_INLINE
+raw_storage_iterator<OutputIterator, T>&
+raw_storage_iterator< OutputIterator, T >::operator*()
+{
+	return *this;
+}
+
+template < class OutputIterator, class T >
+_CODE_INLINE
+raw_storage_iterator<OutputIterator, T>&
+raw_storage_iterator< OutputIterator, T >::operator=(const T& element)
+{
+	construct(iter, element);
+	return *this;
+}        
+
+template < class OutputIterator, class T >
+_CODE_INLINE
+raw_storage_iterator<OutputIterator, T>&
+raw_storage_iterator< OutputIterator, T >::operator++()
+{
+		++iter;
+		return *this;
+}
+
+template < class OutputIterator, class T >
+_CODE_INLINE
+raw_storage_iterator<OutputIterator, T>&
+raw_storage_iterator< OutputIterator, T >::operator++(int)
+{
+	raw_storage_iterator<OutputIterator, T> tmp = *this;
+	++iter;
+	return tmp;
+}
+// MCR end of new stuff from stl/stl/iterator.h
+//////////////////////////////////////////////////////////////////////
+
+template < class InputIterator, class Distance >
+_CODE_INLINE
+void advance( InputIterator& i, Distance n )
+{
+	__advance( i, n, iterator_category( i ) );
+}
+
+template < class INPUT_ITER, class DISTANCE >
+_CODE_INLINE
+void __advance( INPUT_ITER& i, DISTANCE n, input_iterator_tag )
+{
+	while( n-- > 0 )
+		++i;
+}
+
+template < class FORWARD_ITER, class DISTANCE >
+_CODE_INLINE
+void __advance( FORWARD_ITER& i, DISTANCE n, forward_iterator_tag )
+{
+	while( n-- > 0 )
+		++i;
+}
+
+template < class BI_ITER, class DISTANCE >
+_CODE_INLINE
+void __advance( BI_ITER& i, DISTANCE n, bidirectional_iterator_tag )
+{
+	if( n > 0)
+		while( n-- )
+			++i;
+	else
+    	while( n++ )
+			--i;
+}
+
+//////////////////////////////////////////////////////////////////////
+
+template < class RandomAccessIter, class Distance >
+_CODE_INLINE
+void __distance( RandomAccessIter first,
+					RandomAccessIter last, 
+		       		Distance& n,
+		       		random_access_iterator_tag )
+{
+    n = last - first;
+}
+
+///////////////////////////////////
+
+template < class InputIter, class Distance >
+_CODE_INLINE
+void distance( InputIter first,
+				InputIter last,
+				Distance& n )
+{
+	__distance( first, last, n, iterator_category( first ) );
+}
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+bool operator ==(	const reverse_iterator<
+						RandomAccessIterator,
+						T,
+						Reference,
+						Distance >& x, 
+		       		const reverse_iterator<
+		       			RandomAccessIterator,
+		       			T,
+						Reference,
+						Distance >& y )
+{
+    return x.current == y.current;
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+bool operator  <(	const reverse_iterator<
+						RandomAccessIterator,
+						T,
+						Reference,
+						Distance >& x, 
+					const reverse_iterator<
+						RandomAccessIterator,
+						T,
+						Reference,
+						Distance>& y )
+{
+	return y.current < x.current;
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+Distance operator -(	const reverse_iterator<
+							RandomAccessIterator, T,
+							Reference, 
+							Distance >& x, 
+						const reverse_iterator<
+							RandomAccessIterator,
+							T,
+							Reference,
+							Distance >& y )
+{
+	return y.current - x.current;
+}
+
+///////////////////////////////////
+
+template <	class RandomAccessIterator,
+			class T,
+			class Reference,
+			class Distance >
+_CODE_INLINE
+reverse_iterator<	RandomAccessIterator,
+					T,
+					Reference,
+					Distance > 
+operator +(	Distance n,
+			const reverse_iterator<
+			RandomAccessIterator, T, Reference,
+			Distance >& x )
+{
+    return reverse_iterator<	RandomAccessIterator,
+    							T,
+    							Reference,
+    							Distance >( x.current - n );
+}
+
+//////////////////////////////////////////////////////////////////////
+
+template < class Container >
+_CODE_INLINE
+back_insert_iterator< Container >
+back_inserter( Container& x )
+{
+    return back_insert_iterator< Container >( x );
+}
+
+///////////////////////////////////
+
+template < class Container >
+_CODE_INLINE
+front_insert_iterator< Container >
+front_inserter( Container& x )
+{
+    return front_insert_iterator< Container >( x );
+}
+
+///////////////////////////////////
+
+template < class Container, class Iterator >
+_CODE_INLINE
+insert_iterator< Container >
+inserter( Container& x, Iterator i )
+{
+    return insert_iterator< Container >( x, Container::iterator( i ) );
+}
+
+//////////////////////////////////////////////////////////////////////
+
+/**************************
+
+template < class T, class Distance >
+bool operator ==(	const istream_iterator< T, Distance >& x,
+					const istream_iterator< T, Distance >& y )
+{
+	return x.stream == y.stream and x.end_marker == y.end_marker
+			or x.end_marker == false and y.end_marker == false;
+}
+
+**************************/
+

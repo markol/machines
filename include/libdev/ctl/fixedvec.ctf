@@ -1,0 +1,62 @@
+/*
+ * F I X E D V E C . C T F
+ * (c) Charybdis Limited, 1996. All Rights Reserved.
+ */
+
+/* START FILE ************************************************************************/
+
+template < class T >
+bool operator ==( const ctl_fixed_vector< T >& x,	const ctl_fixed_vector< T > & y )
+{
+
+ 	return x.size() == y.size()
+ 			and equal( x.begin(), x.end(), y.begin() );
+}
+
+template < class T >
+bool operator < ( const ctl_fixed_vector< T >& x, const ctl_fixed_vector< T >& y )
+{
+	return lexicographical_compare( x.begin(), x.end(),
+										y.begin(), y.end() );
+}
+
+
+template< class T >
+void perWrite( PerOstream& ostr, const ctl_fixed_vector< T >& vec )
+{
+    PER_WRITE_RAW_OBJECT( ostr, vec.size() );
+
+    for( typename ctl_fixed_vector< T >::const_iterator i = vec.begin(); i != vec.end(); ++i )
+    {
+        ostr << *i;
+    }
+}
+
+template< class T >
+void perRead( PerIstream& istr, ctl_fixed_vector< T >& vec )
+{
+    size_t  size;
+    PER_READ_RAW_OBJECT( istr, size );
+
+    ctl_fixed_vector< T >    v1( size, T() );
+    vec = v1;
+
+    for( size_t i = 0; i < size; ++i )
+    {
+        istr >> vec[ i ];
+    }
+}
+
+template< class T >
+ostream& operator <<( ostream& ostr, const ctl_fixed_vector< T >& vec )
+{
+    for( typename ctl_fixed_vector< T >::const_iterator i = vec.begin(); i != vec.end(); ++i )
+    {
+        ostr << *i << std::endl;
+    }
+
+    return ostr;
+}
+
+
+/* END FILE ************************************************************************/

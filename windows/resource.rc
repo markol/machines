@@ -1,0 +1,73 @@
+////////////////////////////////////////////////////////////////////////////////
+//
+// Machines (PC) WiredForWar Team 2019-07 
+//
+// Desc: resource.rc
+// Windows resource file.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#include <afxres.h>
+#include "resource.h"
+
+/// English (U.S.)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif  // _WIN32
+
+/// text includes
+1 TEXTINCLUDE
+BEGIN
+  "resource.h\0"
+END
+
+2 TEXTINCLUDE
+BEGIN
+  "#include ""afxres.h""\r\n"
+  "\0"
+END
+
+3 TEXTINCLUDE
+BEGIN
+  "\r\n"
+  "\0"
+END
+
+/// icon
+// Icon with lowest ID value placed first to ensure application icon remains \
+    consistent on all systems.
+IDI_ICON1 ICON "icon.ico"
+
+/// version
+VS_VERSION_INFO VERSIONINFO
+  FILEVERSION 1,5,VERSION_BUILD
+  PRODUCTVERSION 1,5,0,2
+  FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+  #ifdef _DEBUG
+  FILEFLAGS VS_FF_DEBUG | VS_FF_PRIVATEBUILD | VS_FF_PRERELEASE
+  #else
+  FILEFLAGS 0x0L
+  #endif  // _DEBUG
+  FILEOS VOS_NT_WINDOWS32
+  FILETYPE VFT_APP
+  FILESUBTYPE VFT2_UNKNOWN
+  BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+      BLOCK "040904e4"
+      BEGIN
+        VALUE "FileDescription", "Machines OpenGL Port"
+        VALUE "FileVersion", "1.5." VERSION_BUILD_STRING
+        VALUE "InternalName", "Machines Wired For War"
+        VALUE "LegalCopyright", "Copyright (C) " VERSION_YEAR_STRING
+        VALUE "OriginalFilename", "Machines"
+        VALUE "ProductName", "Machines"
+        VALUE "ProductVersion", "1, 5, 0, 2"
+      END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+      VALUE "Translation", 0x409, 1252
+    END
+  END

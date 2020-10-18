@@ -1,0 +1,51 @@
+/*
+ * A C T O R . I P P 
+ * (c) Charybdis Limited, 1997. All Rights Reserved
+ */
+
+//  Definitions of inline non-template methods and inline global functions
+
+#ifdef _INLINE
+    #define _CODE_INLINE    inline
+#else
+    #define _CODE_INLINE
+#endif
+
+/////////////////////////////////////////////////////////////////////////////////////////
+_CODE_INLINE
+const SimProcess& SimActor::process( void ) const
+{
+	return *pProcess_;
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+_CODE_INLINE
+const SimPriority& SimActor::priority() const
+{
+	return priority_;
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+_CODE_INLINE
+const PhysAbsoluteTime& SimActor::nextUpdateTime( void ) const
+{
+	return nextUpdateTime_;
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+_CODE_INLINE
+void SimActor::nextUpdateTime( const PhysAbsoluteTime& t )
+{
+	nextUpdateTime_ = t;
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+_CODE_INLINE
+bool SimActor::isDead( void ) const
+{
+	return isDead_;
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+_CODE_INLINE
+bool    SimActor::updateEveryCycle() const
+{
+    return updateEveryCycle_;
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+/* End ACTOR.IPP ****************************************************/

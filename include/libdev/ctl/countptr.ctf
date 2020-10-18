@@ -1,0 +1,134 @@
+/*
+ * C O U N T P T R . C T P
+ * (c) Charybdis Limited, 1996. All Rights Reserved.
+ */
+
+//////////////////////////////////////////////////////////////////////
+
+#include "base/lessptr.hpp"
+#include "base/private/diagint.hpp"
+#include "base/tracker.hpp"
+
+template< class T >
+bool operator <( const CtlCountedPtr< T > a, const CtlCountedPtr< T > b )
+{
+    PRE( a.isDefined() );
+    PRE( b.isDefined() );
+
+	return less_ptr< T >()( a.pCount_->pT_, b.pCount_->pT_ );
+}
+
+template< class T >
+bool operator ==( const CtlCountedPtr< T > a, const CtlCountedPtr< T > b )
+{
+    bool result;
+
+    if( a.pCount_ == NULL )
+    {
+        result = b.pCount_ == NULL;
+    }
+    else if( b.pCount_ == NULL )
+    {
+        result = false;
+    }
+    else
+        result = a.pCount_->pT_ == b.pCount_->pT_;
+
+	return result;
+}
+
+template< class T >
+bool operator <( const CtlConstCountedPtr< T > a, const CtlConstCountedPtr< T > b )
+{
+    PRE( a.isDefined() );
+    PRE( b.isDefined() );
+
+	return less_ptr< T >()( a.pCount_->pT_, b.pCount_->pT_ );
+}
+
+template< class T >
+bool operator ==( const CtlConstCountedPtr< T > a, const CtlConstCountedPtr< T > b )
+{
+    bool result;
+
+    if( a.pCount_ == NULL )
+    {
+        result = b.pCount_ == NULL;
+    }
+    else if( b.pCount_ == NULL )
+    {
+        result = false;
+    }
+    else
+        result = a.pCount_->pT_ == b.pCount_->pT_;
+
+	return result;
+}
+
+template< class T >
+void perWrite( PerOstream& ostr, const CtlCountedPtr< T >& ptr )
+{
+    const CtlCountHolder< T >*    pCount = ctl_cp_holder( ptr );
+
+    ostr << pCount;
+}
+
+template< class T >
+void perRead( PerIstream& istr, CtlCountedPtr< T >& ptr )
+{
+    CtlCountHolder< T >*&    pCount = ctl_cp_holder( ptr );
+
+    if( pCount != NULL )
+		pCount->removeReference();
+
+    istr >> pCount;
+
+    if( pCount )
+        pCount->addReference();
+
+#ifndef NDEBUG
+    if( DiagInternal::checkCountedPointers_ and pCount )
+        DiagInternal::countedPointerTracker().addPointer( pCount->pT_ );
+#endif
+}
+
+template< class T >
+void perWrite( PerOstream& ostr, const CtlConstCountedPtr< T >& ptr )
+{
+    const CtlCountHolder< T >*    pCount = ctl_cp_holder( ptr );
+
+    ostr << pCount;
+}
+
+template< class T >
+void perRead( PerIstream& istr, CtlConstCountedPtr< T >& ptr )
+{
+    CtlCountHolder< T >*&    pCount = ctl_cp_holder( ptr );
+
+    if( pCount != NULL )
+		pCount->removeReference();
+
+    istr >> pCount;
+
+    if( pCount )
+        pCount->addReference();
+
+#ifndef NDEBUG
+    if( DiagInternal::checkCountedPointers_ and pCount )
+        DiagInternal::countedPointerTracker().addPointer( pCount->pT_ );
+#endif
+}
+
+template< class T >
+void perWrite( PerOstream& ostr, const CtlCountHolder< T >& holder )
+{
+    ostr << holder.pT_;
+}
+
+template< class T >
+void perRead( PerIstream& istr, CtlCountHolder< T >& holder )
+{
+    istr >> holder.pT_;
+}
+
+/* End COUNTPTR.CTF ******************************************************/

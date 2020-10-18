@@ -1,0 +1,60 @@
+/*
+ * P V E C T O R . H P P
+ * (c) Charybdis Limited, 1998. All Rights Reserved.
+ */
+
+template < class T >
+bool operator ==( const ctl_pvector< T >& x, const ctl_pvector< T >& y )
+{
+	bool result = true;
+
+	if( x.size() == y.size() )
+	{
+		for( size_t i = 0; i < x.size() and result; ++i )
+		{
+			if( ( x[ i ] == NULL ) or ( y[ i ] == NULL ) )
+			{
+				if( x[ i ] != NULL or y[ i ] != NULL )
+					result = false;
+			}
+			else if( *(x[ i ]) != *(y[ i ]) )
+				result = false;
+		}
+	}
+	else
+		result = false;
+
+	return result;
+}
+
+template< class T >
+void perWrite( PerOstream& ostr, const ctl_pvector< T >& vec )
+{
+    PER_WRITE_RAW_OBJECT( ostr, vec.size() );
+
+	//TBD: no const -iterators so use a size_t for loop.
+	for( size_t i = 0; i < vec.size(); ++i )
+	{
+		ostr << vec[ i ];
+	}    
+}
+ 
+
+template< class T >
+void perRead( PerIstream& istr, ctl_pvector< T >& vec )
+{
+    vec.erase( vec.begin(), vec.end() );
+    ASSERT( vec.size() == 0, "Vector has not been properly cleared" );
+
+    size_t  size;
+    PER_READ_RAW_OBJECT( istr, size );
+    
+    vec.reserve( size );
+    
+    for( size_t i = 0; i < size; ++i )
+    {
+        T*   pT;
+        istr >> pT;
+        vec.push_back( pT );
+    }
+}

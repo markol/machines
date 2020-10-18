@@ -1,0 +1,72 @@
+/*
+ * V E C T O R . C T F
+ * (c) Charybdis Limited, 1996. All Rights Reserved.
+ */
+
+//////////////////////////////////////////////////////////////////////
+
+template < class T >
+bool operator ==( const ctl_vector< T >& x,
+					const ctl_vector< T >& y )
+{
+	return x.size() == y.size()
+			and equal( x.begin(), x.end(), y.begin() );
+}
+
+template < class T >
+bool operator <( const ctl_vector< T >& x, const ctl_vector< T >& y )
+{
+	return lexicographical_compare( x.begin(), x.end(),
+										y.begin(), y.end() );
+}
+
+
+template< class T >
+void perWrite( PerOstream& ostr, const ctl_vector< T >& vec )
+{
+	PER_WRITE_RAW_OBJECT( ostr, vec.size() );
+    //PER_WRITE_RAW_OBJECT( ostr, vec.reserved() );
+    PER_WRITE_RAW_OBJECT( ostr, vec.size() );
+    //PER_WRITE_RAW_OBJECT( ostr, vec.capacity() );
+    PER_WRITE_RAW_OBJECT( ostr, vec.size() );
+
+    for( typename ctl_vector< T >::const_iterator i = vec.begin(); i != vec.end(); ++i )
+    {
+        ostr << *i;
+    }
+}
+
+template< class T >
+void perRead( PerIstream& istr, ctl_vector< T >& vec )
+{
+    vec.erase( vec.begin(), vec.end() );
+    ASSERT( vec.size() == 0, "Vector has not been properly cleared" );
+
+	typename ctl_vector< T >::size_type  size;
+	PER_READ_RAW_OBJECT( istr, size );
+    typename ctl_vector< T >::size_type  reserved;
+    PER_READ_RAW_OBJECT( istr, reserved );
+	typename ctl_vector< T >::size_type  capacity;
+    PER_READ_RAW_OBJECT( istr, capacity );
+
+	typename ctl_vector< T >::size_type r = size == 0 ? reserved : capacity;
+	vec.reserve( r );
+	for( typename ctl_vector< T >::size_type i = 0; i < size; ++i )
+    {
+        T   t;
+        istr >> t;
+        vec.push_back( t );
+    }
+}
+
+template< class T >
+ostream& operator <<( ostream& ostr, const ctl_vector< T >& vec )
+{
+    for( typename ctl_vector< T >::const_iterator i = vec.begin(); i != vec.end(); ++i )
+    {
+        ostr << *i << std::endl;
+    }
+
+    return ostr;
+}
+

@@ -1,0 +1,3 @@
+- [Libsmacker](http://libsmacker.sourceforge.net/#license) by Greg Kennedy is now (Jan 5, 2020) released under [LGPL v2.1.](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) license.
+- [OpenGL Mathematics](https://glm.g-truc.net/0.9.5/api/index.html) - The source code is licenced under the [MIT](http://www.opensource.org/licenses/mit-license.php) licence.
+- Libaudio - by NETWORK COMPUTING DEVICES, INC.

@@ -1,0 +1,35 @@
+#version 120
+
+// Input vertex data, different for all executions of this shader.
+attribute vec3 vertexPosition_modelspace;
+attribute vec2 vertexUV;
+attribute vec4 vertexColor;
+
+// Output data ; will be interpolated for each fragment.
+varying vec2 UV;
+varying vec4 fragmentColor;
+varying vec4 viewSpace;
+varying vec4 fragmentFogColour;
+varying vec3 fragmentFogParams;
+
+// Values that stay constant for the whole mesh.
+uniform mat4 uM;
+uniform mat4 uV;
+uniform mat4 uP;
+uniform vec3 uFogColour;
+uniform vec3 uFogParams;
+
+void main() {
+
+	// Output position of the vertex, in clip space : MVP * position
+    mat4 MVP = uP * uV * uM;
+	gl_Position =  MVP * vec4(vertexPosition_modelspace,1);
+	
+	// UV of the vertex. No special space for this one.
+    UV = vertexUV;
+    fragmentColor = vec4(vertexColor[2],vertexColor[1],vertexColor[0],vertexColor[3]);
+    viewSpace = uV * uM * vec4(vertexPosition_modelspace,1); 
+    fragmentFogColour = vec4(uFogColour,1);
+    fragmentFogParams = uFogParams;
+}
+

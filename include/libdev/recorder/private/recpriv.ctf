@@ -1,0 +1,8 @@
+/*
+ * R E C P R I V . C T F 
+ * (c) Charybdis Limited, 1998. All Rights Reserved
+ */
+
+#ifndef _INLINE
+	#include "recorder/private/recpriv.itf"
+#endif

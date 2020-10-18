@@ -1,0 +1,53 @@
+/*
+ * R A N D O M . C T F 
+ * (c) Charybdis Limited, 1998. All Rights Reserved
+ */
+
+//  Definitions of non-inline template global functions
+
+template< class RANDOM >
+MATHEX_SCALAR mexRandomScalar( RANDOM* pR, MATHEX_SCALAR lowerLimit, MATHEX_SCALAR upperLimit )
+{
+    PRE_INFO( lowerLimit );
+    PRE_INFO( upperLimit );
+
+    PRE( lowerLimit < upperLimit );
+
+    MATHEX_SCALAR result = pR->next();
+    result /= pR->upperLimit();
+    result *= ( upperLimit - lowerLimit );
+    result += lowerLimit;
+
+    POST( lowerLimit <= result and result < upperLimit );
+
+    return result;
+}
+
+template< class RANDOM >
+int mexRandomInt( RANDOM* pR, int lowerLimit, int upperLimit )
+{
+    PRE_INFO( lowerLimit );
+    PRE_INFO( upperLimit );
+    PRE( lowerLimit < upperLimit );
+    
+    int result = mexRandomScalar( pR, (MATHEX_SCALAR)lowerLimit, (MATHEX_SCALAR)upperLimit );
+    
+    POST( lowerLimit <= result and result < upperLimit );
+
+    return result;
+}
+
+template< class RANDOM >
+int mexRandomInt( RANDOM* pR, int upperLimit )
+{
+    PRE_INFO( upperLimit );
+    PRE( 0 < upperLimit );
+    
+    int result = mexRandomInt( pR, 0, upperLimit );
+
+    POST( 0 <= result and result < upperLimit );
+
+    return result;
+}
+
+/* End RANDOM.CTF ***************************************************/
