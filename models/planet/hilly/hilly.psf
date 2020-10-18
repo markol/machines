@@ -1,0 +1,248 @@
+PLANET_SIZE 6 8
+TILE_SIZE 300
+//TILE_CELLS 3 3
+TILE_CELLS 6 6
+TILE_BOUNDS -150 -150 150 150
+BACKGROUND_FILE hilly.bg
+MIN_MACHINE_HEIGHT -5.0
+
+// Tile(0,0)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil12a.lod
+
+// Tile(1,0)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil12d.lod
+
+// Tile(2,0)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil8a.lod
+
+// Tile(3,0)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil8d.lod
+
+// Tile(4,0)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil4a.lod
+
+// Tile(5,0)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil4d.lod
+
+// Tile(0,1)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil12b.lod
+
+// Tile(1,1)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil12c.lod
+
+// Tile(2,1)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil8b.lod
+
+// Tile(3,1)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil8c.lod
+
+// Tile(4,1)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil4b.lod
+
+// Tile(5,1)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil4c.lod
+
+// Tile(0,2)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil11a.lod
+
+// Tile(1,2)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil11d.lod
+
+// Tile(2,2)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil7a.lod
+
+// Tile(3,2)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil7d.lod
+
+// Tile(4,2)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil3a.lod
+
+// Tile(5,2)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil3d.lod
+
+// Tile(0,3)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil11b.lod
+
+// Tile(1,3)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil11c.lod
+
+// Tile(2,3)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil7b.lod
+
+// Tile(3,3)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil7c.lod
+
+// Tile(4,3)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil3b.lod
+
+// Tile(5,3)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil3c.lod
+
+// Tile(0,4)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil10a.lod
+
+// Tile(1,4)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil10d.lod
+
+// Tile(2,4)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil6a.lod
+
+// Tile(3,4)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil6d.lod
+
+// Tile(4,4)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil2b.lod
+
+// Tile(5,4)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil2c.lod
+
+// Tile(0,5)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil10b.lod
+
+// Tile(1,5)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil10c.lod
+
+// Tile(2,5)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil6b.lod
+
+// Tile(3,5)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil6c.lod
+
+// Tile(4,5)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil2a.lod
+
+// Tile(5,5)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil2d.lod
+
+// Tile(0,6)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil9a.lod
+
+// Tile(1,6)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil9d.lod
+
+// Tile(2,6)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil5a.lod
+
+// Tile(3,6)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil5d.lod
+
+// Tile(4,6)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil1b.lod
+
+// Tile(5,6)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil1c.lod
+
+// Tile(0,7)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil9b.lod
+
+// Tile(1,7)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil9c.lod
+
+// Tile(2,7)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil5b.lod
+
+// Tile(3,7)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil5c.lod
+
+// Tile(4,7)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil1a.lod
+
+// Tile(5,7)
+ROTATION 1
+HEIGHT -10.065
+TILE lod\hil1d.lod
+

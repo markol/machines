@@ -1,0 +1,15 @@
+// STRATEGY PRODUCTION LIST
+// NUMBER <X> <Y> <TYPE> <HWLEVEL> <SUBTYPE>
+// Where Y is used in factory production list to sort order of construction.
+PRODUCTION LIST
+// high level strategic stuff at end in order (no sort yet!)
+N_RESOURCE_CARRIERS  3 0
+N_MINES         2 0
+N_CONSTRUCTORS  2 0
+N_GEO_LOCATORS      2 0
+
+END PRODUCTION LIST
+
+SQUAD
+NUMBER 1 0 RESOURCE_CARRIER 2
+END SQUAD

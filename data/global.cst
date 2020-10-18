@@ -1,0 +1,49 @@
+// Construction tree
+//
+// This specifies the order of constructions in the construction tree.
+// Each constructor type has 3 fields specifying a unique entry point into this tree.
+// The constructor in question can build constructions of the type specified, plus all
+// constructions before it in the list.
+//
+// E.g. a level 2 dozer has most advanced constype FACTORY, subtype MILITARY, level 1.
+// It is therefore capable of building all constructions up to and including 
+// FACTORY MILITARY 1 in the list below.
+//
+// These "most advanced" specifications are declared in the 
+// TYPE CONSTRUCTOR DOZER (/BUILDER/BEHEMOTH) sections of Parmdata.dat .
+//
+// Remember, ALL constructors can build all constructions up to and including the highest
+// specified construction of the most advanced type built (NOT merely researched) by a particular
+// race.
+
+
+BEACON 1
+MINE 1
+FACTORY CIVILIAN 1
+FACTORY MILITARY 1
+HARDWARE_LAB CIVILIAN 1
+HARDWARE_LAB MILITARY 1
+MISSILE_EMPLACEMENT TURRET 1
+MISSILE_EMPLACEMENT TURRET 2
+MISSILE_EMPLACEMENT TURRET 3
+
+MINE  3
+SMELTER  1
+FACTORY CIVILIAN 3
+FACTORY MILITARY 3
+FACTORY MILITARY 5
+GARRISON  1
+HARDWARE_LAB CIVILIAN 3
+HARDWARE_LAB MILITARY 3
+MISSILE_EMPLACEMENT SENTRY 3
+MISSILE_EMPLACEMENT SENTRY 4
+
+MINE  5
+SMELTER  3
+FACTORY CIVILIAN 5
+FACTORY MILITARY 4
+MISSILE_EMPLACEMENT LAUNCHER 4
+BEACON  3
+MISSILE_EMPLACEMENT ICBM 5
+
+// End of Construction Tree

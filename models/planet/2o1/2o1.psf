@@ -1,0 +1,51 @@
+PLANET_SIZE 3 3
+TILE_SIZE 400
+TILE_CELLS 5 5
+TILE_BOUNDS -200 -200 200 200
+BACKGROUND_FILE 2o1.bg
+
+// Tile(0,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod/tile01.lod
+
+// Tile(1,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod/tile02.lod
+
+// Tile(2,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod/tile03.lod
+
+// Tile(0,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod/tile04.lod
+
+// Tile(1,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod/tile05.lod
+
+// Tile(2,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod/tile06.lod
+
+// Tile(0,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod/tile07.lod
+
+// Tile(1,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod/tile08.lod
+
+// Tile(2,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod/tile09.lod
+

@@ -1,0 +1,187 @@
+PLANET_SIZE 6 6
+TILE_SIZE 300
+//TILE_CELLS 3 3
+TILE_CELLS 6 6
+TILE_BOUNDS -150 -150 150 150
+BACKGROUND_FILE roller.bg
+
+// Tile(0,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol7.lod
+
+// Tile(1,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol8.lod
+
+// Tile(2,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol9.lod
+
+// Tile(3,0)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\rol9.lod
+
+// Tile(4,0)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\rol8.lod
+
+// Tile(5,0)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\rol7.lod
+
+// Tile(0,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol4.lod
+
+// Tile(1,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol5.lod
+
+// Tile(2,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol6.lod
+
+// Tile(3,1)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\rol9.lod
+
+// Tile(4,1)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\rol6.lod
+
+// Tile(5,1)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\rol3.lod
+
+// Tile(0,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol1.lod
+
+// Tile(1,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol15.lod
+
+// Tile(2,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol3.lod
+
+// Tile(3,2)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\rol8.lod
+
+// Tile(4,2)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\rol5.lod
+
+// Tile(5,2)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\rol2.lod
+
+// Tile(0,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol7.lod
+
+// Tile(1,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol12.lod
+
+// Tile(2,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol10.lod
+
+// Tile(3,3)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\rol11.lod
+
+// Tile(4,3)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\rol14.lod
+
+// Tile(5,3)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\rol1.lod
+
+// Tile(0,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol4.lod
+
+// Tile(1,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol5.lod
+
+// Tile(2,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol6.lod
+
+// Tile(3,4)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\rol1.lod
+
+// Tile(4,4)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\rol14.lod
+
+// Tile(5,4)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\rol7.lod
+
+// Tile(0,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol1.lod
+
+// Tile(1,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol2.lod
+
+// Tile(2,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\rol3.lod
+
+// Tile(3,5)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\rol2.lod
+
+// Tile(4,5)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\rol5.lod
+
+// Tile(5,5)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\rol8.lod
+

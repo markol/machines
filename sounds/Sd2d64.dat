@@ -1,0 +1,119 @@
+SID_NINJA_MOVEMENT				sounds/bipedm.wav	60		5		50	300	PRELOAD		2D	HW_MIXED
+SID_NINJA_IDLE					sounds/bipedr.wav	60		5		35	200	PRELOAD		2D	HW_MIXED
+SID_POD 						sounds/pod.wav 		60 	    2		50 400  PRELOAD		2D	HW_MIXED
+SID_BOLTER  					sounds/bolter.wav	60		3		300  1250 	PRELOAD		2D	HW_MIXED
+SID_HEAVYBOLTER 				sounds/hevybolt.wav	60		3		300  1275	PRELOAD		2D	HW_MIXED
+SID_AUTOCANNON					sounds/autocan.wav	60		3		300   1350	PRELOAD		2D	HW_MIXED
+SID_SUPERHEAL					sounds/suprheal.wav	60		3		300   1100 NOPRELOAD	2D
+SID_FIRE						sounds/fire.wav		50   	5		100 	   500  PRELOAD	    2D	HW_MIXED
+SID_ELECTRICCHARGE				sounds/electchg.wav	60		3		300   1300	PRELOAD		2D	HW_MIXED
+SID_DOOR						sounds/move05.wav	60		1		50    750 PRELOAD		2D	HW_MIXED
+SID_XPLODE1_MACHINE				sounds/xplode1.wav	60		20	  	500    1500	PRELOAD		2D	HW_MIXED
+SID_XPLODE2_MACHINE				sounds/xplode1b.wav	60		20		500    1500	PRELOAD		2D	HW_MIXED
+SID_XPLODE3_MACHINE				sounds/xplode2.wav	60		20		500   	1500	PRELOAD		2D	HW_MIXED
+SID_XPLODE4_MACHINE				sounds/xplode2b.wav	60		20		500   	1500	PRELOAD		2D	HW_MIXED
+SID_XPLODE5_MACHINE 			sounds/xplode3.wav	60		20		500    1500	PRELOAD		2D	HW_MIXED
+SID_XPLODE6_MACHINE				sounds/xplode3b.wav	60		20		500    1500	PRELOAD		2D	HW_MIXED
+SID_XPLODE1_MISSILE				sounds/misex1.wav	60		10		300   	1300	PRELOAD		2D	HW_MIXED
+SID_XPLODE2_MISSILE				sounds/misex2.wav	60		10		300   	1300	PRELOAD		2D	HW_MIXED
+SID_XPLODE3_MISSILE				sounds/misex3.wav	60		10		300   	1300	PRELOAD		2D	HW_MIXED
+SID_XPLODE4_MISSILE				sounds/misex4.wav	60		10		300   	1300	PRELOAD		2D	HW_MIXED
+SID_XPLODE_CONSTR_LARGE			sounds/xplode5.wav	60		30		500   	1500	PRELOAD		2D	HW_MIXED
+SID_XPLODE_CONSTR_SMALL			sounds/xplode6.wav	55		30		500	1500	PRELOAD		2D	HW_MIXED
+SID_FLAMETHROWER				sounds/flamethr.wav	60		3		300	1300	PRELOAD		2D	HW_MIXED
+SID_IONCANNON					sounds/ioncan.wav	60		20		1000	1600	NOPRELOAD	2D
+SID_MLAUNCH1					sounds/ml7.wav	    60		10		300	1400	PRELOAD		2D	HW_MIXED
+SID_MLAUNCH2					sounds/ml4.wav		60		10		300	1400	PRELOAD		2D	HW_MIXED
+SID_MLAUNCH3					sounds/ml1.wav		60		10		300	1400	PRELOAD		2D	HW_MIXED
+SID_MLAUNCH4					sounds/ml2.wav		60		10		300	1400	PRELOAD		2D	HW_MIXED
+SID_MLAUNCH5					sounds/mislnch.wav	60		10		300	1400	PRELOAD		2D	HW_MIXED
+SID_MLAUNCH6					sounds/ml8.wav		60		10		300	1400	PRELOAD		2D	HW_MIXED
+SID_MLAUNCH7					sounds/ml5.wav		60		10		300	1400	PRELOAD		2D	HW_MIXED 
+SID_MLAUNCH8					sounds/mlwar.wav	60		10		300	1400	PRELOAD		2D	HW_MIXED 
+SID_LARGEMLAUNCH				sounds/mutilnch.wav	60		20		300	1400	PRELOAD		2D	HW_MIXED
+SID_MFLY						sounds/dopplerm.wav	60		3		100  	1400	PRELOAD		2D	HW_MIXED
+SID_NUKEMFLY					sounds/dopplern.wav	60		3		100  	1450	PRELOAD		2D	HW_MIXED
+SID_BURNING						sounds/burning.wav	60		10		100 	300	NOPRELOAD	2D
+SID_VORTEX						sounds/vortex.wav	60		20		200	1600	PRELOAD		2D	HW_MIXED
+SID_OREHOLO						sounds/mincone.wav	55		1		100	500	PRELOAD		2D	HW_MIXED
+SID_PLASMARIFLE					sounds/plasmrif.wav	60		30		300	1400	PRELOAD		2D	HW_MIXED
+SID_PLASMACANNON				sounds/plasmcan.wav	60		30		300	1410	PRELOAD		2D	HW_MIXED
+SID_PLRHIT						sounds/plrhit.wav	60		15		300	1000	PRELOAD		2D	HW_MIXED
+SID_PLCHIT						sounds/plchit.wav	60		15		300	1000	PRELOAD		2D	HW_MIXED
+SID_PUCHIT						sounds/puchit.wav	60		15		300	1000    PRELOAD		2D	HW_MIXED
+SID_PULSERIFLE					sounds/pulserif.wav	60		30		300	1350	PRELOAD		2D	HW_MIXED
+SID_PULSECANNON					sounds/pulsecan.wav	60		30		300	1360	PRELOAD		2D	HW_MIXED
+SID_TREACHERY					sounds/treach.wav	60		15		300	1000	NOPRELOAD	2D
+SID_NUKE						sounds/nuke.wav		60		100		1000	200000	PRELOAD		2D	HW_MIXED
+SID_PUNCH						sounds/punch.wav	60		50		300	1500	NOPRELOAD	2D
+SID_MISSDOMEOPEN				sounds/silo_o.wav	60		25		100	400	NOPRELOAD	2D
+SID_MISSDOMECLOSE				sounds/siloclse.wav	60		25		100	400	NOPRELOAD	2D
+SID_NUKEMLAUNCH					sounds/launch.wav	60		50		300	1400	PRELOAD		2D	HW_MIXED
+SID_GARRISON					sounds/garrison.wav	55		10		50 	400	PRELOAD		2D	HW_MIXED
+SID_MINE1						sounds/minewrk1.wav	60		10		50 	450 PRELOAD		2D	HW_MIXED
+SID_MINE3						sounds/minewrk2.wav	60		20		100 	450	PRELOAD		2D	HW_MIXED
+SID_MINE5						sounds/minewrk3.wav	60		20		100 	450	PRELOAD		2D	HW_MIXED
+SID_SMELTER1		     		sounds/smelter.wav	60		10		100     400	PRELOAD		2D	HW_MIXED
+SID_SMELTER3	    			sounds/smelter2.wav	60		10		100 	400	PRELOAD		2D	HW_MIXED
+SID_BEACON1						sounds/beacon.wav	60	 	10		100 	400	PRELOAD		2D	HW_MIXED
+SID_BEACON3						sounds/beacon2.wav	60	 	10		100 	400	PRELOAD		2D	HW_MIXED
+SID_CIVILIANFACTORY				sounds/cfactory.wav	60		10		100 	400	PRELOAD		2D	HW_MIXED
+SID_MILITARYFACTORY				sounds/mfactory.wav	60		10		100 	400	PRELOAD		2D	HW_MIXED
+SID_CIVILIANLAB					sounds/clab.wav		50		10		100 	400	PRELOAD		2D	HW_MIXED
+SID_MILITARYLAB					sounds/mlab.wav		50		10		100 	400	PRELOAD		2D	HW_MIXED
+SID_BOLTER_HIT					sounds/bolthit.wav	60		10		100 	1000	PRELOAD	    2D	HW_MIXED
+SID_GEOLOCATE					sounds/locate.wav	47		1		100 	350	PRELOAD	    2D	HW_MIXED
+SID_LMINE_DEPLOY				sounds/mineprox.wav	60		10		100 	350	NOPRELOAD	2D
+SID_WHEEL_MOVEMENT_LARGE		sounds/wheelml.wav	60		1		35	    300	PRELOAD		2D	HW_MIXED
+SID_WHEEL_IDLE_LARGE			sounds/wheelrl.wav	60		1		35	    200	PRELOAD		2D	HW_MIXED
+SID_WHEEL_MOVEMENT_SMALL		sounds/wheelms.wav	55		1		35	    300	PRELOAD		2D	HW_MIXED
+SID_WHEEL_IDLE_SMALL			sounds/wheelrs.wav	55		1		35 	200	PRELOAD		2D	HW_MIXED
+SID_TRACK_MOVEMENT_LARGE		sounds/trackml.wav	60		1		35	    300	PRELOAD		2D	HW_MIXED
+SID_TRACK_IDLE_LARGE			sounds/trackrl.wav	60		1		35 	200	PRELOAD		2D	HW_MIXED
+SID_TRACK_MOVEMENT_SMALL		sounds/trackms.wav	60		1		35	    300	PRELOAD		2D	HW_MIXED
+SID_TRACK_IDLE_SMALL			sounds/trackrs.wav	60		1		35     200	PRELOAD		2D	HW_MIXED
+SID_SPIDER_MOVEMENT_LARGE		sounds/assleg.wav	55		1		35  	300	PRELOAD		2D	HW_MIXED
+SID_SPIDER_IDLE_LARGE			sounds/leggedr.wav	47		1		35     200	PRELOAD		2D	HW_MIXED
+SID_SPIDER_MOVEMENT_SMALL		sounds/locleg.wav	47		1		35  	300	PRELOAD		2D	HW_MIXED
+SID_SPIDER_IDLE_SMALL			sounds/leggedrs.wav	47		1		35  	200	PRELOAD		2D	HW_MIXED
+SID_SPIDER_MOVEMENT_VERY_LARGE	sounds/scavleg.wav	55		1		35	    300	PRELOAD		2D	HW_MIXED
+SID_SPIDER_IDLE_VERY_LARGE	  	sounds/leggedr.wav	47		1		35	    200	PRELOAD		2D	HW_MIXED
+SID_HOVER_IDLE_SMALL			sounds/hovers.wav	47		1		35 	200	PRELOAD		2D	HW_MIXED
+SID_HOVER_IDLE_LARGE			sounds/hoverl.wav	47		1 		35 	200	PRELOAD		2D	HW_MIXED
+SID_CONSTRUCTING				sounds/cstruct.wav	60		1		100 	500	PRELOAD		2D	HW_MIXED
+SID_RESEARCHING					sounds/research.wav	60		1		100     300	PRELOAD		2D	HW_MIXED
+SID_ENTERED_APC					sounds/apcload.wav	60		10		300 	300	NOPRELOAD	2D
+SID_MINE_DROP					sounds/mineprox.wav	60		10		200 	300	NOPRELOAD	2D
+SID_MACHINE_SELF_DESTRUCT		sounds/selfdest.wav	60		10		100 	500	NOPRELOAD	2D
+SID_RESOURCE_PICKUP				sounds/resource.wav	55		10		100 	300	NOPRELOAD	2D
+SID_IDLE_CONSTRUCTION			sounds/hum.wav		47		1		50  	100	PRELOAD	    2D	 HW_MIXED
+SID_INHEAD					 	sounds/intridle.wav 50  	5		50   	2100 PRELOAD	2D 	HW_MIXED
+SID_GEO_FLY						sounds/geofly.wav   55  	1		50		300	PRELOAD		2D	  HW_MIXED
+SID_APC_FLY_LARGE 				sounds/apcfly.wav   55  	1		50		300	PRELOAD		2D	  HW_MIXED
+SID_APC_FLY_SMALL				sounds/apcfly2.wav  55  	1		40		300 PRELOAD		2D	  HW_MIXED
+SID_BEE_FLY						sounds/bee.wav      60  	1		50		300	PRELOAD		2D	  HW_MIXED
+SID_WASP_FLY					sounds/wasp.wav     55  	1		40		300	PRELOAD		2D	  HW_MIXED
+SID_FLY_BLAST					sounds/burner.wav   60  	1		50		300	PRELOAD		2D	  HW_MIXED
+SID_FLY_BLAST_LARGE	  	 		sounds/burner.wav   60  	1		50		300	PRELOAD		2D	  HW_MIXED
+SID_FLY_BLAST_SMALL				sounds/burner2.wav  	55     1		40		300	PRELOAD		2D    HW_MIXED
+SID_FLY_BRAKE_LARGE	   			sounds/brake.wav    60  	1		50		300	PRELOAD		2D	  HW_MIXED
+SID_FLY_BRAKE_SMALL				sounds/brake2.wav   	55  	1		40		300	PRELOAD		2D	  HW_MIXED
+SID_BEE_BOMB					sounds/beesting.wav 50     1		300		1310	PRELOAD		2D    HW_MIXED
+SID_BEE_DETONATE				sounds/beebomb.wav  60     15		500		1500	PRELOAD		2D    HW_MIXED
+SID_WASP_STING_LIGHT			sounds/lsting.wav 	60     30		300		1450	PRELOAD		2D    HW_MIXED
+SID_WASP_STING_METAL			sounds/msting.wav 	60     30		300		1450	PRELOAD		2D    HW_MIXED
+SID_RECYCLE						sounds/recycle.wav 	60     10		100		1000	PRELOAD		2D    HW_MIXED
+SID_CONTROL 					sounds/control.wav 40     100      2000     200000  NOPRELOAD		3D	HW_MIXED
+SID_COOL1 						sounds/cool1.wav 80  5  200 400  NOPRELOAD	2D	HW_MIXED
+SID_POWER 						sounds/power.wav 60  5  400 400  NOPRELOAD	2D	HW_MIXED
+SID_CONTRL 						sounds/homecont.wav 60  5  400 500  NOPRELOAD	2D	HW_MIXED
+SID_SHIELD 						sounds/shield.wav 60  5  1000 400  NOPRELOAD	2D	HW_MIXED
+SID_TILE22 						sounds/ionsat.wav 47  5  800 400  NOPRELOAD	2D	HW_MIXED
+SID_CMAIN 						sounds/consoles.wav 60  5  100 400  NOPRELOAD	2D	HW_MIXED
+SID_CDOM 						sounds/thunder.wav 60  100  2000 200000  NOPRELOAD	2D	HW_MIXED
+																	
+																	
+																
+																	
+																	
+																	

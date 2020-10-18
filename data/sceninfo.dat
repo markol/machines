@@ -1,0 +1,336 @@
+CAMPAIGNS
+	SYSTEM tutorial IDS 8002 TEXT tut_s.txt FLIC flics/gui/bootcamp.smk
+		PLANET tut IDS 8103 FLIC flics/gui/basic.smk TEXT tut_p1.txt
+			SCENARIO tut01 PLANET tut IDS 8306 TEXT tut01.txt MUSIC 6
+				CAMPAIGN flics/gui/tutba1.smk
+				BRIEFING flics/gui/tutba1b.smk
+				DEBRIEFING flics/gui/v&d/victut.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/deftut.bmp
+			ENDSCENARIO
+			SCENARIO tut02 PLANET tut IDS 8307 TEXT tut02.txt  MUSIC 7
+				CAMPAIGN flics/gui/tutba2.smk
+				BRIEFING flics/gui/tutba2b.smk
+				DEBRIEFING flics/gui/v&d/victut.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/deftut.bmp
+			ENDSCENARIO
+			SCENARIO tut03 PLANET tut IDS 8308 TEXT tut03.txt  MUSIC 10
+				CAMPAIGN flics/gui/tutba3.smk
+				BRIEFING flics/gui/tutba3b.smk
+				DEBRIEFING flics/gui/v&d/victut.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/deftut.bmp
+			ENDSCENARIO
+		ENDPLANET
+		PLANET tut IDS 8104 FLIC flics/gui/advanced.smk TEXT tut_p2.txt
+			SCENARIO tut04 PLANET tut IDS 8309 TEXT tut04.txt MUSIC 5
+				CAMPAIGN flics/gui/tutad1.smk
+				BRIEFING flics/gui/tutad1b.smk
+				DEBRIEFING flics/gui/v&d/victut.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/deftut.bmp
+			ENDSCENARIO
+			SCENARIO tut05 PLANET tut IDS 8310 TEXT tut05.txt MUSIC 10
+				CAMPAIGN flics/gui/tutad2.smk
+				BRIEFING flics/gui/tutad2b.smk
+				DEBRIEFING flics/gui/v&d/victut.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/deftut.bmp
+			ENDSCENARIO
+		ENDPLANET
+	ENDSYSTEM
+	SYSTEM corinthian IDS 8000 TEXT corin_s.txt FLIC flics/gui/s1p0t0.smk 
+		PLANET adelphi IDS 8105 FLIC flics/gui/s1p1t0.smk TEXT 1o1a.txt
+			SCENARIO 1o3demo PLANET 1o3 IDS 8335 TEXT 1o3.txt MUSIC 11 
+				CAMPAIGN flics/gui/s1p1ta.smk
+				BRIEFING flics/gui/s1p1t1a.smk
+				ENTRY flics/podland.smk
+				DEBRIEFING flics/gui/v&d/makevic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/makedef.bmp
+			ENDSCENARIO
+			SCENARIO 1o1demo PLANET 1o1 IDS 8311 TEXT 1o1.txt MUSIC 6 AFTER 1o3demo
+				CAMPAIGN flics/gui/s1p1t1.smk
+				BRIEFING flics/gui/s1p1t1b.smk
+				DEBRIEFING flics/gui/v&d/estabvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/estabdef.bmp
+			ENDSCENARIO
+			SCENARIO 1o2 PLANET seekndes IDS 8312 TEXT 1o2.txt MUSIC 11 AFTER 1o1demo
+				CAMPAIGN flics/gui/s1p1t2.smk
+				BRIEFING flics/gui/s1p1t2b.smk
+				WIN flics/1o2final2.smk
+				DEBRIEFING flics/gui/v&d/seekvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/seekdef.bmp
+			ENDSCENARIO
+		ENDPLANET	
+		PLANET dogbarmax IDS 8101 FLIC flics/gui/s1p2t0.smk TEXT 2o1a.txt AFTER 1o2
+			SCENARIO commsat PLANET commsat IDS 8337 TEXT 2o1.txt MUSIC 10 AFTER 1o2
+				CAMPAIGN flics/gui/s1p2t1.smk
+				BRIEFING flics/gui/s1p2t1b.smk
+				DEBRIEFING flics/gui/v&d/com1vic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/com1def.bmp
+				SAVE_MACHINES RED
+			ENDSCENARIO
+			SCENARIO sat PLANET sat IDS 8338 TEXT 2o2.txt MUSIC 7 AFTER commsat
+				CAMPAIGN flics/gui/s1p2t2.smk
+				BRIEFING flics/gui/s1p2t2b.smk
+				DEBRIEFING flics/gui/v&d/com2vic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/com2def.bmp
+			ENDSCENARIO
+			SCENARIO dogbar PLANET dogbar IDS 8339 TEXT dogbar.txt MUSIC 10 AFTER sat
+				CAMPAIGN flics/gui/s1p2t3.smk
+				BRIEFING flics/gui/s1p2t3b.smk
+				WIN flics/dogbar.smk
+				DEBRIEFING flics/gui/v&d/com3vic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/com3def.bmp
+			ENDSCENARIO
+		ENDPLANET
+		PLANET grackomoon IDS 8106 FLIC flics/gui/s1p3t0.smk TEXT grackp.txt AFTER dogbar
+			SCENARIO gracko PLANET gracko IDS 8323 TEXT gracko.txt MUSIC 8 AFTER dogbar
+				CAMPAIGN flics/gui/s1p3t1.smk
+				BRIEFING flics/gui/s1p3t1b.smk
+				ENTRY flics/grako.smk
+				DEBRIEFING flics/gui/v&d/fieldvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/fielddef.bmp
+			ENDSCENARIO
+		ENDPLANET	
+	ENDSYSTEM
+	SYSTEM border IDS 8003 TEXT bord_s.txt FLIC flics/gui/s2p0t0.smk AFTER dogbar
+		PLANET talonPrimeMoon IDS 8109 FLIC flics/gui/s2p1t0.smk TEXT talok_p.txt AFTER dogbar
+			SCENARIO resfac PLANET resfac IDS 8340 TEXT resfac.txt MUSIC 9 AFTER dogbar
+				CAMPAIGN flics/gui/s2p1t1.smk
+				BRIEFING flics/gui/s2p1t1b.smk
+				DEBRIEFING flics/gui/v&d/motvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/motdef.bmp
+			ENDSCENARIO
+		ENDPLANET
+		PLANET talonPrime IDS 8100 FLIC flics/gui/s2p5t0.smk TEXT talon_p.txt AFTER gracko resfac 
+			SCENARIO 5o1 PLANET 5o1 IDS 8343 TEXT 5o1.txt MUSIC 10 AFTER gracko resfac  
+				CAMPAIGN flics/gui/s2p5t1.smk
+				BRIEFING flics/gui/s2p5t1b.smk
+				ENTRY flics/5o1.smk
+				DEBRIEFING flics/gui/v&d/militvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/militdef.bmp
+			ENDSCENARIO
+			SCENARIO hilly PLANET hilly IDS 8324 TEXT hilly.txt MUSIC 11 AFTER 5o1
+				CAMPAIGN flics/gui/s2p5t2.smk
+				BRIEFING flics/gui/s2p5t2b.smk
+				DEBRIEFING flics/gui/v&d/passvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/passdef.bmp
+			ENDSCENARIO
+			SCENARIO talon8a PLANET talonth8 IDS 8325 TEXT talon8a.txt MUSIC 9 AFTER hilly
+				CAMPAIGN flics/gui/s2p5t3.smk
+				BRIEFING flics/gui/s2p5t3b.smk
+				DEBRIEFING flics/gui/v&d/talonvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/talondef.bmp
+			ENDSCENARIO
+			SCENARIO kidnap PLANET kidnap IDS 8341 TEXT kidnap.txt MUSIC 7 AFTER talon8a
+				CAMPAIGN flics/gui/s2p5t4.smk
+				BRIEFING flics/gui/s2p5t4b.smk
+				ENTRY flics/kidnap.smk
+				DEBRIEFING flics/gui/v&d/kidvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/kiddef.bmp
+			ENDSCENARIO
+			SCENARIO desspy PLANET desspy IDS 8336 TEXT desspy.txt MUSIC 8 AFTER kidnap
+				CAMPAIGN flics/gui/s2p5t5.smk
+				BRIEFING flics/gui/s2p5t5b.smk
+				DEBRIEFING flics/gui/v&d/linesvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/linesdef.bmp
+			ENDSCENARIO
+			SCENARIO guns PLANET guns IDS 8328 TEXT guns.txt MUSIC 9 AFTER desspy
+				CAMPAIGN flics/gui/s6p1t1.smk
+				BRIEFING flics/gui/s2p5t6b.smk
+				ENTRY flics/guns.smk
+				WIN flics/gunsblow.smk
+				DEBRIEFING flics/gui/v&d/gunsvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/gunsdef.bmp
+			ENDSCENARIO
+			SCENARIO finger PLANET finger IDS 8329 TEXT finger.txt MUSIC 11 AFTER guns
+				CAMPAIGN flics/gui/s2p5t7.smk
+				BRIEFING flics/gui/s2p5t7b.smk
+				DEBRIEFING flics/gui/v&d/godvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/goddef.bmp
+			ENDSCENARIO
+		ENDPLANET
+	ENDSYSTEM
+	SYSTEM CoreSystem IDS 8005 TEXT core_s.txt FLIC flics/gui/s3p0t0.smk AFTER finger
+		PLANET HomePlanet IDS 8108 FLIC flics/gui/s3p6t0.smk TEXT home_p.txt AFTER finger
+			SCENARIO home PLANET home IDS 8342 TEXT home.txt MUSIC 7 AFTER finger
+				CAMPAIGN flics/gui/s3p6t1.smk
+				BRIEFING flics/gui/s3p6t1b.smk
+				ENTRY flics/home.smk
+				DEBRIEFING flics/gui/v&d/homevic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/homedef.bmp
+			ENDSCENARIO
+		ENDPLANET
+	ENDSYSTEM
+	SYSTEM MidianPrime IDS 8004 TEXT midian_s.txt FLIC flics/gui/s6p0t0.smk AFTER home
+		PLANET planetmidian IDS 8107 FLIC flics/gui/s6p1t0.smk TEXT midian_p.txt AFTER home
+			SCENARIO deepspac PLANET deepspac IDS 8330 TEXT deepspac.txt MUSIC 5 AFTER home
+				CAMPAIGN flics/gui/s6p1t1.smk
+				BRIEFING flics/gui/s6p1t1b.smk
+				ENTRY flics/deep2.smk
+				DEBRIEFING flics/gui/v&d/deepvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/deepdef.bmp
+			ENDSCENARIO
+			SCENARIO suicide PLANET suicide IDS 8331 TEXT suicide.txt MUSIC 9 AFTER deepspac
+				CAMPAIGN flics/gui/s6p1t1.smk
+				BRIEFING flics/gui/s6p1t2b.smk
+				WIN flics/suicide.smk
+				DEBRIEFING flics/gui/v&d/suicvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/suicdef.bmp
+			ENDSCENARIO
+			SCENARIO midian PLANET midian IDS 8332 TEXT midian.txt MUSIC 10 AFTER suicide
+				CAMPAIGN flics/gui/s6p1t3.smk
+				BRIEFING flics/gui/s6p1t3b.smk
+				ENTRY flics/midian.smk
+				DEBRIEFING flics/gui/v&d/assvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/assdef.bmp
+			ENDSCENARIO
+			SCENARIO control PLANET control IDS 8345 TEXT control.txt MUSIC 11 AFTER midian
+				CAMPAIGN flics/gui/s6p1t4.smk
+				BRIEFING flics/gui/s6p1t4b.smk
+				WIN flics/outro.smk
+				DEBRIEFING flics/gui/v&d/contrvic.bmp
+				DEBRIEFINGLOSE flics/gui/v&d/contrdef.bmp
+			ENDSCENARIO
+		ENDPLANET
+	ENDSYSTEM
+END
+
+SKIRMISHES
+	SMALL
+//	NORMAL SKIRMISH
+		TERRAIN desert IDS 8200 TEXT mdesert.txt
+			SCENARIO m_desert PLANET m_desert IDS 8346 TEXT mdesert.txt   MUSIC 8
+  			SCENARIO daynight PLANET daynight IDS 8347 TEXT daynight.txt 	MUSIC 10
+		ENDTERRAIN
+		TERRAIN ice IDS 8205 TEXT ice_sk.txt
+			SCENARIO ice PLANET ice IDS 8317 TEXT ice1.txt 	MUSIC 7
+			SCENARIO ice PLANET icedn IDS 8368 TEXT ice4.txt 	MUSIC 7
+			SCENARIO micey PLANET micey IDS 8348 TEXT ice2.txt 	MUSIC 7
+			SCENARIO micey PLANET miceydn IDS 8369 TEXT ice3.txt 	MUSIC 7
+		ENDTERRAIN
+		TERRAIN fortress IDS 8203 TEXT fortress.txt
+			SCENARIO fortmult PLANET fortmult IDS 8318 TEXT skfort.txt 	MUSIC 9
+			SCENARIO fortmult PLANET fortmdn IDS 8370 TEXT fortmdn.txt 	MUSIC 9
+			SCENARIO fortseig PLANET fortseig IDS 8319 TEXT fortseig.txt MAXPLAYERS 2  MUSIC 5
+			SCENARIO fortseig PLANET fortsdn IDS 8371 TEXT fortsdn.txt MAXPLAYERS 2  MUSIC 5
+		ENDTERRAIN
+		TERRAIN dales IDS 8201 TEXT p_dales.txt	 
+			SCENARIO m_dales PLANET m_dales IDS 8349 TEXT m_dales.txt  MUSIC 11
+			SCENARIO m_dales PLANET mdalesdn IDS 8372 TEXT mdalesdn.txt  MUSIC 11
+			SCENARIO m_green PLANET m_green IDS 8350 TEXT m_green.txt 	MUSIC 11
+			SCENARIO m_green PLANET mgreendn IDS 8373 TEXT mgreendn.txt 	MUSIC 11
+		ENDTERRAIN
+		TERRAIN moon IDS 8204 TEXT pmoony.txt
+			SCENARIO m_1o2 PLANET 1o2 IDS 8351 TEXT m_1o2.txt 	MUSIC 5
+			SCENARIO mmoony PLANET mmoony IDS 8322 TEXT mmoony.txt 	 MUSIC 10
+			SCENARIO m_moon PLANET m_moon IDS 8352 TEXT m_moon.txt 	 MUSIC 10
+		ENDTERRAIN
+		TERRAIN mgrack IDS 8106 TEXT mgrack.txt	 
+			SCENARIO mgrack PLANET mgrack IDS 8353 TEXT m_grack.txt 	MUSIC 8 
+		ENDTERRAIN
+		TERRAIN multidog IDS 8111 TEXT multidg.txt	 
+			SCENARIO multidog PLANET multidog IDS 8354 TEXT multidog.txt  MUSIC 9
+		ENDTERRAIN
+		TERRAIN control IDS 8208 TEXT sk_cont.txt
+			SCENARIO m_contrl PLANET m_contrl IDS 8355 TEXT m_contrl.txt MUSIC 5
+		ENDTERRAIN
+	END
+	MEDIUM
+//	BATTLE ROYAL
+		TERRAIN dales IDS 8201 TEXT b_dales.txt	 
+			SCENARIO b_dales PLANET m_dales IDS 8356 TEXT b_dales1.txt  MUSIC 11
+		ENDTERRAIN
+		TERRAIN fortress IDS 8203 TEXT b_fort.txt
+			SCENARIO seige PLANET seige IDS 8358 TEXT seige.txt  MUSIC 9
+			SCENARIO seige1 PLANET seige IDS 8365 TEXT seige1.txt  MUSIC 6
+		ENDTERRAIN
+		TERRAIN rolling IDS 8206 TEXT b_roller.txt
+			SCENARIO b_roll3 PLANET roller IDS 8364 TEXT m_roll3.txt 	MUSIC 9
+			SCENARIO b_roll2 PLANET roller IDS 8363 TEXT m_roll2.txt 	MUSIC 10
+			SCENARIO b_roll1 PLANET roller IDS 8362 TEXT m_roll1.txt 	MUSIC 9
+			SCENARIO b_roller PLANET roller IDS 8361 TEXT m_roller.txt 	MUSIC 8
+		ENDTERRAIN
+		TERRAIN control IDS 8208 TEXT b_cont.txt
+			SCENARIO b_contrl PLANET m_contrl IDS 8359 TEXT b_contrl.txt MUSIC 5
+		ENDTERRAIN
+	END
+	LARGE
+//	SPECIAL
+		TERRAIN interior IDS 8207 TEXT sk_space.txt
+			SCENARIO sk_space PLANET space IDS 8321 TEXT space1.txt MUSIC 11
+				ENDTERRAIN
+		TERRAIN home IDS 8209 TEXT joust.txt
+			SCENARIO joust PLANET joust IDS 8360 TEXT joust1.txt 	MUSIC 9
+		ENDTERRAIN
+	END
+END
+
+MULTI_PLAYER
+	SMALL
+//	NORMAL MULTIPLAYER
+		TERRAIN desert IDS 8200 TEXT mdesert.txt
+			SCENARIO m_desert PLANET m_desert IDS 8346 TEXT mdesert.txt   MUSIC 8
+  			SCENARIO daynight PLANET daynight IDS 8347 TEXT daynight.txt 	MUSIC 10
+		ENDTERRAIN
+		TERRAIN ice IDS 8205 TEXT ice_sk.txt
+			SCENARIO ice PLANET ice IDS 8317 TEXT ice1.txt 	MUSIC 7
+			SCENARIO ice PLANET icedn IDS 8368 TEXT ice4.txt 	MUSIC 7
+			SCENARIO micey PLANET micey IDS 8348 TEXT ice2.txt 	MUSIC 7
+			SCENARIO micey PLANET miceydn IDS 8369 TEXT ice3.txt 	MUSIC 7
+		ENDTERRAIN
+		TERRAIN fortress IDS 8203 TEXT fortress.txt
+			SCENARIO fortmult PLANET fortmult IDS 8318 TEXT skfort.txt 	MUSIC 9
+			SCENARIO fortmult PLANET fortmdn IDS 8370 TEXT fortmdn.txt 	MUSIC 9
+			SCENARIO fortseig PLANET fortseig IDS 8319 TEXT fortseig.txt MAXPLAYERS 2  MUSIC 5
+			SCENARIO fortseig PLANET fortsdn IDS 8371 TEXT fortsdn.txt MAXPLAYERS 2  MUSIC 5
+		ENDTERRAIN
+		TERRAIN dales IDS 8201 TEXT p_dales.txt	 
+			SCENARIO m_dales PLANET m_dales IDS 8349 TEXT m_dales.txt  MUSIC 11
+			SCENARIO m_dales PLANET mdalesdn IDS 8372 TEXT mdalesdn.txt  MUSIC 11
+			SCENARIO m_green PLANET m_green IDS 8350 TEXT m_green.txt 	MUSIC 11
+			SCENARIO m_green PLANET mgreendn IDS 8373 TEXT mgreendn.txt 	MUSIC 11
+		ENDTERRAIN
+		TERRAIN moon IDS 8204 TEXT pmoony.txt
+			SCENARIO m_1o2 PLANET 1o2 IDS 8351 TEXT m_1o2.txt 	MUSIC 5
+			SCENARIO mmoony PLANET mmoony IDS 8322 TEXT mmoony.txt 	 MUSIC 10
+			SCENARIO m_moon PLANET m_moon IDS 8352 TEXT m_moon.txt 	 MUSIC 7
+		ENDTERRAIN
+		TERRAIN mgrack IDS 8106 TEXT mgrack.txt	 
+			SCENARIO mgrack PLANET mgrack IDS 8353 TEXT m_grack.txt 	MUSIC 8 
+		ENDTERRAIN
+		TERRAIN multidog IDS 8111 TEXT multidg.txt	 
+			SCENARIO multidog PLANET multidog IDS 8354 TEXT multidog.txt  MUSIC 11
+		ENDTERRAIN
+		TERRAIN control IDS 8208 TEXT sk_cont.txt
+			SCENARIO m_contrl PLANET m_contrl IDS 8355 TEXT m_contrl.txt MUSIC 9
+		ENDTERRAIN
+	END
+	MEDIUM
+//	BATTLE ROYAL
+		TERRAIN dales IDS 8201 TEXT b_dales.txt	 
+			SCENARIO b_dales PLANET m_dales IDS 8356 TEXT b_dales1.txt  MUSIC 11
+		ENDTERRAIN
+		TERRAIN fortress IDS 8203 TEXT b_fort.txt
+			SCENARIO seige PLANET seige IDS 8358 TEXT seige.txt  MUSIC 10
+			SCENARIO seige1 PLANET seige IDS 8365 TEXT seige1.txt  MUSIC 7
+			SCENARIO mseige PLANET seige IDS 8367 TEXT mseige.txt  MAXPLAYERS 2 MUSIC 10
+			SCENARIO mseige1 PLANET seige IDS 8366 TEXT mseige1.txt  MAXPLAYERS 2 MUSIC 7
+		ENDTERRAIN
+		TERRAIN rolling IDS 8206 TEXT b_roller.txt
+			SCENARIO b_roll3 PLANET roller IDS 8364 TEXT m_roll3.txt 	MUSIC 5
+			SCENARIO b_roll2 PLANET roller IDS 8363 TEXT m_roll2.txt 	MUSIC 7
+			SCENARIO b_roll1 PLANET roller IDS 8362 TEXT m_roll1.txt 	MUSIC 8
+			SCENARIO b_roller PLANET roller IDS 8361 TEXT m_roller.txt 	MUSIC 7
+		ENDTERRAIN
+		TERRAIN control IDS 8208 TEXT b_cont.txt
+			SCENARIO b_contrl PLANET m_contrl IDS 8359 TEXT b_contrl.txt MUSIC 5
+		ENDTERRAIN
+	END
+	LARGE
+//	SPECIAL
+		TERRAIN interior IDS 8207 TEXT sk_space.txt
+			SCENARIO sk_space PLANET space IDS 8321 TEXT space1.txt MUSIC 10
+		ENDTERRAIN
+		TERRAIN home IDS 8209 TEXT joust.txt
+			SCENARIO joust PLANET joust IDS 8360 TEXT joust1.txt  MUSIC 8
+					ENDTERRAIN
+	END
+END

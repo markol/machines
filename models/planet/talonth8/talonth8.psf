@@ -1,0 +1,186 @@
+PLANET_SIZE 6 6
+TILE_SIZE 427
+TILE_CELLS 6 6
+TILE_BOUNDS -213.5 -213.5 213.5 213.5
+BACKGROUND_FILE talonth8.bg
+
+// Tile(0,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz7b.lod
+
+// Tile(1,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz7a.lod
+
+// Tile(2,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz8b.lod
+
+// Tile(3,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz8a.lod
+
+// Tile(4,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz9b.lod
+
+// Tile(5,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz9a.lod
+
+// Tile(0,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz7c.lod
+
+// Tile(1,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz7d.lod
+
+// Tile(2,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz8c.lod
+
+// Tile(3,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz8d.lod
+
+// Tile(4,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz9c.lod
+
+// Tile(5,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz9d.lod
+
+// Tile(0,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz4b.lod
+
+// Tile(1,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz4a.lod
+
+// Tile(2,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz5b.lod
+
+// Tile(3,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz5a.lod
+
+// Tile(4,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz6b.lod
+
+// Tile(5,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz6a.lod
+
+// Tile(0,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz4c.lod
+
+// Tile(1,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz4d.lod
+
+// Tile(2,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz5c.lod
+
+// Tile(3,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz5d.lod
+
+// Tile(4,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz6c.lod
+
+// Tile(5,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz6d.lod
+
+// Tile(0,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz1b.lod
+
+// Tile(1,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz1a.lod
+
+// Tile(2,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz2b.lod
+
+// Tile(3,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz2a.lod
+
+// Tile(4,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz3b.lod
+
+// Tile(5,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz3a.lod
+
+// Tile(0,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz1c.lod
+
+// Tile(1,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz1d.lod
+
+// Tile(2,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz2c.lod
+
+// Tile(3,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz2d.lod
+
+// Tile(4,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz3c.lod
+
+// Tile(5,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\maz3d.lod
+

@@ -1,0 +1,507 @@
+PLANET_SIZE 10 10
+TILE_SIZE 120
+TILE_CELLS 3 3
+//TILE_CELLS 5 5
+TILE_BOUNDS -60 -60 60 60
+BACKGROUND_FILE 1o3.bg
+
+// Tile(0,0)
+ROTATION 0
+HEIGHT 59.935
+TILE lod\tile09.lod
+
+// Tile(1,0)
+ROTATION 3
+HEIGHT 29.935
+TILE lod\tile04.lod
+
+// Tile(2,0)
+ROTATION 3
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(3,0)
+ROTATION 2
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(4,0)
+ROTATION 3
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(5,0)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile00.lod
+
+// Tile(6,0)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile00.lod
+
+// Tile(7,0)
+ROTATION 2
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(8,0)
+ROTATION 2
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(9,0)
+ROTATION 2
+HEIGHT 29.935
+TILE lod\tile04.lod
+
+// Tile(0,1)
+ROTATION 3
+HEIGHT 29.935
+TILE lod\tile04.lod
+
+// Tile(1,1)
+ROTATION 3
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(2,1)
+ROTATION 1
+HEIGHT 29.935
+TILE lod\tile01.lod
+
+// Tile(3,1)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(4,1)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(5,1)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(6,1)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile51.lod
+
+// Tile(7,1)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile50.lod
+
+// Tile(8,1)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(9,1)
+ROTATION 1
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(0,2)
+ROTATION 3
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(1,2)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(2,2)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(3,2)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile06.lod
+
+// Tile(4,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile09.lod
+
+// Tile(5,2)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile01.lod
+
+// Tile(6,2)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile14.lod
+
+// Tile(7,2)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile12.lod
+
+// Tile(8,2)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(9,2)
+ROTATION 1
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(0,3)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile00.lod
+
+// Tile(1,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(2,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(3,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile06.lod
+
+// Tile(4,3)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile05.lod
+
+// Tile(5,3)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile06.lod
+
+// Tile(6,3)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(7,3)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(8,3)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(9,3)
+ROTATION 1
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(0,4)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile00.lod
+
+// Tile(1,4)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile47.lod
+
+// Tile(2,4)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile47.lod
+
+// Tile(3,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(4,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(5,4)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(6,4)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(7,4)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile06.lod
+
+// Tile(8,4)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(9,4)
+ROTATION 1
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(0,5)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(1,5)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile51.lod
+
+// Tile(2,5)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile14.lod
+
+// Tile(3,5)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(4,5)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(5,5)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(6,5)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile06.lod
+
+// Tile(7,5)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile66.lod
+
+// Tile(8,5)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile51.lod
+
+// Tile(9,5)
+ROTATION 2
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(0,6)
+ROTATION 3
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(1,6)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(2,6)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile07.lod
+
+// Tile(3,6)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile07.lod
+
+// Tile(4,6)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile12.lod
+
+// Tile(5,6)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile14.lod
+
+// Tile(6,6)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile66.lod
+
+// Tile(7,6)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile72.lod
+
+// Tile(8,6)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile46.lod
+
+// Tile(9,6)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile00.lod
+
+// Tile(0,7)
+ROTATION 3
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(1,7)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(2,7)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tile07.lod
+
+// Tile(3,7)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile07.lod
+
+// Tile(4,7)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile14.lod
+
+// Tile(5,7)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tile12.lod
+
+// Tile(6,7)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile44.lod
+
+// Tile(7,7)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile10.lod
+
+// Tile(8,7)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile47.lod
+
+// Tile(9,7)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile00.lod
+
+// Tile(0,8)
+ROTATION 3
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(1,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(2,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(3,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile03.lod
+
+// Tile(4,8)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(5,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile04.lod
+
+// Tile(6,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tile50.lod
+
+// Tile(7,8)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tile47.lod
+
+// Tile(8,8)
+ROTATION 1
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(9,8)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(0,9)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile04.lod
+
+// Tile(1,9)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(2,9)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(3,9)
+ROTATION 1
+HEIGHT 29.935
+TILE lod\tile31.lod
+
+// Tile(4,9)
+ROTATION 1
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(5,9)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile06.lod
+
+// Tile(6,9)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile00.lod
+
+// Tile(7,9)
+ROTATION 0
+HEIGHT 29.935
+TILE lod\tile00.lod
+
+// Tile(8,9)
+ROTATION 1
+HEIGHT 29.935
+TILE lod\tile03.lod
+
+// Tile(9,9)
+ROTATION 1
+HEIGHT 59.935
+TILE lod\tile06.lod
+

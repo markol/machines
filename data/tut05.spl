@@ -1,0 +1,23 @@
+// STRATEGY PRODUCTION LIST
+// NUMBER <X> <Y> <TYPE> <HWLEVEL> <SUBTYPE>
+// Where Y is used in factory production list to sort order of construction.
+PRODUCTION LIST
+// high level strategic stuff at end in order (no sort yet!)
+N_RESOURCE_CARRIERS  0 0
+N_MINES         0 0
+N_CONSTRUCTORS  0 0
+N_GEO_LOCATORS      0 0
+
+END PRODUCTION LIST
+
+// tutorial spl file. attack player
+SQUAD
+AI ATTACK DELAY 0
+NUMBER 2 0 AGGRESSOR 2 GRUNT L_BOLTER
+END SQUAD
+
+// tutorial spl file. attack player
+SQUAD
+AI PATROL DELAY 0 309 331 383 210 211 196
+NUMBER 4 0 AGGRESSOR 2 ASSASSIN L_AUTO_CANNON
+END SQUAD

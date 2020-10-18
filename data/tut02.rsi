@@ -1,0 +1,13 @@
+// [MARKER] [ALREADY RESEARCHED] [OBJECT TYPE] [HWLEVEL] [SUBTYPE]
+// Note that if an item appears in this lits then it is deemed to be
+// "available". Research Items default to not researched
+// and not available.
+
+RACE RED
+MACHINE RESEARCHED GEO_LOCATOR 1
+
+RACE BLUE
+
+RACE GREEN
+
+RACE YELLOW

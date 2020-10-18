@@ -1,0 +1,2307 @@
+PLANET_SIZE 20 23
+TILE_SIZE 30
+TILE_CELLS 3 3
+//TILE_CELLS 1 1
+TILE_BOUNDS -15 -15 15 15
+BACKGROUND_FILE sat.bg
+
+// Tile(0,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(4,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(5,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(6,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(7,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(8,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(9,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(14,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\darkness.lod
+
+// Tile(15,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\darkness.lod
+
+// Tile(16,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,0)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(4,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(5,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(6,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(7,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(8,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(9,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(14,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(15,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(16,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,1)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(4,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(5,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(6,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(7,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(8,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(9,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,2)
+ROTATION 1
+HEIGHT 19.935
+TILE lod\entr02.lod
+
+// Tile(12,2)
+ROTATION 1
+HEIGHT 19.935
+TILE lod\entr01.lod
+
+// Tile(13,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(14,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(15,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(16,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,2)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,3)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(3,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tube02.lod
+
+// Tile(4,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tube03.lod
+
+// Tile(5,3)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(6,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(7,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(8,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(9,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,3)
+ROTATION 2
+HEIGHT 19.935
+TILE lod\entr03.lod
+
+// Tile(12,3)
+ROTATION 2
+HEIGHT 19.935
+TILE lod\entr04.lod
+
+// Tile(13,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(14,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(15,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(16,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,3)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,4)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube03.lod
+
+// Tile(3,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre.lod
+
+// Tile(4,4)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\centre.lod
+
+// Tile(5,4)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tubvnt.lod
+
+// Tile(6,4)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_vent01.lod
+
+// Tile(7,4)
+ROTATION 1
+HEIGHT 9.935
+TILE lod\vshaft04.lod
+
+// Tile(8,4)
+ROTATION 3
+HEIGHT 9.935
+TILE lod\vshaft01.lod
+
+// Tile(9,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,4)
+ROTATION 3
+HEIGHT 19.935
+TILE lod\entr05.lod
+
+// Tile(12,4)
+ROTATION 3
+HEIGHT 19.935
+TILE lod\entr06.lod
+
+// Tile(13,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(14,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(15,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(16,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,4)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,5)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube02.lod
+
+// Tile(3,5)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\centre.lod
+
+// Tile(4,5)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\centre.lod
+
+// Tile(5,5)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tubvnt2.lod
+
+// Tile(6,5)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_vent02.lod
+
+// Tile(7,5)
+ROTATION 1
+HEIGHT 9.935
+TILE lod\vshaft02.lod
+
+// Tile(8,5)
+ROTATION 3
+HEIGHT 9.935
+TILE lod\vshaft03.lod
+
+// Tile(9,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,5)
+ROTATION 3
+HEIGHT 19.935
+TILE lod\entp01.lod
+
+// Tile(12,5)
+ROTATION 3
+HEIGHT 19.935
+TILE lod\entp02.lod
+
+// Tile(13,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(14,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(15,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(16,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,5)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,6)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,6)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,6)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(3,6)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tubmin4.lod
+
+// Tile(4,6)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tubmin3.lod
+
+// Tile(5,6)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(6,6)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(7,6)
+ROTATION 2
+HEIGHT 9.935
+TILE lod\vent01.lod
+
+// Tile(8,6)
+ROTATION 2
+HEIGHT 14.935
+TILE lod\vent02.lod
+
+// Tile(9,6)
+ROTATION 3
+HEIGHT 14.935
+TILE lod\vent01.lod
+
+// Tile(10,6)
+ROTATION 1
+HEIGHT 19.935
+TILE lod\entc02.lod
+
+// Tile(11,6)
+ROTATION 1
+HEIGHT 19.935
+TILE lod\entl02.lod
+
+// Tile(12,6)
+ROTATION 1
+HEIGHT 19.935
+TILE lod\entl01.lod
+
+// Tile(13,6)
+ROTATION 1
+HEIGHT 19.935
+TILE lod\entc01.lod
+
+// Tile(14,6)
+ROTATION 1
+HEIGHT 19.935
+TILE lod\entc03.lod
+
+// Tile(15,6)
+ROTATION 3
+HEIGHT 19.935
+TILE lod\entc04.lod
+
+// Tile(16,6)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,6)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,6)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,6)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,7)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(3,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tubmin3.lod
+
+// Tile(4,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tubmin4.lod
+
+// Tile(5,7)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(6,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(7,7)
+ROTATION 3
+HEIGHT 14.935
+TILE lod\vent02.lod
+
+// Tile(8,7)
+ROTATION 0
+HEIGHT 14.935
+TILE lod\vent02.lod
+
+// Tile(9,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(14,7)
+ROTATION 2
+HEIGHT 19.935
+TILE lod\entc06.lod
+
+// Tile(15,7)
+ROTATION 2
+HEIGHT 19.935
+TILE lod\entc05.lod
+
+// Tile(16,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,7)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,8)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube03.lod
+
+// Tile(3,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre.lod
+
+// Tile(4,8)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\centre.lod
+
+// Tile(5,8)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tubmin.lod
+
+// Tile(6,8)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_mine02.lod
+
+// Tile(7,8)
+ROTATION 1
+HEIGHT 4.935
+TILE lod\c_mine01.lod
+
+// Tile(8,8)
+ROTATION 1
+HEIGHT 4.935
+TILE lod\c_mine05.lod
+
+// Tile(9,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(14,8)
+ROTATION 2
+HEIGHT 19.935
+TILE lod\u_cord01.lod
+
+// Tile(15,8)
+ROTATION 0
+HEIGHT 19.935
+TILE lod\u_cord01.lod
+
+// Tile(16,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,8)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,9)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube02.lod
+
+// Tile(3,9)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\centre.lod
+
+// Tile(4,9)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\centre.lod
+
+// Tile(5,9)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tubmin2.lod
+
+// Tile(6,9)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_mine03.lod
+
+// Tile(7,9)
+ROTATION 2
+HEIGHT 4.935
+TILE lod\c_mine04.lod
+
+// Tile(8,9)
+ROTATION 0
+HEIGHT 4.935
+TILE lod\c_mine01.lod
+
+// Tile(9,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(14,9)
+ROTATION 2
+HEIGHT 19.935
+TILE lod\u_cord01.lod
+
+// Tile(15,9)
+ROTATION 0
+HEIGHT 19.935
+TILE lod\u_cord01.lod
+
+// Tile(16,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,9)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,10)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(3,10)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tube03.lod
+
+// Tile(4,10)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tube02.lod
+
+// Tile(5,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(6,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(7,10)
+ROTATION 0
+HEIGHT 4.935
+TILE lod\c_mine03.lod
+
+// Tile(8,10)
+ROTATION 0
+HEIGHT 4.935
+TILE lod\c_mine02.lod
+
+// Tile(9,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,10)
+ROTATION 2
+HEIGHT 19.935
+TILE lod\room01.lod
+
+// Tile(14,10)
+ROTATION 2
+HEIGHT 19.935
+TILE lod\room04.lod
+
+// Tile(15,10)
+ROTATION 2
+HEIGHT 19.935
+TILE lod\room05.lod
+
+// Tile(16,10)
+ROTATION 1
+HEIGHT 19.935
+TILE lod\room01.lod
+
+// Tile(17,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,10)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(4,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(5,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(6,11)
+ROTATION 2
+HEIGHT 14.935
+TILE lod\room01.lod
+
+// Tile(7,11)
+ROTATION 2
+HEIGHT 14.935
+TILE lod\room14.lod
+
+// Tile(8,11)
+ROTATION 2
+HEIGHT 14.935
+TILE lod\room09.lod
+
+// Tile(9,11)
+ROTATION 2
+HEIGHT 14.935
+TILE lod\room02.lod
+
+// Tile(10,11)
+ROTATION 1
+HEIGHT 14.935
+TILE lod\room06.lod
+
+// Tile(11,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,11)
+ROTATION 0
+HEIGHT 19.935
+TILE lod\room08.lod
+
+// Tile(14,11)
+ROTATION 0
+HEIGHT 19.935
+TILE lod\room07.lod
+
+// Tile(15,11)
+ROTATION 0
+HEIGHT 19.935
+TILE lod\room03.lod
+
+// Tile(16,11)
+ROTATION 1
+HEIGHT 19.935
+TILE lod\room02.lod
+
+// Tile(17,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,11)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,12)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,12)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,12)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,12)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(4,12)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(5,12)
+ROTATION 2
+HEIGHT 14.935
+TILE lod\room06.lod
+
+// Tile(6,12)
+ROTATION 3
+HEIGHT 14.935
+TILE lod\room03.lod
+
+// Tile(7,12)
+ROTATION 1
+HEIGHT 14.935
+TILE lod\room10.lod
+
+// Tile(8,12)
+ROTATION 0
+HEIGHT 14.935
+TILE lod\room10.lod
+
+// Tile(9,12)
+ROTATION 0
+HEIGHT 14.935
+TILE lod\room10.lod
+
+// Tile(10,12)
+ROTATION 1
+HEIGHT 14.935
+TILE lod\room07.lod
+
+// Tile(11,12)
+ROTATION 1
+HEIGHT 10.935
+TILE lod\c_mine02.lod
+
+// Tile(12,12)
+ROTATION 1
+HEIGHT 15.935
+TILE lod\c_mine01.lod
+
+// Tile(13,12)
+ROTATION 1
+HEIGHT 15.935
+TILE lod\c_mine04.lod
+
+// Tile(14,12)
+ROTATION 0
+HEIGHT 15.935
+TILE lod\c_mine01.lod
+
+// Tile(15,12)
+ROTATION 3
+HEIGHT 19.935
+TILE lod\room01.lod
+
+// Tile(16,12)
+ROTATION 0
+HEIGHT 19.935
+TILE lod\room06.lod
+
+// Tile(17,12)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,12)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,12)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,13)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,13)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,13)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,13)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(4,13)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(5,13)
+ROTATION 3
+HEIGHT 14.935
+TILE lod\room02.lod
+
+// Tile(6,13)
+ROTATION 0
+HEIGHT 14.935
+TILE lod\room10.lod
+
+// Tile(7,13)
+ROTATION 3
+HEIGHT 14.935
+TILE lod\room10.lod
+
+// Tile(8,13)
+ROTATION 1
+HEIGHT 14.935
+TILE lod\room10.lod
+
+// Tile(9,13)
+ROTATION 1
+HEIGHT 14.935
+TILE lod\room03.lod
+
+// Tile(10,13)
+ROTATION 1
+HEIGHT 14.935
+TILE lod\room08.lod
+
+// Tile(11,13)
+ROTATION 1
+HEIGHT 10.935
+TILE lod\c_mine03.lod
+
+// Tile(12,13)
+ROTATION 3
+HEIGHT 15.935
+TILE lod\c_mine01.lod
+
+// Tile(13,13)
+ROTATION 2
+HEIGHT 15.935
+TILE lod\c_mine04.lod
+
+// Tile(14,13)
+ROTATION 0
+HEIGHT 15.935
+TILE lod\c_mine01.lod
+
+// Tile(15,13)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(16,13)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,13)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,13)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,13)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,14)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,14)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,14)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,14)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(4,14)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(5,14)
+ROTATION 3
+HEIGHT 14.935
+TILE lod\room01.lod
+
+// Tile(6,14)
+ROTATION 0
+HEIGHT 14.935
+TILE lod\room11.lod
+
+// Tile(7,14)
+ROTATION 0
+HEIGHT 14.935
+TILE lod\room02.lod
+
+// Tile(8,14)
+ROTATION 0
+HEIGHT 14.935
+TILE lod\room03.lod
+
+// Tile(9,14)
+ROTATION 1
+HEIGHT 14.935
+TILE lod\room02.lod
+
+// Tile(10,14)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,14)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,14)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,14)
+ROTATION 0
+HEIGHT 15.935
+TILE lod\mincon1.lod
+
+// Tile(14,14)
+ROTATION 0
+HEIGHT 15.935
+TILE lod\mincon2.lod
+
+// Tile(15,14)
+ROTATION 1
+HEIGHT 15.935
+TILE lod\c_base01.lod
+
+// Tile(16,14)
+ROTATION 2
+HEIGHT 15.935
+TILE lod\p_room04.lod
+
+// Tile(17,14)
+ROTATION 3
+HEIGHT 15.935
+TILE lod\p_room05.lod
+
+// Tile(18,14)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,14)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,15)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(4,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tube02.lod
+
+// Tile(5,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tube04.lod
+
+// Tile(6,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tube03.lod
+
+// Tile(7,15)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(8,15)
+ROTATION 3
+HEIGHT 14.935
+TILE lod\room01.lod
+
+// Tile(9,15)
+ROTATION 0
+HEIGHT 14.935
+TILE lod\room06.lod
+
+// Tile(10,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,15)
+ROTATION 3
+HEIGHT 15.935
+TILE lod\p_room04.lod
+
+// Tile(14,15)
+ROTATION 3
+HEIGHT 15.935
+TILE lod\p_room03.lod
+
+// Tile(15,15)
+ROTATION 3
+HEIGHT 15.935
+TILE lod\c_base01.lod
+
+// Tile(16,15)
+ROTATION 2
+HEIGHT 15.935
+TILE lod\p_room03.lod
+
+// Tile(17,15)
+ROTATION 2
+HEIGHT 15.935
+TILE lod\p_room01.lod
+
+// Tile(18,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,15)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,16)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube03.lod
+
+// Tile(4,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(5,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(6,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(7,16)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tube02.lod
+
+// Tile(8,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(9,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,16)
+ROTATION 2
+HEIGHT 7.935
+TILE lod\c_base04.lod
+
+// Tile(14,16)
+ROTATION 2
+HEIGHT 7.935
+TILE lod\c_base05.lod
+
+// Tile(15,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(16,16)
+ROTATION 2
+HEIGHT 15.935
+TILE lod\c_base01.lod
+
+// Tile(17,16)
+ROTATION 0
+HEIGHT 15.935
+TILE lod\c_base01.lod
+
+// Tile(18,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,16)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,17)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube04.lod
+
+// Tile(4,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(5,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(6,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(7,17)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tube06.lod
+
+// Tile(8,17)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_base01.lod
+
+// Tile(9,17)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_base01.lod
+
+// Tile(10,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\c_base02.lod
+
+// Tile(11,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,17)
+ROTATION 2
+HEIGHT 7.935
+TILE lod\c_base01.lod
+
+// Tile(14,17)
+ROTATION 0
+HEIGHT 7.935
+TILE lod\c_base01.lod
+
+// Tile(15,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(16,17)
+ROTATION 2
+HEIGHT 7.935
+TILE lod\c_base04.lod
+
+// Tile(17,17)
+ROTATION 2
+HEIGHT 7.935
+TILE lod\c_base05.lod
+
+// Tile(18,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,17)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,18)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,18)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,18)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,18)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube04.lod
+
+// Tile(4,18)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(5,18)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(6,18)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(7,18)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tube05.lod
+
+// Tile(8,18)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\c_base01.lod
+
+// Tile(9,18)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\c_base03.lod
+
+// Tile(10,18)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\c_base01.lod
+
+// Tile(11,18)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,18)
+ROTATION 1
+HEIGHT 7.935
+TILE lod\c_room04.lod
+
+// Tile(13,18)
+ROTATION 0
+HEIGHT 7.935
+TILE lod\c_room01.lod
+
+// Tile(14,18)
+ROTATION 0
+HEIGHT 7.935
+TILE lod\c_room02.lod
+
+// Tile(15,18)
+ROTATION 0
+HEIGHT 7.935
+TILE lod\c_room05.lod
+
+// Tile(16,18)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\c_base04.lod
+
+// Tile(17,18)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\c_base05.lod
+
+// Tile(18,18)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,18)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,19)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,19)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,19)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,19)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\tube02.lod
+
+// Tile(4,19)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(5,19)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(6,19)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\centre2.lod
+
+// Tile(7,19)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tube03.lod
+
+// Tile(8,19)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(9,19)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\c_base01.lod
+
+// Tile(10,19)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\c_base03.lod
+
+// Tile(11,19)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_base01.lod
+
+// Tile(12,19)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_room07.lod
+
+// Tile(13,19)
+ROTATION 0
+HEIGHT 7.935
+TILE lod\c_room03.lod
+
+// Tile(14,19)
+ROTATION 1
+HEIGHT 7.935
+TILE lod\c_room03.lod
+
+// Tile(15,19)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\c_room06.lod
+
+// Tile(16,19)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_base03.lod
+
+// Tile(17,19)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\c_base01.lod
+
+// Tile(18,19)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,19)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,20)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,20)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,20)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,20)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(4,20)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tube03.lod
+
+// Tile(5,20)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tube04.lod
+
+// Tile(6,20)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\tube02.lod
+
+// Tile(7,20)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\tube01.lod
+
+// Tile(8,20)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(9,20)
+ROTATION 2
+HEIGHT -0.065
+TILE lod\c_base02.lod
+
+// Tile(10,20)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\c_base01.lod
+
+// Tile(11,20)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\c_base01.lod
+
+// Tile(12,20)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_room06.lod
+
+// Tile(13,20)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\c_room12.lod
+
+// Tile(14,20)
+ROTATION 1
+HEIGHT -0.065
+TILE lod\c_room12.lod
+
+// Tile(15,20)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\c_room07.lod
+
+// Tile(16,20)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\c_base01.lod
+
+// Tile(17,20)
+ROTATION 3
+HEIGHT -0.065
+TILE lod\c_base02.lod
+
+// Tile(18,20)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,20)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(4,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(5,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(6,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(7,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(8,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(9,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,21)
+ROTATION 2
+HEIGHT 7.935
+TILE lod\c_room09.lod
+
+// Tile(13,21)
+ROTATION 2
+HEIGHT 7.935
+TILE lod\c_room10.lod
+
+// Tile(14,21)
+ROTATION 2
+HEIGHT 7.935
+TILE lod\c_room10.lod
+
+// Tile(15,21)
+ROTATION 3
+HEIGHT 7.935
+TILE lod\c_room09.lod
+
+// Tile(16,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,21)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(0,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(1,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(2,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(3,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(4,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(5,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(6,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(7,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(8,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(9,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(10,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(11,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(12,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(13,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(14,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(15,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(16,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(17,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(18,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
+// Tile(19,22)
+ROTATION 0
+HEIGHT -0.065
+TILE lod\black.lod
+
