@@ -6,7 +6,8 @@
 cmake_minimum_required(VERSION 2.8)
 
 project(machines C CXX)
-
+include(CheckCXXCompilerFlag)
+include(CheckCCompilerFlag)
 
 ##
 # Project version
@@ -47,6 +48,7 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
     set(PLATFORM_MACOSX  0)
     set(PLATFORM_OTHER   0)
 
+    set(OpenGL_GL_PREFERENCE "GLVND")
     # Platform-dependent implementation of system.h
     #set(SYSTEM_CPP_MODULE "system_linux.cpp")
     #set(SYSTEM_H_MODULE "system_linux.h")
@@ -89,12 +91,19 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 
     #set(NORMAL_CXX_FLAGS "-std=gnu++11 -Wall -Werror -Wold-style-cast -pedantic-errors -Wmissing-declarations")
     if(BUILD_32)
-        set(NORMAL_CXX_FLAGS "-std=gnu++11 -m32 -Wall -Wold-style-cast -Wmissing-declarations")
-        set(NORMAL_C_FLAGS "-m32 -Wall")
+        set(MACHINES_COMPILER_BIT_MODE -m32)
     else()
-        set(NORMAL_CXX_FLAGS "-std=gnu++11 -m64 -Wall -Wold-style-cast -Wmissing-declarations")
-        set(NORMAL_C_FLAGS "-m64 -Wall")
+        set(MACHINES_COMPILER_BIT_MODE -m64)
     endif()
+    check_cxx_compiler_flag("${MACHINES_COMPILER_BIT_MODE}" CXX_COMPILER_SUPPORTS_BIT_MODE)
+    check_c_compiler_flag("${MACHINES_COMPILER_BIT_MODE}" C_COMPILER_SUPPORTS_BIT_MODE)
+    if(NOT C_COMPILER_SUPPORTS_BIT_MODE OR NOT CXX_COMPILER_SUPPORTS_BIT_MODE)
+        set(MACHINES_COMPILER_BIT_MODE "")
+        message(WARNING "${PROJECT_NAME} will be built for compiler default target architecture.")
+    endif()
+        
+    set(NORMAL_CXX_FLAGS "-std=gnu++11 ${MACHINES_COMPILER_BIT_MODE} -Wall -Wold-style-cast -Wmissing-declarations")
+    set(NORMAL_C_FLAGS " ${MACHINES_COMPILER_BIT_MODE} -Wall")
     set(NORMAL_CXX_FLAGS "${NORMAL_CXX_FLAGS} -Wno-error=deprecated-declarations") # updated version of physfs is not available on some platforms so we keep using deprecated functions, see #958
 
     if(NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.0)
@@ -112,7 +121,7 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 
     message(STATUS "Detected Clang version 3.1+")
 
-    set(NORMAL_CXX_FLAGS "-std=c++11 -m32 -Wall -Werror -Wold-style-cast -pedantic-errors -Wmissing-prototypes")
+    set(NORMAL_CXX_FLAGS "-std=c++11 ${MACHINES_COMPILER_BIT_MODE} -Wall -Werror -Wold-style-cast -pedantic-errors -Wmissing-prototypes")
     set(NORMAL_CXX_FLAGS "${NORMAL_CXX_FLAGS} -Wno-error=deprecated-declarations") # updated version of physfs is not available on some platforms so we keep using deprecated functions, see #958
     set(RELEASE_CXX_FLAGS "-O2")
     set(DEBUG_CXX_FLAGS "-g -O0")

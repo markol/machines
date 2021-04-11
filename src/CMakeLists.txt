@@ -325,11 +325,9 @@ target_sources(libs_mach_gui
 add_executable(machines ${MACHINES_SOURCES})
 add_executable(planeted ${PLANETED_SOURCES})
 set_target_properties(machines planeted PROPERTIES LINK_FLAGS_RELEASE -s)
-if(BUILD_32)
-    set_target_properties(machines planeted PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
-else()
-    set_target_properties(machines planeted PROPERTIES COMPILE_FLAGS "-m64" LINK_FLAGS "-m64")
-endif()
+set_target_properties(machines planeted PROPERTIES 
+    COMPILE_FLAGS "${MACHINES_COMPILER_BIT_MODE}" LINK_FLAGS "${MACHINES_COMPILER_BIT_MODE}"
+)
 
 target_link_libraries(machines -static-libgcc -static-libstdc++)
 target_link_libraries(planeted -static-libgcc -static-libstdc++)

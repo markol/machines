@@ -167,7 +167,7 @@ int globalLexIstreamBufferInput(unsigned char* pBuffer, int bufferSize);
 //# line 48 "d:\libdev\envirnmt\source\lexer.l"
 #define YY_JAM 32
 #define YY_JAM_BASE 1696
-static char a[39] =
+static signed char a[39] =
     {   0,
         14,    15,     6,    14,    15,     7,    15,    14,    15,    14,
         15,    14,    15,    14,    15,     3,    14,    15,     1,    14,
@@ -175,7 +175,7 @@ static char a[39] =
          5,     9,     4,     1,    11,    10,     8,     4
     } ;
 
-static char l[34] =
+static signed char l[34] =
     {   0,
         -2,    -2,    -2,    -2,     1,     3,     6,     8,    10,    12,
         14,    16,    19,    22,    24,    26,    28,    29,    29,    30,

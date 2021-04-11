@@ -86,8 +86,16 @@
         /* 64 bit detected */
         #include "base/limitw64.hpp"
     #endif
+    #if defined(__aarch64__)
+        /* 64 bit arm detected */
+        #include "base/limitw64.hpp"
+    #endif
     #if defined(__i386__)
         /* 32 bit x86 detected */
+        #include "base/limitw32.hpp"
+    #endif
+    #if defined(__arm__)
+        /* 32 bit arm detected */
         #include "base/limitw32.hpp"
     #endif
 
