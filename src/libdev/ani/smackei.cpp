@@ -160,14 +160,12 @@ void AniSmackerImpl::copyCurrentFrameToBuffer( RenSurface& dst )
 	uint	col_palette[256];
 	for (int i = 0; i < 256; i++)
 	{
-        uint    colour = 0;
-		colour = pal[(i * 3)];
+        uint    colour = 0xFF00;
+		colour |= pal[(i * 3) + 2];
 		colour <<= 8;
 		colour |= pal[(i * 3) + 1];
 		colour <<= 8;
-		colour |= pal[(i * 3) + 2];
-		colour <<= 8;
-		colour |= 0xFF;
+		colour |= pal[(i * 3) + 0];
 		col_palette[i] = colour;
 	}
 

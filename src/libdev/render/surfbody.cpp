@@ -109,9 +109,9 @@ RenISurfBody::Font::Font(FT_Face face, int height): renFont_(NULL), actualHeight
         }
         for(int j = 0; j < g->bitmap.width * g->bitmap.rows; ++j)
         {
-            rgbaBitmap[j] = g->bitmap.buffer[j] | 0xFFFFFF00;
+            rgbaBitmap[j] = (g->bitmap.buffer[j] << 24) | 0x00FFFFFF;
         }
-        glTexSubImage2D(GL_TEXTURE_2D, 0, ox, oy, g->bitmap.width, g->bitmap.rows, GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, rgbaBitmap);
+        glTexSubImage2D(GL_TEXTURE_2D, 0, ox, oy, g->bitmap.width, g->bitmap.rows, GL_RGBA, GL_UNSIGNED_BYTE, rgbaBitmap);
         c[i].ax = g->advance.x >> 6;
         c[i].ay = g->advance.y >> 6;
 
@@ -291,7 +291,7 @@ bool RenISurfBody::allocateDDSurfaces
 		rqHeight,  // height
 		0,  // border, always 0 in OpenGL ES
 		GL_RGBA,  // format
-		GL_UNSIGNED_INT_8_8_8_8, // type, /GL_UNSIGNED_BYTE
+		GL_UNSIGNED_BYTE, // type, /GL_UNSIGNED_BYTE
 		(GLvoid*)NULL);
 
     width_ = rqWidth;
@@ -661,8 +661,8 @@ bool RenISurfBody::copyWithAlpha
     bool createMipmaps
 )
 {
-    SDL_Surface* surfaceDst = SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_RGBA8888, 0);
-    SDL_Surface* surfaceTmp = SDL_ConvertSurfaceFormat(surfaceAlpha, SDL_PIXELFORMAT_ARGB8888, 0);
+    SDL_Surface* surfaceDst = SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_ABGR8888, 0);
+    SDL_Surface* surfaceTmp = SDL_ConvertSurfaceFormat(surfaceAlpha, SDL_PIXELFORMAT_BGRA8888, 0);
 
     Uint32* pixelsDst = (Uint32 *)surfaceDst->pixels;
     Uint32* pixelsSrc = (Uint32 *)surfaceTmp->pixels;
@@ -671,13 +671,13 @@ bool RenISurfBody::copyWithAlpha
         for (int x = 0; x < surfaceDst->w; x++)
         {
             Uint32 index = y * surfaceDst->w + x;
-            Uint32 pixel = pixelsDst[index] & 0xFFFFFF00;
-            pixelsDst[index] = pixel | (pixelsSrc[index] & 0x000000FF);
+            Uint32 pixel = pixelsDst[index] & 0x00FFFFFF;
+            pixelsDst[index] = pixel | (pixelsSrc[index] & 0xFF000000);
         }
     }
     glBindTexture(GL_TEXTURE_2D, textureID_);
 	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, surfaceDst->w, surfaceDst->h,
-                    GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, surfaceDst->pixels);
+                    GL_RGBA, GL_UNSIGNED_BYTE, surfaceDst->pixels);
     if (createMipmaps && surfaceDst->w > 128 && surfaceDst->h > 128) 
     {
         glGenerateMipmap(GL_TEXTURE_2D); 
@@ -705,12 +705,13 @@ bool RenISurfBody::copyWithColourKeyEmulation
 	SDL_Surface* surfaceTmp = SDL_ConvertSurfaceFormat(surface, SDL_PIXELFORMAT_RGBA8888, 0);
 	SDL_SetColorKey(surfaceTmp, SDL_TRUE, SDL_MapRGB( surfaceTmp->format, 0xFF, 0x0, 0xFF ));
 
-	SDL_Surface* surfaceDst = SDL_CreateRGBSurface(SDL_SWSURFACE, surface->w, surface->h, 32, 0xff000000, 0x00ff0000, 0x0000ff00, 0x000000ff);
+	SDL_Surface* surfaceDst = 
+        SDL_CreateRGBSurface(SDL_SWSURFACE, surface->w, surface->h, 32, 0x000000ff, 0x0000ff00, 0x00ff0000, 0xff000000);
 	SDL_BlitSurface(surfaceTmp, NULL, surfaceDst, NULL);
 
     glBindTexture(GL_TEXTURE_2D, textureID_);
 	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, surfaceDst->w, surfaceDst->h,
-                    GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, surfaceDst->pixels);
+                    GL_RGBA, GL_UNSIGNED_BYTE, surfaceDst->pixels);
     if (createMipmaps && surfaceDst->w > 128 && surfaceDst->h > 128)
     {
         glGenerateMipmap(GL_TEXTURE_2D); 
@@ -732,7 +733,7 @@ bool RenISurfBody::copyFromBuffer(const uint* pixelsBuffer)
 {
     glBindTexture(GL_TEXTURE_2D, textureID_);
 	glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width_, height_,
-                    GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, pixelsBuffer);
+                    GL_RGBA, GL_UNSIGNED_BYTE, pixelsBuffer);
 
     // unbind
 	glBindTexture(GL_TEXTURE_2D, NULL);

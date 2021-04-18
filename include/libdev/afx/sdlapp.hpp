@@ -33,6 +33,7 @@ private:
         void dispatchMouseEvent(SDL_Event*, bool);
         void dispatchKeybrdEvent(SDL_Event*, bool);
         void dispatchCharEvent(SDL_Event*);
+        void dispatchTouchEvent(SDL_Event*, bool);
         void initialise(int argc, char* argv[]);
 
         friend int main(int , char* []);

@@ -1,14 +1,16 @@
-#version 120
+#version 310 es
 
+precision mediump float;
 // Interpolated values from the vertex shaders
-varying vec2 UV;
-varying vec4 fragmentColor;
+in vec2 UV;
+in vec4 fragmentColor;
+out vec4 outFragColor;
 
 // Values that stay constant for the whole mesh.
 uniform sampler2D uTextureSampler;
 
 void main() {
 
-	gl_FragColor = texture2D( uTextureSampler, UV ) * fragmentColor;
+	outFragColor = texture( uTextureSampler, UV ) * fragmentColor;
 	
 }

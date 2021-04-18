@@ -44,26 +44,30 @@ Released as a [free software](https://en.wikipedia.org/wiki/Free_software) under
 **Build dependencies**
 Use provided Docker image for building or manually setup your environment.
 
-libsdl2-dev libsdl2-image-dev libopenal-dev libalure-dev libenet-dev libfreetype6-dev libglew-dev libglm-dev libaudio-dev
+`libsdl2-dev libsdl2-image-dev libopenal-dev libalure-dev libenet-dev libfreetype6-dev libglew-dev libglm-dev libaudio-dev`
 
 **Building**
-git clone && git lfs pull
-- Windows exe on linux/docker:
-`sudo apt-get install mingw-w64`
-`mkdir buildMingw64 && cd buildMingw64`
-`cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-mingw64.cmake ..`
-or 32-bit
-`mkdir buildMingw32 && cd buildMingw32`
-`cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-mingw32.cmake -DBUILD_32=1 ..`
+`git clone && git lfs pull`
+
+***Windows exe on linux/docker:***
++ `sudo apt-get install mingw-w64`
++ `mkdir buildMingw64 && cd buildMingw64`
++ `cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-mingw64.cmake ..`
++ or 32-bit cpu:
++ `mkdir buildMingw32 && cd buildMingw32`
++ `cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-mingw32.cmake -DBUILD_32=1 ..`
+
 Extra parameters for release optimizations: 
 `-DCMAKE_BUILD_TYPE=RELEASE -DDEV_BUILD=OFF`
 
-- For linux:
-`mkdir build && cd build`
-`cmake ..`
-`make -j 9`
+***For linux:***
++ `mkdir build && cd build`
++ `cmake ..`
++ `make -j 9`
 
-**Class invariant checks**
+For ARM SoC development boards (like Raspberry or Nitrogen8M) if you do not have cross compilation toolchain prepared it will be easier to boot-up one of dedicated system distribution and build it within this enviroment (takes approx one hour for 4 cores).
+
+**Class invariant checks (for debugging)**
 `export CB_INVARIANT_CHECKING=on`
 
 **Debug streams**

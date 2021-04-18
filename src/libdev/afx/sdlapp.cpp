@@ -186,6 +186,14 @@ void AfxSdlApp::dispatchEvent(SDL_Event* event)
         case SDL_TEXTINPUT:
             dispatchCharEvent(event);
             break;
+        
+        case SDL_FINGERUP:
+            dispatchTouchEvent(event, false);
+            break;
+            
+        case SDL_FINGERDOWN:
+            dispatchTouchEvent(event, true);
+            break;
     }
     RecRecorder::instance().recordingAllowed( true );
 }
@@ -275,4 +283,33 @@ void AfxSdlApp::dispatchCharEvent( SDL_Event* event)
 	DEBUG_STREAM( DIAG_NEIL, "char event " << (char)*(event->text.text) << std::endl );
 
 	DevSdlKeyboard::sdlInstance().wm_char(ev);
+}
+
+void AfxSdlApp::dispatchTouchEvent( SDL_Event* event, bool pressed )
+{
+	// The argument is a bool so that we don't need the definition of
+	// DevButtonEvent in this class's header file.  Decode the bool.
+	const DevButtonEvent::Action act = (pressed)? DevButtonEvent::PRESS: DevButtonEvent::RELEASE;
+
+	// Get the position of the cursor at the time of the event.
+	const DevMouse::Position pos = DevMouse::instance().getMessagePos();
+	const int x = pos.first;
+	const int y = pos.second;
+
+	// Get the states of the modifiers keys at the time of the event.
+	const Uint8* kStates = SDL_GetKeyboardState(NULL);
+	const bool shift = kStates[SDL_SCANCODE_LSHIFT] || kStates[SDL_SCANCODE_RSHIFT];
+	const bool ctrl  = kStates[SDL_SCANCODE_LCTRL] || kStates[SDL_SCANCODE_RCTRL];
+	const bool alt   = kStates[SDL_SCANCODE_LALT] || kStates[SDL_SCANCODE_RALT];
+
+	// Get the message's time.
+	const double time = DevTime::instance().resolution() * event->tfinger.timestamp;
+
+	// Decode wParam and lParam.
+	const DevButtonEvent::ScanCode code = DevKey::LEFT_MOUSE;
+	const bool previous = 0;
+	const size_t repeats = 1;
+
+	const DevButtonEvent ev(code, act, previous, shift, ctrl, alt, time, x,y, repeats);
+	DevMouse::instance().wm_button(ev);
 }

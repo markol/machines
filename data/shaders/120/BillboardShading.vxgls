@@ -1,14 +1,13 @@
-#version 310 es
+#version 120
 
-precision mediump float;
 // Input vertex data, different for all executions of this shader.
-in vec4 vertexPosition_Billboard;
-in vec2 vertexUV;
-in vec4 vertexColor;
+attribute vec4 vertexPosition_Billboard;
+attribute vec2 vertexUV;
+attribute vec4 vertexColor;
 
 // Output data ; will be interpolated for each fragment.
-out vec2 UV;
-out vec4 fragmentColor;
+varying vec2 UV;
+varying vec4 fragmentColor;
 
 uniform mat4 uVP; // Model-View-Projection matrix, but without the Model (the position is in BillboardPos; the orientation depends on the camera)
 
@@ -17,7 +16,7 @@ void main() {
 	// Output position of the vertex, in clip space
 	// UV of the vertex. No special space for this one.
     vec4 pos = vertexPosition_Billboard;
-    pos[3] = 1.0f;
+    pos[3] = 1.0;
     gl_Position =  uVP * pos;
     
 	UV = vertexUV;

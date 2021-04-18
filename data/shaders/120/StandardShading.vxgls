@@ -1,17 +1,16 @@
-#version 310 es
+#version 120
 
-precision mediump float;
 // Input vertex data, different for all executions of this shader.
-in vec3 vertexPosition_modelspace;
-in vec2 vertexUV;
-in vec4 vertexColor;
+attribute vec3 vertexPosition_modelspace;
+attribute vec2 vertexUV;
+attribute vec4 vertexColor;
 
 // Output data ; will be interpolated for each fragment.
-out vec2 UV;
-out vec4 fragmentColor;
-out vec4 viewSpace;
-out vec4 fragmentFogColour;
-out vec3 fragmentFogParams;
+varying vec2 UV;
+varying vec4 fragmentColor;
+varying vec4 viewSpace;
+varying vec4 fragmentFogColour;
+varying vec3 fragmentFogParams;
 
 // Values that stay constant for the whole mesh.
 uniform mat4 uM;

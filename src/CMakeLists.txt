@@ -281,7 +281,7 @@ add_library(recorder    OBJECT ${RECORDER_SOURCES})
 add_library(envirnmt    OBJECT ${ENVIRNMT_SOURCES})
 add_library(machlog     OBJECT ${MACHLOG_SOURCES})
 add_library(libsmacker  OBJECT ${LIBSMACKER_SOURCES})
-add_library(libaudio    OBJECT ${LIBAUDIO_SOURCES})
+add_library(libaudio    STATIC ${LIBAUDIO_SOURCES})
 
 add_library(libs INTERFACE)
 target_sources(libs
