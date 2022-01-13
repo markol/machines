@@ -9,9 +9,14 @@
 #include "gui/gui.hpp"
 #include "stdlib/string.hpp"
 
+class MachLogMachine;
+
 class MachGui
 {
 public:
+    // Load the correct icon for a machine. You may specify whether it's normal looking or matrix-like (first person)
+    static GuiBitmap createIconForMachine(MachLogMachine* machine, bool firstPersonIcon);
+
 	// Draws a number onto the screen. numberArray is an array of bitmaps, each
 	// bitmap representing a number. The index position in the array is the same
 	// as the number shown in the bitmap.

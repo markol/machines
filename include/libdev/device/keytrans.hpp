@@ -18,7 +18,7 @@
 #include "ctl/pvector.hpp"
 #include "ctl/vector.hpp"
 
-class DevButtonEvent;
+//class DevButtonEvent;
 
 class DevKeyToCommandTranslator
 // Canonical form revoked

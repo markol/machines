@@ -3,19 +3,20 @@
 # Contains global options and definitions
 ##
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.14)
 
 project(machines C CXX)
 include(CheckCXXCompilerFlag)
 include(CheckCCompilerFlag)
+include(CMakeDependentOption)
 
 ##
 # Project version
 ##
-set(MACHINES_VERSION_CODENAME "Patch 1.5")
+set(MACHINES_VERSION_CODENAME "Patch 1.6")
 set(MACHINES_VERSION_MAJOR    0)
 set(MACHINES_VERSION_MINOR    1)
-set(MACHINES_VERSION_REVISION 1.5)
+set(MACHINES_VERSION_REVISION 1.6)
 
 message(STATUS "Building Machines \"${MACHINES_VERSION_CODENAME}\" (${MACHINES_VERSION_FULL})")
 
@@ -157,6 +158,31 @@ if(DEV_BUILD)
     message(STATUS "Building with development extensions")
 endif()
 
+# Testing
+#option(BUILD_TESTS "Build the test suite" off)
+cmake_dependent_option(BUILD_TESTS "Build the test suites" ON "DEV_BUILD" OFF)
+
+# Warn about xbawks huge test binaries
+if(BUILD_TESTS)
+    message(WARNING
+        "The testing binaries are HUGE! Each compiled test suite will be around 25MB.\n"
+        "If this a problem for you, run \"cmake -DBUILD_TESTS=OFF ..\" to disable.")
+endif()
+
+# Export compiler commands when building
+#option(BUILD_EXPORT_CC_CMDS "Export the compiler commands when building to use with Sourcetrail" ON)
+cmake_dependent_option(BUILD_EXPORT_CC_CMDS "Export the compiler commands when building to use with Sourcetrail" ON "DEV_BUILD" OFF)
+
+# Export the compiler commands when building to use with Sourcetrail
+if(BUILD_EXPORT_CC_CMDS)
+    if(NOT CMAKE_EXPORT_COMPILE_COMMANDS)
+        set(CMAKE_EXPORT_COMPILE_COMMANDS
+            ON
+            CACHE BOOL "Enable output of compile commands during generation." FORCE)
+    endif()
+    message(STATUS "Export of compile commands is set to: ${CMAKE_EXPORT_COMPILE_COMMANDS}")
+endif(BUILD_EXPORT_CC_CMDS)
+
 ##
 # Searching for packages
 ##
@@ -180,6 +206,7 @@ find_package(OpenAL REQUIRED)
 find_package(Alure REQUIRED)
 find_package(ENet REQUIRED)
 find_package(Freetype REQUIRED)
+find_package(SWScale REQUIRED)
 
 
 if(NOT DEV_BUILD)
@@ -220,5 +247,43 @@ endif()
 # Subdirectory with sources
 add_subdirectory(src)
 
+# TESTS
+if(BUILD_TESTS)
+    message(STATUS "Unit tests are enabled.")
+    include(FetchContent)
+    FetchContent_Declare(
+        googletest
+        # Specify the commit you depend on and update it regularly.
+        URL https://github.com/google/googletest/archive/refs/tags/release-1.10.0.zip
+    )
+    FetchContent_MakeAvailable(googletest)
+    if(PLATFORM_WINDOWS)
+        set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+    endif(PLATFORM_WINDOWS)
+    enable_testing()
+    add_subdirectory(test)
+endif(BUILD_TESTS)
 
-
+# Distribution Target
+# A directory that can be copied into your installation folder
+set(DISTRIBUTION_DIR "${CMAKE_BINARY_DIR}/distribution")
+add_custom_target(distribution
+                    DEPENDS machines planeted)
+add_custom_command(TARGET distribution
+                    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/data ${DISTRIBUTION_DIR}/data
+                    COMMENT "Copying GAME-data files to distribution directory" VERBATIM)
+add_custom_command(TARGET distribution
+                    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/sounds ${DISTRIBUTION_DIR}/sounds
+                    COMMENT "Copying SOUND-data files to distribution directory" VERBATIM)
+add_custom_command(TARGET distribution
+                    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/gui ${DISTRIBUTION_DIR}/gui
+                    COMMENT "Copying GUI graphics files to distribution directory" VERBATIM)
+add_custom_command(TARGET distribution
+                    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/models ${DISTRIBUTION_DIR}/models
+                    COMMENT "Copying WORLD4D-data and graphics files to distribution directory" VERBATIM)
+add_custom_command(TARGET distribution
+                    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:machines> ${DISTRIBUTION_DIR}/$<TARGET_FILE_NAME:machines>
+                    COMMENT "Copying machines binary to distribution directory" VERBATIM)
+add_custom_command(TARGET distribution
+                    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:planeted> ${DISTRIBUTION_DIR}/$<TARGET_FILE_NAME:planeted>
+                    COMMENT "Copying planeted binary to distribution directory" VERBATIM)

@@ -1,6 +1,9 @@
 // Common bits of mouse source code.  Included from both
 // the DOS and Windows95 mouse implementations.
 
+#include "base/compiler.hpp"
+#ifndef _SDLAPP
+
 // static 
 DevMouse& DevMouse::instance( void )
 {
@@ -59,3 +62,5 @@ void DevMouse::resetPosition()
 	const YCoord y = (minRange().second + maxRange().second) / 2;
 	position(x,y);
 }
+
+#endif

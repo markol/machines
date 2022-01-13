@@ -78,6 +78,12 @@ public:
     bool existsAsFile( void ) const;
     // PRE( set() )
 
+    // Return true if the pathname has capitals. Use when wanting to check for files again in lowercase.
+    bool containsCapitals( void ) const;
+
+    // CASE INSENSITIVE - Return true iff the pathname exists and is a file
+    bool insensitiveExistsAsFile( void ) const;
+
     // Return true iff the last section of the pathname has an extension
     bool hasExtension( void ) const;
     // PRE( set() )
@@ -158,6 +164,8 @@ private:
     void    createComponents( void ) const;
 
     void createPathnameFromComponents( void );
+
+    bool checkForCapitals(const string& path) const;
 
     PER_FRIEND_READ_WRITE( SysPathName );
     OBJECT_TRACKER( SysPathName );

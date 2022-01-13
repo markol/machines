@@ -35,6 +35,8 @@
 #include "machlog/entrance.hpp"
 #include "machlog/camera.hpp"
 
+#include "machlog/MachLog1stPersonActiveSquad.hpp"
+
 // forward declarations
 class MachLogSquadron;
 
@@ -45,6 +47,9 @@ public:
     MachLogMachine* pMachine_; //the machine being controlled
 	MachLogSquadron* pOriginalSquadron_;
     bool isFirstUpdate_; //Used to detect first update call
+
+    // First Person Command
+    MachLog1stPersonActiveSquadron activeSquadron_;
 };
 
 MachLog1stPersonMachineHandler::MachLog1stPersonMachineHandler
@@ -67,6 +72,9 @@ MachLog1stPersonMachineHandler::MachLog1stPersonMachineHandler
 	if( pData_->pOriginalSquadron_ )
 	{
 		pData_->pMachine_->squadron( NULL );
+
+        // Provide the machine's squadron as the active one for FP Command
+        pData_->activeSquadron_ = MachLog1stPersonActiveSquadron{ pData_->pOriginalSquadron_ };
 	}
 
     //Cancel current operations
@@ -486,5 +494,11 @@ void MachLog1stPersonMachineHandler::firstUpdateProcessing()
         if( machine.insideBuilding() )
             camera().enterConstruction();
     }
+}
+
+//virtual
+const MachLog1stPersonActiveSquadron& MachLog1stPersonMachineHandler::actuallyGetActiveSquadron() const
+{
+    return pData_->activeSquadron_;
 }
 /* End P1MCHNDL.CPP *************************************************/

@@ -802,6 +802,11 @@ void GuiDisplayable::doHandleMouseExitEvent( const GuiMouseEvent& )
 	// Intentionally Empty
 }
 
+void GuiDisplayable::doHandleMouseScrollEvent( const GuiMouseEvent& )
+{
+    // Intentionally Empty
+}
+
 void GuiDisplayable::doHandleContainsMouseEvent( const GuiMouseEvent& )
 {
 	// Intentionally Empty

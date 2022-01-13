@@ -13,6 +13,7 @@
 #define _EDITACTOR_HPP
 
 //#include "base/base.hpp"
+#include "device/butevent.hpp"
 #include "planeted/editmode.hpp"
 #include "machphys/machphys.hpp"
 #include "world4d/entity.hpp"
@@ -22,7 +23,7 @@ class W4dEntity;
 class UtlLineTokeniser;
 class wdebug;
 class MachPhysMarker;
-class DevButtonEvent;
+//class DevButtonEvent;
 class SysPathName;
 class W4dComposite;
 class W4dSceneManager;

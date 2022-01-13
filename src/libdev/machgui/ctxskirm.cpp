@@ -348,9 +348,10 @@ void MachGuiCtxSkirmish::update()
 void MachGuiCtxSkirmish::updateMapSizeList()
 {
 	bool firstItem = true;
+    // There will be no CUSTOM skirmishSystem if there is no customscen.dat file
+    const MachGuiDatabase::TerrainSize maxMapSize = MachGuiDatabase::doCustomScenariosExist() ? MachGuiDatabase::CUSTOM : MachGuiDatabase::LARGE;
 
-	//for ( MachGuiDatabase::TerrainSize loop = MachGuiDatabase::SMALL; loop <= MachGuiDatabase::LARGE; ++loop )
-	for ( MachGuiDatabase::TerrainSize loop = MachGuiDatabase::SMALL; loop <= MachGuiDatabase::CUSTOM; loop = _STATIC_CAST(MachGuiDatabase::TerrainSize, _STATIC_CAST(uint, loop)+1 ))
+    for ( MachGuiDatabase::TerrainSize loop = MachGuiDatabase::SMALL; loop <= maxMapSize; loop = _STATIC_CAST(MachGuiDatabase::TerrainSize, _STATIC_CAST(uint, loop)+1 ))
 	{
     	MachGuiDbSystem& system = MachGuiDatabase::instance().skirmishSystem( loop );
 

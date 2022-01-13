@@ -50,7 +50,7 @@ public:
 MachPhys1stPersonDriver::MachPhys1stPersonDriver
 (
     W4dEntity* pEntity, MachPhysCanAttack* pCanAttack,
-    bool remoteNode
+    MATHEX_SCALAR scannerRange, bool remoteNode
 )
 :   pEntity_( pEntity ),
     pCanAttack_( pCanAttack ),
@@ -59,11 +59,14 @@ MachPhys1stPersonDriver::MachPhys1stPersonDriver
     turningLeft_( false ),
     turningRight_( false ),
     maxWeaponRange_( 0.0 ),
+    scannerRange_( scannerRange ),
     pCameraEntity_( NULL ),
     pTrackEntity_( NULL ),
     remoteNode_( remoteNode ),
     pHitEntity_( NULL ),
     hitDistance_( 20.0 ),
+    farCmdHitDistance_( 0.0 ),
+    pFarCmdHitEntity_( nullptr ),
     lastUpdateTime_( W4dManager::instance().time() ),
     pImpl_( NULL )
 {
@@ -274,34 +277,61 @@ void MachPhys1stPersonDriver::update()
 
 void MachPhys1stPersonDriver::aimData()
 {
-    PRE( pImpl_->pAimDataFilter_ != NULL );
-    pHitEntity_ = NULL;
+    PRE( pImpl_->pAimDataFilter_ != nullptr );
+    pHitEntity_ = nullptr;
 
     //Need the current camera
     W4dCamera& camera = *W4dManager::instance().sceneManager()->currentCamera();
 
+    // For far away commands: Find the 'sweet spot' between the machine's sensor range & clip distance.
+    MATHEX_SCALAR farCommandDistance = std::abs( camera.yonClipDistance() - scannerRange_ );
+    farCommandDistance *= 0.25;
+    farCommandDistance += scannerRange_;
+
     //Construct a 3d line along the line of sight, given current maximum weapon range.
     MATHEX_SCALAR lineLength = maxWeaponRange();
-    MexPoint3d farPoint( lineLength, 0.0, 0.0 );
+    auto farPoint = MexPoint3d{ lineLength, 0.0, 0.0 };
     const MexTransform3d& cameraTransform = camera.globalTransform();
     cameraTransform.transform( &farPoint );
 
     //We should be able to use the lineLength from above. However, due to rounding errors,
     //the MexLine3d ctor below fails an assertion if we do.
     lineLength = cameraTransform.position().euclidianDistance( farPoint );
-    MexLine3d lineOfSight( cameraTransform.position(), farPoint, lineLength );
+    auto lineOfSight = MexLine3d{ cameraTransform.position(), farPoint, lineLength };
 
-    //Find what this line intersects.
+    //Find what this NEAR line intersects.
     ulong checkId = W4dEntity::nextCheckId();
     pEntity_->checkId( checkId );
 
-    pHitEntity_ = NULL;
+    pHitEntity_ = nullptr;
     hitDistance_ = lineLength;
     camera.containingDomain()->findNearerEntity( lineOfSight, lineLength, checkId, W4dEntity::HIGH,
                                                  &pHitEntity_, &hitDistance_, pImpl_->pAimDataFilter_ );
 
-    //Update the hit point
+    //Update the NEAR hit point
     hitPoint_ = lineOfSight.pointAtDistance( hitDistance_ );
+
+    pFarCmdHitEntity_ = nullptr;
+    //No entity in weap range? Look outside of weapon range for a far away entity as a command target
+    if (pHitEntity_ == nullptr)
+    {
+        farPoint = MexPoint3d{ farCommandDistance, 0.0, 0.0 };
+        cameraTransform.transform( &farPoint );
+        // following their lead :|
+        farCommandDistance = cameraTransform.position().euclidianDistance( farPoint );
+        lineOfSight = MexLine3d{ cameraTransform.position(), farPoint, farCommandDistance };
+
+        //Find what this FAR line intersects.
+        ulong checkId = W4dEntity::nextCheckId();
+        pEntity_->checkId( checkId );
+
+        farCmdHitDistance_ = farCommandDistance;
+        camera.containingDomain()->findNearerEntity( lineOfSight, farCommandDistance, checkId, W4dEntity::HIGH,
+                                                     &pFarCmdHitEntity_, &farCmdHitDistance_, pImpl_->pAimDataFilter_ );
+
+        //Update the FAR hit point
+        farCmdHitPoint_ = lineOfSight.pointAtDistance( farCmdHitDistance_ );
+    }
 }
 
 MATHEX_SCALAR MachPhys1stPersonDriver::hitDistance() const
@@ -323,6 +353,27 @@ W4dEntity& MachPhys1stPersonDriver::hitEntity() const
 const MexPoint3d& MachPhys1stPersonDriver::hitPoint() const
 {
     return hitPoint_;
+}
+
+MATHEX_SCALAR MachPhys1stPersonDriver::farCmdHitDistance() const
+{
+    return farCmdHitDistance_;
+}
+
+const MexPoint3d& MachPhys1stPersonDriver::farCmdHitPoint() const
+{
+    return farCmdHitPoint_;
+}
+
+bool MachPhys1stPersonDriver::hasFarCmdHitEntity() const
+{
+    return pFarCmdHitEntity_ != nullptr;
+}
+
+W4dEntity& MachPhys1stPersonDriver::farCmdHitEntity() const
+{
+    PRE( hasFarCmdHitEntity() );
+    return *pFarCmdHitEntity_;
 }
 
 void MachPhys1stPersonDriver::setTrackEntityPosition()

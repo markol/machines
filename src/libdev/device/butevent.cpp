@@ -5,13 +5,13 @@
 
 #include "device/butevent.hpp"
 #include <ctype.h>
-#include <iomanip>
 #include "device/time.hpp"
 
-DevButtonEvent::DevButtonEvent
+template<typename DevTimeDep>
+DevButtonEventT<DevTimeDep>::DevButtonEventT
 (
-	DevButtonEvent::ScanCode code,
-	DevButtonEvent::Action   action,
+    ScanCode code,
+    DevButtonEventT::Action   action,
 	bool prev, bool shift, bool ctrl, bool alt,
 	double time,
 	int x, int y,
@@ -19,6 +19,7 @@ DevButtonEvent::DevButtonEvent
 	char print
 ):
 	code_(code),
+    action_(action),
 	press_(action == PRESS),
 	previous_( prev ? 1 : 0 ),
 	shift_(shift),
@@ -36,8 +37,10 @@ DevButtonEvent::DevButtonEvent
 // This ctor is only supplied because the template instantiation of list
 // requires it.  If one were actually to construct a default object, it
 // would fail lots of assertions because the MAX_CODE value is not allowed.
-DevButtonEvent::DevButtonEvent():
+template<typename DevTimeDep>
+DevButtonEventT<DevTimeDep>::DevButtonEventT():
 	code_(DevKey::MAX_CODE),
+    action_(PRESS),
 	press_(PRESS),
 	previous_(0),
 	shift_(0),
@@ -50,8 +53,10 @@ DevButtonEvent::DevButtonEvent():
 {
 }
 
-DevButtonEvent::DevButtonEvent(const DevButtonEvent& b):
+template<typename DevTimeDep>
+DevButtonEventT<DevTimeDep>::DevButtonEventT(const DevButtonEventT& b):
 	code_(b.code_),
+    action_(b.action_),
 	press_(b.press_),
 	previous_(b.previous_),
 	shift_(b.shift_),
@@ -63,7 +68,8 @@ DevButtonEvent::DevButtonEvent(const DevButtonEvent& b):
 	time_(b.time_)
 {}
 
-DevButtonEvent& DevButtonEvent::operator=(const DevButtonEvent& b)
+template<typename DevTimeDep>
+DevButtonEventT<DevTimeDep>& DevButtonEventT<DevTimeDep>::operator=(const DevButtonEventT& b)
 {
 	press_			= b.press_;
 	previous_		= b.previous_;
@@ -72,6 +78,7 @@ DevButtonEvent& DevButtonEvent::operator=(const DevButtonEvent& b)
 	ctrl_			= b.ctrl_;
 	printable_		= b.printable_;
 	code_			= b.code_;
+    action_         = b.action_;
 	coords_			= b.coords_;
 	repeatCount_	= b.repeatCount_;
 	time_			= b.time_;
@@ -79,41 +86,50 @@ DevButtonEvent& DevButtonEvent::operator=(const DevButtonEvent& b)
 	return *this;
 }
 
-DevButtonEvent::ScanCode DevButtonEvent::scanCode() const
+template<typename DevTimeDep>
+typename DevButtonEventT<DevTimeDep>::ScanCode DevButtonEventT<DevTimeDep>::scanCode() const
 {
 	return code_;
 }
 
-DevButtonEvent::Action DevButtonEvent::action() const
+template<typename DevTimeDep>
+typename DevButtonEventT<DevTimeDep>::Action DevButtonEventT<DevTimeDep>::action() const
 {
-	return (press_)? PRESS: RELEASE;
+    return action_;
 }
 
-bool DevButtonEvent::previous() const
+template<typename DevTimeDep>
+bool DevButtonEventT<DevTimeDep>::previous() const
 {
 	return previous_;
 }
 
-size_t DevButtonEvent::repeatCount() const
+template<typename DevTimeDep>
+size_t DevButtonEventT<DevTimeDep>::repeatCount() const
 {
 	return repeatCount_;
 }
 
-bool DevButtonEvent::wasShiftPressed() const
+template<typename DevTimeDep>
+bool DevButtonEventT<DevTimeDep>::wasShiftPressed() const
 {
 	return shift_;
 }
-bool DevButtonEvent::wasCtrlPressed() const
+
+template<typename DevTimeDep>
+bool DevButtonEventT<DevTimeDep>::wasCtrlPressed() const
 {
 	return ctrl_;
 }
 
-bool DevButtonEvent::wasAltPressed() const
+template<typename DevTimeDep>
+bool DevButtonEventT<DevTimeDep>::wasAltPressed() const
 {
 	return alt_;
 }
 
-double DevButtonEvent::time() const
+template<typename DevTimeDep>
+double DevButtonEventT<DevTimeDep>::time() const
 {
 // This doesn't seem to work.  TBD: investigate the Windows time functions
 // and find out why it's broken.
@@ -121,37 +137,43 @@ double DevButtonEvent::time() const
 	return time_;
 }
 
-double DevButtonEvent::age() const
+template<typename DevTimeDep>
+double DevButtonEventT<DevTimeDep>::age() const
 {
-	const double result = DevTime::instance().time() - time_;
+    const double result = timeDependency_.get().time() - time_;
 // This doesn't seem to work.  TBD: investigate the Windows time functions
 // and find out why it's broken.
 //	POST(result >= 0);
 	return result;
 }
 
-const DevButtonEvent::Coord& DevButtonEvent::cursorCoords() const
+template<typename DevTimeDep>
+const typename DevButtonEventT<DevTimeDep>::Coord& DevButtonEventT<DevTimeDep>::cursorCoords() const
 {
 	return coords_;
 }
 
-char DevButtonEvent::printableChar() const
+template<typename DevTimeDep>
+char DevButtonEventT<DevTimeDep>::printableChar() const
 {
 	PRE( isPrintable() );
 	return printable_;
 }
 
-bool DevButtonEvent::isPrintable() const
+template<typename DevTimeDep>
+bool DevButtonEventT<DevTimeDep>::isPrintable() const
 {
 	return isprint(printable_);
 }
 
-char DevButtonEvent::getChar() const
+template<typename DevTimeDep>
+char DevButtonEventT<DevTimeDep>::getChar() const
 {
 	return printable_;
 }
 
-bool DevButtonEvent::compressRepeats(const DevButtonEvent& ev)
+template<typename DevTimeDep>
+bool DevButtonEventT<DevTimeDep>::compressRepeats(const DevButtonEventT& ev)
 {
 	const bool result = *this == ev;
 
@@ -161,7 +183,8 @@ bool DevButtonEvent::compressRepeats(const DevButtonEvent& ev)
 	return result;
 }
 
-DevButtonEvent DevButtonEvent::decompressRepeats()
+template<typename DevTimeDep>
+DevButtonEventT<DevTimeDep> DevButtonEventT<DevTimeDep>::decompressRepeats()
 {
 	PRE(repeatCount() > 1);
 
@@ -174,9 +197,11 @@ DevButtonEvent DevButtonEvent::decompressRepeats()
 	return result;
 }
 
-bool DevButtonEvent::operator==(const DevButtonEvent& ev) const
+template<typename DevTimeDep>
+bool DevButtonEventT<DevTimeDep>::operator==(const DevButtonEventT& ev) const
 {
 	return	code_      == ev.code_      &&
+            action_    == ev.action_    &&
 			coords_    == ev.coords_    &&
 			printable_ == ev.printable_ &&
 			press_     == ev.press_     &&
@@ -185,31 +210,20 @@ bool DevButtonEvent::operator==(const DevButtonEvent& ev) const
 			alt_       == ev.alt_;
 }
 
-bool DevButtonEvent::operator<(const DevButtonEvent& ev) const
+template<typename DevTimeDep>
+bool DevButtonEventT<DevTimeDep>::operator<(const DevButtonEventT& ev) const
 {
 	return code_ < ev.code_;
 }
 
-ostream& operator <<( ostream& o, const DevButtonEvent& t )
-{
-	o << "Button event: "
-	  << std::setprecision(4) << " age=" << t.age()
-	  << " s=" << t.wasShiftPressed()
-	  << " c=" << t.wasCtrlPressed()
-	  << " a=" << t.wasAltPressed()
-	  << " rpt=" << t.repeatCount() << " ";
-	DevKey::printScanCode(o, t.scanCode());
-	o << ((t.action() == DevButtonEvent::PRESS)? " down": " up  ");
-	o << " coords=" << t.cursorCoords();
-    return o;
-}
-
-bool DevButtonEvent::isCharEvent() const
+template<typename DevTimeDep>
+bool DevButtonEventT<DevTimeDep>::isCharEvent() const
 {
 	return printable_ != 0;
 }
 
-bool DevButtonEvent::isKeyEvent() const
+template<typename DevTimeDep>
+bool DevButtonEventT<DevTimeDep>::isKeyEvent() const
 {
 	// Key event if the printable is zero ( although there is a char 0 it is
 	// sufficiently useless as a char event	that we can use it to distinguish
@@ -217,4 +231,6 @@ bool DevButtonEvent::isKeyEvent() const
 	return printable_ == 0;
 }
 
+//Instantiate the template identified by DevButtonEvent alias
+template class DevButtonEventT<DevTime>;
 /* End BUTEVENT.CPP *************************************************/

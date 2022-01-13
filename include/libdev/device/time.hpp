@@ -12,6 +12,7 @@
 #define DEVICE_TIME_HPP_INCLUDED
 
 #include "base/base.hpp"
+#include "utility/DependencyProvider.hpp"
 
 // Provide access to time, measured in seconds.  Also supported are
 // the ability to pause & restart time and to slow down or speed up
@@ -75,6 +76,15 @@ private:
     const DevTime& operator =( const DevTime& );
     bool operator ==( const DevTime& ) const;
 };
+
+/* *******************************************************
+ * SINGLETON DEPENDENCY PROVIDER
+ */
+template<>
+inline DevTime& DependencyProvider<DevTime>::getProvided()
+{
+    return DevTime::instance();
+}
 
 #endif
 /* End TIME.HPP ****************************************************/

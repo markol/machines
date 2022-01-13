@@ -18,6 +18,9 @@
 #include "phys/mcwtrans.hpp"
 #include "phys/brake.hpp"
 
+#include "gui/gui.hpp"
+#include "machgui/cameras.hpp"
+
 class PhysZenithFlyControl : public PhysMotionControlWithTrans
 {
 public:
@@ -61,6 +64,8 @@ private:
 
 	// data members
     MexRadians pitchAngle_; //Fixed pitch angle
+
+    friend void MachCameras::scrollWithWheel(const Gui::ScrollState, const double);
 };
 
 class PhysZenithMotionConstraint : public PhysMotionConstraint

@@ -14,6 +14,8 @@
 #include <fstream>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <algorithm>
+#include <cctype>
 
 #define CB_SYS_PATHNAME_DEPIMPL                          \
             CB_DEPIMPL(string, pathname_);               \
@@ -22,7 +24,8 @@
 			CB_DEPIMPL(bool, set_);                      \
 			CB_DEPIMPL(size_t, rootId_);                 \
 			CB_DEPIMPL(bool, fullPathnameSet_);          \
-			CB_DEPIMPL(bool, componentsSet_);
+            CB_DEPIMPL(bool, componentsSet_);            \
+            CB_DEPIMPL(bool, containsCapitals_);
 
 // Used in the persistence functions.
 #define CB_FRIEND_DEPIMPL(type, name, objectRef) \
@@ -48,6 +51,7 @@ SysPathName::SysPathName()
 	fullPathnameSet_ = false;
 	componentsSet_ = false;
 	rootId_ = 0;
+    containsCapitals_ = false;
 
     LOG_CONSTRUCTION;
 
@@ -67,6 +71,7 @@ SysPathName::SysPathName( const char* path )
 	fullPathnameSet_ = false;
 	componentsSet_ = false;
 	rootId_ = 0;
+    containsCapitals_ = checkForCapitals(string(path));
 
     createComponents();
 
@@ -92,6 +97,7 @@ SysPathName::SysPathName( const string& path )
 	fullPathnameSet_ = false;
 	componentsSet_ = false;
 	rootId_ = 0;
+    containsCapitals_ = checkForCapitals(path);
 
     createComponents();
 
@@ -256,6 +262,51 @@ bool SysPathName::existsAsFile( void ) const
     std::ifstream f(pathname().c_str());
     return f.good();
 
+}
+
+bool SysPathName::checkForCapitals(const string& path) const
+{
+    if (path.length() <= 0)
+    {
+        return false;
+    }
+
+    //start from back
+    for (auto c = path.cend(); c > path.cbegin(); --c)
+    {
+        const unsigned char curChar = static_cast<unsigned char>(*c);
+        if (std::isupper(curChar) != 0)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool SysPathName::containsCapitals( void ) const
+{
+    CB_SYS_PATHNAME_DEPIMPL;
+
+    return containsCapitals_;
+}
+
+bool SysPathName::insensitiveExistsAsFile( void ) const
+{
+    CB_SYS_PATHNAME_DEPIMPL;
+
+    PRE( set() );
+
+    if (not containsCapitals_)
+    {
+        return existsAsFile();
+    }
+
+    string path = string(pathname());
+    std::transform(path.begin(), path.end(), path.begin(), [](unsigned char c){ return std::tolower(c); });
+
+    std::ifstream f(path.c_str());
+    return f.good();
 }
 
 bool SysPathName::isAbsolute( void ) const

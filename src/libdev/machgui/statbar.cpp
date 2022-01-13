@@ -18,7 +18,7 @@ unsigned char pPromptText7[] = { 191, 72, 239, 110, 89, 145, 9, 168, 237, 122, 2
 MachGuiStatisticsBar::MachGuiStatisticsBar( GuiDisplayable* pParent, const Gui::Coord& topLeft, const string& bitmapPathname, uint range )
 {
 	SysPathName barBmpFilename( bitmapPathname );
-	ASSERT( barBmpFilename.existsAsFile(), barBmpFilename.c_str() );
+    ASSERT( barBmpFilename.insensitiveExistsAsFile(), barBmpFilename.c_str() );
 
 	range_ = range;
 	stat_ = 0;

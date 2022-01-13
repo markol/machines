@@ -21,7 +21,7 @@ BaseAssertion::AssertionAction_fn_AssertionInfo    BaseAssertion::assertionHandl
 
 //////////////////////////////////////////////////////////////////////////////////
 
-void BaseAssertion::preconditionFail( const char* exprStr, const char* file, const char* line )
+WEAK_SYMBOL void BaseAssertion::preconditionFail( const char* exprStr, const char* file, const char* line )
 {
 	std::string	failString( exprStr );
 	failString += ", ";
@@ -34,7 +34,7 @@ void BaseAssertion::preconditionFail( const char* exprStr, const char* file, con
 
 //////////////////////////////////////////////////////////////////////////////////
 
-void BaseAssertion::postconditionFail( const char* exprStr, const char* file, const char* line )
+WEAK_SYMBOL void BaseAssertion::postconditionFail( const char* exprStr, const char* file, const char* line )
 {
 	std::string	failString = exprStr;
 	failString += ", ";
@@ -49,7 +49,7 @@ void BaseAssertion::postconditionFail( const char* exprStr, const char* file, co
 
 //////////////////////////////////////////////////////////////////////////////////
 
-void BaseAssertion::invariantFail( const char* exprStr, const char* file, const char* line,
+WEAK_SYMBOL void BaseAssertion::invariantFail( const char* exprStr, const char* file, const char* line,
     const char* calledFromFile, const char* calledFromLine )
 {
 	std::string	failString = exprStr;
@@ -68,7 +68,7 @@ void BaseAssertion::invariantFail( const char* exprStr, const char* file, const 
 
 //////////////////////////////////////////////////////////////////////////////////
 
-void BaseAssertion::assertFileExists( const char* fileName, const char* file, const char* line )
+WEAK_SYMBOL void BaseAssertion::assertFileExists( const char* fileName, const char* file, const char* line )
 {
 #ifdef NDEBUG
     return;
@@ -122,67 +122,17 @@ void BaseAssertion::assertFileExists( const char* fileName, const char* file, co
 
 //////////////////////////////////////////////////////////////////////////////////
 
-//  Return true if this is a valid DOS file name - no more than 8 characters for
-//  a directory or file name, no more than 3 characters on the extension, only a
-//  single character drive name.
+// This function made sure that filenames weren't too long. It DID NOT assert any other validity.
+// Completely useless on modern systems
 
 bool BaseAssertion::validFileName( const char* fileName )
 {
-    bool    result = true;
-    size_t  charCount = 0;
-
-    const   size_t  MAX_DIRECTORY_COUNT = 8;
-    const   size_t  MAX_EXTENSION_COUNT = 3;
-
-    size_t  maxCount = MAX_DIRECTORY_COUNT;
-
-    for( size_t i = 0; i < strlen( fileName ) && result; ++i )
-    {
-        switch( fileName[ i ] )
-        {
-            case ':':
-                //  We have had a drive name up to here - a drive name can only be one letter
-                if( charCount > 1 )
-                    result = false;
-                charCount = 0;
-                break;
-
-            case '\\':
-            case '/':
-                charCount = 0;
-                maxCount = MAX_DIRECTORY_COUNT;
-                break;
-
-            case '.':
-                if( fileName[ i + 1 ] != '\0' )
-                {
-                    //  Is this dot an indication of the current or parent
-                    //  directory, or is it introducing an extension?
-
-                    if( fileName[ i + 1 ] != '.' and
-                      fileName[ i + 1 ] != '/' and
-                      fileName[ i + 1 ] != '\\' )
-                    {
-                        //  Not a directory specifier, switch in the extension count
-                        charCount = 0;
-                        maxCount = MAX_EXTENSION_COUNT;
-                    }
-                }
-                break;
-
-            default:
-                if( ++charCount > maxCount )
-                    result = false;
-                break;
-        }
-    }
-
-    return result;
+    return true;
 }
 
 //////////////////////////////////////////////////////////////////////////////////
 
-void BaseAssertion::assertFail( const char *msg, const xmsg& xms )
+WEAK_SYMBOL void BaseAssertion::assertFail( const char *msg, const xmsg& xms )
 {
     //  Need a semaphore on this in case one ASSERT triggers others
     //  as the program is exiting

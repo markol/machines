@@ -14,12 +14,13 @@
 
 #include "base/base.hpp"
 
+#include "device/butevent.hpp"
 #include "system/pathname.hpp"
 #include "planeted/scenfile.hpp"
 
 class W4dSceneManager;
 class MachLogPlanet;
-class DevButtonEvent;
+//class DevButtonEvent;
 class PedEditorMode;
 
 class PedPlanetEditor

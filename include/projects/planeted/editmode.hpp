@@ -13,6 +13,7 @@
 #define _PLANETED_EDITMODE_HPP
 
 #include "base/base.hpp"
+#include "device/butevent.hpp"
 #include "mathex/line3d.hpp"
 #include "ctl/vector.hpp"
 #include <fstream>
@@ -20,7 +21,7 @@
 
 class W4dSceneManager;
 class MachLogPlanet;
-class DevButtonEvent;
+//class DevButtonEvent;
 class SysPathName;
 class MexPoint2d;
 class PedScenarioFile;

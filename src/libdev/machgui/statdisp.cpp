@@ -25,7 +25,7 @@ MachGuiStatisticsDisplay::MachGuiStatisticsDisplay( GuiDisplayable *pParent, con
 	redraw_( true )
 {
 	SysPathName	backgroundBmpFile( "gui/menu/barBack.bmp" );
-	ASSERT( backgroundBmpFile.existsAsFile(), backgroundBmpFile.c_str() );
+    ASSERT( backgroundBmpFile.insensitiveExistsAsFile(), backgroundBmpFile.c_str() );
 
 	backgroundBmp_ = Gui::bitmap( backgroundBmpFile );
 

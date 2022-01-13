@@ -40,7 +40,7 @@ void RecRecorderPrivate::recordTime( double time )
        _STATIC_CAST( const void*, &time ) );
 }
 
-void RecRecorderPrivate::recordMousePosition( const DevMouse::Position& position )
+void RecRecorderPrivate::recordMousePosition( const DevMousePosition& position )
 {
     RecRecorderImplementation& recorder = RecRecorderImplementation::instance();
 
@@ -336,9 +336,9 @@ double RecRecorderPrivate::playbackTime() const
     return time;
 }
 
-DevMouse::Position RecRecorderPrivate::playbackMousePosition() const
+DevMousePosition RecRecorderPrivate::playbackMousePosition() const
 {
-    DevMouse::Position   result;
+    DevMousePosition   result;
 
     RecRecorderImplementation& recorder = RecRecorderImplementation::instance();
 

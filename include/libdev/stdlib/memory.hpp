@@ -1,18 +1,8 @@
-/*
- * M E M O R Y . H P P
- * (c) Charybdis Limited, 1995. All Rights Reserved.
- */
+#pragma once
 
-#ifndef _STD_MEMORY
-#define _STD_MEMORY
+#include <cstddef>
 
-#include <stddef.h>
-
-//////////////////////////////////////////////////////////////////////
-
-void * operator new( size_t, void * );
-
-//////////////////////////////////////////////////////////////////////
+//void * operator new( size_t, void * ) noexcept;
 
 // the following template function is replaced by the following two
 // functions due to the fact that the Borland compiler doesn't change
@@ -92,148 +82,49 @@ void construct( T1 *p, const T2& value );
 template < class InputIter, class ForwardIter >
 ForwardIter
 uninitialized_copy( InputIter first,
-					InputIter last,
-				   	ForwardIter result );
+    InputIter last,
+    ForwardIter result );
 
 template < class ForwardIter, class T >
 void uninitialized_fill( ForwardIter first,
-							ForwardIter last,
-							const T& );
+    ForwardIter last,
+    const T& );
 
 template < class ForwardIter, class Size, class T >
 void uninitialized_fill_n( ForwardIter first,
-							Size n,
-							const T& );
+    Size n,
+    const T& );
 
-//////////////////////////////////////////////////////////////////////
-/*
-template < class T >
-class allocator
-{
-public:
-
-	///////////////////////////////
-
-    typedef	T			value_type;
-    typedef	T *			pointer;
-    typedef const T *	const_pointer;
-    typedef T&			reference;
-    typedef const T&	const_reference;
-    typedef size_t		size_type;
-    typedef ptrdiff_t	difference_type;
-
-	///////////////////////////////
-
-    pointer allocate( size_type );
-
-    void deallocate( pointer );
-
-    pointer address( reference );
-
-    const_pointer
-    const_address( const_reference x );
-
-    size_type init_page_size();
-
-    size_type max_size() const;
-};
-*/
-//////////////////////////////////////////////////////////////////////
-/*
-class allocator< void >
-{
-public:
-    typedef void *	pointer;
-};
-*/
-///////////////////////////////////////////////////////////////////////////
-
-/*
-    This interface for auto_ptr taken from the December 1996 C++ draft
-    standard, section 20.4.5
-*/
-/*
-template < class X >
-class auto_ptr
-{
-public:
-    typedef X element_type;
-
-	//* _EXPLICIT / auto_ptr( X *tPtr = 0 );
-	auto_ptr( const auto_ptr& );
-    auto_ptr& operator =( const auto_ptr& );
-
-    //  Member templates not yet available under Watcom
-    //	template< class Y >    auto_ptr( const auto_ptr< Y >& );
-    //	template< class Y >    auto_ptr< Y >& operator =( const auto_ptr< Y >& );
-
-	~auto_ptr();
-
-
-	X& operator  *() const;
-	X* operator ->() const;
-
-	X* get() const;
-	X* release() const;
-
-private:
-
-	X*  pData_;
-   /* mutable / bool owner_;
-
-    // template<class Y> friend class auto_ptr;
-};
-*/
-//////////////////////////////////////////////////////////////////////
-// This is exactly the same as auto_ptr, except it calls the array form
-// of delete.
 template < class X >
 class auto_ptr_array
 {
 public:
     typedef X element_type;
 
-	/* _EXPLICIT */ auto_ptr_array( X *tPtr = 0 );
-	auto_ptr_array( const auto_ptr_array& );
-    auto_ptr_array& operator =( const auto_ptr_array& );
+    /* _EXPLICIT */ auto_ptr_array( X *tPtr = 0 );
+    auto_ptr_array( const auto_ptr_array& );
+    auto_ptr_array& operator =( const auto_ptr_array& ) ;
 
     //  Member templates not yet available under Watcom
     //	template< class Y >    auto_ptr_array( const auto_ptr_array< Y >& );
     //	template< class Y >    auto_ptr_array< Y >& operator =( const auto_ptr_array< Y >& );
 
-	~auto_ptr_array();
+    ~auto_ptr_array();
 
 
-	X& operator  *() const;
-	X* operator ->() const;
+    X& operator  *() const;
+    X* operator ->() const;
 
-	X* get() const;
-	X* release() const;
+    X* get() const;
+    X* release() const;
 
 private:
 
-	X*  pData_;
+    X*  pData_;
     /* mutable */ bool owner_;
 
     // template<class Y> friend class auto_ptr_array;
-};
+} ;
 
-//////////////////////////////////////////////////////////////////////
-
-#ifdef _INLINE
-    #include "stdlib/memory.ipp"
-    #include "stdlib/memory.itp"
-    #include "stdlib/memory.itf"
-#endif
-
-//#ifdef _INSTANTIATE_TEMPLATE_CLASSES
-    #include "stdlib/memory.ctp"
-//#endif
-
-//#ifdef _INSTANTIATE_TEMPLATE_FUNCTIONS
-    #include "stdlib/memory.ctf"
-//#endif
-
-//////////////////////////////////////////////////////////////////////
-
-#endif	/*	#ifndef _STD_MEMORY	*/
+#include "stdlib/memory.ctp"
+#include "stdlib/memory.ctf"

@@ -55,7 +55,7 @@ public:
     //ctor specifies machine being driven (including view of as can attack - maybe NULL).
     //If remoteNode is true, this is being used to echo 1st person from another node.
     MachPhys1stPersonDriver( W4dEntity* pEntity, MachPhysCanAttack* pCanAttack,
-                             bool remoteNode );
+                             MATHEX_SCALAR scannerRange, bool remoteNode );
 
     virtual ~MachPhys1stPersonDriver();
 
@@ -65,6 +65,7 @@ public:
     //performs per-frame updating
     void update();
 
+    /*** Vanilla FPS data Getters ***/
     //The distance along camera line of sight which is at the nearer of max weapon range
     //or intersecting some entity. Updated every update() call.
     MATHEX_SCALAR hitDistance() const;
@@ -76,6 +77,12 @@ public:
     bool hasHitEntity() const;
     W4dEntity& hitEntity() const;
     //PRE( hasHitEntity() );
+
+    /*** 'Far' Command FPS data Getters ***/
+    MATHEX_SCALAR farCmdHitDistance() const;
+    const MexPoint3d& farCmdHitPoint() const;
+    bool hasFarCmdHitEntity() const;
+    W4dEntity& farCmdHitEntity() const;
 
     //Sets the machine moving forwards
     void moveForwards();
@@ -188,11 +195,15 @@ private:
     MachPhysCanAttack *pCanAttack_; //the attacker view of the machine
     PhysAbsoluteTime lastUpdateTime_; //base time for current motion
     MATHEX_SCALAR maxWeaponRange_; //Max weapon range of enabled weapons - set by client
+    MATHEX_SCALAR scannerRange_; //Scanner range of the machine - set by client
     W4dEntity* pCameraEntity_; //Entity at camera position: is the camera on player node, dummy on remote nodes
     W4dEntity* pTrackEntity_; //Entity attached to head for weapons to track
     MexPoint3d hitPoint_; //the point on line-of-sight cached from aimData call
     MATHEX_SCALAR hitDistance_; //distance along line-of-sight to hitPoint
     W4dEntity* pHitEntity_; //the entity that would be fired at on firing cached from aimData call
+    MexPoint3d farCmdHitPoint_; //FAR CMD - the point on line-of-sight cached from aimData call
+    MATHEX_SCALAR farCmdHitDistance_; //FAR CMD - distance along line-of-sight to hitPoint
+    W4dEntity* pFarCmdHitEntity_; //FAR CMD - the entity that would be fired at on firing cached from aimData call
     bool movingForwards_; //True if driving forwards
     bool movingBackwards_; //True if reversing
     bool turningLeft_; //True if turning to left

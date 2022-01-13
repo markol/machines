@@ -13,6 +13,7 @@
 #define _RECORDER_RECORDER_HPP
 
 #include "base/base.hpp"
+#include "utility/DependencyProvider.hpp"
 
 class RecRecorder
 // Canonical form revoked
@@ -49,6 +50,15 @@ private:
 
     RecRecorder( void );
 };
+
+/* *******************************************************
+ * SINGLETON DEPENDENCY PROVIDER
+ */
+template<>
+inline RecRecorder& DependencyProvider<RecRecorder>::getProvided()
+{
+    return RecRecorder::instance();
+}
 
 
 #endif

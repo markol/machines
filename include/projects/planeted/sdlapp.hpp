@@ -5,10 +5,11 @@
 
 #include "system/pathname.hpp"
 #include "device/timer.hpp"
+#include "device/butevent.hpp"
 #include "render/texmgr.hpp"
 #include "afx/osapp.hpp"
 
-class DevButtonEvent;
+//class DevButtonEvent;
 class RenDisplay;
 class W4dEntity;
 class W4dSceneManager;

@@ -13,12 +13,13 @@
 #define _PLANETED_EDITCAMR_HPP
 
 #include "base/base.hpp"
+#include "device/butevent.hpp"
 #include "render/colour.hpp"
 #include "machphys/machphys.hpp"
 #include "planeted/editmode.hpp"
 
 
-class DevButtonEvent; 
+//class DevButtonEvent;
 class SysPathName;
 class ofstream;
 class PedCameraMarker;

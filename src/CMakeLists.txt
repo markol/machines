@@ -14,6 +14,9 @@ set(CMAKE_CXX_FLAGS_DEBUG ${MACHINES_CXX_FLAGS_DEBUG})
 # Source files
 # GLOB is sometimes considered anti pattern but watever
 file(GLOB AFX_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/afx/*.cpp)
+# # # afx_lite is used with test suite
+set(AFX_LITE_SOURCES ${AFX_SOURCES})
+list(REMOVE_ITEM AFX_LITE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/afx/AfxSdlApp.cpp)
 
 file(GLOB BASE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/base/*.cpp)
 list(REMOVE_ITEM BASE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/base/basver.cpp)
@@ -219,6 +222,8 @@ set(LIBS
     ${FREETYPE_LIBRARY}
     #enet
     ${ENET_LIBRARY}
+    #swscale
+    ${SWSCALE_LIBRARY}
 )
 
 set(MACHINES_LIBS ${LIBS} PARENT_SCOPE)
@@ -241,6 +246,7 @@ set(SYSTEM_INCLUDES
     ${ALURE_INCLUDE_DIR}
     ${ENET_INCLUDE_DIRS}
     ${OPENAL_INCLUDE_DIR}
+    ${SWSCALE_INCLUDE_DIR}
 )
 
 
@@ -259,6 +265,7 @@ link_directories(
 add_library(base        OBJECT ${BASE_SOURCES})
 add_library(mathex      OBJECT ${MATHEX_SOURCES})
 add_library(afx         OBJECT ${AFX_SOURCES})
+add_library(afx_lite    OBJECT ${AFX_LITE_SOURCES}) # For the tests
 add_library(utility     OBJECT ${UTILITY_SOURCES})
 add_library(profiler    OBJECT ${PROFILER_SOURCES})
 add_library(system      OBJECT ${SYSTEM_SOURCES})

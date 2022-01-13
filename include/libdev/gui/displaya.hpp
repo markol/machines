@@ -39,6 +39,7 @@
 #ifndef _GUI_DISPLAYA_HPP
 #define _GUI_DISPLAYA_HPP
 
+#include "device/butevent.hpp"
 #include "stdlib/strfwd.hpp"
 #include "gui/gui.hpp"
 
@@ -46,7 +47,7 @@ class GuiDisplayableImpl;
 class GuiKeyEvent;
 class GuiMouseEvent;
 class GuiEvent;
-class DevButtonEvent;
+//class DevButtonEvent;
 
 typedef DevButtonEvent GuiCharEvent;
 
@@ -114,6 +115,7 @@ public:
 	virtual void doHandleMouseClickEvent( const GuiMouseEvent& rel );
 	virtual void doHandleMouseEnterEvent( const GuiMouseEvent& rel );
 	virtual void doHandleMouseExitEvent( const GuiMouseEvent& rel );
+    virtual void doHandleMouseScrollEvent( const GuiMouseEvent& rel );
 	virtual void doHandleContainsMouseEvent( const GuiMouseEvent& rel );
 
 	unsigned width() const;

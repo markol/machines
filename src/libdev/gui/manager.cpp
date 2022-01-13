@@ -113,6 +113,10 @@ GuiManager::GuiManager()
 	ScanCodes::const_iterator i = scanCodes().begin();
 	for( ; i != scanCodes().end(); ++i )
 		DevEventQueue::instance().queueEvents( *i );
+
+    // Event Queue is explicity told to handle mouse wheel scrolling events
+    DevEventQueue::instance().queueEvents(DevKey::MIDDLE_MOUSE, DevButtonEvent::SCROLL_UP);
+    DevEventQueue::instance().queueEvents(DevKey::MIDDLE_MOUSE, DevButtonEvent::SCROLL_DOWN);
 }
 
 GuiManager::~GuiManager()
@@ -341,9 +345,17 @@ void GuiManager::processMouseEvent( const GuiMouseEvent& me )
 								and hasRoot()
 								and root().doHandleRightClickEvent( mrel );
 
+    bool isMouseWheelEvent = ( me.scrollDirection() != Gui::ScrollState::NO_SCROLL );
+
 	if( pMouseFocus_ != NULL )
 	{
-		if( not handledRightClick )
+        if ( isMouseWheelEvent )
+        {
+            mrel = me;
+            mrel.translate( unaryMinus( pMouseFocus_->absoluteCoord() ) );
+            pMouseFocus_->doHandleMouseScrollEvent( mrel );
+        }
+        else if( not handledRightClick )
 		{
 			mrel = me;
 			mrel.translate( unaryMinus( pMouseFocus_->absoluteCoord() ) );
@@ -387,6 +399,11 @@ void GuiManager::processEvents()
 			GuiMouseEvent e( be.cursorCoords(), Gui::NO_CHANGE, buttonState( be.action() ), mKeys );
 			processMouseEvent( e );
 		}
+        else if( be.scanCode() == DevKey::MIDDLE_MOUSE )
+        {
+            GuiMouseEvent e( be.cursorCoords(), Gui::NO_CHANGE, Gui::NO_CHANGE, getScrollDirection( be.action() ), mKeys );
+            processMouseEvent( e );
+        }
 		else if ( be.isKeyEvent() ) // keyboard event
 		{
 			if( keyboardFocusExists() )
@@ -410,6 +427,24 @@ void GuiManager::processEvents()
 			}
 		}
 	}
+}
+
+//static
+inline Gui::ScrollState GuiManager::getScrollDirection(DevButtonEvent::Action act)
+{
+    switch (act)
+    {
+        case DevButtonEvent::SCROLL_UP:
+            return Gui::ScrollState::SCROLL_UP;
+
+        case DevButtonEvent::SCROLL_DOWN:
+            return Gui::ScrollState::SCROLL_DOWN;
+
+        case DevButtonEvent::PRESS:
+        case DevButtonEvent::RELEASE:
+        default:
+            return Gui::ScrollState::NO_SCROLL;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////

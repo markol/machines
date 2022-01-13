@@ -4,45 +4,56 @@
  */
 
 #include "device/eventq.hpp"
-#include "ctl/list.hpp"
-
-#include "recorder/recorder.hpp"
-#include "recorder/private/recpriv.hpp"
 
 // static
-DevEventQueue& DevEventQueue::instance()
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>& DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::instance()
 {
     static DevEventQueue instance_;
     return instance_;
 }
 
-DevEventQueue::DevEventQueue():
-	list_(_NEW(ctl_list<DevButtonEvent>))
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::DevEventQueueT()
+    : list_(new ctl_list<typename DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::DevButtonEventType>)
 {
 	ASSERT(list_, "Failed to allocate device event queue.");
 
-	// By default we don't queue anything until asked.  Reset the filters.
-	for (int i=0; i!=DevKey::MAX_CODE; ++i)
-		pressFilter_[i] = releaseFilter_[i] = false;
+    // By default we don't queue anything until asked.  Reset the filters.
+    for (int i=0; i!=DevKey::MAX_CODE; ++i)
+    {
+        pressFilter_[i] = releaseFilter_[i] = false;
+    }
+
+    // The middle mouse wheel is the only button that would receive these.
+    // Explicity ask for these using queueEvents w/ middle mouse wheel scan code.
+    scrollUpFilter_   = false;
+    scrollDownFilter_ = false;
 
     TEST_INVARIANT;
 }
 
-DevEventQueue::~DevEventQueue()
+// virtual
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::~DevEventQueueT()
 {
     TEST_INVARIANT;
-	_DELETE(list_);
+    delete list_;
 }
 
-DevButtonEvent DevEventQueue::oldestEvent()
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+typename DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::DevButtonEventType DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::oldestEvent()
 {
-    DevButtonEvent result;
+    using ButtonEvent = typename DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::DevButtonEventType;
+    ButtonEvent result;
 
-    if( RecRecorder::instance().state() == RecRecorder::PLAYING )
-        result = RecRecorderPrivate::instance().playbackButtonEvent();
+    if( recorderDependency_.get().state() == RecRecorder::PLAYING )
+    {
+        result = recorderPrivDependency_.get().playbackButtonEvent();
+    }
     else
     {
-    	DevButtonEvent& front = list_->front();
+        ButtonEvent& front = list_->front();
 
     	if (front.repeatCount() == 1)
     	{
@@ -55,8 +66,10 @@ DevButtonEvent DevEventQueue::oldestEvent()
     	}
 
 
-        if( RecRecorder::instance().state() == RecRecorder::RECORDING )
-            RecRecorderPrivate::instance().recordButtonEvent( result );
+        if( recorderDependency_.get().state() == RecRecorder::RECORDING )
+        {
+            recorderPrivDependency_.get().recordButtonEvent( result );
+        }
     }
 
 
@@ -65,7 +78,8 @@ DevButtonEvent DevEventQueue::oldestEvent()
 	return result;
 }
 
-void DevEventQueue::queueEvent(const DevButtonEvent& event)
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+void DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::queueEvent(const typename DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::DevButtonEventType& event)
 {
 	PRE(event.scanCode() < DevKey::MAX_CODE);
 
@@ -79,119 +93,158 @@ void DevEventQueue::queueEvent(const DevButtonEvent& event)
         //  working properly. Bob
 
 		if (list_->size() > 0 && list_->back().compressRepeats(event))
+        {
 			return;
+        }
 		else
+        {
 			list_->push_back(event);
+        }
 	}
 }
 
-bool DevEventQueue::filterEvent(const DevButtonEvent& event) const
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+bool DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::filterEvent(const typename DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::DevButtonEventType& event) const
 {
+    using ButtonEvent = typename DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::DevButtonEventType;
 	PRE(event.scanCode() < DevKey::MAX_CODE);
 
 	switch (event.action())
 	{
-		case DevButtonEvent::RELEASE:	return releaseFilter_[event.scanCode()];
-		case DevButtonEvent::PRESS:		return   pressFilter_[event.scanCode()];
-		default:						ASSERT_BAD_CASE;
+        case ButtonEvent::RELEASE:
+            return releaseFilter_[event.scanCode()];
+        case ButtonEvent::PRESS:
+            return   pressFilter_[event.scanCode()];
+        case ButtonEvent::SCROLL_UP:
+            return (event.scanCode() == DevKey::MIDDLE_MOUSE and scrollUpFilter_);
+        case ButtonEvent::SCROLL_DOWN:
+            return (event.scanCode() == DevKey::MIDDLE_MOUSE and scrollDownFilter_);
+        default:
+            ASSERT_BAD_CASE;
+        break;
 	}
 
 	return false;
 }
 
-void DevEventQueue::queueEvents(ScanCode code)
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+void DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::queueEvents(ScanCode code)
 {
 	PRE(code < DevKey::MAX_CODE);
 	releaseFilter_[code] = pressFilter_[code] = true;
 }
 
-void DevEventQueue::dontQueueEvents(ScanCode code)
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+void DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::dontQueueEvents(ScanCode code)
 {
 	PRE(code < DevKey::MAX_CODE);
 	releaseFilter_[code] = pressFilter_[code] = false;
 }
 
-void DevEventQueue::queueEvents(ScanCode code, Action action)
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+void DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::queueEvents(ScanCode code, Action action)
 {
+    using ButtonEvent = typename DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::DevButtonEventType;
 	PRE(code < DevKey::MAX_CODE);
 
 	switch (action)
 	{
-		case DevButtonEvent::RELEASE:	releaseFilter_[code] = true; break;
-		case DevButtonEvent::PRESS:		  pressFilter_[code] = true; break;
-		default:						ASSERT_BAD_CASE;
+        case ButtonEvent::RELEASE:
+            releaseFilter_[code] = true;
+        break;
+        case ButtonEvent::PRESS:
+            pressFilter_[code] = true;
+        break;
+        case ButtonEvent::SCROLL_UP:
+            // only set for middle mouse
+            scrollUpFilter_ = code == DevKey::MIDDLE_MOUSE;
+        break;
+        case ButtonEvent::SCROLL_DOWN:
+            // only set for middle mouse
+            scrollDownFilter_ = code == DevKey::MIDDLE_MOUSE;
+        break;
+        default:
+            ASSERT_BAD_CASE;
+        break;
 	}
 }
 
-void DevEventQueue::dontQueueEvents(ScanCode code, Action action)
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+void DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::dontQueueEvents(ScanCode code, Action action)
 {
+    using ButtonEvent = typename DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::DevButtonEventType;
 	PRE(code < DevKey::MAX_CODE);
 
 	switch (action)
 	{
-		case DevButtonEvent::RELEASE:	releaseFilter_[code] = false; break;
-		case DevButtonEvent::PRESS:		  pressFilter_[code] = false; break;
-		default:						ASSERT_BAD_CASE;
+        case ButtonEvent::RELEASE:
+            releaseFilter_[code] = false;
+        break;
+        case ButtonEvent::PRESS:
+            pressFilter_[code] = false;
+        break;
+        case ButtonEvent::SCROLL_UP:
+            // only set for middle mouse
+            scrollUpFilter_ = (code == DevKey::MIDDLE_MOUSE) ? false : scrollUpFilter_;
+        break;
+        case ButtonEvent::SCROLL_DOWN:
+            // only set for middle mouse
+            scrollDownFilter_ = (code == DevKey::MIDDLE_MOUSE) ? false : scrollDownFilter_;
+        break;
+        default:
+            ASSERT_BAD_CASE;
+        break;
 	}
 }
 
-size_t DevEventQueue::length() const
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+size_t DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::length() const
 {
     size_t result;
 
-    if( RecRecorder::instance().state() == RecRecorder::PLAYING )
-        result = RecRecorderPrivate::instance().playbackEventQueueLength();
+    if( recorderDependency_.get().state() == RecRecorder::PLAYING )
+    {
+        result = recorderPrivDependency_.get().playbackEventQueueLength();
+    }
     else
     {
   		result = list_->size();
 
-        if( RecRecorder::instance().state() == RecRecorder::RECORDING )
-            RecRecorderPrivate::instance().recordEventQueueLength( result );
+        if( recorderDependency_.get().state() == RecRecorder::RECORDING )
+        {
+            recorderPrivDependency_.get().recordEventQueueLength( result );
+        }
     }
 
     return result;
 }
 
-bool DevEventQueue::isEmpty() const
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+bool DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::isEmpty() const
 {
 	return length() == 0;
 }
 
-void DevEventQueue::CLASS_INVARIANT
+template<typename RecRecorderDep, typename RecRecorderPrivDep, typename DevTimeDep>
+void DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::CLASS_INVARIANT
 {
 	INVARIANT(list_);
 
+    // Ayy Lmao
+    using ButtonEvent = typename DevEventQueueT<RecRecorderDep, RecRecorderPrivDep, DevTimeDep>::DevButtonEventType;
+    using ButtonEvent_Iterator = typename ctl_list<ButtonEvent>::const_iterator;
+
 	// This will fail for default objects!
-	ctl_list<DevButtonEvent>::const_iterator it = list_->begin();
+    ButtonEvent_Iterator it = list_->begin();
 	while (it != list_->end())
 	{
-		const DevButtonEvent& ev = *it;
+        const ButtonEvent& ev = *it;
 		INVARIANT(ev.scanCode() < DevKey::MAX_CODE);
 		++it;
 	}
 }
 
-ostream& operator <<( ostream& o, const DevEventQueue& t )
-{
-	o << "Event queue:" << std::endl;
 
-	ctl_list<DevButtonEvent>::const_iterator it = t.list_->begin();
-	while (it != t.list_->end())
-	{
-		o << "\t" << *it << std::endl;
-		++it;
-	}
-
-	o << std::endl;
-
-	o << "Filter tables:	(press)		(release)\n";
-
-	for (int i=0; i!=DevKey::MAX_CODE; ++i)
-		o << i << "\t\t\t\t   " << (int) t.pressFilter_[i] << "\t\t   " << (int) t.releaseFilter_[i] << "\n";
-
-	o << std::endl;
-
-	return o;
-}
-
+//Instantiate the template identified by DevEventQueue alias
+template class DevEventQueueT<RecRecorder,RecRecorderPrivate,DevTime>;
 /* End EVENTQ.CPP ***************************************************/

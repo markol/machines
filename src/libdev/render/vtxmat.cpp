@@ -10,90 +10,86 @@
 PER_DEFINE_PERSISTENT( RenIVtxMaterial );
 PER_DEFINE_PERSISTENT( RenIVertexMaterials );
 
-RenIVertexMaterials::RenIVertexMaterials(size_t nElements):
-	Base(0)
+RenIVertexMaterials::RenIVertexMaterials(size_t nElements) :
+Base(0)
 {
-	reserve(nElements);
+    reserve(nElements);
 }
 
-RenIVertexMaterials::RenIVertexMaterials(const RenIVertexMaterials& copyMe):
-	Base(copyMe)
-{
-}
+RenIVertexMaterials::RenIVertexMaterials(const RenIVertexMaterials& copyMe) :
+Base(copyMe) { }
 
-RenIVertexMaterials::~RenIVertexMaterials()
-{
-}
+RenIVertexMaterials::~RenIVertexMaterials() { }
 
 bool RenIVertexMaterials::contains(Ren::VertexIdx i) const
 {
-	const_iterator it = findIter(i);
-	return it != end();
+    const_iterator it = findIter(i);
+    return it != end();
 }
 
 const RenMaterial& RenIVertexMaterials::find(Ren::VertexIdx i) const
 {
-	PRE(contains(i));
-	const_iterator it = findIter(i);
-	ASSERT(it != end(), "Didn't find per-vertex material in material map.");
-	return (*it).mat_;
+    bool const contain = contains(i);
+
+    PRE(contain);
+    const_iterator it = findIter(i);
+    ASSERT(it != end(), "Didn't find per-vertex material in material map.");
+    return (*it).mat_;
 }
 
 void RenIVertexMaterials::insert(Ren::VertexIdx i, RenMaterial newValue)
 {
-	iterator it = findIter(i);
+    iterator it = findIter(i);
 
-	if (it != end())
-		(*it).mat_ = newValue;
-	else
-	{
-		RenIVtxMaterial newElement;
-		newElement.index_ = i;
-		newElement.mat_   = newValue;
-		Base::push_back(newElement);
-	}
+    if (it != end())
+        (*it).mat_ = newValue;
+    else
+    {
+        RenIVtxMaterial newElement;
+        newElement.index_ = i;
+        newElement.mat_   = newValue;
+        Base::push_back(newElement);
+    }
 
-	POST(contains(i));
+    POST(contains(i));
 }
 
 void RenIVertexMaterials::erase(Ren::VertexIdx i)
 {
-	iterator it = findIter(i);
+    iterator it = findIter(i);
 
-	if (it != end())
-		Base::erase(it);
+    if (it != end())
+        Base::erase(it);
 
-	POST(!contains(i));
+    POST(!contains(i));
 }
 
 ctl_vector<RenIVtxMaterial>::iterator RenIVertexMaterials::findIter(Ren::VertexIdx i)
 {
-	RenIVtxMaterial target;
-	target.index_ = i;
+    RenIVtxMaterial target;
+    target.index_ = i;
 
-	// There appears to be a Watcom bug here.  The compiler fails to recognise
-	// that begin and end can refer to overloaded functions which return a
-	// iterator rather than a const_iterator.
-	#ifdef NDEBUG
-	iterator it = std::find(begin(), end(), target);
-//	const_iterator cit = ::find(begin(), end(), target);
-//	iterator it = _CONST_CAST(iterator, cit);
-	#else
-	iterator it = std::find(begin(), end(), target);
-	#endif
+    // There appears to be a Watcom bug here.  The compiler fails to recognise
+    // that begin and end can refer to overloaded functions which return a
+    // iterator rather than a const_iterator.
+#ifdef NDEBUG
+    iterator it = std::find(begin(), end(), target);
+    //	const_iterator cit = ::find(begin(), end(), target);
+    //	iterator it = const_cast<iterator>( cit);
+#else
+    iterator it = std::find(begin(), end(), target);
+#endif
 
-	return it;
+    return it;
 }
 
 ctl_vector<RenIVtxMaterial>::const_iterator RenIVertexMaterials::findIter(Ren::VertexIdx i) const
 {
-	return _CONST_CAST(RenIVertexMaterials*, this)->findIter(i);
+    return const_cast<RenIVertexMaterials*> ( this)->findIter(i);
 }
 
 RenIVertexMaterials::RenIVertexMaterials( PerConstructor con )
-: Base( con )
-{
-}
+: Base( con ) { }
 
 void perWrite( PerOstream& ostr, const RenIVertexMaterials& t )
 {

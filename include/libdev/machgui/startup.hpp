@@ -266,7 +266,7 @@ protected:
     //Start playing a fullscreen smacker animation filename. Specify "fast" if you
 	//want the animation to run at the fastest speed the CPU can go.
     void startPlayingAnimation( const SysPathName& filename, bool fast );
-    void startPlayingAnimation( const SysPathName& filename, bool fast, bool frontBuffer, const Gui::Coord& pos );
+    void startPlayingAnimation( const SysPathName& filename, bool fast, bool frontBuffer, const Gui::Coord& pos, bool isCutscene=false );
 
     //Stop playing any smacker animation
     void stopPlayingAnimation();

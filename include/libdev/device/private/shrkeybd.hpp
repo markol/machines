@@ -6,9 +6,9 @@
 #ifndef DEVICE_SHARED_KEYBOARD_HPP
 #define DEVICE_SHARED_KEYBOARD_HPP
 
-#ifndef DEVICE_KEYBOARD
-	#error Do not include shrkeybd.hpp file directly, include keyboard.hpp
-#endif
+//#ifndef DEVICE_KEYBOARD
+//	#error Do not include shrkeybd.hpp file directly, include keyboard.hpp
+//#endif
 
 #include "base/base.hpp"
 //class ostream;
@@ -81,8 +81,11 @@ public:
 		// keyboard keys.
 		LEFT_MOUSE = 256, RIGHT_MOUSE = 257,
 
+        // Not trusting that these guys didn't go LEFT_MOUSE+1 or something janky somewhere
+        MIDDLE_MOUSE = 258,
+
 		// This *must* be the highest code in this enumeration plus 1.
-		MAX_CODE = 258
+        MAX_CODE = 259
 	};
 
 	static void printScanCode(ostream&, ScanCode);

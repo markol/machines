@@ -44,7 +44,7 @@ Released as a [free software](https://en.wikipedia.org/wiki/Free_software) under
 **Build dependencies**
 Use provided Docker image for building or manually setup your environment.
 
-`libsdl2-dev libsdl2-image-dev libopenal-dev libalure-dev libenet-dev libfreetype6-dev libglew-dev libglm-dev libaudio-dev`
+`libsdl2-dev libsdl2-image-dev libopenal-dev libalure-dev libenet-dev libfreetype6-dev libglew-dev libglm-dev libaudio-dev libswscale-dev`
 
 **Building**
 `git clone && git lfs pull`
@@ -66,6 +66,9 @@ Extra parameters for release optimizations:
 + `make -j 9`
 
 For ARM SoC development boards (like Raspberry or Nitrogen8M) if you do not have cross compilation toolchain prepared it will be easier to boot-up one of dedicated system distribution and build it within this enviroment (takes approx one hour for 4 cores).
+
+**Making a distribution (Collect everything for installation)**
+Run `make distribution` to collect all of the data files, graphics files, and compiled binaries into a single folder. You may then copy the contents of the `distribution` folder into your game's directory.
 
 **Class invariant checks (for debugging)**
 `export CB_INVARIANT_CHECKING=on`

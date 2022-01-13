@@ -11,6 +11,7 @@
 #include "machlog/squad.hpp"
 #include "machlog/administ.hpp"
 
+#include "machgui/gui.hpp"
 #include "machgui/ingame.hpp"
 #include "machgui/squadron.hpp"
 #include "machgui/guictrl.hpp"
@@ -55,16 +56,23 @@ public:
 				bitmap_ = Gui::bitmap( MachGuiCorralResource_hack( &pSquadron->commander() ) );
 				noCommander_ = false;
 				adminSw_ = pSquadron->commander().swLevel();
-	        }	
+            }
+            else
+            {
+                bitmap_ = MachGui::createIconForMachine(pSquadron->getStrongestMachine(), false);
+            }
 		}
 
-		redrawEveryFrame( noCommander_ and ( numInSquad_ > 0 ) );
+        // The static might be "cool", but CONSISTENCY with FP command icons is more important. :)
+        //redrawEveryFrame( noCommander_ and ( numInSquad_ > 0 ) );
 
 		changed();
 	}
 
 	virtual void doDisplay()
 	{
+        /* The static might be "cool", but CONSISTENCY with FP command icons is more important. :)
+         *
 		// TV static bitmaps
 		static GuiBitmap nosquadBmp[5];
 		static bool initialised = false;
@@ -77,6 +85,7 @@ public:
 			nosquadBmp[4] = Gui::bitmap( SysPathName( "gui/misc/nosquad5.bmp" ) );
 			initialised = true;
 		}
+        */
 		
 		Gui::Coord absCoordInOne( absoluteCoord() );
 		absCoordInOne.x( absCoordInOne.x() + 1 );
@@ -86,11 +95,11 @@ public:
 		{
 			GuiPainter::instance().hollowRectangle( absoluteBoundary(), Gui::BLACK(), 1 );
 
-			// Squad with no commander ( show static )
+            // Squad with no commander ( show the strongest machine in the squad )
 			if ( noCommander_ )
 			{
-				GuiPainter::instance().blit(nosquadBmp[ mexRandomInt( &staticImageRandom_, 5 ) ], absCoordInOne );
-
+                GuiPainter::instance().blit(bitmap_, absCoordInOne );
+                //GuiPainter::instance().blit(nosquadBmp[ mexRandomInt( &staticImageRandom_, 5 ) ], absCoordInOne );
 		   	} 
 			else // Squad with commander, show commander
 			{

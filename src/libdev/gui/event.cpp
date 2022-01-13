@@ -43,9 +43,20 @@ GuiMouseEvent::GuiMouseEvent(  const Gui::Coord& at,
 : GuiEventBase( keys ),
   coord_( at ),
   leftButton_( left ),
-  rightButton_( right )
+  rightButton_( right ),
+  scroll_( Gui::ScrollState::NO_SCROLL )
 {
 	// Intentionally Empty
+}
+
+GuiMouseEvent::GuiMouseEvent(const Gui::Coord& at,
+                             Gui::ButtonState left,
+                             Gui::ButtonState right,
+                             Gui::ScrollState scroll,
+                             ModifierKeys keys )
+ : GuiMouseEvent(at, left, right, keys)
+{
+    scroll_ = scroll;
 }
 
 Gui::ButtonState 
@@ -59,7 +70,13 @@ GuiMouseEvent::rightButton() const
 {
 	return rightButton_;
 }
-	
+
+Gui::ScrollState
+GuiMouseEvent::scrollDirection() const
+{
+    return scroll_;
+}
+
 const Gui::Coord& 
 GuiMouseEvent::coord() const
 {

@@ -13,6 +13,8 @@ PER_DEFINE_PERSISTENT( MachLogSquadronImpl )
 
 MachLogSquadronImpl::MachLogSquadronImpl( int squadronId )
 :	hasCommander_( false ),
+    pStrongestMachine_( nullptr ),
+    squadronHasChanged_( true ),
 	squadronId_( squadronId ),
 	totalDesiredMachines_( 0 ),
 	setDefCon_( false ),

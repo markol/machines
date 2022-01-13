@@ -30,6 +30,7 @@
 #include "machlog/canattac.hpp"
 #include "machlog/machine.hpp"
 #include "machlog/p1mchndl.hpp"
+#include "machlog/MachLog1stPersonActiveSquad.hpp"
 #include "machlog/plandoms.hpp"
 #include "machlog/planet.hpp"
 #include "machlog/weapon.hpp"
@@ -45,6 +46,7 @@
 #include "machgui/chatmsgs.hpp"
 #include "machgui/database.hpp"
 #include "machgui/dbscenar.hpp"
+#include "machgui/MachGuiFPCommand.hpp"
 #include "machphys/objdata.hpp"
 #include "machphys/snddata.hpp"
 #include "machphys/machine.hpp"
@@ -194,6 +196,11 @@ public:
 	bool isHitInterferenceOn_;
 	double hitInterferenceEndTime_;
 	int frameNumber_;
+
+    // FP Command
+    MachGuiFPCommand* pCommandWidget_;
+    int64_t commandSquadIndex_;
+    double timeSquadIndexChanged_;
 };
 
 MachGuiFirstPersonImpl::MachGuiFirstPersonImpl()
@@ -224,7 +231,10 @@ MachGuiFirstPersonImpl::MachGuiFirstPersonImpl()
 	reverseUpDownMouse_( SysRegistry::instance().queryIntegerValue( "Options\\Reverse BackForward Mouse", "on", SysRegistry::CURRENT_USER ) ),
 	hitInterferenceRandom_( MexBasicRandom::constructSeededFromTime() ),
 	machineNVGOn_( false ),
-	finishedStartupSequence_( false )
+    finishedStartupSequence_( false ),
+    pCommandWidget_( nullptr ),
+    commandSquadIndex_(-1L),
+    timeSquadIndexChanged_(0.0)
 {
 	compassBmp_.enableColourKeying();
 	weaponChargeBmp_.enableColourKeying();
@@ -287,6 +297,13 @@ MachGuiFirstPerson::MachGuiFirstPerson( W4dSceneManager* pSceneManager, W4dRoot*
  	pKeyTranslator_->addTranslation( DevKeyToCommand( DevKey::RIGHT_ARROW_PAD, TURNHEADRIGHT, DevKeyToCommand::CTRLKEY_PRESSED, DevKeyToCommand::SHIFTKEY_PRESSED ) );
 	pKeyTranslator_->addTranslation( DevKeyToCommand( DevKey::LEFT_ARROW_PAD, TURNHEADLEFTFAST, DevKeyToCommand::CTRLKEY_RELEASED, DevKeyToCommand::SHIFTKEY_PRESSED ) );
  	pKeyTranslator_->addTranslation( DevKeyToCommand( DevKey::RIGHT_ARROW_PAD, TURNHEADRIGHTFAST, DevKeyToCommand::CTRLKEY_RELEASED, DevKeyToCommand::SHIFTKEY_PRESSED ) );
+    // Keyboard commands for first person command
+    pKeyTranslator_->addTranslation( DevKeyToCommand( DevKey::HOME, COMMAND_SELECT_NEXT, DevKeyToCommand::CTRLKEY_RELEASED, DevKeyToCommand::SHIFTKEY_RELEASED ));
+    pKeyTranslator_->addTranslation( DevKeyToCommand( DevKey::END, COMMAND_SELECT_PREV, DevKeyToCommand::CTRLKEY_RELEASED, DevKeyToCommand::SHIFTKEY_RELEASED ));
+    pKeyTranslator_->addTranslation( DevKeyToCommand( DevKey::KEY_DELETE, COMMAND_ORDER_ATTACK, DevKeyToCommand::CTRLKEY_RELEASED, DevKeyToCommand::SHIFTKEY_RELEASED ) );
+    pKeyTranslator_->addTranslation( DevKeyToCommand( DevKey::PAGE_DOWN, COMMAND_ORDER_MOVE, DevKeyToCommand::CTRLKEY_RELEASED, DevKeyToCommand::SHIFTKEY_RELEASED ) );
+    pKeyTranslator_->addTranslation( DevKeyToCommand( DevKey::INSERT, COMMAND_ORDER_FOLLOW, DevKeyToCommand::CTRLKEY_RELEASED, DevKeyToCommand::SHIFTKEY_RELEASED ) );
+
 
 	pKeyTranslator_->initEventQueue();
 
@@ -309,6 +326,12 @@ MachGuiFirstPerson::~MachGuiFirstPerson()
 	CB_DEPIMPL( DevKeyToCommandTranslator*, pKeyTranslator_ );
 	CB_DEPIMPL( MachLog1stPersonHandler*, pLogHandler_ );
 	CB_DEPIMPL( MachGuiPausedImage*, pPausedImage_ );
+    CB_DEPIMPL( MachGuiFPCommand*, pCommandWidget_);
+
+    if (pCommandWidget_ != nullptr)
+    {
+        delete pCommandWidget_;
+    }
 
 	_DELETE( pKeyTranslator_ );
 	_DELETE( pLogHandler_ );
@@ -409,6 +432,9 @@ void MachGuiFirstPerson::update()
 	CB_DEPIMPL( bool, finishedStartupSequence_ )
 	CB_DEPIMPL( bool, isHitInterferenceOn_ );
 	CB_DEPIMPL( int, frameNumber_ );
+    CB_DEPIMPL( int64_t, commandSquadIndex_ );
+    CB_DEPIMPL( MachGuiFPCommand*, pCommandWidget_ );
+    CB_DEPIMPL( double, timeSquadIndexChanged_ );
 
 	double now = DevTime::instance().time();
 
@@ -416,6 +442,9 @@ void MachGuiFirstPerson::update()
 	{
 		// Controls when weapon not recharged sound is played.
 		timeWeaponsFired_ = now;
+
+        // Keeps the squad changing from going too fast
+        timeSquadIndexChanged_ = now;
 	}
 
 	// Check to see if we should automatically leave 1st person
@@ -453,6 +482,11 @@ void MachGuiFirstPerson::update()
     if( pLogHandler_ )
     {
         MachLog1stPersonHandler& logHandler = *pLogHandler_;
+
+        if ( commandSquadIndex_ == -1L and logHandler.getActiveSquadron().hasActiveSquadron() )
+        {
+            commandSquadIndex_ = logHandler.getActiveSquadron().getActiveSquadronId() - 1;
+        }
 
 		if( pActor_ and not ( pActor_->objectType() == MachLog::AGGRESSOR
 							  and pActor_->asAggressor().subType() == MachPhys::NINJA
@@ -493,6 +527,55 @@ void MachGuiFirstPerson::update()
 	    		logHandler.turnRight();
 	    	}
 		}
+
+        // Cycle squadrons for Command
+        if( commandList_[COMMAND_SELECT_NEXT].on() )
+        {
+            // prevent super-fast cycling
+            if (now - timeSquadIndexChanged_ >= 0.15)
+            {
+                // start over if need be
+                if (++commandSquadIndex_ > 9)
+                {
+                    commandSquadIndex_ = 0;
+                }
+
+                const_cast<MachLog1stPersonActiveSquadron&>(logHandler.getActiveSquadron()).setActiveSquadron(commandSquadIndex_);
+                pCommandWidget_->updateSquadIcon();
+                pCommandWidget_->updateSquadNumber();
+
+                // If commandSquadIndex didn't point to an empty squad, update time variable.
+                timeSquadIndexChanged_ = ((logHandler.getActiveSquadron().getActiveSquadronId()-1^commandSquadIndex_) == 0) ? now : timeSquadIndexChanged_;
+            }
+        }
+        if( commandList_[COMMAND_SELECT_PREV].on() )
+        {
+            // prevent super-fast cycling
+            if (now - timeSquadIndexChanged_ >= 0.15)
+            {
+                // roll back over to end
+                if (--commandSquadIndex_ < 0)
+                {
+                    commandSquadIndex_ = 9;
+                }
+
+                const_cast<MachLog1stPersonActiveSquadron&>(logHandler.getActiveSquadron()).setActiveSquadron(commandSquadIndex_);
+                pCommandWidget_->updateSquadIcon();
+                pCommandWidget_->updateSquadNumber();
+
+                // If commandSquadIndex didn't point to an empty squad, update time variable.
+                timeSquadIndexChanged_ = ((logHandler.getActiveSquadron().getActiveSquadronId()-1^commandSquadIndex_) == 0) ? now : timeSquadIndexChanged_;
+            }
+        }
+
+        // The command icons should not light up if there's nobody selected. This value will be used more further down...
+        bool canIssueCommands = logHandler.getActiveSquadron().hasActiveSquadron();
+        if (not canIssueCommands)
+        {
+            pCommandWidget_->setAttackIconState(MachGuiFPCommand::CommandIconState::INVALID);
+            pCommandWidget_->setFollowIconState(MachGuiFPCommand::CommandIconState::INVALID);
+            pCommandWidget_->setMoveIconState(MachGuiFPCommand::CommandIconState::INVALID);
+        }
 
 		// Turn head...
     	if( commandList_[TURNHEADLEFT].on() and logHandler.canTurnHead() )
@@ -656,121 +739,214 @@ void MachGuiFirstPerson::update()
 	    logHandler.update();
 
         //Check the current aim
-        pTargetActor_ = NULL;
-        MachPhys::StrikeType strikeType = logHandler.aimData( &targetPoint_, &pTargetActor_ );
+        MachLog1stPersonTargetInfo targetingInfo;
+        logHandler.acquireTargetingInfo(targetingInfo);
 
-        // Work out which cursor should be visible in the middle of the screen
-        bool viableTarget = strikeType == MachPhys::ON_OBJECT;
+        // This guy is used for the health indicator stuff elsewhere in this file. Will either be someone you can shoot at or NULL
+        pTargetActor_ = targetingInfo.shootingTarget;
 
-		// Is it really a viable target, it might be an Ore Holograph or Debris
-		if ( viableTarget )
-		{
-			if ( pTargetActor_->objectIsOreHolograph() or
-				pTargetActor_->objectIsDebris() )
-			{
-				viableTarget = false;
-				pTargetActor_ = NULL;
-			}
-		}
+        bool viableTarget = targetingInfo.strikeType == MachPhys::ON_OBJECT;
+        bool viableShootingTarget = (targetingInfo.shootingTarget != nullptr) and viableTarget;
+        bool viableCommandTarget = (targetingInfo.getCommandTarget() != nullptr) and viableTarget;
+        bool viableMoveToTarget = logHandler.isPointingTowardsGround() and logHandler.isViableMoveToTarget(targetingInfo);
+        bool moveIndicatorPresent = logHandler.isMoveIndicatorPresent();
 
-		// Are we targeting a machine?
-		if ( viableTarget )
-		{
-			// Enemy machine?
-			if ( pTargetActor_->race() != pActor_->race() )
-			{
-				bool anglesValid = logHandler.targetAnglesValid();
+        // Don't allow the target of ore holos or debris!
+        if (viableShootingTarget)
+        {
+            if ( targetingInfo.shootingTarget->objectIsOreHolograph() or
+                 targetingInfo.shootingTarget->objectIsDebris() )
+            {
+                viableTarget = false;
+            }
+        }
+        else if (viableCommandTarget)
+        {
+            if ( targetingInfo.getCommandTarget()->objectIsOreHolograph() or
+                 targetingInfo.getCommandTarget()->objectIsDebris() )
+            {
+                viableTarget = false;
+            }
+        }
 
-				// Display attack cursor or miss cursor
-				if ( not pAttackCursor_->isVisible() and anglesValid )
-				{
-					// Attack cursor has just come on line. play sound
-					MachGuiSoundManager::instance().playSound( "gui/sounds/attackon.wav" );
-				}
-				pAttackCursor_->isVisible( anglesValid );
-	        	pMissCursor_->isVisible( not anglesValid );
-			}
-			else
-			{
-				if ( not pMissCursor_->isVisible() )
-				{
-					// Attack cursor has just come on line. play sound
-					MachGuiSoundManager::instance().playSound( "gui/sounds/friendon.wav" );
-				}
+        // FOR SHOOTING: Are we targeting a machine?
+        if ( viableShootingTarget and viableTarget )
+        {
+            // Enemy machine?
+            if ( targetingInfo.shootingTarget->race() != pActor_->race() )
+            {
+                bool anglesValid = logHandler.targetAnglesValid();
 
-				// Display miss cursor ( fristd::endly machine )
-	        	pAttackCursor_->isVisible( false );
-	        	pMissCursor_->isVisible( true );
-			}
-		}
-		else
-		{
-			// Hide attack cursors
-			pAttackCursor_->isVisible( false );
-        	pMissCursor_->isVisible( false );
-		}
+                // Display attack cursor or miss cursor
+                if ( not pAttackCursor_->isVisible() and anglesValid )
+                {
+                    // Attack cursor has just come on line. play sound
+                    MachGuiSoundManager::instance().playSound( "gui/sounds/attackon.wav" );
+                }
+                pAttackCursor_->isVisible( anglesValid );
+                pMissCursor_->isVisible( not anglesValid );
+            }
+            else
+            {
+                if ( not pMissCursor_->isVisible() )
+                {
+                    // Attack cursor has just come on line. play sound
+                    MachGuiSoundManager::instance().playSound( "gui/sounds/friendon.wav" );
+                }
 
-		// Display normal or startup cursor
- 		if ( pStartCursor_->cellIndex() == pStartCursor_->numCells() - 1 )
-		{
-			pNormalCursor_->isVisible( not viableTarget );
-			pStartCursor_->isVisible( false );
-		}
-		else
-		{
-			pNormalCursor_->isVisible( false );
-			pStartCursor_->isVisible( not viableTarget );
+                // Display miss cursor ( friendly machine )
+                pAttackCursor_->isVisible( false );
+                pMissCursor_->isVisible( true );
+            }
+        }
+        else
+        {
+            // Hide attack cursors
+            pAttackCursor_->isVisible( false );
+            pMissCursor_->isVisible( false );
+        }
 
-			// End startup cursor animation if there is a valid target
-			if ( viableTarget )
-			{
-				pStartCursor_->jumpToCell( pStartCursor_->numCells() - 1 );
-			}
-		}
+        // FOR COMMAND: Are we targeting a machine?
+        if ( canIssueCommands and viableCommandTarget and viableTarget )
+        {
+            // Enemy machine?
+            if ( targetingInfo.getCommandTarget()->race() != pActor_->race() )
+            {
+                // Light up Attack Icon
+                pCommandWidget_->setAttackIconState(MachGuiFPCommand::CommandIconState::VALID);
+
+                // Dim the Follow Icon
+                pCommandWidget_->setFollowIconState(MachGuiFPCommand::CommandIconState::INVALID);
+            }
+            else
+            {
+                // He's a friend bruv!
+                // Don't light up Attack Icon
+                pCommandWidget_->setAttackIconState(MachGuiFPCommand::CommandIconState::INVALID);
+
+                // Light up Follow Icon (FOLLOW FRIENDLY)
+                pCommandWidget_->setFollowIconState(MachGuiFPCommand::CommandIconState::VALID);
+            }
+        }
+        else
+        {
+            if (canIssueCommands)
+            {
+                // Don't light up attack icon
+                pCommandWidget_->setAttackIconState(MachGuiFPCommand::CommandIconState::INVALID);
+
+                // Light up Follow Icon (FOLLOW SELF)
+                pCommandWidget_->setFollowIconState(MachGuiFPCommand::CommandIconState::VALID);
+
+                // Only light up Move Icon when pointing at navigable ground AND when the indicator disappears
+                if (viableMoveToTarget and not moveIndicatorPresent)
+                {
+                    pCommandWidget_->setMoveIconState(MachGuiFPCommand::CommandIconState::VALID);
+                }
+                else
+                {
+                    pCommandWidget_->setMoveIconState(MachGuiFPCommand::CommandIconState::INVALID);
+                }
+            }
+        }
+
+        // Display normal or startup cursor - This is the CROSSHAIRS btw
+        if ( pStartCursor_->cellIndex() == pStartCursor_->numCells() - 1 )
+        {
+            pNormalCursor_->isVisible( not viableTarget or not viableShootingTarget );
+            pStartCursor_->isVisible( false );
+        }
+        else
+        {
+            pNormalCursor_->isVisible( false );
+            pStartCursor_->isVisible( not viableTarget );
+
+            // End startup cursor animation if there is a valid target
+            if ( viableTarget )
+            {
+                pStartCursor_->jumpToCell( pStartCursor_->numCells() - 1 );
+            }
+        }
 
         //Fire enabled weapons if requested
-    	if( commandList_[FIRE].on() or DevMouse::instance().leftButton() )
-    	{
-			bool canFire = false;
-			// Check that at least one weapon can fire
-			for ( int weaponIndex = 0; weaponIndex < logHandler.nWeapons() and not canFire; ++weaponIndex )
-			{
-				if ( not pTargetActor_ and logHandler.weaponCanOnlyFireAtActor( weaponIndex ) )
-				{
-					// canFire remains as false
-				}
-				else
-				{
-					if ( logHandler.weapon( weaponIndex ).percentageRecharge() >= 100 and
-						 logHandler.isWeaponEnabled( weaponIndex ) )
-					{
-						// We've found a weapon that can fire
-						canFire = true;
-					}
-				}
-			}
+        if( commandList_[FIRE].on() or DevMouse::instance().leftButton() )
+        {
+            bool canFire = false;
+            // Check that at least one weapon can fire
+            for ( uint weaponIndex = 0; weaponIndex < logHandler.nWeapons() and not canFire; ++weaponIndex )
+            {
+                if ( not targetingInfo.shootingTarget and logHandler.weaponCanOnlyFireAtActor( weaponIndex ) )
+                {
+                    // canFire remains as false
+                }
+                else
+                {
+                    if ( logHandler.weapon( weaponIndex ).percentageRecharge() >= 100 and
+                         logHandler.isWeaponEnabled( weaponIndex ) )
+                    {
+                        // We've found a weapon that can fire
+                        canFire = true;
+                    }
+                }
+            }
 
-			if ( not canFire )
-			{
-				// timeWeaponsFired_ stops sound from being triggered over and over
-				if ( now - timeWeaponsFired_ > 0.8 )
-				{
-					MachGuiSoundManager::instance().playSound( "gui/sounds/nowefire.wav" );
-					timeWeaponsFired_ = now;
-				}
-			}
-			else
-			{
-				timeWeaponsFired_ = now;
+            if ( not canFire )
+            {
+                // timeWeaponsFired_ stops sound from being triggered over and over
+                if ( now - timeWeaponsFired_ > 0.8 )
+                {
+                    MachGuiSoundManager::instance().playSound( "gui/sounds/nowefire.wav" );
+                    timeWeaponsFired_ = now;
+                }
+            }
+            else
+            {
+                timeWeaponsFired_ = now;
 
-	            //Fire the weapons that can fire at points
-	            logHandler.fire( targetPoint_ );
+                //Fire the weapons that can fire at points
+                logHandler.fire( targetingInfo.shootingPoint );
 
-	            //Fire the weapons that can only fire at actors, if we have one
-	            if( pTargetActor_ )
-	                logHandler.fire( pTargetActor_ );
-			}
-    	}
+                //Fire the weapons that can only fire at actors, if we have one
+                if( targetingInfo.shootingTarget )
+                    logHandler.fire( targetingInfo.shootingTarget );
+            }
+        }
+
+        if (commandList_[COMMAND_ORDER_ATTACK].on() and canIssueCommands and viableTarget)
+        {
+            MachActor* pTarget = targetingInfo.getCommandTarget();
+            if (pTarget)
+            {
+                pCommandWidget_->setAttackIconState(MachGuiFPCommand::CommandIconState::ACTIVATED);
+                logHandler.getActiveSquadron().issueAttackCommand(pTarget);
+            }
+        }
+
+        if (commandList_[COMMAND_ORDER_FOLLOW].on() and canIssueCommands)
+        {
+            if (not viableTarget) // FOLLOW SELF
+            {
+                pCommandWidget_->setFollowIconState(MachGuiFPCommand::CommandIconState::ACTIVATED);
+                logHandler.getActiveSquadron().issueFollowCommand(pActor_);
+            }
+            else                  // FOLLOW FRIENDLY
+            {
+                MachActor* pTarget = targetingInfo.getCommandTarget();
+                if (pTarget and pTarget->race() == pActor_->race())
+                {
+                    pCommandWidget_->setFollowIconState(MachGuiFPCommand::CommandIconState::ACTIVATED);
+                    logHandler.getActiveSquadron().issueFollowCommand(pTarget);
+                }
+            }
+        }
+
+        if (commandList_[COMMAND_ORDER_MOVE].on() and canIssueCommands and viableMoveToTarget and not viableTarget and not moveIndicatorPresent)
+        {
+            const auto& point = targetingInfo.getCommandPoint();
+            pCommandWidget_->setMoveIconState(MachGuiFPCommand::CommandIconState::ACTIVATED);
+            logHandler.getActiveSquadron().issueMoveCommand(point);
+            logHandler.displayMoveIndicator(point);
+        }
 	}
 
 	pNormalCursor_->update();
@@ -949,6 +1125,7 @@ void MachGuiFirstPerson::doBecomeRoot()
 	CB_DEPIMPL( bool, isHitInterferenceOn_ );
 	CB_DEPIMPL( int, frameNumber_ );
 	CB_DEPIMPL( bool, machineNVGOn_ );
+    CB_DEPIMPL( MachGuiFPCommand*, pCommandWidget_);
 
 	// Just about to enter machine so initialise the startup sequence
 	finishedStartupSequence_ = false;
@@ -984,8 +1161,12 @@ void MachGuiFirstPerson::doBecomeRoot()
 
 		// Create radar
 		GuiBitmap rcmMapBmp = Gui::bitmap("gui/fstpersn/radar/rmmap.bmp");
-		_DELETE( pRadar_ );
-		pRadar_ = _NEW( MachGuiRadar( this, Gui::Coord( w-rcmMapBmp.width(), h-borderHeight_-rcmMapBmp.height() ) ) );
+        if (pRadar_ != nullptr)
+        {
+            delete pRadar_;
+        }
+
+        pRadar_ = _NEW( MachGuiRadar( this, Gui::Coord( w-rcmMapBmp.width(), h-borderHeight_-rcmMapBmp.height() ) ) );
 		pRadar_->actor( pActor_ );
 
 		// Reset resolution changed flag
@@ -999,6 +1180,12 @@ void MachGuiFirstPerson::doBecomeRoot()
 
 	// Store camera type use in game
 	switchBackToGroundCamera_ = pInGameScreen_->cameras()->isGroundCameraActive();
+
+    // Create FP Command Widget
+    if (pCommandWidget_ == nullptr)
+    {
+        pCommandWidget_ = new MachGuiFPCommand(this, Gui::Coord(21, h-187));
+    }
 
     //Embody the actor
     embodyActor();
@@ -1500,6 +1687,7 @@ void MachGuiFirstPerson::embodyActor()
 	CB_DEPIMPL( MachGuiRadar*, pRadar_ );
 	CB_DEPIMPL( MachInGameScreen*, pInGameScreen_ );
 	CB_DEPIMPL( bool, rightMouseButtonHeadTurningUsed_ );
+    CB_DEPIMPL( MachGuiFPCommand*, pCommandWidget_);
 
     PRE( pActor_ != NULL );
     PRE( pLogHandler_ == NULL );
@@ -1514,6 +1702,15 @@ void MachGuiFirstPerson::embodyActor()
     {
         pLogHandler_ = _NEW( MachLog1stPersonMachineHandler( &actor.asMachine(), MachLog1stPersonHandler::LOCAL ) );
 		pRadar_->logHandler( pLogHandler_ );
+        pCommandWidget_->logHandler(pLogHandler_);
+
+        // If the embodied machine has a squadron, it shall be selected. Let's show that.
+        if (pLogHandler_->getActiveSquadron().hasActiveSquadron())
+        {
+            pCommandWidget_->updateSquadIcon();
+            pCommandWidget_->updateSquadNumber();
+        }
+
 		W4dEntity* thisEntity = _STATIC_CAST(W4dEntity*, &(pActor_->asMachine().physMachine()));
 		W4dSoundManager::instance().stop(thisEntity);
 		W4dSoundManager::instance().play(thisEntity, SID_INHEAD, 0, 0);
@@ -1536,12 +1733,21 @@ void MachGuiFirstPerson::exitActor()
 	CB_DEPIMPL( MachLog1stPersonHandler*, pLogHandler_ );
 	CB_DEPIMPL( MachActor*, pActor_ );
 	CB_DEPIMPL( MachGuiRadar*, pRadar_ );
+    CB_DEPIMPL( MachGuiFPCommand*, pCommandWidget_);
+    CB_DEPIMPL( int64_t, commandSquadIndex_);
 
     //Delete the handler
     _DELETE( pLogHandler_ );
     pLogHandler_ = NULL;
 
+    // RESET RADAR (sorta...)
 	pRadar_->resetLogHandler();
+
+    // RESET COMMAND WIDGET
+    pCommandWidget_->resetLogHandler();
+    pCommandWidget_->clearSquadIcon();
+    pCommandWidget_->resetSquadNumber();
+    commandSquadIndex_ = -1L;
 
 	// Put selection box back round actor.
 	if ( pActor_ )

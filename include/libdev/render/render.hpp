@@ -56,7 +56,7 @@ struct Ren
 
 	struct Rect
 	{
-		Rect(int x=0, int y=0, int w=0, int h=0): originX(x), originY(y), width(w), height(h)	{}
+        constexpr Rect(int x=0, int y=0, int w=0, int h=0): originX(x), originY(y), width(w), height(h)	{}
 		int originX, originY, width, height;
 	};
 

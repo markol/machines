@@ -15,12 +15,13 @@
 #include "planeted/editactor.hpp"
 #include "ctl/pvector.hpp"
 #include "ctl/vector.hpp"
+#include "device/butevent.hpp"
 #include "mathex/degrees.hpp"
 #include "planeted/scenfile.hpp"
 
 class MachPhysConstruction;
 class W4dComposite;
-class DevButtonEvent;
+//class DevButtonEvent;
 class SysPathName;
 class ofstream;
 class MexTransform3d;

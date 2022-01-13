@@ -36,6 +36,8 @@ private:
 
 	MachLogAdministrator*				pCommander_;
 	bool								hasCommander_;
+    MachLogMachine*                     pStrongestMachine_;
+    bool                                squadronHasChanged_;
 	MachLogSquadron::Machines			machines_;
 	int									squadronId_;
 	MachLogSquadron::DesiredMachineList	desiredMachineList_;

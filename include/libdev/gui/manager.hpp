@@ -129,6 +129,8 @@ private:
 	void processMouseEvent( const GuiMouseEvent& );
 	void updateMouseFocus();
 
+    static Gui::ScrollState getScrollDirection(DevButtonEvent::Action act);
+
 	enum { N_BUFFERS = 2 };
 
 	// Data members

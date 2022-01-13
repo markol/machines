@@ -20,58 +20,58 @@ class UtlSubrange
 {
 public:
 
-	typedef NUMERIC Value;
-	typedef UtlOpenInterval< Value > Range;
+    typedef NUMERIC Value;
+    typedef UtlOpenInterval< Value > Range;
 
-	UtlSubrange( const Range& range )
-	: UtlTypeBase< NUMERIC >::UtlTypeBase( range.lower() ),
-	  range_( range )
-	{
-		PRE_INFO( UtlTypeBase< NUMERIC >::value_ );
-		PRE( isValid( UtlTypeBase< NUMERIC >::value_ ) );
-	}
+    UtlSubrange( const Range& range )
+    : UtlTypeBase< NUMERIC >::UtlTypeBase( range.lower() ),
+    range_( range )
+    {
+        PRE_INFO( UtlTypeBase< NUMERIC >::value_ );
+        PRE( isValid( UtlTypeBase< NUMERIC >::value_ ) );
+    }
 
-	Range range( void ) const
-	{
-		return range_;
-	}
+    Range range( void ) const
+    {
+        return range_;
+    }
 
-	operator const Value&() const
-	{
-		PRE_INFO( UtlTypeBase< NUMERIC >::value_ );
-		PRE( isValid( UtlTypeBase< NUMERIC >::value_ ) );
-		return UtlTypeBase< NUMERIC >::value_;
-	}
+    operator const Value&() const
+    {
+        PRE_INFO( UtlTypeBase< NUMERIC >::value_ );
+        PRE( isValid( UtlTypeBase< NUMERIC >::value_ ) );
+        return UtlTypeBase< NUMERIC >::value_;
+    }
 
-	void value(const Value& newValue)
-	{
-		PRE_INFO(newValue);
-		PRE(isValid(newValue));
-		UtlTypeBase< NUMERIC >::value_ = newValue;
-	}
+    void value(const Value& newValue)
+    {
+        PRE_INFO(newValue);
+        PRE(isValid(newValue));
+        UtlTypeBase< NUMERIC >::value_ = newValue;
+    }
 
-	bool isValid( const Value& t ) const
-	{
-		return range_.contains( t );
-	}
+    bool isValid( const Value& t ) const
+    {
+        return range_.contains( t );
+    }
 
-	NUMERIC length( void ) const
-	{
-		return range_.length();
-	}
+    NUMERIC length( void ) const
+    {
+        return range_.length();
+    }
 
-	UtlSubrange& operator =( const Value& t )
-	{
-		PRE_INFO( t );
-		PRE( isValid( t ) );
-		UtlTypeBase< NUMERIC >::value_ = t;
-		return *this;
-	}
+    UtlSubrange& operator =( const Value& t )
+    {
+        PRE_INFO( t );
+        PRE( isValid( t ) );
+        UtlTypeBase< NUMERIC >::value_ = t;
+        return *this;
+    }
 
 private:
 
-	Range	range_;
-};
+    Range	range_;
+} ;
 
 //////////////////////////////////////////////////////////////////////
 
@@ -81,22 +81,25 @@ class UtlIntegralSubrangeBase
 {
 public:
 
-	typedef INTEGRAL_TYPE					value_type;
-	typedef UtlIntegralSubrangeBase			Base;
-	typedef UtlOpenInterval< value_type >	Range;
+    typedef INTEGRAL_TYPE					value_type;
+    typedef UtlIntegralSubrangeBase			Base;
+    typedef UtlOpenInterval< value_type >	Range;
 
-	UtlIntegralSubrangeBase( value_type value )
-	: value_( value )
-	{
-		// Intentionally Empty
-	}
+    UtlIntegralSubrangeBase( value_type value )
+    : value_( value )
+    {
+        // Intentionally Empty
+    }
 
-	operator value_type() const { return value_; }
+    operator value_type() const
+    {
+        return value_;
+    }
 
 protected:
 
-	value_type	value_;
-};
+    value_type	value_;
+} ;
 
 //////////////////////////////////////////////////////////////////////
 
@@ -107,57 +110,64 @@ class UtlIntSubrange
 {
 public:
 
-	void constraints()
-	{
-		ASSERT_COMPILE_TIME( LOWER <= UPPER );
-	}
+    void constraints()
+    {
+        ASSERT_COMPILE_TIME( LOWER <= UPPER );
+    }
 
-	UtlIntSubrange()
-	: Base( LOWER )
-	{
-		PRE( isInRange( *this ) );
-	}
+    UtlIntSubrange()
+    : Base( LOWER )
+    {
+        PRE( isInRange( *this ) );
+    }
 
-	UtlIntSubrange( value_type value )
-	: Base( value )
-	{
-		PRE( isInRange( value ) );
-	}
+    UtlIntSubrange( value_type value )
+    : Base( value )
+    {
+        PRE( isInRange( value ) );
+    }
 
-	Base::operator value_type;
+    using Base::operator value_type;
 
-	UtlIntSubrange& operator =( value_type newValue )
-	{
-		PRE( isInRange( newValue ) );
-		value_ = newValue;
-		return *this;
-	}
+    UtlIntSubrange& operator =( value_type newValue )
+    {
+        PRE( isInRange( newValue ) );
+        value_ = newValue;
+        return *this;
+    }
 
-	static bool isInRange( value_type v )
-	{
-		return v >= LOWER and v <= UPPER;
-	}
+    static bool isInRange( value_type v )
+    {
+        return v >= LOWER and v <= UPPER;
+    }
 
-	static value_type length() { return UPPER - LOWER; };
-	static Range range() { return Range( LOWER, UPPER ); }
-};
+    static value_type length()
+    {
+        return UPPER - LOWER;
+    };
+
+    static Range range()
+    {
+        return Range( LOWER, UPPER );
+    }
+} ;
 
 //////////////////////////////////////////////////////////////////////
 
 #ifndef NDEBUG
-	#define UTL_SUBRANGE( TYPE, LOWER, UPPER, VARNAME ) UtlSubrange< TYPE > VARNAME( UtlOpenInterval< TYPE >( LOWER, UPPER ) )
+#define UTL_SUBRANGE( TYPE, LOWER, UPPER, VARNAME ) UtlSubrange< TYPE > VARNAME( UtlOpenInterval< TYPE >( LOWER, UPPER ) )
 #else
-	#define UTL_SUBRANGE( TYPE, LOWER, UPPER, VARNAME ) TYPE VARNAME
-#endif	// #ifndef NDEBUG
+#define UTL_SUBRANGE( TYPE, LOWER, UPPER, VARNAME ) TYPE VARNAME
+#endif // #ifndef NDEBUG
 
 #ifndef NDEBUG
-	#define UTL_INT_SUBRANGE( LOWER, UPPER, TYPENAME ) typedef UtlIntSubrange< LOWER, UPPER > TYPENAME
+#define UTL_INT_SUBRANGE( LOWER, UPPER, TYPENAME ) typedef UtlIntSubrange< LOWER, UPPER > TYPENAME
 #else
-	#define UTL_INT_SUBRANGE( LOWER, UPPER, TYPENAME ) typedef int TYPENAME
-#endif	// #ifndef NDEBUG
+#define UTL_INT_SUBRANGE( LOWER, UPPER, TYPENAME ) typedef int TYPENAME
+#endif // #ifndef NDEBUG
 
 //////////////////////////////////////////////////////////////////////
 
-#endif	/* #ifndef _UTL_SUBRANGE_HPP	*/
+#endif /* #ifndef _UTL_SUBRANGE_HPP	*/
 
 /* End SUBRANGE.HPP **************************************************/

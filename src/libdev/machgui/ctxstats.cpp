@@ -12,7 +12,8 @@
 #include "device/cd.hpp"
 #include "render/device.hpp"
 #include "render/display.hpp"
-#include "ani/smacker.hpp"
+#include "ani/AniSmacker.hpp"
+#include "ani/AniSmackerRegular.hpp"
 #include "gui/gui.hpp"
 #include "gui/font.hpp"
 #include "gui/restring.hpp"
@@ -77,8 +78,9 @@ MachGuiCtxStatistics::MachGuiCtxStatistics( MachGuiStartupScreens* pStartupScree
 //	   	HWND targetWindow = RenDevice::current()->display()->window();
 
 //		AniSmacker* pSmackerAnimation = _NEW( AniSmacker( statAnim, targetWindow, 55 + pStartupScreens_->xMenuOffset(), 142 + pStartupScreens_->yMenuOffset() ) );
-		AniSmacker* pSmackerAnimation = _NEW( AniSmacker( statAnim, 55 + pStartupScreens_->xMenuOffset(), 142 + pStartupScreens_->yMenuOffset() ) );
-		pStartupScreens->addSmackerAnimation( pSmackerAnimation );
+        //AniSmacker* pSmackerAnimation = _NEW( AniSmacker( statAnim, 55 + pStartupScreens_->xMenuOffset(), 142 + pStartupScreens_->yMenuOffset() ) );
+        AniSmacker* pSmackerAnimation = new AniSmackerRegular(statAnim, 55 + pStartupScreens_->xMenuOffset(), 142 + pStartupScreens_->yMenuOffset());
+        pStartupScreens->addSmackerAnimation( pSmackerAnimation );
 	}
 
 	// Heading texts

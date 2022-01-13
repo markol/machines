@@ -28,7 +28,8 @@
 #include "gui/event.hpp"
 #include "machgui/internal/strings.hpp"
 #include "gui/image.hpp"
-#include "ani/smacker.hpp"
+#include "ani/AniSmacker.hpp"
+#include "ani/AniSmackerRegular.hpp"
 #include "system/registry.hpp"
 #include "render/device.hpp"
 #include "render/display.hpp"
@@ -657,8 +658,9 @@ void MachGuiCtxScenario::updateDisplayedInfo( const string& text, SysPathName an
 //		    HWND targetWindow = RenDevice::current()->display()->window();
 
 //			AniSmacker* pSmackerAnimation = _NEW( AniSmacker( animation, targetWindow, 342 + pStartupScreens_->xMenuOffset(), 32 + pStartupScreens_->yMenuOffset() ) );
-			AniSmacker* pSmackerAnimation = _NEW( AniSmacker( animation, 342 + pStartupScreens_->xMenuOffset(), 32 + pStartupScreens_->yMenuOffset() ) );
-			pStartupScreens_->addSmackerAnimation( pSmackerAnimation );
+            //AniSmacker* pSmackerAnimation = _NEW( AniSmacker( animation, 342 + pStartupScreens_->xMenuOffset(), 32 + pStartupScreens_->yMenuOffset() ) );
+            AniSmacker* pSmackerAnimation = new AniSmackerRegular(animation, 342 + pStartupScreens_->xMenuOffset(), 32 + pStartupScreens_->yMenuOffset());
+            pStartupScreens_->addSmackerAnimation( pSmackerAnimation );
 		}
 		else if ( animation.extension() == "bmp" )
 		{

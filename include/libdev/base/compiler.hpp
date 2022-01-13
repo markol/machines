@@ -78,6 +78,8 @@
     #if __GNUC__ >= 5
         //#include "base/watc1060.hpp"
         #define _COMPILER_VERSION
+    #elif defined (__clang__)   // Appease Qt Creator's code model
+        #define _COMPILER_VERSION
     #endif
 
     #define _COMPILER_NAME  GCC
@@ -102,6 +104,9 @@
     //#define _WIN95APP
     #define _SDLAPP
 
+    #define WEAK_SYMBOL __attribute__((weak))
+#else
+    #define WEAK_SYMBOL
 #endif
 
 //////////////////////////////////////////////////////////////////////

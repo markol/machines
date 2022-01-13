@@ -13,6 +13,26 @@
 #include "gui/gui.hpp"
 #include "gui/restring.hpp"
 
+#include "system/pathname.hpp"
+#include "machgui/actbmpnm.hpp"
+#include "machlog/canattac.hpp"
+#include "machlog/machine.hpp"
+
+//static
+GuiBitmap MachGui::createIconForMachine(MachLogMachine* machine, bool firstPersonIcon)
+{
+    // This is needed for the bitmap name function. )^:?
+    MachPhys::WeaponCombo wc = MachPhys::N_WEAPON_COMBOS;
+    if ( machine->objectIsCanAttack() )
+    {
+        wc = machine->asCanAttack().weaponCombo();
+    }
+
+    auto icon = GuiBitmap{ Gui::bitmap( MachActorBitmaps::name( machine->objectType(), machine->subType(), machine->asMachine().hwLevel(), wc, machine->race(), firstPersonIcon ) ) };
+    return icon;
+}
+
+
 // static
 const Gui::Colour&
 MachGui::mVIIIBackgroundColour()

@@ -348,6 +348,12 @@ void MachWorldViewWindow::doHandleMouseExitEvent( const GuiMouseEvent& )
 }
 
 //virtual
+void MachWorldViewWindow::doHandleMouseScrollEvent( const GuiMouseEvent& event )
+{
+    pCameras_->scrollWithWheel(event.scrollDirection(), 15.0);
+}
+
+//virtual
 void MachWorldViewWindow::doHandleContainsMouseEvent( const GuiMouseEvent& event )
 {
     //get the 3d line

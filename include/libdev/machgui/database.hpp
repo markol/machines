@@ -69,6 +69,8 @@ public:
     //Unload all loaded text data objects. Should be called at intervals.
     void clearAllTextData();
 
+    //Are there even any custom scenarios to begin with?
+    static bool doCustomScenariosExist();
     ///////////////////////////////////////////
     //  Players
 

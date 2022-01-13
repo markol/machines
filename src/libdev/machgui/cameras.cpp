@@ -695,6 +695,56 @@ void MachCameras::scroll( ScrollDir scrollDir, const GuiMouseEvent& event )
 	}
 }
 
+void MachCameras::scrollWithWheel(const Gui::ScrollState wheelDir, const double step)
+{
+    constexpr auto zoomIn  = Gui::ScrollState::SCROLL_UP;
+    constexpr auto zoomOut = Gui::ScrollState::SCROLL_DOWN;
+
+    if ( pCurrentCamera_ == pZenithCamera_ )
+    {
+        auto  zenithMotion     = PhysMotion{ pZenithControl_->motion_ };
+        auto  zenithTransform  = MexTransform3d{ pZenithCamera_->globalTransform() };
+
+        if (wheelDir == zoomIn)
+        {
+            double newClimb = std::fabs(zenithMotion.climb()) * -1.0;
+            zenithMotion.climb(newClimb);
+            zenithMotion.deltaClimb(step * -1.0);
+        }
+        else if (wheelDir == zoomOut)
+        {
+            double newClimb = std::fabs(zenithMotion.climb());
+            zenithMotion.climb(newClimb);
+            zenithMotion.deltaClimb(step);
+        }
+
+        pZenithControl_->pMotionConstraint_->move(zenithTransform, zenithMotion, step / pZenithControl_->metresPerSecond());
+        pZenithCamera_->globalTransform(zenithTransform);
+    }
+    else if ( pCurrentCamera_ == pGroundCamera_ )
+    {
+        auto  groundMotion    = PhysMotion{ pGroundControl_->motion_ };
+        auto  groundTransform = MexTransform3d{ pGroundCamera_->globalTransform() };
+
+        // GROUND CAM is inverted directions
+        if (wheelDir == zoomOut)
+        {
+            double newClimb = std::fabs(groundMotion.climb()) * -1.0;
+            groundMotion.climb(newClimb);
+            groundMotion.deltaClimb(step * -1.0);
+        }
+        else if (wheelDir == zoomIn)
+        {
+            double newClimb = std::fabs(groundMotion.climb());
+            groundMotion.climb(newClimb);
+            groundMotion.deltaClimb(step);
+        }
+
+        pGroundControl_->pMotionConstraint_->move(groundTransform, groundMotion, step / pGroundControl_->metresPerSecond());
+        pGroundCamera_->globalTransform(groundTransform);
+    }
+}
+
 bool MachCameras::isZenithCameraActive() const
 {
 	return ( pCurrentCamera_ == pZenithCamera_ );

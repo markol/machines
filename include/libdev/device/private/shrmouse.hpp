@@ -38,8 +38,8 @@ protected:
         DevSharedMouse();
     void clipToRange(Position&) const;
 
-    bool    lastLeftButtonState_;
-    bool    lastRightButtonState_;
+    mutable bool    lastLeftButtonState_;
+    mutable bool    lastRightButtonState_;
 
 private:
     Position    minRange_;

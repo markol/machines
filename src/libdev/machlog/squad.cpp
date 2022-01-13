@@ -33,7 +33,9 @@ PER_DEFINE_PERSISTENT( MachLogSquadron );
 	CB_DEPIMPL( MachLogSquadron::DesiredMachineList	,desiredMachineList_) \
 	CB_DEPIMPL( int									,totalDesiredMachines_) \
 	CB_DEPIMPL( bool								,setDefCon_ ) \
-	CB_DEPIMPL( MachLog::DefCon						,defCon_ );
+    CB_DEPIMPL( MachLog::DefCon						,defCon_ ) \
+    CB_DEPIMPL( MachLogMachine*                     ,pStrongestMachine_) \
+    CB_DEPIMPL( bool                                ,squadronHasChanged_);
 
 
 MachLogSquadron::MachLogSquadron( MachLogRace* pRace, W4dEntity* pPhysObject, int squadronId )
@@ -127,6 +129,9 @@ bool MachLogSquadron::addToControl( MachLogMachine* p )
     if( addToEnd )
 		machines_.push_back( p );
 
+    // This is for get strongest machine
+    squadronHasChanged_ = true;
+
 	MachLogProductionUnit prod( p->objectType(), p->subType(), p->hwLevel(), p->swLevel(), MachLogProductionUnit::UNCHECKED_PRIORITY );
 	MachPhys::WeaponCombo wc = MachPhys::N_WEAPON_COMBOS;
 
@@ -218,6 +223,8 @@ void MachLogSquadron::removeFromControl( const MachLogMachine* p )
 
 	notifyObservers( W4dSubject::CLIENT_SPECIFIC, MachLog::SQUADRON_CHANGED );
 
+    // This is for get strongest machine
+    squadronHasChanged_ = true;
 }
 
 void MachLogSquadron::releaseAllMachines( void )
@@ -229,6 +236,7 @@ void MachLogSquadron::releaseAllMachines( void )
 		(*machines_.begin())->squadron( NULL );
 	}
 
+    pStrongestMachine_ = nullptr;
 }
 
 int MachLogSquadron::squadronId() const
@@ -284,6 +292,8 @@ void MachLogSquadron::addDesiredMachine( MachLogProductionUnit* pProd, int desir
 	desiredMachineList_.push_back( dmd );
 	totalDesiredMachines_ += desiredNumber;
 
+    // This is for get strongest machine
+    squadronHasChanged_ = true;
 }
 
 //virtual
@@ -424,6 +434,50 @@ void MachLogSquadron::autoSetDefCon( MachLog::DefCon defCon )
 	CB_MachLogSquadron_DEPIMPL();
 	setDefCon_ = true;
 	defCon_ = defCon;
+}
+
+MachLogMachine* MachLogSquadron::getStrongestMachine()
+{
+    MachLogMachine* strongestMachine = nullptr;
+    CB_MachLogSquadron_DEPIMPL();
+
+    if (machines_.size() > 0)
+    {
+        if (not squadronHasChanged_ and pStrongestMachine_ != nullptr)
+        {
+            strongestMachine = pStrongestMachine_;
+        }
+        else if (pStrongestMachine_ == nullptr or squadronHasChanged_ == true)
+        {
+            int bestStrength = 0;
+            int myStrength = 0;
+            for (auto machine : machines())
+            {
+                if (not machine)
+                {
+                    continue;
+                }
+                // Initially assign the first machine, so that all-civvie squads don't cause null pointer woes.
+                if (strongestMachine == nullptr)
+                {
+                    strongestMachine = machine;
+                }
+
+                myStrength = machine->militaryStrength();
+                if (std::max(myStrength, bestStrength) > bestStrength)
+                {
+                    bestStrength = myStrength;
+                    strongestMachine = machine;
+                }
+            }
+        }
+    }
+
+    // This bool serves this function
+    // ...so that we perform the above iteration sparingly
+    squadronHasChanged_ = false;
+
+    return strongestMachine;
 }
 
 /* End SQUAD.CPP ****************************************************/

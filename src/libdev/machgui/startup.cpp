@@ -54,7 +54,8 @@
 #include "profiler/profiler.hpp"
 #include "recorder/recorder.hpp"
 #include "mathex/random.hpp"
-#include "ani/smacker.hpp"
+#include "ani/AniSmacker.hpp"
+#include "ani/AniSmackerCutscene.hpp"
 #include "gui/event.hpp"
 #include "gui/manager.hpp"
 #include "gui/painter.hpp"
@@ -95,7 +96,6 @@
 #include "device/cd.hpp"
 #include "device/butevent.hpp"
 #include "afx/resource.hpp"
-#include "ani/smacker.hpp"
 #include "system/winapi.hpp"
 #include <fstream>
 #include "network/netnet.hpp"
@@ -2046,13 +2046,14 @@ void MachGuiStartupScreens::startPlayingAnimation( const SysPathName& filename, 
     //Construct a smacker player
 //    HWND targetWindow = RenDevice::current()->display()->window();
 //    pPlayingSmacker_ = _NEW( AniSmacker( filename, targetWindow, xMenuOffset(), yMenuOffset(), fast ) );
-    pPlayingSmacker_ = _NEW( AniSmacker( filename, xMenuOffset(), yMenuOffset(), fast ) );
+    //pPlayingSmacker_ = _NEW( AniSmacker( filename, xMenuOffset(), yMenuOffset(), fast ) );
+    pPlayingSmacker_ = new AniSmackerRegular(filename, xMenuOffset(), yMenuOffset(), fast);
 
 	// Remove mouse pointer
     cursorOn( false );
 }
 
-void MachGuiStartupScreens::startPlayingAnimation( const SysPathName& filename, bool fast, bool frontBuffer, const Gui::Coord& pos )
+void MachGuiStartupScreens::startPlayingAnimation( const SysPathName& filename, bool fast, bool frontBuffer, const Gui::Coord& pos, bool isCutscene )
 {
 	CB_DEPIMPL(	AniSmacker*, pPlayingSmacker_ );
 
@@ -2063,7 +2064,15 @@ void MachGuiStartupScreens::startPlayingAnimation( const SysPathName& filename, 
     //Construct a smacker player
 //    HWND targetWindow = RenDevice::current()->display()->window();
 //    pPlayingSmacker_ = _NEW( AniSmacker( filename, targetWindow, pos.x() + xMenuOffset(), pos.y() + yMenuOffset(), fast ) );
-    pPlayingSmacker_ = _NEW( AniSmacker( filename, pos.x() + xMenuOffset(), pos.y() + yMenuOffset(), fast ) );
+    //pPlayingSmacker_ = _NEW( AniSmacker( filename, pos.x() + xMenuOffset(), pos.y() + yMenuOffset(), fast ) );
+
+    if (not isCutscene) {
+        pPlayingSmacker_ = new AniSmackerRegular(filename, pos.x() + xMenuOffset(), pos.y() + yMenuOffset(), fast);
+    }
+    else {
+        const auto& displayMode = RenDevice::current()->display()->currentMode();
+        pPlayingSmacker_ = new AniSmackerCutscene(filename, 0, 0, displayMode.width(), displayMode.height());
+    }
 
 	if ( frontBuffer )
 		pPlayingSmacker_->useFrontBuffer( frontBuffer );
@@ -2311,7 +2320,7 @@ void MachGuiStartupScreens::contextAnimation()
 		// Try playing into anim off hard-disk
 		if ( sysFlicName.existsAsFile() )
 		{
-			startPlayingAnimation( sysFlicName, false, true, Gui::Coord(5,104) );
+            startPlayingAnimation( sysFlicName, false, true, Gui::Coord(5,104), true );
 			flicExists = true;
 		}
 		// Try playing intro anim off CD-ROM
@@ -2326,7 +2335,7 @@ void MachGuiStartupScreens::contextAnimation()
 			if ( MachGui::getCDRomDriveContainingFile( cdRomDrive, "flics/animatic.smk" ) )
 			{
 				SysPathName sysCDFlicName( cdRomDrive + "flics/animatic.smk" );
-				startPlayingAnimation( sysCDFlicName, false, true, Gui::Coord(5,104) );
+                startPlayingAnimation( sysCDFlicName, false, true, Gui::Coord(5,104), true );
 				flicExists = true;
 			}
 		}
@@ -2398,7 +2407,7 @@ void MachGuiStartupScreens::contextAnimation()
 		// Try playing intro anim off hard-disk
 		if ( sysFlicName.existsAsFile() )
 		{
-			startPlayingAnimation( sysFlicName, false, true, Gui::Coord(5,104) );
+            startPlayingAnimation( sysFlicName, false, true, Gui::Coord(5,104), true );
 			flicExists = true;
 		}
 		// Try playing intro anim off CD-ROM
@@ -2413,7 +2422,7 @@ void MachGuiStartupScreens::contextAnimation()
 			if ( MachGui::getCDRomDriveContainingFile( cdRomDrive, flicName ) )
 			{
 				SysPathName sysCDFlicName( cdRomDrive + flicName );
-				startPlayingAnimation( sysCDFlicName, false, true, Gui::Coord(5,104) );
+                startPlayingAnimation( sysCDFlicName, false, true, Gui::Coord(5,104), true );
 				flicExists = true;
 			}
 		}

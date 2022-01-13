@@ -11,13 +11,14 @@
 #include "ctl/list.hpp"
 #include "utility/property.hpp"
 #include "device/timer.hpp"
+#include "device/butevent.hpp"
 #include "mathex/transf3d.hpp"
 #include "mathex/vec3.hpp"
 
 //class ostream;
 class PhysMotionConstraint;	// defined below
 class MexTransform3d;
-class DevButtonEvent;
+//class DevButtonEvent;
 class MexVec2;
 
 // This needs a better name because it's very plausible that you

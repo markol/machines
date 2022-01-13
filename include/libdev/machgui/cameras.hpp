@@ -16,9 +16,10 @@
 #include "mathex/point3d.hpp"
 #include "mathex/transf3d.hpp"
 #include "device/timer.hpp"
+#include "device/butevent.hpp"
 #include "gui/gui.hpp"
 
-class DevButtonEvent;
+//class DevButtonEvent;
 class DevKeyToCommandTranslator;
 class PhysFlyControl;
 class PhysZenithFlyControl;
@@ -76,6 +77,8 @@ public:
 	// Called when mouse is at edge of screen.
 	enum ScrollDir { LEFT, RIGHT, UP, DOWN };
 	void scroll( ScrollDir, const GuiMouseEvent& event );
+
+    void scrollWithWheel(const Gui::ScrollState wheelDir, const double step);
 
 	bool isZenithCameraActive() const;
 	bool isGroundCameraActive() const;

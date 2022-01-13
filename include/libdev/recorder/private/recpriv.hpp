@@ -18,15 +18,18 @@
 #define _RECORDER_RECPRIV_HPP
 
 #include "base/base.hpp"
-#include "device/mouse.hpp"
 #include "device/keyboard.hpp"
 #include "system/registry.hpp"
 
 #include "sound/snd.hpp"
 
+#include "utility/DependencyProvider.hpp"
+
 #include <string>
+#include <utility>
 
 class MexPoint3d;
+using DevMousePosition = std::pair<int32,int32>;
 
 class RecRecorderPrivate
 // Canonical form revoked
@@ -41,7 +44,7 @@ public:
     void recordTime( double time );
     void recordMessageTime( double time );
 
-    void recordMousePosition( const DevMouse::Position& );
+    void recordMousePosition( const DevMousePosition& );
     void recordLeftButton( bool );
     void recordRightButton( bool );
 
@@ -85,7 +88,7 @@ public:
     double playbackTime() const;
     double playbackMessageTime() const;
 
-    DevMouse::Position playbackMousePosition() const;
+    DevMousePosition playbackMousePosition() const;
     bool playbackLeftButton() const;
     bool playbackRightButton() const;
 
@@ -135,6 +138,15 @@ private:
 
     RecRecorderPrivate( void );
 };
+
+/* *******************************************************
+ * SINGLETON DEPENDENCY PROVIDER
+ */
+template<>
+inline RecRecorderPrivate& DependencyProvider<RecRecorderPrivate>::getProvided()
+{
+    return RecRecorderPrivate::instance();
+}
 
 #ifdef _INLINE
     #include "recorder/private/recpriv.itf"

@@ -129,8 +129,16 @@ const Gui::Colour& Gui::GREY()
 GuiBitmap
 Gui::bitmap( const SysPathName& path )
 {
-	ASSERT_FILE_EXISTS( path.pathname().c_str() );
-	return GuiBitmap::createSharedSurface( path.pathname(), Gui::backBuffer() );
+    //LO's assets don't keep case. :(
+    string pathName(path.pathname());
+
+    if (path.containsCapitals() and not path.existsAsFile())
+    {
+        std::transform(pathName.begin(), pathName.end(), pathName.begin(), [](unsigned char c){ return std::tolower(c); });
+    }
+    ASSERT_FILE_EXISTS( pathName.c_str() );
+
+    return GuiBitmap::createSharedSurface( pathName, Gui::backBuffer() );
 }
 
 // static

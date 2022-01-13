@@ -84,6 +84,13 @@ struct Gui
 		NO_CHANGE	= DevMouse::NO_CHANGE
 	};
 
+    enum class ScrollState
+    {
+        NO_SCROLL,
+        SCROLL_UP,
+        SCROLL_DOWN
+    };
+
 	///////////////////////////////
 
 	static Gui::Box bitmapDimensions( const SysPathName& path );

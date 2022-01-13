@@ -54,6 +54,8 @@ public:
 	void setStringValue( const std::string& keyName, const std::string& valueName, const std::string& value, Root root = LOCAL_MACHINE );
 	void setIntegerValue( const std::string& keyName, const std::string& valueName, int value, Root root = LOCAL_MACHINE );
 
+    ReturnValue	queryValueNoRecord( KeyHandle, const std::string& valueName, std::string& );
+
     void CLASS_INVARIANT;
 
 private:
@@ -67,7 +69,7 @@ private:
     //  are for use within functions which are already doing their own recording
     //  - e.g. queryStringValue and queryIntegerValue.
 	ReturnValue	onlyOpenKeyNoRecord( const std::string& keyName, KeyHandle* pOpenedKey, Root root = LOCAL_MACHINE );
-	ReturnValue	queryValueNoRecord( KeyHandle, const std::string& valueName, std::string& );
+    // Query is now public. F the recorder. =)
 	ReturnValue	closeKeyNoRecord( KeyHandle );
 
     SysRegistry( void );

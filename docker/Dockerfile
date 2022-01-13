@@ -21,7 +21,8 @@ RUN apt-get update --fix-missing && \
         libfreetype6-dev \
         libglew-dev \
         libglm-dev \
-        libaudio-dev
+        libaudio-dev \
+        libswscale-dev
 
 
 RUN useradd -ms /bin/bash dev

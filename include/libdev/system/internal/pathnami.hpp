@@ -36,6 +36,8 @@ public:
     size_t rootId_;
     bool fullPathnameSet_;
     bool componentsSet_;
+
+    bool containsCapitals_;
 };
 
 #endif /* _SYSTEM_INTERNAL_PATHNAME_IMPL_HPP **************/

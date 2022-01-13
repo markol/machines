@@ -14,6 +14,7 @@
 #define _MACHGUI_PRODBANK_HPP
 
 #include "base/base.hpp"
+#include "device/butevent.hpp"
 #include "world4d/observer.hpp"
 #include "gui/displaya.hpp"
 
@@ -24,7 +25,7 @@ class MachLogFactory;
 class MachInGameScreen;
 class GuiFilledProgressBar;
 class MachGuiBufferScrollButton;
-class DevButtonEvent;
+//class DevButtonEvent;
 class DevKeyToCommandTranslator;
 
 //orthodox canonical (revoked)

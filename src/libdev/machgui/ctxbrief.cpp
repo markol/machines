@@ -24,7 +24,8 @@
 #include "machlog/races.hpp"
 #include "machgui/internal/strings.hpp"
 #include "gui/image.hpp"
-#include "ani/smacker.hpp"
+#include "ani/AniSmacker.hpp"
+#include "ani/AniSmackerRegular.hpp"
 #include "sound/soundmix.hpp"
 #include "sound/smpparam.hpp"
 #include "sound/sndwavid.hpp"
@@ -326,8 +327,9 @@ void MachGuiCtxBriefing::displayBriefingImage( void )
 //		   	HWND targetWindow = RenDevice::current()->display()->window();
 
  //			AniSmacker* pSmackerAnimation = _NEW( AniSmacker( briefPicture, targetWindow, 355 + pStartupScreens_->xMenuOffset(), 56 + pStartupScreens_->yMenuOffset() ) );
- 			AniSmacker* pSmackerAnimation = _NEW( AniSmacker( briefPicture, 355 + pStartupScreens_->xMenuOffset(), 56 + pStartupScreens_->yMenuOffset() ) );
-			pStartupScreens_->addSmackerAnimation( pSmackerAnimation );
+            //AniSmacker* pSmackerAnimation = _NEW( AniSmacker( briefPicture, 355 + pStartupScreens_->xMenuOffset(), 56 + pStartupScreens_->yMenuOffset() ) );
+            AniSmacker* pSmackerAnimation = new AniSmackerRegular(briefPicture, 355 + pStartupScreens_->xMenuOffset(), 56 + pStartupScreens_->yMenuOffset());
+            pStartupScreens_->addSmackerAnimation( pSmackerAnimation );
 		}
 		else if ( briefPicture.extension() == "bmp" )
 		{

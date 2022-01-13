@@ -6,6 +6,7 @@
 #ifndef _MACHGUI_SQUADRON_HPP
 #define _MACHGUI_SQUADRON_HPP
 
+#include "device/butevent.hpp"
 #include "gui/icon.hpp"
 #include "gui/scrolist.hpp"
 #include "world4d/observer.hpp"
@@ -20,7 +21,7 @@ class MachInGameScreen;
 class MachGuiSquadron;
 class MachGuiSquadronAdminIcon;
 class MachSquadronIcon;
-class DevButtonEvent;
+//class DevButtonEvent;
 class DevKeyToCommandTranslator;
 
 

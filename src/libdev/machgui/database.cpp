@@ -166,7 +166,7 @@ void MachGuiDatabase::readDatabase()
         }
     }
     //Read the user scenarios database
-    if ( customDatabaseSourcePath().existsAsFile() )
+    if ( doCustomScenariosExist() )
         parseUserCampaignFile();
 }
 
@@ -810,6 +810,11 @@ void MachGuiDatabase::clearAllTextData()
                 planet.scenario( j ).clearTextData();
         }
     }
+}
+
+//static
+bool MachGuiDatabase::doCustomScenariosExist() {
+    return customDatabaseSourcePath().existsAsFile();
 }
 
 uint MachGuiDatabase::nSavedGames() const

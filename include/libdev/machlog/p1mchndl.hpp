@@ -37,12 +37,12 @@ public:
 
     //Returns the entity to become the camera parent, and the local transform to give it
     //in pOffsetTransform
-    virtual W4dEntity& cameraAttachment( MexTransform3d* pOffsetTransform ) const;
+    virtual W4dEntity& cameraAttachment( MexTransform3d* pOffsetTransform ) const override;
 	
+    ///////////////////////////////////////////////////
+
 	// current scalar speed of physical machine controlled
 	MATHEX_SCALAR currentSpeed() const;
-    
-    ///////////////////////////////////////////////////
 
 private:
     friend ostream& operator <<( ostream& o, const MachLog1stPersonMachineHandler& t );
@@ -52,11 +52,14 @@ private:
 
     //Implements the update of motion etc.
     //Setups are cleared after this callback.
-    virtual void doUpdate();
+    virtual void doUpdate() override;
 
     //Callback to take action on maximum weapon raneg change.
     //this occurs as different weapons are en/disabled
-    virtual void doUpdateMaxWeaponRange( MATHEX_SCALAR range );
+    virtual void doUpdateMaxWeaponRange( MATHEX_SCALAR range ) override;
+
+    // FP COMMAND - Get the active squadron
+    virtual const MachLog1stPersonActiveSquadron& actuallyGetActiveSquadron() const override;
 
     ///////////////////////////////////////////////////
 

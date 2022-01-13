@@ -15,6 +15,7 @@
 #define _MACHLOG_MOTCONST_HPP
 
 #include "base/base.hpp"
+#include "device/butevent.hpp"
 #include "mathex/radians.hpp"
 #include "phys/phys.hpp"
 #include "phys/mcground.hpp"
@@ -24,7 +25,7 @@
 class MachLogCamera;
 class MachLogMachine;
 class DevKeyToCommandTranslator;
-class DevButtonEvent;
+//class DevButtonEvent;
 
 class MachLogGroundCameraMotionConstraint : public PhysGroundMotionConstraint
 // Canonical form revoked

@@ -32,7 +32,7 @@ MachPhys1stPersonMachineDriver::MachPhys1stPersonMachineDriver
     MachPhysMachine* pMachine, MachPhysCanAttack* pCanAttack,
     const MachPhysPlanetSurface& planetSurface, bool remoteNode
 )
-:   MachPhys1stPersonDriver( pMachine, pCanAttack, remoteNode ),
+:   MachPhys1stPersonDriver( pMachine, pCanAttack, pMachine->machineData().scannerRange(), remoteNode ),
     pMachine_( pMachine ),
     pPlanetSurface_( &planetSurface ),
     lastSpeed_( 0.0 ),

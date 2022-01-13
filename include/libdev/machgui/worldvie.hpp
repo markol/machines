@@ -66,6 +66,7 @@ protected:
     virtual void doHandleMouseClickEvent( const GuiMouseEvent& );
 	virtual void doHandleMouseEnterEvent( const GuiMouseEvent& );
 	virtual void doHandleMouseExitEvent( const GuiMouseEvent& );
+    virtual void doHandleMouseScrollEvent( const GuiMouseEvent& );
 	virtual void doHandleContainsMouseEvent( const GuiMouseEvent& );
 
 	void doMouseRightClickCameraMotion( const GuiMouseEvent& );

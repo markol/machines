@@ -24,7 +24,8 @@
 #include "gui/image.hpp"
 #include "sound/sndwavid.hpp"
 #include "sound/smpparam.hpp"
-#include "ani/smacker.hpp"
+#include "ani/AniSmacker.hpp"
+#include "ani/AniSmackerRegular.hpp"
 #include "system/pathname.hpp"
 #include "render/device.hpp"
 #include "render/display.hpp"
@@ -280,8 +281,9 @@ void MachGuiCtxDeBriefing::displayDeBriefImage( void )
 //		   	HWND targetWindow = RenDevice::current()->display()->window();
 
 //			AniSmacker* pSmackerAnimation = _NEW( AniSmacker( debriefPicture, targetWindow, 359 + pStartupScreens_->xMenuOffset(), 51 + pStartupScreens_->yMenuOffset() ) );
-			AniSmacker* pSmackerAnimation = _NEW( AniSmacker( debriefPicture, 359 + pStartupScreens_->xMenuOffset(), 51 + pStartupScreens_->yMenuOffset() ) );
-			pStartupScreens_->addSmackerAnimation( pSmackerAnimation );
+            //AniSmacker* pSmackerAnimation = _NEW( AniSmacker( debriefPicture, 359 + pStartupScreens_->xMenuOffset(), 51 + pStartupScreens_->yMenuOffset() ) );
+            AniSmacker* pSmackerAnimation = new AniSmackerRegular(debriefPicture, 359 + pStartupScreens_->xMenuOffset(), 51 + pStartupScreens_->yMenuOffset());
+            pStartupScreens_->addSmackerAnimation( pSmackerAnimation );
 		}
 		else if ( debriefPicture.extension() == "bmp" )
 		{

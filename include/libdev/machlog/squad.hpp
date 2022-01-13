@@ -67,6 +67,8 @@ public:
 	// sets the virtual defcon to all machines to DEFCON_HIGH for a short period.
 	void manualCommandIssuedToSquadron();
 
+    MachLogMachine* getStrongestMachine();
+
     virtual PhysRelativeTime beDestroyed();
 
     friend ostream& operator <<( ostream& o, const MachLogSquadron& t );

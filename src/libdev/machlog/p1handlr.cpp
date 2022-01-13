@@ -15,20 +15,25 @@
 #include "mathex/transf3d.hpp"
 #include "mathex/point2d.hpp"
 #include "phys/phys.hpp"
+#include "phys/cspace2.hpp"
 #include "world4d/entity.hpp"
 #include "world4d/entyfilt.hpp"
 #include "world4d/manager.hpp"
 #include "world4d/scenemgr.hpp"
 #include "world4d/camera.hpp"
 #include "world4d/domain.hpp"
+#include "world4d/garbcoll.hpp"
 #include "sim/manager.hpp"
 #include "machphys/p1driver.hpp"
+#include "machphys/MachPhysMoveIndicator.hpp"
 #include "machlog/actor.hpp"
 #include "machlog/canattac.hpp"
 #include "machlog/weapon.hpp"
 #include "machlog/races.hpp"
 #include "machlog/network.hpp"
 #include "machlog/messbrok.hpp"
+#include "machlog/planet.hpp"
+#include "machlog/plandoms.hpp"
 #include "network/netnet.hpp"
 
 class MachLogAimDataFilter;
@@ -53,6 +58,7 @@ public:
     uint healWeaponIndex_; //the index of the heal weapon
     MachLogCamera* pCamera_; //The camera used in 1st person
     MachLogAimDataFilter* pAimDataFiler_; //Filter used on aim data check
+    PhysAbsoluteTime indicatorSpawnTime_; //Assist us in spawning a SINGLE indicator -.-'
 };
 
 //Class used to filter out entities we aren't interested in when looking for what's in line of sight
@@ -118,6 +124,7 @@ MachLog1stPersonHandler::MachLog1stPersonHandler
     pData_->remoteNode_ = networkType == REMOTE;
     pData_->xmitOnUpdate_ = not pData_->remoteNode_;
     pData_->lastXmitTime_ = 0.0;
+    pData_->indicatorSpawnTime_ = 0.0;
 
     TEST_INVARIANT;
 }
@@ -292,40 +299,145 @@ MATHEX_SCALAR MachLog1stPersonHandler::maxWeaponRange() const
     return pData_->maxWeaponRange_;
 }
 
-MachPhys::StrikeType MachLog1stPersonHandler::aimData( MexPoint3d* pTargetPoint, MachActor** ppTargetActor ) const
+void MachLog1stPersonHandler::acquireTargetingInfo(TargetingInfo& targetInfo) const
 {
-    MachPhys::StrikeType result = MachPhys::IN_AIR;
-    *ppTargetActor = NULL;
+    bool hadFarther = false;
 
-    //Use the physical driver's cached entity
-    if( pData_->pPhysDriver_->hasHitEntity() )
+    // If we have the nearer hit entity, the one in weapon's range, we will not have the farther one
+    if ( pData_->pPhysDriver_->hasHitEntity() )
     {
         W4dEntity& hitEntity = pData_->pPhysDriver_->hitEntity();
 
         UtlId entityId = hitEntity.id();
 
         ASSERT_INFO( entityId );
-        ASSERT( entityId < 2001, "That entityId isn't in the permissible range." ); 
+        ASSERT( entityId < 2001, "That entityId isn't in the permissible range." );
 
         if( entityId != 0  and  MachLogRaces::instance().actorExists( entityId ) )
         {
-            *ppTargetActor = &MachLogRaces::instance().actor( entityId );
-            result = MachPhys::ON_OBJECT;
+            MachActor* pTargetActor = &MachLogRaces::instance().actor( entityId );
+            // boost alertness of actor being targetted if it's a canattack of a different race to me
+            MachActor& targetActor = *pTargetActor;
+            if( targetActor.objectIsCanAttack() and targetActor.race() != pData_->pActor_->race() )
+            {
+                targetActor.asCanAttack().setMinimumAlertness( 125 );
+            }
 
-			// boost alertness of actor being targetted if it's a canattack of a different race to me
-			MachActor& targetActor = **ppTargetActor;
-			if( targetActor.objectIsCanAttack() and targetActor.race() != pData_->pActor_->race() )
-				targetActor.asCanAttack().setMinimumAlertness( 125 );
-
+            // WEAPONS RANGE TARGET
+            targetInfo.shootingTarget = pTargetActor;
+            targetInfo.strikeType = MachPhys::ON_OBJECT;
         }
         else
-            result = MachPhys::ON_TERRAIN;
+        {
+            targetInfo.strikeType = MachPhys::ON_TERRAIN;
+        }
+    }
+    else if ( pData_->pPhysDriver_->hasFarCmdHitEntity() )
+    {
+        W4dEntity& hitEntity = pData_->pPhysDriver_->farCmdHitEntity();
+
+        UtlId entityId = hitEntity.id();
+
+        ASSERT_INFO( entityId );
+        ASSERT( entityId < 2001, "That entityId isn't in the permissible range." );
+
+        if( entityId != 0  and  MachLogRaces::instance().actorExists( entityId ) )
+        {
+            MachActor* pTargetActor = &MachLogRaces::instance().actor( entityId );
+            // boost alertness of actor being targetted if it's a canattack of a different race to me
+            MachActor& targetActor = *pTargetActor;
+            if( targetActor.objectIsCanAttack() and targetActor.race() != pData_->pActor_->race() )
+            {
+                targetActor.asCanAttack().setMinimumAlertness( 125 );
+            }
+
+            // FAR AWAY COMMAND ONLY TARGET
+            targetInfo.commandTarget = pTargetActor;
+            targetInfo.strikeType = MachPhys::ON_OBJECT;
+        }
+        else
+        {
+            targetInfo.strikeType = MachPhys::ON_TERRAIN;
+        }
+
+        // Set the far point
+        hadFarther = true;
     }
 
-    //Get the hit point coords
-    *pTargetPoint = pData_->pPhysDriver_->hitPoint();
+    // The shootingPoint field defaults to <0,0,0>
+    // Always set this or guns will shoot sideways when targets are invalid / OoR
+    targetInfo.shootingPoint = pData_->pPhysDriver_->hitPoint();
 
-    return result;
+    if (hadFarther)
+    {
+        targetInfo.commandPoint = pData_->pPhysDriver_->farCmdHitPoint();
+    }
+}
+
+bool MachLog1stPersonHandler::isPointingTowardsGround() const
+{
+    MexTransform3d cameraTransform = camera().globalTransform();
+    auto point100mAway = MexPoint3d{ 100.0, 0.0, 0.0 };
+    cameraTransform.transform(&point100mAway);
+
+    MATHEX_SCALAR cameraZed = cameraTransform.position().z();
+    auto forwardVec = MexVec2{ cameraZed, 0.0 };
+    auto differenceVec = MexVec2{ 1.0, 1.0 };
+
+    MATHEX_SCALAR pointZed = point100mAway.z();
+    differenceVec *= cameraZed - pointZed;
+
+    return forwardVec.dotProduct(differenceVec) >= -1.0;
+}
+
+bool MachLog1stPersonHandler::isViableMoveToTarget(const TargetingInfo& targetInfo) const
+{
+    bool viableMoveToTarget = targetInfo.strikeType == MachPhys::ON_TERRAIN;
+    if (not viableMoveToTarget or targetInfo.getCommandPoint().isZeroPoint())
+    {
+        return false;
+    }
+
+    const MexPoint2d& point = targetInfo.getCommandPoint();
+    PhysConfigSpace2d::DomainId domainId;
+    if ( MachLogPlanet::instance().configSpace().domain( targetInfo.getCommandPoint(), &domainId ) )
+    {
+        PhysConfigSpace2d::PolygonId nastyPolygonId;
+        // OBSTACLE_ALL appears to be the most `permissive` flag
+        viableMoveToTarget &= MachLogPlanet::instance().configSpace().contains(point, MachLog::OBSTACLE_ALL, &nastyPolygonId, PhysConfigSpace2d::USE_PERMANENT_ONLY);
+    }
+    else
+    {
+        return false;
+    }
+
+    return viableMoveToTarget;
+}
+
+void MachLog1stPersonHandler::displayMoveIndicator(const MexPoint3d& targetPoint)
+{
+    PhysAbsoluteTime now = SimManager::instance().currentTime();
+    if (now > pData_->indicatorSpawnTime_)
+    {
+        //get domain and transform to use
+        MexTransform3d localTransform;
+        W4dDomain* pDomain = MachLogPlanetDomains::pDomainPosition(targetPoint, 0, &localTransform);
+        //translate a bit on the Z-axis, or else the indicator will be wedged in the ground
+        auto moveUpwards = MexPoint3d{ 1.0, 1.0, 1.5 };
+        localTransform.translate(moveUpwards);
+
+        auto* pMoveIndicator = new MachPhysMoveIndicator(pDomain, localTransform, 1.0);
+        pMoveIndicator->startFadeOut(now);
+
+        W4dGarbageCollector::instance().add(pMoveIndicator, now + MachPhysMoveIndicator::DisplayTime + 10);
+        pData_->indicatorSpawnTime_ = now + MachPhysMoveIndicator::DisplayTime;
+    }
+}
+
+bool MachLog1stPersonHandler::isMoveIndicatorPresent() const
+{
+    PhysAbsoluteTime now = SimManager::instance().currentTime();
+    return not (now > pData_->indicatorSpawnTime_);
 }
 
 void MachLog1stPersonHandler::fire( const MexPoint3d& targetPoint )
@@ -604,6 +716,11 @@ bool MachLogAimDataFilter::check( const W4dEntity& entity, TreeOption* pOption )
     }
 
     return doCheck;
+}
+
+const MachLog1stPersonActiveSquadron& MachLog1stPersonHandler::getActiveSquadron() const
+{
+    return actuallyGetActiveSquadron();
 }
 
 /* End P1HANDLR.CPP *************************************************/
