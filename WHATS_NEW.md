@@ -1,5 +1,7 @@
 # WHAT'S NEW
 
+![Screenshot](https://i.postimg.cc/bJ7ZK8fY/Machines-V1-6-20211228-214709.png)
+
 ### ⭐ Gameplay
 
  - __First Person Command__ - You may now issue commands to your squadrons while in the FPS mode. Squadrons must be created in RTS mode first. You can issue: _Move To_, _Follow Self/Other_, and _Attack_.
