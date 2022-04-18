@@ -98,7 +98,7 @@ void SndMixerImpl::sort()
 
 Snd::Volume SndMixerImpl::hardwareMasterSampleVolume() const
 {
-	Snd::Volume theVol = 1;
+	Snd::Volume theVol = 95;
 	return theVol;
 }
 
