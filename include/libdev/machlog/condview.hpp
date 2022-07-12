@@ -31,7 +31,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogCameraViewCondition( void );
+    virtual ~MachLogCameraViewCondition();
 
     void CLASS_INVARIANT;
 

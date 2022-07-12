@@ -23,11 +23,11 @@ class MachGuiPlayerNameList	: public GuiDisplayable
 public:
     MachGuiPlayerNameList( GuiDisplayable *pParent, const Gui::Coord& topLeft, const string& fontName, uint title );
     MachGuiPlayerNameList( GuiDisplayable *pParent, const Gui::Boundary& boundary, const string& fontName, uint title, bool isWhite );
-    ~MachGuiPlayerNameList( void );
+    ~MachGuiPlayerNameList();
 
     void CLASS_INVARIANT;
 	
-	virtual void doDisplay( void );
+	virtual void doDisplay();
 
 	void names( const string& player1, const string& player2, const string& player3, const string& player4 );
 

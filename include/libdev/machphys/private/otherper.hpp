@@ -94,8 +94,8 @@ class MachPhysOtherPersistence
 {
 public:
     //  Singleton class
-    static MachPhysOtherPersistence& instance( void );
-    ~MachPhysOtherPersistence( void );
+    static MachPhysOtherPersistence& instance();
+    ~MachPhysOtherPersistence();
 
     W4dRoot* pRoot();
 
@@ -184,7 +184,7 @@ private:
     MachPhysOtherPersistence& operator =( const MachPhysOtherPersistence& );
     bool operator ==( const MachPhysOtherPersistence& );
 
-    MachPhysOtherPersistence( void );
+    MachPhysOtherPersistence();
 
 	MachPhysOtherPersistenceImpl* pImpl_;
     W4dRoot root_;

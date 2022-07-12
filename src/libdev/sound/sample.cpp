@@ -26,16 +26,16 @@ stopPending_(false)
 		loopForever_ = false;
 }
 
-Sample::~Sample( void )
+Sample::~Sample()
 {
 }
 
-const char* Sample::path( void ) const
+const char* Sample::path() const
 {
 	return sampleParameters_.id().pathname().c_str();
 }
 
-int Sample::volume( void ) const
+int Sample::volume() const
 {
 	return volume_;
 }

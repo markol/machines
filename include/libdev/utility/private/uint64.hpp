@@ -17,8 +17,8 @@
 class UtlUint64
 {
 public:
-    UtlUint64( void );
-    ~UtlUint64( void );
+    UtlUint64();
+    ~UtlUint64();
 
     //  Compiler supplied copy constructor is sufficient
 //    UtlUint64( const UtlUint64& );
@@ -31,9 +31,9 @@ public:
     UtlUint64& operator +=( const UtlUint64& );
     UtlUint64& operator -=( const UtlUint64& );
 
-    uint32* data( void );
+    uint32* data();
     
-    double  asDouble( void ) const;
+    double  asDouble() const;
     
     friend ostream& operator <<( ostream& o, const UtlUint64& t );
     friend bool operator ==( const UtlUint64&, const UtlUint64& );

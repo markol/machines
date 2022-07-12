@@ -57,7 +57,7 @@ public:
         MATHEX_SCALAR depthOffset,
         const PhysRelativeTime& duration );
 
-    ~MachPhysFlame( void );
+    ~MachPhysFlame();
 
     //  Start the flame at the given time, and turning off after the duration
     //defined in the constructor.
@@ -71,10 +71,10 @@ public:
     //  Load all of the flame bitmaps in advance so that the
     //  flame can be created 'instantly'
 
-    static  void preload( void );
+    static  void preload();
 
     //  return a random flame type out of those available
-    static  MachPhysFlameType randomFlame( void );
+    static  MachPhysFlameType randomFlame();
 
     typedef ctl_vector< Ren::MaterialVecPtr > Materials;
     typedef CtlCountedPtr< Materials > MaterialsPtr;
@@ -93,7 +93,7 @@ private:
     MachPhysFlame& operator =( const MachPhysFlame& );
     bool operator ==( const MachPhysFlame& );
 
-    static  const MaterialsPtr&   materials1Ptr( void );
+    static  const MaterialsPtr&   materials1Ptr();
     static  void addMaterial( Materials* pMaterials, const RenTexture& texture );
 
     //data members

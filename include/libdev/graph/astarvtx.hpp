@@ -25,7 +25,7 @@ public:
     typedef typename GRA_GRAPH::ArcId ArcId;
 
     //ctor. Default required for stl collection instantiation
-    GraAStarVertex( void );
+    GraAStarVertex();
 
     //ctor. The current cost of getting from the start vertex to this vertex is costFromStart.
     //The estimated cost of getting from the vertex to the goal vertex is estimatedCostToEnd.
@@ -34,18 +34,18 @@ public:
                     const ArcId& previousArcId );
 
     //dtor.
-    ~GraAStarVertex( void );
+    ~GraAStarVertex();
 
     //Access methods.
-    const Weight& costFromStart( void ) const;
+    const Weight& costFromStart() const;
     void costFromStart( const Weight& cost );
 
-    const Weight& estimatedCostToEnd( void ) const;
+    const Weight& estimatedCostToEnd() const;
 
-    const ArcId& previousArcId( void ) const;
+    const ArcId& previousArcId() const;
     void previousArcId( const ArcId& arcId );
 
-    bool closed( void ) const;
+    bool closed() const;
     void closed( bool isClosed );
 
     void CLASS_INVARIANT;

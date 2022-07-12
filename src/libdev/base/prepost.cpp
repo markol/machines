@@ -233,7 +233,7 @@ bool BaseAssertion::inAssertionData()
 size_t  BaseAssertion::index_ = 0;
 BaseAssertion::InfoEntry	BaseAssertion::info_[ BaseAssertion::N_SAVED_ENTRIES ];
 
-size_t	BaseAssertion::nextIndex( void )
+size_t	BaseAssertion::nextIndex()
 {
     size_t result = index_;
 
@@ -278,7 +278,7 @@ void BaseAssertion::set_assertion_handler( AssertionAction_fn_AssertionInfo fn )
 
 //////////////////////////////////////////////////////////////////////////////////
 
-BaseAssertion::InfoEntry::InfoEntry( void )
+BaseAssertion::InfoEntry::InfoEntry()
 : stream_( dataBuffer_ ),
   lineNumber_( 0 ),
   containsData_( false )
@@ -290,7 +290,7 @@ BaseAssertion::InfoEntry::InfoEntry( void )
 
 //////////////////////////////////////////////////////////////////////////////////
 
-std::ostringstream& BaseAssertion::InfoEntry::str( void )
+std::ostringstream& BaseAssertion::InfoEntry::str()
 {
     stream_.str("");
     stream_.clear();
@@ -313,7 +313,7 @@ void    BaseAssertion::InfoEntry::logFilePositionInfo( const char* file, size_t 
 
 //////////////////////////////////////////////////////////////////////////////////
 
-bool	BaseAssertion::InfoEntry::containsData( void ) const
+bool	BaseAssertion::InfoEntry::containsData() const
 {
     return containsData_;
 }
@@ -363,7 +363,7 @@ ostream& operator <<( ostream& o, const BaseAssertion::InfoEntry& i )
     return o;
 }
 
-BaseAssertion::AssertionInfo::AssertionInfo( void )
+BaseAssertion::AssertionInfo::AssertionInfo()
 {
 }
 

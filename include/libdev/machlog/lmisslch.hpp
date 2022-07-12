@@ -22,7 +22,7 @@ class MachLogLargeMissileLauncher : public MachLogLinearWeapon
 {
 public:
     MachLogLargeMissileLauncher( MachLogRace*, MachPhysLargeMissile*, MachActor* pOwner );
-    virtual ~MachLogLargeMissileLauncher( void );
+    virtual ~MachLogLargeMissileLauncher();
 
     void CLASS_INVARIANT;
 

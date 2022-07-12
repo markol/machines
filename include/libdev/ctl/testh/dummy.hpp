@@ -17,10 +17,10 @@
 class DummyClass
 {
 public:
-    DummyClass( void );
+    DummyClass();
     DummyClass( const DummyClass& );
     DummyClass& operator =( const DummyClass& );
-    ~DummyClass( void );
+    ~DummyClass();
 
     void CLASS_INVARIANT;
 

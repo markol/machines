@@ -24,7 +24,7 @@ class MachLogNuclearBombImpl
 {
 public:
     MachLogNuclearBombImpl( const MachPhysWeaponData* const );
-    virtual ~MachLogNuclearBombImpl( void );
+    virtual ~MachLogNuclearBombImpl();
 
     void CLASS_INVARIANT;
 

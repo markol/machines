@@ -25,7 +25,7 @@ public:
     typedef unsigned long RepType;
 
     //ctors
-    FtlSerialId( void )
+    FtlSerialId()
         : id_( 0 ) {};
 
     FtlSerialId( const RepType& value )
@@ -44,10 +44,10 @@ public:
     FtlSerialId& operator-- () { --id_; return *this;  };
 
     //Id in format suitable for indexing vector etc
-    size_t asScalar( void ) const { return id_; };
+    size_t asScalar() const { return id_; };
 
     //An invalid id.
-    static FtlSerialId invalidId( void ) { return FtlSerialId( 0xFFFFFFFF ); };
+    static FtlSerialId invalidId() { return FtlSerialId( 0xFFFFFFFF ); };
 
     friend ostream& operator <<( ostream& o, const FtlSerialId& t )
     {
@@ -70,10 +70,10 @@ class FtlSerialIdGenerator
 {
 public:
     //ctor start ids at zero
-    FtlSerialIdGenerator( void ) : nextId_( 0 ) {};
+    FtlSerialIdGenerator() : nextId_( 0 ) {};
 
     //Generate and return next id in sequence    
-    FtlSerialId next( void )
+    FtlSerialId next()
     {
         FtlSerialId id = nextId_;
         ++nextId_;
@@ -81,8 +81,8 @@ public:
     };
 
     //First/last+1 generated ids
-    FtlSerialId begin( void ) const { return FtlSerialId( 0 ); };
-    const FtlSerialId& end( void ) const { return nextId_; };
+    FtlSerialId begin() const { return FtlSerialId( 0 ); };
+    const FtlSerialId& end() const { return nextId_; };
 
 private:
     FtlSerialId nextId_; //The next id to use

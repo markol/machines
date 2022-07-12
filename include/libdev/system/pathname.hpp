@@ -54,7 +54,7 @@ public:
     //  Set the root directory from the given environment variable
     static  void    rootEnvironmentVariable( const string& environmentVariable );
 
-    static  SysPathName rootDirectory( void );
+    static  SysPathName rootDirectory();
 
     const string& pathname() const;
     // PRE( set() )
@@ -63,34 +63,34 @@ public:
 
     //  True iff this pathname has been explicitly set - i.e. it hasn't been
     //  constructed by the default constructor.
-    bool set( void ) const;
+    bool set() const;
 
     // Return true iff the pathname exists and is a file or a directory
     // POST( iff( result, existsAsDirectory() || existsAsFile() ) );
-    bool exists( void ) const;
+    bool exists() const;
     // PRE( set() )
 
     // Return true iff the pathname exists and is a directory
-    bool existsAsDirectory( void ) const;
+    bool existsAsDirectory() const;
     // PRE( set() )
 
     // Return true iff the pathname exists and is a file
-    bool existsAsFile( void ) const;
+    bool existsAsFile() const;
     // PRE( set() )
 
     // Return true if the pathname has capitals. Use when wanting to check for files again in lowercase.
-    bool containsCapitals( void ) const;
+    bool containsCapitals() const;
 
     // CASE INSENSITIVE - Return true iff the pathname exists and is a file
-    bool insensitiveExistsAsFile( void ) const;
+    bool insensitiveExistsAsFile() const;
 
     // Return true iff the last section of the pathname has an extension
-    bool hasExtension( void ) const;
+    bool hasExtension() const;
     // PRE( set() )
 
     // Return the extension of the pathname without the '.'
     // PRE( hasExtension() );
-    string extension( void ) const;
+    string extension() const;
     // PRE( set() )
 
     // Set the extension of the pathname
@@ -109,15 +109,15 @@ public:
     // PRE( existsAsFile() );
 
     // Return true iff the pathname is an absolute pathname
-    bool isAbsolute( void ) const;
+    bool isAbsolute() const;
     // PRE( set() )
 
     // Return true iff the pathname is a relative pathname
-    bool isRelative( void ) const;
+    bool isRelative() const;
     // PRE( set() )
 
     // Split the pathname into its component parts
-    const Components& components( void ) const;
+    const Components& components() const;
     // PRE( set() )
 
     //  Set up the pathname from the given components
@@ -154,16 +154,16 @@ public:
 private:
 	SysPathNameImpl* pImpl_;
 
-    static  string& internalRootDirectory( void );
-    static  bool&   internalRootDirectorySet( void );
-    static  size_t& currentRootId( void );
+    static  string& internalRootDirectory();
+    static  bool&   internalRootDirectorySet();
+    static  size_t& currentRootId();
 
-    static  string  separator( void );
-    static  char    extensionCharacter( void );
+    static  string  separator();
+    static  char    extensionCharacter();
 
-    void    createComponents( void ) const;
+    void    createComponents() const;
 
-    void createPathnameFromComponents( void );
+    void createPathnameFromComponents();
 
     bool checkForCapitals(const string& path) const;
 

@@ -37,7 +37,7 @@ public:
     MachLogHardwareLab( MachPhys::HardwareLabSubType subType, MachLogRace* pRace, uint level,
                     const MexPoint3d& location, const MexRadians& angle, UtlId );
 
-    ~MachLogHardwareLab( void );
+    ~MachLogHardwareLab();
 
     //Inherited from SimActor
     virtual PhysRelativeTime update( const PhysRelativeTime& maxCPUTime,

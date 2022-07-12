@@ -23,7 +23,7 @@ class MachLogScore
 {
 public:
     MachLogScore( MachPhys::Race );
-    ~MachLogScore( void );
+    ~MachLogScore();
 
     void CLASS_INVARIANT;
 

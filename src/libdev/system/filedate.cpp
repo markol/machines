@@ -59,29 +59,29 @@ SysFileDate::~SysFileDate()
 
 }
 
-bool    SysFileDate::dateSet( void ) const
+bool    SysFileDate::dateSet() const
 {
     return  dateSet_;
 }
     
-bool    SysFileDate::yearSet( void ) const
+bool    SysFileDate::yearSet() const
 {
     return yearSet_;
 }
 
-size_t  SysFileDate::year( void ) const
+size_t  SysFileDate::year() const
 {
     PRE( yearSet() );
     
     return year_;
 }
 
-bool    SysFileDate::monthSet( void ) const
+bool    SysFileDate::monthSet() const
 {
     return monthSet_;
 }
 
-size_t  SysFileDate::month( void ) const
+size_t  SysFileDate::month() const
 {
     PRE( monthSet() );
 
@@ -92,12 +92,12 @@ size_t  SysFileDate::month( void ) const
     return result;
 }
 
-bool    SysFileDate::dayOfMonthSet( void ) const
+bool    SysFileDate::dayOfMonthSet() const
 {
     return dayOfMonthSet_;
 }
 
-size_t  SysFileDate::dayOfMonth( void ) const
+size_t  SysFileDate::dayOfMonth() const
 {
     PRE( dayOfMonthSet() );
     

@@ -131,7 +131,7 @@ void PedActorEditor::processInput( const DevButtonEvent& devButtonEvent )
 }
 
 // virtual
-void PedActorEditor::displayKeyboardCtrls( void )
+void PedActorEditor::displayKeyboardCtrls()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -148,7 +148,7 @@ void PedActorEditor::displayKeyboardCtrls( void )
 }
 
 // virtual
-void PedActorEditor::preRenderUpdate( void )
+void PedActorEditor::preRenderUpdate()
 {
 	highlightVertex();
 	errors->display();
@@ -157,7 +157,7 @@ void PedActorEditor::preRenderUpdate( void )
 }
 
 // virtual
-void PedActorEditor::displayModeInfo( void )
+void PedActorEditor::displayModeInfo()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -171,7 +171,7 @@ void PedActorEditor::displayModeInfo( void )
 }
 
 // virtual
-void PedActorEditor::changingMode( void )
+void PedActorEditor::changingMode()
 {
 	PedEditorMode::changingMode();
 	_DELETE( pVertexMarker_ );
@@ -183,13 +183,13 @@ void PedActorEditor::changingMode( void )
 }
 
 // virtual
-void PedActorEditor::activateMode( void )
+void PedActorEditor::activateMode()
 {
 	PedEditorMode::activateMode();
 	changeAllSolidities( W4dEntity::SOLID );
 }
 
-void PedActorEditor::processDrop( void )
+void PedActorEditor::processDrop()
 {
 	W4dEntity* pEntity;
 	changeAllSolidities( W4dEntity::NOT_SOLID );
@@ -239,7 +239,7 @@ void PedActorEditor::processMove( PedActorEditor::MoveDir dir)
 
 }
 
-void PedActorEditor::processReleaseSelection( void )
+void PedActorEditor::processReleaseSelection()
 {
 	W4dEntity* pSelectedActor = currentActor();
 
@@ -253,7 +253,7 @@ void PedActorEditor::processReleaseSelection( void )
 	}
 }
 
-void PedActorEditor::processDrag( void )
+void PedActorEditor::processDrag()
 {
 	W4dEntity* pSelectedActor = currentActor();
    	if ( mouseDrag_  && pSelectedActor )
@@ -275,7 +275,7 @@ void PedActorEditor::processDrag( void )
 	}
 }
 
-void PedActorEditor::highlightSelected( void )
+void PedActorEditor::highlightSelected()
 {
 	// Create marker to highlight selected construction
 	PRE( currentActor() != NULL );
@@ -313,7 +313,7 @@ W4dEntity* PedActorEditor::domain( const MexPoint3d& point )
 
 }
 
-const MexTransform3d PedActorEditor::localTransformAtMouse( void )
+const MexTransform3d PedActorEditor::localTransformAtMouse()
 {
 	// change to call localTransformAtPoint
 	MexPoint3d mouseCoords;
@@ -394,7 +394,7 @@ bool PedActorEditor::mouseVertexPoint(MexPoint3d* intersectPoint)
 	return result;
 }
 
-void PedActorEditor::highlightVertex( void )
+void PedActorEditor::highlightVertex()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -416,7 +416,7 @@ void PedActorEditor::highlightVertex( void )
 	}
 }
 
-void PedActorEditor::displayVertexCoords( void )
+void PedActorEditor::displayVertexCoords()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -457,7 +457,7 @@ void PedActorEditor::parseRace( const string& race )
 		race_ = MachPhys::N_RACES;
 }
 
-void PedActorEditor::processRace( void )
+void PedActorEditor::processRace()
 {
 	changeRace( &race_ );
 }

@@ -50,7 +50,7 @@ public:
     //PRE( minResolution > MexEpsilon::instance() )
 
     //dtor.
-    ~PhysAlignedBSPTree2d( void );
+    ~PhysAlignedBSPTree2d();
 
     //Defines constraints on template for documentation - never called
     void constraints( P_ITEM pItem )
@@ -66,7 +66,7 @@ public:
     void remove( P_ITEM pItem );
 
     //Count of items stored in the tree
-    size_t nItems( void ) const;
+    size_t nItems() const;
 
     //Finds all the items referenced in the tree which have bounding boxes overlapping
     //boundary, and adds them to pItems.

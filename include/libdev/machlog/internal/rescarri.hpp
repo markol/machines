@@ -27,8 +27,8 @@ class MachLogResourceCarrierImpl
 // Canonical form revoked
 {
 public:
-    MachLogResourceCarrierImpl( void );
-    ~MachLogResourceCarrierImpl( void );
+    MachLogResourceCarrierImpl();
+    ~MachLogResourceCarrierImpl();
 	
 	typedef  MachLogResourceCarrier::Suppliers	Suppliers;
 

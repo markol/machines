@@ -41,7 +41,7 @@ public:
 	UtlProperty( const T& );
 
 	// 'get' method
-	const T& operator ()( void ) const;
+	const T& operator ()() const;
 
 	// 'set' method
 	void operator ()( const T& );
@@ -93,7 +93,7 @@ UtlProperty< T >::UtlProperty( const T& t )
 
 template < class T >
 inline
-const T& UtlProperty< T >::operator ()( void ) const
+const T& UtlProperty< T >::operator ()() const
 {
 	return property_;
 }

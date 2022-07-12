@@ -19,7 +19,7 @@ MachPhysActorData::~MachPhysActorData()
 
 }
 
-MachPhys::buildingMaterialUnits MachPhysActorData::cost( void ) const
+MachPhys::buildingMaterialUnits MachPhysActorData::cost() const
 {
 	return cost_;
 }
@@ -29,7 +29,7 @@ void MachPhysActorData::cost( const MachPhys::buildingMaterialUnits& newCost )
 	cost_ = newCost;
 }
 
-MachPhys::researchUnits MachPhysActorData::hwResearchCost( void ) const
+MachPhys::researchUnits MachPhysActorData::hwResearchCost() const
 {
 	return hwResearchCost_;
 }

@@ -33,7 +33,7 @@ private:
 	MachPhysMachineDamageData( MachPhysMachine* pTargetMachine );
     MachPhysMachineDamageData( const MachPhysMachineDamageData& );
 
-    ~MachPhysMachineDamageData( void );
+    ~MachPhysMachineDamageData();
 
 	MachPhysMachineBurning& machineBurning();
 	void finishBurning();

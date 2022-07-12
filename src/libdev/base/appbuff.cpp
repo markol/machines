@@ -18,7 +18,7 @@ BaseAppendBuffer::BaseAppendBuffer( const char* fileName )
     strcpy( pFileName_, fileName );
 }
 
-BaseAppendBuffer::BaseAppendBuffer( void )
+BaseAppendBuffer::BaseAppendBuffer()
 : pFileName_( NULL )
 {
 }
@@ -51,7 +51,7 @@ int BaseAppendBuffer::overflow( int c )
 }
 
 // virtual
-int BaseAppendBuffer::underflow( void )
+int BaseAppendBuffer::underflow()
 {
 //    cout << "underflow" << endl;
     return EOF;
@@ -88,7 +88,7 @@ int        BaseAppendBuffer::sync()
     return !EOF;
 }
 
-void BaseAppendBuffer::clear( void )
+void BaseAppendBuffer::clear()
 {
     std::ofstream    ostr( pFileName_ );
 }

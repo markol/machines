@@ -20,8 +20,8 @@ class ErrorHandler
 {
 public:
     //  Singleton class
-    static ErrorHandler& instance( void );
-    ~ErrorHandler( void );
+    static ErrorHandler& instance();
+    ~ErrorHandler();
 
     void pDisplay( RenDisplay* pDisplay );
 
@@ -41,7 +41,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const ErrorHandler& );
 
-    ErrorHandler( void );
+    ErrorHandler();
     
     RenDisplay* pDisplay_;
 };

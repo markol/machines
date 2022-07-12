@@ -464,7 +464,7 @@ bool MachLogFactory::buildMachineUnique( const MachLog::ObjectType type, const i
 	return false;
 }
 
-void MachLogFactory::clearProductionLine( void )
+void MachLogFactory::clearProductionLine()
 {
    //HAL_STREAM("(" << id() << ") MLFactory:;clearProductionLine " << productionLine_.size() << std::endl );
 	CB_MachLogFactory_DEPIMPL();

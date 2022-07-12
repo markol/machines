@@ -89,7 +89,7 @@ public:
     void clearAllSurfaces(const RenColour&);			// PRE(!rendering());
     void clearAllSurfaces();							// PRE(!rendering());
 
-    void reset( void );
+    void reset();
     virtual void setMaterialHandles(const RenMaterial& mat);
 
     // If the display mode changes, the device must be re-initialised.  This is
@@ -156,7 +156,7 @@ public:
     void fogOn(float start, float end, float density);
     void fogOn();
     void fogOff();
-    const RenColour& fogColour( void ) const;
+    const RenColour& fogColour() const;
     void fogColour(const RenColour& newFogColour);
     void fogEnd(float end);
 
@@ -270,7 +270,7 @@ public:
     } ;
 
     RenIDeviceImpl& impl();
-    const RenIDeviceImpl& impl( void ) const;
+    const RenIDeviceImpl& impl() const;
 
     const GLuint loadShaders(const char* vertexPath, const char* fragmentPath);
 

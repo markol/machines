@@ -34,10 +34,10 @@ public:
     //  Copy construction data and place it at a specific position
     MachPhysConstructionData( const MachPhysConstructionData&, const MexTransform3d& );
     MachPhysConstructionData& operator =( const MachPhysConstructionData& );
-    virtual ~MachPhysConstructionData( void );
+    virtual ~MachPhysConstructionData();
 
 	//Get methods are public
-	MachPhys::ResearchUnits hwResearchCost( void ) const;
+	MachPhys::ResearchUnits hwResearchCost() const;
 
     //Pair of points for an entrance
     struct EntranceData

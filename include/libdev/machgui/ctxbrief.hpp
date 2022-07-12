@@ -26,7 +26,7 @@ class MachGuiCtxBriefing : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxBriefing( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxBriefing( void );
+    ~MachGuiCtxBriefing();
 
     void CLASS_INVARIANT;
 
@@ -50,9 +50,9 @@ private:
     MachGuiCtxBriefing( const MachGuiCtxBriefing& );
     MachGuiCtxBriefing& operator =( const MachGuiCtxBriefing& );
 
-	void displayBriefingImage( void );
-	void playBriefingVoicemail( void );
-	void stopPlayingBriefingVoicemail( void );
+	void displayBriefingImage();
+	void playBriefingVoicemail();
+	void stopPlayingBriefingVoicemail();
 
 	// Data members...
 	MachGuiAnimations animations_;

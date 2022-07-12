@@ -116,7 +116,7 @@ void MachPhysShockWave::addMaterial( MachPhysShockWave::Materials* pMaterials, c
 }
 
 // static
-const MachPhysShockWave::MaterialsPtr& MachPhysShockWave::materialsPtr( void )
+const MachPhysShockWave::MaterialsPtr& MachPhysShockWave::materialsPtr()
 {
     static MachPhysShockWave::MaterialsPtr materialsPtr;
     static bool once = true;

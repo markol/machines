@@ -21,7 +21,7 @@ class MachLogHardwareLabImpl
 {
 public:
     MachLogHardwareLabImpl( MachPhys::HardwareLabSubType subType );
-    ~MachLogHardwareLabImpl( void );
+    ~MachLogHardwareLabImpl();
 
     void CLASS_INVARIANT;
 

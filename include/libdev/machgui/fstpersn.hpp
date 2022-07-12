@@ -31,7 +31,7 @@ class MachGuiFirstPerson : public GuiRoot, public W4dObserver
 {
 public:
     MachGuiFirstPerson( W4dSceneManager* pSceneManager, W4dRoot* pRoot, MachInGameScreen* );
-    ~MachGuiFirstPerson( void );
+    ~MachGuiFirstPerson();
 
     void CLASS_INVARIANT;
 

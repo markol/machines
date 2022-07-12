@@ -30,7 +30,7 @@ public:
 	:	MachGuiSingleSelectionListBoxItem( pStartupScreens, pListBox, width, text )
 	{}
 
-    ~MachGuiProtocolListBoxItem( void )
+    ~MachGuiProtocolListBoxItem()
 	{}
 
 	bool isSelectedProtocol()

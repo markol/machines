@@ -32,7 +32,7 @@ public:
 	GuiBmpFont(); // Default constructor to satisfy ctl_vector. DO NOT USE!!!
     GuiBmpFont( const GuiBmpFont& );
     GuiBmpFont& operator =( const GuiBmpFont& );
-    ~GuiBmpFont( void );
+    ~GuiBmpFont();
 
 	size_t charHeight() const;
     

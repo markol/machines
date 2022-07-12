@@ -300,7 +300,7 @@ void W4dEntityPlan::clearAtTime( const PhysAbsoluteTime& time )
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void W4dEntityPlan::clearMotionPlans( void )
+void W4dEntityPlan::clearMotionPlans()
 {
 	CB_ENTITYPLAN_DEPIMPL;
 
@@ -317,7 +317,7 @@ void W4dEntityPlan::clearMotionPlans( void )
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void W4dEntityPlan::clearAbsoluteMotionPlans( void )
+void W4dEntityPlan::clearAbsoluteMotionPlans()
 {
     clearMotionPlans();
 }
@@ -420,7 +420,7 @@ void W4dEntityPlan::plan( const W4dEntityPlan& rhs, const PhysAbsoluteTime& star
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-PhysAbsoluteTime W4dEntityPlan::endTime( void ) const
+PhysAbsoluteTime W4dEntityPlan::endTime() const
 {
     return pImpl_->endTime_;
 }
@@ -489,13 +489,13 @@ void W4dEntityPlan::materialPlan(
     TEST_INVARIANT;
 }
 
-bool W4dEntityPlan::hasMaterialPlan( void ) const
+bool W4dEntityPlan::hasMaterialPlan() const
 {
     return pImpl_->pMaterialPlans_  and  pImpl_->pMaterialPlans_->size() != 0;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-bool    W4dEntityPlan::hasVisibilityPlan( void ) const
+bool    W4dEntityPlan::hasVisibilityPlan() const
 {
     return pImpl_->hasVisibilityPlan_;
 }
@@ -544,7 +544,7 @@ W4dEntityPlan::PlanState W4dEntityPlan::visible
     return state;
 }
 
-bool    W4dEntityPlan::hasScalePlan( void ) const
+bool    W4dEntityPlan::hasScalePlan() const
 {
     return pImpl_->pScalePlans_  and  pImpl_->pScalePlans_->size() > 0;
 }

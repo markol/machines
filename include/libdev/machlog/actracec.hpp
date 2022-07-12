@@ -26,7 +26,7 @@ class MachLogChangeRaceAction : public SimAction
 {
 public:
 
-    virtual ~MachLogChangeRaceAction( void );
+    virtual ~MachLogChangeRaceAction();
 	static MachLogChangeRaceAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 
     void CLASS_INVARIANT;

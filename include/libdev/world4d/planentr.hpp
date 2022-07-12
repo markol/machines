@@ -25,7 +25,7 @@ public:
     : id_( id ), plan_( plan )
     {}
     
-    ~W4dCompositePlanEntry( void );
+    ~W4dCompositePlanEntry();
 
     const W4dLinkId&        id() const
     {

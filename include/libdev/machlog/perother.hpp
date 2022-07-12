@@ -28,8 +28,8 @@ class MachLogOtherPersistence
 {
 public:
     //  Singleton class
-    static MachLogOtherPersistence& instance( void );
-    ~MachLogOtherPersistence( void );
+    static MachLogOtherPersistence& instance();
+    ~MachLogOtherPersistence();
 
     void CLASS_INVARIANT;
 	PER_MEMBER_PERSISTENT_DEFAULT( MachLogOtherPersistence );
@@ -50,7 +50,7 @@ private:
     MachLogOtherPersistence( const MachLogOtherPersistence& );
     MachLogOtherPersistence& operator =( const MachLogOtherPersistence& );
 
-    MachLogOtherPersistence( void );
+    MachLogOtherPersistence();
 	typedef ctl_pvector< MachActor >			Others;
 	typedef ctl_pvector< MachLogMineralSite >	Sites;
 	typedef ctl_pvector< MachLogResearchItem >	ResearchItems;

@@ -40,7 +40,7 @@ public:
         return *this;
     }
 
-    ~MachPhysSubTypeId( void )
+    ~MachPhysSubTypeId()
     {}
     
     SUBTYPE subType_;

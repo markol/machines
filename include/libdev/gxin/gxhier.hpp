@@ -23,8 +23,8 @@ class GXHier
 // Canonical form revoked
 {
 public:
-    GXHier( void );
-    ~GXHier( void );
+    GXHier();
+    ~GXHier();
 
     void CLASS_INVARIANT;
 
@@ -42,19 +42,19 @@ public:
 	bool hasObject() const { return not (meshId_==zeroId_); }
 
 	void meshId(const GXIdPos& newMeshId) { meshId_=newMeshId; }
-	const GXIdPos& meshId( void ) const { return meshId_; }
+	const GXIdPos& meshId() const { return meshId_; }
 
 	void parentId(const GXIdPos& newParentId) { parentId_=newParentId; }
-	const GXIdPos& ParentId( void ) const { return parentId_; }
+	const GXIdPos& ParentId() const { return parentId_; }
 
 	void meshName(const GXName & newMeshName) { meshName_=newMeshName; }
     const GXName& meshName(void) const { return meshName_; }
 
 	void transform(const GXMatrix3& newTransform) { transform_=newTransform; }
-	const GXMatrix3& transform( void ) const { return transform_; }
+	const GXMatrix3& transform() const { return transform_; }
 
 	void translate(const GXVect3& newTranslate) { translate_=newTranslate; }
-	const GXVect3& translate( void ) const { return translate_; }
+	const GXVect3& translate() const { return translate_; }
 
 	long nChildrenSupplied(void) const { return children_.size(); }
 

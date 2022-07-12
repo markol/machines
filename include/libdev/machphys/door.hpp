@@ -32,7 +32,7 @@ public:
                   MATHEX_SCALAR speed, MATHEX_SCALAR acceleration );
 
     //dtor
-    ~MachPhysDoor( void );
+    ~MachPhysDoor();
 
     //The physical door entity
     const W4dEntity& doorEntity() const

@@ -20,12 +20,12 @@
 class MachPhysObjectData
 {
 public:
-    virtual ~MachPhysObjectData( void );
+    virtual ~MachPhysObjectData();
 
 	//get methods are public
-	MachPhys::ArmourUnits armour( void ) const;
-	MachPhys::HitPointUnits hitPoints( void ) const;
-	MachPhys::BuildingMaterialUnits cost( void ) const;
+	MachPhys::ArmourUnits armour() const;
+	MachPhys::HitPointUnits hitPoints() const;
+	MachPhys::BuildingMaterialUnits cost() const;
 
     void CLASS_INVARIANT;
 
@@ -42,7 +42,7 @@ private:
     MachPhysObjectData( const MachPhysObjectData& );
     MachPhysObjectData& operator =( const MachPhysObjectData& );
     bool operator ==( const MachPhysObjectData& );
-    MachPhysObjectData( void );
+    MachPhysObjectData();
 
 	//set methods are private
 	void armour( const MachPhys::ArmourUnits& );

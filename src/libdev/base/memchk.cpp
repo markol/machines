@@ -49,12 +49,12 @@ void DbgMemChkRegisterFileData( const char *, unsigned long )
 /*--------------------------------------------------------------------------
 --------------------------------------------------------------------------*/
 
-static  ostream& logStream( void )
+static  ostream& logStream()
 {
     return Diag::instance().memoryStream();
 }
 
-size_t  DbgMemChkFreeMemory( void )
+size_t  DbgMemChkFreeMemory()
 {
     const   size_t  STORE_SIZE = 2048;
     void*   pStore[ STORE_SIZE ];
@@ -166,7 +166,7 @@ static  uint32              currentMask = 0;
 
 // static  ofstream    logStream( "memchk.log" );
 
-typedef void (*v_fn_v)( void );
+typedef void (*v_fn_v)();
 
 static  void    *getMemory( size_t amt );
 static  void    addBlockToList( DebugInfo* d );
@@ -175,7 +175,7 @@ static  void    setupCommonData( DebugInfo *dPtr );
 static  void    checkCommonData( DebugInfo *dPtr );
 static  void    logNewBlock( const DebugInfo *dPtr );
 static  void    logDeleteBlock( const DebugInfo *dPtr );
-static  void    checkFirst( void );
+static  void    checkFirst();
 static  uint32  calculateCheckSum( DebugInfo *dPtr );
 static  void    checkMemoryBlock( DebugInfo* dPtr );
 
@@ -711,7 +711,7 @@ void    DbgMemChkRecordStackData( bool record )
 /*--------------------------------------------------------------------------
 --------------------------------------------------------------------------*/
 
-void    DbgMemChkWriteMemoryAllocationData( void )
+void    DbgMemChkWriteMemoryAllocationData()
 {
     writeMemoryAllocationData( logStream() );
 }
@@ -721,7 +721,7 @@ Check all memory blocks to see if any of them have been corrupted. If they
 have, log this information.
 --------------------------------------------------------------------------*/
 
-void    DbgMemChkCheckAllMemory( void )
+void    DbgMemChkCheckAllMemory()
 {
 	DebugInfo* d = firstInList;
 
@@ -761,7 +761,7 @@ void    DbgMemChkLogAllAllocatedMemory( uint32 mask )
     logStream() << "~~~~~~ Finish memory currently allocated with mask " << mask << " ~~~~~~~~~" << std::endl;
 }
 
-const   DbgMemChkData& DbgMemChkAllocationData( void )
+const   DbgMemChkData& DbgMemChkAllocationData()
 {
     static  DbgMemChkData   memoryData;
 
@@ -778,7 +778,7 @@ const   DbgMemChkData& DbgMemChkAllocationData( void )
 
 static  bool    canAllocateNextBlock( void** ppBlockPtr, size_t* pBlockSize );
 
-void    DbgMemChkWriteFragmentationData( void )
+void    DbgMemChkWriteFragmentationData()
 {
     void*   pBlock;
     size_t  blockSize;
@@ -927,7 +927,7 @@ static  void    checkMemoryBlock( DebugInfo* dPtr )
 /*--------------------------------------------------------------------------
 --------------------------------------------------------------------------*/
 
-static  void    checkFirst( void )
+static  void    checkFirst()
 {
     static bool first = true;
 

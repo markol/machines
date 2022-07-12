@@ -19,13 +19,13 @@ class MexTransform3d;
 class MachPhysSmelterData : public MachPhysConstructionData
 {
 public:
-    MachPhysSmelterData( void );
+    MachPhysSmelterData();
     MachPhysSmelterData( const MachPhysSmelterData&, const MexTransform3d& );
-    ~MachPhysSmelterData( void );
+    ~MachPhysSmelterData();
 
 	// Get methods public
-	MachPhys::SizeUnits capacity( void ) const;
-	MATHEX_SCALAR sqrMineDistance( void ) const;
+	MachPhys::SizeUnits capacity() const;
+	MATHEX_SCALAR sqrMineDistance() const;
 	
     void CLASS_INVARIANT;
 

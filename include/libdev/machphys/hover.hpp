@@ -37,7 +37,7 @@ public:
         W4dLink* pBobbingLink,
         MATHEX_SCALAR bobHeight );
         
-    virtual ~MachPhysHoverBoots( void );
+    virtual ~MachPhysHoverBoots();
 
     virtual MachPhysLocomotionMethod* clone( MachPhysMachine* pMachine, const W4dLinks& links );
 
@@ -70,7 +70,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const MachPhysHoverBoots& );
 
-    void startBobbing( void );
+    void startBobbing();
 
     //Callback to do the work of displaying the locomotion animations
     void doFirstPersonMotionAnimations( MachPhysLocomotionMethod::FirstPersonMotionState state );

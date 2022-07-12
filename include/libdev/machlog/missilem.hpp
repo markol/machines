@@ -37,7 +37,7 @@ public:
     MachLogMissileEmplacement( const MachPhys::MissileEmplacementSubType&, MachLogRace* pRace, uint level,
                     const MexPoint3d& location, const MexRadians& angle, MachPhys::WeaponCombo, UtlId );
 
-    ~MachLogMissileEmplacement( void );
+    ~MachLogMissileEmplacement();
 
     //Inherited from SimActor
     virtual PhysRelativeTime update( const PhysRelativeTime& maxCPUTime,

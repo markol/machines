@@ -27,7 +27,7 @@ class MachLogPlayAnimationAction : public SimAction
 {
 public:
 
-    virtual ~MachLogPlayAnimationAction( void );
+    virtual ~MachLogPlayAnimationAction();
 	static MachLogPlayAnimationAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 
     void CLASS_INVARIANT;

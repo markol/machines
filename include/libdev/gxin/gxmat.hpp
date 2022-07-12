@@ -21,8 +21,8 @@ class GXMat
 // Canonical form 
 {
 public:
-    GXMat( void );
-    ~GXMat( void );
+    GXMat();
+    ~GXMat();
     GXMat( const GXMat& );
     GXMat& operator =( const GXMat& );
     friend bool operator ==( const GXMat& , const GXMat& );
@@ -32,7 +32,7 @@ public:
 
     friend ostream& operator <<( ostream& o, const GXMat& t );
 
-	GXIdPos textureId( void ) const {
+	GXIdPos textureId() const {
 	  return textureId_;
 	}
 	void textureId(GXIdPos newTextureId) {
@@ -48,7 +48,7 @@ public:
       hasValidTexture_=valid;
     }
 
-	short transparancy( void ) const { return transparancy_; }
+	short transparancy() const { return transparancy_; }
 	void transparancy(short newTransparancy) { transparancy_=newTransparancy; }
 
     void hasOneColor(bool newHasOneColor )  { hasOneColor_=newHasOneColor; }

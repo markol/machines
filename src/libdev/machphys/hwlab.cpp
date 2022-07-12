@@ -140,7 +140,7 @@ MachPhysHardwareLab::Factory& MachPhysHardwareLab::factory()
     return factory_;
 }
 
-MachPhys::HardwareLabSubType MachPhysHardwareLab::subType( void ) const
+MachPhys::HardwareLabSubType MachPhysHardwareLab::subType() const
 {
     return subType_;
 }

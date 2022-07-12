@@ -18,8 +18,8 @@ class GXUVCoords
 // Canonical form revoked
 {
 public:
-    GXUVCoords( void );
-    ~GXUVCoords( void );
+    GXUVCoords();
+    ~GXUVCoords();
     GXUVCoords( const GXUVCoords& );
     GXUVCoords& operator =( const GXUVCoords& );
     friend bool operator ==( const GXUVCoords&, const GXUVCoords& );
@@ -29,13 +29,13 @@ public:
 
     friend ostream& operator <<( ostream& o, const GXUVCoords& t );
 
-	float u( void ) const {
+	float u() const {
 	  return u_;
 	}
 	void u(float newU) {
 	  u_=newU;
 	}
-    float v( void ) const {
+    float v() const {
 	  return v_;
 	}
     void v(float newV) {

@@ -827,7 +827,7 @@ void D3DApp::loopCycle()
 	}
 }
 
-void D3DApp::displayHelp( void )
+void D3DApp::displayHelp()
 {
     Ren::out() << std::endl;
     Ren::out() << "        ==== VIEWER HELP SCREEN ====" << std::endl;

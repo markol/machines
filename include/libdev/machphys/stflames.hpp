@@ -37,7 +37,7 @@ public:
         const MexVec3& spinAxis,
         const PhysRelativeTime& duration );
         
-    ~MachPhysSTFFlame( void );
+    ~MachPhysSTFFlame();
 
     //  Start the flame at the given time, and turning off after the duration
     //defined in the constructor.

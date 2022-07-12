@@ -27,7 +27,7 @@ public:
 	enum CreateHolder { DO_NOT_CREATE_HOLDER, CREATE_HOLDER };
 
     MachLogLinearWeapon( MachLogRace*, MachPhysLinearWeapon*, MachActor* pOwner );
-    virtual ~MachLogLinearWeapon( void );
+    virtual ~MachLogLinearWeapon();
 
     void CLASS_INVARIANT;
 

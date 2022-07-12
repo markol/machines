@@ -35,7 +35,7 @@ void BaseFilterOstream::stream( ostream& ostr )
     pOstr_ = &ostr;
 }
 
-BaseFilterBuffer* BaseFilterOstream::pFilterBuffer( void )
+BaseFilterBuffer* BaseFilterOstream::pFilterBuffer()
 {
     pBuffer_ = _NEW( BaseFilterBuffer( this ) );
     return pBuffer_;

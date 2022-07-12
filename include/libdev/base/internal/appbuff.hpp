@@ -22,13 +22,13 @@ public:
     BaseAppendBuffer( const char* fileName );
     // PRE( fileName != NULL );
 
-    BaseAppendBuffer( void );
+    BaseAppendBuffer();
 
-    ~BaseAppendBuffer( void );
+    ~BaseAppendBuffer();
 
     void name( const char* fileName );
 
-    void clear( void );
+    void clear();
 
     virtual int     overflow( int c );
     virtual int     underflow();

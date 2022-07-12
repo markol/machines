@@ -36,7 +36,7 @@ public:
     PhysCS2dExpansionSpace( const MexAlignedBox2d& boundary, MATHEX_SCALAR expansionDistance );
 
     //dtor.
-    ~PhysCS2dExpansionSpace( void );
+    ~PhysCS2dExpansionSpace();
 
     //////////////////////////////////////////////////////////
 
@@ -45,19 +45,19 @@ public:
     //However, this is an implementation class of PhysConfigSpace2d, and no
     //clients of the original space can get at an expansion space. The only clients
     //are those which are also implementation classes of PhysConfigSpace2d.
-    const PhysConfigSpace2d& configSpace( void ) const;
-    PhysConfigSpace2d* pConfigSpace( void );
+    const PhysConfigSpace2d& configSpace() const;
+    PhysConfigSpace2d* pConfigSpace();
 
     //Maintain count of clients
-    size_t nClients( void ) const;
+    size_t nClients() const;
 
-    void addClient( void );
+    void addClient();
 
-    void removeClient( void );
+    void removeClient();
     //PRE( nClients() > 0 )
 
     //Accessors
-    MATHEX_SCALAR expansionDistance( void ) const;
+    MATHEX_SCALAR expansionDistance() const;
 
     //////////////////////////////////////////////////////////
     //Adds an expanded polygon to the space derived from oldPolygon, which in the master

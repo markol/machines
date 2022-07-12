@@ -450,7 +450,7 @@ void W4dCamera::savedYonClipDistance( double dist )
 	savedYonClipDistance_=dist;
 }
 
-double W4dCamera::savedYonClipDistance( void ) const
+double W4dCamera::savedYonClipDistance() const
 {
 	return savedYonClipDistance_;
 }
@@ -543,7 +543,7 @@ RenCamera* W4dCamera::pRenCamera() const
 	return camera_;
 }
 
-const MexTransform3dKey& W4dCamera::lastRenderTransformKey( void ) const
+const MexTransform3dKey& W4dCamera::lastRenderTransformKey() const
 {
 	return lastRenderTransformKey_;
 }

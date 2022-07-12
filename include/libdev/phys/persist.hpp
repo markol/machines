@@ -19,8 +19,8 @@ class PhysPersistence
 {
 public:
     //  Singleton class
-    static PhysPersistence& instance( void );
-    ~PhysPersistence( void );
+    static PhysPersistence& instance();
+    ~PhysPersistence();
 
     void CLASS_INVARIANT;
 
@@ -31,7 +31,7 @@ private:
     PhysPersistence& operator =( const PhysPersistence& );
     bool operator ==( const PhysPersistence& );
 
-    PhysPersistence( void );
+    PhysPersistence();
 };
 
 

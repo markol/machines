@@ -23,7 +23,7 @@ class MachGuiSingleLineEditBox : public GuiSingleLineEditBox
 {
 public:
 	MachGuiSingleLineEditBox( MachGuiStartupScreens* pStartupScreens, const Gui::Box& box, const GuiBmpFont& font );
-	virtual ~MachGuiSingleLineEditBox( void );
+	virtual ~MachGuiSingleLineEditBox();
 
 	void clearTextOnNextChar( bool );
 	bool clearTextOnNextChar() const;
@@ -32,7 +32,7 @@ public:
 	void ignoreSpaceAtBeginning( bool );
 
 protected:
-	virtual void drawBackground( void );
+	virtual void drawBackground();
 	virtual bool doHandleCharEvent( const GuiCharEvent& e );
 	
 private:

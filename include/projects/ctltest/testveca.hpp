@@ -22,20 +22,20 @@
 class TestVectorAssert : public SoakTestAssert
 {
 public:
-    static TestVectorAssert& instance( void );
-    ~TestVectorAssert( void );
+    static TestVectorAssert& instance();
+    ~TestVectorAssert();
 
     typedef int                         TestType;
     typedef ctl_vector< TestType >      TestVectorType;
 
-    static  TestVectorType& vector1( void );
-    static  TestVectorType& vector2( void );
+    static  TestVectorType& vector1();
+    static  TestVectorType& vector2();
 
-    static  size_t  vector1Size( void );
-    static  size_t  vector2Size( void );
+    static  size_t  vector1Size();
+    static  size_t  vector2Size();
 
-    static  size_t  randomIndex1( void );
-    static  size_t  randomIndex2( void );
+    static  size_t  randomIndex1();
+    static  size_t  randomIndex2();
 
     static  void invalidateIterator( const TestVectorType::iterator& i, TestVectorType& vector );
     static  void invalidateIterator( const TestVectorType::const_iterator& i, TestVectorType& vector );
@@ -64,10 +64,10 @@ private:
     // Operation deliberately revoked
     TestVectorAssert& operator =( const TestVectorAssert& );
 
-    TestVectorAssert( void );
+    TestVectorAssert();
 
-    void    initialiseTestFunctions( void );
-    void    initialiseVectors( void );
+    void    initialiseTestFunctions();
+    void    initialiseVectors();
 
     // Operation deliberately revoked
     bool operator ==( const TestVectorAssert& );

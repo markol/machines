@@ -24,7 +24,7 @@ class MachLogExplosionAction : public SimAction
 {
 public:
 
-    virtual ~MachLogExplosionAction( void );
+    virtual ~MachLogExplosionAction();
 	static MachLogExplosionAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 
     void CLASS_INVARIANT;

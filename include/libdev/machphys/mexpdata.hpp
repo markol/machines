@@ -28,7 +28,7 @@ class MexPoint3d;
 class MachPhysMachineExplosionData
 {
 public:
-    MachPhysMachineExplosionData( void );
+    MachPhysMachineExplosionData();
 
     //  Copy the data "as is"
     MachPhysMachineExplosionData( const MachPhysMachineExplosionData& copyMe );
@@ -36,23 +36,23 @@ public:
     //  Copy the data "as is"
     MachPhysMachineExplosionData& operator =( const MachPhysMachineExplosionData& copyMe );
 
-    ~MachPhysMachineExplosionData( void );
+    ~MachPhysMachineExplosionData();
 
     //  Return the maximum size of link to be exploded
-    MATHEX_SCALAR   maxSize( void ) const;
+    MATHEX_SCALAR   maxSize() const;
 
     enum { ALL_LINKS = -1 };
     
     //  The maximum number of links to shoot off
-    size_t  maxToShootOff( void ) const;
+    size_t  maxToShootOff() const;
     void    maxToShootOff( size_t newMax );
             
     //  The minimum number of links to shoot off
-    size_t  minToShootOff( void ) const;
+    size_t  minToShootOff() const;
     void    minToShootOff( size_t newMin );
 
     //  The explosion center from wich all the parts are sent in the air
-    const MexPoint3d&  explosionCenter( void ) const;
+    const MexPoint3d&  explosionCenter() const;
     void  explosionCenter( const MexPoint3d& newExplosionCenter );
 
     #include "machphys/linkdata.hpp"
@@ -61,7 +61,7 @@ public:
         
     typedef ctl_list< LinkData >  LinkDatas;
     
-    const LinkDatas& links( void ) const;
+    const LinkDatas& links() const;
     
     void CLASS_INVARIANT;
 

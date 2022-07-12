@@ -30,7 +30,7 @@ PedCameraMarker::PedCameraMarker( W4dEntity* pParent, const MexTransform3d& loca
 {
 }
 
-void PedCameraMarker::draw( void )
+void PedCameraMarker::draw()
 {
 	// Draws marker ( a big arrow along x-axis )
 

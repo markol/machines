@@ -55,7 +55,7 @@ public:
 
 	const ulong& renderPassId() const { return passId_; };
 	const ulong& lastRenderPassId() const { return lastPassId_; };
-	const MexTransform3dKey& lastRenderTransformKey( void ) const;
+	const MexTransform3dKey& lastRenderTransformKey() const;
 
 	// Rendering statistics.
 	uint   entitiesRendered() const;
@@ -93,7 +93,7 @@ private:
 
 	void savedYonClipDistance( double );
 	// PRE( dist >= 0 );
-	double savedYonClipDistance( void ) const;
+	double savedYonClipDistance() const;
 
 	// Render the tree of W4dEntities that this camera is attached to,
 	// starting from the root of the tree and doing a traversal of the

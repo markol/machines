@@ -22,7 +22,7 @@ class MachPhysMetalSting : public MachPhysTrailedProjectile
 {
 public:
     MachPhysMetalSting( W4dEntity* pParent, const MexTransform3d& localTransform );
-    virtual ~MachPhysMetalSting( void );
+    virtual ~MachPhysMetalSting();
 
 	static const MachPhysMetalSting& exemplar();
 
@@ -49,7 +49,7 @@ private:
 	friend class MachPhysOtherPersistence;
 
 	//one time constructor
-    MachPhysMetalSting( void );
+    MachPhysMetalSting();
 };
 
 PER_DECLARE_PERSISTENT( MachPhysMetalSting );

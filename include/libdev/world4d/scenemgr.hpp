@@ -121,7 +121,7 @@ public:
 
 	void updateDisplay();
 
-    RenDevice* pDevice( void );
+    RenDevice* pDevice();
 
 	W4dCameraShake& cameraShakeForEdit();
 
@@ -130,18 +130,18 @@ public:
 
 	// true if we want the complexity of the scene
 	// to be adjusted so as to garantee a steady frame rate
-    bool autoAdjustFrameRate( void ) const;
+    bool autoAdjustFrameRate() const;
     void autoAdjustFrameRate( bool autoAdjust );
 
-	const double& requestedMinFrameRate( void ) const;
+	const double& requestedMinFrameRate() const;
 	void requestedMinFrameRate( const double & );
 
-	const double& highEnoughFrameRate( void ) const;
+	const double& highEnoughFrameRate() const;
 	void highEnoughFrameRate( const double & );
 
 	// enable/disable dynamic lights
 	void dynamicLightsEnabled( bool enabled );
-	bool dynamicLightsEnabled( void ) const;
+	bool dynamicLightsEnabled() const;
 
 private:
 	// Modify the list of objects which can potentially light the scene.

@@ -24,7 +24,7 @@ public:
     MachGuiAutoDeleteDisplayable( MachGuiStartupScreens* );
 	// PRE( pStartupScreens );
 
-    virtual ~MachGuiAutoDeleteDisplayable( void );
+    virtual ~MachGuiAutoDeleteDisplayable();
 
     void CLASS_INVARIANT;
 

@@ -25,7 +25,7 @@ class MexCompressedTransform3d
 public:
     MexCompressedTransform3d( const MexTransform3d& );
     MexCompressedTransform3d();
-    ~MexCompressedTransform3d( void );
+    ~MexCompressedTransform3d();
 
     void CLASS_INVARIANT;
 

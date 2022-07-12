@@ -4,10 +4,10 @@
 
 #include "ctl/set.hpp"
 
-void	testSet( void );
-void	testMultiSet( void );
+void	testSet();
+void	testMultiSet();
 
-int main( void )
+int main()
 {
 	testSet();
 	testMultiSet();
@@ -15,7 +15,7 @@ int main( void )
 	return 0;
 }
 
-void	testSet( void )
+void	testSet()
 {
 	ctl_set< int, std::less< int > >	intSet;
 
@@ -37,7 +37,7 @@ void	testSet( void )
 }
 
 
-void	testMultiSet( void )
+void	testMultiSet()
 {
 	ctl_multiset< int, std::less< int > >	intSet;
 

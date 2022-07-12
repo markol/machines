@@ -23,8 +23,8 @@ class MachLogCameraImpl
 // Canonical form revoked
 {
 public:
-    MachLogCameraImpl( void );
-    ~MachLogCameraImpl( void );
+    MachLogCameraImpl();
+    ~MachLogCameraImpl();
 
     void CLASS_INVARIANT;
 

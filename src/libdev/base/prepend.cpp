@@ -34,7 +34,7 @@ DiagOstreamPrepend::DiagOstreamPrepend( ostream* pOstr )
     this->rdbuf(&buffer_);
 }
 
-DiagOstreamPrepend::DiagOstreamPrepend( void )
+DiagOstreamPrepend::DiagOstreamPrepend()
 : ostream( &dummyStreamBuf( this ) ),
   pOstr_( NULL ),
   prependNow_( true ),
@@ -105,7 +105,7 @@ void    DiagOstreamPrepend::prependClock( bool value )
     clock_ = value;
 }
 
-void    DiagOstreamPrepend::doPrepend( void )
+void    DiagOstreamPrepend::doPrepend()
 {
     if( date_ )
     {

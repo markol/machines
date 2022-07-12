@@ -34,7 +34,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogReachedLocationCondition( void );
+    virtual ~MachLogReachedLocationCondition();
 
     void CLASS_INVARIANT;
 

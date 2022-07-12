@@ -87,18 +87,18 @@ public:
 	void attachStars(W4dStars* const pStars);
 	// PRE(pStars);
 	// POST(pStars_);
-	void detachStars( void );
+	void detachStars();
 	// PRE(pStars_);
 	// POST(not pStars_);
 
 	// Returns 0 if the no stars have been attached or they have been detached.
-    const W4dStars*	pStars( void ) const;
-    W4dStars*	pStars( void );
+    const W4dStars*	pStars() const;
+    W4dStars*	pStars();
 
     void CLASS_INVARIANT;
 
 protected:
-	EnvSky( void );
+	EnvSky();
 
 	// Using vertex colouring, apply the given colour to the entire mesh.
 	// Supplied as a service for sub-classes.
@@ -124,16 +124,16 @@ class EnvControlledSky : public EnvSky
 // Cannonical form revoked.
 {
 public:
-	virtual ~EnvControlledSky( void );
+	virtual ~EnvControlledSky();
 
     void controller(const EnvSatellite* c);
     // PRE(c);
-	const EnvSatellite* controller( void ) const;
+	const EnvSatellite* controller() const;
 
 	void CLASS_INVARIANT;
 
 protected:
-	EnvControlledSky( void );
+	EnvControlledSky();
 
 private:
 	const EnvSatellite* pController_;
@@ -231,7 +231,7 @@ class EnvStaticSky : public EnvSky
 {
 public:
 	EnvStaticSky(W4dEntity* pParent);
-	~EnvStaticSky( void );
+	~EnvStaticSky();
 
 	virtual void update(W4dSceneManager*);
 	// PRE(pSceneManager);
@@ -242,7 +242,7 @@ public:
 	void mesh(const SysPathName& meshFile);
 
 	void backgroundColour(RenColour newBackgroundColour);
-	const RenColour& backgroundColour( void ) const;
+	const RenColour& backgroundColour() const;
 
 	void CLASS_INVARIANT;
 

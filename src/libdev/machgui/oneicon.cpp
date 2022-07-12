@@ -55,7 +55,7 @@ public:
 		pInGameScreen_( pInGameScreen )
 	{}
 
-    ~MachGuiSelectInsideBuildingIcon( void )
+    ~MachGuiSelectInsideBuildingIcon()
 	{}
 
 	void setConstruction( MachLogConstruction* pConstruction )
@@ -135,7 +135,7 @@ public:
 		pInGameScreen_( pInGameScreen )
 	{}
 
-    ~MachGuiInHeadIcon( void )
+    ~MachGuiInHeadIcon()
 	{}
 
 	void setMachine( MachLogMachine* pMachine )

@@ -33,7 +33,7 @@ class PhysRampAcceleration
 {
 public:
     //ctor.
-	PhysRampAcceleration( void );
+	PhysRampAcceleration();
 
     PhysRampAcceleration
     (
@@ -289,7 +289,7 @@ public:
 private:
     // Operations deliberately revoked
 	friend class PhysCompressedRampAcceleration;
-    //PhysRampAcceleration( void );
+    //PhysRampAcceleration();
 
     bool solveForTime(
         MATHEX_SCALAR a1, MATHEX_SCALAR a3, MATHEX_SCALAR t,

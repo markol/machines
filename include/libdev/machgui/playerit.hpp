@@ -39,7 +39,7 @@ class MachGuiPlayerColour : public GuiDisplayable
 {
 public:
 	MachGuiPlayerColour( MachGuiStartupScreens*, MachGuiPlayerListItem* pParent, MachGuiSharedPlayerInfo* );
-    ~MachGuiPlayerColour( void );
+    ~MachGuiPlayerColour();
 
 	static size_t reqWidth(); 
 
@@ -89,7 +89,7 @@ public:
     						bool		   playerIsHost,
     						double		   ping,
     						bool hasMachinesCD );
-    ~MachGuiPlayerListItem( void );
+    ~MachGuiPlayerListItem();
 
     void CLASS_INVARIANT;
 
@@ -136,7 +136,7 @@ public:
 						MachGuiPlayerColour* pParent, 
 						const Gui::Box& box,
 						MachGuiSharedPlayerInfo* );
-	~MachGuiColourList( void );
+	~MachGuiColourList();
 
 	virtual bool containsMousePointer();
 
@@ -156,7 +156,7 @@ public:
 							const Gui::Box& box, 
 							MachPhys::Race race,
 							MachGuiSharedPlayerInfo* );
-    ~MachGuiColourSelector( void );
+    ~MachGuiColourSelector();
 
 protected:
 	virtual void doDisplay();

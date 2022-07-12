@@ -16,12 +16,12 @@ class BaseTrace
 {
 public:
     //  Singleton class
-    static BaseTrace& instance( void );
+    static BaseTrace& instance();
 
-    ~BaseTrace( void );
+    ~BaseTrace();
 
     void    trace( bool );
-    bool    trace( void ) const { return trace_; }
+    bool    trace() const { return trace_; }
     
     void    log( const char* fileName, size_t line );
     
@@ -35,7 +35,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const BaseTrace& );
 
-    BaseTrace( void );
+    BaseTrace();
     
     bool    trace_;
 };

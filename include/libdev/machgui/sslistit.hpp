@@ -26,7 +26,7 @@ class MachGuiSingleSelectionListBoxItem	: public GuiSingleSelectionListBoxItem
 public:
     MachGuiSingleSelectionListBoxItem( MachGuiStartupScreens*, MachGuiSingleSelectionListBox* pListBox, size_t width, const string& text );
     MachGuiSingleSelectionListBoxItem( MachGuiStartupScreens*, GuiSingleSelectionListBox* pListBox, size_t width, const string& text );
-    ~MachGuiSingleSelectionListBoxItem( void );
+    ~MachGuiSingleSelectionListBoxItem();
 
     void CLASS_INVARIANT;
 

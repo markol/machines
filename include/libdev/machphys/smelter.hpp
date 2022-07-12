@@ -34,7 +34,7 @@ public:
         size_t level,
         MachPhys::Race race );
 
-    virtual ~MachPhysSmelter( void );
+    virtual ~MachPhysSmelter();
 
 	//return MachPhysData object for this building
 	virtual const MachPhysConstructionData& constructionData() const;

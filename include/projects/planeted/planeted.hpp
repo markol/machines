@@ -28,7 +28,7 @@ class PedPlanetEditor
 {
 public:
     //  Singleton class
-    static PedPlanetEditor& instance( void );
+    static PedPlanetEditor& instance();
   
     void CLASS_INVARIANT;
 
@@ -38,7 +38,7 @@ public:
 
 	void processInput( const DevButtonEvent& );
 
-	void preRenderUpdate( void );
+	void preRenderUpdate();
 
 	void readCspFile( const SysPathName& );
 	void readScnFile( const SysPathName& );
@@ -46,8 +46,8 @@ public:
 
 private:
 	// Private as class is Singleton
-    PedPlanetEditor( void );
-	~PedPlanetEditor( void );
+    PedPlanetEditor();
+	~PedPlanetEditor();
 
 	// Operations deliberately revoked
     PedPlanetEditor( const PedPlanetEditor& );
@@ -56,10 +56,10 @@ private:
 
     friend ostream& operator <<( ostream& o, const PedPlanetEditor& t );
 
-	void initDeviceEvents( void );
-	void processSave( void );
-	void displayKeyboardCtrls( void );
-	void displaySavedStatus( void );
+	void initDeviceEvents();
+	void processSave();
+	void displayKeyboardCtrls();
+	void displaySavedStatus();
 	// void writeScnFile( ofstream& );
 
 	// Data...

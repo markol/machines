@@ -24,7 +24,7 @@ void MachPhysTechnicianData::CLASS_INVARIANT
     INVARIANT( this != NULL );
 }
 
-MachPhys::ResearchUnits MachPhysTechnicianData::researchRate( void ) const
+MachPhys::ResearchUnits MachPhysTechnicianData::researchRate() const
 {
 	return researchRate_;
 }

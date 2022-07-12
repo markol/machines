@@ -37,7 +37,7 @@ ALSound::SOUNDCARD ALSound::soundcard_ = UNKNOWN;
 
 
 /** PROTECTED **/
-ALSound::ALSound( void )
+ALSound::ALSound()
 {
     preLoadedSamples_.reserve( 512 );
 }
@@ -58,7 +58,7 @@ void ALSound::shutdown( )
     preLoadedSamples_.erase( preLoadedSamples_.begin(), preLoadedSamples_.end() );
 }
 
-ALSound::~ALSound( void )
+ALSound::~ALSound()
 {
     alDevice_ = alcGetContextsDevice(alContext_);
 	alcMakeContextCurrent(NULL);
@@ -144,7 +144,7 @@ void ALSound::initialise( const SndMixerParameters& params, PriorityLevel p )
 }
 
 /** STATIC **/
-bool& ALSound::isInitialised( void )
+bool& ALSound::isInitialised()
 {
 	static bool isInitialised_ = false;
 
@@ -152,7 +152,7 @@ bool& ALSound::isInitialised( void )
 }
 
 /** STATIC **/
-ALSound& ALSound::instance( void )
+ALSound& ALSound::instance()
 {
 //	PRE( instance().pIDirectSound_);
 	PRE( ALSound::isInitialised() );
@@ -163,7 +163,7 @@ ALSound& ALSound::instance( void )
 
 ////////////////////////////////////////////////////////////
 
-void ALSound::compact( void )
+void ALSound::compact()
 {
 	PRE( ALSound::isInitialised() );
 }

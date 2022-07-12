@@ -25,7 +25,7 @@ class MachGuiCtxLoad : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxLoad( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxLoad( void );
+    ~MachGuiCtxLoad();
 
     void CLASS_INVARIANT;
 

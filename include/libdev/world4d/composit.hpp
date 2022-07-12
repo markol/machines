@@ -35,7 +35,7 @@ public:
     //Used to store pointers to held objects
     typedef ctl_pvector< W4dEntity > HeldEntities;
 
-    virtual ~W4dComposite( void );
+    virtual ~W4dComposite();
 
     //Update this composite to use the animations defined in newPlan, with time offset
     //startTime.
@@ -45,7 +45,7 @@ public:
                uint nRepetitions = 0, uint animId = 0 );
 
     //Clear all motion/mesh plans etc for the composite and its links
-    void clearAllPlans( void );
+    void clearAllPlans();
 
     /////////////////////////////////////////////////////////////////
     //Scaling
@@ -139,7 +139,7 @@ public:
     typedef ctl_vector< W4dLink* >    W4dLinks;
 
     //The collection of links
-    const W4dLinks& links( void ) const;
+    const W4dLinks& links() const;
 
     //returns in pTransform the transform from this composite to link
     void linkTransform( const W4dLink& link, MexTransform3d* pTransform ) const;
@@ -152,9 +152,9 @@ public:
     //elsewhere.
     void hold( W4dEntity* object, W4dLink* parent, const W4dTransform3d& newLocalTransform );
 
-    bool hasHeldEntities( void ) const;
+    bool hasHeldEntities() const;
 
-	const HeldEntities& heldEntities( void );
+	const HeldEntities& heldEntities();
 	// PRE(hasHeldEntities);
 
     //Cancel any holding relationship with object.
@@ -195,11 +195,11 @@ protected:
     void renderHeldObjects( const W4dCamera& camera ) const;
 
     //Store the link transforms, and parent pointers
-    void storeLinkTransforms( void ) const;
+    void storeLinkTransforms() const;
 
     //Restore the link transforms and parents as they were
     //on last storeLinkTransforms() call
-    void restoreLinkTransforms( void );
+    void restoreLinkTransforms();
 
     void readCompositeFile( const SysPathName& pathname );
     // Read in a composite file and set up the appropriate W4dLinks

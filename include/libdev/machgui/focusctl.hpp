@@ -22,7 +22,7 @@ class MachGuiFocusCapableControl
 {
 public:
     MachGuiFocusCapableControl( MachGuiStartupScreens* );
-    virtual ~MachGuiFocusCapableControl( void );
+    virtual ~MachGuiFocusCapableControl();
 
 	enum NavKey { TAB_FOWARD, TAB_BACKWARD, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW };
 

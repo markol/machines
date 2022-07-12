@@ -20,8 +20,8 @@ class GXMatrix3
 // Orthodox canonical form
 {
 public:
-    GXMatrix3( void );
-    ~GXMatrix3( void );
+    GXMatrix3();
+    ~GXMatrix3();
     GXMatrix3( const GXMatrix3& );
     GXMatrix3& operator =( const GXMatrix3& );
     friend bool operator ==( const GXMatrix3&, const GXMatrix3& );

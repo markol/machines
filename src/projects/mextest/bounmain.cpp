@@ -30,7 +30,7 @@ MexConvexPolygon2d randomConvexPolygon2d( MexBasicRandom* pRandom );
 
 using namespace std;
 
-int main( void )
+int main()
 {
     INSPECT_ON( cout, MexEpsilon::instance() );
     INSPECT_ON( cout, MexEpsilon::sqrInstance() );

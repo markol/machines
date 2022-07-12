@@ -41,7 +41,7 @@ MachCameras& MachCameras::instance()
     return instance_;
 }
 
-MachCameras::MachCameras( void )
+MachCameras::MachCameras()
 :	machineIndex_( 0 ),
 	pThirdPerson_( NULL ),
    	pCurrentCamera_( NULL),
@@ -701,7 +701,7 @@ void readZenithDataFile( MATHEX_SCALAR* pZenithMinHeight, MATHEX_SCALAR* pZenith
     }
 }
 
-void MachCameras::switchToZenithView( void )
+void MachCameras::switchToZenithView()
 {
     if( pSceneManager_->currentCamera() != pZenithCamera_ )
     {
@@ -718,7 +718,7 @@ void MachCameras::switchToZenithView( void )
     }
 }
 
-void MachCameras::switchToSuperHighZenithView( void )
+void MachCameras::switchToSuperHighZenithView()
 {
     if( pSceneManager_->currentCamera() != pSuperHighZenithCamera_ )
     {
@@ -735,7 +735,7 @@ void MachCameras::switchToSuperHighZenithView( void )
     }
 }
 
-void MachCameras::switchToGroundView( void )
+void MachCameras::switchToGroundView()
 {
     if( pCurrentCamera_ != pGroundCamera_ )
     {
@@ -747,7 +747,7 @@ void MachCameras::switchToGroundView( void )
     }
 }
 
-void MachCameras::switchToThirdPersonView( void )
+void MachCameras::switchToThirdPersonView()
 {
 	// Only change third person once every 1/3 second.
 	if ( lastThirdPersonChange_.time() > 0.333 )
@@ -759,7 +759,7 @@ void MachCameras::switchToThirdPersonView( void )
 	}
 }
 
-void MachCameras::switchToFirstPersonView( void )
+void MachCameras::switchToFirstPersonView()
 {
 	useCamera( pFreeCamera_ );
 	pFreeCamera_->update();

@@ -27,7 +27,7 @@ MachPhysMissileEmplacementData::~MachPhysMissileEmplacementData()
 
 }
 
-MATHEX_SCALAR MachPhysMissileEmplacementData::nWeapons( void ) const
+MATHEX_SCALAR MachPhysMissileEmplacementData::nWeapons() const
 {
 	return nWeapons_;
 }
@@ -37,7 +37,7 @@ void MachPhysMissileEmplacementData::nWeapons( const MATHEX_SCALAR& newNumberOfW
 	nWeapons_ = newNumberOfWeapons;
 }
 
-MATHEX_SCALAR MachPhysMissileEmplacementData::accuracy( void ) const
+MATHEX_SCALAR MachPhysMissileEmplacementData::accuracy() const
 {
 	return accuracy_;
 }
@@ -47,7 +47,7 @@ void MachPhysMissileEmplacementData::accuracy( const MATHEX_SCALAR& newAccuracy 
 	accuracy_ = newAccuracy;
 }
 
-MexRadians MachPhysMissileEmplacementData::maxRotation( void ) const
+MexRadians MachPhysMissileEmplacementData::maxRotation() const
 {
 	return maxRotation_;
 }

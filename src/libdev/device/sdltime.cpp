@@ -10,12 +10,12 @@
 #include <SDL2/SDL.h>
 
 // TODO TIMER
-double DevTime::OSTime::resolution( void ) const
+double DevTime::OSTime::resolution() const
 {
     return DevSdlTimeInternal::instance().resolution();
 }
 
-double DevTime::OSTime::time( void ) const
+double DevTime::OSTime::time() const
 {
     double result;
     if( RecRecorder::instance().state() == RecRecorder::PLAYING )
@@ -31,7 +31,7 @@ double DevTime::OSTime::time( void ) const
     return result;
 }
 
-double DevTime::OSTime::timeNoRecord( void ) const
+double DevTime::OSTime::timeNoRecord() const
 {
     double result;
     //result = SDL_GetTicks() / 1000.0;

@@ -93,7 +93,7 @@ ostream& operator <<(ostream& o, const EnvSky& t)
 ////////////////////////////////////////////////////////////
 
 // VIRTUAL //
-EnvControlledSky::~EnvControlledSky( void )
+EnvControlledSky::~EnvControlledSky()
 {
 	TEST_INVARIANT;
 }
@@ -104,7 +104,7 @@ void EnvControlledSky::CLASS_INVARIANT
 }
 
 // PROTECTED //
-EnvControlledSky::EnvControlledSky( void )
+EnvControlledSky::EnvControlledSky()
 
 	:pController_(0)
 {
@@ -112,7 +112,7 @@ EnvControlledSky::EnvControlledSky( void )
 
 ////////////////////////////////////////////////////////////
 
-EnvUniformSky::EnvUniformSky( void )
+EnvUniformSky::EnvUniformSky()
 
     :pColourTable_(0),
     visible_(true)
@@ -467,7 +467,7 @@ EnvStaticSky::EnvStaticSky(W4dEntity* pParent)
 }
 
 // VIRTUAL //
-EnvStaticSky::~EnvStaticSky( void )
+EnvStaticSky::~EnvStaticSky()
 {
 	TEST_INVARIANT;
 
@@ -509,7 +509,7 @@ void EnvStaticSky::write(ostream& o) const
 }
 
 // VIRTUAL //
-bool EnvStaticSky::visible( void ) const
+bool EnvStaticSky::visible() const
 {
 	TEST_INVARIANT;
 

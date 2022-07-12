@@ -50,7 +50,7 @@ public:
                              PhysCS2dExpansionSpace* pExpansionSpace, MATHEX_SCALAR clearance );
 
     //dtor.
-    ~PhysCS2dVisibilityGraph( void );
+    ~PhysCS2dVisibilityGraph();
 
     /////////////////////////////////////////////////////////
     //Add the config space's polygon to the graph
@@ -60,7 +60,7 @@ public:
     void removePolygon( const PolygonId& polygonId );
 
     //True if graph is constructed for all registered polygons
-    bool isUpToDate( void ) const;
+    bool isUpToDate() const;
 
     //Perform some updating of the visibility graph, without taking too long.
     //True iff becomes up to date.
@@ -80,17 +80,17 @@ public:
     bool updateFindPath( const PhysRelativeTime& maxTime, ObstacleFlags flags );
 
     //True iff the current findPath search is complete
-    bool isFindPathFinished( void ) const;
+    bool isFindPathFinished() const;
 
     //Returns the results of the current findPath search. If result is empty,
     //no path could be found. Otherwise the first and last points returned will
     //be the start and end points.
-    Path findPath( void ) const;
+    Path findPath() const;
     //PRE( isFindPathFinished() )
 
     //Clears the current findPath search, and removes the start and end points from
     //the graph.
-    void clearFindPath( void );
+    void clearFindPath();
 
     /////////////////////////////////////////////////////////
 
@@ -172,7 +172,7 @@ private:
     //Process some intersections between the polygon currently being processed
     //and existing arcs in the graph. Remove any that intersect the polygon.
     //True iff at least one arc actually tested for intersection.
-    bool processOldArcs( void );
+    bool processOldArcs();
 
     //Check current vertex of the processing polygon against an existing graph vertex
     //and add an arc between them if no intersections with the config space polygons.
@@ -186,10 +186,10 @@ private:
     bool processNewVertexWithNewVertex( ObstacleFlags flags );
 
     //Complete processing of the current polygon
-    void endProcessingPolygon( void );
+    void endProcessingPolygon();
 
     //Set up the processing for the start/end vertex, depending on processingState_;
-    void startProcessingFindPathVertex( void );
+    void startProcessingFindPathVertex();
 
     //Check current processing findPath vertex against an existing graph vertex
     //and add an arc between them if no intersections with the config space polygons.
@@ -202,7 +202,7 @@ private:
 
     //Invalidates any current findPath search or stored results, and deletes items
     //no longer useful.
-    void invalidateFindPath( void );
+    void invalidateFindPath();
 
     bool originalSpaceContainsSausage
     (

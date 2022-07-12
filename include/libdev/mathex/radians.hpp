@@ -25,11 +25,11 @@ class MexRadians : public MexAngle
 {
 public:
 
-    MexRadians( void );
+    MexRadians();
     MexRadians( MATHEX_SCALAR );
     MexRadians( const MexAngle& );
 
-    MATHEX_SCALAR   asScalar( void ) const;
+    MATHEX_SCALAR   asScalar() const;
 
     friend ostream& operator <<( ostream& o, const MexRadians& t );
     //Persistence

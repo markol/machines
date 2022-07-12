@@ -10,7 +10,7 @@ static  DevSharedMouse::Position  defaultMaxRange = DevSharedMouse::Position( 32
 
 //////////////////////////////////////////////////////////////////////
 
-DevSharedMouse::DevSharedMouse( void ):
+DevSharedMouse::DevSharedMouse():
         minRange_( defaultMinRange ),  
         maxRange_( defaultMaxRange ),  
         lastRightButtonState_( false ),
@@ -27,12 +27,12 @@ void DevSharedMouse::range( const Position& min, const Position& max )
     maxRange_ = max;
 }
 
-const DevSharedMouse::Position&    DevSharedMouse::minRange( void ) const
+const DevSharedMouse::Position&    DevSharedMouse::minRange() const
 {
     return minRange_;
 }
 
-const DevSharedMouse::Position&    DevSharedMouse::maxRange( void ) const
+const DevSharedMouse::Position&    DevSharedMouse::maxRange() const
 {
     return maxRange_;
 }

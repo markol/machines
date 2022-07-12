@@ -58,7 +58,7 @@
 
 
 inline
-unsigned int randomInt( void )
+unsigned int randomInt()
 {
 	return rand();
 }
@@ -70,7 +70,7 @@ unsigned int randomInt( unsigned int n )
 }
 
 inline
-float randomFloat( void )
+float randomFloat()
 {
 	float	randFloat = rand() / (double) RAND_MAX;
 
@@ -80,7 +80,7 @@ float randomFloat( void )
 }
 
 inline
-double randomDouble( void )
+double randomDouble()
 {
 	double	randDouble = rand() / (double) RAND_MAX;
 

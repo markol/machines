@@ -39,7 +39,7 @@ class MachCameras
 {
 public:
     //  Singleton class
-    static MachCameras& instance( void );
+    static MachCameras& instance();
 
 	void initialise( W4dSceneManager*, W4dRoot* );
 
@@ -67,15 +67,15 @@ public:
 	void lookAt( const MachActor& );
 
 	// Change camera to appropriate view
-	void switchToZenithView( void );
+	void switchToZenithView();
 
-	void switchToSuperHighZenithView( void );
+	void switchToSuperHighZenithView();
 
-	void switchToGroundView( void );
+	void switchToGroundView();
 
-	void switchToThirdPersonView( void );
+	void switchToThirdPersonView();
 
-	void switchToFirstPersonView( void );
+	void switchToFirstPersonView();
 
 	// Called when mouse is at edge of screen.
 	enum ScrollDir { LEFT, RIGHT, UP, DOWN };
@@ -86,11 +86,11 @@ public:
 
 private:
 	// Private as class is Singleton
-    MachCameras( void );
+    MachCameras();
 	// PRE( pSceneManager );
 	// PRE( pRoot );
 
-    ~MachCameras( void );
+    ~MachCameras();
 
 	// Operations revoked
     MachCameras( const MachCameras& );

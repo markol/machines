@@ -8,7 +8,7 @@
 
 #include "device/time.hpp"
 
-DevTime::DevTime( void )
+DevTime::DevTime()
 : rate_( 1.0 ),
   paused_( false ),
   offset_( 0.0 ),
@@ -16,14 +16,14 @@ DevTime::DevTime( void )
 {
 }
 
-DevTime& DevTime::instance( void )
+DevTime& DevTime::instance()
 {
     static  DevTime  instance;
     
     return instance;
 }
 
-DevTime::~DevTime( void )
+DevTime::~DevTime()
 {
 }
 
@@ -32,7 +32,7 @@ double DevTime::resolution() const
 	return OSTime_.resolution();
 }	
 
-double DevTime::time( void ) const
+double DevTime::time() const
 {
 	double realTime;
 
@@ -48,7 +48,7 @@ double DevTime::time( void ) const
 	return realTime * rate_;
 }
 
-double DevTime::timeNoRecord( void ) const
+double DevTime::timeNoRecord() const
 {
 	double realTime;
 
@@ -74,7 +74,7 @@ double DevTime::rate() const
 	return rate_;
 }
 
-void DevTime::pause( void )
+void DevTime::pause()
 {
 	if( !paused_ )
 	{
@@ -83,7 +83,7 @@ void DevTime::pause( void )
 	}
 }
 
-void DevTime::resume( void )
+void DevTime::resume()
 {
 	if( paused_ )
 	{

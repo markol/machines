@@ -28,7 +28,7 @@ public:
 	// selects only direct draw drivers
     RenDriverSelector();
 
-    ~RenDriverSelector( void );
+    ~RenDriverSelector();
 
     void CLASS_INVARIANT;
 

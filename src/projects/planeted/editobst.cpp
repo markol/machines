@@ -286,7 +286,7 @@ PedPolygon* PedObstacleEditor::createDefaultPolygon() const
 }
 
 // virtual
-void PedObstacleEditor::displayKeyboardCtrls( void )
+void PedObstacleEditor::displayKeyboardCtrls()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -315,7 +315,7 @@ void PedObstacleEditor::displayKeyboardCtrls( void )
 }
 
 // virtual
-void PedObstacleEditor::displayModeInfo( void )
+void PedObstacleEditor::displayModeInfo()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -449,7 +449,7 @@ void PedObstacleEditor::processDisplayVerticalPolygons( bool displayPolygons )
 	}
 }
 
-void PedObstacleEditor::highlightAllObstacles( void )
+void PedObstacleEditor::highlightAllObstacles()
 {
 	for( PedPolygonEditor::Polygons::iterator polyIter = polygons_.begin(); polyIter != polygons_.end(); ++polyIter )
 	{
@@ -458,7 +458,7 @@ void PedObstacleEditor::highlightAllObstacles( void )
 }
 
 // virtual
-void PedObstacleEditor::updatePolygon( void )
+void PedObstacleEditor::updatePolygon()
 {
 	if (  mouseDrag_ and
 		  pSelectedPolygon_ and
@@ -494,7 +494,7 @@ void PedObstacleEditor::validate()
 	}
 }
 
-void PedObstacleEditor::processChangeObstacleType( void )
+void PedObstacleEditor::processChangeObstacleType()
 {
 	PRE( pSelectedPolygon_ );
 

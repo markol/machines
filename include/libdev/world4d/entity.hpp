@@ -68,7 +68,7 @@ public:
     // Cancels any previous W4dComposite holding relationship.
     // PRE( newParent != NULL );
 
-    bool hasParent( void ) const;
+    bool hasParent() const;
     // True iff this object has a parent
 
     W4dEntity* pParent() const;
@@ -128,13 +128,13 @@ public:
         // Any existing intersecting domains are *replaced* by the new ones.
     void intersectingDomains(const W4dDomains&);
 
-        bool hasIntersectingDomains( void ) const;
-        void createIntersectingDomains( void );
-        void eraseIntersectingDomains( void );
-        void deleteIntersectingDomains( void );
+        bool hasIntersectingDomains() const;
+        void createIntersectingDomains();
+        void eraseIntersectingDomains();
+        void deleteIntersectingDomains();
         void addIntersectingDomain( W4dDomain* );
 
-    W4dDomain* containingDomain( void ) const;
+    W4dDomain* containingDomain() const;
     // Returns the lowest domain in the tree that owns 'this'.
     // PRE( hasParent() );
     // POST( result != NULL );
@@ -143,10 +143,10 @@ public:
     // via ppDomain (if ppDomain is NULL, this argument is just ignored).
     bool hasContainingDomain( W4dDomain** ppDomain=NULL ) const;
 
-    bool isDomain( void ) const;
+    bool isDomain() const;
     // Returns the value stored in the domain flag
 
-    W4dDomain* getAsDomain( void );
+    W4dDomain* getAsDomain();
     // PRE( isDomain() );
     // POST( result != NULL );
 
@@ -190,7 +190,7 @@ public:
         // Useful for debugging, i.e. asserting which tree something belongs to.
 
     //Clear all current plans attached to this entity
-    void clearPlan( void );
+    void clearPlan();
 
         //The entity plan.
         const W4dEntityPlan& entityPlan() const;
@@ -266,7 +266,7 @@ public:
     const RenMeshInstance& mesh( W4dLOD LODid = 0 ) const;
     //PRE( hasMesh( LODiD ) )
 
-    bool visible( void ) const;
+    bool visible() const;
     void visible( bool vis );
 
     //The local mesh bounding volume (scaled if any scale applied)
@@ -448,7 +448,7 @@ private:
 
     // Initialises child list to empty, activity priority to 0, and static flag to true.
     // This call only for use by W4dRoot::W4dRoot
-    W4dEntity( void );
+    W4dEntity();
 
     //enum NotAChild { DONT_ADD_TO_CHILD_LIST };
     // Constructor attaches to parent, DOES NOT add this to the parent's list of children,
@@ -493,10 +493,10 @@ private:
     //Only call this if you want to add a child.
     W4dEntities* childListForEdit();
 
-    bool isHeld( void ) const;
+    bool isHeld() const;
     // true iff this object is being held by a composite object
 
-    W4dComposite* pHolder( void ) const;
+    W4dComposite* pHolder() const;
     // PRE( isHeld() );
     // POST( result != NULL );
 
@@ -511,7 +511,7 @@ private:
 
         //deletes the owned W4dEntityPlan if all its plans are complete, returning true
         //if actually deletes it.
-        bool clearPlanIfDone( void );
+        bool clearPlanIfDone();
 
     void parseMesh( const SysPathName& directoryname, UtlLineTokeniser* pParser, W4dLOD id );
 
@@ -530,7 +530,7 @@ private:
 
     //Get/set the render pass id;
     void passId( ulong id );
-    ulong passId( void ) const;
+    ulong passId() const;
 
     //Mark the global transform of this entity and all its descendants out of date.
     //Also works for composites and their links.

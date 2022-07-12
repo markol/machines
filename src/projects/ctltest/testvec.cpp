@@ -4,7 +4,7 @@
 #include "ctl/fixedvec.hpp"
 // #include "ctl/mmvector.hpp"
 
-void	testVector( void );
+void	testVector();
 
 int	main( int argc, char* argv[] )
 {
@@ -13,7 +13,7 @@ int	main( int argc, char* argv[] )
 	return 0;
 }
 
-void    testVector( void )
+void    testVector()
 {
   
     ctl_fixed_vector< int >    v1( 10 );

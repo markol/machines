@@ -25,7 +25,7 @@ class MachPhysFacePlate : public W4dGeneric
 {
 public:
     MachPhysFacePlate( W4dEntity* pParent, size_t level );
-    ~MachPhysFacePlate( void );
+    ~MachPhysFacePlate();
 
     void CLASS_INVARIANT;
 

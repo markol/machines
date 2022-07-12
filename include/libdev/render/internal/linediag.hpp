@@ -49,9 +49,9 @@ public:
         TEST1, TEST2
     };
 
-	static RenILinesDiagnostic& instance( void );
+	static RenILinesDiagnostic& instance();
 
-	~RenILinesDiagnostic( void );
+	~RenILinesDiagnostic();
 
 	// This is called to draw the test lines onto a surface. Allocates some line vertices.
 	void drawLines(RenSurface* pSurface) const;
@@ -67,26 +67,26 @@ public:
 	//	PRE(RenDevice::current()->idleRendering() or not RenDevice::current()->rendering());
 	// POST(hasTestedLines());
 
-	DrawMethod horizontalResult( void ) const;
+	DrawMethod horizontalResult() const;
 	// PRE(hasTestedLines());
-	DrawMethod verticalResult( void ) const;
+	DrawMethod verticalResult() const;
 	// PRE(hasTestedLines());
 
-	bool hasTestedLines( void ) const;
+	bool hasTestedLines() const;
     void setTestType( TestType type );
 	
 	void CLASS_INVARIANT;
 
 private:
-	RenILinesDiagnostic( void );
+	RenILinesDiagnostic();
 
 	// Operations deliberatly revoked.
 	RenILinesDiagnostic(const RenILinesDiagnostic& copyMe);
 	RenILinesDiagnostic& operator =(const RenILinesDiagnostic& assignMe);
 
 	// These are the vertices actual used in the drawing.
-	static const RenSurface::Points& horizontalVertices( void );
-	static const RenSurface::Points& verticalVertices( void );
+	static const RenSurface::Points& horizontalVertices();
+	static const RenSurface::Points& verticalVertices();
 
 	// These are vertices gained from tests on machines with and without
 	// drawing errors. They are tested against the actual results to determine

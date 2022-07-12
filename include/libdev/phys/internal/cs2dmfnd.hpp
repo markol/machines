@@ -32,7 +32,7 @@ class PhysCS2dDomainFindPath
 {
 public:
     //Default ctor for collections etc.
-    PhysCS2dDomainFindPath( void );
+    PhysCS2dDomainFindPath();
 
     typedef PhysConfigSpace2d::ObstacleFlags ObstacleFlags;
 
@@ -44,7 +44,7 @@ public:
                       PhysPathFindingPriority );
 
     //dtor
-    ~PhysCS2dDomainFindPath( void );
+    ~PhysCS2dDomainFindPath();
 
     //Useful types
     typedef PhysConfigSpace2d::Path Path;
@@ -53,7 +53,7 @@ public:
     typedef PhysConfigSpace2d::PortalPoints PortalPoints;
 
     //True if the algorithm is finished
-    bool isFinished( void ) const;
+    bool isFinished() const;
 
     //Run the algorithm (for no longer than maxTime)
     void update( const PhysRelativeTime& maxTime );
@@ -112,19 +112,19 @@ private:
     };
 
     //Updates at various stages
-    void start( void );
+    void start();
 
     //////////////////////////////////////////////////
     //True if start and end points in different domains.
     //If so, need to do a macro search using the domain graph.
-    bool needMacroSearch( void );
+    bool needMacroSearch();
 
     //If the domain graph is available, lock it. Then add a domain vertex
     //for the start and endpoint to the domain graph, with arcs joining each
     //existing domain vertex in the respective domains. Set up the A* search
     //algorithm on the graph. Enter MACRO state.
     //If the domain graph is not avaliable, do nothing.
-    void startMacroSearch( void );
+    void startMacroSearch();
     //PRE( state_ == PENDING_MACRO )
 
     //Advance the macro search algorithm (for no longer than maxTime)
@@ -132,11 +132,11 @@ private:
     //PRE( state_ == MACRO )
 
     //True iff the domain graph search has completed.
-    bool isMacroSearchFinished( void ) const;
+    bool isMacroSearchFinished() const;
     //PRE( state_ == MACRO )
 
     //Get the results of the domain graph pathFind, and tidy up
-    void endMacroSearch( void );
+    void endMacroSearch();
     //////////////////////////////////////////////////
 
     //Data members

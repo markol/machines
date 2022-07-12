@@ -34,7 +34,7 @@ class MachPhysSubTypedObjectFactory
 {
 public:
     MachPhysObjectFactory( size_t nEntries );
-    virtual ~MachPhysObjectFactory( void );
+    virtual ~MachPhysObjectFactory();
 
     PART& part( SUB_TYPE subType, size_t hardwareLevel )
 

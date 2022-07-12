@@ -36,10 +36,10 @@ class SimProcess
 public:
 	enum ToBeUpdated { MANAGER_UPDATE, MANAGER_NOT_UPDATE };
     // Constructor registers this Simprocess with the SimManager
-    SimProcess( void );
+    SimProcess();
 
     // Destructor unregisters with the SimManager, and deletes all its actors
-    virtual ~SimProcess( void );
+    virtual ~SimProcess();
 
     //Set the priority. When CPU time is in short supply, a process (including its actors) with
     //priority 10 will get approx 10 times the CPU time as a process with priority 1.

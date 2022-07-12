@@ -36,7 +36,7 @@ class W4dEntityImpl
 // Canonical form revoked
 {
 public:
-    ~W4dEntityImpl( void );
+    ~W4dEntityImpl();
 
 	// These methods are public, available to entities and composites.
     bool hasAnimationData() const;
@@ -44,7 +44,7 @@ public:
 	void applyLightAnimations( W4dEntity* pEntity, const PhysAbsoluteTime& startTime ) const;
 	void applyNonLightAnimations( W4dEntity* pEntity, const PhysAbsoluteTime& startTime ) const;
 
-    bool hasParent( void ) const;
+    bool hasParent() const;
     // True iff this object has a parent
 
     W4dEntity* pParent() const;
@@ -54,9 +54,9 @@ public:
 
     //Get/set the render pass id;
     void passId( ulong id );
-    ulong passId( void ) const;
+    ulong passId() const;
 
-	bool hasMesh( void ) const;
+	bool hasMesh() const;
 
 	void doNotLight(bool lightIt);
 	bool doNotLight() const;
@@ -131,7 +131,7 @@ private:
 
     W4dEntityImpl( W4dEntity* pParent, const W4dTransform3d& localTransform, W4dEntity::Solidity solid );
     W4dEntityImpl( const W4dEntityImpl& copyMe, W4dEntity* pParent, const W4dTransform3d& localTransform );
-	W4dEntityImpl( void );
+	W4dEntityImpl();
 	W4dEntityImpl( W4dEntity* pParent, const W4dTransform3d& newLocalTransform, W4dEntity::Solidity, W4dEntity::NotAChild);
 
 	void name(const string&);

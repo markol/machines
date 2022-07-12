@@ -22,7 +22,7 @@ class PhysPathFindingQueueWriter
 {
 public:
     PhysPathFindingQueueWriter( const PhysConfigSpace2d& configSpace );
-    ~PhysPathFindingQueueWriter( void );
+    ~PhysPathFindingQueueWriter();
 
     void CLASS_INVARIANT;
 

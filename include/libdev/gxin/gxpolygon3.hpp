@@ -24,8 +24,8 @@ class GXPolygon3
 // Canonical form
 {
 public:
-    GXPolygon3( void );
-    ~GXPolygon3( void );
+    GXPolygon3();
+    ~GXPolygon3();
     GXPolygon3( const GXPolygon3& );
     GXPolygon3& operator =( const GXPolygon3& );
     friend bool operator ==( const GXPolygon3&, const GXPolygon3& );
@@ -35,7 +35,7 @@ public:
     friend ostream& operator <<( ostream& o, const GXPolygon3& t );
 
     // Get the size of the vertices array
-    int numVertices( void ) const;
+    int numVertices() const;
 	// Resize the vertices array
 	void numVertices(int newNumVertices);
     // Get vertex i
@@ -43,13 +43,13 @@ public:
 	// Add a vertex to the array
 	void addVertex(const GXPolyVert3& newVertex);
 
-	UCHAR flag( void ) const { return flag_; }
+	UCHAR flag() const { return flag_; }
 	void flag( UCHAR newFlag) { flag_=newFlag; }
 
     // true if textureId_ refers to a valid texture name in the mesh
     bool hasValidTexture() { return mat_.hasValidTexture(); }
     void hasValidTexture(bool valid) { mat_.hasValidTexture(valid); }
-	short transparancy( void ) const { return mat().transparancy();	}
+	short transparancy() const { return mat().transparancy();	}
 	void transparancy(short newTransparancy) { mat_.transparancy(newTransparancy); }
 	const GXMat& mat() const { return mat_;	}
 	void mat(const GXMat& newMat) { 

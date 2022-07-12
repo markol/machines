@@ -20,8 +20,8 @@ class MachPhysConstructionPersistence
 {
 public:
     //  Singleton class
-    static MachPhysConstructionPersistence& instance( void );
-    ~MachPhysConstructionPersistence( void );
+    static MachPhysConstructionPersistence& instance();
+    ~MachPhysConstructionPersistence();
 
     void CLASS_INVARIANT;
 
@@ -34,7 +34,7 @@ private:
     MachPhysConstructionPersistence& operator =( const MachPhysConstructionPersistence& );
     bool operator ==( const MachPhysConstructionPersistence& );
 
-    MachPhysConstructionPersistence( void );
+    MachPhysConstructionPersistence();
 };
 
 PER_READ_WRITE( MachPhysConstructionPersistence );

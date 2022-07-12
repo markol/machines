@@ -22,7 +22,7 @@ class MachGuiEditBoxListBoxItem : public MachGuiSingleSelectionListBoxItem
 {
 public:
     MachGuiEditBoxListBoxItem( MachGuiStartupScreens* pStartupScreens, MachGuiSingleSelectionListBox* pListBox, size_t width, const string& text );
-    ~MachGuiEditBoxListBoxItem( void );
+    ~MachGuiEditBoxListBoxItem();
 
     void CLASS_INVARIANT;
 

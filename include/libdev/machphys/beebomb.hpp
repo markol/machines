@@ -27,7 +27,7 @@ public:
 
 	//public constructor
     MachPhysBeeBomb( W4dEntity* pParent, const MexTransform3d& localTransform );
-    virtual ~MachPhysBeeBomb( void );
+    virtual ~MachPhysBeeBomb();
 
     //Return an exemplar bomb - ensures the mesh is loaded
 	static const MachPhysBeeBomb& exemplar();
@@ -54,7 +54,7 @@ private:
 	friend class MachPhysOtherPersistence;
 
 	//one time constructor
-    MachPhysBeeBomb( void );
+    MachPhysBeeBomb();
 
     //Implement a bomb explosion at time
     void createBombExplosion( const PhysAbsoluteTime& time );

@@ -50,7 +50,7 @@ public:
 	};
 
     MachGuiOptionsLayout( const SysPathName& );
-    ~MachGuiOptionsLayout( void );
+    ~MachGuiOptionsLayout();
 
 	const MachGuiOptionsLayout::SlidebarInfo& slidebarInfo( uint index ) const;
 	// PRE( index < nScrollBars() )
@@ -61,15 +61,15 @@ public:
 	const MachGuiOptionsLayout::CheckBoxInfo& checkBoxInfo( uint index ) const;
 	// PRE( index < nCheckBoxes() )
 
-	uint nSlidebars( void ) const { return slidebars_.size(); }
-	uint nMenuTexts( void ) const { return menuTexts_.size(); }
-	uint nCheckBoxes( void ) const { return checkBoxes_.size(); }
+	uint nSlidebars() const { return slidebars_.size(); }
+	uint nMenuTexts() const { return menuTexts_.size(); }
+	uint nCheckBoxes() const { return checkBoxes_.size(); }
 
     void CLASS_INVARIANT;
 
 private:
 
-	void parse( void );
+	void parse();
 	void parseSlidebar( const UtlLineTokeniser::Tokens& tokens );
 	void parseMenuText( const UtlLineTokeniser::Tokens& tokens );
 	void parseCheckBox( const UtlLineTokeniser::Tokens& tokens );

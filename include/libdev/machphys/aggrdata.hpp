@@ -16,10 +16,10 @@
 class MachPhysAggressorData : public MachPhysMachineData
 {
 public:
-    ~MachPhysAggressorData( void );
+    ~MachPhysAggressorData();
 
-	MATHEX_SCALAR accuracy( void ) const;
-	MATHEX_SCALAR nWeapons( void ) const;
+	MATHEX_SCALAR accuracy() const;
+	MATHEX_SCALAR nWeapons() const;
 
     void CLASS_INVARIANT;
 
@@ -30,7 +30,7 @@ private:
 	friend class MachPhysDataParser;
 
     // Operations deliberately revoked
-    MachPhysAggressorData( void );
+    MachPhysAggressorData();
     MachPhysAggressorData( const MachPhysAggressorData& );
     MachPhysAggressorData& operator =( const MachPhysAggressorData& );
     bool operator ==( const MachPhysAggressorData& );

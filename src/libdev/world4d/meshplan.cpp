@@ -12,7 +12,7 @@ PER_DEFINE_PERSISTENT( W4dMeshPlan );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-W4dMeshPlan::W4dMeshPlan( void )
+W4dMeshPlan::W4dMeshPlan()
 :	pRoot_( NULL )
 {
 	//Set the extension size of the collection
@@ -25,7 +25,7 @@ W4dMeshPlan::W4dMeshPlan( void )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-W4dMeshPlan::~W4dMeshPlan( void )
+W4dMeshPlan::~W4dMeshPlan()
 {
 
 	//Delete the root along with all the W4dGenerics
@@ -83,7 +83,7 @@ void W4dMeshPlan::renderAtRange( const W4dCamera& camera, MATHEX_SCALAR range,
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-PhysRelativeTime W4dMeshPlan::duration( void ) const
+PhysRelativeTime W4dMeshPlan::duration() const
 {
     return (intervals_.size() == 0 ? 0 : intervals_.back().second );
 }

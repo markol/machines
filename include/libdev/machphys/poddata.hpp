@@ -20,13 +20,13 @@ class MexTransform3d;
 class MachPhysPodData : public MachPhysConstructionData
 {
 public:
-    MachPhysPodData( void );
+    MachPhysPodData();
     MachPhysPodData( const MachPhysPodData&, const MexTransform3d& );
-    ~MachPhysPodData( void );
+    ~MachPhysPodData();
 	
 	//Get methods public							Added 6/3/98 CPS							
-	MachPhys::SizeUnits capacity( void ) const;
-	MachPhys::BuildingMaterialUnits extractionRate( void ) const;
+	MachPhys::SizeUnits capacity() const;
+	MachPhys::BuildingMaterialUnits extractionRate() const;
 
     void CLASS_INVARIANT;
 

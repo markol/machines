@@ -48,7 +48,7 @@ private:
 	bool operator ==( const DevRate& ) const;
 
     //  This is a friend purely to allow template instantiation
-    friend void devDummyFunction( void );
+    friend void devDummyFunction();
 
     enum { N_READINGS = 10 };
 

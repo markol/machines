@@ -60,7 +60,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-MachLogPlanet::MachLogPlanet( void )
+MachLogPlanet::MachLogPlanet()
 :	pImpl_( _NEW( MachLogPlanetImpl ) )
 {
 	CB_MachLogPlanet_DEPIMPL();
@@ -143,7 +143,7 @@ bool MachLogPlanet::siteExists( int id )
 //////////////////////////////////////////////////////////////////////////////////////////
 
 //static
-MachLogPlanet& MachLogPlanet::instance( void )
+MachLogPlanet& MachLogPlanet::instance()
 {
     static MachLogPlanet instance_;
     return instance_;
@@ -568,14 +568,14 @@ void MachLogPlanet::clear()
     POST( not hasSurface() );
 }
 
-bool MachLogPlanet::hasSurface( void ) const
+bool MachLogPlanet::hasSurface() const
 {
 	CB_MachLogPlanet_DEPIMPL();
 	return pSurface_ != NULL;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-MachPhysPlanetSurface* MachLogPlanet::surface( void ) const
+MachPhysPlanetSurface* MachLogPlanet::surface() const
 {
 	CB_MachLogPlanet_DEPIMPL();
 	PRE( hasSurface() );
@@ -583,14 +583,14 @@ MachPhysPlanetSurface* MachLogPlanet::surface( void ) const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-bool MachLogPlanet::hasWorld( void ) const
+bool MachLogPlanet::hasWorld() const
 {
 	CB_MachLogPlanet_DEPIMPL();
 	return pWorld_ != NULL;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-W4dEntity* MachLogPlanet::pWorld( void ) const
+W4dEntity* MachLogPlanet::pWorld() const
 {
 	CB_MachLogPlanet_DEPIMPL();
 	return pWorld_;

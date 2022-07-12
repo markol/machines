@@ -22,7 +22,7 @@ template < class T > class CtlCountedPtr;
 class RenDriver
 {
 public:
-    ~RenDriver( void );
+    ~RenDriver();
 
     void CLASS_INVARIANT;
 

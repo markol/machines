@@ -39,7 +39,7 @@ public:
 				    const PhysRelativeTime& burningDuration,
     				const MachPhysDebrisType& debrisType);
 
-    ~MachPhysDebris( void );
+    ~MachPhysDebris();
 
 	void startBurning();
 

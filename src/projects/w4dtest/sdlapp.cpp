@@ -831,7 +831,7 @@ void SDLApp::loopCycle()
 	}
 }
 
-void SDLApp::displayHelp( void )
+void SDLApp::displayHelp()
 {
     Ren::out() << std::endl;
     Ren::out() << "        ==== VIEWER HELP SCREEN ====" << std::endl;

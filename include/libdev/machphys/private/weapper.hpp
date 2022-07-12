@@ -48,8 +48,8 @@ class MachPhysWeaponPersistence
 {
 public:
     //  Singleton class
-    static MachPhysWeaponPersistence& instance( void );
-    ~MachPhysWeaponPersistence( void );
+    static MachPhysWeaponPersistence& instance();
+    ~MachPhysWeaponPersistence();
 
     W4dRoot* pRoot();
 
@@ -98,7 +98,7 @@ private:
     MachPhysWeaponPersistence& operator =( const MachPhysWeaponPersistence& );
     bool operator ==( const MachPhysWeaponPersistence& );
 
-    MachPhysWeaponPersistence( void );
+    MachPhysWeaponPersistence();
 
     W4dRoot root_;
     MachPhysWeaponPersistenceImpl* pImpl_;   

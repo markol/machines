@@ -60,7 +60,7 @@ MachPhysTechnician::~MachPhysTechnician()
 
 }
 
-MachPhys::TechnicianSubType MachPhysTechnician::subType( void ) const
+MachPhys::TechnicianSubType MachPhysTechnician::subType() const
 {
     return subType_;
 }
@@ -141,12 +141,12 @@ MachPhysTechnician::Factory& MachPhysTechnician::factory()
 }
 
 //virtual
-const MachPhysMachineData& MachPhysTechnician::machineData( void ) const
+const MachPhysMachineData& MachPhysTechnician::machineData() const
 {
 	return data();
 }
 
-const MachPhysTechnicianData& MachPhysTechnician::data( void ) const
+const MachPhysTechnicianData& MachPhysTechnician::data() const
 {
 	return MachPhysData::instance().technicianData( subType_, bodyLevel(), brainLevel() );
 }
@@ -191,7 +191,7 @@ PhysRelativeTime MachPhysTechnician::research()
     return interval;
 }
 
-void MachPhysTechnician::createExplosionData( void )
+void MachPhysTechnician::createExplosionData()
 {
     MachPhysMachineExplosionData& expData = explosionDataForEdit();
     switch( subType() )

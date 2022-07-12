@@ -23,26 +23,26 @@ class TestMinMemoryVector
 {
 public:
     //  Singleton class
-    static TestMinMemoryVector& instance( void );
-    ~TestMinMemoryVector( void );
+    static TestMinMemoryVector& instance();
+    ~TestMinMemoryVector();
 
     void CLASS_INVARIANT;
 
     friend ostream& operator <<( ostream& o, const TestMinMemoryVector< VECTOR, ITERATOR >& t );
 
-    static void    TestMinMemoryVectorOperatorSquareBrackets( void );
-    static void    TestMinMemoryVectorIteratorOperatorAddition( void );
-    static void    TestMinMemoryVectorIteratorOperatorAddEquals( void );
-    static void    TestMinMemoryVectorIteratorOperatorSubtraction( void );
-    static void    TestMinMemoryVectorIteratorOperatorSubtractEquals( void );
-    static void    TestMinMemoryVectorIteratorOperatorPlusPlusPrefix( void );
-    static void    TestMinMemoryVectorIteratorOperatorPlusPlusPostfix( void );
-    static void    TestMinMemoryVectorIteratorOperatorMinusMinusPrefix( void );
-    static void    TestMinMemoryVectorIteratorOperatorMinusMinusPostfix( void );
-    static void    TestMinMemoryVectorIteratorOperatorSquareBrackets( void );
-    static void    TestMinMemoryVectorIteratorDereference( void );
-    static void    TestMinMemoryVectorIteratorComparison( void );
-    static void    iteratorInvalidation( void );
+    static void    TestMinMemoryVectorOperatorSquareBrackets();
+    static void    TestMinMemoryVectorIteratorOperatorAddition();
+    static void    TestMinMemoryVectorIteratorOperatorAddEquals();
+    static void    TestMinMemoryVectorIteratorOperatorSubtraction();
+    static void    TestMinMemoryVectorIteratorOperatorSubtractEquals();
+    static void    TestMinMemoryVectorIteratorOperatorPlusPlusPrefix();
+    static void    TestMinMemoryVectorIteratorOperatorPlusPlusPostfix();
+    static void    TestMinMemoryVectorIteratorOperatorMinusMinusPrefix();
+    static void    TestMinMemoryVectorIteratorOperatorMinusMinusPostfix();
+    static void    TestMinMemoryVectorIteratorOperatorSquareBrackets();
+    static void    TestMinMemoryVectorIteratorDereference();
+    static void    TestMinMemoryVectorIteratorComparison();
+    static void    iteratorInvalidation();
 
 private:
     // Operation deliberately revoked
@@ -54,10 +54,10 @@ private:
     // Operation deliberately revoked
     bool operator ==( const TestMinMemoryVector& );
 
-    TestMinMemoryVector( void );
+    TestMinMemoryVector();
 
-    void    initialiseVectors( void );
-    void    initialiseTestFunctions( void );
+    void    initialiseVectors();
+    void    initialiseTestFunctions();
 
     typedef int                         TestType;
     typedef ctl_vector< TestType >      TestMinMemoryVectorType;

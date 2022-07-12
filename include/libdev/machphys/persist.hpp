@@ -27,8 +27,8 @@ class MachPhysPersistence
 {
 public:
     //  Singleton class
-    static MachPhysPersistence& instance( void );
-    ~MachPhysPersistence( void );
+    static MachPhysPersistence& instance();
+    ~MachPhysPersistence();
 
     //  Allow the machines to be persisted independently of everything else
     const MachPhysMachinePersistence& machines() const;
@@ -57,7 +57,7 @@ private:
     MachPhysPersistence& operator =( const MachPhysPersistence& );
     bool operator ==( const MachPhysPersistence& );
 
-    MachPhysPersistence( void );
+    MachPhysPersistence();
 };
 
 PER_READ_WRITE( MachPhysPersistence );

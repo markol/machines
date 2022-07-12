@@ -28,7 +28,7 @@ class MachGuiStatisticsDisplay : public GuiDisplayable
 public:
     MachGuiStatisticsDisplay( GuiDisplayable *pParent, const Gui::Coord& topLeft, MachPhys::Race race );
   
-    ~MachGuiStatisticsDisplay( void );
+    ~MachGuiStatisticsDisplay();
 
  	// Set the values to be displayed
 	void setStatistics( int stat1, int stat2, int stat3, int stat4 );

@@ -23,7 +23,7 @@ public:
 					const MexAlignedBox3d& boundary, 
 					bool permanent );
 
-    ~PedTileMarker( void );
+    ~PedTileMarker();
 
     void CLASS_INVARIANT;
 

@@ -14,7 +14,7 @@
 #include "utility/time.hpp"
 
 void    registerDerivedClasses();
-void    testNonPersistent( void );
+void    testNonPersistent();
 void    writeFile( const SysPathName& pathname, const Master& master );
 void    readFile( const SysPathName& pathname, Master* pMaster );
 

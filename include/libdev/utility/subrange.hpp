@@ -31,7 +31,7 @@ public:
         PRE( isValid( UtlTypeBase< NUMERIC >::value_ ) );
     }
 
-    Range range( void ) const
+    Range range() const
     {
         return range_;
     }
@@ -55,7 +55,7 @@ public:
         return range_.contains( t );
     }
 
-    NUMERIC length( void ) const
+    NUMERIC length() const
     {
         return range_.length();
     }

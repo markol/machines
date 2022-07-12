@@ -27,7 +27,7 @@ RenStars::RenStars(
 }
 
 // VIRTUAL //
-RenStars::~RenStars( void )
+RenStars::~RenStars()
 {
 	TEST_INVARIANT;
 
@@ -56,14 +56,14 @@ RenStars::Configuration RenStars::configuration() const
 	return pImpl_->configuration();
 }
 
-MATHEX_SCALAR RenStars::radius( void ) const
+MATHEX_SCALAR RenStars::radius() const
 {
 	TEST_INVARIANT;
 
     return pImpl_->radius();
 }
 
-uint RenStars::nStars( void ) const
+uint RenStars::nStars() const
 {
 	TEST_INVARIANT;
 

@@ -57,7 +57,7 @@ public:
 	
 	static bool withinRangeOfMexAlignedBox2d( const MexAlignedBox2d& box, const MexPoint2d& pos, MATHEX_SCALAR range );
 
-    ~MachLogSpacialManipulation( void );
+    ~MachLogSpacialManipulation();
 
     void CLASS_INVARIANT;
 	
@@ -100,7 +100,7 @@ public:
 private:
     friend ostream& operator <<( ostream& o, const MachLogSpacialManipulation& t );
     // Operation deliberately revoked
-    MachLogSpacialManipulation( void );
+    MachLogSpacialManipulation();
     MachLogSpacialManipulation( const MachLogSpacialManipulation& );
 
     // Operation deliberately revoked

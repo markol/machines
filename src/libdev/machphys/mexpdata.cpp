@@ -75,18 +75,18 @@ void MachPhysMachineExplosionData::addData( const LinkData& data )
 }
 
 const MachPhysMachineExplosionData::LinkDatas&
-  MachPhysMachineExplosionData::links( void ) const
+  MachPhysMachineExplosionData::links() const
 {
    CB_MacPhysMachineExplosionData_DEPIMPL()
     return links_;
 }
 
-MATHEX_SCALAR   MachPhysMachineExplosionData::maxSize( void ) const
+MATHEX_SCALAR   MachPhysMachineExplosionData::maxSize() const
 {
     return pImpl_->maxSize_;
 }
 
-size_t  MachPhysMachineExplosionData::maxToShootOff( void ) const
+size_t  MachPhysMachineExplosionData::maxToShootOff() const
 {
 	PRE(pImpl_);
     return pImpl_->maxToShootOff();
@@ -98,7 +98,7 @@ void    MachPhysMachineExplosionData::maxToShootOff( size_t newMax )
     pImpl_->maxToShootOff( newMax );
 }
 
-const MexPoint3d&  MachPhysMachineExplosionData::explosionCenter( void ) const
+const MexPoint3d&  MachPhysMachineExplosionData::explosionCenter() const
 {
 	PRE(pImpl_);
     return pImpl_->explosionCenter();
@@ -110,7 +110,7 @@ void    MachPhysMachineExplosionData::explosionCenter( const MexPoint3d& newCent
     pImpl_->explosionCenter( newCenter );
 }
 
-size_t  MachPhysMachineExplosionData::minToShootOff( void ) const
+size_t  MachPhysMachineExplosionData::minToShootOff() const
 {
 	PRE(pImpl_);
     return pImpl_->minToShootOff_;

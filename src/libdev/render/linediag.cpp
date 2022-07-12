@@ -20,14 +20,14 @@
 #endif
 
 // STATIC //
-RenILinesDiagnostic& RenILinesDiagnostic::instance( void )
+RenILinesDiagnostic& RenILinesDiagnostic::instance()
 {
 	static RenILinesDiagnostic instance;
 
 	return instance;
 }
 
-RenILinesDiagnostic::~RenILinesDiagnostic( void )
+RenILinesDiagnostic::~RenILinesDiagnostic()
 {
 	TEST_INVARIANT;
 }
@@ -208,7 +208,7 @@ void RenILinesDiagnostic::CLASS_INVARIANT
 }
 
 // PRIVATE //
-RenILinesDiagnostic::RenILinesDiagnostic( void )
+RenILinesDiagnostic::RenILinesDiagnostic()
 
 	:lineColour_(RenColour::white()),
 	hasTestedLines_(false),
@@ -220,7 +220,7 @@ RenILinesDiagnostic::RenILinesDiagnostic( void )
 }
 
 // STATIC //
-const RenSurface::Points& RenILinesDiagnostic::horizontalVertices( void )
+const RenSurface::Points& RenILinesDiagnostic::horizontalVertices()
 {
 	static RenSurface::Points vertices;
 	static bool initialised = false;
@@ -242,7 +242,7 @@ const RenSurface::Points& RenILinesDiagnostic::horizontalVertices( void )
 }
 
 // STATIC //
-const RenSurface::Points& RenILinesDiagnostic::verticalVertices( void )
+const RenSurface::Points& RenILinesDiagnostic::verticalVertices()
 {
 	static RenSurface::Points vertices;
 	static bool initialised = false;

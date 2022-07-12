@@ -48,7 +48,7 @@ public:
 
     //  Create a timer that takes its time from
     //  the master timer.
-    UtlDebugTimer( void );
+    UtlDebugTimer();
     //  POST( not paused() );
 
     enum    InitialState { PAUSED, RUNNING };
@@ -56,22 +56,22 @@ public:
     UtlDebugTimer( InitialState state );
 
     //  Return the built in master timer
-    static  UtlDebugTimer&  masterTimer( void );
+    static  UtlDebugTimer&  masterTimer();
 
     ~UtlDebugTimer();
 
     //  There are two calls to get the time back. Use the first one
     //  for maximum speed,
     void    time( Time* pTime ) const;
-    Time    time( void ) const;
+    Time    time() const;
 
     //  Set the current time
     void    time( double newTime );
 
-    void    pause( void );
-    void    resume( void );
+    void    pause();
+    void    resume();
 
-    bool    paused( void ) const;
+    bool    paused() const;
 
     //  Calibrate over the given number of seconds
     static  void    calibrate( double calibrationTimeSeconds = 3.0 );
@@ -81,7 +81,7 @@ public:
     //  application, then finishCalibrate at a later time. The value supplied
     //  to finishCalibrate is the minimum time delay it will use for the calibration.
 
-    static  void    startCalibration( void );
+    static  void    startCalibration();
     static  void    finishCalibration( double minCalibrationTimeSeconds = 3.0 );
 
 private:
@@ -98,13 +98,13 @@ private:
     const UtlDebugTimer& operator =( const UtlDebugTimer& );
     bool operator ==( const UtlDebugTimer& ) const;
 
-    static  size_t& calibrationInitialClock( void );
-    static  double& calibrationInitialTicks( void );
+    static  size_t& calibrationInitialClock();
+    static  double& calibrationInitialTicks();
 
     friend  class Time;
-    static  double& pentiumTicksPerSecond( void );
+    static  double& pentiumTicksPerSecond();
 
-    static  bool&   calibrated( void );
+    static  bool&   calibrated();
 
     bool    paused_;
     UtlUint64  pausedTime_;

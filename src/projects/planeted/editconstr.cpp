@@ -36,7 +36,7 @@
 #include "planeted/race.hpp"
 
 
-PedConstructionEditor::PedConstructionEditor( void )
+PedConstructionEditor::PedConstructionEditor()
 : PedActorEditor( "construction" ),
   pSelectedConstruction_( NULL )
 {
@@ -95,7 +95,7 @@ void PedConstructionEditor::processInput( const DevButtonEvent& devButtonEvent )
 }
 
 // virtual
-void PedConstructionEditor::displayKeyboardCtrls( void )
+void PedConstructionEditor::displayKeyboardCtrls()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -109,7 +109,7 @@ void PedConstructionEditor::displayKeyboardCtrls( void )
 }
 
 // virtual
-void PedConstructionEditor::displayModeInfo( void )
+void PedConstructionEditor::displayModeInfo()
 {
 	PedActorEditor::displayModeInfo();
 	pSceneManager_->out() << "Construction: " << (*conDataIter_)->description_ << std::endl;
@@ -172,7 +172,7 @@ void PedConstructionEditor::writeScnFile( PedScenarioFile& scenarioFile )
 }
 
 // virtual
-W4dEntity* PedConstructionEditor::currentActor( void )
+W4dEntity* PedConstructionEditor::currentActor()
 {
 	TEST_INVARIANT;
 	return pSelectedConstruction_;
@@ -207,7 +207,7 @@ void PedConstructionEditor::processCycle( PedActorEditor::CycleDir dir)
 }
 
 // virtual
-void PedConstructionEditor::processSelection( void )
+void PedConstructionEditor::processSelection()
 {
 	TEST_INVARIANT;
 	W4dEntity* actor = NULL;
@@ -262,7 +262,7 @@ void PedConstructionEditor::processSelection( void )
 }
 
 // virtual
-void PedConstructionEditor::processDelete( void )
+void PedConstructionEditor::processDelete()
 {
 	TEST_INVARIANT;
 	if ( pSelectedConstruction_ != NULL )
@@ -281,7 +281,7 @@ void PedConstructionEditor::processDelete( void )
 }
 
 // virtual
-void PedConstructionEditor::processRace( void )
+void PedConstructionEditor::processRace()
 {
 	TEST_INVARIANT;
 	PedActorEditor::processRace();
@@ -335,7 +335,7 @@ void PedConstructionEditor::changeAllSolidities( W4dEntity::Solidity solidity )
 			(*i).construction_->solid( solidity );
 }
 
-void PedConstructionEditor::initialiseActors( void )
+void PedConstructionEditor::initialiseActors()
 {
 	TEST_INVARIANT;
 	AfxResourceLib resourceLib("machstrg.xml");
@@ -565,7 +565,7 @@ void PedConstructionEditor::createEntity( W4dEntity& pEntity, const MexTransform
 	TEST_INVARIANT;
 }
 
-void PedConstructionEditor::rotateAfterMove( void )
+void PedConstructionEditor::rotateAfterMove()
 {
 	TEST_INVARIANT;
 	// Rotates actor after  it has undergone a transform

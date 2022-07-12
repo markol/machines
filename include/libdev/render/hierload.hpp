@@ -31,7 +31,7 @@ private:
     RenHierarchyLoader();
 
     // Operation deliberately revoked
-    ~RenHierarchyLoader( void );
+    ~RenHierarchyLoader();
 
     // Operation deliberately revoked
     RenHierarchyLoader( const RenHierarchyLoader& );

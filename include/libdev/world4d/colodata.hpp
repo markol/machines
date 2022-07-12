@@ -30,7 +30,7 @@ public:
 	W4dColourPlanData(const ScalarVec& times, const ColourVec& colours);
     W4dColourPlanData( const W4dColourPlanData& );
 
-    ~W4dColourPlanData( void );
+    ~W4dColourPlanData();
 
     void CLASS_INVARIANT;
 

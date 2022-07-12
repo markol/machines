@@ -46,7 +46,7 @@ public:
 						MT_HASMACHINESCDMESSAGE, MT_IVELOSTMESSAGE, MT_NAMECHANGEMESSAGE };
 
     MachGuiMessageBroker( MachGuiStartupData* );
-    virtual ~MachGuiMessageBroker( void );
+    virtual ~MachGuiMessageBroker();
 
 	virtual void processMessage( NetMessage* );
 

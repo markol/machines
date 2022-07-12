@@ -33,7 +33,7 @@ public:
         size_t brainLevel,
         MachPhys::Race race );
 
-    virtual ~MachPhysGeoLocator( void );
+    virtual ~MachPhysGeoLocator();
 
     //Set/get locating mode
     void isLocating( bool doLocate );
@@ -79,7 +79,7 @@ private:
 
     MachPhysGeoLocator( W4dEntity* pParent, size_t bodyLevel );
 
-    void createExplosionData( void );
+    void createExplosionData();
 
 	enum {LOCATOR_LOCATING};
 

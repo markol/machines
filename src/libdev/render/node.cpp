@@ -52,7 +52,7 @@ RenHierarchyBuilder::Node::Node(
     reserve( nChildren );
 }
 
-bool    RenHierarchyBuilder::Node::allChildrenSupplied( void ) const
+bool    RenHierarchyBuilder::Node::allChildrenSupplied() const
 {
     //  We do not know how many children the root node will have in
     //  advance so we cannot tell if all children have been supplied
@@ -62,7 +62,7 @@ bool    RenHierarchyBuilder::Node::allChildrenSupplied( void ) const
     return nChildren_ == size();
 }
 
-RenHierarchyBuilder::Node*   RenHierarchyBuilder::Node::pParent( void ) const
+RenHierarchyBuilder::Node*   RenHierarchyBuilder::Node::pParent() const
 {
     return pParent_;
 }
@@ -75,12 +75,12 @@ RenHierarchyBuilder::Node::~Node()
         _DELETE( *i );
 }
 
-const MexTransform3d& RenHierarchyBuilder::Node::transform( void ) const
+const MexTransform3d& RenHierarchyBuilder::Node::transform() const
 {
     return transform_;
 }
 
-RenMeshInstance* RenHierarchyBuilder::Node::pMeshInstance( void ) const
+RenMeshInstance* RenHierarchyBuilder::Node::pMeshInstance() const
 {
     RenMeshInstance* result;
 
@@ -97,7 +97,7 @@ RenMeshInstance* RenHierarchyBuilder::Node::pMeshInstance( void ) const
     return result;
 }
 
-const std::string& RenHierarchyBuilder::Node::instanceName( void ) const
+const std::string& RenHierarchyBuilder::Node::instanceName() const
 {
     return instanceName_;
 }

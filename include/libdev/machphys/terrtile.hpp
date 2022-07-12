@@ -39,7 +39,7 @@ public:
                          MATHEX_SCALAR xMin, MATHEX_SCALAR xMax,
                          MATHEX_SCALAR yMin, MATHEX_SCALAR yMax );
 
-    ~MachPhysTerrainTile( void );
+    ~MachPhysTerrainTile();
 
     //The tile boundary
     const MachPhysTileData& tileData() const;

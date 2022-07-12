@@ -29,7 +29,7 @@ public:
                         const RenColour& toCol,
                         const PhysRelativeTime& duration);
 
-    ~W4dColourPulseData( void );
+    ~W4dColourPulseData();
 
     void CLASS_INVARIANT;
 

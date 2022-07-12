@@ -38,7 +38,7 @@ public:
    	PedTileEditor( PedArtefactEditor& artefactEditor );
 	// POST( selectedTiles_.empty() );
 
-	~PedTileEditor( void );
+	~PedTileEditor();
 
     void CLASS_INVARIANT;
 
@@ -46,18 +46,18 @@ public:
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 
-	virtual void displayKeyboardCtrls( void );
+	virtual void displayKeyboardCtrls();
 
-	virtual void displayModeInfo( void );
+	virtual void displayModeInfo();
 
-	virtual void preRenderUpdate( void );
+	virtual void preRenderUpdate();
 
 	virtual void readCspFile( const SysPathName& );
 	// PRE( cspFileName.existsAsFile() );
 
 	virtual void writeCspFile( std::ofstream& );
 
-	virtual void changingMode( void );
+	virtual void changingMode();
 
 private:
 	enum CycleDir { NEXT, PREV, CURRENT };
@@ -86,7 +86,7 @@ private:
 	PedTileEditor& operator =( const PedTileEditor& );
 	bool operator ==( const PedTileEditor& );
 
-	void highlightTile( void );
+	void highlightTile();
 	// PRE( pSceneManager_ != NULL );
 
 	void processSelection( const DevButtonEvent& devButtonEvent );
@@ -95,7 +95,7 @@ private:
 	void processCycleTile( CycleDir dir );
 
 	// Called by displayInfo
-	void displayTileCoords( void );
+	void displayTileCoords();
 
 	bool isSelected( MachPhysTerrainTile* );
 	void clearAllSelectedTiles();

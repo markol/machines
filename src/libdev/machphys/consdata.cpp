@@ -106,7 +106,7 @@ MachPhysConstructionData::~MachPhysConstructionData()
     _DELETE( pImpl_ );
 }
 
-MachPhys::ResearchUnits MachPhysConstructionData::hwResearchCost( void ) const
+MachPhys::ResearchUnits MachPhysConstructionData::hwResearchCost() const
 {
 	return hwResearchCost_;
 }

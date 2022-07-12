@@ -73,7 +73,7 @@ RenMaterial MachPhysFireballImpl::initialMaterial( MachPhysFireballType fireball
     return materialVec.front();
 }
 
-const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials1( void )
+const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials1()
 {
     static Materials materials;
     static bool once = true;
@@ -130,7 +130,7 @@ const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials1( void 
 }
 
 // static
-const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials2( void )
+const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials2()
 {
     static Materials materials;
     static bool once = true;
@@ -175,7 +175,7 @@ const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials2( void 
 }
 
 // static
-const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials3( void )
+const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials3()
 {
     static Materials materials;
     static bool once = true;
@@ -202,7 +202,7 @@ const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials3( void 
 }
 
 // static
-const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials4( void )
+const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials4()
 {
     static Materials materials;
     static bool once = true;
@@ -235,7 +235,7 @@ const MachPhysFireballImpl::Materials&   MachPhysFireballImpl::materials4( void 
 }
 
 // static
-W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr1( void )
+W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr1()
 {
     static  W4dMaterialPlanPtr materialPlanPtr =
         _NEW(W4dMaterialSequencePlan( materials1(),
@@ -246,7 +246,7 @@ W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr1( void )
 }
 
 // static
-W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr2( void )
+W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr2()
 {
     static  W4dMaterialPlanPtr materialPlanPtr =
         _NEW(W4dMaterialSequencePlan( materials2(),
@@ -257,7 +257,7 @@ W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr2( void )
 }
 
 // static
-W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr3( void )
+W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr3()
 {
     static  W4dMaterialPlanPtr materialPlanPtr =
         _NEW(W4dMaterialSequencePlan( materials3(),
@@ -268,7 +268,7 @@ W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr3( void )
 }
 
 // static
-W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr4( void )
+W4dMaterialPlanPtr MachPhysFireballImpl::materialPlanPtr4()
 {
     static  W4dMaterialPlanPtr materialPlanPtr =
         _NEW(W4dMaterialSequencePlan( materials4(),

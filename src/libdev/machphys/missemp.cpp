@@ -118,7 +118,7 @@ MachPhysMissileEmplacement::~MachPhysMissileEmplacement()
     _DELETE( pTurnerTracker_ );
 }
 
-MachPhys::MissileEmplacementSubType MachPhysMissileEmplacement::subType( void ) const
+MachPhys::MissileEmplacementSubType MachPhysMissileEmplacement::subType() const
 {
     return subType_;
 }

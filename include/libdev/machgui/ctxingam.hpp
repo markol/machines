@@ -21,7 +21,7 @@ class MachGuiCtxInGameOptions : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxInGameOptions( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxInGameOptions( void );
+    ~MachGuiCtxInGameOptions();
 
     void CLASS_INVARIANT;
 

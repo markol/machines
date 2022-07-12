@@ -440,7 +440,7 @@ PhysRelativeTime MachLogAPC::update( const PhysRelativeTime& maxCPUTime,
 
 //////////////////////////////////////////////////////////////////////////////////
 
-void MachLogAPC::turnRearToFaceNearestIncoming( void )
+void MachLogAPC::turnRearToFaceNearestIncoming()
 {
 	CB_MachLogAPC_DEPIMPL();
 

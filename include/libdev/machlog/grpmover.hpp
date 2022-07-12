@@ -26,7 +26,7 @@ public:
     MachLogGroupMover( const MachLogMachineOperations& );
     MachLogGroupMover( const MachLogMachineOperations&,
       const MachLogGroupMoverUtility& );
-    ~MachLogGroupMover( void );
+    ~MachLogGroupMover();
 
     void CLASS_INVARIANT;
 

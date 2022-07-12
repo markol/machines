@@ -156,7 +156,7 @@ void MachGuiMessageBox::displayButtons( MachGuiStartupScreens* pStartupScreens )
 	}
 }
 
-const GuiBitmap& MachGuiMessageBox::image( void ) const
+const GuiBitmap& MachGuiMessageBox::image() const
 {
 	if ( mbType_ == MBOKCANCEL or mbType_ == MBYESNO )
 		return MachGui::okCancelMsgBoxBmp();

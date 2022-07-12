@@ -36,7 +36,7 @@ public:
     );
 
 
-    ~MachPhysLightningHaloMaterialPlan( void );
+    ~MachPhysLightningHaloMaterialPlan();
 
 
     //True if the plan is defined for level of detail lodId.

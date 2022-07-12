@@ -20,7 +20,7 @@ class MachLogPodImpl
 {
 public:
     MachLogPodImpl();
-    ~MachLogPodImpl( void );
+    ~MachLogPodImpl();
 
     void CLASS_INVARIANT;
 

@@ -26,7 +26,7 @@ class MachGuiCtxCampaign : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxCampaign( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxCampaign( void );
+    ~MachGuiCtxCampaign();
 
     void CLASS_INVARIANT;
 
@@ -51,7 +51,7 @@ private:
     MachGuiCtxCampaign( const MachGuiCtxCampaign& );
     MachGuiCtxCampaign& operator =( const MachGuiCtxCampaign& );
 
-	void displayCurrentStatus( void );
+	void displayCurrentStatus();
 	// Data members...
 	MachGuiAnimations animations_;
 	MachGuiSingleSelectionListBox* pPlayersList_;

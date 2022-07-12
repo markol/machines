@@ -24,8 +24,8 @@ class W4dCameraShake
 // Canonical form revoked
 {
 public:
-    W4dCameraShake( void );
-    ~W4dCameraShake( void );
+    W4dCameraShake();
+    ~W4dCameraShake();
 
 	enum QuakeScale {FIRST_DEGREE, SECOND_DEGREE, THIRD_DEGREE, NDEGREES};
 

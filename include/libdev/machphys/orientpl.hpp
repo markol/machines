@@ -27,7 +27,7 @@ class MachPhysOrientationAndPositionPlan : public PhysMotionPlan
 {
 public:
     MachPhysOrientationAndPositionPlan( W4dEntity* pEntity,  const PhysRelativeTime& duration );
-    ~MachPhysOrientationAndPositionPlan( void );
+    ~MachPhysOrientationAndPositionPlan();
 
     virtual void transform( const PhysRelativeTime& timeOffset, MexTransform3d* pResult) const;
     //PRE( pResult != NULL )

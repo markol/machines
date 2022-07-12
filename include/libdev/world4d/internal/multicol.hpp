@@ -30,7 +30,7 @@ class W4dMultiColourPulseData: public  W4dAnimationData
 public:
     W4dMultiColourPulseData( const size_t& nData );
 
-    virtual ~W4dMultiColourPulseData( void );
+    virtual ~W4dMultiColourPulseData();
 
 	//apply the texture cucling animation to pEntity  start at statTime
 	virtual void apply( W4dEntity* pEntity, const PhysAbsoluteTime& startTime);

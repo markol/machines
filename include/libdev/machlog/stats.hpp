@@ -23,8 +23,8 @@ class MachLogStats
 {
 public:
 
-    MachLogStats( void );
-    ~MachLogStats( void );
+    MachLogStats();
+    ~MachLogStats();
 
 	int pcPriority() const;
 	int aiPriority() const;

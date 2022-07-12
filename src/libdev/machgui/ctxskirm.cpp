@@ -48,7 +48,7 @@ public:
 		pSkirmishCtx_( pSkirmishCtx )
 	{}
 
-    ~MachGuiTerrainTypeListBoxItem( void )
+    ~MachGuiTerrainTypeListBoxItem()
 	{}
 
 	static bool allScenariosCompleted( MachGuiDbPlanet& planet )
@@ -116,7 +116,7 @@ public:
 		pSkirmishCtx_( pSkirmishCtx )
 	{}
 
-    ~MachGuiMapSizeListBoxItem( void )
+    ~MachGuiMapSizeListBoxItem()
 	{}
 
 protected:
@@ -183,7 +183,7 @@ public:
 		pSkirmishCtx_( pSkirmishCtx )
 	{}
 
-    ~MachGuiSkirmScenarioListBoxItem( void )
+    ~MachGuiSkirmScenarioListBoxItem()
 	{}
 
 protected:

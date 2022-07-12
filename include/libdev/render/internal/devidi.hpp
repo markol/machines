@@ -12,7 +12,7 @@
 class RenIDeviceIdentifier
 {
 public:
-    ~RenIDeviceIdentifier( void );
+    ~RenIDeviceIdentifier();
 
 	typedef enum {
 		VOODOO_GRAPHICS,

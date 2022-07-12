@@ -20,8 +20,8 @@ class SimStats
 {
 public:
     //  Singleton class
-    static SimStats& instance( void );
-    ~SimStats( void );
+    static SimStats& instance();
+    ~SimStats();
 
 	PhysRelativeTime		minComputationTime();
 	PhysRelativeTime		targetRenderInterval();
@@ -40,7 +40,7 @@ private:
     SimStats& operator =( const SimStats& );
     bool operator ==( const SimStats& );
 
-    SimStats( void );
+    SimStats();
 	PhysRelativeTime		minComputationTime_;
 	PhysRelativeTime		targetRenderInterval_;
 	PhysRelativeTime		minProcessUpdateTime_;

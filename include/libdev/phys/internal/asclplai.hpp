@@ -26,7 +26,7 @@ private:
 
 	PhysAcceleratedScalarPlanImpl(const PhysAcceleratedScalarPlan::RampAccelerations& rampAccelerations, MATHEX_SCALAR scale);
 
-    ~PhysAcceleratedScalarPlanImpl( void );
+    ~PhysAcceleratedScalarPlanImpl();
 
     PhysAcceleratedScalarPlanImpl( const PhysAcceleratedScalarPlanImpl& );
     PhysAcceleratedScalarPlanImpl& operator =( const PhysAcceleratedScalarPlanImpl& );

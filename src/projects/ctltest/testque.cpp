@@ -6,10 +6,10 @@
 #include "ctl/deque.hpp"
 #include "ctl/vector.hpp"
 
-void	testQueue( void );
-void	testPriorityQueue( void );
+void	testQueue();
+void	testPriorityQueue();
 
-int main( void )
+int main()
 {
 	testQueue();
 	testPriorityQueue();
@@ -17,7 +17,7 @@ int main( void )
 	return 0;
 }
 
-void	testQueue( void )
+void	testQueue()
 {
     //ctl_queue< ctl_deque< int > >  q;
     ctl_queue< int >  q;
@@ -38,7 +38,7 @@ void	testQueue( void )
 
 }
 
-void	testPriorityQueue( void )
+void	testPriorityQueue()
 {
 // //    ctl_priority_queue< ctl_vector< int >, less< int > >  q;
 //     priority_queue< vector< int >, less< int > >  q;

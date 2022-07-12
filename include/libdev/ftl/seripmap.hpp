@@ -29,7 +29,7 @@ public:
     FtlSerialPMap( size_t reserveSize );
 
     //dtor.
-    virtual ~FtlSerialPMap( void ) {};
+    virtual ~FtlSerialPMap() {};
 
 	// inherited from FtlContainer...
 	virtual bool contains( const FtlSerialId& id ) const;

@@ -33,7 +33,7 @@ int DiagPrependBuffer::overflow( int c )
 }
 
 // virtual
-int DiagPrependBuffer::underflow( void )
+int DiagPrependBuffer::underflow()
 {
 //    cout << "underflow" << endl;
     return EOF;

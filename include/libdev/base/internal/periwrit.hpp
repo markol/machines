@@ -29,8 +29,8 @@ class PerOstream;
 class PersistenceImplementationWrite
 {
 public:
-    PersistenceImplementationWrite( void );
-    ~PersistenceImplementationWrite( void );
+    PersistenceImplementationWrite();
+    ~PersistenceImplementationWrite();
 
     //  Get the identifier for a given pointer. If the pointer
     //  does not currently have an identifier assign it one
@@ -106,8 +106,8 @@ private:
 
     void writeNamedObject( PerOstream& istr, const char* className, const void* ptr );
 
-    void startWrite( void );
-    void finishWrite( void );
+    void startWrite();
+    void finishWrite();
 
     bool writeAsRaw() const;
     bool logAddresses() const;

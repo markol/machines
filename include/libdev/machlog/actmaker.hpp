@@ -110,8 +110,8 @@ public:
 
 private:
     // Operations deliberately revoked
-    MachLogActorMaker( void );
-    ~MachLogActorMaker( void );
+    MachLogActorMaker();
+    ~MachLogActorMaker();
     MachLogActorMaker( const MachLogActorMaker& );
     MachLogActorMaker& operator =( const MachLogActorMaker& );
     bool operator ==( const MachLogActorMaker& );

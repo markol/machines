@@ -24,7 +24,7 @@ class MachLogWinAction : public SimAction
 {
 public:
 
-    virtual ~MachLogWinAction( void );
+    virtual ~MachLogWinAction();
 	static MachLogWinAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 	static MachLogWinAction* newDynamic( SimCondition*, bool enabled, MachPhys::Race race );
 

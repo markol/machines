@@ -93,7 +93,7 @@ bool MachPhysLandMine::intersectsLine( const MexLine3d& line, MATHEX_SCALAR* pDi
 }
 
 //virtual
-PhysRelativeTime MachPhysLandMine::beDestroyed( void )
+PhysRelativeTime MachPhysLandMine::beDestroyed()
 {
     //Make the landmine invisible
     visible( false );

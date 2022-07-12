@@ -25,18 +25,18 @@
 class GXMesh {
 // Canonical form revoked
 public:
-    GXMesh( void );
-    ~GXMesh( void );
+    GXMesh();
+    ~GXMesh();
 
     friend ostream& operator <<( ostream& o, const GXMesh& t );
 
     void CLASS_INVARIANT;
 
-	bool hasName( void ) const { return hasName_; }
-    const GXName& name( void ) const { return name_; }
+	bool hasName() const { return hasName_; }
+    const GXName& name() const { return name_; }
     void name(const GXName& newName) { name_=newName; }
 
-    const GXIdPos& id( void ) const {
+    const GXIdPos& id() const {
       return id_;
     }
     void id(const GXIdPos& newId) {
@@ -45,7 +45,7 @@ public:
 // points_ access methods
 
     // Get the size of the points array
-    int numPoints( void ) const;
+    int numPoints() const;
 
 	// Resize the points array
 	void numPoints(int newNumPoint);
@@ -67,7 +67,7 @@ public:
 // normals_ access methods
 
     // Get the size of the normals array
-    int numNormals( void ) const;
+    int numNormals() const;
 
 	// Resize the normals array
 	void numNormals(int newNumNormals);
@@ -84,7 +84,7 @@ public:
 // polygons_ access methods
 
     // Get the size of the polygons array
-    int numPolygons( void ) const;
+    int numPolygons() const;
 
 	// Resize the normals array
 	void numPolygons(int newNumPolygons);
@@ -98,7 +98,7 @@ public:
 	// Add a polygon to the array
 	void addPolygon(const GXPolygon3& newPolygon);
 
-    bool hasTextures( void ) { return hasTextures_;	}
+    bool hasTextures() { return hasTextures_;	}
 	//const GXTexture& texture(const GXIdPos &id) const;
 	const GXTexture& texture(const GXIdPos &id);
 	// PRE(hasTextureWithId(id));

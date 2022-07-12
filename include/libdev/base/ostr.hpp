@@ -26,7 +26,7 @@ public:
     //  Not yet implemented
     // PerOstream( const char* fileName );
 
-    virtual ~PerOstream( void );
+    virtual ~PerOstream();
 
     void    write( const char*, size_t length );
 
@@ -52,7 +52,7 @@ private:
 
 //    virtual void    doFilterCharacters( const char* pBuf, size_t nChars ) = 0;
 
-    PerOstreamBuffer* pFilterBuffer( void );
+    PerOstreamBuffer* pFilterBuffer();
 
     PerOstreamBuffer*   pBuffer_;
     ostream& ostr_;

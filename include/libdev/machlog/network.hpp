@@ -27,8 +27,8 @@ public:
 	enum Remote { LOCAL_PROCESS, REMOTE_PROCESS };
 	enum InitialiseConnection { INITIALISE_CONNECTION, DO_NOT_INITIALISE_CONNECTION };
     //  Singleton class
-    static MachLogNetwork& instance( void );
-    ~MachLogNetwork( void );
+    static MachLogNetwork& instance();
+    ~MachLogNetwork();
 
 	void processNetworkIniSettings( const string& fileName );
 	void terminateAndReset();
@@ -76,7 +76,7 @@ private:
     MachLogNetwork& operator =( const MachLogNetwork& );
     bool operator ==( const MachLogNetwork& );
 
-    MachLogNetwork( void );
+    MachLogNetwork();
 
 	MachLogNetworkDataImpl*			pImpl_;
 

@@ -29,7 +29,7 @@ public:
     MachLogMineralSiteImpl( const MachPhys::MineralGrade& grade ,
 							const MachPhys::BuildingMaterialUnits& amount,
 							const MexPoint3d& p);
-    ~MachLogMineralSiteImpl( void );
+    ~MachLogMineralSiteImpl();
 
     void CLASS_INVARIANT;
 

@@ -44,7 +44,7 @@ class MachPhysObjectFactory
 {
 public:
     MachPhysObjectFactory( size_t nEntries );
-    virtual ~MachPhysObjectFactory( void );
+    virtual ~MachPhysObjectFactory();
 
     PART& part( const ID& id, size_t index );
 

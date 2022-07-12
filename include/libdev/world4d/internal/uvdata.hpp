@@ -26,7 +26,7 @@ class W4dUVTranslateData: public  W4dAnimationData
 {
 public:
     W4dUVTranslateData( const string& textureName, const MexVec2& speedVec, W4dLOD maxLod );
-    virtual ~W4dUVTranslateData( void );
+    virtual ~W4dUVTranslateData();
 
 	//apply the uv animation to pEntity	 start at statTime
 	virtual void apply( W4dEntity* pEntity, const PhysAbsoluteTime& startTime);

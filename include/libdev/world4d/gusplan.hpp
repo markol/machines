@@ -28,7 +28,7 @@ public:
 	typedef  CtlCountedPtr< PhysScalarPlan > PhysScalarPlanPtr;
     W4dGeneralUniformScalePlan( const PhysScalarPlanPtr&  scalarPlanPtr );
 
-    virtual ~W4dGeneralUniformScalePlan( void );
+    virtual ~W4dGeneralUniformScalePlan();
 
     virtual bool isNonUniform() const;
 

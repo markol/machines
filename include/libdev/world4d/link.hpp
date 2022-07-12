@@ -26,15 +26,15 @@ class W4dLink : public W4dEntity
 {
 public:
 
-    ~W4dLink( void );
+    ~W4dLink();
 
     void CLASS_INVARIANT;
 
-    W4dComposite* pComposite( void ) const;
+    W4dComposite* pComposite() const;
 
     typedef W4dLinkId   Id;
 
-    const Id& id( void ) const
+    const Id& id() const
         { return id_; };
 
     void add( RenMeshInstance* pMeshInstance, W4dLOD LODid = 0 )

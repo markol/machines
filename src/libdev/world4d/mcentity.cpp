@@ -51,7 +51,7 @@ void W4dMotionControlledEntity::setOrientation( const MexTransform3d& trans )
 }
 
 // virtual
-MexTransform3d W4dMotionControlledEntity::globalTransform( void ) const
+MexTransform3d W4dMotionControlledEntity::globalTransform() const
 {
 	return pMotionControlledEntity_->globalTransform();
 }
@@ -73,7 +73,7 @@ void W4dMotionControlledEntity::globalTransform( const MexTransform3d& trans )
 }
 
 // virtual
-MexTransform3d W4dMotionControlledEntity::localTransform( void ) const
+MexTransform3d W4dMotionControlledEntity::localTransform() const
 {
    return pMotionControlledEntity_->localTransform();
 }

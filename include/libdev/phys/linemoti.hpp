@@ -31,7 +31,7 @@ public:
                           const MexTransform3d& endPosition,
                           const PhysRelativeTime& endTime);
 
-    ~PhysLinearMotionPlan( void );
+    ~PhysLinearMotionPlan();
 
     //Extends the motion path to end at endPosition at time EndTime
     void add( const MexTransform3d& endPosition, const PhysRelativeTime& endTime );

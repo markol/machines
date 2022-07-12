@@ -24,7 +24,7 @@ class MachLogPunchBlastImpl
 {
 public:
     MachLogPunchBlastImpl( const MachPhysWeaponData* const );
-    virtual ~MachLogPunchBlastImpl( void );
+    virtual ~MachLogPunchBlastImpl();
 
     void CLASS_INVARIANT;
 

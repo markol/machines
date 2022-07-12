@@ -18,8 +18,8 @@ class PerIstreamReporter
 // Canonical form revoked
 {
 public:
-    PerIstreamReporter( void );
-    ~PerIstreamReporter( void );
+    PerIstreamReporter();
+    ~PerIstreamReporter();
 
     //  Override this functino to provide whatever monitoring you want.
     //  The function must return the number of bytes it wants read

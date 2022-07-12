@@ -38,8 +38,8 @@ typedef FtlSerialMap< PhysCS2dDomainGraphArc > PhysCS2dDomainArcMap;
 class PhysCS2dDomainGraph : public GraGraph< PhysCS2dDomainVertexMap, PhysCS2dDomainArcMap >
 {
 public:
-    //PhysCS2dDomainGraph( void );
-    //~PhysCS2dDomainGraph( void );
+    //PhysCS2dDomainGraph();
+    //~PhysCS2dDomainGraph();
 
     FtlReusingIdGenerator& domainVertexIdGenerator()
     {

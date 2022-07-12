@@ -147,7 +147,7 @@ public:
 
 	///////////////////////////////
 
-	void update( void );
+	void update();
 
 	///////////////////////////////
 
@@ -225,7 +225,7 @@ public:
 	void masterSampleVolume( Snd::Volume newVolume );
 	// POST( masterSampleVolume() == newVolume );
 
-	void shutdown( void );
+	void shutdown();
 
 	//Is the sound switched on?
 	//This is accomplished by not setting CB_SOUND_OFF

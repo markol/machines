@@ -23,18 +23,18 @@ class MexSphere3d
 // Canonical form revoked
 {
 public:
-    MexSphere3d( void );
+    MexSphere3d();
     MexSphere3d( const MexPoint3d& , MATHEX_SCALAR );
-    ~MexSphere3d( void );
+    ~MexSphere3d();
 
     void CLASS_INVARIANT;
 
    void transform( const MexTransform3d& transform );
 
    // set/get
-   MATHEX_SCALAR radius( void ) const { return radius_; }
+   MATHEX_SCALAR radius() const { return radius_; }
    void radius( MATHEX_SCALAR newradius ) { radius_=newradius; }
-   const MexPoint3d& center( void ) const { return center_; }
+   const MexPoint3d& center() const { return center_; }
    void center( const MexPoint3d& newCenter ) { center_=newCenter; }
 
    // true if the first argument intersects this 

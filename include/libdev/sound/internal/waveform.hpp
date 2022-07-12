@@ -39,13 +39,13 @@
 	{
 	public:
 		SndWaveform(  const SndWaveformId& id );
-		~SndWaveform( void );
+		~SndWaveform();
 
 		static bool isWaveFile( const char* path );
 
-		WaveFormat* format( void );
+		WaveFormat* format();
 		// returns size of PCM data in bytes
-		uint dataSize( void );
+		uint dataSize();
 
 		// reads all the wave data to buf and
 		// returns the size of buf in bytes
@@ -55,9 +55,9 @@
 		uint read( void* buf, uint from, uint len );
 
 		// return the pathname of the SndWaveform
-		const SysPathName& pathname( void ) const;
+		const SysPathName& pathname() const;
 
-		const SndWaveformId& id( void ) const;
+		const SndWaveformId& id() const;
 
 		SndWaveform& addReference();
 		SndWaveform& removeReference();
@@ -68,7 +68,7 @@
 
 	private:
 		/** revoked operations **/
-		SndWaveform( void );
+		SndWaveform();
 		SndWaveform( const SndWaveform& );
 		SndWaveform& operator =( const SndWaveform& );
 

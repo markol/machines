@@ -25,7 +25,7 @@ class MachLogTaskStateAction : public SimAction
 {
 public:
 
-    virtual ~MachLogTaskStateAction( void );
+    virtual ~MachLogTaskStateAction();
 	static MachLogTaskStateAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 	static MachLogTaskStateAction* newDynamic( SimCondition*, bool enabled, uint taskIndex, bool isAvailabe, bool isComplete );
 

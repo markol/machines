@@ -29,7 +29,7 @@ class MachGuiCtxSettings : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxSettings( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxSettings( void );
+    ~MachGuiCtxSettings();
 
     void CLASS_INVARIANT;
 

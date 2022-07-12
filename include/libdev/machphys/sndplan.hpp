@@ -17,8 +17,8 @@
 class MachPhysSoundPlan
 {
 public:
-    MachPhysSoundPlan( void );
-    ~MachPhysSoundPlan( void );
+    MachPhysSoundPlan();
+    ~MachPhysSoundPlan();
 
     void CLASS_INVARIANT;
 

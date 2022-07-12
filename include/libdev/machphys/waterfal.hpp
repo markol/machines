@@ -26,7 +26,7 @@ public:
     //Return an exemplar vortex bomb - ensures the bomb meshes and textures are loaded
     static const MachPhysWaterfall& exemplar();
 
-    ~MachPhysWaterfall( void );
+    ~MachPhysWaterfall();
 
     //Inherited from W4dEntity. Returns false.
     virtual bool intersectsLine( const MexLine3d& line, MATHEX_SCALAR* pDistance,

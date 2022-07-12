@@ -556,7 +556,7 @@ void RenIGXMeshLoader::convertNode(const GXHier& source, RenHierarchyBuilder *de
 //}
 
 // static
-//static char separator( void )
+//static char separator()
 //{
 //    return 'X';
 //}

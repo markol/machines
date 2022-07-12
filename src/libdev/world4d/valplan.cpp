@@ -20,7 +20,7 @@ W4dFloatValuePlan::~W4dFloatValuePlan()
 
 }
 
-const PhysRelativeTime& W4dFloatValuePlan::duration( void ) const
+const PhysRelativeTime& W4dFloatValuePlan::duration() const
 {
     return duration_;
 }

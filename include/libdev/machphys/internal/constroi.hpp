@@ -32,7 +32,7 @@ class MachPhysConstructionImpl
 public:
     MachPhysConstructionImpl( double height, size_t level, MachPhys::Race race, const MachPhysConstructionData& data, const MexTransform3d& globalTransform );
 
-    ~MachPhysConstructionImpl( void );
+    ~MachPhysConstructionImpl();
 
     typedef ctl_vector< W4dLink* > W4dLinks;
     typedef ctl_vector< MachPhysEntrance* > Entrances;

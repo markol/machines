@@ -18,12 +18,12 @@
 class MachPhysConstructorData : public MachPhysMachineData
 {
 public:
-	MachPhysConstructorData( void );
-    ~MachPhysConstructorData( void );
+	MachPhysConstructorData();
+    ~MachPhysConstructorData();
 
 	//get methods public
-	MachPhys::SizeUnits capacity( void ) const;
-	MachPhys::BuildingMaterialUnits constructionRate( void ) const;
+	MachPhys::SizeUnits capacity() const;
+	MachPhys::BuildingMaterialUnits constructionRate() const;
 	MachPhys::ConstructionType		mostAdvancedConstructionType() const;
 	int								mostAdvancedSubType() const;
 	size_t							mostAdvancedConstructionLevel() const;
@@ -46,7 +46,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const MachPhysConstructorData& );
 
-    //MachPhysConstructorData( void );
+    //MachPhysConstructorData();
 
 	//set methods private
 	void capacity( const MachPhys::SizeUnits& );

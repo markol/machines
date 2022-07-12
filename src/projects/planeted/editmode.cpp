@@ -74,13 +74,13 @@ MexLine3d PedEditorMode::cameraThroughCursorLine( const MexPoint2d& cursorScreen
 }
 
 // virtual
-void PedEditorMode::activateMode( void )
+void PedEditorMode::activateMode()
 {
 	active_ = true;
 }
 
 // virtual
-void PedEditorMode::changingMode( void )
+void PedEditorMode::changingMode()
 {
 	active_ = false;
 }

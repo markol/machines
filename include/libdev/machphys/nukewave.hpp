@@ -76,7 +76,7 @@ private:
 	//typedef  MachPhysFlame::Materials Materials;
 	typedef  MachPhysFlame::MaterialsPtr MaterialsPtr;
 
-    static  const MaterialsPtr& materialsPtr( void );
+    static  const MaterialsPtr& materialsPtr();
 };
 
 PER_READ_WRITE( MachPhysNukeWave );

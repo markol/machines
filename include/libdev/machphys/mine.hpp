@@ -39,7 +39,7 @@ public:
         size_t level,
         MachPhys::Race race );
 
-    virtual ~MachPhysMine( void );
+    virtual ~MachPhysMine();
 
     void CLASS_INVARIANT;
 

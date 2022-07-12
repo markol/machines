@@ -27,7 +27,7 @@ public:
     // PRE( maxValue >= minValue );
     // PRE( 0.0 <= brakeBandFraction and brakeBandFraction <= 1.0 );
     
-    ~Brake( void );
+    ~Brake();
 
     void setLimits( MATHEX_SCALAR minValue, MATHEX_SCALAR maxValue, MATHEX_SCALAR brakeBandFraction );
     // PRE( maxValue >= minValue );

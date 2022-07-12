@@ -30,7 +30,7 @@ TestFixedVectorAssert::~TestFixedVectorAssert()
 
 }
 
-void    TestFixedVectorAssert::initialiseTestFunctions( void )
+void    TestFixedVectorAssert::initialiseTestFunctions()
 {
     #define ADD_FUNCTION( fn )      \
         addTestFunction( #fn, fn );
@@ -66,7 +66,7 @@ void    TestFixedVectorAssert::initialiseTestFunctions( void )
     ADD_FUNCTION( constFrontAndBack );
 }
 
-void    TestFixedVectorAssert::initialiseVectors( void )
+void    TestFixedVectorAssert::initialiseVectors()
 {
     size_t  size1;
     size_t  size2;
@@ -95,31 +95,31 @@ void    TestFixedVectorAssert::initialiseVectors( void )
 }
 
 // static
-TestFixedVectorAssert::TestFixedVectorType& TestFixedVectorAssert::vector1( void )
+TestFixedVectorAssert::TestFixedVectorType& TestFixedVectorAssert::vector1()
 {
     return  instance().vector1_;
 }
 
 // static
-TestFixedVectorAssert::TestFixedVectorType& TestFixedVectorAssert::vector2( void )
+TestFixedVectorAssert::TestFixedVectorType& TestFixedVectorAssert::vector2()
 {
     return  instance().vector2_;
 }
 
 // static
-size_t  TestFixedVectorAssert::vector1Size( void )
+size_t  TestFixedVectorAssert::vector1Size()
 {
     return  instance().vector1_.size();
 }
 
 // static
-size_t  TestFixedVectorAssert::vector2Size( void )
+size_t  TestFixedVectorAssert::vector2Size()
 {
     return  instance().vector2_.size();
 }
 
 // static
-size_t  TestFixedVectorAssert::randomIndex1( void )
+size_t  TestFixedVectorAssert::randomIndex1()
 {
     //  The index will not necessarily be valid
 
@@ -134,7 +134,7 @@ size_t  TestFixedVectorAssert::randomIndex1( void )
 }
 
 // static
-size_t  TestFixedVectorAssert::randomIndex2( void )
+size_t  TestFixedVectorAssert::randomIndex2()
 {
     //  The index will not necessarily be valid
 

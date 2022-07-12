@@ -13,8 +13,8 @@
 
 // #include <memory.hpp>
 
-size_t  DbgMemChkFreeMemory( void );
-void    DbgMemChkWriteFragmentationData( void );
+size_t  DbgMemChkFreeMemory();
+void    DbgMemChkWriteFragmentationData();
 
 //Set/get status of memory watching. When watching memory, all allocations and deletions are logged
 //with the BaseMemWatcher singleton.
@@ -26,13 +26,13 @@ bool MemChkMemoryWatchingOn();
     void    DbgMemChkRegisterFileData( const char *fName, unsigned long lineNum );
     void    DbgMemChkRegisterFileData2( const char *fName, unsigned long lineNum, const char* ctor );
     void    DbgMemChkRecordAllMemory( bool );
-    void    DbgMemChkCheckAllMemory( void );
-    void    DbgMemChkWriteMemoryAllocationData( void );
+    void    DbgMemChkCheckAllMemory();
+    void    DbgMemChkWriteMemoryAllocationData();
     void    DbgMemChkMask( uint32 newMask );
     void    DbgMemChkLogAllAllocatedMemory( uint32 mask );
     void    DbgMemChkRecordStackData( bool );
 
-    const   DbgMemChkData& DbgMemChkAllocationData( void );
+    const   DbgMemChkData& DbgMemChkAllocationData();
 
 // TODO: charybdis heap operators overload
 	#define _NEW(t)   \

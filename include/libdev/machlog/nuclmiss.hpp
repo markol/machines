@@ -36,7 +36,7 @@ public:
         MachActor* pOwner,
         const MachPhysWeaponData& );
 
-    ~MachLogNuclearMissile( void );
+    ~MachLogNuclearMissile();
 	
     void CLASS_INVARIANT;
 

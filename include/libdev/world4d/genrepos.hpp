@@ -90,7 +90,7 @@ public:
     void clear();
 
 	//Returns the total number of W4dGeneric and W4dGenericComposite objects.
-	uint nGenerics( void ) const;
+	uint nGenerics() const;
 
 	//Returns the key string associated with the Generic object at index
 	//( treating both lists as one continous list )

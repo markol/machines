@@ -19,7 +19,7 @@ class MachLogOperationPersistence
 // Canonical form revoked
 {
 public:
-    ~MachLogOperationPersistence( void );
+    ~MachLogOperationPersistence();
 
 	static void registerDerivedClasses();
 
@@ -28,7 +28,7 @@ public:
 private:
     friend ostream& operator <<( ostream& o, const MachLogOperationPersistence& t );
 
-    MachLogOperationPersistence( void );
+    MachLogOperationPersistence();
     MachLogOperationPersistence( const MachLogOperationPersistence& );
     MachLogOperationPersistence& operator =( const MachLogOperationPersistence& );
 

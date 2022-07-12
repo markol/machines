@@ -20,7 +20,7 @@ class BaseWindowStream : public BaseFilterOstream
 {
 public:
     BaseWindowStream( const char* windowName );
-    ~BaseWindowStream( void );
+    ~BaseWindowStream();
 
     void CLASS_INVARIANT;
 // 	ostream& ostr();

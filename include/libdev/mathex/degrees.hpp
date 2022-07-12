@@ -24,11 +24,11 @@
 class MexDegrees : public MexAngle
 {
 public:
-    MexDegrees( void );
+    MexDegrees();
     MexDegrees( MATHEX_SCALAR );
     MexDegrees( const MexAngle& );
 
-    MATHEX_SCALAR   asScalar( void ) const;
+    MATHEX_SCALAR   asScalar() const;
     
     friend ostream& operator <<( ostream& o, const MexDegrees& t );
 

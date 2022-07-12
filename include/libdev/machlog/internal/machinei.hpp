@@ -20,7 +20,7 @@ class MachLogMachineImpl
 {
 public:
     MachLogMachineImpl( MachPhys::MachineType, MachLogMachine::Level hwLevel, MachLogMachine::Level swLevel, MachPhys::Race race );
-    ~MachLogMachineImpl( void );
+    ~MachLogMachineImpl();
 
     void CLASS_INVARIANT;
 

@@ -39,7 +39,7 @@ public:
 							MATHEX_SCALAR blastRadius,
 							CanHitAirUnits canHitAirUnits = CAN_HIT_AIR_UNITS );
 
-    ~MachLogExpandingBlast( void );
+    ~MachLogExpandingBlast();
 	
 	typedef ctl_pvector< MachActor > Victims;
 	

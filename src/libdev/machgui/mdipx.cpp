@@ -27,7 +27,7 @@ void MachGuiIPXNetworkMode::CLASS_INVARIANT
 }
 
 //virtual 
-void MachGuiIPXNetworkMode::setNetworkDetails( void )
+void MachGuiIPXNetworkMode::setNetworkDetails()
 {
 	NetNetwork::instance().initialiseConnection();
 }
@@ -39,7 +39,7 @@ bool MachGuiIPXNetworkMode::validNetworkDetails( bool /*isHost*/ )
 }
 
 //virtual
-void MachGuiIPXNetworkMode::readNetworkDetails( void )
+void MachGuiIPXNetworkMode::readNetworkDetails()
 {
 }
 

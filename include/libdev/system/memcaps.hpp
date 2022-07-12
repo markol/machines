@@ -45,8 +45,8 @@ public:
     void CLASS_INVARIANT;
 
 private:
-    SysMemoryCaps( void );
-    ~SysMemoryCaps( void );
+    SysMemoryCaps();
+    ~SysMemoryCaps();
 
     friend ostream& operator <<( ostream& o, const SysMemoryCaps& t );
 

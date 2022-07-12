@@ -130,7 +130,7 @@ bool RenIMeshID::operator==(const RenIMeshID& rhs) const
 }
 
 // static
-char RenIMeshID::separator( void )
+char RenIMeshID::separator()
 {
     return 'X';
 }

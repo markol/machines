@@ -10,7 +10,7 @@
 
 #include "profiler/profiler.hpp"
 
-void ProProfilerAnchor( void )
+void ProProfilerAnchor()
 {
 	//	The text passed here must match the name of the function
 

@@ -39,7 +39,7 @@ public:
         MachPhys::Race race,
         MachPhys::WeaponCombo combo );
 
-    virtual ~MachPhysAggressor( void );
+    virtual ~MachPhysAggressor();
 
 
     ///////////////////////////////////////////////////////
@@ -66,7 +66,7 @@ public:
 
 	const MachPhysAggressorData& data() const;
 
-    MachPhys::AggressorSubType subType( void ) const;
+    MachPhys::AggressorSubType subType() const;
 
 	bool canPunch() const;
 
@@ -103,7 +103,7 @@ private:
     static  MachPhysAggressor& part( MachPhys::AggressorSubType subType, size_t bodyLevel );
     static  Factory& factory();
 
-    void createExplosionData( void );
+    void createExplosionData();
 
     SysPathName compositeFileName( MachPhys::AggressorSubType, size_t bodyLevel ) const;
 

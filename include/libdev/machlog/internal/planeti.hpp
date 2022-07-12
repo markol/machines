@@ -26,8 +26,8 @@ public:
 
 	typedef ctl_map< int , MachLogMineralSite*, std::less< int >	>	SiteMap;
 
-    MachLogPlanetImpl( void );
-    ~MachLogPlanetImpl( void );
+    MachLogPlanetImpl();
+    ~MachLogPlanetImpl();
 
     void CLASS_INVARIANT;
 

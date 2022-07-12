@@ -16,7 +16,7 @@
 #define TEXSET_STREAM(x)	RENDER_STREAM(x)
 #define TEXSET_INDENT(x)	RENDER_INDENT(x)
 
-RenTextureSetImpl::RenTextureSetImpl( void )
+RenTextureSetImpl::RenTextureSetImpl()
 : isLoaded_( false )
 {
     TEST_INVARIANT;

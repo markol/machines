@@ -21,9 +21,9 @@ class MexCompressedPoint3d
 // Canonical form revoked
 {
 public:
-    MexCompressedPoint3d( void );
+    MexCompressedPoint3d();
     MexCompressedPoint3d( const MexPoint3d& );
-    ~MexCompressedPoint3d( void );
+    ~MexCompressedPoint3d();
 
     void CLASS_INVARIANT;
 

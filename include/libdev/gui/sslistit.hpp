@@ -22,7 +22,7 @@ class GuiSingleSelectionListBoxItem : public GuiDisplayable
 {
 public:
     GuiSingleSelectionListBoxItem( GuiSingleSelectionListBox* pListBox, size_t width, size_t height );
-    ~GuiSingleSelectionListBoxItem( void );
+    ~GuiSingleSelectionListBoxItem();
 
 	// True if this is the selected item in the list box.
 	bool selected() const;

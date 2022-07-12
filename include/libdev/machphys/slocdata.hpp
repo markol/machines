@@ -18,13 +18,13 @@
 class MachPhysSpyLocatorData : public MachPhysMachineData
 {
 public:
-    ~MachPhysSpyLocatorData( void );
+    ~MachPhysSpyLocatorData();
 
     void CLASS_INVARIANT;
 
 	// Get methods public
-	int				mineCapacity( void ) const;
-	MachPhys::ResearchUnits	downloadRate( void ) const;
+	int				mineCapacity() const;
+	MachPhys::ResearchUnits	downloadRate() const;
 
     friend ostream& operator <<( ostream& o, const MachPhysSpyLocatorData& t );
 
@@ -43,7 +43,7 @@ private:
 	void mineCapacity( int );
 	void downloadRate( MachPhys::ResearchUnits );
 
-    MachPhysSpyLocatorData( void );
+    MachPhysSpyLocatorData();
 	int					mineCapacity_;
 	MachPhys::ResearchUnits		downloadRate_;
 

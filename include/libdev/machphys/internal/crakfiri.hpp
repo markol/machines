@@ -32,8 +32,8 @@ public:
         
 private:
     MachPhysCrackFireImpl( const MATHEX_SCALAR& length );
-    MachPhysCrackFireImpl( void );
-    ~MachPhysCrackFireImpl( void );
+    MachPhysCrackFireImpl();
+    ~MachPhysCrackFireImpl();
 
     void CLASS_INVARIANT;
 

@@ -59,7 +59,7 @@ class MachPhysMachine
     public MachPhysCanBeDestroyed
 {
 public:
-    virtual ~MachPhysMachine( void );
+    virtual ~MachPhysMachine();
 
     //The machine's race
     MachPhys::Race race() const;
@@ -138,7 +138,7 @@ public:
 
     //  Destroy yourself
     //  Return the time that will be taken for the animation
-    virtual PhysRelativeTime beDestroyed( void );
+    virtual PhysRelativeTime beDestroyed();
 
     //Do a shaking animation appropriate for eg being hit by a projectile.
     PhysRelativeTime shake( const PhysAbsoluteTime startTime );
@@ -171,10 +171,10 @@ public:
 	//virtual method returns the correct data element from the arrays held within MachPhysData
 	virtual const MachPhysMachineData& machineData() const = 0;
 
-    MATHEX_SCALAR   maxTranslationSpeed( void ) const;
-    MexRadians      maxRotationSpeed( void ) const;
-    MATHEX_SCALAR   maxTranslationAcceleration( void ) const;
-    MexRadians      maxRotationAcceleration( void ) const;
+    MATHEX_SCALAR   maxTranslationSpeed() const;
+    MexRadians      maxRotationSpeed() const;
+    MATHEX_SCALAR   maxTranslationAcceleration() const;
+    MexRadians      maxRotationAcceleration() const;
 
     //  Attach the given fireball to the given link
     void attachFireball( MachPhysFireball* pFireball, W4dLink* pLink, const MexTransform3d& localTransform );
@@ -267,9 +267,9 @@ protected:
     void doMove( const MachPhysMachineMoveInfo& info );
 
     PhysRelativeTime doTurn( MATHEX_SCALAR angle );
-    PhysRelativeTime doExplode( void );
+    PhysRelativeTime doExplode();
 
-    PhysRelativeTime    explodeLinks( void );
+    PhysRelativeTime    explodeLinks();
     void    fireballEffect( PhysAbsoluteTime time );
 
     void    maxTranslationSpeed( MATHEX_SCALAR newSpeed );
@@ -278,8 +278,8 @@ protected:
 //     void            maxTranslationAcceleration( MATHEX_SCALAR newAcceleration );
 //     void            maxRotationAcceleration( MATHEX_SCALAR newAcceleration );
 
-    const   MachPhysMachineExplosionData& explosionData( void ) const;
-    MachPhysMachineExplosionData& explosionDataForEdit( void );
+    const   MachPhysMachineExplosionData& explosionData() const;
+    MachPhysMachineExplosionData& explosionDataForEdit();
 
 	size_t	bodyLevel() const;
 	size_t  brainLevel() const;
@@ -310,7 +310,7 @@ private:
 
     static  MachPhysFacePlate&  faceplateFactory( size_t brainLevel );
 
-    void defaultExplosionData( void );
+    void defaultExplosionData();
 
     //Set up the shakeLinks_ data
     void initialiseShakeLinks();

@@ -19,8 +19,8 @@ class MachLogConstructionItemImpl
 // Canonical form revoked
 {
 public:
-    MachLogConstructionItemImpl( void );
-    ~MachLogConstructionItemImpl( void );
+    MachLogConstructionItemImpl();
+    ~MachLogConstructionItemImpl();
 
     void CLASS_INVARIANT;
 

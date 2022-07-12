@@ -505,17 +505,17 @@ void PhysLinearTravelPlan::startRotationDistance( MATHEX_SCALAR distance )
     startRotationDistance_ = distance;
 }
 
-size_t PhysLinearTravelPlan::nSegments( void ) const
+size_t PhysLinearTravelPlan::nSegments() const
 {
 	return segmentTimes()->size();
 }
 
-const PhysMotionPlan::TimesPtr& PhysLinearTravelPlan::segmentTimes( void ) const
+const PhysMotionPlan::TimesPtr& PhysLinearTravelPlan::segmentTimes() const
 {
 	return pImpl_->segmentTimesPtr_;
 }
 
-const PhysMotionPlan::RampAccelerationsPtr& PhysLinearTravelPlan::rampAccelerations( void ) const
+const PhysMotionPlan::RampAccelerationsPtr& PhysLinearTravelPlan::rampAccelerations() const
 {
 	return pImpl_->rampAccelerationsPtr_;
 }

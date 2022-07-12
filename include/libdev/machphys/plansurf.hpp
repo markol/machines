@@ -46,7 +46,7 @@ public:
     MachPhysPlanetSurface( W4dSceneManager* pSceneManager, const SysPathName& fileName );
     // PRE( pParent != NULL );
 
-    ~MachPhysPlanetSurface( void );
+    ~MachPhysPlanetSurface();
 
     //Export the planet surface exterior environment
     bool hasEnvironment() const;
@@ -78,10 +78,10 @@ public:
     W4dDomain* domainByXYIndex( size_t xIndex, size_t yIndex ) const;
 
     //Export the planet continent bounds
-    MATHEX_SCALAR xMin( void ) const;
-    MATHEX_SCALAR xMax( void ) const;
-    MATHEX_SCALAR yMin( void ) const;
-    MATHEX_SCALAR yMax( void ) const;
+    MATHEX_SCALAR xMin() const;
+    MATHEX_SCALAR xMax() const;
+    MATHEX_SCALAR yMin() const;
+    MATHEX_SCALAR yMax() const;
 
     //The number of tiles in x and y, and the spacing.
     //Tiles are located with the "top left" corner (in zenith view) at (0, 0)
@@ -184,7 +184,7 @@ private:
     void parseTile( const SysPathName& pathname, UtlLineTokeniser* pParser, W4dEntity* pParent );
 
     //Construct the inter-domain portals
-    void makePortals( void );
+    void makePortals();
 
     MATHEX_SCALAR   heightOffset() const;
 

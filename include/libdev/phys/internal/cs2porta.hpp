@@ -34,14 +34,14 @@ public:
                     const MexPoint2d& endPoint2 );
 
     //dtor.
-    ~PhysCS2dPortal( void );
+    ~PhysCS2dPortal();
 
     //Data access
-    PhysConfigSpace2d::DomainId domainId1( void ) const;
-    PhysConfigSpace2d::DomainId domainId2( void ) const;
-    const MexPoint2d& endPoint1( void ) const;
-    const MexPoint2d& endPoint2( void ) const;
-    MATHEX_SCALAR length( void ) const;
+    PhysConfigSpace2d::DomainId domainId1() const;
+    PhysConfigSpace2d::DomainId domainId2() const;
+    const MexPoint2d& endPoint1() const;
+    const MexPoint2d& endPoint2() const;
+    MATHEX_SCALAR length() const;
 
     //The point proportionalDistance of the way from endPoint1() to endPoint2()
     MexPoint2d proportionalPoint( MATHEX_SCALAR proportionalDistance ) const;
@@ -71,7 +71,7 @@ public:
     //PRE( distance >= 0.0 and distance <= length() );
 
     //Number registered
-    size_t nDomainVertexs( void ) const;
+    size_t nDomainVertexs() const;
 
     //Id of ith
     const PhysConfigSpace2d::DomainVertexId& domainVertexId( size_t i ) const;

@@ -22,8 +22,8 @@ class MachGuiMessageDisplay
 {
 public:
     //  Singleton class
-    static MachGuiMessageDisplay& instance( void );
-    ~MachGuiMessageDisplay( void );
+    static MachGuiMessageDisplay& instance();
+    ~MachGuiMessageDisplay();
 
     void CLASS_INVARIANT;
 
@@ -36,7 +36,7 @@ private:
     MachGuiMessageDisplay& operator =( const MachGuiMessageDisplay& );
     bool operator ==( const MachGuiMessageDisplay& );
 
-    MachGuiMessageDisplay( void );
+    MachGuiMessageDisplay();
 	struct DisplayMessage
 	{
 		string				messageText_;

@@ -77,21 +77,21 @@ MachPhysMachineExplosionData::LinkData::~LinkData()
 
 }
 
-W4dLinkId MachPhysMachineExplosionData::LinkData::linkId( void ) const
+W4dLinkId MachPhysMachineExplosionData::LinkData::linkId() const
 {
     PRE( initialised_ );
 
     return linkId_;
 }
 
-MATHEX_SCALAR MachPhysMachineExplosionData::LinkData::size( void ) const
+MATHEX_SCALAR MachPhysMachineExplosionData::LinkData::size() const
 {
     PRE( initialised_ );
 
     return size_;
 }
 
-MATHEX_SCALAR   MachPhysMachineExplosionData::LinkData::shootOffProbability( void ) const
+MATHEX_SCALAR   MachPhysMachineExplosionData::LinkData::shootOffProbability() const
 {
     PRE( initialised_ );
 
@@ -102,14 +102,14 @@ MATHEX_SCALAR   MachPhysMachineExplosionData::LinkData::shootOffProbability( voi
     return result;
 }
 
-const PhysRelativeTime& MachPhysMachineExplosionData::LinkData::minExplosionTime( void ) const
+const PhysRelativeTime& MachPhysMachineExplosionData::LinkData::minExplosionTime() const
 {
     PRE( initialised_ );
 
     return minExplosionTime_;
 }
 
-const PhysRelativeTime& MachPhysMachineExplosionData::LinkData::maxExplosionTime( void ) const
+const PhysRelativeTime& MachPhysMachineExplosionData::LinkData::maxExplosionTime() const
 {
     PRE( initialised_ );
 
@@ -148,7 +148,7 @@ void MachPhysMachineExplosionData::LinkData::maxExplosionTime( const PhysRelativ
 
 //  Return the size as one of 10 discrete sizes. All parts
 //  will be categorised in one of these sizes
-uint    MachPhysMachineExplosionData::LinkData::discreteSize( void ) const
+uint    MachPhysMachineExplosionData::LinkData::discreteSize() const
 {
     PRE( initialised_ );
 

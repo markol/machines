@@ -130,13 +130,13 @@ MachPhysConstructor::~MachPhysConstructor()
     TEST_INVARIANT;
 }
 
-MachPhys::ConstructorSubType MachPhysConstructor::subType( void ) const
+MachPhys::ConstructorSubType MachPhysConstructor::subType() const
 {
     return subType_;
 }
 
 //virtual
-const MachPhysMachineData& MachPhysConstructor::machineData( void ) const
+const MachPhysMachineData& MachPhysConstructor::machineData() const
 {
 	return data();
 }
@@ -265,7 +265,7 @@ PhysRelativeTime MachPhysConstructor::construct()
     return interval;
 }
 
-void MachPhysConstructor::createExplosionData( void )
+void MachPhysConstructor::createExplosionData()
 {
 
     switch( subType() )

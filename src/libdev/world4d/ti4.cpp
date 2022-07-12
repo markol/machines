@@ -10,7 +10,7 @@
 #include "world4d/compplan.hpp"
 
 
-W4dDummyFunction4( void )
+W4dDummyFunction4()
 {
     static CtlCountedPtr< W4dCompositePlan >   dummyPtr;
     static vector< CtlCountedPtr< W4dCompositePlan > >  dummy1;

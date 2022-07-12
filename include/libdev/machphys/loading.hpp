@@ -24,7 +24,7 @@ class MachPhysResourceLoading : public W4dEntity
 public:
 	//public constructor
     MachPhysResourceLoading( W4dEntity* pParent, const MexTransform3d& localTransform );
-    virtual ~MachPhysResourceLoading( void );
+    virtual ~MachPhysResourceLoading();
 
     //Inherited from W4dEntity. Returns false.
     virtual bool intersectsLine( const MexLine3d& line, MATHEX_SCALAR* pDistance,
@@ -45,7 +45,7 @@ private:
 
 	friend class MachPhysOtherPersistence;
 
-    MachPhysResourceLoading( void );
+    MachPhysResourceLoading();
 };
 
 PER_DECLARE_PERSISTENT( MachPhysResourceLoading );

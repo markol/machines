@@ -8,7 +8,7 @@
 #include <string.hpp>
 #include "internal/soundmai.hpp"
 
-W4dDummyFunction14( void )
+W4dDummyFunction14()
 {
      W4dSoundManagerImpl::EntitySounds dummy1;
      W4dSoundManagerImpl::SoundIDMap   dummy2;

@@ -26,7 +26,7 @@ class MachGuiCtxSave : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxSave( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxSave( void );
+    ~MachGuiCtxSave();
 
     void CLASS_INVARIANT;
 

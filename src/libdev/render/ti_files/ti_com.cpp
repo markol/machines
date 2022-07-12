@@ -3,7 +3,7 @@
 #include "internal/ren_pch.hpp"
 #include "internal/comptr.ctp"
 
-dummyFunction1( void )
+dummyFunction1()
 {
 	static COMPTR(IDirectDraw)				dd1;
 	static COMPTR(IDirectDraw2)				dd2;

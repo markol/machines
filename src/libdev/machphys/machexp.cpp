@@ -764,7 +764,7 @@ int MachPhysMachineExplosion::randomInt(
 }
 
 // static
-MexVec3& MachPhysMachineExplosion::acceleration( void )
+MexVec3& MachPhysMachineExplosion::acceleration()
 {
     static MexVec3   acceleration_( 0.0, 0.0, -9.81 );
 

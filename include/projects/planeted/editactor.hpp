@@ -37,7 +37,7 @@ class PedActorEditor : public PedEditorMode
 {
 public:
     PedActorEditor( const string& actorType );
-    virtual ~PedActorEditor( void );
+    virtual ~PedActorEditor();
 
     void CLASS_INVARIANT;
 
@@ -45,15 +45,15 @@ public:
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 
-	virtual void displayKeyboardCtrls( void );
+	virtual void displayKeyboardCtrls();
 
-	virtual void preRenderUpdate( void );
+	virtual void preRenderUpdate();
 
-	virtual void displayModeInfo( void );
+	virtual void displayModeInfo();
 
-	virtual void changingMode( void );
+	virtual void changingMode();
 
-	virtual void activateMode( void );
+	virtual void activateMode();
 
 	virtual void initialise( W4dSceneManager* pSceneManager, MachLogPlanet* pPlanet );
 
@@ -69,21 +69,21 @@ protected:
 
 	virtual W4dEntity* currentActor() = 0;
 	virtual void processCycle( CycleDir dir ) = 0;
-	virtual void processSelection( void ) = 0;
-	virtual void processDelete( void ) = 0;
-	virtual void processRace( void );
+	virtual void processSelection() = 0;
+	virtual void processDelete() = 0;
+	virtual void processRace();
 	virtual void createEntity( W4dEntity&, const MexTransform3d& ) = 0;
-	virtual void rotateAfterMove( void ) = 0;
+	virtual void rotateAfterMove() = 0;
 	virtual void processHide( bool );
  	virtual void changeAllSolidities( W4dEntity::Solidity ) = 0;
     virtual void processMove( MoveDir dir );
-	virtual void processDrag( void );
+	virtual void processDrag();
 
-	const MexTransform3d localTransformAtMouse( void );
+	const MexTransform3d localTransformAtMouse();
 	const MexTransform3d localTransformAtPoint( W4dEntity** ppDomain, const MexPoint3d& point );
 
 	bool actorSelected( W4dEntity** ppActor );
-	void highlightSelected( void );
+	void highlightSelected();
 //	void changeRace( MachPhys::Race* race );	// TBD Put in namespace
 	size_t vertexSpacingX() const;
 	size_t vertexSpacingY() const;
@@ -103,8 +103,8 @@ protected:
 	wdebug* errors;
 
 private:
-	void processDrop( void );
-	void processReleaseSelection( void );
+	void processDrop();
+	void processReleaseSelection();
 
 	bool domainAtMousePoint( W4dEntity** ppEntity );
 	W4dEntity* domain( const MexPoint3d& point );
@@ -114,9 +114,9 @@ private:
     PedActorEditor( const PedActorEditor& );
     PedActorEditor& operator =( const PedActorEditor& );
 
-	void highlightVertex( void );
+	void highlightVertex();
 	// PRE( pSceneManager_ != NULL )
- 	void displayVertexCoords( void );
+ 	void displayVertexCoords();
 	// PRE( pSceneManager_ != NULL )
 
     // Data...

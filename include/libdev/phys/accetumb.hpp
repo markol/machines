@@ -41,7 +41,7 @@ public:
     //  PRE( transformsPtr->size() == durationPtr->size() + 1 );
     //  PRE( inAscendingOrder( *timesPtr ) );
 
-    virtual ~PhysAccelerateTumblePlan( void );
+    virtual ~PhysAccelerateTumblePlan();
 
     //Override defines result as a function of timeOffset.
     //If time is greater than duration, the transform at time duration is returned.
@@ -63,12 +63,12 @@ private:
     // Operation deliberately revoked
     bool operator ==( const PhysAccelerateTumblePlan& );
 
-    PhysRelativeTime    currentSegmentDuration( void ) const;
+    PhysRelativeTime    currentSegmentDuration() const;
 
     void setPosition( const PhysRelativeTime& timeOffset, MexTransform3d* pResult ) const;
     void setRotation( const PhysRelativeTime& timeOffset, MexTransform3d* pResult ) const;
 
-    void computeCacheData( void );
+    void computeCacheData();
 
 /*
     EulerTransformsPtr   transformsPtr_;

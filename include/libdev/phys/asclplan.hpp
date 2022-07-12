@@ -32,7 +32,7 @@ public:
 	PhysAcceleratedScalarPlan(const RampAccelerations& rampAccelerations, MATHEX_SCALAR scale);
     PhysAcceleratedScalarPlan( const PhysAcceleratedScalarPlan& );
 	 
-    virtual ~PhysAcceleratedScalarPlan( void );
+    virtual ~PhysAcceleratedScalarPlan();
 
 	const RampAccelerations& rampAccelerations() const;
 	const Distances& distances() const;

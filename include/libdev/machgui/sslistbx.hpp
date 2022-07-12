@@ -27,7 +27,7 @@ public:
     MachGuiSingleSelectionListBox(  MachGuiStartupScreens* pParent, const Gui::Box&, 
     								size_t horizontalSpacing, size_t verticalSpacing,
     								size_t scrollInc );
-    ~MachGuiSingleSelectionListBox( void );
+    ~MachGuiSingleSelectionListBox();
 
     void CLASS_INVARIANT;
 

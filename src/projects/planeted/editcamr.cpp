@@ -77,18 +77,18 @@ void PedCameraEditor::processInput( const DevButtonEvent& devButtonEvent )
 }
 
 //virtual
-void PedCameraEditor::changingMode( void )
+void PedCameraEditor::changingMode()
 {
 	PedEditorMode::changingMode();
 }
 
 //virtual
-void PedCameraEditor::preRenderUpdate( void )
+void PedCameraEditor::preRenderUpdate()
 {
 }
 
 //virtual
-void PedCameraEditor::displayKeyboardCtrls( void )
+void PedCameraEditor::displayKeyboardCtrls()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -97,7 +97,7 @@ void PedCameraEditor::displayKeyboardCtrls( void )
 }
 
 //virtual
-void PedCameraEditor::displayModeInfo( void )
+void PedCameraEditor::displayModeInfo()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -157,7 +157,7 @@ void PedCameraEditor::writeScnFile( PedScenarioFile& scenarioFile )
 }
 
 // virtual
-void PedCameraEditor::activateMode( void )
+void PedCameraEditor::activateMode()
 {
 	PedEditorMode::activateMode();
 	pCurrentMarker_ = setMarkerForRace( race_ );
@@ -173,7 +173,7 @@ ostream& operator <<( ostream& o, const PedCameraEditor& t )
     return o;
 }
 
-void PedCameraEditor::processDrop( void )
+void PedCameraEditor::processDrop()
 {
 	setMarkerToCamera( &pCurrentMarker_, race_ );
 }

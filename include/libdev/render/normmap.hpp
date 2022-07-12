@@ -17,8 +17,8 @@
 class RenNormalMap
 {
 public:
-    RenNormalMap( void );
-    ~RenNormalMap( void );
+    RenNormalMap();
+    ~RenNormalMap();
 
     void CLASS_INVARIANT;
 

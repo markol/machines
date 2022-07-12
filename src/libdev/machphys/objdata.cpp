@@ -26,7 +26,7 @@ MachPhysObjectData::~MachPhysObjectData()
 
 }
 
-MachPhys::ArmourUnits MachPhysObjectData::armour( void ) const
+MachPhys::ArmourUnits MachPhysObjectData::armour() const
 {
 	return armour_;
 }
@@ -36,7 +36,7 @@ void MachPhysObjectData::armour( const MachPhys::ArmourUnits& newArmour )
 	armour_ = newArmour;
 }
 
-MachPhys::HitPointUnits MachPhysObjectData::hitPoints( void ) const
+MachPhys::HitPointUnits MachPhysObjectData::hitPoints() const
 {
 	return hitPoints_;
 }
@@ -46,7 +46,7 @@ void MachPhysObjectData::hitPoints( const MachPhys::HitPointUnits& newHp )
 	hitPoints_ = newHp;
 }
 
-MachPhys::BuildingMaterialUnits MachPhysObjectData::cost( void ) const
+MachPhys::BuildingMaterialUnits MachPhysObjectData::cost() const
 {
 	return cost_;
 }

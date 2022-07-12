@@ -25,7 +25,7 @@ class MachPhysBeeBombExplosion : public W4dEntity
 {
 public:
     MachPhysBeeBombExplosion( W4dEntity* pParent, const MexTransform3d& localTransform );
-    virtual ~MachPhysBeeBombExplosion( void );
+    virtual ~MachPhysBeeBombExplosion();
 
 	const PhysRelativeTime startExplosion( const PhysAbsoluteTime& startTime, const MachPhysPlanetSurface& surface);
 

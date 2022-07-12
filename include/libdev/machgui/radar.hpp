@@ -24,7 +24,7 @@ class MachGuiRadar : public GuiDisplayable
 {
 public:
     MachGuiRadar( GuiDisplayable* pParent, const Gui::Coord& relPos );
-    ~MachGuiRadar( void );
+    ~MachGuiRadar();
 
     void CLASS_INVARIANT;
 

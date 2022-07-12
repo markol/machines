@@ -53,7 +53,7 @@ void MachGuiSerialNetworkMode::CLASS_INVARIANT
 }
 
 // virtual
-void MachGuiSerialNetworkMode::setNetworkDetails( void )
+void MachGuiSerialNetworkMode::setNetworkDetails()
 {
 	// Use the settings from the drop downs to configure network settings
 	// Populate a com port object with user settings
@@ -98,7 +98,7 @@ bool MachGuiSerialNetworkMode::validNetworkDetails( bool /*isHost*/ )
 #define SNM_MINY3 SNM_MINY + (SNM_DEPTH*2)
 
 // virtual
-void MachGuiSerialNetworkMode::readNetworkDetails( void )
+void MachGuiSerialNetworkMode::readNetworkDetails()
 {
 	GuiStrings comStrings;
 	MachGuiDropDownListBoxCreator::DropDownListBoxItems comSettings;

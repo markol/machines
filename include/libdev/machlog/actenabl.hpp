@@ -24,7 +24,7 @@ class MachLogEnableActionAction : public SimAction
 {
 public:
 
-    virtual ~MachLogEnableActionAction( void );
+    virtual ~MachLogEnableActionAction();
 	static MachLogEnableActionAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 	static MachLogEnableActionAction* newDynamic( SimCondition*, bool enabled, const string& enableToken );
 

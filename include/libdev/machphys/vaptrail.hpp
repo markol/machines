@@ -32,7 +32,7 @@ public:
         size_t nPuffs,
         MATHEX_SCALAR averagePuffSize, size_t missile_level );
 
-    ~MachPhysVapourTrail( void );
+    ~MachPhysVapourTrail();
 
 //    void startTrail(
 //        const PhysAbsoluteTime& startTime );

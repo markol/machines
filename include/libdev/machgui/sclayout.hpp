@@ -19,8 +19,8 @@ class MachGuiScreenLayoutInfo
 {
 public:
     //  Singleton class
-    static MachGuiScreenLayoutInfo& instance( void );
-    ~MachGuiScreenLayoutInfo( void );
+    static MachGuiScreenLayoutInfo& instance();
+    ~MachGuiScreenLayoutInfo();
 
     void CLASS_INVARIANT;
 
@@ -31,7 +31,7 @@ private:
     MachGuiScreenLayoutInfo& operator =( const MachGuiScreenLayoutInfo& );
     bool operator ==( const MachGuiScreenLayoutInfo& );
 
-    MachGuiScreenLayoutInfo( void );
+    MachGuiScreenLayoutInfo();
 };
 
 

@@ -25,7 +25,7 @@ class MachLogScenario
 {
 public:
     MachLogScenario( ){};
-    ~MachLogScenario( void );
+    ~MachLogScenario();
 
 	static void load( 	const SysPathName& scenarioFilePath, const MachLogGameCreationData& );
 

@@ -185,27 +185,27 @@ SysFileData::MatchType    SysFileData::matches( const SysFileData& fdata ) const
     return result;
 }
 
-const SysPathName& 	SysFileData::pathName( void ) const
+const SysPathName& 	SysFileData::pathName() const
 {
 	return pathName_;
 }
 
-const SysPathName& 	SysFileData::baseDirectory( void ) const
+const SysPathName& 	SysFileData::baseDirectory() const
 {
 	return baseDirectory_;
 }
 
-const SysPathName& 	SysFileData::relativePathName( void ) const
+const SysPathName& 	SysFileData::relativePathName() const
 {
 	return relativePathName_;
 }
 
-bool SysFileData::sizeSet( void ) const
+bool SysFileData::sizeSet() const
 {
     return size_ != UNKNOWN_SIZE;
 }
 
-SysFileData::SysFileSize	SysFileData::size( void ) const
+SysFileData::SysFileSize	SysFileData::size() const
 {
 	return	size_;
 }
@@ -215,7 +215,7 @@ void	SysFileData::size( SysFileSize newSize )
 	size_ = newSize;
 }
 
-const SysFileTime& SysFileData::time( void ) const
+const SysFileTime& SysFileData::time() const
 {
     return time_;
 }
@@ -225,7 +225,7 @@ void SysFileData::time( const SysFileTime& newTime )
     time_ = newTime;
 }
 
-const SysFileDate& SysFileData::date( void ) const
+const SysFileDate& SysFileData::date() const
 {
     return date_;
 }

@@ -15,8 +15,8 @@ class DevSdlTimeInternal
 {
 public:
     //  Singleton class
-    static DevSdlTimeInternal& instance( void ){ static DevSdlTimeInternal instance_; return instance_; };
-    ~DevSdlTimeInternal( void );
+    static DevSdlTimeInternal& instance(){ static DevSdlTimeInternal instance_; return instance_; };
+    ~DevSdlTimeInternal();
 
     double  resolution() const { return resolution_; };
 
@@ -33,7 +33,7 @@ private:
     DevSdlTimeInternal( const DevSdlTimeInternal& );
     DevSdlTimeInternal& operator =( const DevSdlTimeInternal& );
 
-    DevSdlTimeInternal( void );
+    DevSdlTimeInternal();
 
 
     double resolution_;

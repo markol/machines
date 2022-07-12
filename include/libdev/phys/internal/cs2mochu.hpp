@@ -32,7 +32,7 @@ public:
                          const PhysMotionChunk& motionChunk );
 
     //dtor.
-    ~PhysCS2dMotionChunk( void );
+    ~PhysCS2dMotionChunk();
 
     //Accessors
     const PhysMotionChunk& motionChunk() const;

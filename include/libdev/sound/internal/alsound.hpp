@@ -51,12 +51,12 @@ class MexTransform3d;
 
 		/** SINGLETON IMPLEMENTATION **/
 		static void initialise( const SndMixerParameters& params, PriorityLevel p );
-		static ALSound& instance( void );
+		static ALSound& instance();
 		static void listDevices(const ALCchar*);
 
 		void shutdown( );
 
-		void compact( void );
+		void compact();
 
 		bool listenerPosition(const MexVec3& newval);
 		MexPoint3d listenerPosition() const;
@@ -73,16 +73,16 @@ class MexTransform3d;
 		void commitDeferredSettings();
 
 	protected:
-		IDirectSound* pIDirectSound( void ) const;
-		ALSound( void );
-		~ALSound( void );
+		IDirectSound* pIDirectSound() const;
+		ALSound();
+		~ALSound();
 
 	private:
 		/** revoked methods **/
 		ALSound( const ALSound& );
 		ALSound& operator =( const ALSound& );
 
-		static bool& isInitialised( void );
+		static bool& isInitialised();
 
 		static SOUNDCARD soundcard_;
 

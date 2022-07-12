@@ -35,7 +35,7 @@ public:
     MachLogTransportOperation( MachLogResourceCarrier*, MachLogResourceCarrier::StartWithPickUpOrPutDown );    
 	// PRE( pActor_->isNormalResourceCarrier() );	
 	
-    ~MachLogTransportOperation( void );
+    ~MachLogTransportOperation();
 
 	PER_MEMBER_PERSISTENT_VIRTUAL( MachLogTransportOperation );
 	PER_FRIEND_READ_WRITE( MachLogTransportOperation );

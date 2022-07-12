@@ -19,8 +19,8 @@ class Class12
 // Canonical form revoked
 {
 public:
-    Class12( void );
-    ~Class12( void );
+    Class12();
+    ~Class12();
 
     PER_MEMBER_PERSISTENT_DEFAULT( Class12 );
     PER_FRIEND_READ_WRITE( Class12 );

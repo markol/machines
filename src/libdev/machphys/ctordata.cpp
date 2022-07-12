@@ -19,7 +19,7 @@ MachPhysConstructorData::~MachPhysConstructorData()
 
 }
 
-MachPhys::SizeUnits MachPhysConstructorData::capacity( void ) const
+MachPhys::SizeUnits MachPhysConstructorData::capacity() const
 {
 	return capacity_;
 }
@@ -29,7 +29,7 @@ void MachPhysConstructorData::capacity( const MachPhys::SizeUnits& newCapacity)
 	capacity_ = newCapacity;
 }
 
-MachPhys::BuildingMaterialUnits MachPhysConstructorData::constructionRate( void ) const
+MachPhys::BuildingMaterialUnits MachPhysConstructorData::constructionRate() const
 {
 	return constructionRate_;
 }

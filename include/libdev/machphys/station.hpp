@@ -31,7 +31,7 @@ public:
     MachPhysStation( const MachPhysStation& );
     //  Copy and transform the station
     MachPhysStation( const MachPhysStation&, const MexTransform3d& );
-    ~MachPhysStation( void );
+    ~MachPhysStation();
 
     MachPhysStation& operator =( const MachPhysStation& );
 

@@ -1473,7 +1473,7 @@ size_t  MachPhysLevels::nHardwareIndices( MachPhys::ConstructionType type ) cons
 }
 
 
-size_t  MachPhysLevels::nSoftwareIndices( void ) const
+size_t  MachPhysLevels::nSoftwareIndices() const
 {
     size_t result = 0;
 

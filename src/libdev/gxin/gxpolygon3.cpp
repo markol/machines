@@ -74,7 +74,7 @@ void GXPolygon3::CLASS_INVARIANT
 	INVARIANT( !(allVerticesColored() && noVertexColored()));
 }
 
-bool GXPolygon3::allVerticesColored( void )	const
+bool GXPolygon3::allVerticesColored()	const
 {
   bool result=false;
 

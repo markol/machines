@@ -107,7 +107,7 @@ bool MachPhysNukeWave::intersectsLine( const MexLine3d&, MATHEX_SCALAR*, Accurac
 }
 
 // static
-const MachPhysNukeWave::MaterialsPtr& MachPhysNukeWave::materialsPtr( void )
+const MachPhysNukeWave::MaterialsPtr& MachPhysNukeWave::materialsPtr()
 {
     static MachPhysNukeWave::MaterialsPtr materialsPtr;
     static bool once = true;

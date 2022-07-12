@@ -40,7 +40,7 @@ public:
         W4dEntity* pParent, const W4dTransform3d& localTransform );
 
     //dtor
-    ~W4dGenericComposite( void );
+    ~W4dGenericComposite();
 
     //Inherited from W4dEntity
     virtual bool intersectsLine( const MexLine3d& line, MATHEX_SCALAR* pDistance,

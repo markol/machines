@@ -22,8 +22,8 @@ class W4dEntity;
 class W4dLocalLightList
 {
 public:
-    W4dLocalLightList( void );
-    ~W4dLocalLightList( void );
+    W4dLocalLightList();
+    ~W4dLocalLightList();
 
 	void removeLight(W4dLight* pLightItem);
 	void addLight(W4dLight* pLightItem);

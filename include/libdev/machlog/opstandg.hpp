@@ -26,7 +26,7 @@ class MachLogStandGroundOperation
 public:
 
     MachLogStandGroundOperation( MachLogMachine* );
-    ~MachLogStandGroundOperation( void );
+    ~MachLogStandGroundOperation();
 
 	PER_MEMBER_PERSISTENT_VIRTUAL( MachLogStandGroundOperation );
 	PER_FRIEND_READ_WRITE( MachLogStandGroundOperation );

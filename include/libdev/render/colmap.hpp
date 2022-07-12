@@ -17,8 +17,8 @@
 class RenColourMap
 {
 public:
-    RenColourMap( void );
-    ~RenColourMap( void );
+    RenColourMap();
+    ~RenColourMap();
 
     void CLASS_INVARIANT;
 

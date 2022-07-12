@@ -29,7 +29,7 @@ public:
     SysFileEnumerator(  const SysPathName& directory, const SysPathName& fileSpecification );
 	// POST( isEmpty() );
 
-    ~SysFileEnumerator( void );
+    ~SysFileEnumerator();
 
 	typedef ctl_vector< SysFileData >   FileDatas;
 

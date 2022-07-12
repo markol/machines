@@ -69,13 +69,13 @@ void	DevTimer::time ( double newTime )
 	}
 }
 
-void    DevTimer::pause( void )
+void    DevTimer::pause()
 {
     offset_ = time();
     paused_ = true;
 }
 
-void    DevTimer::resume( void )
+void    DevTimer::resume()
 {
     if( paused_ )
     {
@@ -88,7 +88,7 @@ void    DevTimer::resume( void )
     }
 }
 
-bool    DevTimer::paused( void ) const
+bool    DevTimer::paused() const
 {
     return paused_;
 }

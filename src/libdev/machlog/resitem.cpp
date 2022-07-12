@@ -113,7 +113,7 @@ MachLogResearchItem::MachLogResearchItem( MachLog::ObjectType objectType,
 	}
 }
 
-MachLogResearchItem::~MachLogResearchItem( void )
+MachLogResearchItem::~MachLogResearchItem()
 {
 	_DELETE( pImpl_ );
 }

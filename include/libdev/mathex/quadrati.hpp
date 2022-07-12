@@ -33,8 +33,8 @@ private:
     MexQuadratic( const MexQuadratic& );
     MexQuadratic& operator =( const MexQuadratic& );
     bool operator ==( const MexQuadratic& );
-    MexQuadratic( void );
-    ~MexQuadratic( void );
+    MexQuadratic();
+    ~MexQuadratic();
 
 };
 

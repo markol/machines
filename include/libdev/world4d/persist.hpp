@@ -19,8 +19,8 @@ class W4dPersistence
 {
 public:
     //  Singleton class
-    static W4dPersistence& instance( void );
-    ~W4dPersistence( void );
+    static W4dPersistence& instance();
+    ~W4dPersistence();
 
     void CLASS_INVARIANT;
 
@@ -31,7 +31,7 @@ private:
     W4dPersistence& operator =( const W4dPersistence& );
     bool operator ==( const W4dPersistence& );
 
-    W4dPersistence( void );
+    W4dPersistence();
 };
 
 

@@ -20,7 +20,7 @@ public:
     //ctor. Defaults to no entrances, pickup points etc.
     //cost is the quantity of building material needed to fully build the construction
     MachPhysOreHolographData();
-    ~MachPhysOreHolographData( void );
+    ~MachPhysOreHolographData();
 
 
     void CLASS_INVARIANT;

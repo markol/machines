@@ -69,7 +69,7 @@ private:
    	MachLogResearchItem* stealNewResearchItem( MachPhys::Race otherRace, MachPhys::HardwareLabSubType hardwareLabSubType );
 	bool stealable( const MachLogResearchItem& researchItem, MachPhys::Race otherRace, MachPhys::HardwareLabSubType hardwareLabSubType);
 	
-	void executeTheft( void );
+	void executeTheft();
 	// PRE ( insideBuilding() );
 	// PRE (  insideWhichBuilding().objectType() == MachLog::HARDWARE_LAB );
 

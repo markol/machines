@@ -58,17 +58,17 @@ public:
 
     void setVector( MATHEX_SCALAR x, MATHEX_SCALAR y );
 
-    MATHEX_SCALAR x( void ) const;
-    MATHEX_SCALAR y( void ) const;
+    MATHEX_SCALAR x() const;
+    MATHEX_SCALAR y() const;
 
     //Modify the vector so that it becomes a unit vector
-    void makeUnitVector( void );
+    void makeUnitVector();
 
     //Returns scalar dot product this.rhs
     MATHEX_SCALAR dotProduct( const MexVec2& rhs ) const;
 
     //Returns vector normal to this.
-    MexVec2 normal( void ) const;
+    MexVec2 normal() const;
 
     //return angle in rotating from this to other
     MexRadians angleBetween( const MexVec2& other ) const;

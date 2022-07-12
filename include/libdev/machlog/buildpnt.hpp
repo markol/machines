@@ -25,8 +25,8 @@ class MachLogBuildPoint
 {
 public:
     MachLogBuildPoint( const MexPoint2d& position );
-	MachLogBuildPoint( void );		// to satisfy the requirements of ctl_vector - not intended for use
-    ~MachLogBuildPoint( void );
+	MachLogBuildPoint();		// to satisfy the requirements of ctl_vector - not intended for use
+    ~MachLogBuildPoint();
 
 	MexPoint2d position() const;
     bool isReserved() const;

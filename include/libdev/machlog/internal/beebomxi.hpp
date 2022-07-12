@@ -24,7 +24,7 @@ class MachLogBeeBombExplosionImpl
 {
 public:
     MachLogBeeBombExplosionImpl( const MachPhysWeaponData* const );
-    virtual ~MachLogBeeBombExplosionImpl( void );
+    virtual ~MachLogBeeBombExplosionImpl();
 
     void CLASS_INVARIANT;
 

@@ -34,8 +34,8 @@ public:
 private:
     friend ostream& operator <<( ostream& o, const MachLogMapper& t );
 
-    MachLogMapper( void );
-    ~MachLogMapper( void );
+    MachLogMapper();
+    ~MachLogMapper();
 
     MachLogMapper( const MachLogMapper& );
     MachLogMapper& operator =( const MachLogMapper& );

@@ -27,8 +27,8 @@ public:
 	enum{MAX_SOUNDS = 3};
 
     //  Singleton class
-    static MachGuiSoundManager& instance( void );
-    ~MachGuiSoundManager( void );
+    static MachGuiSoundManager& instance();
+    ~MachGuiSoundManager();
 
 	//Play the requested sound
 	//Return value as to whether the sound
@@ -60,7 +60,7 @@ private:
     MachGuiSoundManager( const MachGuiSoundManager& );
     MachGuiSoundManager& operator =( const MachGuiSoundManager& );
 
-    MachGuiSoundManager( void );
+    MachGuiSoundManager();
 };
 
 

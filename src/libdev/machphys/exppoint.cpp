@@ -7,7 +7,7 @@
 
 #include "machphys/cexpdata.hpp"
 
-MachPhysConstructionExplosionData::ExplosionPoint::ExplosionPoint( void )
+MachPhysConstructionExplosionData::ExplosionPoint::ExplosionPoint()
 {
     ASSERT_FAIL( "" );
 }
@@ -44,27 +44,27 @@ MachPhysConstructionExplosionData::ExplosionPoint::~ExplosionPoint()
 
 }
 
-const MexPoint3d& MachPhysConstructionExplosionData::ExplosionPoint::position( void ) const
+const MexPoint3d& MachPhysConstructionExplosionData::ExplosionPoint::position() const
 {
     return position_;
 }
 
-MATHEX_SCALAR MachPhysConstructionExplosionData::ExplosionPoint::maxFireballOffset( void ) const
+MATHEX_SCALAR MachPhysConstructionExplosionData::ExplosionPoint::maxFireballOffset() const
 {
     return maxFireballOffset_;
 }
 
-size_t MachPhysConstructionExplosionData::ExplosionPoint::minFireballs( void ) const
+size_t MachPhysConstructionExplosionData::ExplosionPoint::minFireballs() const
 {
     return minFireballs_;
 }
 
-size_t MachPhysConstructionExplosionData::ExplosionPoint::maxFireballs( void ) const
+size_t MachPhysConstructionExplosionData::ExplosionPoint::maxFireballs() const
 {
     return maxFireballs_;
 }
 
-MATHEX_SCALAR   MachPhysConstructionExplosionData::ExplosionPoint::minTimeFactor( void ) const
+MATHEX_SCALAR   MachPhysConstructionExplosionData::ExplosionPoint::minTimeFactor() const
 {
     MATHEX_SCALAR   result = minTimeFactor_;
 
@@ -74,7 +74,7 @@ MATHEX_SCALAR   MachPhysConstructionExplosionData::ExplosionPoint::minTimeFactor
     return result;
 }
 
-MATHEX_SCALAR   MachPhysConstructionExplosionData::ExplosionPoint::maxTimeFactor( void ) const
+MATHEX_SCALAR   MachPhysConstructionExplosionData::ExplosionPoint::maxTimeFactor() const
 {
     MATHEX_SCALAR   result = maxTimeFactor_;
 
@@ -84,12 +84,12 @@ MATHEX_SCALAR   MachPhysConstructionExplosionData::ExplosionPoint::maxTimeFactor
     return result;
 }
 
-MATHEX_SCALAR   MachPhysConstructionExplosionData::ExplosionPoint::size( void ) const
+MATHEX_SCALAR   MachPhysConstructionExplosionData::ExplosionPoint::size() const
 {
     return size_;
 }
 
-MATHEX_SCALAR   MachPhysConstructionExplosionData::ExplosionPoint::depthOffset( void ) const
+MATHEX_SCALAR   MachPhysConstructionExplosionData::ExplosionPoint::depthOffset() const
 {
     return depthOffset_;
 }

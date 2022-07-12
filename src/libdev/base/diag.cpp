@@ -16,7 +16,7 @@
 #include "ctl/private/ptrvalid.hpp"
 #include <cstring>
 
-Diag& Diag::instance( void )
+Diag& Diag::instance()
 {
     static  Diag    instance_;
 
@@ -111,118 +111,118 @@ const char*	Diag::getenv( const char* name )
     return ::getenv( name );
 }
 
-ostream& Diag::bobStream( void )
+ostream& Diag::bobStream()
 {
     return stream( DIAG_BOB );
 }
 
-ostream& Diag::halStream( void )
+ostream& Diag::halStream()
 {
     return stream( DIAG_HAL );
 }
 
-ostream& Diag::iainStream( void )
+ostream& Diag::iainStream()
 {
     return stream( DIAG_IAIN );
 }
 
-ostream& Diag::jerryStream( void )
+ostream& Diag::jerryStream()
 {
     return stream( DIAG_JERRY );
 }
 
-ostream& Diag::jonStream( void )
+ostream& Diag::jonStream()
 {
     return stream( DIAG_JON );
 }
 
-ostream& Diag::richardStream( void )
+ostream& Diag::richardStream()
 {
     return stream( DIAG_RICHARD );
 }
 
-ostream& Diag::yueaiStream( void )
+ostream& Diag::yueaiStream()
 {
     return stream( DIAG_YUEAI );
 }
 
-ostream& Diag::lionelStream( void )
+ostream& Diag::lionelStream()
 {
     return stream( DIAG_LIONEL );
 }
 
-ostream& Diag::ceriStream( void )
+ostream& Diag::ceriStream()
 {
     return stream( DIAG_CERI );
 }
 
-ostream& Diag::neilStream( void )
+ostream& Diag::neilStream()
 {
     return stream( DIAG_NEIL );
 }
 
-ostream& Diag::wayneStream( void )
+ostream& Diag::wayneStream()
 {
     return stream( DIAG_WAYNE );
 }
 
-ostream& Diag::miscStream( void )
+ostream& Diag::miscStream()
 {
     return stream( DIAG_MISC );
 }
 
-ostream& Diag::whereStream( void )
+ostream& Diag::whereStream()
 {
     return stream( DIAG_WHERE );
 }
 
-ostream& Diag::perReadStream( void )
+ostream& Diag::perReadStream()
 {
     return stream( DIAG_PER_READ );
 }
 
-ostream& Diag::perWriteStream( void )
+ostream& Diag::perWriteStream()
 {
     return stream( DIAG_PER_WRITE );
 }
 
-ostream& Diag::traceStream( void )
+ostream& Diag::traceStream()
 {
     return stream( DIAG_TRACE );
 }
 
-ostream& Diag::danielStream( void )
+ostream& Diag::danielStream()
 {
     return stream( DIAG_DANIEL );
 }
 
-ostream& Diag::motseqStream( void )
+ostream& Diag::motseqStream()
 {
     return stream( DIAG_MOTSEQ );
 }
 
-ostream& Diag::cs2pathStream( void )
+ostream& Diag::cs2pathStream()
 {
     return stream( DIAG_CS2PATH );
 }
 
-ostream& Diag::cs2vgraStream( void )
+ostream& Diag::cs2vgraStream()
 {
     return stream( DIAG_CS2VGRA );
 }
 
-ostream& Diag::observerStream( void )
+ostream& Diag::observerStream()
 {
     return stream( DIAG_OBSERVER );
 }
 
-ostream& Diag::pathProfileStream( void )
+ostream& Diag::pathProfileStream()
 {
     return stream( DIAG_PATH_PROFILE );
 }
 
 
-ostream& Diag::memoryStream( void )
+ostream& Diag::memoryStream()
 {
     //  The memory stream is a special case - we have to be careful about
     //  recursion since in the process of setting up the memory stream it
@@ -246,67 +246,67 @@ ostream& Diag::memoryStream( void )
     return result;
 }
 
-ostream& Diag::renderStream( void )
+ostream& Diag::renderStream()
 {
     return stream( DIAG_RENDER );
 }
 
-ostream& Diag::soundStream( void )
+ostream& Diag::soundStream()
 {
     return stream( DIAG_SOUND );
 }
 
-ostream& Diag::networkStream( void )
+ostream& Diag::networkStream()
 {
     return stream( DIAG_NETWORK );
 }
 
-ostream& Diag::recRecordStream( void )
+ostream& Diag::recRecordStream()
 {
     return stream( DIAG_REC_RECORD );
 }
 
-ostream& Diag::recPlaybackStream( void )
+ostream& Diag::recPlaybackStream()
 {
     return stream( DIAG_REC_PLAYBACK );
 }
 
-ostream& Diag::netAnalysisStream( void )
+ostream& Diag::netAnalysisStream()
 {
     return stream( DIAG_NET_ANALYSIS );
 }
 
-ostream& Diag::aStarStream( void )
+ostream& Diag::aStarStream()
 {
     return stream( DIAG_A_STAR );
 }
 
-ostream& Diag::linearTravelStream( void )
+ostream& Diag::linearTravelStream()
 {
     return stream( DIAG_LINEAR_TRAVEL );
 }
 
-ostream& Diag::planetSurfaceStream( void )
+ostream& Diag::planetSurfaceStream()
 {
     return stream( DIAG_PLANET_SURFACE );
 }
 
-ostream& Diag::physMotionStream( void )
+ostream& Diag::physMotionStream()
 {
     return stream( DIAG_PHYS_MOTION );
 }
 
-ostream& Diag::networkErrorsStream( void )
+ostream& Diag::networkErrorsStream()
 {
     return stream( DIAG_NETWORK_ERRORS );
 }
 
-ostream& Diag::mexGrid2dStream( void )
+ostream& Diag::mexGrid2dStream()
 {
     return stream( DIAG_MEX_GRID2D );
 }
 
-ostream& Diag::configSpaceStream( void )
+ostream& Diag::configSpaceStream()
 {
     return stream( DIAG_CONFIG_SPACE );
 }
@@ -316,7 +316,7 @@ void    Diag::invariantCheckingActive( bool flag )
     DiagInternal::checkInvariants_ = flag;
 }
 
-bool    Diag::invariantCheckingActive( void ) const
+bool    Diag::invariantCheckingActive() const
 {
     return DiagInternal::checkInvariants_;
 }

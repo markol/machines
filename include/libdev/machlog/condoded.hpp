@@ -33,7 +33,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogAllOtherRacesUnitsDeadCondition( void );
+    virtual ~MachLogAllOtherRacesUnitsDeadCondition();
 
     void CLASS_INVARIANT;
 

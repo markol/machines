@@ -22,7 +22,7 @@ class PerOstreamBuffer : public streambuf
 {
 public:
     PerOstreamBuffer( PerOstream* pFilter );
-    ~PerOstreamBuffer( void );
+    ~PerOstreamBuffer();
 
     virtual int     overflow( int c );
     virtual int     underflow();

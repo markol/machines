@@ -27,8 +27,8 @@ public:
 
 private:
     // Operation deliberately revoked
-    MachActorBitmaps( void );
-    ~MachActorBitmaps( void );
+    MachActorBitmaps();
+    ~MachActorBitmaps();
     MachActorBitmaps( const MachActorBitmaps& );
     MachActorBitmaps& operator =( const MachActorBitmaps& );
     bool operator ==( const MachActorBitmaps& );
@@ -36,21 +36,21 @@ private:
     //Type methods
     static const char* administratorName( MachPhys::AdministratorSubType subType );
     static const char* aggressorName( MachPhys::AggressorSubType subType );
-    static const char* geoLocatorName( void );
-    static const char* spyLocatorName( void );
+    static const char* geoLocatorName();
+    static const char* spyLocatorName();
     static const char* constructorName( MachPhys::ConstructorSubType subType );
     static const char* technicianName( MachPhys::TechnicianSubType subType );
-    static const char* resourceCarrierName( void );
-    static const char* apcName( void );
-    static const char* beaconName( void );
-    static const char* podName( void );
+    static const char* resourceCarrierName();
+    static const char* apcName();
+    static const char* beaconName();
+    static const char* podName();
     static const char* hwLabName( MachPhys::HardwareLabSubType subType );
-    static const char* swLabName( void );
-    static const char* smelterName( void );
+    static const char* swLabName();
+    static const char* smelterName();
     static const char* factoryName( MachPhys::FactorySubType subType );
     static const char* missileEmplacementName( MachPhys::MissileEmplacementSubType subType );
-    static const char* garrisonName( void );
-    static const char* mineName( void );
+    static const char* garrisonName();
+    static const char* mineName();
 	static void appendHwLevel( string&, int hwLevel );
 	static void appendWeaponCombo( string&,  MachPhys::WeaponCombo );
 };

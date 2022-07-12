@@ -72,7 +72,7 @@ SimManager::~SimManager()
 	_DELETE(pImpl_);
 }
 
-void SimManager::deleteAllProcesses( void )
+void SimManager::deleteAllProcesses()
 {
     CB_DEPIMPL(SimManagerImpl::SimProcesses, processes_);
 	CB_DEPIMPL(bool,processesAllDeleted_);
@@ -95,7 +95,7 @@ void SimManager::deleteAllProcesses( void )
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 
-void SimManager::cycle( void )
+void SimManager::cycle()
 {
     CB_DEPIMPL(bool, suspended_);
     CB_DEPIMPL(PhysAbsoluteTime, currentTime_);
@@ -198,7 +198,7 @@ bool SimManager::isSuspended()
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-void SimManager::updateCurrentTime( void )
+void SimManager::updateCurrentTime()
 {
     CB_DEPIMPL(PhysAbsoluteTime, currentTime_);
     CB_DEPIMPL(PhysAbsoluteTime, devStartTime_);
@@ -210,7 +210,7 @@ void SimManager::updateCurrentTime( void )
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 
-void SimManager::executeDiscreteEvents( void )
+void SimManager::executeDiscreteEvents()
 {
     CB_DEPIMPL(PhysAbsoluteTime, currentTime_);
     CB_DEPIMPL(SimEventDiary, diary_);
@@ -402,7 +402,7 @@ void SimManager::remove (SimDiscreteEventPtr eventPtr)
 	diary_.remove( eventPtr );
 }
 
-void SimManager::clearDiary( void )
+void SimManager::clearDiary()
 {
     CB_DEPIMPL(SimEventDiary, diary_);
 

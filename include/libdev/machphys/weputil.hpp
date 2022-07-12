@@ -47,8 +47,8 @@ public:
                                              MachPhysArtefact* pArtefact );
                                             
 private:
-    MachPhysWeaponUtility( void );
-    ~MachPhysWeaponUtility( void );
+    MachPhysWeaponUtility();
+    ~MachPhysWeaponUtility();
     MachPhysWeaponUtility( const MachPhysWeaponUtility& );
     MachPhysWeaponUtility& operator =( const MachPhysWeaponUtility& );
     bool operator ==( const MachPhysWeaponUtility& );

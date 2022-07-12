@@ -28,7 +28,7 @@ public:
         MachActor* pOwner,
         const MachPhysWeaponData& );
 
-    ~MachLogElectro( void );
+    ~MachLogElectro();
 
     void CLASS_INVARIANT;
 

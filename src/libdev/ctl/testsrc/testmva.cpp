@@ -28,7 +28,7 @@ TestMinMemoryVectorAssert::~TestMinMemoryVectorAssert()
 
 }
 
-void    TestMinMemoryVectorAssert::initialiseTestFunctions( void )
+void    TestMinMemoryVectorAssert::initialiseTestFunctions()
 {
     #define ADD_FUNCTION( fn )      \
         addTestFunction( #fn, fn );
@@ -64,7 +64,7 @@ void    TestMinMemoryVectorAssert::initialiseTestFunctions( void )
     ADD_FUNCTION( constFrontAndBack );
 }
 
-void    TestMinMemoryVectorAssert::initialiseVectors( void )
+void    TestMinMemoryVectorAssert::initialiseVectors()
 {
     size_t  size1;
     size_t  size2;
@@ -90,31 +90,31 @@ void    TestMinMemoryVectorAssert::initialiseVectors( void )
 }
 
 // static
-TestMinMemoryVectorAssert::TestMinMemoryVectorType& TestMinMemoryVectorAssert::vector1( void )
+TestMinMemoryVectorAssert::TestMinMemoryVectorType& TestMinMemoryVectorAssert::vector1()
 {
     return  instance().vector1_;
 }
 
 // static
-TestMinMemoryVectorAssert::TestMinMemoryVectorType& TestMinMemoryVectorAssert::vector2( void )
+TestMinMemoryVectorAssert::TestMinMemoryVectorType& TestMinMemoryVectorAssert::vector2()
 {
     return  instance().vector2_;
 }
 
 // static
-size_t  TestMinMemoryVectorAssert::vector1Size( void )
+size_t  TestMinMemoryVectorAssert::vector1Size()
 {
     return  instance().vector1_.size();
 }
 
 // static
-size_t  TestMinMemoryVectorAssert::vector2Size( void )
+size_t  TestMinMemoryVectorAssert::vector2Size()
 {
     return  instance().vector2_.size();
 }
 
 // static
-size_t  TestMinMemoryVectorAssert::randomIndex1( void )
+size_t  TestMinMemoryVectorAssert::randomIndex1()
 {
     //  The index will not necessarily be valid
 
@@ -129,7 +129,7 @@ size_t  TestMinMemoryVectorAssert::randomIndex1( void )
 }
 
 // static
-size_t  TestMinMemoryVectorAssert::randomIndex2( void )
+size_t  TestMinMemoryVectorAssert::randomIndex2()
 {
     //  The index will not necessarily be valid
 

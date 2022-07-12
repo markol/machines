@@ -23,7 +23,7 @@ class MachGuiDisplayText : public GuiDisplayable
 {
 public:
     MachGuiDisplayText( MachGuiStartupScreens* pParent, const Gui::Box& box, unsigned int stringId, const GuiBmpFont& );
-    ~MachGuiDisplayText( void );
+    ~MachGuiDisplayText();
 
     void CLASS_INVARIANT;
 

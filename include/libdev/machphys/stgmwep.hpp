@@ -30,7 +30,7 @@ public:
 	//public constructor
     MachPhysMetalStingWeapon( W4dEntity* pParent, const MexTransform3d& localTransform );
 
-    virtual ~MachPhysMetalStingWeapon( void );
+    virtual ~MachPhysMetalStingWeapon();
 
     static const MachPhysMetalStingWeapon& exemplar();
 
@@ -64,7 +64,7 @@ private:
     MachPhysMetalStingWeapon& operator =( const MachPhysMetalStingWeapon& );
 
 	//one tiem constructor
-    MachPhysMetalStingWeapon( void );
+    MachPhysMetalStingWeapon();
 
     friend class MachPhysWeaponPersistence;
 

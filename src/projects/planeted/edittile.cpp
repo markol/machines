@@ -130,7 +130,7 @@ void PedTileEditor::processInput( const DevButtonEvent& devButtonEvent )
 	}
 }
 
-void PedTileEditor::highlightTile( void )
+void PedTileEditor::highlightTile()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -378,7 +378,7 @@ void PedTileEditor::processCycleTile( CycleDir dir )
    	}
 }
 
-void PedTileEditor::displayTileCoords( void )
+void PedTileEditor::displayTileCoords()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -429,7 +429,7 @@ void PedTileEditor::displayTileCoords( void )
 }
 
 // virtual
-void PedTileEditor::displayKeyboardCtrls( void )
+void PedTileEditor::displayKeyboardCtrls()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -449,13 +449,13 @@ void PedTileEditor::displayKeyboardCtrls( void )
 }
 
 // virtual
-void PedTileEditor::preRenderUpdate( void )
+void PedTileEditor::preRenderUpdate()
 {
 	highlightTile();
 }
 
 // virtual
-void PedTileEditor::displayModeInfo( void )
+void PedTileEditor::displayModeInfo()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -468,7 +468,7 @@ void PedTileEditor::displayModeInfo( void )
 }
 
 // virtual
-void PedTileEditor::changingMode( void )
+void PedTileEditor::changingMode()
 {
 	PedEditorMode::changingMode();
 

@@ -21,11 +21,11 @@
 class BaseLogStreamBuffer : public std::streambuf
 {
 public:
-    BaseLogStreamBuffer( void );
-    virtual ~BaseLogStreamBuffer( void );
+    BaseLogStreamBuffer();
+    virtual ~BaseLogStreamBuffer();
 
-    virtual void    clear( void ) = 0;
-    virtual size_t  nCharactersInBuffer( void ) const = 0;
+    virtual void    clear() = 0;
+    virtual size_t  nCharactersInBuffer() const = 0;
 
 private:
     // Operation deliberately revoked

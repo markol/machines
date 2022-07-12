@@ -48,7 +48,7 @@ public:
     // virtual PhysTime update( MATHEX_SCALAR clearanceFromDisplayedVolume ) = 0;
 
     // Must be overriden to return the W4dDomain in which the actor currently resides
-	// virtual const W4dDomain& renDomain( void ) const = 0;
+	// virtual const W4dDomain& renDomain() const = 0;
 
 	///////////////////////////////
 

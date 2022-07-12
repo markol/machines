@@ -24,7 +24,7 @@ class MachLogIonBeamImpl
 {
 public:
     MachLogIonBeamImpl( const MachPhysWeaponData* const );
-    virtual ~MachLogIonBeamImpl( void );
+    virtual ~MachLogIonBeamImpl();
 
     void CLASS_INVARIANT;
 

@@ -20,8 +20,8 @@ class MachGuiControlPanelImpl
 // Canonical form revoked
 {
 public:
-    MachGuiControlPanelImpl( void );
-    ~MachGuiControlPanelImpl( void );
+    MachGuiControlPanelImpl();
+    ~MachGuiControlPanelImpl();
 
     void CLASS_INVARIANT;
 

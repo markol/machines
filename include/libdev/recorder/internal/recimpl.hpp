@@ -22,8 +22,8 @@ class RecRecorderImplementation
 {
 public:
     //  Singleton class
-    static RecRecorderImplementation& instance( void );
-    ~RecRecorderImplementation( void );
+    static RecRecorderImplementation& instance();
+    ~RecRecorderImplementation();
 
     enum RecordType
     {
@@ -106,7 +106,7 @@ private:
     RecRecorderImplementation( const RecRecorderImplementation& );
     RecRecorderImplementation& operator =( const RecRecorderImplementation& );
 
-    RecRecorderImplementation( void );
+    RecRecorderImplementation();
 
     static  void closeStreams();
     void checkOKToRecord();

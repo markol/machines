@@ -21,7 +21,7 @@ RenHierarchyBuilder::~RenHierarchyBuilder()
     _DELETE( pRoot_ );
 }
 
-const RenHierarchyBuilder::Node* RenHierarchyBuilder::pRoot( void ) const
+const RenHierarchyBuilder::Node* RenHierarchyBuilder::pRoot() const
 {
     return pRoot_;
 }

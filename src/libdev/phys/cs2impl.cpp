@@ -829,7 +829,7 @@ void PhysCS2dImpl::createVisibilityGraph
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void PhysCS2dImpl::deleteVisibilityGraph( void )
+void PhysCS2dImpl::deleteVisibilityGraph()
 {
     PRE( pVisibilityGraph_ != NULL )
 
@@ -902,7 +902,7 @@ bool PhysCS2dImpl::expansionSpaceIsOpen( MATHEX_SCALAR expansionDistance ) const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-bool PhysCS2dImpl::expansionSpaceIsOpen( void ) const
+bool PhysCS2dImpl::expansionSpaceIsOpen() const
 {
     return pExpansionSpace_ != NULL and
            pExpansionSpace_->nClients() != 0;

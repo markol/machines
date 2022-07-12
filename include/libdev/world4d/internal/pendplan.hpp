@@ -54,11 +54,11 @@ public:
       animId_( animId )
     {}
 
-    ~W4dPendingPlan( void )
+    ~W4dPendingPlan()
     {}
 
     //  These three functions required for STL compatability
-    W4dPendingPlan( void )
+    W4dPendingPlan()
     {  }
 
     bool operator ==( const W4dPendingPlan< PLAN_TYPE >& rhs )
@@ -76,17 +76,17 @@ public:
 
     //  Default assignment operator is adequate
 
-    PLAN_TYPE   planPtr( void ) const
+    PLAN_TYPE   planPtr() const
     {
         return planPtr_;
     }
 
-    PhysAbsoluteTime    startTime( void ) const
+    PhysAbsoluteTime    startTime() const
     {
         return startTime_;
     }
 
-    uint        nRepetitions( void ) const
+    uint        nRepetitions() const
     {
         return nRepetitions_;
     }

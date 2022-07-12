@@ -22,7 +22,7 @@ class SysMetaFileImpl
 public:
     SysMetaFileImpl( const SysPathName& filename );
     // ASSERT_FILE_EXISTS( filename );
-    ~SysMetaFileImpl( void );
+    ~SysMetaFileImpl();
 
     const SysPathName& filename() const;
     

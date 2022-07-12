@@ -54,7 +54,7 @@ public:
 
     void startSmokePlume( const PhysAbsoluteTime& startTime );
 
-    ~MachPhysSmokePlume( void );
+    ~MachPhysSmokePlume();
 
     //Inherited from W4dEntity
     virtual bool intersectsLine( const MexLine3d& line, MATHEX_SCALAR* pDistance,

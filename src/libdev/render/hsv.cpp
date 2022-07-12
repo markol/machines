@@ -85,7 +85,7 @@ RenColourHSV::~RenColourHSV()
 
 }
 
-RenColour RenColourHSV::rgb( void ) const
+RenColour RenColourHSV::rgb() const
 {
     double  red = 0;
     double  green = 0;
@@ -153,12 +153,12 @@ RenColour RenColourHSV::rgb( void ) const
     return result;
 }
 
-bool    RenColourHSV::hueDefined( void ) const
+bool    RenColourHSV::hueDefined() const
 {
     return hueDefined_;
 }
 
-double    RenColourHSV::hue( void ) const
+double    RenColourHSV::hue() const
 {
     PRE( hueDefined() );
 
@@ -169,12 +169,12 @@ double    RenColourHSV::hue( void ) const
     return result;
 }
 
-double    RenColourHSV::saturation( void ) const
+double    RenColourHSV::saturation() const
 {
     return saturation_;
 }
 
-double    RenColourHSV::value( void ) const
+double    RenColourHSV::value() const
 {
     return value_;
 }

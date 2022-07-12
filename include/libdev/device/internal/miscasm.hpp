@@ -10,15 +10,15 @@
 
 extern "C"
 {
-	void DevEnableVideo( void );
-	void DevDisableVideo( void );
+	void DevEnableVideo();
+	void DevDisableVideo();
 
 	void DevSetColour( uint8, uint8, uint8, uint8 );
 	void DevSetPalette256( uint8 * );
 
-	void DevWaitVBL( void );
-	void DevWaitDisplay( void );
-	void DevWaitRetrace( void );
+	void DevWaitVBL();
+	void DevWaitDisplay();
+	void DevWaitRetrace();
 }
 
 #endif // _MISCASM_HPP

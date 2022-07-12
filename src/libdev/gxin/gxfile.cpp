@@ -47,7 +47,7 @@ void GXFile::close()
   }
 }
 
-GXError GXFile::skipHeader( void )
+GXError GXFile::skipHeader()
 {
   GXError   err             = NO_ERROR_AGT;
   LabelAGT  type            = NOLABEL;
@@ -315,7 +315,7 @@ char GXFile::moveToNextGetChar(void)
    return currentLine_[++linePos_];
 }
 
-void GXFile::moveToNext( void )
+void GXFile::moveToNext()
 {
    PRE(isOpen());
    ++linePos_;

@@ -27,7 +27,7 @@ class MachGuiNavigatorBase : public GuiDisplayable
 {
 public:
     MachGuiNavigatorBase( GuiDisplayable *pParent, const Gui::Box& box, MachInGameScreen*  );
-    ~MachGuiNavigatorBase( void );
+    ~MachGuiNavigatorBase();
 
 	static size_t reqWidth();
 	static size_t reqHeight();
@@ -99,7 +99,7 @@ class MachGuiMachineNavigator : public MachGuiNavigatorBase, public MachLogNotif
 {
 public:
     MachGuiMachineNavigator( GuiDisplayable *pParent, const Gui::Coord& rel, MachInGameScreen* );
-    ~MachGuiMachineNavigator( void );
+    ~MachGuiMachineNavigator();
 
 	void update();
 	
@@ -198,7 +198,7 @@ class MachGuiConstructionNavigator : public MachGuiNavigatorBase, public MachLog
 public:
    
     MachGuiConstructionNavigator( GuiDisplayable *pParent, const Gui::Coord& rel, MachInGameScreen* );
-    ~MachGuiConstructionNavigator( void );
+    ~MachGuiConstructionNavigator();
 
 	void update();
 	

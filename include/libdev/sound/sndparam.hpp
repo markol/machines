@@ -39,7 +39,7 @@ public:
 						size_t noOfChannels);
 	~SndMixerParameters();
 
-	Snd::Polyphony polyphony( void ) const;
+	Snd::Polyphony polyphony() const;
 	SoundSystem soundSystem() const;
 	Snd::SampleRates sampleRate() const;
 	Snd::SoundQuality soundQuality() const;

@@ -3,11 +3,11 @@
 
 #include "device/timer.hpp"
 
-void    testvectorP2( void );
+void    testvectorP2();
 
-void	speedTest( void );
+void	speedTest();
 
-int main( void )
+int main()
 {
 	testvectorP2();
 
@@ -16,7 +16,7 @@ int main( void )
 	return 0;
 }
 
-void    testvectorP2( void )
+void    testvectorP2()
 {
     ctl_vector< int* > v1;
 	int	i1;
@@ -54,7 +54,7 @@ void    testvectorP2( void )
 
 const size_t	N_ITERATIONS = 1000000;
 
-void speedTest( void )
+void speedTest()
 {
 	ctl_vector< int* >	v1;
 	ctl_pvector< int >	v2( 5 );
@@ -104,7 +104,7 @@ void speedTest( void )
 	cout << "Time for vector_p " << t1.time() << endl;
 }
 
-void t1( void )
+void t1()
 {
 	ctl_vector< int* >	v1;
 
@@ -114,7 +114,7 @@ void t1( void )
 }
 
 
-void t2( void )
+void t2()
 {
 	ctl_pvector< int >	v1;
 
@@ -130,7 +130,7 @@ public:
     void push_back( int* pI ) { v1_.push_back( pI ); }
 };
 
-void t3( void )
+void t3()
 {
     TestClass   v1;
 
@@ -148,7 +148,7 @@ public:
     void push_back( int* pI ) { vector< void* >::push_back( pI ); }
 };
 
-void t4( void )
+void t4()
 {
     TestClass2< int >   v1;
 
@@ -159,7 +159,7 @@ void t4( void )
 }
 
 
-void t5( void )
+void t5()
 {
     vector< int* >   v1;
 

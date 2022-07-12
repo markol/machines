@@ -29,7 +29,7 @@ public:
 	enum FlowControl { DTR_FLOW, NO_FLOW, RTSDTR_FLOW, RTS_FLOW, XONXOFF_FLOW };
 
     NetComPortAddress( size_t portNumber, BaudRate = NET_BAUD_19200, StopBits = ONE_STOPBIT, Parity = NO_PARITY, FlowControl = RTS_FLOW );
-    ~NetComPortAddress( void );
+    ~NetComPortAddress();
 	
 	size_t		portNumber() const;
 	void		portNumber( size_t );

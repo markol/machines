@@ -31,7 +31,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogScenarioFlagCondition( void );
+    virtual ~MachLogScenarioFlagCondition();
 
     void CLASS_INVARIANT;
 

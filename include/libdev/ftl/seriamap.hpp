@@ -28,7 +28,7 @@ public:
     FtlSerialMap();
 
     //dtor.
-    virtual ~FtlSerialMap( void ) {};
+    virtual ~FtlSerialMap() {};
 
 	// inherited from FtlContainer...
 	virtual bool contains( const FtlSerialId& id ) const;

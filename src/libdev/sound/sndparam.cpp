@@ -71,7 +71,7 @@ SndMixerParameters::~SndMixerParameters()
 	_DELETE(pImpl_);
 }
 
-Snd::Polyphony SndMixerParameters::polyphony( void ) const
+Snd::Polyphony SndMixerParameters::polyphony() const
 {
 	CB_DEPIMPL(Snd::Polyphony, polyphony_);
 

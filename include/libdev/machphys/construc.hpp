@@ -41,7 +41,7 @@ public:
         size_t brainLevel,
         MachPhys::Race race );
 
-    virtual ~MachPhysConstructor( void );
+    virtual ~MachPhysConstructor();
 
     //Run a constructing animation, returning time it will take
     PhysRelativeTime construct();
@@ -56,7 +56,7 @@ public:
 
 	const MachPhysConstructorData& data() const;
 
-    MachPhys::ConstructorSubType subType( void ) const;
+    MachPhys::ConstructorSubType subType() const;
 
     void CLASS_INVARIANT;
 
@@ -93,7 +93,7 @@ private:
     static  MachPhysConstructor& part( MachPhys::ConstructorSubType subType, size_t bodyLevel );
     static  Factory& factory();
 
-    void createExplosionData( void );
+    void createExplosionData();
 
     SysPathName compositeFileName( MachPhys::ConstructorSubType subType, size_t bodyLevel ) const;
 

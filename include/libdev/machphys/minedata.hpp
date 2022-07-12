@@ -19,14 +19,14 @@ class MexTransform3d;
 class MachPhysMineData : public MachPhysConstructionData
 {
 public:
-    MachPhysMineData( void );
+    MachPhysMineData();
     MachPhysMineData(const MachPhysMineData&, const MexTransform3d& );
-    ~MachPhysMineData( void );
+    ~MachPhysMineData();
 	
 	//Get methods public
-	MachPhys::SizeUnits capacity( void ) const;
-	MachPhys::BuildingMaterialUnits extractionRate( void ) const;
-	MATHEX_SCALAR sqrMineralDistance( void ) const;
+	MachPhys::SizeUnits capacity() const;
+	MachPhys::BuildingMaterialUnits extractionRate() const;
+	MATHEX_SCALAR sqrMineralDistance() const;
 
     void CLASS_INVARIANT;
 

@@ -33,7 +33,7 @@ public:
     GuiSimpleScrollableList(GuiDisplayable* pParent, const Gui::Box&, 
     						size_t horizontalSpacing, size_t verticalSpacing,
     						size_t scrollInc );
-    ~GuiSimpleScrollableList( void );
+    ~GuiSimpleScrollableList();
 
     void CLASS_INVARIANT;
 

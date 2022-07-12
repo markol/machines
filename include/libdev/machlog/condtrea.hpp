@@ -29,7 +29,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogTechniciansTreacheriedCondition( void );
+    virtual ~MachLogTechniciansTreacheriedCondition();
 
     void CLASS_INVARIANT;
 

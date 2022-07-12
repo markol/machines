@@ -2,7 +2,7 @@
 #include "render/display.hpp"
 #include "ctl/list.ctp"
 
-dummyFunction3( void )
+dummyFunction3()
 {
 	ctl_list<RenDisplay::Mode> modes;
 }

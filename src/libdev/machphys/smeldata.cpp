@@ -26,7 +26,7 @@ MachPhysSmelterData::~MachPhysSmelterData()
 
 }
 
-MachPhys::SizeUnits MachPhysSmelterData::capacity( void ) const
+MachPhys::SizeUnits MachPhysSmelterData::capacity() const
 {
 	return capacity_;
 }
@@ -36,7 +36,7 @@ void MachPhysSmelterData::capacity( const MachPhys::SizeUnits& newCapacity )
 	capacity_ = newCapacity;
 }
 
-MATHEX_SCALAR MachPhysSmelterData::sqrMineDistance( void ) const
+MATHEX_SCALAR MachPhysSmelterData::sqrMineDistance() const
 {
 	return mineDistance_;
 }

@@ -25,7 +25,7 @@ public:
     MachGuiScrollableText( 	MachGuiStartupScreens* pParent, const Gui::Box&, uint stringId );
 	MachGuiScrollableText( 	MachGuiStartupScreens* pParent, const Gui::Box&, const string& text );
 	MachGuiScrollableText( 	MachGuiStartupScreens* pParent, const Gui::Box&, uint columnWidth, const string& text );
-	virtual ~MachGuiScrollableText( void );
+	virtual ~MachGuiScrollableText();
 
 	void setText( uint stringId );
 	void setText( const string& );

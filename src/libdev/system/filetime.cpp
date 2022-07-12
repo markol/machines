@@ -7,7 +7,7 @@
 
 #include "system/filetime.hpp"
 
-SysFileTime::SysFileTime( void )
+SysFileTime::SysFileTime()
 : hoursSet_( false ),
   minutesSet_( false ),
   secondsSet_( false )
@@ -71,41 +71,41 @@ SysFileTime::~SysFileTime()
 
 }
 
-bool    SysFileTime::timeSet( void ) const
+bool    SysFileTime::timeSet() const
 {
     return hoursSet() || minutesSet() || secondsSet();
 }
 
-bool    SysFileTime::hoursSet( void ) const
+bool    SysFileTime::hoursSet() const
 {
     return hoursSet_;
 }
 
-bool    SysFileTime::minutesSet( void ) const
+bool    SysFileTime::minutesSet() const
 {
     return minutesSet_;
 }
 
-bool    SysFileTime::secondsSet( void ) const
+bool    SysFileTime::secondsSet() const
 {
     return secondsSet_;
 }
 
-size_t  SysFileTime::hours( void ) const
+size_t  SysFileTime::hours() const
 {
     PRE( hoursSet() );
     
     return hours_;
 }
 
-size_t  SysFileTime::minutes( void ) const
+size_t  SysFileTime::minutes() const
 {
     PRE( minutesSet() );
     
     return minutes_;
 }
 
-size_t  SysFileTime::seconds( void ) const
+size_t  SysFileTime::seconds() const
 {
     PRE( secondsSet() );
     

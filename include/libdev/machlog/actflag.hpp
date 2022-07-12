@@ -25,7 +25,7 @@ class MachLogSetFlagAction : public SimAction
 {
 public:
 
-    virtual ~MachLogSetFlagAction( void );
+    virtual ~MachLogSetFlagAction();
 	static MachLogSetFlagAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 	static MachLogSetFlagAction* newDynamic( SimCondition*, bool enabled, const string& flag );
 

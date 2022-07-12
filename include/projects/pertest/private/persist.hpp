@@ -30,8 +30,8 @@ class Persistence
 {
 public:
     //  Singleton class
-    static Persistence& instance( void );
-    ~Persistence( void );
+    static Persistence& instance();
+    ~Persistence();
 
 	void    registerDerivedClass( const char* className, PerWriteFnPtr, PerReadFnPtr );
 
@@ -100,7 +100,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const Persistence& );
 
-    Persistence( void );
+    Persistence();
 
 	PersistenceImplementationWrite*	pImplementationWrite_;
 	PersistenceImplementationRead*	pImplementationRead_;
@@ -129,9 +129,9 @@ enum PerConstructor { PERSISTENCE_CONSTRUCTOR };
 //  all persistent classes.
 #define	PER_PRIVATE_MEMBER_PERSISTENT_STANDARD( className, VIRTUAL )   		\
     public:                                                         \
-    	static const char* perClassName( void );    	            \
-    	VIRTUAL const char* perMostDerivedClassName( void ) const;	\
-    	VIRTUAL char* perPDerivedClass( void ) const;               \
+    	static const char* perClassName();    	            \
+    	VIRTUAL const char* perMostDerivedClassName() const;	\
+    	VIRTUAL char* perPDerivedClass() const;               \
     public:
 
 #define	PER_PRIVATE_MEMBER_PERSISTENT( className, VIRTUAL )   		        \
@@ -174,12 +174,12 @@ enum PerConstructor { PERSISTENCE_CONSTRUCTOR };
 
 #define	PER_PRIVATE_MEMBER_PERSISTENT_STANDARD_INLINE( className, VIRTUAL )  \
     public:                                                         \
-    	static const char* perClassName( void )     	            \
+    	static const char* perClassName()     	            \
         	PER_PRIVATE_CLASSNAME_DEFINITION( className )		    \
     private:                                                        \
-    	VIRTUAL const char* perMostDerivedClassName( void ) const	\
+    	VIRTUAL const char* perMostDerivedClassName() const	\
             PER_PRIVATE_VIRTUAL_CLASSNAME_DEFINITION                \
-    	VIRTUAL char* perPDerivedClass( void ) const                \
+    	VIRTUAL char* perPDerivedClass() const                \
             PER_PRIVATE_P_DERIVED_CLASS_DEFINITION                  \
 	    friend PerOstream& operator <<( PerOstream& ostr, const className& ob )	\
     	PER_OBJECT_WRITE( className )									        \
@@ -319,11 +319,11 @@ enum PerConstructor { PERSISTENCE_CONSTRUCTOR };
     void perWrite ## className( PerOstream&, const void* pVoid );
 
 #define	PER_PRIVATE_DEFINE_PERSISTENT( className )					    \
-	char* className::perPDerivedClass( void ) const                \
+	char* className::perPDerivedClass() const                \
         { return _CONST_CAST( char*, _REINTERPRET_CAST( const char*, this ) ); }  \
-	const char* className::perClassName( void )     	                \
+	const char* className::perClassName()     	                \
     	{ return #className; }										    \
-	const char* className::perMostDerivedClassName( void ) const   \
+	const char* className::perMostDerivedClassName() const   \
         { return this->perClassName(); }                       \
     void perRead ## className( PerIstream& istr )               \
     {                                                           \
@@ -344,11 +344,11 @@ enum PerConstructor { PERSISTENCE_CONSTRUCTOR };
 	PER_POINTER_READ( className, className::perCreate() )
 
 #define	PER_PRIVATE_DEFINE_PERSISTENT_ABSTRACT( className )					    \
-	char* className::perPDerivedClass( void ) const                \
+	char* className::perPDerivedClass() const                \
         { return _STATIC_CAST( char*, this ); }                 \
-	const char* className::perClassName( void )     	                \
+	const char* className::perClassName()     	                \
     	{ return #className; }										    \
-	const char* className::perMostDerivedClassName( void ) const   \
+	const char* className::perMostDerivedClassName() const   \
         { return this->perClassName(); }                       \
 	PerOstream& operator <<( PerOstream& ostr, const className& ob )	\
 	PER_OBJECT_WRITE( className )									        \
@@ -427,11 +427,11 @@ enum PerConstructor { PERSISTENCE_CONSTRUCTOR };
 	PER_POINTER_WRITE( className ## STRING_T )	    				            \
 	PerIstream& operator >>( PerIstream& istr, className< LIST_T >*& pOb )	    \
 	PER_POINTER_READ( className ## STRING_T, (className< LIST_T >::perCreate())  )			\
-	char* className< LIST_T >::perPDerivedClass( void ) const                   \
+	char* className< LIST_T >::perPDerivedClass() const                   \
         { return _STATIC_CAST( char*, this ); }                                 \
-	const char* className< LIST_T >::perClassName( void ) const		            \
+	const char* className< LIST_T >::perClassName() const		            \
 	    { return #className ## #STRING_T; }							            \
-	const char* className< LIST_T >::perMostDerivedClassName( void ) const      \
+	const char* className< LIST_T >::perMostDerivedClassName() const      \
         { return this->perClassName(); }                                        \
     void perRead ## className ## STRING_T( PerIstream& istr )                   \
     {                                                                           \
@@ -452,11 +452,11 @@ enum PerConstructor { PERSISTENCE_CONSTRUCTOR };
 	PER_POINTER_WRITE( className ## STRING_T ) 					            \
 	PerIstream& operator >>( PerIstream& istr, className< LIST_T >*& pOb )	    \
 	PER_POINTER_READ_ABSTRACT( className< LIST_T > )						\
-	char* className< LIST_T >::perPDerivedClass( void ) const           \
+	char* className< LIST_T >::perPDerivedClass() const           \
         { return _STATIC_CAST( char*, this ); }                                 \
-	const char* className< LIST_T >::perClassName( void ) const		            \
+	const char* className< LIST_T >::perClassName() const		            \
 	    { return #className ## #STRING_T; }							            \
-	const char* className< LIST_T >::perMostDerivedClassName( void ) const  \
+	const char* className< LIST_T >::perMostDerivedClassName() const  \
         { return this->perClassName(); }
 
 /*
@@ -487,15 +487,15 @@ enum PerConstructor { PERSISTENCE_CONSTRUCTOR };
 	PER_POINTER_READ( className, (className< LIST_T >::perCreate()) )  \
     template< CLASS_LIST_T >                                                    \
     inline                                                                      \
-	char* className< LIST_T >::perPDerivedClass( void ) const           \
+	char* className< LIST_T >::perPDerivedClass() const           \
         { return _CONST_CAST( char*, _REINTERPRET_CAST( const char*, this ) ); }  \
     template< CLASS_LIST_T >                                                    \
     inline                                                                      \
-	const char* className< LIST_T >::perMostDerivedClassName( void ) const  \
+	const char* className< LIST_T >::perMostDerivedClassName() const  \
         {  return this->perClassName(); }                                        \
     template< CLASS_LIST_T >                                                    \
     inline                                                                      \
-	const char* className< LIST_T >::perClassName( void ) 		            \
+	const char* className< LIST_T >::perClassName() 		            \
 	    { return #className; }
 
 #define PER_PRIVATE_READ_WRITE_T( className, CLASS_LIST_T, LIST_T )     \

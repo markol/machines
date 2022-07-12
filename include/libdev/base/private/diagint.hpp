@@ -56,7 +56,7 @@ private:
 
     friend class Diag;
 
-    static  void    initialiseSignalHandler( void );
+    static  void    initialiseSignalHandler();
     static  void    signalHandler( int sig );
 };
 

@@ -24,7 +24,7 @@ class MachGuiPlayerScore
 {
 public:
     MachGuiPlayerScore( GuiDisplayable *pParent, const Gui::Coord& topLeft );
-    ~MachGuiPlayerScore( void );
+    ~MachGuiPlayerScore();
 
     void CLASS_INVARIANT;
 

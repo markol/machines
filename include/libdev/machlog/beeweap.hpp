@@ -21,7 +21,7 @@ class MachLogBeeBomber : public MachLogLinearWeapon
 {
 public:
     MachLogBeeBomber( MachLogRace*, MachPhysLinearWeapon*, MachActor* pOwner );
-    virtual ~MachLogBeeBomber( void );
+    virtual ~MachLogBeeBomber();
 
     void CLASS_INVARIANT;
 

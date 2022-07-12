@@ -36,8 +36,8 @@ private:
 
     friend ostream& operator <<( ostream& o, const MachGuiDbIScenario& t );
 
-    MachGuiDbIScenario( void );
-    ~MachGuiDbIScenario( void );
+    MachGuiDbIScenario();
+    ~MachGuiDbIScenario();
     MachGuiDbIScenario( const MachGuiDbIScenario& );
     MachGuiDbIScenario& operator =( const MachGuiDbIScenario& );
 

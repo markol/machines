@@ -103,12 +103,12 @@ MachPhysAPC::Factory& MachPhysAPC::factory()
 }
 
 //virtual
-const MachPhysMachineData& MachPhysAPC::machineData( void ) const
+const MachPhysMachineData& MachPhysAPC::machineData() const
 {
 	return data();
 }
 
-const MachPhysAPCData& MachPhysAPC::data( void ) const
+const MachPhysAPCData& MachPhysAPC::data() const
 {
 	return MachPhysData::instance().APCData( bodyLevel(), brainLevel() );
 }
@@ -133,7 +133,7 @@ ostream& operator <<( ostream& o, const MachPhysAPC& t )
     return o;
 }
 
-void MachPhysAPC::createExplosionData( void )
+void MachPhysAPC::createExplosionData()
 {
     MachPhysMachineExplosionData& dataForEdit = explosionDataForEdit();
 

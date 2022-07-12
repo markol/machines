@@ -22,8 +22,8 @@ class PedDomainEditor	: public PedPolygonEditor
 // Canonical form revoked
 {
 public:
-    PedDomainEditor( void );
-    ~PedDomainEditor( void );
+    PedDomainEditor();
+    ~PedDomainEditor();
 
     void CLASS_INVARIANT;
 
@@ -31,9 +31,9 @@ public:
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 
-	virtual void displayKeyboardCtrls( void );
+	virtual void displayKeyboardCtrls();
 
-	virtual void displayModeInfo( void );
+	virtual void displayModeInfo();
 
 	virtual void writeCspFile( std::ofstream& );
 
@@ -48,11 +48,11 @@ public:
 protected:
 	virtual PedPolygon* createPolygon( const PolyVerticies& verticies, MATHEX_SCALAR height, bool selected ) const;
 	virtual PedPolygon* createDefaultPolygon() const;
-	virtual void processVertexRight( void );
-	virtual void processVertexLeft( void );
-	virtual void processVertexUp( void );
-	virtual void processVertexDown( void );
-	virtual void updatePolygon( void );
+	virtual void processVertexRight();
+	virtual void processVertexLeft();
+	virtual void processVertexUp();
+	virtual void processVertexDown();
+	virtual void updatePolygon();
 
 private:
 	// Operations deliberately revoked

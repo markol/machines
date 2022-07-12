@@ -26,7 +26,7 @@ class MachLogProductionUnit
 public:
 	static const int UNCHECKED_PRIORITY;
 
-    MachLogProductionUnit( void );
+    MachLogProductionUnit();
     MachLogProductionUnit( MachLog::ObjectType, int subType, int hwLevel, int swLevel, int priority );
 	MachLogProductionUnit( const MachLogProductionUnit& );
 
@@ -65,7 +65,7 @@ public:
 	bool needRebuild() const;
 	void needRebuild( bool );
 
-    ~MachLogProductionUnit( void );
+    ~MachLogProductionUnit();
 
     void CLASS_INVARIANT;
 

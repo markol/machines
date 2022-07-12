@@ -22,8 +22,8 @@ class MachPhysSpyLocatorImpl
 // Canonical form revoked
 {
 public:
-    MachPhysSpyLocatorImpl( void );
-    ~MachPhysSpyLocatorImpl( void );
+    MachPhysSpyLocatorImpl();
+    ~MachPhysSpyLocatorImpl();
 
     void CLASS_INVARIANT;
 

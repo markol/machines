@@ -38,7 +38,7 @@ public:
       const RenMaterial& material,
       const MexVec3& spinAxis );
 
-    ~W4dSpinSprite( void );
+    ~W4dSpinSprite();
 
     //Will only be visible up to distance metres
     void visibleRange( MATHEX_SCALAR distance );

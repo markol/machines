@@ -36,7 +36,7 @@ private:
 
     MachPhysMachineDamage( MachPhysMachine* pTarget_ );
     MachPhysMachineDamage( const MachPhysMachineDamage& );
-    ~MachPhysMachineDamage( void );
+    ~MachPhysMachineDamage();
 
 	void damageLevel( const double& percent );
 	const double& damageLevel() const;

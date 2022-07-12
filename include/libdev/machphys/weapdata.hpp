@@ -19,9 +19,9 @@ class MexTransform3d;
 class MachPhysWeaponsLabData : public MachPhysConstructionData
 {
 public:
-    MachPhysWeaponsLabData( void );
+    MachPhysWeaponsLabData();
     MachPhysWeaponsLabData( const MachPhysWeaponsLabData&, const MexTransform3d& );
-    ~MachPhysWeaponsLabData( void );
+    ~MachPhysWeaponsLabData();
 
     void CLASS_INVARIANT;
 

@@ -40,7 +40,7 @@ public:
         MachPhys::Race race,
         MachPhys::WeaponCombo combo );
 
-    virtual ~MachPhysMissileEmplacement( void );
+    virtual ~MachPhysMissileEmplacement();
 
     ///////////////////////////////////////////////////////
     //Inherited from MachPhysCanAttack
@@ -66,7 +66,7 @@ public:
 	virtual const MachPhysConstructionData& constructionData() const;
 	const MachPhysMissileEmplacementData& data() const;
 
-    MachPhys::MissileEmplacementSubType subType( void ) const;
+    MachPhys::MissileEmplacementSubType subType() const;
 
     void CLASS_INVARIANT;
 

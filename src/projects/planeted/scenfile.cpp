@@ -111,7 +111,7 @@ void PedScenarioFile::write( std::ofstream& out )
 
 }
 
-PedScenarioFile::Constructions PedScenarioFile::constructions( void ) const
+PedScenarioFile::Constructions PedScenarioFile::constructions() const
 {
 	// Construct a list of all constructions from raceInfo lists
 	Constructions constructions;
@@ -145,7 +145,7 @@ void  PedScenarioFile::constructions( const Constructions& constructions )
  	}
 }
 
-PedScenarioFile::Machines PedScenarioFile::machines( void ) const
+PedScenarioFile::Machines PedScenarioFile::machines() const
 {
 	// Construct a list of all machines from raceInfo lists
 	Machines machines;
@@ -179,7 +179,7 @@ void  PedScenarioFile::machines( const Machines& machines )
  	}
 }
 
-PedScenarioFile::Artefacts PedScenarioFile::artefacts( void ) const
+PedScenarioFile::Artefacts PedScenarioFile::artefacts() const
 {
 	return artefacts_;
 }
@@ -201,7 +201,7 @@ PedScenarioFile::Camera& PedScenarioFile::camera( MachPhys::Race race )
 	return  (*raceIter).camera;
 }
 
-void PedScenarioFile::readAI( void )
+void PedScenarioFile::readAI()
 {
  	bool parsingAI = false;
 	bool done = false;
@@ -229,7 +229,7 @@ void PedScenarioFile::readAI( void )
 	}
 }
 
-void PedScenarioFile::readMineralSite( void )
+void PedScenarioFile::readMineralSite()
 {
  	bool parsingMineralsSites = false;
 	bool done = false;
@@ -257,7 +257,7 @@ void PedScenarioFile::readMineralSite( void )
 	}
 }
 
-void PedScenarioFile::readConditions( void )
+void PedScenarioFile::readConditions()
 {
  	bool parsing = false;
 	bool done = false;
@@ -285,7 +285,7 @@ void PedScenarioFile::readConditions( void )
 	}
 }
 
-void PedScenarioFile::readActions( void )
+void PedScenarioFile::readActions()
 {
  	bool parsing = false;
 	bool done = false;
@@ -393,7 +393,7 @@ void PedScenarioFile::readRace( RaceInfo& raceInfo, MachPhys::Race race )
 	}
 }
 
-void PedScenarioFile::readMiscellani( void )
+void PedScenarioFile::readMiscellani()
 {
 	uint raceNumber = nRaces();
 	_DELETE( pParser_ );
@@ -420,7 +420,7 @@ void PedScenarioFile::readMiscellani( void )
 	}
 }
 
-void PedScenarioFile::readArtefacts( void )
+void PedScenarioFile::readArtefacts()
 {
 	bool parsingKey = false;
 	bool parsingArtefacts = false;
@@ -1052,7 +1052,7 @@ int	PedScenarioFile::machineSubType( const string& type ) const
 
 }
 
-uint PedScenarioFile::nRaces( void )
+uint PedScenarioFile::nRaces()
 {
 	// Returns the number of races in scenario file
 	uint nRaces = 0;

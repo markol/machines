@@ -36,7 +36,7 @@ PedPolygon::~PedPolygon()
 
 }
 
-void PedPolygon::refreshMesh( void )
+void PedPolygon::refreshMesh()
 {
 	//Construct a material of the appropriate colour
     RenMaterial mat( selected_ ? RenColour::green() : getWireColour() );
@@ -125,7 +125,7 @@ void PedPolygon::hide( bool hide )
 		attachTo( hidden_ ? &MachLogPlanet::instance().hiddenRoot() : MachLogPlanet::instance().pWorld() );
 }
 
-bool PedPolygon::hidden( void )
+bool PedPolygon::hidden()
 {
 	return hidden_;
 }

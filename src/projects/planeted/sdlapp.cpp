@@ -163,7 +163,7 @@ static void usage()
 	SysWindowsAPI::messageBox( usageString.c_str(),"PlanetEditor v352.01" );
 }
 
-static  void    newHandler( void )
+static  void    newHandler()
 {
     WHERE_STREAM( "Aborting in new handler " << std::endl );
 	//FAST_DEBUG("Aborting in new handler" << std::endl );

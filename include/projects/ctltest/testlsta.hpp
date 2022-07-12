@@ -22,20 +22,20 @@
 class TestListAssert : public SoakTestAssert
 {
 public:
-    static TestListAssert& instance( void );
-    ~TestListAssert( void );
+    static TestListAssert& instance();
+    ~TestListAssert();
 
     typedef int                     TestType;
     typedef ctl_list< TestType >    TestListType;
 
-    static  TestListType& list1( void );
-    static  TestListType& list2( void );
+    static  TestListType& list1();
+    static  TestListType& list2();
 
-    static  size_t  list1Size( void );
-    static  size_t  list2Size( void );
+    static  size_t  list1Size();
+    static  size_t  list2Size();
 
-    static  size_t  randomIndex1( void );
-    static  size_t  randomIndex2( void );
+    static  size_t  randomIndex1();
+    static  size_t  randomIndex2();
 
     static  void frontAndBack();
     static  void constFrontAndBack();
@@ -49,15 +49,15 @@ private:
     // Operation deliberately revoked
     TestListAssert& operator =( const TestListAssert& );
 
-    TestListAssert( void );
+    TestListAssert();
 
-    void    initialiseTestFunctions( void );
-    void    initialiseLists( void );
+    void    initialiseTestFunctions();
+    void    initialiseLists();
 
     // Operation deliberately revoked
     bool operator ==( const TestListAssert& );
 
-    static  void    iteratorInvalidation( void );
+    static  void    iteratorInvalidation();
     static  TestListType::iterator    getValidRandomIterator( TestListType& list, size_t* pIndex );
     static  void invalidateIterator( const TestListType::iterator& i, TestListType& list );
     static  void dontInvalidateIterator( const TestListType::iterator& i, TestListType& list );

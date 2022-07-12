@@ -15,12 +15,12 @@
 
 #include "stdlib/string.hpp"
 
-void	testMap( void );
-void	testPair( void );
-void    testPtr( void );
+void	testMap();
+void	testPair();
+void    testPtr();
 void    testPtr2( int* );
-void    testPtr3( void );
-void    testPtr4( void );
+void    testPtr3();
+void    testPtr4();
 void    testMinMemVector();
 
 typedef string PerString;
@@ -62,7 +62,7 @@ int	main( int argc, char** argv )
 	return 0;
 }
 
-// void    test1( void )
+// void    test1()
 // {
 //     struct S
 //     {
@@ -80,7 +80,7 @@ int	main( int argc, char** argv )
 // }
 
 
- void    testPtr( void )
+ void    testPtr()
  {
      int* pI = _NEW( int );
 
@@ -111,7 +111,7 @@ int	main( int argc, char** argv )
      dPtr3 = dPtr2;
  }
 
- void testPtr3( void )
+ void testPtr3()
  {
      CtlCountedPtr< double >    dPtr1( NULL );
 
@@ -124,7 +124,7 @@ int	main( int argc, char** argv )
      dPtr2 = pD;
  }
 
- void testPtr4( void )
+ void testPtr4()
  {
      CtlCountedPtr< double >    dPtr1[ 10 ];
 

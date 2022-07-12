@@ -22,7 +22,7 @@ class MachGuiCtxHotKeys : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxHotKeys( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxHotKeys( void );
+    ~MachGuiCtxHotKeys();
 
     void CLASS_INVARIANT;
 

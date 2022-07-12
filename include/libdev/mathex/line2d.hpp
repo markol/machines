@@ -19,7 +19,7 @@ class MexLine2d
 {
 public:
 
-    MexLine2d( void );
+    MexLine2d();
 	MexLine2d( const MexPoint2d& v1, const MexPoint2d& v2 );
 	MexLine2d( const MexLine2d& );
 	~MexLine2d();

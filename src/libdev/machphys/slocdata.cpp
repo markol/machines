@@ -19,7 +19,7 @@ MachPhysSpyLocatorData::~MachPhysSpyLocatorData()
 
 }
 
-int MachPhysSpyLocatorData::mineCapacity( void ) const
+int MachPhysSpyLocatorData::mineCapacity() const
 {
 	return mineCapacity_;
 }
@@ -29,7 +29,7 @@ void MachPhysSpyLocatorData::mineCapacity( int newMineCapacity )
 	mineCapacity_ = newMineCapacity;
 }
 
-MachPhys::ResearchUnits MachPhysSpyLocatorData::downloadRate( void ) const
+MachPhys::ResearchUnits MachPhysSpyLocatorData::downloadRate() const
 {
 	return downloadRate_;
 }

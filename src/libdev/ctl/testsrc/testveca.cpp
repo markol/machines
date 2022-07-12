@@ -28,7 +28,7 @@ TestVectorAssert::~TestVectorAssert()
 
 }
 
-void    TestVectorAssert::initialiseTestFunctions( void )
+void    TestVectorAssert::initialiseTestFunctions()
 {
     #define ADD_FUNCTION( fn )      \
         addTestFunction( #fn, fn );
@@ -64,7 +64,7 @@ void    TestVectorAssert::initialiseTestFunctions( void )
     ADD_FUNCTION( constFrontAndBack );
 }
 
-void    TestVectorAssert::initialiseVectors( void )
+void    TestVectorAssert::initialiseVectors()
 {
     size_t  size1;
     size_t  size2;
@@ -90,31 +90,31 @@ void    TestVectorAssert::initialiseVectors( void )
 }
 
 // static
-TestVectorAssert::TestVectorType& TestVectorAssert::vector1( void )
+TestVectorAssert::TestVectorType& TestVectorAssert::vector1()
 {
     return  instance().vector1_;
 }
 
 // static
-TestVectorAssert::TestVectorType& TestVectorAssert::vector2( void )
+TestVectorAssert::TestVectorType& TestVectorAssert::vector2()
 {
     return  instance().vector2_;
 }
 
 // static
-size_t  TestVectorAssert::vector1Size( void )
+size_t  TestVectorAssert::vector1Size()
 {
     return  instance().vector1_.size();
 }
 
 // static
-size_t  TestVectorAssert::vector2Size( void )
+size_t  TestVectorAssert::vector2Size()
 {
     return  instance().vector2_.size();
 }
 
 // static
-size_t  TestVectorAssert::randomIndex1( void )
+size_t  TestVectorAssert::randomIndex1()
 {
     //  The index will not necessarily be valid
 
@@ -129,7 +129,7 @@ size_t  TestVectorAssert::randomIndex1( void )
 }
 
 // static
-size_t  TestVectorAssert::randomIndex2( void )
+size_t  TestVectorAssert::randomIndex2()
 {
     //  The index will not necessarily be valid
 

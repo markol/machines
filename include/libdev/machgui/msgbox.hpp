@@ -39,13 +39,13 @@ public:
 
     MachGuiMessageBox( MachGuiStartupScreens*, uint stringResId, MBType );
 	MachGuiMessageBox( MachGuiStartupScreens*, uint stringResId, MBType, const GuiStrings& );
-    ~MachGuiMessageBox( void );
+    ~MachGuiMessageBox();
 
 	
     void CLASS_INVARIANT;
 
 	void update();
-	const GuiBitmap& image( void ) const;
+	const GuiBitmap& image() const;
 
 protected:
 	virtual void doDisplay();

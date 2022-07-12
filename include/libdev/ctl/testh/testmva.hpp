@@ -28,20 +28,20 @@ class TestMinMemoryVector;
 class TestMinMemoryVectorAssert : public SoakTestAssert
 {
 public:
-    static TestMinMemoryVectorAssert& instance( void );
-    ~TestMinMemoryVectorAssert( void );
+    static TestMinMemoryVectorAssert& instance();
+    ~TestMinMemoryVectorAssert();
 
     typedef int                         TestType;
     typedef ctl_min_memory_vector< TestType >      TestMinMemoryVectorType;
 
-    static  TestMinMemoryVectorType& vector1( void );
-    static  TestMinMemoryVectorType& vector2( void );
+    static  TestMinMemoryVectorType& vector1();
+    static  TestMinMemoryVectorType& vector2();
 
-    static  size_t  vector1Size( void );
-    static  size_t  vector2Size( void );
+    static  size_t  vector1Size();
+    static  size_t  vector2Size();
 
-    static  size_t  randomIndex1( void );
-    static  size_t  randomIndex2( void );
+    static  size_t  randomIndex1();
+    static  size_t  randomIndex2();
 
     static  void invalidateIterator( const TestMinMemoryVectorType::iterator& i, TestMinMemoryVectorType& vector );
     static  void invalidateIterator( const TestMinMemoryVectorType::const_iterator& i, TestMinMemoryVectorType& vector );
@@ -70,10 +70,10 @@ private:
     // Operation deliberately revoked
     TestMinMemoryVectorAssert& operator =( const TestMinMemoryVectorAssert& );
 
-    TestMinMemoryVectorAssert( void );
+    TestMinMemoryVectorAssert();
 
-    void    initialiseTestFunctions( void );
-    void    initialiseVectors( void );
+    void    initialiseTestFunctions();
+    void    initialiseVectors();
 
     // Operation deliberately revoked
     bool operator ==( const TestMinMemoryVectorAssert& );

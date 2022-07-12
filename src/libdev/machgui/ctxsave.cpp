@@ -60,7 +60,7 @@ public:
  		}
 	}
 
-    ~MachGuiSaveGameListBoxItem( void )
+    ~MachGuiSaveGameListBoxItem()
 	{}
 
 	static string displayText( MachGuiDbSavedGame& savedGame )

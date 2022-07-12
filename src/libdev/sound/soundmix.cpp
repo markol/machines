@@ -73,7 +73,7 @@ SndMixerImpl::~SndMixerImpl()
 
 // static
 //Is the sound system initialised
-bool& SndMixerImpl::isInitialised_( void )
+bool& SndMixerImpl::isInitialised_()
 {
 	static bool isInit_ = false;
 
@@ -111,7 +111,7 @@ void SndMixerImpl::hardwareMasterSampleVolume( Snd::Volume newVolume )
 
 // static
 //Is the sound system initialised
-bool SndMixer::isInitialised( void )
+bool SndMixer::isInitialised()
 {
 	return SndMixerImpl::isInitialised_();
 }
@@ -123,7 +123,7 @@ bool SndMixer::soundOn()
 	return soundOn;
 }
 
-SndMixer::SndMixer( void )
+SndMixer::SndMixer()
 {
 	//Construct in the correct order
 	SndWaveManager::instance();
@@ -173,7 +173,7 @@ void SndMixer::initialise( const SndMixerParameters& params )
 }
 
 // static
-SndMixer& SndMixer::instance( void )
+SndMixer& SndMixer::instance()
 {
 	//Check that the class is valid before we instantiate it
     PRE( SndMixer::isInitialised() );
@@ -199,7 +199,7 @@ Snd::RelativeTime SndMixer::SndSampleLength(const SndWaveformId& id)
 
 //////////////////////////////////////////////////
 
-SndMixer::~SndMixer( void )
+SndMixer::~SndMixer()
 {
 	CB_DEPIMPL(UtlBoundedIdGenerator*, pSoundIDGenerator_);
 
@@ -517,7 +517,7 @@ void SndMixer::unloadWaveform( const SndWaveformId& id )
 //////////////////////////////////////////////////
 
 //Update the state of each sample
-void SndMixer::update( void )
+void SndMixer::update()
 {
 	if(soundOn())
 	{

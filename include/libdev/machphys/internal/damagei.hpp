@@ -39,7 +39,7 @@ private:
     MachPhysEntityDamageImpl( W4dEntity* pTarget );
     MachPhysEntityDamageImpl( MachPhysConstruction* pTarget );
 
-    ~MachPhysEntityDamageImpl( void );
+    ~MachPhysEntityDamageImpl();
 
     void CLASS_INVARIANT;
 

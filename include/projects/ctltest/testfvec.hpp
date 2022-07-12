@@ -23,26 +23,26 @@ class TestFixedVector
 {
 public:
     //  Singleton class
-    static TestFixedVector& instance( void );
-    ~TestFixedVector( void );
+    static TestFixedVector& instance();
+    ~TestFixedVector();
 
     void CLASS_INVARIANT;
 
     friend ostream& operator <<( ostream& o, const TestFixedVector< VECTOR, ITERATOR >& t );
 
-    static void    operatorSquareBrackets( void );
-    static void    iteratorOperatorAddition( void );
-    static void    iteratorOperatorAddEquals( void );
-    static void    iteratorOperatorSubtraction( void );
-    static void    iteratorOperatorSubtractEquals( void );
-    static void    iteratorOperatorPlusPlusPrefix( void );
-    static void    iteratorOperatorPlusPlusPostfix( void );
-    static void    iteratorOperatorMinusMinusPrefix( void );
-    static void    iteratorOperatorMinusMinusPostfix( void );
-    static void    iteratorOperatorSquareBrackets( void );
-    static void    iteratorDereference( void );
-    static void    iteratorComparison( void );
-    static void    iteratorInvalidation( void );
+    static void    operatorSquareBrackets();
+    static void    iteratorOperatorAddition();
+    static void    iteratorOperatorAddEquals();
+    static void    iteratorOperatorSubtraction();
+    static void    iteratorOperatorSubtractEquals();
+    static void    iteratorOperatorPlusPlusPrefix();
+    static void    iteratorOperatorPlusPlusPostfix();
+    static void    iteratorOperatorMinusMinusPrefix();
+    static void    iteratorOperatorMinusMinusPostfix();
+    static void    iteratorOperatorSquareBrackets();
+    static void    iteratorDereference();
+    static void    iteratorComparison();
+    static void    iteratorInvalidation();
 
 private:
     // Operation deliberately revoked
@@ -54,10 +54,10 @@ private:
     // Operation deliberately revoked
     bool operator ==( const TestFixedVector& );
 
-    TestFixedVector( void );
+    TestFixedVector();
 
-    void    initialiseVectors( void );
-    void    initialiseTestFunctions( void );
+    void    initialiseVectors();
+    void    initialiseTestFunctions();
 
     typedef int                         TestType;
     typedef ctl_vector< TestType >      TestFixedVectorType;

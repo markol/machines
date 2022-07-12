@@ -37,8 +37,8 @@ private:
                         const PhysMotionPlan::TimesPtr& timesPtr,
                         const MexVec3& axis, const MexVec3& position );
 
-    PhysTimedAnglePlanImpl( void );
-    ~PhysTimedAnglePlanImpl( void );
+    PhysTimedAnglePlanImpl();
+    ~PhysTimedAnglePlanImpl();
 
     PhysTimedAnglePlanImpl( const PhysTimedAnglePlanImpl& );
     PhysTimedAnglePlanImpl& operator =( const PhysTimedAnglePlanImpl& );

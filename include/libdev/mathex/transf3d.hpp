@@ -36,7 +36,7 @@ typedef float MexFloatMatrix3d[4][4];
 class MexTransform3d
 {
 public:
-    MexTransform3d( void );
+    MexTransform3d();
 
     MexTransform3d( const MexTransform3d& );
     MexTransform3d( const MexQuaternion& );
@@ -87,7 +87,7 @@ public:
 
     //Get the translation component of the transform
     void position( MexPoint3d* pPos ) const;
-    MexPoint3d  position( void ) const;
+    MexPoint3d  position() const;
 
     //Modify the transform to include an additional rotation relative to
     //its transformed axis system.
@@ -103,8 +103,8 @@ public:
     //Get the rotation component of the transform
     void rotation( MexEulerAngles* pAngles) const;
     void rotation( MexQuaternion* pParams ) const;
-    MexEulerAngles  rotationAsEulerAngles( void ) const;
-    MexQuaternion   rotationAsQuaternion( void ) const;
+    MexEulerAngles  rotationAsEulerAngles() const;
+    MexQuaternion   rotationAsQuaternion() const;
 
     //this = this * t
     void transform( const MexTransform3d& t);
@@ -178,24 +178,24 @@ public:
     void getTransform( MexFloatMatrix3d m ) const;
 
     //Invert this
-	void	invert( void );
+	void	invert();
 
     //Return inverted this in t
 	void	invert( MexTransform3d* t ) const;
 
     //true iff zero translation and rotation
-    bool    isIdentity( void ) const;
+    bool    isIdentity() const;
 
     // Returns the transform's current unique key
-    const MexTransform3dKey& key( void ) const;
+    const MexTransform3dKey& key() const;
 
     void xBasis( MexVec3* ) const;
     void yBasis( MexVec3* ) const;
     void zBasis( MexVec3* ) const;
 
-    MexVec3 xBasis( void ) const;
-    MexVec3 yBasis( void ) const;
-    MexVec3 zBasis( void ) const;
+    MexVec3 xBasis() const;
+    MexVec3 yBasis() const;
+    MexVec3 zBasis() const;
 
     //////////////////////////////////////////////////////////////////////
 

@@ -33,7 +33,7 @@ public:
         size_t brainLevel,
         MachPhys::Race race );
 
-    virtual ~MachPhysSpyLocator( void );
+    virtual ~MachPhysSpyLocator();
 
     //Set/get locating mode
     void isLocating( bool doLocate );
@@ -79,7 +79,7 @@ private:
 
     MachPhysSpyLocator( W4dEntity* pParent, size_t bodyLevel );
 
-    void createExplosionData( void );
+    void createExplosionData();
 
     // Data members
     MachPhysSpyLocatorImpl* pImpl_;

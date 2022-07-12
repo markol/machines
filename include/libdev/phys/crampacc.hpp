@@ -24,7 +24,7 @@ class PhysCompressedRampAcceleration
 public:
     PhysCompressedRampAcceleration();
     PhysCompressedRampAcceleration( const PhysRampAcceleration& );
-    ~PhysCompressedRampAcceleration( void );
+    ~PhysCompressedRampAcceleration();
 
     void CLASS_INVARIANT;
 

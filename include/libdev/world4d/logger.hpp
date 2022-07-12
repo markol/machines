@@ -21,11 +21,11 @@ class W4dLogger
 {
 public:
     //  Singleton class
-    static W4dLogger& instance( void );
-    ~W4dLogger( void );
+    static W4dLogger& instance();
+    ~W4dLogger();
 
-    bool    logTextureData( void ) const;
-    std::ofstream& textureLogStream( void );
+    bool    logTextureData() const;
+    std::ofstream& textureLogStream();
 
     void CLASS_INVARIANT;
 
@@ -41,7 +41,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const W4dLogger& );
 
-    W4dLogger( void );
+    W4dLogger();
 
     std::ofstream renderLogStream_;
 };

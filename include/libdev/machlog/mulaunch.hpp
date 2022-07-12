@@ -23,7 +23,7 @@ class MachLogMultiLauncher : public MachLogLinearWeapon
 {
 public:
     MachLogMultiLauncher( MachLogRace*, MachPhysMultiLauncher*, MachActor* pOwner );
-    virtual ~MachLogMultiLauncher( void );
+    virtual ~MachLogMultiLauncher();
 
     void CLASS_INVARIANT;
 

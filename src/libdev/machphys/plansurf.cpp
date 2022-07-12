@@ -589,22 +589,22 @@ W4dDomain* MachPhysPlanetSurface::domainAt( const MexPoint3d& point ) const
     return pTile( point )->containingDomain();
 }
 
-MATHEX_SCALAR MachPhysPlanetSurface::xMin( void ) const
+MATHEX_SCALAR MachPhysPlanetSurface::xMin() const
 {
     return 0;
 }
 
-MATHEX_SCALAR MachPhysPlanetSurface::yMin( void ) const
+MATHEX_SCALAR MachPhysPlanetSurface::yMin() const
 {
     return 0;
 }
 
-MATHEX_SCALAR MachPhysPlanetSurface::xMax( void ) const
+MATHEX_SCALAR MachPhysPlanetSurface::xMax() const
 {
     return nTilesX_ * edgeLength_;
 }
 
-MATHEX_SCALAR MachPhysPlanetSurface::yMax( void ) const
+MATHEX_SCALAR MachPhysPlanetSurface::yMax() const
 {
     return nTilesY_ * edgeLength_;
 }
@@ -645,7 +645,7 @@ MATHEX_SCALAR MachPhysPlanetSurface::terrainHeight( MATHEX_SCALAR x, MATHEX_SCAL
     return answer;
 }
 
-void MachPhysPlanetSurface::makePortals( void )
+void MachPhysPlanetSurface::makePortals()
 {
     MATHEX_SCALAR maxHeight = 30000.0;
     MATHEX_SCALAR x;

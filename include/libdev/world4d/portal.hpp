@@ -25,7 +25,7 @@ class W4dDomain;
 class W4dPortal : public W4dEntity
 {
 public:
-    ~W4dPortal( void );
+    ~W4dPortal();
 
     void partner (W4dDomain* pNewPartner);
     // Changes the adjoining domain. Could be used for mobile domains which pass into new

@@ -30,7 +30,7 @@ public:
                           MachPhys::Race race, uint concentration, uint quantity );
 
     //dtor
-    ~MachPhysOreHolograph( void );
+    ~MachPhysOreHolograph();
 
     //Inherited from W4dEntity
     virtual bool intersectsLine( const MexLine3d& line, MATHEX_SCALAR* pDistance,

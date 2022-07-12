@@ -58,7 +58,7 @@ private:
     bool operator ==( const PhysGroundFlyControl& );
 
 	void setupDefaultKeyboardMapping();
-    void updateMotion( void );
+    void updateMotion();
 	void ctor();
 
 	// Data members...

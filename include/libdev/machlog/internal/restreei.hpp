@@ -20,8 +20,8 @@ class MachLogResearchTreeImpl
 // Canonical form revoked
 {
 public:
-    MachLogResearchTreeImpl( void );
-    ~MachLogResearchTreeImpl( void );
+    MachLogResearchTreeImpl();
+    ~MachLogResearchTreeImpl();
 
     void CLASS_INVARIANT;
 

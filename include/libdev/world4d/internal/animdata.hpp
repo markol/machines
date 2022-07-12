@@ -26,7 +26,7 @@ class W4dAnimationData
 {
 public:
     W4dAnimationData( const string& textureName, W4dLOD maxLod );
-    virtual ~W4dAnimationData( void );
+    virtual ~W4dAnimationData();
 
 	const string& name() const;
 	void name( const string& name);

@@ -139,7 +139,7 @@ W4dEntityImpl::W4dEntityImpl( const W4dEntityImpl& copyMe,
     TEST_INVARIANT;
 }
 
-W4dEntityImpl::W4dEntityImpl( void )
+W4dEntityImpl::W4dEntityImpl()
 : pParent_( NULL ),
   childList_( NULL ),
   meshes_(_NEW(Meshes)),

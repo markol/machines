@@ -16,7 +16,7 @@ MachLogBuildPoint::MachLogBuildPoint( const MexPoint2d& position )
     TEST_INVARIANT;
 }
 
-MachLogBuildPoint::MachLogBuildPoint( void )
+MachLogBuildPoint::MachLogBuildPoint()
 :	position_( MexPoint2d( 0,0 ) ),
 	reserved_( false )
 {

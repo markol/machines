@@ -194,7 +194,7 @@ void MachPhysConstruction::adornmentsVisible( bool visible )
 }
 
 
-double MachPhysConstruction::percentageComplete( void ) const
+double MachPhysConstruction::percentageComplete() const
 {
 	CB_DEPIMPL( double, percentageComplete_ );
 
@@ -515,13 +515,13 @@ void MachPhysConstruction::doPercentageComplete( double newPercentage )
 
 }
 
-size_t  MachPhysConstruction::level( void )
+size_t  MachPhysConstruction::level()
 {
 	CB_DEPIMPL( size_t, level_ );
     return level_;
 }
 
-size_t  MachPhysConstruction::level( void ) const
+size_t  MachPhysConstruction::level() const
 {
 	CB_DEPIMPL( size_t, level_ );
     return level_;
@@ -647,12 +647,12 @@ MachPhysEntrance* MachPhysConstruction::pEntrance( uint index ) const
 }
 
 // virtual
-PhysRelativeTime    MachPhysConstruction::destroy( void )
+PhysRelativeTime    MachPhysConstruction::destroy()
 {
     return doDestroy();
 }
 
-PhysRelativeTime    MachPhysConstruction::doDestroy( void )
+PhysRelativeTime    MachPhysConstruction::doDestroy()
 {
     adornmentsVisible( false );
 
@@ -671,13 +671,13 @@ PhysRelativeTime    MachPhysConstruction::doDestroy( void )
     return animationDuration;
 }
 
-bool    MachPhysConstruction::hasInterior( void ) const
+bool    MachPhysConstruction::hasInterior() const
 {
 	CB_DEPIMPL( W4dDomain*, pInteriorDomain_ );
     return pInteriorDomain_ != NULL;
 }
 
-W4dDomain* MachPhysConstruction::pInteriorDomain( void ) const
+W4dDomain* MachPhysConstruction::pInteriorDomain() const
 {
     PRE( hasInterior() );
 
@@ -690,7 +690,7 @@ W4dDomain* MachPhysConstruction::pInteriorDomain( void ) const
     return result;
 }
 
-void    MachPhysConstruction::setupEntrances( void )
+void    MachPhysConstruction::setupEntrances()
 {
 	CB_DEPIMPL( MachPhysConstructionData, constructionData_ );
 	CB_DEPIMPL( Entrances, entrances_ );

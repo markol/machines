@@ -23,23 +23,23 @@ class MexHierSphere3d : public MexHierShape3d
 // Canonical form revoked
 {
 public:
-    MexHierSphere3d( void );
+    MexHierSphere3d();
     MexHierSphere3d( const MexPoint3d& , MATHEX_SCALAR );
     MexHierSphere3d( const MexHierSphere3d& );
     const MexHierSphere3d& operator =( const MexHierSphere3d& );
-    virtual ~MexHierSphere3d( void );
+    virtual ~MexHierSphere3d();
 
     void CLASS_INVARIANT;
 
    static bool colinearPoints(const PointList& points);
    static bool coplanarPoints(const PointList& points);
 
-   virtual bool hasZeroVolume( void ) const { return ray_==0; }
+   virtual bool hasZeroVolume() const { return ray_==0; }
 
    // set/get
-   MATHEX_SCALAR ray( void ) const { return ray_; }
+   MATHEX_SCALAR ray() const { return ray_; }
    void ray( MATHEX_SCALAR newRay ) { ray_=newRay; }
-   const MexPoint3d& center( void ) const { return center_; }
+   const MexPoint3d& center() const { return center_; }
    void center( const MexPoint3d& newCenter ) { center_=newCenter; }
 
    virtual void transform( const MexTransform3d& transform );

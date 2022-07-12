@@ -26,8 +26,8 @@ class MachPhysCanAttackImpl
 // Canonical form revoked
 {
 public:
-    MachPhysCanAttackImpl( void );
-    ~MachPhysCanAttackImpl( void );
+    MachPhysCanAttackImpl();
+    ~MachPhysCanAttackImpl();
 
     void CLASS_INVARIANT;
 

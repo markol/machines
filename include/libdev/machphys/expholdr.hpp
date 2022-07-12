@@ -20,7 +20,7 @@ class MachPhysConstructionExplosionData;
 class MachPhysGenericExplosionData
 {
 public:
-    ~MachPhysGenericExplosionData( void );
+    ~MachPhysGenericExplosionData();
 	static const CtlConstCountedPtr< MachPhysConstructionExplosionData >& genericExplosion( size_t level );
 
     void CLASS_INVARIANT;
@@ -28,7 +28,7 @@ public:
     friend ostream& operator <<( ostream& o, const MachPhysGenericExplosionData& t );
 
 private:
-    MachPhysGenericExplosionData( void );
+    MachPhysGenericExplosionData();
     // Operation deliberately revoked
     MachPhysGenericExplosionData( const MachPhysGenericExplosionData& );
 

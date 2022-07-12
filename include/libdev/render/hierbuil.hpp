@@ -25,12 +25,12 @@ class RenIMeshID;
 class RenHierarchyBuilder
 {
 public:
-    RenHierarchyBuilder( void );
-    ~RenHierarchyBuilder( void );
+    RenHierarchyBuilder();
+    ~RenHierarchyBuilder();
 
     #include "render/node.hpp"
     
-    const Node*   pRoot( void ) const;
+    const Node*   pRoot() const;
     
     void CLASS_INVARIANT;
 

@@ -156,7 +156,7 @@ void    RenMeshInstance::materialMap( const RenMaterialMap& map )
     }
 }
 
-const MexAlignedBox3d& RenMeshInstance::boundingVolume( void ) const
+const MexAlignedBox3d& RenMeshInstance::boundingVolume() const
 {
     return pMesh_->boundingVolume();
 }

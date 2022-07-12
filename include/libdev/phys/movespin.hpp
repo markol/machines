@@ -29,7 +29,7 @@ public:
 						  MATHEX_SCALAR rotationSpeed,
                           const PhysRelativeTime& endTime);
 
-    ~PhysMoveSpinPlan( void );
+    ~PhysMoveSpinPlan();
 
     virtual void transform( const PhysRelativeTime& timeOffset, MexTransform3d* pResult) const;
 
@@ -41,7 +41,7 @@ public:
 private:
     friend ostream& operator <<( ostream& o, const PhysMoveSpinPlan& t );
 
-    PhysMoveSpinPlan( void );
+    PhysMoveSpinPlan();
     PhysMoveSpinPlan( const PhysMoveSpinPlan& );
     PhysMoveSpinPlan& operator =( const PhysMoveSpinPlan& );
 

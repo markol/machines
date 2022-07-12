@@ -23,7 +23,7 @@ class MachGuiControlPanel : public GuiDisplayable
 {
 public:
     MachGuiControlPanel( GuiDisplayable* pParent, const Gui::Box&, MachInGameScreen* );
-    ~MachGuiControlPanel( void );
+    ~MachGuiControlPanel();
 
     void CLASS_INVARIANT;
 

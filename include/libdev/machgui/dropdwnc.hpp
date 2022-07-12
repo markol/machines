@@ -32,7 +32,7 @@ public:
     MachGuiDropDownListBoxCreator( GuiDisplayable* pParent, MachGuiStartupScreens*, int width, const GuiStrings& availText );
 	MachGuiDropDownListBoxCreator( GuiDisplayable* pParent, MachGuiStartupScreens*, int width, const GuiStrings& availText, bool whiteFont );
     MachGuiDropDownListBoxCreator( GuiDisplayable* pParent, MachGuiStartupScreens*, const Gui::Coord& relCoord, int width, const GuiStrings& availText, bool whiteFont, bool border );
-    ~MachGuiDropDownListBoxCreator( void );
+    ~MachGuiDropDownListBoxCreator();
 
     void CLASS_INVARIANT;
 

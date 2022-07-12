@@ -28,7 +28,7 @@ public:
       std::istream& istr,
       PerIstreamReporter* pReporter );
 
-    ~PerIstreamImpl( void );
+    ~PerIstreamImpl();
 
     void logDataRead( size_t bytesRead );
 

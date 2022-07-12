@@ -23,7 +23,7 @@ class MachPhysConstructionExplosionData
 {
 public:
     MachPhysConstructionExplosionData( const PhysRelativeTime& duration );
-    ~MachPhysConstructionExplosionData( void );
+    ~MachPhysConstructionExplosionData();
 
     #include "machphys/private/exppoint.hpp"
 
@@ -31,9 +31,9 @@ public:
 
     typedef ctl_vector< ExplosionPoint >    ExplosionPoints;
     
-    const ExplosionPoints& explosionPoints( void ) const;
+    const ExplosionPoints& explosionPoints() const;
 
-    const PhysRelativeTime&    duration( void ) const;
+    const PhysRelativeTime&    duration() const;
         
     void CLASS_INVARIANT;
 

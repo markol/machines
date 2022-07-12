@@ -22,7 +22,7 @@ class MachLogSuperCharger : public MachLogWeapon
 {
 public:
     MachLogSuperCharger( MachLogRace*, MachPhysSuperCharger*, MachActor* pOwner );
-    virtual ~MachLogSuperCharger( void );
+    virtual ~MachLogSuperCharger();
 
     void CLASS_INVARIANT;
 

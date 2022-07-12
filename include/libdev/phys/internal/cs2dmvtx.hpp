@@ -23,17 +23,17 @@ class PhysCS2dDomainVertex
 {
 public:
     //ctor.
-    PhysCS2dDomainVertex( void ); //Default for ctl
+    PhysCS2dDomainVertex(); //Default for ctl
     PhysCS2dDomainVertex( const MexPoint2d& point, MATHEX_SCALAR clearance,
       PhysConfigSpace2d::ObstacleFlags flags,
       PhysConfigSpace2d::PortalId portalId = PhysConfigSpace2d::PortalId::invalidId() );
 
     //dtor.
-    ~PhysCS2dDomainVertex( void );
+    ~PhysCS2dDomainVertex();
 
     //Access
-    const PhysConfigSpace2d::PortalId& portalId( void ) const;
-    const MexPoint2d& point( void ) const;
+    const PhysConfigSpace2d::PortalId& portalId() const;
+    const MexPoint2d& point() const;
     MATHEX_SCALAR   clearance() const;
     PhysConfigSpace2d::ObstacleFlags    flags() const;
 

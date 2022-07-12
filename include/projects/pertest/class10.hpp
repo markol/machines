@@ -20,8 +20,8 @@ class Class10 : public Class9< int >
 // Canonical form revoked
 {
 public:
-    Class10( void );
-    virtual ~Class10( void );
+    Class10();
+    virtual ~Class10();
 
     void CLASS_INVARIANT;
 

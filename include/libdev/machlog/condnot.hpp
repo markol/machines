@@ -32,7 +32,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogNotCondition( void );
+    virtual ~MachLogNotCondition();
 
     void CLASS_INVARIANT;
 

@@ -24,10 +24,10 @@ class PersistenceObjectLog
 // Memberwise canonical
 {
 public:
-    PersistenceObjectLog( void );
+    PersistenceObjectLog();
     PersistenceObjectLog( const char* classname, const void* ptr );
 
-    ~PersistenceObjectLog( void );
+    ~PersistenceObjectLog();
 
     void CLASS_INVARIANT;
 

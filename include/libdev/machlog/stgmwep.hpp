@@ -21,7 +21,7 @@ class MachLogMetalStingWeapon : public MachLogLinearWeapon
 {
 public:
     MachLogMetalStingWeapon( MachLogRace*, MachPhysLinearWeapon*, MachActor* pOwner );
-    virtual ~MachLogMetalStingWeapon( void );
+    virtual ~MachLogMetalStingWeapon();
 
     void CLASS_INVARIANT;
 

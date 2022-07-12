@@ -28,8 +28,8 @@ class MachGuiInGameChatMessages
 {
 public:
     //  Singleton class
-    static MachGuiInGameChatMessages& instance( void );
-    ~MachGuiInGameChatMessages( void );
+    static MachGuiInGameChatMessages& instance();
+    ~MachGuiInGameChatMessages();
 
 	void initialise( MachGuiMessageBroker*, MachGuiStartupScreens* );
 
@@ -66,7 +66,7 @@ private:
     MachGuiInGameChatMessages( const MachGuiInGameChatMessages& );
     MachGuiInGameChatMessages& operator =( const MachGuiInGameChatMessages& );
 
-    MachGuiInGameChatMessages( void );
+    MachGuiInGameChatMessages();
 
 	// Data members...
 	MachGuiInGameChatMessagesImpl* pImpl_;

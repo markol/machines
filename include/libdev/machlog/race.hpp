@@ -23,7 +23,7 @@ class MachLogRace : public SimProcess
 {
 public:
     MachLogRace( const MachPhys::Race& race );
-    ~MachLogRace( void );
+    ~MachLogRace();
 
     const MachPhys::Race& race() const
     {

@@ -17,8 +17,8 @@
 class MachPhysTestTileBoundary
 {
 public:
-    MachPhysTestTileBoundary( void );
-    ~MachPhysTestTileBoundary( void );
+    MachPhysTestTileBoundary();
+    ~MachPhysTestTileBoundary();
 
     void CLASS_INVARIANT;
 

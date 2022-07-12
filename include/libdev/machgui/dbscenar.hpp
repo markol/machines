@@ -74,7 +74,7 @@ public:
     const string& loseFlic() const;
 
 	// get the maximum number of players that play a scenario
-	uint maxPlayers( void ) const;
+	uint maxPlayers() const;
     void CLASS_INVARIANT;
 
     //Number of races for which we need save a list of the surviving machines

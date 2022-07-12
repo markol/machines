@@ -37,7 +37,7 @@ public:
     MachLogPod( MachLogRace* pRace, uint level,
                     const MexPoint3d& location, const MexRadians& angle, MachPhys::WeaponCombo wc, UtlId );
 
-    ~MachLogPod( void );
+    ~MachLogPod();
 
     //Inherited from SimActor
     virtual PhysRelativeTime update( const PhysRelativeTime& maxCPUTime,

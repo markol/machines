@@ -21,7 +21,7 @@ class Class9
 {
 public:
     Class9( double d );
-    virtual ~Class9( void );
+    virtual ~Class9();
 
     X       x1_;
     double  d1_;
@@ -35,7 +35,7 @@ public:
     virtual void overrideMe() const = 0;
 
 private:
-    Class9( void );
+    Class9();
     Class9( const Class9< X >& );
     Class9< X >& operator =( const Class9< X >& );
 

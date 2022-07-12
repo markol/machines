@@ -22,7 +22,7 @@ class MachLogActions
 // Canonical form revoked
 {
 public:
-    ~MachLogActions( void );
+    ~MachLogActions();
 
     //Parse the ACTIONS section of a scenario file
     static void parseActionsSection( UtlLineTokeniser* pParser );
@@ -34,7 +34,7 @@ public:
 private:
     friend ostream& operator <<( ostream& o, const MachLogActions& t );
 
-    MachLogActions( void );
+    MachLogActions();
     MachLogActions( const MachLogActions& );
     MachLogActions& operator =( const MachLogActions& );
 

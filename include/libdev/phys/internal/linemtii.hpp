@@ -35,7 +35,7 @@ private:
     PhysLinearMotionPlanImpl( const MexTransform3d& startPosition,
                           const MexTransform3d& endPosition,
                           const PhysRelativeTime& endTime );
-    ~PhysLinearMotionPlanImpl( void );
+    ~PhysLinearMotionPlanImpl();
 
     PhysLinearMotionPlanImpl( const PhysLinearMotionPlanImpl& );
     PhysLinearMotionPlanImpl& operator =( const PhysLinearMotionPlanImpl& );

@@ -38,9 +38,9 @@ public:
 
     //ctor,dtor
     W4dCompositePlan( const string& name );
-    ~W4dCompositePlan( void );
+    ~W4dCompositePlan();
 
-    const   string& name( void ) const;
+    const   string& name() const;
 
     //Set the plan for the composite itself
     void compositePlan( const W4dEntityPlan& plan );
@@ -50,17 +50,17 @@ public:
     void linkPlan( W4dLinkId id, const W4dEntityPlan& plan );
 
     //Export the list of pairs of link id/link plan
-    const Entries& entries( void ) const;
+    const Entries& entries() const;
 
     //True iff the plan has a plan for the composite entity
-    bool hasCompositePlan( void ) const;
+    bool hasCompositePlan() const;
 
     //Export the plan for the composite entity
-    const W4dEntityPlan& compositePlan( void ) const;
+    const W4dEntityPlan& compositePlan() const;
     //PRE( hasCompositePlan() )
 
     //The finishing time of the plan
-    PhysRelativeTime finishTime( void ) const;
+    PhysRelativeTime finishTime() const;
 
     void CLASS_INVARIANT;
 

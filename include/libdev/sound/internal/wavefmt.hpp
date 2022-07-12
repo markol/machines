@@ -61,11 +61,11 @@
 		void sampleRateKHz( SampleRateKHz );
 		void bitsPerSample( BitsPerSample );
 
-		Channels channels( void ) const;
-		SampleRateHz sampleRateHz( void ) const;
-		SampleRateKHz sampleRateKHz( void ) const;
-		BitsPerSample bitsPerSample( void ) const;
-		int nBytesPerSec( void ) const;
+		Channels channels() const;
+		SampleRateHz sampleRateHz() const;
+		SampleRateKHz sampleRateKHz() const;
+		BitsPerSample bitsPerSample() const;
+		int nBytesPerSec() const;
 
 	    friend bool operator ==( const WaveFormat& a, const WaveFormat& b);
 		friend bool operator <( const WaveFormat& a, const WaveFormat& b);

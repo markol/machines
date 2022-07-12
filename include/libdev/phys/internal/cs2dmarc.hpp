@@ -23,14 +23,14 @@ class PhysCS2dDomainArc
 {
 public:
     //ctor
-    PhysCS2dDomainArc( void );
+    PhysCS2dDomainArc();
     PhysCS2dDomainArc( PhysConfigSpace2d::DomainId domainId );
 
     //dtor
-    ~PhysCS2dDomainArc( void );
+    ~PhysCS2dDomainArc();
 
     //Data access
-    const PhysConfigSpace2d::DomainId& domainId( void ) const;
+    const PhysConfigSpace2d::DomainId& domainId() const;
 
     friend bool operator== ( const PhysCS2dDomainArc& lhs, const PhysCS2dDomainArc& rhs );
     friend bool operator< ( const PhysCS2dDomainArc& lhs, const PhysCS2dDomainArc& rhs );

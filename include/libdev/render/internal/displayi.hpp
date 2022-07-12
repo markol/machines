@@ -28,7 +28,7 @@ class RenIDisplay
 // Canonical form revoked
 {
 public:
-    ~RenIDisplay( void );
+    ~RenIDisplay();
 
     void CLASS_INVARIANT;
 

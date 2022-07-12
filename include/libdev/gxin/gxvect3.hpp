@@ -18,8 +18,8 @@ class GXVect3
 // Canonical form revoked
 {
 public:
-    GXVect3( void );
-    ~GXVect3( void );
+    GXVect3();
+    ~GXVect3();
     GXVect3( const GXVect3& );
 	// POST(*this==copy);
     GXVect3& operator =( const GXVect3& );

@@ -27,13 +27,13 @@ public:
 	// not the text label to the right of it.
     MachGuiCheckBox( MachGuiStartupScreens*, GuiDisplayable* pParent, const Gui::Coord& boxTopLeft, const string& label, bool isChecked = false );
     MachGuiCheckBox( MachGuiStartupScreens*, GuiDisplayable* pParent, const Gui::Coord& boxTopLeft, uint idsLabel, bool isChecked = false );
-    ~MachGuiCheckBox( void );
+    ~MachGuiCheckBox();
 
 	// Check/uncheck box
 	void check( bool isChecked ) { isChecked_ = isChecked; }
 
 	// Determine if checked
-	bool checked( void ) const { return isChecked_; }
+	bool checked() const { return isChecked_; }
 
     void CLASS_INVARIANT;
 
@@ -41,7 +41,7 @@ public:
 	virtual void hasFocus( bool );
 
 protected:
-	virtual void doDisplay( void );
+	virtual void doDisplay();
 	virtual void doHandleMouseClickEvent( const GuiMouseEvent& );
 	virtual void doHandleMouseEnterEvent( const GuiMouseEvent& );
 	virtual void doHandleMouseExitEvent( const GuiMouseEvent& );

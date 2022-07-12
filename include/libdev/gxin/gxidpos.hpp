@@ -16,8 +16,8 @@ typedef unsigned long GXId;
 class GXIdPos {
 // Canonical form revoked
 public:
-    GXIdPos( void );
-    ~GXIdPos( void );
+    GXIdPos();
+    ~GXIdPos();
     GXIdPos( const GXIdPos& );
     GXIdPos& operator =( const GXIdPos& );
     friend bool operator ==(const GXIdPos&, const GXIdPos& );

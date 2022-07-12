@@ -37,9 +37,9 @@ public:
 
     bool operator ==( const MexEulerAngles& ) const;
 
-    const MexRadians&   azimuth( void ) const;
-    const MexRadians&   elevation( void ) const;
-    const MexRadians&   roll( void ) const;
+    const MexRadians&   azimuth() const;
+    const MexRadians&   elevation() const;
+    const MexRadians&   roll() const;
 
     void    azimuth( const MexRadians& );
     void    elevation( const MexRadians& );

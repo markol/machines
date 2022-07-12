@@ -15,7 +15,7 @@
 
 CTL_QUAD( Data, string, name, double, time, size_t, count, size_t, recursionCount );
 
-void	PerDummyFunction1( void )
+void	PerDummyFunction1()
 {
 	static	ctl_map< size_t, size_t, less< size_t > >	        dummy1;
 

@@ -62,8 +62,8 @@ public:
 	};	
 
     //  Singleton class
-    static MachLogMachineVoiceMailManager& instance( void );
-    ~MachLogMachineVoiceMailManager( void );
+    static MachLogMachineVoiceMailManager& instance();
+    ~MachLogMachineVoiceMailManager();
 	
 	//Post verbal mail onto queue
 	void postNewMail( MachLog::ObjectType, int subType, MachineVoiceMailEventID id, MachPhys::Race targetRace );
@@ -78,7 +78,7 @@ private:
 	
 	MachLogMachineVoiceMailManager( const MachLogMachineVoiceMailManager& );
     MachLogMachineVoiceMailManager& operator =( const MachLogMachineVoiceMailManager& );
-    MachLogMachineVoiceMailManager( void );
+    MachLogMachineVoiceMailManager();
 	
 	//-------------------------------
 	

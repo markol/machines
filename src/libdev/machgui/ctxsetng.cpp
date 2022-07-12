@@ -48,7 +48,7 @@ public:
 		pSettingsCtx_( pSettingsCtx )
 	{}
 
-    ~MachGuiMPMapSizeListBoxItem( void )
+    ~MachGuiMPMapSizeListBoxItem()
 	{}
 
 protected:
@@ -84,7 +84,7 @@ public:
 		pSettingsCtx_( pSettingsCtx )
 	{}
 
-    ~MachGuiMPTerrainTypeListBoxItem( void )
+    ~MachGuiMPTerrainTypeListBoxItem()
 	{}
 
 protected:
@@ -120,7 +120,7 @@ public:
 		pSettingsCtx_( pSettingsCtx )
 	{}
 
-    ~MachGuiMPScenarioListBoxItem( void )
+    ~MachGuiMPScenarioListBoxItem()
 	{}
 
 protected:

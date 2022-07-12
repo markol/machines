@@ -34,19 +34,19 @@ public:
         size_t brainLevel,
         MachPhys::Race race );
 
-    virtual ~MachPhysTechnician( void );
+    virtual ~MachPhysTechnician();
 
 	virtual const MachPhysMachineData& machineData() const;
 
 	const MachPhysTechnicianData& data() const;
 
-    MachPhys::TechnicianSubType subType( void ) const;
+    MachPhys::TechnicianSubType subType() const;
 
     void CLASS_INVARIANT;
 
     friend ostream& operator <<( ostream& o, const MachPhysTechnician& t );
 
-	PhysRelativeTime research( void );
+	PhysRelativeTime research();
 
     PER_MEMBER_PERSISTENT( MachPhysTechnician );
     PER_FRIEND_READ_WRITE( MachPhysTechnician );
@@ -77,7 +77,7 @@ private:
     static  MachPhysTechnician& part( MachPhys::TechnicianSubType subType, size_t bodyLevel );
     static  Factory& factory();
 
-	void createExplosionData( void );
+	void createExplosionData();
     SysPathName compositeFileName( MachPhys::TechnicianSubType subType, size_t bodyLevel ) const;
 
     //  This is the constructor that is used by the factory. It is the

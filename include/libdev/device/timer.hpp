@@ -16,7 +16,7 @@ public:
 	enum Direction	{ COUNT_UP,	COUNT_DOWN };
 
     DevTimer( Direction direction = COUNT_UP );
-    ~DevTimer( void );
+    ~DevTimer();
 
 	double	time () const;
     //  The "NoRecord" function is only suppied to allow library
@@ -26,10 +26,10 @@ public:
 	void	time ( double newTime );
 	void	timeNoRecord ( double newTime );
 
-	void    pause( void );
-	void    resume( void );
+	void    pause();
+	void    resume();
 
-    bool    paused( void ) const;
+    bool    paused() const;
     
 	Direction	direction () const;
 	void        direction ( Direction newDirection );

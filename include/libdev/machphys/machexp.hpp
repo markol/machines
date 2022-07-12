@@ -37,7 +37,7 @@ public:
         const MachPhysMachineExplosionData& data,
         const PhysAbsoluteTime& time );
 
-    ~MachPhysMachineExplosion( void );
+    ~MachPhysMachineExplosion();
 
     void CLASS_INVARIANT;
 
@@ -99,7 +99,7 @@ private:
         int upperLimit );
 
     friend  void MachPhysPlanetSurface::parseHeader( UtlLineTokeniser* pParser );
-    static  MexVec3& acceleration( void );
+    static  MexVec3& acceleration();
 };
 
 

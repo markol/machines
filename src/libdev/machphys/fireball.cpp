@@ -102,7 +102,7 @@ void MachPhysFireball::startFireball( const PhysRelativeTime& startTime )
 }
 
 // static
-MachPhysFireballType MachPhysFireball::randomFireball( void )
+MachPhysFireballType MachPhysFireball::randomFireball()
 {
     MachPhysFireballType    result = FIREBALL_1;
 
@@ -135,7 +135,7 @@ MachPhysFireballType MachPhysFireball::randomFireball( void )
 }
 
 // static
-void MachPhysFireball::preload( void )
+void MachPhysFireball::preload()
 {
     MachPhysFireballImpl::materialPlanPtr1();
     //materialPlanPtr2();

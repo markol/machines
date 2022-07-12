@@ -258,7 +258,7 @@ void    PersistenceImplementationWrite::registerDerivedClass( const char* classN
     writeFnMap_.insert( className, ptr );
 }
 
-void	PersistenceImplementationWrite::startWrite( void )
+void	PersistenceImplementationWrite::startWrite()
 {
 	if( outputCount_ == 0 )
 	{
@@ -272,7 +272,7 @@ void	PersistenceImplementationWrite::startWrite( void )
         indentStream_.indentString( "  ", outputCount_ );
 }
 
-void	PersistenceImplementationWrite::finishWrite( void )
+void	PersistenceImplementationWrite::finishWrite()
 {
 	PRE( outputCount_ != 0 );
 
@@ -307,7 +307,7 @@ void PersistenceImplementationWrite::writeAsRaw( bool raw )
     }
 }
 
-bool PersistenceImplementationWrite::writeAsRaw( void ) const
+bool PersistenceImplementationWrite::writeAsRaw() const
 {
     return writeAsRawCount_ > 0;
 }

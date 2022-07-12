@@ -29,12 +29,12 @@ class W4dManager
 {
 public:
     // Singleton class
-    static W4dManager& instance( void );
-    ~W4dManager( void );
+    static W4dManager& instance();
+    ~W4dManager();
 
     // Set/get the current simulation time
     void time( const PhysAbsoluteTime& newTime );
-    const PhysAbsoluteTime& time( void ) const;
+    const PhysAbsoluteTime& time() const;
 
     //set/get/clear the artificial time.
     //When set, time() returns the artificial time instead of actual current time.
@@ -53,19 +53,19 @@ public:
 	// Set sceneManager back to NULL.
 	void clearSceneManager();
 
-    W4dSceneManager* sceneManager( void ) const;
+    W4dSceneManager* sceneManager() const;
 	//PRE( pSceneManager != NULL );
 
     //True iff there is a current scene manager
-    bool hasSceneManager( void ) const;
+    bool hasSceneManager() const;
 
     // Perform any rendering required to maintain the frame rates of the
     // current scenes. Not all scenes will necessarily be rendered.
-    void render( void );
+    void render();
 
     //  Return the frame number. The frame number is incremented after
     //  each call to render
-    size_t  frameNumber( void ) const;
+    size_t  frameNumber() const;
     
 	// A number which a camera or scene manager can use to uniquely
 	// identify a render pass.
@@ -97,7 +97,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const W4dManager& );
 
-    W4dManager( void );
+    W4dManager();
 
     //data members
     PhysAbsoluteTime	currentTime_;	//Current simulation time

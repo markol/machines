@@ -31,7 +31,7 @@ public:
 private:
 
     MachPhysMissileImpl( size_t level );
-    ~MachPhysMissileImpl( void );
+    ~MachPhysMissileImpl();
 
     MachPhysMissileImpl( const MachPhysMissileImpl& );
     MachPhysMissileImpl& operator =( const MachPhysMissileImpl& );

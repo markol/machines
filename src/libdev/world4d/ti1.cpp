@@ -11,7 +11,7 @@
 
 class W4dEntity;
 
-W4dDummyFunction1( void )
+W4dDummyFunction1()
 {
      static ctl_vector<MexPoint3d> dummyPoints;
      ctl_vector< pair<W4dEntity*, MexTransform3d> > dummyStoredLinkPositions;

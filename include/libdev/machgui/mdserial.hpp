@@ -23,16 +23,16 @@ class MachGuiSerialNetworkMode : public MachGuiNetworkProtocolMode
 {
 public:
     MachGuiSerialNetworkMode( GuiDisplayable* , MachGuiStartupScreens* );
-    ~MachGuiSerialNetworkMode( void );
+    ~MachGuiSerialNetworkMode();
 
     void CLASS_INVARIANT;
 
-	virtual void setNetworkDetails( void );
+	virtual void setNetworkDetails();
 
 	virtual bool validNetworkDetails( bool isHost );
 
 protected:
-	virtual void readNetworkDetails( void );
+	virtual void readNetworkDetails();
 
 private:
     friend ostream& operator <<( ostream& o, const MachGuiSerialNetworkMode& t );

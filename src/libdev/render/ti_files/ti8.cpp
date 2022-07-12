@@ -9,7 +9,7 @@
 #include "ctl/mmvector.ctp"
 #include <d3d.h>
 
-dummyFunction8( void )
+dummyFunction8()
 {
 	static auto_ptr_array< D3DTLVERTEX > dummy1;
 	static ctl_min_memory_vector<D3DLVERTEX> vertices2;

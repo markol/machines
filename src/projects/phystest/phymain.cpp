@@ -16,7 +16,7 @@
 #include "mathex/point3d.hpp"
 #include "mathex/eulerang.hpp"
 
-//void    bobTest( void );
+//void    bobTest();
 
 static void rampAccelerationTest();
 static void rampAccelerationTest2();
@@ -33,7 +33,7 @@ static MexVec3 randomVec3( MexBasicRandom* pR );
 static MexPoint3d randomPoint3d( MexBasicRandom* pR );
 static MexTransform3d randomTransform3d( MexBasicRandom* pR );
 
-int main( void )
+int main()
 
 {
 	PhysTest	tester;

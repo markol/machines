@@ -43,7 +43,7 @@ public:
 //         const MachPhysAPC& copyMe,
 //         const W4dLink& faceplate );
 
-    virtual ~MachPhysAPC( void );
+    virtual ~MachPhysAPC();
 
 	virtual const MachPhysMachineData& machineData() const;
 
@@ -87,7 +87,7 @@ private:
     static  MachPhysAPC&    part( size_t bodyLevel );
     static  Factory& factory();
 
-    void createExplosionData( void );
+    void createExplosionData();
 };
 
 PER_DECLARE_PERSISTENT( MachPhysAPC );

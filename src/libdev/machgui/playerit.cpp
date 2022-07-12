@@ -49,7 +49,7 @@ MachGuiColourSelector::MachGuiColourSelector( 	MachGuiStartupScreens* pStartupSc
 	}
 }
 
-MachGuiColourSelector::~MachGuiColourSelector( void )
+MachGuiColourSelector::~MachGuiColourSelector()
 {}
 
 //static
@@ -220,7 +220,7 @@ MachGuiColourList::MachGuiColourList( MachGuiStartupScreens* pStartupScreens, Ma
 	_NEW( MachGuiColourSelector( pStartupScreens, this, Gui::Box(48,0,61,13), MachPhys::YELLOW, pPlayerInfo ) );
 }
 
-MachGuiColourList::~MachGuiColourList( void )
+MachGuiColourList::~MachGuiColourList()
 {}
 
 MachGuiPlayerListItem::MachGuiPlayerListItem(  	MachGuiStartupScreens* pStartupScreens,
@@ -253,7 +253,7 @@ MachGuiPlayerListItem::MachGuiPlayerListItem(  	MachGuiStartupScreens* pStartupS
 	pPlayerColour_ = _NEW( MachGuiPlayerColour( pStartupScreens, this, &playerInfo_ ) );
 }
 
-MachGuiPlayerListItem::~MachGuiPlayerListItem( void )
+MachGuiPlayerListItem::~MachGuiPlayerListItem()
 {}
 
 //static
@@ -493,7 +493,7 @@ MachGuiPlayerColour::MachGuiPlayerColour( MachGuiStartupScreens* pStartupScreens
 	pPlayerInfo_( pPlayerInfo )
 {}
 
-MachGuiPlayerColour::~MachGuiPlayerColour( void )
+MachGuiPlayerColour::~MachGuiPlayerColour()
 {}
 
 //static

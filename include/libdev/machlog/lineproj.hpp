@@ -49,7 +49,7 @@ public:
         const MachPhysWeaponData&,
 		DetectIntersections detectIntersections = DO_DETECT_INTERSECTIONS );
 
-    virtual ~MachLogLinearProjectile( void );
+    virtual ~MachLogLinearProjectile();
 
     // Override updates the logical machine's Ai process.
     // Clearance ignored for now.
@@ -93,8 +93,8 @@ protected:
         const MexPoint3d& globalEndPosition,
         MATHEX_SCALAR range );
 
-    MachPhysLinearProjectile& physLinearProjectile( void );
-    const MachPhysLinearProjectile& physLinearProjectile( void ) const;
+    MachPhysLinearProjectile& physLinearProjectile();
+    const MachPhysLinearProjectile& physLinearProjectile() const;
 
 	virtual void doBeDestroyed() = 0;
     

@@ -31,7 +31,7 @@ public:
 	enum DummySeed{ DUMMY_SEED = -1 };
 	
     MachLogWeapon( MachLogRace*, MachPhysWeapon*, MachActor* pOwner );
-    virtual ~MachLogWeapon( void );
+    virtual ~MachLogWeapon();
 
 	PhysRelativeTime fire( MachActor* pTarget, const MachLogFireData& fireData );
 	PhysRelativeTime fire( MachActor* pTarget );

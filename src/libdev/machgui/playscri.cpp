@@ -23,7 +23,7 @@ MachGuiPlayerScore::~MachGuiPlayerScore()
 }
 
 // virtual
-void MachGuiPlayerScore::update( void )
+void MachGuiPlayerScore::update()
 {
 	if( statDisplay_.redraw() )
 	{

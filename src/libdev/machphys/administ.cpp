@@ -72,7 +72,7 @@ MachPhysAdministrator::~MachPhysAdministrator()
 
 }
 
-MachPhys::AdministratorSubType MachPhysAdministrator::subType( void ) const
+MachPhys::AdministratorSubType MachPhysAdministrator::subType() const
 {
     return subType_;
 }
@@ -177,12 +177,12 @@ ostream& operator <<( ostream& o, const MachPhysAdministrator& t )
 }
 
 //virtual
-const MachPhysMachineData& MachPhysAdministrator::machineData( void ) const
+const MachPhysMachineData& MachPhysAdministrator::machineData() const
 {
 	return data();
 }
 
-const MachPhysAdministratorData& MachPhysAdministrator::data( void ) const
+const MachPhysAdministratorData& MachPhysAdministrator::data() const
 {
 	return MachPhysData::instance().administratorData( subType_, bodyLevel() , brainLevel() );
 }
@@ -201,7 +201,7 @@ const W4dComposite& MachPhysAdministrator::asComposite() const
 
 // should only be called by one time constructor
 // to overide default settings of MachPhysMachine::defaultExplosionData()
-void MachPhysAdministrator::createExplosionData( void )
+void MachPhysAdministrator::createExplosionData()
 {
 
     switch( subType() )

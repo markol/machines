@@ -81,7 +81,7 @@ MachLogExpandingBlast::MachLogExpandingBlast( MachLogRace* pRace,
 	}
 }
 
-MachLogExpandingBlast::~MachLogExpandingBlast( void )
+MachLogExpandingBlast::~MachLogExpandingBlast()
 {
 
 	CB_MachLogExpandingBlast_DEPIMPL();

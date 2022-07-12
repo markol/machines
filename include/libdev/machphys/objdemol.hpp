@@ -27,7 +27,7 @@ public:
 
 	void startDemolition( const PhysAbsoluteTime& startTime, const PhysRelativeTime& demolitionDuration, MATHEX_SCALAR ObjectToGenericRatio, MATHEX_SCALAR objectExpansion );
 
-    ~MachPhysObjDemolish( void );
+    ~MachPhysObjDemolish();
 
     static const MachPhysObjDemolish& exemplar( MachPhys::DemolitionType type );
 

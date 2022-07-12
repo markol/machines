@@ -36,7 +36,7 @@ public:
 
 
     //Return an exemplar multi-launcher - ensures the mesh is loaded
-    static const MachPhysLargeMissile& exemplar( void );
+    static const MachPhysLargeMissile& exemplar();
 
     //dtor.
     virtual ~MachPhysLargeMissile();
@@ -87,10 +87,10 @@ private:
     bool operator ==( const MachPhysLargeMissile& );
 
     //One-time ctor used to read the mesh (once per multi-launcher type)
-    MachPhysLargeMissile( void );
+    MachPhysLargeMissile();
 
     //The file path to the composite definition file
-    static const char* compositeFilePath( void );
+    static const char* compositeFilePath();
 
     friend class MachPhysWeaponPersistence;
 

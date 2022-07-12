@@ -31,16 +31,16 @@ class PedConstructionEditor	: public PedActorEditor
 {
 public:
     PedConstructionEditor( );
-    ~PedConstructionEditor( void );
+    ~PedConstructionEditor();
 
     void CLASS_INVARIANT;
 
 	virtual void processInput( const DevButtonEvent& );
 
-	virtual void displayKeyboardCtrls( void );
+	virtual void displayKeyboardCtrls();
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
-	virtual void displayModeInfo( void );
+	virtual void displayModeInfo();
 
 	virtual void readScnFile( PedScenarioFile& );
 
@@ -48,14 +48,14 @@ public:
 
 protected:
 
-	void initialiseActors( void );	void processRotation( bool clockwise );
-	virtual W4dEntity* currentActor( void );
+	void initialiseActors();	void processRotation( bool clockwise );
+	virtual W4dEntity* currentActor();
 	virtual void processCycle( PedActorEditor::CycleDir dir );
- 	virtual void processSelection( void );
- 	virtual void processDelete( void );
-	virtual void processRace( void );
+ 	virtual void processSelection();
+ 	virtual void processDelete();
+	virtual void processRace();
 	virtual void createEntity( W4dEntity&, const MexTransform3d& );
-	virtual void rotateAfterMove( void );
+	virtual void rotateAfterMove();
 	virtual void processHidden( bool hidden );
 	virtual void changeAllSolidities( W4dEntity::Solidity );
 

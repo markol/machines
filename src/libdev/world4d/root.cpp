@@ -23,7 +23,7 @@ W4dRoot::~W4dRoot()
     TEST_INVARIANT;
 }
 
-W4dSceneManager *W4dRoot::sceneManager( void )
+W4dSceneManager *W4dRoot::sceneManager()
 {
 	return sceneManager_;
 }

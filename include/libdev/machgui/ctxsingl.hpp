@@ -21,7 +21,7 @@ class MachGuiCtxSinglePlayer : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxSinglePlayer( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxSinglePlayer( void );
+    ~MachGuiCtxSinglePlayer();
 
     void CLASS_INVARIANT;
 

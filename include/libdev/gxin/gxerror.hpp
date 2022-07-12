@@ -44,8 +44,8 @@ typedef enum
 ** class GXError {                                                               **
 ** public:                                                                       **
 **  // Orthodox canonical form                                                   **
-**         GXError( void );                                                      **
-**         ~GXError( void );                                                     **
+**         GXError();                                                      **
+**         ~GXError();                                                     **
 **         GXError( const GXError& copy);                                        **
 **         GXError& operator=(const GXError& copy);                              **
 **         GXError& operator=(const GXErrorCode& err);                           **

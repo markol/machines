@@ -497,7 +497,7 @@ void PhysMotionControlledTransform::setOrientation( const MexTransform3d& trans 
 }
 
 // virtual
-MexTransform3d PhysMotionControlledTransform::globalTransform( void ) const
+MexTransform3d PhysMotionControlledTransform::globalTransform() const
 {
 	return *pMotionControlledTransform_;
 }
@@ -509,7 +509,7 @@ void PhysMotionControlledTransform::globalTransform( const MexTransform3d& trans
 }
 
 // virtual
-MexTransform3d PhysMotionControlledTransform::localTransform( void ) const
+MexTransform3d PhysMotionControlledTransform::localTransform() const
 {
 	return *pMotionControlledTransform_;
 }

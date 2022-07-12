@@ -45,14 +45,14 @@ public:
     //PRE( xMin < xMax and yMin < yMax )
 
     //dtor
-    ~MachPhysTileBoundary( void );
+    ~MachPhysTileBoundary();
 
     //Add another triangle with vertices
     void add( const MexPoint3d& v1, const MexPoint3d& v2, const MexPoint3d& v3 );
 
     //Must be called after adding all vertices as an integrity check,
     //before trying to use the data.
-    void doneBuilding( void );
+    void doneBuilding();
 
     //z coordinate of polygon at coords (x, y) over the tile
     MATHEX_SCALAR height( MATHEX_SCALAR x, MATHEX_SCALAR y ) const;

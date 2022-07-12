@@ -18,7 +18,7 @@
 class SysFileDate
 {
 public:
-    SysFileDate( void );
+    SysFileDate();
     //  POST( !dateSet() );
 
     SysFileDate( size_t year, size_t month, size_t dayOfMonth );
@@ -29,21 +29,21 @@ public:
 
     SysFileDate& operator =( const SysFileDate& );
 
-    ~SysFileDate( void );
+    ~SysFileDate();
 
-    bool    dateSet( void ) const;
+    bool    dateSet() const;
 
-    bool    yearSet( void ) const;
-    size_t  year( void ) const;
+    bool    yearSet() const;
+    size_t  year() const;
     //  PRE( yearSet() );
 
-    bool    monthSet( void ) const;
-    size_t  month( void ) const;
+    bool    monthSet() const;
+    size_t  month() const;
     //  PRE( monthSet() );
     //  POST( result >= 1 && result <= 12 )
 
-    bool    dayOfMonthSet( void ) const;
-    size_t  dayOfMonth( void ) const;
+    bool    dayOfMonthSet() const;
+    size_t  dayOfMonth() const;
     //  PRE( dayOfMonthSet() );
     //  POST( result >= 1 && result <= 31 )
 

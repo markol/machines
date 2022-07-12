@@ -89,7 +89,7 @@ void MachPhysDataParser::read( const SysPathName& pathname, MachPhysDataImplemen
     readParameterisedDataFile( pathname );
 }
 
-void MachPhysDataParser::initialiseDataStores( void )
+void MachPhysDataParser::initialiseDataStores()
 {
     MachPhysLevelIndexMap hardwareMap = MachPhysLevels::instance().hardwareLevelIndexMap( MachPhys::BOSS );
     MachPhysLevelIndexMap softwareMap = MachPhysLevels::instance().softwareLevelIndexMap( MachPhys::BOSS );

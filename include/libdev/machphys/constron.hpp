@@ -34,7 +34,7 @@ class MachPhysPod;
 class MachPhysConstruction : public W4dComposite
 {
 public:
-    virtual ~MachPhysConstruction( void );
+    virtual ~MachPhysConstruction();
 
     enum { N_BUILDING_LEVELS = 10 };
 
@@ -44,16 +44,16 @@ public:
 
     void    percentageComplete( double newPercentage );
     // PRE( newPercentage >= 0.0 and newPercentage <= 100.0 );
-    double  percentageComplete( void ) const;
+    double  percentageComplete() const;
     // POST( result >= 0.0 and result <= 100.0 );
 
-    virtual PhysRelativeTime    destroy( void );
+    virtual PhysRelativeTime    destroy();
 
 	//return the MachPhysData object for the building.
 	virtual const MachPhysConstructionData& constructionData() const = 0;
 
-    size_t  level( void );
-    size_t  level( void ) const;
+    size_t  level();
+    size_t  level() const;
 
     //Get/set working state
     void isWorking( bool doWork );
@@ -78,9 +78,9 @@ public:
 
     //  This is true iff the building was constructed using the constructor
     //  which specifies an interior composite.
-    bool    hasInterior( void ) const;
+    bool    hasInterior() const;
 
-    W4dDomain* pInteriorDomain( void ) const;
+    W4dDomain* pInteriorDomain() const;
     // PRE( hasInterior() );
     // POST( result != NULL );
 
@@ -175,7 +175,7 @@ protected:
 
     virtual void doWorking( bool isWorking );
 
-    PhysRelativeTime    doDestroy( void );
+    PhysRelativeTime    doDestroy();
 
     //  Derived classes use this when doing a persistent read to make sure the
     //  internal copy is correctly set up.
@@ -200,7 +200,7 @@ private:
     //PRE( index < nEntrances() );
 
     //  Setup the physical entrance data for this building
-    void    setupEntrances( void );
+    void    setupEntrances();
 
     //  The adornments are those parts of the object which are not visible
     //  while the object is being built but pop in to existance when it

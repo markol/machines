@@ -29,7 +29,7 @@ public:
 
     MachLogDeployAPCOperation( MachLogAPC* , const MexPoint3d& );
 
-    ~MachLogDeployAPCOperation( void );
+    ~MachLogDeployAPCOperation();
 
 	virtual	bool beNotified( W4dSubject* pSubject,
 	                         W4dSubject::NotificationEvent event, int clientData );

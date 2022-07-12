@@ -24,7 +24,7 @@ class PhysTestConfigSpace2d
 {
 public:
     PhysTestConfigSpace2d( ostream& out );
-    ~PhysTestConfigSpace2d( void );
+    ~PhysTestConfigSpace2d();
 
     //Add the test domains, checking results
     bool addDomains( PhysConfigSpace2d* pSpace );

@@ -72,7 +72,7 @@ public:
 	RenSurface createSharedSurface(const std::string& bitmapName, const AfxResourceLib&, const RenSurface& surf);
 
     //  Maintains a list of directories to search for any given texture
-    const PathNames&  searchList( void );
+    const PathNames&  searchList();
     void  searchList( const PathNames& newSearchList );
 
 	// When Alt-Tab is pressed, textures can get unloaded from a hardware

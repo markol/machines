@@ -142,7 +142,7 @@ void MachPhysDoublesidedFlame::startFlame(
 }
 
 // static
-const MachPhysDoublesidedFlame::MaterialsPtr&   MachPhysDoublesidedFlame::materialsPtr( void )
+const MachPhysDoublesidedFlame::MaterialsPtr&   MachPhysDoublesidedFlame::materialsPtr()
 {
     static MaterialsPtr materialsPtr;
     static bool once = true;

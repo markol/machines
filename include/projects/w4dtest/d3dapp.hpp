@@ -78,7 +78,7 @@ private:
 	bool readBackground(const SysPathName&, W4dEntity*, W4dEntity**, W4dEntity*, 
 						W4dEntity*, MATHEX_SCALAR*, MexDegrees*);
 
-    void bobTest( void );
+    void bobTest();
 
     void displayHelp();
         

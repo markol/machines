@@ -27,7 +27,7 @@ public:
     typedef size_t  W4dRootId;
 
     W4dRoot( W4dRootId id );
-    ~W4dRoot( void );
+    ~W4dRoot();
 
     void CLASS_INVARIANT;
 
@@ -40,7 +40,7 @@ public:
 	void adjustDomainCount(int);
 
 	// get/set the pointer to the scene manager
-	W4dSceneManager* sceneManager( void );
+	W4dSceneManager* sceneManager();
 	void sceneManager( W4dSceneManager* );
 
     //Inherited from W4dEntity

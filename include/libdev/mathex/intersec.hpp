@@ -37,8 +37,8 @@ public:
 
 private:
     //stateless
-    MexIntersections( void );
-    ~MexIntersections( void );
+    MexIntersections();
+    ~MexIntersections();
     MexIntersections( const MexIntersections& );
     MexIntersections& operator =( const MexIntersections& );
 

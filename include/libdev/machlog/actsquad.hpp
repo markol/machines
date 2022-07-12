@@ -27,7 +27,7 @@ class MachLogActivateSquadronsAction : public SimAction
 {
 public:
 
-    virtual ~MachLogActivateSquadronsAction( void );
+    virtual ~MachLogActivateSquadronsAction();
 	static MachLogActivateSquadronsAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 
     void CLASS_INVARIANT;

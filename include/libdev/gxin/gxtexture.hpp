@@ -22,8 +22,8 @@ class GXTexture
 // Canonical form revoked
 {
 public:
-    GXTexture( void );
-    ~GXTexture( void );
+    GXTexture();
+    ~GXTexture();
     GXTexture( const GXTexture& );
     GXTexture& operator =( const GXTexture& );
     friend bool operator ==( const GXTexture& , const GXTexture& );
@@ -31,13 +31,13 @@ public:
 
     void CLASS_INVARIANT;
 
-    const GXName& name( void ) const {
+    const GXName& name() const {
 	  return name_;
 	}
 	void name(const GXName& newName) {
 	  name_=newName;
 	}
-    const GXIdPos& id( void ) const {
+    const GXIdPos& id() const {
       return id_;
     }
     void id(const GXIdPos& newId) {

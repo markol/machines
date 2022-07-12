@@ -40,7 +40,7 @@ public:
                           const MachLogResearchItem& item );
 
     //dtor.
-    virtual ~MachBuildMachineIcon( void );
+    virtual ~MachBuildMachineIcon();
 
     void CLASS_INVARIANT;
 

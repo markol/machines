@@ -30,22 +30,22 @@ class PedEditorMode
 // Canonical form revoked
 {
 public:
-    PedEditorMode( void );
-    virtual ~PedEditorMode( void );
+    PedEditorMode();
+    virtual ~PedEditorMode();
 
     void CLASS_INVARIANT;
 
 	virtual void processInput( const DevButtonEvent& ) = 0;
 
-	virtual void changingMode( void ) = 0;
+	virtual void changingMode() = 0;
 
-	virtual void activateMode( void );
+	virtual void activateMode();
 
-	virtual void preRenderUpdate( void ) = 0;
+	virtual void preRenderUpdate() = 0;
 
-	virtual void displayKeyboardCtrls( void ) = 0;
+	virtual void displayKeyboardCtrls() = 0;
 
-	virtual void displayModeInfo( void ) = 0;
+	virtual void displayModeInfo() = 0;
 
 	virtual void readCspFile( const SysPathName& ) {};
 	// PRE( fileName.existsAsFile() );

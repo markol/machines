@@ -29,14 +29,14 @@ public:
     BaseAppendOstream( const char* fileName );
     //  PRE( fileName != NULL );
 
-    BaseAppendOstream( void );
+    BaseAppendOstream();
 
     //  Clear the file
-    void    clear( void );
+    void    clear();
 
     void    name( const char* fileName );
 
-    virtual ~BaseAppendOstream( void );
+    virtual ~BaseAppendOstream();
 
 private:
     // Operation deliberately revoked

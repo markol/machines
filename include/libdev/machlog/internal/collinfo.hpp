@@ -26,7 +26,7 @@ class MachLogCollisionInfo
 public:
     typedef PhysConfigSpace2d::ObjectId ObjectId;
 
-    MachLogCollisionInfo( void );
+    MachLogCollisionInfo();
     //  POST( not valid() );
     
     MachLogCollisionInfo(
@@ -43,7 +43,7 @@ public:
     //  POST( valid() );
     //  POST( not collisionTimeValid() );
 
-    ~MachLogCollisionInfo( void );
+    ~MachLogCollisionInfo();
 
     const MexPoint2d& collisionPoint() const;
     //  PRE( valid() );

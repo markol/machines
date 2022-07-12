@@ -2,7 +2,7 @@
 #include "ctl/vector.hpp"
 #include "ctl/vector.ctp"
 
-dummyFunction6( void )
+dummyFunction6()
 {
 	static RenIMatManager::Bodies dummyBodies;
 }

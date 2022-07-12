@@ -24,8 +24,8 @@ class TClass1
 // Canonical form revoked
 {
 public:
-    TClass1( void );
-    ~TClass1( void );
+    TClass1();
+    ~TClass1();
 
     T1  d1_;
     T2  d2_;

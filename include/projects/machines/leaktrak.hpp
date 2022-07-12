@@ -26,8 +26,8 @@ public:
 
 private:
     // Operations deliberately revoked
-    LeakTracker( void );
-    ~LeakTracker( void );
+    LeakTracker();
+    ~LeakTracker();
     LeakTracker( const LeakTracker& );
     LeakTracker& operator =( const LeakTracker& );
     bool operator ==( const LeakTracker& );

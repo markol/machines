@@ -56,7 +56,7 @@ MachGuiGeneralStatistics::~MachGuiGeneralStatistics()
 }
 
 // virtual
-void MachGuiGeneralStatistics::update( void )
+void MachGuiGeneralStatistics::update()
 {
 	if( statDisplay_.redraw() )
 	{
@@ -71,7 +71,7 @@ void MachGuiGeneralStatistics::setStatistics( int stat1, int stat2, int stat3, i
 }
 
 // virtual 
-void MachGuiGeneralStatistics::doDisplay( void )
+void MachGuiGeneralStatistics::doDisplay()
 {
 	const Gui::Boundary& boundary = absoluteBoundary();
 

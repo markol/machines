@@ -21,7 +21,7 @@ BaseAppendOstream::BaseAppendOstream( const char* fileName )
     this->rdbuf(&appendBuffer_);
 }
 
-BaseAppendOstream::BaseAppendOstream( void )
+BaseAppendOstream::BaseAppendOstream()
 : ostream( &dummyStreamBuf() )
 {
     //ostream& thisAsOStream = *this;
@@ -60,7 +60,7 @@ std::streambuf&  BaseAppendOstream::dummyStreamBuf()
     return str_;
 }
 
-void BaseAppendOstream::clear( void )
+void BaseAppendOstream::clear()
 {
     appendBuffer_.clear();
 }

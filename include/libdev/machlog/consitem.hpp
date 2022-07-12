@@ -26,7 +26,7 @@ public:
 							size_t hwLevel,
 							MachPhys::WeaponCombo wc = MachPhys::N_WEAPON_COMBOS );
 
-    ~MachLogConstructionItem( void );
+    ~MachLogConstructionItem();
 
 	const MachLog::ObjectType&			constructionType() const;
 	int									subType() const;

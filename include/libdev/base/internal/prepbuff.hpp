@@ -21,7 +21,7 @@ class DiagPrependBuffer : public std::streambuf
 {
 public:
     DiagPrependBuffer( DiagOstreamPrepend* pFilter );
-    ~DiagPrependBuffer( void );
+    ~DiagPrependBuffer();
 
     virtual int     overflow( int c );
     virtual int     underflow();

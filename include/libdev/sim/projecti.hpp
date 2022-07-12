@@ -21,7 +21,7 @@ class SimProjectile : public SimActor
 {
 public:
     SimProjectile( SimProcess* pProcess, W4dEntity* pPhysObject );
-    ~SimProjectile( void );
+    ~SimProjectile();
 
     void CLASS_INVARIANT;
 

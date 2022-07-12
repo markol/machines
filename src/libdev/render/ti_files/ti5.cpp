@@ -2,7 +2,7 @@
 #include "ctl/list.ctp"
 class RenILight;
 
-dummyFunction5( void )
+dummyFunction5()
 {
 	static ctl_list<RenILight*>	lights;
 }

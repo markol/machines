@@ -19,8 +19,8 @@ class MachPhysIMachineData
 // Canonical form revoked
 {
 public:
-    MachPhysIMachineData( void );
-    ~MachPhysIMachineData( void );
+    MachPhysIMachineData();
+    ~MachPhysIMachineData();
 
     MachPhys::LocomotionType    locomotionType() const;
     void locomotionType( MachPhys::LocomotionType );

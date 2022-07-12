@@ -28,7 +28,7 @@ class MachPhysJetRingPlan : public PhysMotionPlan
 {
 public:
     MachPhysJetRingPlan( W4dEntity* pEntity, const MexPoint3d& targetOffsetGlobal, const PhysRelativeTime& duration );
-    ~MachPhysJetRingPlan( void );
+    ~MachPhysJetRingPlan();
 
     virtual void transform( const PhysRelativeTime& timeOffset, MexTransform3d* pResult) const;
     //PRE( pResult != NULL )

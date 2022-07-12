@@ -23,7 +23,7 @@ public:
     MachGuiBuildProgressBar(GuiDisplayable * pParent,
     						const Gui::Coord& rel,
 							size_t width );
-    ~MachGuiBuildProgressBar( void );
+    ~MachGuiBuildProgressBar();
 
     void CLASS_INVARIANT;
 

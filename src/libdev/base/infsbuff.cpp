@@ -25,7 +25,7 @@ BaseInfiniteStreamBuffer::~BaseInfiniteStreamBuffer()
 }
 
 // virtual
-void    BaseInfiniteStreamBuffer::clear( void )
+void    BaseInfiniteStreamBuffer::clear()
 {
     setp( pBuffer_, pBuffer_ + bufferSize_ );
     nCharactersOutput_ = 0;
@@ -43,7 +43,7 @@ int BaseInfiniteStreamBuffer::overflow( int c )
 }
 
 // virtual
-int BaseInfiniteStreamBuffer::underflow( void )
+int BaseInfiniteStreamBuffer::underflow()
 {
 //    cout << "underflow" << endl;
     return EOF;
@@ -129,13 +129,13 @@ int        BaseInfiniteStreamBuffer::sync()
     return !EOF;
 }
 
-size_t  BaseInfiniteStreamBuffer::nCharactersInBuffer( void ) const
+size_t  BaseInfiniteStreamBuffer::nCharactersInBuffer() const
 {
     return pptr() - pbase();
 }
 
 // static
-size_t  BaseInfiniteStreamBuffer::bufferIncrement( void )
+size_t  BaseInfiniteStreamBuffer::bufferIncrement()
 {
     return 1000;
 }

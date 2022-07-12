@@ -52,14 +52,14 @@ pFormat_( NULL )
     POST( waveInfo_ );
 }
 
-SndWaveform::~SndWaveform( void )
+SndWaveform::~SndWaveform()
 {
     WaveCloseFile(waveInfo_);
 }
 
 ////////////////////////////////////////////////////////////
 
-WaveFormat* SndWaveform::format( void )
+WaveFormat* SndWaveform::format()
 {
 	if(!pFormat_)
 	{
@@ -73,7 +73,7 @@ WaveFormat* SndWaveform::format( void )
 	return pFormat_;
 }
 
-uint SndWaveform::dataSize( void )
+uint SndWaveform::dataSize()
 {
     //Ensure the size is cached
     if( dataSize_ == 0 )
@@ -179,7 +179,7 @@ uint SndWaveform::read( void* buf, uint from,
 
 ////////////////////////////////////////////////////////////
 
-const SysPathName& SndWaveform::pathname( void ) const
+const SysPathName& SndWaveform::pathname() const
 {
 	return id_.pathname();
 }

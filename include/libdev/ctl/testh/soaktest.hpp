@@ -22,9 +22,9 @@
 class SoakTestAssert
 {
 public:
-    virtual ~SoakTestAssert( void );
+    virtual ~SoakTestAssert();
 
-    void    runSoakTestAssert( void );
+    void    runSoakTestAssert();
 
     void CLASS_INVARIANT;
 
@@ -33,12 +33,12 @@ public:
     enum    ExpectedResult { SUCCEED, FAIL, NOT_SET };
 
     void    expectedResult( ExpectedResult result );
-    ExpectedResult    expectedResult( void ) const;
+    ExpectedResult    expectedResult() const;
 
 protected:
-    SoakTestAssert( void );
+    SoakTestAssert();
 
-    typedef void (*v_fn_v)( void );
+    typedef void (*v_fn_v)();
 
     void    addTestFunction( const std::string& name, v_fn_v fn );
 
@@ -55,9 +55,9 @@ private:
     ctl_vector< v_fn_v >    testFunctions_;
     ctl_vector< std::string >    testFunctionName_;
 
-    void    readCount( void );
-    void    writeCount( void );
-    void    updateFailureCount( void );
+    void    readCount();
+    void    writeCount();
+    void    updateFailureCount();
     void    createFile( const std::string& fileName );
     void    writeSucceedFailFiles( ExpectedResult expectedResult );
 

@@ -27,8 +27,8 @@ class PedMachineEditor : public PedActorEditor
 // Canonical form revoked
 {
 public:
-    PedMachineEditor( void );
-    ~PedMachineEditor( void );
+    PedMachineEditor();
+    ~PedMachineEditor();
 
 	void CLASS_INVARIANT;
 
@@ -36,16 +36,16 @@ public:
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 
-	virtual void displayModeInfo( void );
+	virtual void displayModeInfo();
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 
-	virtual void displayKeyboardCtrls( void );
+	virtual void displayKeyboardCtrls();
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 
-    //virtual void preRenderUpdate( void );
-//	virtual void displayModeInfo( void );
+    //virtual void preRenderUpdate();
+//	virtual void displayModeInfo();
 
 	virtual void readScnFile( PedScenarioFile& );
 
@@ -54,14 +54,14 @@ public:
 
 protected:
 
-	void initialiseActors( void );
-	virtual W4dEntity* currentActor( void );
+	void initialiseActors();
+	virtual W4dEntity* currentActor();
 	virtual void processCycle( PedActorEditor::CycleDir dir );
- 	virtual void processSelection( void );
- 	virtual void processDelete( void );
-	virtual void processRace( void );
+ 	virtual void processSelection();
+ 	virtual void processDelete();
+	virtual void processRace();
 	virtual void createEntity( W4dEntity&, const MexTransform3d& );
-	virtual void rotateAfterMove( void );
+	virtual void rotateAfterMove();
 	virtual void processHide( bool hidden );
 	virtual void changeAllSolidities( W4dEntity::Solidity );
 
@@ -113,7 +113,7 @@ private:
     PedMachineEditor& operator =( const PedMachineEditor& );
 
 //	void initialiseActors();
- 	void deleteMachines( void );
+ 	void deleteMachines();
 	MachPhys::MachineType machineType( const string& type );
 	int subType( const string& type );
 

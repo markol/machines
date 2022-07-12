@@ -28,7 +28,7 @@ public:
         size_t level,
         MachPhys::Race race );
 
-    virtual ~MachPhysWeaponsLab( void );
+    virtual ~MachPhysWeaponsLab();
 
 	//return MachPhysData object for this building
 	virtual const MachPhysConstructionData& constructionData() const;

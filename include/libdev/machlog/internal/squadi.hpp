@@ -21,7 +21,7 @@ class MachLogSquadronImpl
 {
 public:
     MachLogSquadronImpl( int squadronId );
-    ~MachLogSquadronImpl( void );
+    ~MachLogSquadronImpl();
 
     void CLASS_INVARIANT;
 	PER_MEMBER_PERSISTENT( MachLogSquadronImpl );

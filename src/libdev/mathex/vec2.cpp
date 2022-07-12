@@ -151,7 +151,7 @@ MexVec2::MexVec2( const MexPoint2d& p1, const MexPoint2d& p2 )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void MexVec2::makeUnitVector( void )
+void MexVec2::makeUnitVector()
 {
     PRE( not isZeroVector() );
 

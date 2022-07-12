@@ -243,7 +243,7 @@ if(pLHoverBoot_ != NULL and pRHoverBoot_!= NULL)
 }
 }
 
-void MachPhysHoverBoots::startBobbing( void )
+void MachPhysHoverBoots::startBobbing()
 {
 	CB_DEPIMPL(W4dLink*, pBobbingLink_);
 	CB_DEPIMPL(MATHEX_SCALAR, bobHeight_);

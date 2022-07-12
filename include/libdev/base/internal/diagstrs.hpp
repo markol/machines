@@ -20,8 +20,8 @@ class DiagStreams
 {
 public:
     //  Singleton class
-    static DiagStreams& instance( void );
-    ~DiagStreams( void );
+    static DiagStreams& instance();
+    ~DiagStreams();
 
     //  Close all open diagnostic streams
     void    close();
@@ -38,7 +38,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const DiagStreams& );
 
-    DiagStreams( void );
+    DiagStreams();
 
     friend class Diag;
     friend class DiagInternal;

@@ -27,7 +27,7 @@ MachPhysMachineData::~MachPhysMachineData()
 
 }
 
-MachPhys::ResearchUnits MachPhysMachineData::hwResearchCost( void ) const
+MachPhys::ResearchUnits MachPhysMachineData::hwResearchCost() const
 {
 	return hwResearchCost_;
 }
@@ -37,12 +37,12 @@ void MachPhysMachineData::hwResearchCost( const MachPhys::ResearchUnits& newSwRe
 	hwResearchCost_ = newSwResearchCost;
 }
 
-MachPhys::BuildingMaterialUnits MachPhysMachineData::swCost( void ) const
+MachPhys::BuildingMaterialUnits MachPhysMachineData::swCost() const
 {
 	return swCost_;
 }
 
-MachPhys::BuildingMaterialUnits MachPhysMachineData::hwCost( void ) const
+MachPhys::BuildingMaterialUnits MachPhysMachineData::hwCost() const
 {
 	return hwCost_;
 }
@@ -73,7 +73,7 @@ void MachPhysMachineData::hwCost( const MachPhys::BuildingMaterialUnits& newHwCo
     cost( swCost() + hwCost() );
 }
 
-MachPhys::ResearchUnits MachPhysMachineData::swResearchCost( void ) const
+MachPhys::ResearchUnits MachPhysMachineData::swResearchCost() const
 {
 	return swResearchCost_;
 }
@@ -83,7 +83,7 @@ void MachPhysMachineData::swResearchCost( const MachPhys::ResearchUnits& newSwRe
 	swResearchCost_ = newSwResearchCost;
 }
 
-MachPhys::SizeUnits MachPhysMachineData::volume( void ) const
+MachPhys::SizeUnits MachPhysMachineData::volume() const
 {
 	return volume_;
 }
@@ -93,7 +93,7 @@ void MachPhysMachineData::volume( const MachPhys::SizeUnits& newVolume )
 	volume_ = newVolume;
 }
 
-MATHEX_SCALAR MachPhysMachineData::speed( void ) const
+MATHEX_SCALAR MachPhysMachineData::speed() const
 {
 	return speed_;
 }
@@ -103,7 +103,7 @@ void MachPhysMachineData::speed( const MATHEX_SCALAR& newSpeed )
 	speed_ = newSpeed;
 }
 
-MATHEX_SCALAR MachPhysMachineData::taskSpeed( void ) const
+MATHEX_SCALAR MachPhysMachineData::taskSpeed() const
 {
 	return taskSpeed_;
 }
@@ -113,7 +113,7 @@ void MachPhysMachineData::taskSpeed( const MATHEX_SCALAR& newSpeed )
 	taskSpeed_ = newSpeed;
 }
 
-MATHEX_SCALAR MachPhysMachineData::acceleration( void ) const
+MATHEX_SCALAR MachPhysMachineData::acceleration() const
 {
 	return acceleration_;
 }
@@ -122,7 +122,7 @@ void MachPhysMachineData::acceleration( const MATHEX_SCALAR& newAcceleration )
 	acceleration_ = newAcceleration;
 }
 
-MexRadians MachPhysMachineData::rotationSpeed( void ) const
+MexRadians MachPhysMachineData::rotationSpeed() const
 {
 	return rotationSpeed_;
 }
@@ -132,7 +132,7 @@ void MachPhysMachineData::rotationSpeed( const MexRadians& newRotationSpeed )
 	rotationSpeed_ = newRotationSpeed;
 }
 
-MexRadians MachPhysMachineData::rotationAcceleration( void ) const
+MexRadians MachPhysMachineData::rotationAcceleration() const
 {
 	return rotationAcceleration_;
 }
@@ -142,7 +142,7 @@ void MachPhysMachineData::rotationAcceleration( const MexRadians& newRotationAcc
 	rotationAcceleration_ = newRotationAcceleration;
 }
 
-MachPhys::RepairRateUnits MachPhysMachineData::repairRate( void ) const
+MachPhys::RepairRateUnits MachPhysMachineData::repairRate() const
 {
 	return repairRate_;
 }
@@ -151,7 +151,7 @@ void MachPhysMachineData::repairRate( const MachPhys::RepairRateUnits& newRepair
 	repairRate_ = newRepairRate;
 }
 
-MATHEX_SCALAR MachPhysMachineData::scannerRange( void ) const
+MATHEX_SCALAR MachPhysMachineData::scannerRange() const
 {
 	return scannerRange_;
 }

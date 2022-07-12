@@ -18,8 +18,8 @@ template< class X >
 class PLAN_TYPE
 {
 public:
-    PLAN_TYPE( void );
-    ~PLAN_TYPE( void );
+    PLAN_TYPE();
+    ~PLAN_TYPE();
 
     void CLASS_INVARIANT;
 

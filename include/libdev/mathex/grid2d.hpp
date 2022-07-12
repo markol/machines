@@ -29,7 +29,7 @@ public:
       MATHEX_SCALAR xCellSize, MATHEX_SCALAR yCellSize,
       const MexPoint2d& origin );
 
-    ~MexGrid2d( void );
+    ~MexGrid2d();
 
     CTL_PAIR( CellIndex, size_t, xIndex, size_t, yIndex );
     typedef ctl_vector< CellIndex > Cells;

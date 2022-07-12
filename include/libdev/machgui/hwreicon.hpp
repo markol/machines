@@ -36,7 +36,7 @@ public:
                         MachLogResearchItem* pResearchItem );
 
     //dtor.
-    virtual ~MachHWResearchIcon( void );
+    virtual ~MachHWResearchIcon();
 
 	// inherited from GuiButton...
 	virtual void doBeDepressed( const GuiMouseEvent& rel );

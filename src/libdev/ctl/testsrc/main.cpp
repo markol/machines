@@ -12,12 +12,12 @@
 // #include "testh/testmva.hpp"
 // #include "testh/clargs.hpp"
 
-void	testMap( void );
-void	testPair( void );
-void    testPtr( void );
+void	testMap();
+void	testPair();
+void    testPtr();
 void    testPtr2( int* );
-void    testPtr3( void );
-void    testPtr4( void );
+void    testPtr3();
+void    testPtr4();
 void    testMinMemVector();
 
 int	main( int, char** )
@@ -55,7 +55,7 @@ int	main( int, char** )
 	return 0;
 }
 
-// void    test1( void )
+// void    test1()
 // {
 //     struct S
 //     {
@@ -73,7 +73,7 @@ int	main( int, char** )
 // }
 
 
-void    testPtr( void )
+void    testPtr()
 {
     int* pI = _NEW( int );
 
@@ -104,7 +104,7 @@ void    testPtr( void )
     dPtr3 = dPtr2;
 }
 
-void testPtr3( void )
+void testPtr3()
 {
     CtlCountedPtr< double >    dPtr1( NULL );
 
@@ -117,7 +117,7 @@ void testPtr3( void )
     dPtr2 = pD;
 }
 
-void testPtr4( void )
+void testPtr4()
 {
     CtlCountedPtr< double >    dPtr1[ 10 ];
     

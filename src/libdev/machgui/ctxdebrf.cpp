@@ -182,7 +182,7 @@ bool MachGuiCtxDeBriefing::okayToSwitchContext()
 	return true;
 }
 
-void MachGuiCtxDeBriefing::displayDeBriefImage( void )
+void MachGuiCtxDeBriefing::displayDeBriefImage()
 {
 	if ( pDebriefImage_ )
 	{
@@ -293,7 +293,7 @@ void MachGuiCtxDeBriefing::displayDeBriefImage( void )
 	}
 }
 
-void MachGuiCtxDeBriefing::playDeBriefingVoicemail( void )
+void MachGuiCtxDeBriefing::playDeBriefingVoicemail()
 {
 	stopPlayingDeBriefingVoicemail();
 
@@ -325,7 +325,7 @@ void MachGuiCtxDeBriefing::playDeBriefingVoicemail( void )
 	}
 }
 
-void MachGuiCtxDeBriefing::stopPlayingDeBriefingVoicemail( void )
+void MachGuiCtxDeBriefing::stopPlayingDeBriefingVoicemail()
 {
 	if ( playedMail_ && SndMixer::instance().isActive( debriefVoicemail_ ) )
 	{

@@ -47,7 +47,7 @@ W4dManager::~W4dManager()
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void W4dManager::render( void )
+void W4dManager::render()
 {
     TEST_INVARIANT;
 
@@ -58,7 +58,7 @@ void W4dManager::render( void )
     ++frameNumber_;
 }
 
-size_t W4dManager::frameNumber( void ) const
+size_t W4dManager::frameNumber() const
 {
     return frameNumber_;
 }

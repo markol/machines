@@ -20,8 +20,8 @@ class RecRecorder
 {
 public:
     //  Singleton class
-    static RecRecorder& instance( void );
-    ~RecRecorder( void );
+    static RecRecorder& instance();
+    ~RecRecorder();
 
     enum State { INACTIVE, RECORDING, PLAYING };
 
@@ -48,7 +48,7 @@ private:
     RecRecorder( const RecRecorder& );
     RecRecorder& operator =( const RecRecorder& );
 
-    RecRecorder( void );
+    RecRecorder();
 };
 
 /* *******************************************************

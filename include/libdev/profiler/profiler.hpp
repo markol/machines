@@ -32,8 +32,8 @@ class ProProfiler
 {
 public:
     //  Singleton class
-    static ProProfiler& instance( void );
-    ~ProProfiler( void );
+    static ProProfiler& instance();
+    ~ProProfiler();
 
     //  The default trace interval is 50ms
     void    traceInterval( double timeSeconds );
@@ -109,7 +109,7 @@ private:
     ProProfiler& operator =( const ProProfiler& );
     bool operator ==( const ProProfiler& );
 
-    ProProfiler( void );
+    ProProfiler();
 
     void    setupTraceInterval() const;
     void    calibrate();

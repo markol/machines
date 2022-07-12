@@ -39,7 +39,7 @@ public:
                     const MexPoint3d& location, const MexRadians& angle, 
                     const CheckDiscoveredFlag check , UtlId );
 
-    ~MachLogMine( void );
+    ~MachLogMine();
 
     //Inherited from SimActor
     virtual PhysRelativeTime update( const PhysRelativeTime& maxCPUTime,

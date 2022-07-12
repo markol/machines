@@ -67,17 +67,17 @@ public:
     //  PRE( transformsPtr->size() == rampAccelerationsPtr->size() + 1 );
 
     //dtor
-    ~PhysLinearTravelPlan( void );
+    ~PhysLinearTravelPlan();
 
     //Export the cumulative travel times for each segment of the journey.
     //The number of times is 1 less than the number of transforms supplied.
-    const PhysMotionPlan::TimesPtr& segmentTimes( void ) const;
+    const PhysMotionPlan::TimesPtr& segmentTimes() const;
 
     size_t  nSegments() const;
 
     //Export the ramp accelerations for each segment of the journey
     //The number of accelerations is 1 less than the number of transforms supplied.
-    const PhysMotionPlan::RampAccelerationsPtr& rampAccelerations( void ) const;
+    const PhysMotionPlan::RampAccelerationsPtr& rampAccelerations() const;
 
     //Override defines result as a function of timeOffset.
     //If time is greater than duration, the transform at time duration is returned.
@@ -101,7 +101,7 @@ private:
     bool operator ==( const PhysLinearTravelPlan& );
 
     //Load the cached data for segment cacheSegment_;
-    void computeCacheData( void );
+    void computeCacheData();
 
     //Compute the interpolated transform at time timeOffset from start of plan.
     //Returns transform in pResult.

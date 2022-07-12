@@ -18,7 +18,7 @@ class ExplosionPoint
 {
 public:
     //  Only required for vector
-    ExplosionPoint( void );
+    ExplosionPoint();
 
     ExplosionPoint(
         const MexPoint3d&      position,
@@ -32,26 +32,26 @@ public:
     // PRE( 0.0 <= minTimeFactor and minTimeFactor <= 1.0 );
     // PRE( 0.0 <= maxTimeFactor and maxTimeFactor <= 1.0 );
 
-    ~ExplosionPoint( void );
+    ~ExplosionPoint();
 
-    const MexPoint3d& position( void ) const;
+    const MexPoint3d& position() const;
 
     //  How far from the given position can we place fireballs?
-    MATHEX_SCALAR   maxFireballOffset( void ) const;
+    MATHEX_SCALAR   maxFireballOffset() const;
 
-    size_t minFireballs( void ) const;
-    size_t maxFireballs( void ) const;
+    size_t minFireballs() const;
+    size_t maxFireballs() const;
 
     //  As a proportion of the total explosion time
-    MATHEX_SCALAR   minTimeFactor( void ) const;
+    MATHEX_SCALAR   minTimeFactor() const;
     // POST( 0.0 <= result and result <= 1.0 );
 
     //  As a proportion of the total explosion time
-    MATHEX_SCALAR   maxTimeFactor( void ) const;
+    MATHEX_SCALAR   maxTimeFactor() const;
     // POST( 0.0 <= result and result <= 1.0 );
 
-    MATHEX_SCALAR   size( void ) const;
-    MATHEX_SCALAR   depthOffset( void ) const;
+    MATHEX_SCALAR   size() const;
+    MATHEX_SCALAR   depthOffset() const;
 
     void CLASS_INVARIANT;
 

@@ -2,7 +2,7 @@
 #include "ctl/list.ctp"
 class RenIDriverInfo;
 
-dummyFunction2( void )
+dummyFunction2()
 {
 	static ctl_list<RenIDriverInfo*> driverList;
 }

@@ -78,7 +78,7 @@ public:
 	void	animateTextureCoords(const Ren::UVTransformPtr&);
 
     //  Return the unscaled bounding volume of the mesh
-    const MexAlignedBox3d& boundingVolume( void ) const;
+    const MexAlignedBox3d& boundingVolume() const;
 
     void CLASS_INVARIANT;
 

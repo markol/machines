@@ -22,10 +22,10 @@ class BaseCircularStreamBuffer : public BaseLogStreamBuffer
 {
 public:
     BaseCircularStreamBuffer( size_t nCharactersInBuffer );
-    ~BaseCircularStreamBuffer( void );
+    ~BaseCircularStreamBuffer();
 
-    virtual void    clear( void );
-    virtual size_t  nCharactersInBuffer( void ) const;
+    virtual void    clear();
+    virtual size_t  nCharactersInBuffer() const;
 
     virtual int     overflow( int c );
     virtual int     underflow();

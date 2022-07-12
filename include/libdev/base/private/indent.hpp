@@ -20,7 +20,7 @@ class BaseIndentOstream : public BaseFilterOstream
 {
 public:
     BaseIndentOstream( ostream& ostr, const std::string& indentString );
-    ~BaseIndentOstream( void );
+    ~BaseIndentOstream();
 
     //  Set a new output stream
     void stream( ostream& ostr );

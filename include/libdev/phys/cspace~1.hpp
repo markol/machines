@@ -56,7 +56,7 @@ public:
     //PRE( minPoint.y() < maxPoint.y() )
 
     //dtor.
-    ~PhysConfigSpace2d( void );
+    ~PhysConfigSpace2d();
 
     //Identifies various entites
     typedef FtlSerialId PolygonId; //A registered polygon
@@ -83,7 +83,7 @@ public:
     typedef ctl_nb_vector< PortalPoint > PortalPoints;
 
     //The space's mode
-    Mode mode( void ) const;
+    Mode mode() const;
 
     //Export the space's boundary
     const MexAlignedBox2d& boundary() const;
@@ -456,12 +456,12 @@ private:
     bool operator ==( const PhysConfigSpace2d& );
 
     //Export the implementation to friends
-    const PhysCS2dImpl& impl( void ) const;
-    PhysCS2dImpl* pImpl( void );
+    const PhysCS2dImpl& impl() const;
+    PhysCS2dImpl* pImpl();
 
     //Set/get option to maintain visibility graph between vertices of permanent polygons.
     void isMaintainingVisibilityGraph( bool doMaintain );
-    bool isMaintainingVisibilityGraph( void ) const;
+    bool isMaintainingVisibilityGraph() const;
 
     //Data members
     PhysCS2dImpl& impl_;

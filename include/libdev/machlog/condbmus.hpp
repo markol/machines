@@ -31,7 +31,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogBMUCountCondition( void );
+    virtual ~MachLogBMUCountCondition();
 
     void CLASS_INVARIANT;
 

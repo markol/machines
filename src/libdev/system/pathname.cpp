@@ -154,7 +154,7 @@ void SysPathName::createFromComponents( const Components& newComponents )
     POST( set() );
 }
 
-void SysPathName::createPathnameFromComponents( void )
+void SysPathName::createPathnameFromComponents()
 {
 	CB_SYS_PATHNAME_DEPIMPL;
 
@@ -214,7 +214,7 @@ const char* SysPathName::c_str() const
     return pathname().c_str();
 }
 
-bool SysPathName::exists( void ) const
+bool SysPathName::exists() const
 {
 	CB_SYS_PATHNAME_DEPIMPL;
 
@@ -227,7 +227,7 @@ bool SysPathName::exists( void ) const
     return result;
 }
 
-bool SysPathName::existsAsDirectory( void ) const
+bool SysPathName::existsAsDirectory() const
 {
 	CB_SYS_PATHNAME_DEPIMPL;
 
@@ -250,7 +250,7 @@ bool SysPathName::existsAsDirectory( void ) const
     return result;
 }
 
-bool SysPathName::existsAsFile( void ) const
+bool SysPathName::existsAsFile() const
 {
 	CB_SYS_PATHNAME_DEPIMPL;
 
@@ -284,14 +284,14 @@ bool SysPathName::checkForCapitals(const string& path) const
     return false;
 }
 
-bool SysPathName::containsCapitals( void ) const
+bool SysPathName::containsCapitals() const
 {
     CB_SYS_PATHNAME_DEPIMPL;
 
     return containsCapitals_;
 }
 
-bool SysPathName::insensitiveExistsAsFile( void ) const
+bool SysPathName::insensitiveExistsAsFile() const
 {
     CB_SYS_PATHNAME_DEPIMPL;
 
@@ -309,7 +309,7 @@ bool SysPathName::insensitiveExistsAsFile( void ) const
     return f.good();
 }
 
-bool SysPathName::isAbsolute( void ) const
+bool SysPathName::isAbsolute() const
 {
 	CB_SYS_PATHNAME_DEPIMPL;
 
@@ -328,7 +328,7 @@ bool SysPathName::isAbsolute( void ) const
     return result;
 }
 
-bool SysPathName::isRelative( void ) const
+bool SysPathName::isRelative() const
 {
 	CB_SYS_PATHNAME_DEPIMPL;
 
@@ -362,7 +362,7 @@ void SysPathName::combine( const SysPathName& nextPath )
     componentsSet_ = false;
 }
 
-const SysPathName::Components& SysPathName::components( void ) const
+const SysPathName::Components& SysPathName::components() const
 {
 	CB_SYS_PATHNAME_DEPIMPL;
 
@@ -374,7 +374,7 @@ const SysPathName::Components& SysPathName::components( void ) const
     return components_;
 }
 
-void SysPathName::createComponents( void ) const
+void SysPathName::createComponents() const
 {
 	CB_SYS_PATHNAME_DEPIMPL;
 
@@ -437,7 +437,7 @@ void SysPathName::createComponents( void ) const
 }
 
 //  static
-string  SysPathName::separator( void )
+string  SysPathName::separator()
 {
     static  string  separator_ = "/";
 
@@ -445,12 +445,12 @@ string  SysPathName::separator( void )
 }
 
 //  static
-char  SysPathName::extensionCharacter( void )
+char  SysPathName::extensionCharacter()
 {
     return '.';
 }
 
-bool SysPathName::hasExtension( void ) const
+bool SysPathName::hasExtension() const
 {
 	CB_SYS_PATHNAME_DEPIMPL;
 
@@ -469,7 +469,7 @@ bool SysPathName::hasExtension( void ) const
     return result;
 }
 
-string SysPathName::extension( void ) const
+string SysPathName::extension() const
 {
     PRE( set() );
 
@@ -669,13 +669,13 @@ void    SysPathName::rootEnvironmentVariable( const string& environmentVariable 
 }
 
 // static
-SysPathName SysPathName::rootDirectory( void )
+SysPathName SysPathName::rootDirectory()
 {
     return internalRootDirectory();
 }
 
 // static
-string& SysPathName::internalRootDirectory( void )
+string& SysPathName::internalRootDirectory()
 {
     static  string rootDirectory_;
 
@@ -683,14 +683,14 @@ string& SysPathName::internalRootDirectory( void )
 }
 
 // static
-bool& SysPathName::internalRootDirectorySet( void )
+bool& SysPathName::internalRootDirectorySet()
 {
     static  bool    internalRootDirectorySet_ = false;
 
     return internalRootDirectorySet_;
 }
 
-bool SysPathName::set( void ) const
+bool SysPathName::set() const
 {
 	CB_DEPIMPL(bool, set_);
 
@@ -698,7 +698,7 @@ bool SysPathName::set( void ) const
 }
 
 // static
-size_t& SysPathName::currentRootId( void )
+size_t& SysPathName::currentRootId()
 {
     static  size_t internalId_ = 10;
 

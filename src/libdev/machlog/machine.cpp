@@ -727,7 +727,7 @@ void MachLogMachine::stationLocked( MachPhysStation* pStation )
 	pLockedStation_ = pStation;
 }
 
-MachPhysStation& MachLogMachine::stationLocked( void ) const
+MachPhysStation& MachLogMachine::stationLocked() const
 {
 	CB_DEPIMPL( MachPhysStation*, pLockedStation_ );
 	return *pLockedStation_;
@@ -785,7 +785,7 @@ bool MachLogMachine::squadron( const MachLogSquadron* pNewSquadron )
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const MachLogSquadron* MachLogMachine::squadron( void ) const
+const MachLogSquadron* MachLogMachine::squadron() const
 {
 	CB_DEPIMPL( MachLogSquadron*, pSquadron_ );
 
@@ -794,7 +794,7 @@ const MachLogSquadron* MachLogMachine::squadron( void ) const
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-MachLogSquadron* MachLogMachine::squadron( void )
+MachLogSquadron* MachLogMachine::squadron()
 {
 	CB_DEPIMPL( MachLogSquadron*, pSquadron_ );
 	if( pSquadron_ == NULL )
@@ -1370,7 +1370,7 @@ void MachLogMachine::APCImInside( MachLogAPC* pAPC )
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-bool MachLogMachine::insideAPC( void ) const
+bool MachLogMachine::insideAPC() const
 {
 	CB_DEPIMPL( bool, insideAPC_ );
 	return insideAPC_;
@@ -1386,7 +1386,7 @@ void MachLogMachine::isStandingGround( bool newStandGroundStatus )
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-bool MachLogMachine::isStandingGround( void ) const
+bool MachLogMachine::isStandingGround() const
 {
 	CB_DEPIMPL( bool, standGround_ );
 	return standGround_;

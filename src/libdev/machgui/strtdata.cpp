@@ -578,7 +578,7 @@ MachGuiStartupData::PlayerInfo* MachGuiStartupData::players()
 	return players_;
 }
 
-bool MachGuiStartupData::transitionFlicsOn( void ) const
+bool MachGuiStartupData::transitionFlicsOn() const
 {
 	return transitionFlicsOn_;
 }

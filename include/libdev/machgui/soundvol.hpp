@@ -22,7 +22,7 @@ class MachGuiSoundVolumeSlideBar : public MachGuiSlideBar
 {
 public:
     MachGuiSoundVolumeSlideBar( MachGuiStartupScreens* pStartupScreens, GuiDisplayable* pParent, Gui::Coord topLeft, size_t width );
-    ~MachGuiSoundVolumeSlideBar( void );
+    ~MachGuiSoundVolumeSlideBar();
 
 	// Sets new sound FX volume. Called when slide button is moved.
 	virtual void valueChanged( float value );

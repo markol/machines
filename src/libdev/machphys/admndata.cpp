@@ -19,7 +19,7 @@ MachPhysAdministratorData::~MachPhysAdministratorData()
 
 }
 
-MATHEX_SCALAR MachPhysAdministratorData::accuracy( void ) const
+MATHEX_SCALAR MachPhysAdministratorData::accuracy() const
 {
 	return accuracy_;
 }
@@ -29,7 +29,7 @@ void MachPhysAdministratorData::accuracy( const MATHEX_SCALAR& newAccuracy)
 	accuracy_ = newAccuracy;
 }
 
-MATHEX_SCALAR MachPhysAdministratorData::nWeapons( void ) const
+MATHEX_SCALAR MachPhysAdministratorData::nWeapons() const
 {
 	return nWeapons_;
 }
@@ -39,7 +39,7 @@ void MachPhysAdministratorData::nWeapons( const MATHEX_SCALAR& newNumberOfWeapon
 	nWeapons_ = newNumberOfWeapons;
 }
 
-MATHEX_SCALAR MachPhysAdministratorData::maxSubordinates( void ) const
+MATHEX_SCALAR MachPhysAdministratorData::maxSubordinates() const
 {
 	return maxSubordinates_;
 }

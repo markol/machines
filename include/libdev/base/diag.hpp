@@ -452,70 +452,70 @@ public:
     //  memory allocation or debugging output. Note that this
     //  is done automatically by the AFX library.
 
-    static Diag& instance( void );
+    static Diag& instance();
 
     ostream& stream( DiagStreamType );
 
     void indent( DiagStreamType, int nSpaces );
 
     //  People's own streams
-	ostream& bobStream( void );
-	ostream& halStream( void );
-	ostream& iainStream( void );
-	ostream& jerryStream( void );
-	ostream& jonStream( void );
-	ostream& richardStream( void );
-	ostream& yueaiStream( void );
-	ostream& lionelStream( void );
-	ostream& ceriStream( void );
-	ostream& neilStream( void );
-	ostream& wayneStream( void );
-    ostream& danielStream( void );
+	ostream& bobStream();
+	ostream& halStream();
+	ostream& iainStream();
+	ostream& jerryStream();
+	ostream& jonStream();
+	ostream& richardStream();
+	ostream& yueaiStream();
+	ostream& lionelStream();
+	ostream& ceriStream();
+	ostream& neilStream();
+	ostream& wayneStream();
+    ostream& danielStream();
 
-	ostream& miscStream( void );
+	ostream& miscStream();
 
-	ostream& whereStream( void );
-	ostream& traceStream( void );
-	ostream& memoryStream( void );
+	ostream& whereStream();
+	ostream& traceStream();
+	ostream& memoryStream();
 
 
 
     //  Library streams
-	ostream& renderStream( void );
-	ostream& networkStream( void );
+	ostream& renderStream();
+	ostream& networkStream();
 
-    ostream& motseqStream( void );
-    ostream& cs2pathStream( void );
-    ostream& cs2vgraStream( void );
-    ostream& observerStream( void );
+    ostream& motseqStream();
+    ostream& cs2pathStream();
+    ostream& cs2vgraStream();
+    ostream& observerStream();
 
-	ostream& perReadStream( void );
-	ostream& perWriteStream( void );
+	ostream& perReadStream();
+	ostream& perWriteStream();
 
-	ostream& pathProfileStream( void );
+	ostream& pathProfileStream();
 
-	ostream& soundStream( void );
+	ostream& soundStream();
 
-	ostream& recRecordStream( void );
-	ostream& recPlaybackStream( void );
+	ostream& recRecordStream();
+	ostream& recPlaybackStream();
 
-	ostream& netAnalysisStream( void );
-	ostream& aStarStream( void );
-	ostream& linearTravelStream( void );
+	ostream& netAnalysisStream();
+	ostream& aStarStream();
+	ostream& linearTravelStream();
 
-	ostream& planetSurfaceStream( void );
-	ostream& physMotionStream( void );
+	ostream& planetSurfaceStream();
+	ostream& physMotionStream();
 
-	ostream& networkErrorsStream( void );
+	ostream& networkErrorsStream();
 
-	ostream& mexGrid2dStream( void );
-	ostream& configSpaceStream( void );
+	ostream& mexGrid2dStream();
+	ostream& configSpaceStream();
 
 	const char*	getenv( const char* name );
 
     //  Set / get the invariant checking flag.
     void    invariantCheckingActive( bool flag );
-    bool    invariantCheckingActive( void ) const;
+    bool    invariantCheckingActive() const;
 
     //  Force a crash and a crash.log to be written
     void    forceCrash() const;
@@ -534,8 +534,8 @@ public:
     void enableFPException();
 
 private:
-    Diag( void );
-    ~Diag( void );
+    Diag();
+    ~Diag();
 
     // Operation deliberately revoked
     Diag( const Diag& );

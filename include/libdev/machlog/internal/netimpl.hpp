@@ -19,7 +19,7 @@ class MachLogNetworkDataImpl
 // Canonical form revoked
 {
 public:
-    ~MachLogNetworkDataImpl( void );
+    ~MachLogNetworkDataImpl();
 
     void CLASS_INVARIANT;
 
@@ -27,7 +27,7 @@ private:
     friend ostream& operator <<( ostream& o, const MachLogNetworkDataImpl& t );
 	friend class MachLogNetwork;
 
-    MachLogNetworkDataImpl( void );
+    MachLogNetworkDataImpl();
 
     MachLogNetworkDataImpl( const MachLogNetworkDataImpl& );
     MachLogNetworkDataImpl& operator =( const MachLogNetworkDataImpl& );

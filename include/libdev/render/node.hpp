@@ -17,14 +17,14 @@ class Node;
 class Node : public ctl_vector< Node* >
 {
 public:
-    ~Node( void );
+    ~Node();
 
     void CLASS_INVARIANT;
 
-    const MexTransform3d& transform( void ) const;
-    RenMeshInstance* pMeshInstance( void ) const;
+    const MexTransform3d& transform() const;
+    RenMeshInstance* pMeshInstance() const;
 
-    const std::string & instanceName( void ) const;
+    const std::string & instanceName() const;
 
     friend ostream& operator <<( ostream& o, const Node& t );
 
@@ -57,8 +57,8 @@ private:
         size_t nChildren,
         const RenIMeshID& id );
 
-    bool    allChildrenSupplied( void ) const;
-    Node*   pParent( void ) const;
+    bool    allChildrenSupplied() const;
+    Node*   pParent() const;
 
     //  This is the number of children that will
     //  eventually be supplied

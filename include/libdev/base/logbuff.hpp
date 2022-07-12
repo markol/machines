@@ -27,18 +27,18 @@ class BaseLogBuffer : public std::ostringstream
 {
 public:
     //  Create an 'infinite' (limited only by memory)  buffer
-    BaseLogBuffer( void );
+    BaseLogBuffer();
 
     //  Create a finite buffer which will store the last
     //  bufferSize characters
     BaseLogBuffer( size_t bufferSize );
 
-    ~BaseLogBuffer( void );
+    ~BaseLogBuffer();
 
     //  Clear the buffer of all characters
-    void    clear( void );
+    void    clear();
 
-    std::string dataAsString( void ) const;
+    std::string dataAsString() const;
 
     //  Note that writing the buffer out does not clear it
     friend ostream& operator <<( ostream& o, const BaseLogBuffer& t );
@@ -55,7 +55,7 @@ private:
 
     BaseLogStreamBuffer* pStreamBuffer_;
 
-    BaseLogStreamBuffer* pInfiniteStreamBuffer( void );
+    BaseLogStreamBuffer* pInfiniteStreamBuffer();
     BaseLogStreamBuffer* pCircularStreamBuffer( size_t bufferSize );
 };
 

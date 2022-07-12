@@ -58,7 +58,7 @@ const MachGuiOptionsLayout::CheckBoxInfo& MachGuiOptionsLayout::checkBoxInfo( ui
 	return *( checkBoxes_[ index ] );
 }
 
-void MachGuiOptionsLayout::parse( void )
+void MachGuiOptionsLayout::parse()
 {
 	while (	not parser_.finished() )
 	{

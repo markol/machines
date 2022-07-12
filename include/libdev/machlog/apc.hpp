@@ -100,7 +100,7 @@ private:
 
 	virtual void doOutputOperator( ostream& o ) const;
 	
-	void turnRearToFaceNearestIncoming( void );
+	void turnRearToFaceNearestIncoming();
 	// PRE( nMachinesIncoming_ > 0 );
 	
 	const MachLogMachine& currentNearestMachine() const;

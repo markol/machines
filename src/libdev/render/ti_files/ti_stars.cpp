@@ -5,7 +5,7 @@
 
 #include "ctl/vector.hpp"
 
-void dummyFunctionStarsInstantiations( void )
+void dummyFunctionStarsInstantiations()
 {
 	static ctl_vector< ctl_vector<D3DLVERTEX> > d3dLVerticesVec;
 	static ctl_vector< D3DLVERTEX* > pVertices;

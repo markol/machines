@@ -21,7 +21,7 @@ class MachLogIonWeapon : public MachLogWeapon
 {
 public:
     MachLogIonWeapon( MachLogRace*, MachPhysWeapon*, MachActor* pOwner );
-    virtual ~MachLogIonWeapon( void );
+    virtual ~MachLogIonWeapon();
 
     void CLASS_INVARIANT;
 

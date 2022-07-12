@@ -28,9 +28,9 @@ public:
 	virtual void setPosition( const MexTransform3d& );
 	virtual void setOrientation( const MexTransform3d& );
 
-	virtual MexTransform3d globalTransform( void ) const;
+	virtual MexTransform3d globalTransform() const;
 	virtual void globalTransform( const MexTransform3d& );
-	virtual MexTransform3d localTransform( void ) const;
+	virtual MexTransform3d localTransform() const;
 	virtual void localTransform( const MexTransform3d& );
 
 private:

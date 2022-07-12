@@ -27,7 +27,7 @@ class PhysRampAcceleration
 {
 public:
     //ctor.
-	PhysRampAcceleration( void );
+	PhysRampAcceleration();
 
     PhysRampAcceleration
     (
@@ -204,7 +204,7 @@ public:
 
 private:
     // Operations deliberately revoked
-    PhysRampAcceleration( void );
+    PhysRampAcceleration();
 
     //data members
     MATHEX_SCALAR startSpeed_; //Initial speed

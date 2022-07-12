@@ -38,7 +38,7 @@ public:
 	};
 
 	RenStars(Configuration, MATHEX_SCALAR radius, uint nStars);
-	virtual ~RenStars( void );
+	virtual ~RenStars();
 
 	void render(
 	    UtlPercentage opacity,

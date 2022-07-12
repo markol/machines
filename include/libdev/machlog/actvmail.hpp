@@ -25,7 +25,7 @@ class MachLogVoiceMailAction : public SimAction
 {
 public:
 
-    virtual ~MachLogVoiceMailAction( void );
+    virtual ~MachLogVoiceMailAction();
 	static MachLogVoiceMailAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 
     void CLASS_INVARIANT;

@@ -20,8 +20,8 @@ class MexAlignedBox2d;
 class MexTemp
 {
 public:
-    MexTemp( void );
-    ~MexTemp( void );
+    MexTemp();
+    ~MexTemp();
 
     //Rotate the boundary of pBox by n times 90 degrees
     static void quarterRotate( MexAlignedBox2d* pBox, int n );

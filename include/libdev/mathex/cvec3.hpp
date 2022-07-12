@@ -23,7 +23,7 @@ class MexCompressedVec3
 public:
     MexCompressedVec3();
     MexCompressedVec3( const MexVec3& );
-    ~MexCompressedVec3( void );
+    ~MexCompressedVec3();
 
     void CLASS_INVARIANT;
 

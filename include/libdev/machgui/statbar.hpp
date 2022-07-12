@@ -25,26 +25,26 @@ class MachGuiStatisticsBar
 public:
     MachGuiStatisticsBar( 	GuiDisplayable* pParent, const Gui::Coord& topLeft,
     						const string& bitmapPathname, uint range = 100 );
-    ~MachGuiStatisticsBar( void );
+    ~MachGuiStatisticsBar();
 
 	// set/get maximum value that can be displayed by Statistics bar
-	float range( void ) const;
+	float range() const;
 	// Setting range causes stat bar to be redrawn
 	void range( float newRange );
 
 	// set/get current stat value
-	float stat( void ) const;
+	float stat() const;
 	void stat( float newStat );
 
 	// get bar dimensions
-	uint height( void ) const;
-	uint width( void ) const;
+	uint height() const;
+	uint width() const;
 
 	// draws statistic bar on screen
 	void draw( bool update = true );
 
 	// Draws numerical value at the end of the bar
-	void showStatistic( void );
+	void showStatistic();
 
     void CLASS_INVARIANT;
 

@@ -17,11 +17,11 @@
 class MachPhysAdministratorData : public MachPhysMachineData
 {
 public:
-    ~MachPhysAdministratorData( void );
+    ~MachPhysAdministratorData();
 
-	MATHEX_SCALAR accuracy( void ) const;
-	MATHEX_SCALAR nWeapons( void ) const;
-	MATHEX_SCALAR maxSubordinates( void ) const;
+	MATHEX_SCALAR accuracy() const;
+	MATHEX_SCALAR nWeapons() const;
+	MATHEX_SCALAR maxSubordinates() const;
 
     void CLASS_INVARIANT;
 
@@ -35,7 +35,7 @@ private:
     MachPhysAdministratorData& operator =( const MachPhysAdministratorData& );
     bool operator ==( const MachPhysAdministratorData& );
 
-    MachPhysAdministratorData( void );
+    MachPhysAdministratorData();
 
 	//Set methods private
 	void accuracy( const MATHEX_SCALAR& );

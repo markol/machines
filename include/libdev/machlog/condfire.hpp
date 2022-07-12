@@ -28,7 +28,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogFiredAtCondition( void );
+    virtual ~MachLogFiredAtCondition();
 
     void CLASS_INVARIANT;
 

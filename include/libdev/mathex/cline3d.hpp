@@ -24,7 +24,7 @@ class MexCompressedLine3d
 public:
     MexCompressedLine3d();
     MexCompressedLine3d( const MexLine3d& );
-    ~MexCompressedLine3d( void );
+    ~MexCompressedLine3d();
 
     void CLASS_INVARIANT;
 

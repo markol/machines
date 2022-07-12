@@ -22,7 +22,7 @@ class RenTextureSetImpl
 // Canonical form revoked
 {
 public:
-    ~RenTextureSetImpl( void );
+    ~RenTextureSetImpl();
 
     void CLASS_INVARIANT;
 
@@ -30,7 +30,7 @@ private:
     friend ostream& operator <<( ostream& o, const RenTextureSetImpl& t );
 	friend class RenTextureSet;
 
-    RenTextureSetImpl( void );
+    RenTextureSetImpl();
     RenTextureSetImpl( const SysPathName& directory );
 	RenTextureSetImpl( const SysPathName& directory, BaseProgressReporter* pReporter );
 

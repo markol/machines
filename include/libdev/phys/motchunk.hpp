@@ -67,7 +67,7 @@ public:
 	PhysMotionChunk( const PhysCompressedMotionChunk& );
 
     //dtor
-    ~PhysMotionChunk( void );
+    ~PhysMotionChunk();
 
     //Set expiry time. After this time the object is considered not to be at any
     //location defined by the motion chunk.

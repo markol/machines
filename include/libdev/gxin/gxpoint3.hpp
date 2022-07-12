@@ -10,8 +10,8 @@
 
 class GXPoint3 {
 public:
-    GXPoint3( void );
-    ~GXPoint3( void );
+    GXPoint3();
+    ~GXPoint3();
     GXPoint3( const GXPoint3& );
 	// POST(*this==copy);
     GXPoint3& operator =( const GXPoint3& );

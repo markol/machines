@@ -114,12 +114,12 @@ MachPhysResourceCarrier::Factory& MachPhysResourceCarrier::factory()
 }
 
 //virtual
-const MachPhysMachineData& MachPhysResourceCarrier::machineData( void ) const
+const MachPhysMachineData& MachPhysResourceCarrier::machineData() const
 {
 	return data();
 }
 
-const MachPhysResourceCarrierData& MachPhysResourceCarrier::data( void ) const
+const MachPhysResourceCarrierData& MachPhysResourceCarrier::data() const
 {
 	return MachPhysData::instance().resourceCarrierData( bodyLevel(), brainLevel() );
 }
@@ -144,7 +144,7 @@ ostream& operator <<( ostream& o, const MachPhysResourceCarrier& t )
     return o;
 }
 
-void MachPhysResourceCarrier::createExplosionData( void )
+void MachPhysResourceCarrier::createExplosionData()
 {
     MachPhysMachineExplosionData& dataForEdit = explosionDataForEdit();
 

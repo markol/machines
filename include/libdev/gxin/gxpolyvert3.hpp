@@ -21,8 +21,8 @@ class GXPolyVert3
 // Canonical form revoked
 {
 public:
-    GXPolyVert3( void );
-    ~GXPolyVert3( void );
+    GXPolyVert3();
+    ~GXPolyVert3();
     GXPolyVert3( const GXPolyVert3& );
     GXPolyVert3& operator =( const GXPolyVert3& );
     friend bool operator ==( const GXPolyVert3&, const GXPolyVert3& );
@@ -32,15 +32,15 @@ public:
 
     friend ostream& operator <<( ostream& o, const GXPolyVert3& t );
 
-	USHORT pointIndex( void ) const { return pointIndex_; }
+	USHORT pointIndex() const { return pointIndex_; }
 	void pointIndex(USHORT newPointIndex) { pointIndex_=newPointIndex; }
-	USHORT normalIndex( void ) const { return normalIndex_;	}
+	USHORT normalIndex() const { return normalIndex_;	}
 	void normalIndex(USHORT newNormalIndex) { normalIndex_=newNormalIndex; }
 
 	void hasColor(bool newHasColor);
-	bool hasColor( void ) const { return ! color_==NULL; }
+	bool hasColor() const { return ! color_==NULL; }
 
-	const GXColor& color( void ) const {
+	const GXColor& color() const {
 	  PRE(hasColor());
 	  return *color_;
 	}
@@ -50,7 +50,7 @@ public:
 	  *color_=newColor;
 	}
 
-	const GXUVCoords& uv( void ) const { return uv_; }
+	const GXUVCoords& uv() const { return uv_; }
 	void uv(const GXUVCoords& newUV) { uv_=newUV; }
 
 private:

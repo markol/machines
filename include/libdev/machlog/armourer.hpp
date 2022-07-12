@@ -31,7 +31,7 @@ class MachLogArmourer
 // Canonical form revoked
 {
 public:
-    ~MachLogArmourer( void );
+    ~MachLogArmourer();
 
 	static void arm( MachLogAggressor* );
 	static void rearm( MachLogAggressor* );
@@ -52,7 +52,7 @@ private:
 
 	static MachLogWeapon* createWeapon( MachLogRace*, MachPhysWeapon*, MachActor* );
 
-    MachLogArmourer( void );
+    MachLogArmourer();
     MachLogArmourer( const MachLogArmourer& );
     MachLogArmourer& operator =( const MachLogArmourer& );
     bool operator ==( const MachLogArmourer& );

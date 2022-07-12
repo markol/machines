@@ -26,7 +26,7 @@
 //////////////////////////////////////////////////////////////////////
 
 
-MexAlignedBox2d::MexAlignedBox2d( void )
+MexAlignedBox2d::MexAlignedBox2d()
 :   vmin_( MexPoint2d( 0, 0 ) ),
     vmax_( MexPoint2d( 0, 0 ) )
 {

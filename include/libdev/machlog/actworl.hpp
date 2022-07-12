@@ -25,7 +25,7 @@ class MachLogWinOrLoseAction : public SimAction
 {
 public:
 
-    virtual ~MachLogWinOrLoseAction( void );
+    virtual ~MachLogWinOrLoseAction();
 	static MachLogWinOrLoseAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 	static MachLogWinOrLoseAction* newDynamic( SimCondition*, bool enabled, MachPhys::Race race );
 

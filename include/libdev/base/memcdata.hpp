@@ -16,36 +16,36 @@ class DbgMemChkData
     //  THIS CLASS IS BITWISE CANONICAL
 
 public:
-    DbgMemChkData( void );
-    ~DbgMemChkData( void );
+    DbgMemChkData();
+    ~DbgMemChkData();
 
     //  All figures for memory sizes are in bytes
 
-    size_t  nNewCalls( void ) const;
+    size_t  nNewCalls() const;
     void    nNewCalls( size_t newNNewCalls );
 
-    size_t  nDeleteCalls( void ) const;
+    size_t  nDeleteCalls() const;
     void    nDeleteCalls( size_t newNDeleteCalls );
 
-    size_t  nNewArrayCalls( void ) const;
+    size_t  nNewArrayCalls() const;
     void    nNewArrayCalls( size_t newNNewArrayCalls );
 
-    size_t  nDeleteArrayCalls( void ) const;
+    size_t  nDeleteArrayCalls() const;
     void    nDeleteArrayCalls( size_t newNDeleteArrayCalls );
 
-    size_t  totalMemoryNewed( void ) const;
+    size_t  totalMemoryNewed() const;
     void    totalMemoryNewed( size_t newTotalMemoryNewed );
 
-    size_t  totalMemoryDeleted( void ) const;
+    size_t  totalMemoryDeleted() const;
     void    totalMemoryDeleted( size_t newTotalMemoryDeleted );
 
-    size_t  maxMemoryNewed( void ) const;
+    size_t  maxMemoryNewed() const;
     void    maxMemoryNewed( size_t newMaxMemoryNewed );
 
-    int32   nOutstandingNewCalls( void ) const;
-    int32   nOutstandingNewArrayCalls( void ) const;
+    int32   nOutstandingNewCalls() const;
+    int32   nOutstandingNewArrayCalls() const;
 
-    int32   currentMemoryNewed( void ) const;
+    int32   currentMemoryNewed() const;
 
     friend std::ostream& operator <<( std::ostream& o, const DbgMemChkData& t );
 

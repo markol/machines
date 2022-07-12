@@ -42,7 +42,7 @@ MexTransform3d::MexTransform3d( const MexQuaternion& rot )
     forward_[3][2] = 0.0;
 }
 
-MexTransform3d::MexTransform3d( void )
+MexTransform3d::MexTransform3d()
 :   flags_( IDENTITY )
 {
     forward_[ 0 ][ 0 ] = 1.0;
@@ -867,7 +867,7 @@ void	MexTransform3d::invert( MexTransform3d *pTransform ) const
     TEST_INVARIANT;
 }
 
-void	MexTransform3d::invert( void )
+void	MexTransform3d::invert()
 
 {
     TEST_INVARIANT;
@@ -881,7 +881,7 @@ void	MexTransform3d::invert( void )
     TEST_INVARIANT;
 }
 
-bool MexTransform3d::isIdentity( void ) const
+bool MexTransform3d::isIdentity() const
 
 {
     TEST_INVARIANT;

@@ -25,24 +25,24 @@ class MachGuiNetworkProtocolMode
 public:
 
     MachGuiNetworkProtocolMode( GuiDisplayable*, MachGuiStartupScreens* );
-    virtual ~MachGuiNetworkProtocolMode( void );
+    virtual ~MachGuiNetworkProtocolMode();
 
     void CLASS_INVARIANT;
 
-	virtual void setNetworkDetails( void ) = 0;
+	virtual void setNetworkDetails() = 0;
 
 	virtual bool validNetworkDetails( bool isHost ) = 0;
 
-	virtual void updateGUI( void ) {}
+	virtual void updateGUI() {}
 
-	virtual void charFocus( void ) {}
+	virtual void charFocus() {}
 
-	bool connectionSet( void );
+	bool connectionSet();
     //  Use the no record version in assertions
-	bool connectionSetNoRecord( void );
+	bool connectionSetNoRecord();
 	
 protected:
-	virtual void readNetworkDetails( void ) = 0;
+	virtual void readNetworkDetails() = 0;
 
 	GuiDisplayable& parent();
 	MachGuiStartupScreens& startupScreens();

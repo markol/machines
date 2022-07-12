@@ -21,7 +21,7 @@ class MexLine3d
 {
 public:
 
-    MexLine3d( void );
+    MexLine3d();
 	MexLine3d( const MexPoint3d& v1, const MexPoint3d& v2 );
 	MexLine3d( const MexLine3d& );
 

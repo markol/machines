@@ -19,9 +19,9 @@ class MexTransform3d;
 class MachPhysSoftwareLabData : public MachPhysConstructionData
 {
 public:
-    MachPhysSoftwareLabData( void );
+    MachPhysSoftwareLabData();
     MachPhysSoftwareLabData( const MachPhysSoftwareLabData&, const MexTransform3d& );
-    ~MachPhysSoftwareLabData( void );
+    ~MachPhysSoftwareLabData();
 
     void CLASS_INVARIANT;
 

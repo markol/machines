@@ -29,7 +29,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogVortexHasBeenFiredCondition( void );
+    virtual ~MachLogVortexHasBeenFiredCondition();
 
     void CLASS_INVARIANT;
 

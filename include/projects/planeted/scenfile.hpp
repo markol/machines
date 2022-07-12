@@ -31,8 +31,8 @@ class PedScenarioFile
 // Canonical form revoked
 {
 public:
-    PedScenarioFile( void );
-    ~PedScenarioFile( void );
+    PedScenarioFile();
+    ~PedScenarioFile();
 
     void CLASS_INVARIANT;
 
@@ -135,15 +135,15 @@ public:
 	// PRE fileName.existsAsFile()
 	void write( std::ofstream& );
 
-	Constructions constructions( void ) const;
+	Constructions constructions() const;
 	void constructions( const Constructions& );
 
-	Machines machines( void ) const;
+	Machines machines() const;
 	void machines( const Machines& );
 
 	const SysPathName& arfFilename() const { return artefactModelFile_; }
 	void arfFilename( SysPathName fileName ) { artefactModelFile_ = fileName; }
-	Artefacts artefacts( void ) const;
+	Artefacts artefacts() const;
 	void artefacts( const Artefacts& );
 
 	Camera& camera( MachPhys::Race );
@@ -166,13 +166,13 @@ private:
 	typedef ctl_vector< RaceInfo > RacesInfo;
 
 	// File read methods
-	void readAI( void );
-	void readMineralSite( void );
-	void readConditions( void );
-	void readActions( void );
+	void readAI();
+	void readMineralSite();
+	void readConditions();
+	void readActions();
 	void readRace( RaceInfo&, MachPhys::Race race );
-	void readMiscellani( void );
-	void readArtefacts( void );
+	void readMiscellani();
+	void readArtefacts();
     Camera parseCamera( const UtlLineTokeniser::Tokens& );
 	Construction parseConstruction( const UtlLineTokeniser::Tokens& );
 	Machine parseMachine( const UtlLineTokeniser::Tokens& );
@@ -196,7 +196,7 @@ private:
 	int constructionSubType( const string& ) const;
 	MachPhys::MachineType machineType( const string& ) const;
 	int	machineSubType( const string& ) const;
-	uint nRaces( void );
+	uint nRaces();
 	void errorBox( const string& errorMessage ) const;
 
 

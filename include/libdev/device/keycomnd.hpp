@@ -38,7 +38,7 @@ public:
 
     DevKeyToCommand( ScanCode, CommandId, CtrlModifier = CTRLKEY_EITHER, ShiftModifier = SHIFTKEY_EITHER, AltModifier = ALTKEY_EITHER );
 
-    ~DevKeyToCommand( void );
+    ~DevKeyToCommand();
 
 	Modifier ctrlReq() const;
 	Modifier shiftReq() const;

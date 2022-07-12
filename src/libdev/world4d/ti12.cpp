@@ -3,7 +3,7 @@
  
 class W4dDomain;
 
-W4dDummyFunction12( void )
+W4dDummyFunction12()
 {
      static ctl_list<W4dDomain*> dummyDomains;
 }

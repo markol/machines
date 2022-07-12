@@ -29,7 +29,7 @@ class MachLogMachine;
 class MachLogCanAdminister
 {
 public:
-    virtual ~MachLogCanAdminister( void );
+    virtual ~MachLogCanAdminister();
 
     void CLASS_INVARIANT;
 	virtual void moveOutOfTheWay( MachLogMachine * );

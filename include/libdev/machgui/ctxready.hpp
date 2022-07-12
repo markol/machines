@@ -30,7 +30,7 @@ class MachGuiCtxImReady : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxImReady( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxImReady( void );
+    ~MachGuiCtxImReady();
 
 	virtual bool doHandleKeyEvent( const GuiKeyEvent& );
 

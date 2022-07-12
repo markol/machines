@@ -22,20 +22,20 @@
 class MachPhysMachineData : public MachPhysObjectData
 {
 public:
-    virtual ~MachPhysMachineData( void );
+    virtual ~MachPhysMachineData();
 	//Get methods are public
-	MachPhys::ResearchUnits hwResearchCost( void ) const;
-	MachPhys::ResearchUnits swResearchCost( void ) const;
-	MachPhys::BuildingMaterialUnits hwCost( void ) const;
-	MachPhys::BuildingMaterialUnits swCost( void ) const;
-	MachPhys::SizeUnits volume( void ) const;
-	MATHEX_SCALAR speed( void ) const;
-	MATHEX_SCALAR taskSpeed( void ) const;
-	MATHEX_SCALAR acceleration( void ) const;
-	MexRadians rotationSpeed( void ) const;
-	MexRadians rotationAcceleration( void ) const;
-	MachPhys::RepairRateUnits repairRate( void ) const;
-	MATHEX_SCALAR scannerRange( void ) const;
+	MachPhys::ResearchUnits hwResearchCost() const;
+	MachPhys::ResearchUnits swResearchCost() const;
+	MachPhys::BuildingMaterialUnits hwCost() const;
+	MachPhys::BuildingMaterialUnits swCost() const;
+	MachPhys::SizeUnits volume() const;
+	MATHEX_SCALAR speed() const;
+	MATHEX_SCALAR taskSpeed() const;
+	MATHEX_SCALAR acceleration() const;
+	MexRadians rotationSpeed() const;
+	MexRadians rotationAcceleration() const;
+	MachPhys::RepairRateUnits repairRate() const;
+	MATHEX_SCALAR scannerRange() const;
     MachPhys::MachineType machineType() const;
     int subType() const;
     uint hwLevel() const;
@@ -66,7 +66,7 @@ private:
 	friend class MachPhysResourceCarrierData;
 	friend class MachPhysDataParser;
     // Operations deliberately revoked
-    MachPhysMachineData( void );
+    MachPhysMachineData();
     MachPhysMachineData( const MachPhysMachineData& );
     MachPhysMachineData& operator =( const MachPhysMachineData& );
     bool operator ==( const MachPhysMachineData& );

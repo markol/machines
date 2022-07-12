@@ -29,7 +29,7 @@ public:
     MachPhysEntrance();
 
     //dtor
-    ~MachPhysEntrance( void );
+    ~MachPhysEntrance();
 
     //Create a door, which has physical rep pDoor. To move from closed to open position
     //traverses through displacement using speed/acceleration specified.

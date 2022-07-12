@@ -35,7 +35,7 @@ int PerIstreamBuffer::overflow( int )
 }
 //
 // virtual
-int PerIstreamBuffer::underflow( void )
+int PerIstreamBuffer::underflow()
 {
 //    cout << "underflow" << endl;
 

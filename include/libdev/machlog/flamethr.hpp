@@ -21,7 +21,7 @@ class MachLogFlameThrower : public MachLogLinearWeapon
 {
 public:
     MachLogFlameThrower( MachLogRace*, MachPhysLinearWeapon*, MachActor* pOwner );
-    virtual ~MachLogFlameThrower( void );
+    virtual ~MachLogFlameThrower();
 
     void CLASS_INVARIANT;
 

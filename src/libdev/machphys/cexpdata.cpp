@@ -25,12 +25,12 @@ void    MachPhysConstructionExplosionData::addPoint( const ExplosionPoint& point
     explosionPoints_.push_back( point );
 }
 
-const MachPhysConstructionExplosionData::ExplosionPoints& MachPhysConstructionExplosionData::explosionPoints( void ) const
+const MachPhysConstructionExplosionData::ExplosionPoints& MachPhysConstructionExplosionData::explosionPoints() const
 {
     return explosionPoints_;
 }
 
-const PhysRelativeTime&    MachPhysConstructionExplosionData::duration( void ) const
+const PhysRelativeTime&    MachPhysConstructionExplosionData::duration() const
 {
     return duration_;
 }

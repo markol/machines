@@ -25,7 +25,7 @@ public:
 
     MachGuiDispositionChangeNotifiable( MachGuiStartupScreens* );
 
-    virtual ~MachGuiDispositionChangeNotifiable( void );
+    virtual ~MachGuiDispositionChangeNotifiable();
 
 	virtual void notifyGeneralDispositionChange();
 	//one of these is generated for the actual specifics of a race

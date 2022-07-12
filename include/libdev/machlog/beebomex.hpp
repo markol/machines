@@ -34,7 +34,7 @@ public:
 		const MachPhysWeaponData&,
         MachActor* pOwner );
 
-    ~MachLogBeeBombExplosion( void );
+    ~MachLogBeeBombExplosion();
 									 								 									 
     void CLASS_INVARIANT;
 

@@ -98,8 +98,8 @@ public:
 
 	typedef	ctl_pvector< SingleProjectileDestroyData > ProjectileDestroyData;
 
-    MachLogMessageBroker( void );
-    virtual ~MachLogMessageBroker( void );
+    MachLogMessageBroker();
+    virtual ~MachLogMessageBroker();
 
 	virtual void processMessage( NetMessage* );
 	//note that message code has to be integer. This allows untype safe but useful different

@@ -127,7 +127,7 @@ public:
     void inOrOnPadBuilding( MachLogConstruction* pConstruction );
 
 	void insideAPC( bool );
-	bool insideAPC( void ) const;
+	bool insideAPC() const;
 	void APCImInside( MachLogAPC* pAPC );
    	const MachLogAPC& APCImInside() const;
 
@@ -344,8 +344,8 @@ private:
 
 	///////////////////////////////
 
-    PhysRelativeTime startExplodingAnimation( void );
-    PhysRelativeTime endExplodingAnimation( void );
+    PhysRelativeTime startExplodingAnimation();
+    PhysRelativeTime endExplodingAnimation();
 	PhysRelativeTime virtualDefConInterval();
 
 	///////////////////////////////

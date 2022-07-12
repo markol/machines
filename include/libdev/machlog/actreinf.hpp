@@ -28,7 +28,7 @@ class MachLogReinforcementsAction : public SimAction
 public:
 	typedef ctl_pvector< MachLogProductionUnit >	ProductionList;
 
-    virtual ~MachLogReinforcementsAction( void );
+    virtual ~MachLogReinforcementsAction();
 	static MachLogReinforcementsAction* newFromParser( SimCondition*, bool enabled, UtlLineTokeniser* );
 
 	const MexPoint2d& destination() const;

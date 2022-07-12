@@ -21,7 +21,7 @@ class MachPhysSymbolParser
 {
 public:
     MachPhysSymbolParser( ){};
-    ~MachPhysSymbolParser( void );
+    ~MachPhysSymbolParser();
 
     static MachPhys::ConstructionType 			constructionType( const string& token );
     static MachPhys::AggressorSubType      	aggressorSubType( const string& );

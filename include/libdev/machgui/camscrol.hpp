@@ -25,7 +25,7 @@ public:
 	enum POSITION { Top, Bottom, Right, Left };
 
     MachGuiCameraScrollArea( GuiDisplayable* pParent, const Gui::Box& rel, POSITION pos, MachCameras*, MachInGameScreen* );
-    ~MachGuiCameraScrollArea( void );
+    ~MachGuiCameraScrollArea();
 
     void CLASS_INVARIANT;
 

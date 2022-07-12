@@ -32,8 +32,8 @@ class W4dSoundManager
 {
 public:
     //  Singleton class
-    static W4dSoundManager& instance( void );
-    ~W4dSoundManager( void );
+    static W4dSoundManager& instance();
+    ~W4dSoundManager();
 
     //Preload the sound file with specified path
     void load( const SysPathName& path );
@@ -114,7 +114,7 @@ private:
     W4dSoundManager& operator =( const W4dSoundManager& );
     bool operator ==( const W4dSoundManager& );
 
-    W4dSoundManager( void );
+    W4dSoundManager();
 
 	W4dSoundManagerImpl* pImpl_;
 

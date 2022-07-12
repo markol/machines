@@ -49,7 +49,7 @@ public:
         MachActor* pOwner,
         int damage );
 
-    virtual ~MachLogStretchy( void );
+    virtual ~MachLogStretchy();
 
     // Override updates the logical machine's Ai process.
     // Clearance ignored for now.
@@ -79,8 +79,8 @@ protected:
         const MexPoint3d& globalEndPosition,
         MATHEX_SCALAR range );
 
-    MachPhysStretchy& physStretchy( void );
-    const MachPhysStretchy& physStretchy( void ) const;
+    MachPhysStretchy& physStretchy();
+    const MachPhysStretchy& physStretchy() const;
 
 	virtual void doBeDestroyed() = 0;
 

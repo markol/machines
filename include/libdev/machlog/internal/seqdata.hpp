@@ -37,7 +37,7 @@ class MachLogMachineMotionSequencerData
 {
 public:
     MachLogMachineMotionSequencerData( int id );
-    ~MachLogMachineMotionSequencerData( void );
+    ~MachLogMachineMotionSequencerData();
 
     void CLASS_INVARIANT;
 

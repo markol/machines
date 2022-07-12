@@ -20,8 +20,8 @@ class MachLogDyingEntityEventImpl
 // Canonical form revoked
 {
 public:
-    MachLogDyingEntityEventImpl( void );
-    ~MachLogDyingEntityEventImpl( void );
+    MachLogDyingEntityEventImpl();
+    ~MachLogDyingEntityEventImpl();
 
     void CLASS_INVARIANT;
 

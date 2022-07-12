@@ -248,7 +248,7 @@
                 void transform( const MexTransform3d& t, MexTransform3d* pResult ) const;
                 void setTransform( const MexFloatMatrix3d m );
                 void getTransform( MexFloatMatrix3d m ) const;
-                const MexTransform3dKey& key( void ) const;
+                const MexTransform3dKey& key() const;
                 void xBasis( MexVec3* ) const;
                 void yBasis( MexVec3* ) const;
                 void zBasis( MexVec3* ) const;
@@ -332,12 +332,12 @@
                 void rotate( const MexEulerAngles& );
                 void rotate( const MexQuaternion& );
                 void position( const MexPoint3d& newPosition );
-                MexVec3 xBasis( void ) const;
-                MexVec3 yBasis( void ) const;
-                MexVec3 zBasis( void ) const;
-                MexPoint3d  position( void ) const;
-                MexEulerAngles  rotationAsEulerAngles( void ) const;
-                MexQuaternion  rotationAsQuaternion( void ) const;
+                MexVec3 xBasis() const;
+                MexVec3 yBasis() const;
+                MexVec3 zBasis() const;
+                MexPoint3d  position() const;
+                MexEulerAngles  rotationAsEulerAngles() const;
+                MexQuaternion  rotationAsQuaternion() const;
                 all added.
 
                 void transformVector( MexVec3* pVector ) const;

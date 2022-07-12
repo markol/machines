@@ -21,7 +21,7 @@
 
 struct MachGuiModemNetworkModeImpl
 {
-	MachGuiModemNetworkModeImpl( void )
+	MachGuiModemNetworkModeImpl()
 	:	pModemSelector_( NULL ),
 		pTelNoEntryBox_( NULL )
 	{}
@@ -52,7 +52,7 @@ void MachGuiModemNetworkMode::CLASS_INVARIANT
 }
 
 // virtual
-void MachGuiModemNetworkMode::setNetworkDetails( void )
+void MachGuiModemNetworkMode::setNetworkDetails()
 {
 	// This function will use the settings from the drop downs to configure network settings
 	string currentModem = pimpl_->pModemSelector_->text();
@@ -77,7 +77,7 @@ bool MachGuiModemNetworkMode::validNetworkDetails( bool isHost )
 }
 
 // virtual
-void MachGuiModemNetworkMode::updateGUI( void )
+void MachGuiModemNetworkMode::updateGUI()
 {
 	// calling the update method on the text entry box will cause its caret to flash
 	pimpl_->pTelNoEntryBox_->update();
@@ -91,7 +91,7 @@ void MachGuiModemNetworkMode::updateGUI( void )
 #define MAX_TELNO_LEN 20
 
 // virtual
-void MachGuiModemNetworkMode::readNetworkDetails( void )
+void MachGuiModemNetworkMode::readNetworkDetails()
 {
 	GuiResourceString modemHeading( IDS_MENU_MODEMTYPE );
   	GuiBmpFont font( GuiBmpFont::getFont("gui/menu/smalwfnt.bmp") );

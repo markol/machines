@@ -27,8 +27,8 @@ class Containers
 // Canonical form revoked
 {
 public:
-    Containers( void );
-    ~Containers( void );
+    Containers();
+    ~Containers();
 
     void CLASS_INVARIANT;
 

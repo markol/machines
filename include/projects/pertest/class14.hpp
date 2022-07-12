@@ -20,8 +20,8 @@ class Class14 : public ctl_min_memory_vector< int >
 // Canonical form revoked
 {
 public:
-    Class14( void );
-    virtual ~Class14( void );
+    Class14();
+    virtual ~Class14();
 
     void CLASS_INVARIANT;
 

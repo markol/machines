@@ -123,7 +123,7 @@ MachGuiDbPlanet& MachGuiDbScenario::planet() const
     return *pData_->pPlanet_;
 }
 
-uint MachGuiDbScenario::maxPlayers( void ) const
+uint MachGuiDbScenario::maxPlayers() const
 {
 	return pData_->maxPlayers_;
 }

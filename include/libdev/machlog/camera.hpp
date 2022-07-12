@@ -41,13 +41,13 @@ public:
     //  PRE( pMgr != NULL );
     //  PRE( pParent != NULL );
             
-    ~MachLogCamera( void );
+    ~MachLogCamera();
 	
 	// When a camera become the active camera, this should be called.
 	void enable(MachLogCamera* lastCamera);
 
     //  Update the camera's domain, also take care of it entering any buildings.
-    void    update( void );
+    void    update();
     
     void CLASS_INVARIANT;
 
@@ -62,7 +62,7 @@ public:
     void    pushParent( W4dEntity* pParent, PhysConfigSpace2d* pConfigSpace );
 
     //  Attach the camera to the previous parent held in its stack
-    void    popParent( void );
+    void    popParent();
     //  PRE( stack is not empty );
 
     //Forces camera to stay in pDomain unless NULL
@@ -128,8 +128,8 @@ private:
     //  up to walls.
     MexConvexPolygon2d cameraPolygon( const MexPoint2d& position ) const;
 
-    void    checkThreshold( void );
-    Mathex::Side    thresholdSide( void );
+    void    checkThreshold();
+    Mathex::Side    thresholdSide();
 
     //Setup/remove observer relation with pCurrentPadConstruction_
     void startObservingConstruction();

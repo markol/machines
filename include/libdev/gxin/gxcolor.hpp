@@ -19,8 +19,8 @@ class GXColor
 // Canonical form revoked
 {
 public:
-    GXColor( void );
-    ~GXColor( void );
+    GXColor();
+    ~GXColor();
     GXColor( const GXColor& );
     GXColor& operator =( const GXColor& );
     friend bool operator ==( const GXColor&, const GXColor& );

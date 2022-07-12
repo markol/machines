@@ -32,8 +32,8 @@ class PedArtefactEditor : public PedActorEditor
 // Canonical form revoked
 {
 public:
-    PedArtefactEditor( void );
-    ~PedArtefactEditor( void );
+    PedArtefactEditor();
+    ~PedArtefactEditor();
 
 	void CLASS_INVARIANT;
 
@@ -41,20 +41,20 @@ public:
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 
-	virtual void displayModeInfo( void );
+	virtual void displayModeInfo();
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 
-    //virtual void preRenderUpdate( void );
-	//virtual void displayModeInfo( void );
+    //virtual void preRenderUpdate();
+	//virtual void displayModeInfo();
 
 	virtual void readScnFile( PedScenarioFile& );
 	// PRE( cspFileName.existsAsFile() );
 
 	virtual void writeScnFile( PedScenarioFile& );
 
-	void displayKeyboardCtrls( void );
-	//virtual void changingMode( void );
+	void displayKeyboardCtrls();
+	//virtual void changingMode();
 
 	void createCeilingArtefact( const MachPhysTerrainTile& terrainTile );
 
@@ -62,15 +62,15 @@ public:
 
 protected:
 
-	void initialiseActors( void );
-	virtual W4dEntity* currentActor( void );
+	void initialiseActors();
+	virtual W4dEntity* currentActor();
 	virtual void processCycle( PedActorEditor::CycleDir dir );
- 	virtual void processSelection( void );
- 	virtual void processDelete( void );
-	virtual void processRace( void );
+ 	virtual void processSelection();
+ 	virtual void processDelete();
+	virtual void processRace();
 	virtual void processRotation( bool );
 	virtual void createEntity( W4dEntity&, const MexTransform3d& );
-	virtual void rotateAfterMove( void );
+	virtual void rotateAfterMove();
 	virtual void processHide( bool hidden );
 	virtual void changeAllSolidities( W4dEntity::Solidity );
 	virtual void processHeightChange( int deltaz );
@@ -108,7 +108,7 @@ private:
 	void createEntity(  W4dEntity&, const MexTransform3d&, const string& key, MexDegrees orientation );
 
 //	void initialiseActors();
- 	void deleteArtefacts( void );
+ 	void deleteArtefacts();
    //	MachPhys::ArtefactType artefactType( const string& type );
 	int subType( const string& type );
 	artefactIndex storeIndex( W4dEntity* pSelectedArtefact );

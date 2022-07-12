@@ -34,7 +34,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogHighUnitCountCondition( void );
+    virtual ~MachLogHighUnitCountCondition();
 
     void CLASS_INVARIANT;
 

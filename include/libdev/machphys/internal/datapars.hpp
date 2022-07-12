@@ -28,8 +28,8 @@ class MachPhysDataParser
 {
 public:
     //  Singleton class
-    static MachPhysDataParser& instance( void );
-    ~MachPhysDataParser( void );
+    static MachPhysDataParser& instance();
+    ~MachPhysDataParser();
 
     void read( const SysPathName& pathname, MachPhysDataImplementation* pData );
 
@@ -47,7 +47,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const MachPhysDataParser& );
 
-    MachPhysDataParser( void );
+    MachPhysDataParser();
 
     typedef MachPhysDataImplementation::AggressorDataStore        AggressorDataStore;
     typedef MachPhysDataImplementation::AdministratorDataStore    AdministratorDataStore;
@@ -142,7 +142,7 @@ private:
 	void parseWeaponBlock( UtlLineTokeniser*, MachPhys::WeaponType type );
     void parseGeneralData( UtlLineTokeniser* pParser );
 
-    void initialiseDataStores( void );
+    void initialiseDataStores();
 
     //  Return true iff the data is valid for each construction data in the store
     bool constructionDataValid( const ConstructionDataStore& store ) const;

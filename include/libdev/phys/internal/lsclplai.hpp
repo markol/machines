@@ -25,7 +25,7 @@ public:
 
 private:
     PhysLinearScalarPlanImpl( const PhysLinearScalarPlan::ScalarVec& times, const PhysLinearScalarPlan::ScalarVec& scales );
-    ~PhysLinearScalarPlanImpl( void );
+    ~PhysLinearScalarPlanImpl();
 
     PhysLinearScalarPlanImpl( const PhysLinearScalarPlanImpl& );
     PhysLinearScalarPlanImpl& operator =( const PhysLinearScalarPlanImpl& );

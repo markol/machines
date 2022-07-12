@@ -25,7 +25,7 @@ class PedVertexMarker : public W4dCustom
 public:
     PedVertexMarker( size_t x, size_t y, bool highlight );
     PedVertexMarker( const MexPoint3d& point, bool highlight );
-    ~PedVertexMarker( void );
+    ~PedVertexMarker();
 
     void CLASS_INVARIANT;
 

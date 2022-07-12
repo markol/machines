@@ -50,7 +50,7 @@ public:
     
     virtual MachPhysLocomotionMethod* clone( MachPhysMachine* pMachine, const W4dLinks& links ) = 0;
     
-    virtual ~MachPhysLocomotionMethod( void );
+    virtual ~MachPhysLocomotionMethod();
 
 
     typedef ctl_vector< MexRadians >    TurnAngles;

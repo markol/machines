@@ -24,7 +24,7 @@ class MachPhysMaterialConverter
 {
 public:
     MachPhysMaterialConverter( MachPhys::Race from, MachPhys::Race to );
-    ~MachPhysMaterialConverter( void );
+    ~MachPhysMaterialConverter();
 
     //  If the material is 'close' to the from colour then convert it
     //  to the to colour and return true. Otherwise return false.

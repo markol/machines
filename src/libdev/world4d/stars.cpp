@@ -81,7 +81,7 @@ W4dStars::W4dStars(const W4dStars& copyMe, W4dEntity* pParent)
 }
 
 // VIRTUAL //
-W4dStars::~W4dStars( void )
+W4dStars::~W4dStars()
 {
 	TEST_INVARIANT;
 

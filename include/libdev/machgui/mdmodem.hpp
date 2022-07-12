@@ -23,21 +23,21 @@ class MachGuiModemNetworkMode : public MachGuiNetworkProtocolMode
 {
 public:
     MachGuiModemNetworkMode( GuiDisplayable* , MachGuiStartupScreens* );
-    ~MachGuiModemNetworkMode( void );
+    ~MachGuiModemNetworkMode();
 
     void CLASS_INVARIANT;
 
-	virtual void setNetworkDetails( void );
+	virtual void setNetworkDetails();
 
-	virtual void updateGUI( void );
+	virtual void updateGUI();
 
 	bool validNetworkDetails( bool isHost );
 
 protected:
-	virtual void readNetworkDetails( void );
+	virtual void readNetworkDetails();
 
 private:
-	//void previousTransition( void );
+	//void previousTransition();
 
     friend ostream& operator <<( ostream& o, const MachGuiModemNetworkMode& t );
 

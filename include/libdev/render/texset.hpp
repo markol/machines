@@ -24,14 +24,14 @@ class RenTextureSet
 // Canonical form revoked
 {
 public:
-    RenTextureSet( void );
+    RenTextureSet();
 	// POST( not isLoaded() );
     RenTextureSet( const SysPathName& sysPathName );
 	// POST( isLoaded() );
 	RenTextureSet( const SysPathName& sysPathName, BaseProgressReporter* pReporter );
 	// PRE( pReporter );
 	// POST( isLoaded() );
-    ~RenTextureSet( void );
+    ~RenTextureSet();
 
     void CLASS_INVARIANT;
 
@@ -44,7 +44,7 @@ public:
 	// PRE(not isLoaded() );
 	// PRE( pReporter );
 	
-	bool isLoaded( void ) const;
+	bool isLoaded() const;
 
     typedef ctl_vector< RenTexture > RenTextures;
 

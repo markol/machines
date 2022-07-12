@@ -32,7 +32,7 @@ public:
 	// POST( maxValue_ == 1.0 );
 	// POST( value() == minValue_ );
 
-    ~MachGuiSlideBar( void );
+    ~MachGuiSlideBar();
 
 	// Set the range of values the slide bar can produce.
 	void minMax( float minV, float maxV );

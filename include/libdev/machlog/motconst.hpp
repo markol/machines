@@ -32,7 +32,7 @@ class MachLogGroundCameraMotionConstraint : public PhysGroundMotionConstraint
 {
 public:
  	MachLogGroundCameraMotionConstraint( MachLogCamera* pCamera );
-	virtual ~MachLogGroundCameraMotionConstraint( void );
+	virtual ~MachLogGroundCameraMotionConstraint();
 
     void CLASS_INVARIANT;
 	
@@ -128,8 +128,8 @@ class MachLogPlanetCameraConstraint : public PhysMotionConstraint
 // Canonical form revoked
 {
 public:
- 	MachLogPlanetCameraConstraint( void );
-	virtual ~MachLogPlanetCameraConstraint( void );
+ 	MachLogPlanetCameraConstraint();
+	virtual ~MachLogPlanetCameraConstraint();
 
     void CLASS_INVARIANT;
 	
@@ -179,7 +179,7 @@ private:
 	enum Command { ZOOMOUT, ZOOMIN, LEFT, RIGHT, UP, DOWN, RESET };
 
 	static DevKeyToCommandTranslator& keyTranslator();
-	static MexTransform3d& thirdPersonOffset( void );
+	static MexTransform3d& thirdPersonOffset();
 
 	// data members
 	const MachLogMachine* pMachine_;
@@ -189,7 +189,7 @@ class MachLogThirdPersonCameraConstraint : public PhysThirdPersonCameraConstrain
 {
 public:
  	MachLogThirdPersonCameraConstraint( PhysThirdPerson* pThirdPerson, MachLogCamera* pCamera );
-	virtual ~MachLogThirdPersonCameraConstraint( void );
+	virtual ~MachLogThirdPersonCameraConstraint();
 
     void CLASS_INVARIANT;
 	

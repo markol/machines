@@ -43,8 +43,8 @@ public:
 	typedef ctl_vector< bool > BoolVec;
 
     //  Singleton class
-    static MachLogVoiceMailManager& instance( void );
-    ~MachLogVoiceMailManager( void );
+    static MachLogVoiceMailManager& instance();
+    ~MachLogVoiceMailManager();
 
 	//Update voicemail Queue and play all new mails
 	void update();
@@ -115,7 +115,7 @@ private:
     MachLogVoiceMailManager( const MachLogVoiceMailManager& );
     MachLogVoiceMailManager& operator =( const MachLogVoiceMailManager& );
 
-    MachLogVoiceMailManager( void );
+    MachLogVoiceMailManager();
 
     //typedef ctl_map< string, VoiceMailType, std::less< string > > VEmailTypeMap;
     //typedef ctl_pvector< MachLogVoiceMailInfo > MailInfoVector;

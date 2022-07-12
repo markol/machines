@@ -28,16 +28,16 @@ class PedPolygon : public W4dCustom
 {
 public:
     PedPolygon( const PolyVerticies& , MATHEX_SCALAR z, bool selected );
-    ~PedPolygon( void );
+    ~PedPolygon();
 
     void CLASS_INVARIANT;
 
-	PolyVerticies& verticies( void );
+	PolyVerticies& verticies();
 	const PolyVerticies& verticies() const;
 
 	bool isConvex() const;
 
-	void refreshMesh( void );
+	void refreshMesh();
 
 	virtual void select( bool selected );
 
@@ -47,7 +47,7 @@ public:
 
 	void hide( bool hide );
 
-	bool hidden( void );
+	bool hidden();
 
 	virtual size_t height() const;
 

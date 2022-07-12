@@ -27,13 +27,13 @@ class MexHierShape3d
 {
 // orthodox canonical form
 public:
-    MexHierShape3d( void );
-    virtual ~MexHierShape3d( void );
+    MexHierShape3d();
+    virtual ~MexHierShape3d();
 
     void CLASS_INVARIANT;
 
    typedef ctl_vector<MexPoint3d> PointList;
-   virtual bool hasZeroVolume( void ) const { return true; }
+   virtual bool hasZeroVolume() const { return true; }
    virtual void transform( const MexTransform3d& transform ) = 0;
    virtual void transform(const MexTransform3d& transform, MexHierShape3d* &pShape ) const = 0;
    // PRE(result==NULL);

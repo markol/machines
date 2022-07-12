@@ -51,7 +51,7 @@ public:
     //  PRE( MexUtility::inStraightLineXY( *transformsPtr ) );
 
     //dtor.
-    ~MachPhysMachineMoveInfo( void );
+    ~MachPhysMachineMoveInfo();
 
     //Accessors
     const MexTransform3d& startTransform() const;

@@ -46,7 +46,7 @@ void MachGuiStatisticsBar::CLASS_INVARIANT
     INVARIANT( this != NULL );
 }
 
-float MachGuiStatisticsBar::range( void ) const
+float MachGuiStatisticsBar::range() const
 {
 	return range_;
 }
@@ -67,17 +67,17 @@ void MachGuiStatisticsBar::stat( float newStat )
 	PRE( newStat <= range() );
 	stat_ = newStat;
 }
-float MachGuiStatisticsBar::stat( void ) const
+float MachGuiStatisticsBar::stat() const
 {
 	return stat_;
 }
 
-uint MachGuiStatisticsBar::height( void ) const
+uint MachGuiStatisticsBar::height() const
 {
 	return statsBarBmp_.height();
 }
 
-uint MachGuiStatisticsBar::width( void ) const
+uint MachGuiStatisticsBar::width() const
 {
 	return statsBarBmp_.width();
 }
@@ -98,7 +98,7 @@ void MachGuiStatisticsBar::draw( bool update )
         showStatistic();
 }
 
-void MachGuiStatisticsBar::showStatistic( void )
+void MachGuiStatisticsBar::showStatistic()
 {
 	showStatistic_ = true;
 	GuiBmpFont font = GuiBmpFont::getFont( SysPathName("gui/menu/smallfnt.bmp") );

@@ -36,18 +36,18 @@ public:
                      const PhysConfigSpace2d::Longevity& longevity );
 
     //dtor.
-    ~PhysCS2dPolygon( void );
+    ~PhysCS2dPolygon();
 
     //Data access
-    const PolygonId& id( void ) const;
-    const MexPolygon2d& polygon( void ) const;
-    MATHEX_SCALAR height( void ) const;
-    PhysConfigSpace2d::Longevity longevity( void ) const;
+    const PolygonId& id() const;
+    const MexPolygon2d& polygon() const;
+    MATHEX_SCALAR height() const;
+    PhysConfigSpace2d::Longevity longevity() const;
     void longevity( PhysConfigSpace2d::Longevity newLongevity );
-    const MexAlignedBox2d& boundary( void ) const;
+    const MexAlignedBox2d& boundary() const;
     void boundary( MexAlignedBox2d* pBox ) const;
 
-    bool isEnabled( void ) const;
+    bool isEnabled() const;
     void isEnabled( bool doEnable );
 
     //  Returns true iff the polygon isEnabled() and there is no

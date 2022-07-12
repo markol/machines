@@ -39,12 +39,12 @@ class MachGuiCtxOptions : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxOptions( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxOptions( void );
+    ~MachGuiCtxOptions();
 
     void CLASS_INVARIANT;
 
 	virtual void update();
-	virtual bool okayToSwitchContext( void );
+	virtual bool okayToSwitchContext();
 	virtual void buttonEvent( MachGuiStartupScreens::ButtonEvent );
 
 	void exitFromOptions();
@@ -54,8 +54,8 @@ public:
 private:
     friend ostream& operator <<( ostream& o, const MachGuiCtxOptions& t );
 
-	void getOptions( void );
-	void setOptions( void );
+	void getOptions();
+	void setOptions();
 	void showDirect3DDrivers();
 
     MachGuiCtxOptions( const MachGuiCtxOptions& );

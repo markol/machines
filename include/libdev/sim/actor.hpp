@@ -47,7 +47,7 @@ public:
     SimActor (SimProcess* pProcess, W4dEntity* pPhysObject, Update);
 
     //The owning SimProcess
-    const SimProcess& process( void ) const;
+    const SimProcess& process() const;
 
     //Set the priority. When CPU time is in short supply, an actor with
     //priority 10 will get approx 10 times the CPU time as an actor with priority 1 owned
@@ -68,14 +68,14 @@ public:
                                      MATHEX_SCALAR clearanceFromDisplayedVolume ) = 0;
 
     //Must be overriden to return the RenDomain in which the actor currently resides
-//    virtual const RenDomain& renDomain( void ) const = 0;
+//    virtual const RenDomain& renDomain() const = 0;
 
     void CLASS_INVARIANT;
 
     friend ostream& operator <<( ostream& o, const SimActor& t );
 
     // Get the isDead flag
-    bool isDead( void ) const;
+    bool isDead() const;
 
 	//Actors may assign themselves to different processes
 	//in public interface as persistence mechanism may have to do this as well.
@@ -88,7 +88,7 @@ protected:
 
     // Set/get the time at which the actor has requested it should be next updated
     void nextUpdateTime( const PhysAbsoluteTime& );
-    const PhysAbsoluteTime& nextUpdateTime( void ) const;
+    const PhysAbsoluteTime& nextUpdateTime() const;
 
     //Default implementation does nothing
 	virtual bool beNotified( W4dSubject* pSubject,
@@ -100,7 +100,7 @@ protected:
     void isDead( bool die );
 
     //Destructor unregisters with owning SimProcess.
-    virtual ~SimActor( void );
+    virtual ~SimActor();
 
 private:
     friend class SimManager;

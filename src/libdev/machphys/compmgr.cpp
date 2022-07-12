@@ -131,7 +131,7 @@ static void updateItem( MachPhysComplexityItem* item)
 	item->update();
 }
 
-void MachPhysComplexityManager::updateSceneParameters( void )
+void MachPhysComplexityManager::updateSceneParameters()
 {
 	for_each( booleanItems_.begin(), booleanItems_.end(), updateItem );
 	for_each( choiceItems_.begin(), choiceItems_.end(), updateItem );

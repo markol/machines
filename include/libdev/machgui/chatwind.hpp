@@ -22,7 +22,7 @@ class MachGuiChatWindow : public GuiDisplayable
 {
 public:
     MachGuiChatWindow( MachGuiStartupScreens*, const Gui::Box& );
-    ~MachGuiChatWindow( void );
+    ~MachGuiChatWindow();
 
 	static void addText( const string& text );
 

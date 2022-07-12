@@ -231,7 +231,7 @@ void SndWaveManager::freeWaveForm( const SndWaveformId& id )
 	}
 }
 
-void SndWaveManager::freeAll( void )
+void SndWaveManager::freeAll()
 {
 	WaveFormMap::iterator i = loadedWaveForms_.begin();
 

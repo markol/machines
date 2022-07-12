@@ -108,7 +108,7 @@ void MachLogCamera::enable(MachLogCamera* lastCamera)
 	}
 }
 
-void MachLogCamera::update( void )
+void MachLogCamera::update()
 {
 	CB_MachLogCamera_DEPIMPL();
 
@@ -411,7 +411,7 @@ bool MachLogCamera::canSnapToPosition( const MexPoint3d& newPosition )
 }
 
 
-void MachLogCamera::checkThreshold( void )
+void MachLogCamera::checkThreshold()
 {
 	CB_MachLogCamera_DEPIMPL();
 
@@ -441,7 +441,7 @@ void MachLogCamera::checkThreshold( void )
     }
 }
 
-Mathex::Side MachLogCamera::thresholdSide( void )
+Mathex::Side MachLogCamera::thresholdSide()
 {
 	CB_MachLogCamera_DEPIMPL();
 
@@ -473,7 +473,7 @@ void    MachLogCamera::pushParent( W4dEntity* pNewParent, PhysConfigSpace2d* pCo
 
 }
 
-void    MachLogCamera::popParent( void )
+void    MachLogCamera::popParent()
 {
 	CB_MachLogCamera_DEPIMPL();
 

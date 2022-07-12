@@ -26,7 +26,7 @@ class PedPortalEditor	: public PedPolygonEditor
 {
 public:
     PedPortalEditor( );
-    ~PedPortalEditor( void );
+    ~PedPortalEditor();
 
     void CLASS_INVARIANT;
 
@@ -34,9 +34,9 @@ public:
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 
-	virtual void displayKeyboardCtrls( void );
+	virtual void displayKeyboardCtrls();
 
-	virtual void displayModeInfo( void );
+	virtual void displayModeInfo();
 
 	virtual void readCspFile( const SysPathName& );
 	// PRE( cspFileName.existsAsFile() );
@@ -50,14 +50,14 @@ public:
 protected:
 	virtual PedPolygon* createPolygon( const PolyVerticies& verticies, MATHEX_SCALAR height, bool selected ) const;
 	virtual PedPolygon* createDefaultPolygon() const;
-	virtual void processVertexRight( void );
-	virtual void processVertexLeft( void );
-	virtual void processVertexUp( void );
-	virtual void processVertexDown( void );
-	virtual void updatePolygon( void );
+	virtual void processVertexRight();
+	virtual void processVertexLeft();
+	virtual void processVertexUp();
+	virtual void processVertexDown();
+	virtual void updatePolygon();
 
 private:
-	void processCreatePortalsFromDomains( void );
+	void processCreatePortalsFromDomains();
 
 	// Operations deliberately revoked
     PedPortalEditor( const PedPortalEditor& );

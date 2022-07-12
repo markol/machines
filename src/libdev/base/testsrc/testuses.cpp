@@ -18,7 +18,7 @@ private:
 };
 
 
-void	testUsesA( void )
+void	testUsesA()
 
 {
 	WHERE;

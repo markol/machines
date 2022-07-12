@@ -43,7 +43,7 @@ public:
         MATHEX_SCALAR maxX, MATHEX_SCALAR maxY,
         uint nColumns, uint nRows );
 
-    ~UtlAsciiPicture( void );
+    ~UtlAsciiPicture();
 
     uint nColumns() const;
     uint nRows() const;

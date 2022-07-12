@@ -46,8 +46,8 @@ class MachPhysDataImplementation
 {
 public:
     //  Singleton class
-    static MachPhysDataImplementation& instance( void );
-    ~MachPhysDataImplementation( void );
+    static MachPhysDataImplementation& instance();
+    ~MachPhysDataImplementation();
 
 	//Machine Types
 	const MachPhysAggressorData& aggressorData( MachPhys::AggressorSubType, size_t hwLevel , size_t swLevel ) const;
@@ -88,7 +88,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const MachPhysDataImplementation& );
 
-    MachPhysDataImplementation( void );
+    MachPhysDataImplementation();
 
     enum { MAX_HARDWARE_LEVELS = 5 };
     enum { MAX_SOFTWARE_LEVELS = 5 };

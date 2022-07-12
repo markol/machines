@@ -47,7 +47,7 @@ void DiagStream::setup(
     exists_ = true;
 }
 
-void DiagStream::setupStream( void )
+void DiagStream::setupStream()
 {
     //  Look for DiagStreams already using this filename so that
     //  we don't end up fighting over the file.
@@ -156,7 +156,7 @@ void    DiagStream::close()
     pWindowStream_ = NULL;
 }
 
-// bool    DiagStream::exists( void )
+// bool    DiagStream::exists()
 // {
 //     PRE( this != NULL );
 //
@@ -166,7 +166,7 @@ void    DiagStream::close()
 //     return exists_;
 // }
 
-ostream&    DiagStream::ostr( void )
+ostream&    DiagStream::ostr()
 {
 //     if( pDependantStream_ )
 //     {
@@ -184,7 +184,7 @@ ostream&    DiagStream::ostr( void )
 //     return ostr_;
 }
 
-ostream&    DiagStream::nonPrependOstr( void )
+ostream&    DiagStream::nonPrependOstr()
 {
     if( pDependantStream_ )
     {
@@ -266,17 +266,17 @@ void DiagStream::interpretEnvironmentVariable(
     }
 }
 
-const char* DiagStream::name( void ) const
+const char* DiagStream::name() const
 {
     return name_;
 }
 
-bool DiagStream::append( void ) const
+bool DiagStream::append() const
 {
     return append_;
 }
 
-void DiagStream::forceAppendFile( void )
+void DiagStream::forceAppendFile()
 {
     if( not append_ )
     {
@@ -288,7 +288,7 @@ void DiagStream::forceAppendFile( void )
     }
 }
 
-DiagStream* DiagStream::pNextStream( void )
+DiagStream* DiagStream::pNextStream()
 {
     return pNextStream_;
 }
@@ -299,14 +299,14 @@ void DiagStream::pNextStream( DiagStream* pNext )
 }
 
 // static
-DiagStream*& DiagStream::pFirstStream( void )
+DiagStream*& DiagStream::pFirstStream()
 {
     static  DiagStream* pFirstStream_ = NULL;
 
     return pFirstStream_;
 }
 
-bool    DiagStream::hasDestination( void ) const
+bool    DiagStream::hasDestination() const
 {
     return masterOstr_.hasStream();
 }

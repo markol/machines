@@ -26,25 +26,25 @@ class MachPhysIMachineExplosionData
 // Canonical form revoked
 {
 public:
-    MachPhysIMachineExplosionData( void );
+    MachPhysIMachineExplosionData();
     MachPhysIMachineExplosionData( const MachPhysIMachineExplosionData& );
-    ~MachPhysIMachineExplosionData( void );
+    ~MachPhysIMachineExplosionData();
 
     void CLASS_INVARIANT;
 
     //  Return the maximum size of link to be exploded
-    MATHEX_SCALAR   maxSize( void ) const;
+    MATHEX_SCALAR   maxSize() const;
 
     //  The min number of links to shoot off
-    size_t  minToShootOff( void ) const;
+    size_t  minToShootOff() const;
     void    minToShootOff( size_t newMin );
 
     //  The maximum number of links to shoot off
-    size_t  maxToShootOff( void ) const;
+    size_t  maxToShootOff() const;
     void    maxToShootOff( size_t newMax );
 
     //  The explosion center from wich all the parts are sent in the air
-    const MexPoint3d&  explosionCenter( void ) const;
+    const MexPoint3d&  explosionCenter() const;
     void  explosionCenter( const MexPoint3d& newExplosionCenter );
 
     PER_MEMBER_PERSISTENT( MachPhysIMachineExplosionData );

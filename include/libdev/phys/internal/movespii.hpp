@@ -39,7 +39,7 @@ private:
 						  const MexVec3& rotationAxis,
 						  MATHEX_SCALAR rotationSpeed,
                           const PhysRelativeTime& endTime);
-    ~PhysMoveSpinPlanImpl( void );
+    ~PhysMoveSpinPlanImpl();
     PhysMoveSpinPlanImpl( const PhysMoveSpinPlanImpl& );
     PhysMoveSpinPlanImpl& operator =( const PhysMoveSpinPlanImpl& );
 

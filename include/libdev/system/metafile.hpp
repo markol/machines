@@ -24,7 +24,7 @@ class SysMetaFile
 {
 public:
     SysMetaFile( const SysPathName& filename );
-    ~SysMetaFile( void );
+    ~SysMetaFile();
 
     const SysPathName& filename() const;
     

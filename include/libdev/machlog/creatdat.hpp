@@ -35,7 +35,7 @@ public:
 	typedef ctl_vector< PlayerCreationData >            PlayersCreationData;
 
 	//default constructor sets appropriate default values.
-    MachLogGameCreationData( void );
+    MachLogGameCreationData();
 	//use this constructor in skirmish and multiplayer games.
     MachLogGameCreationData( MachLog::RandomStarts, 
     						const PlayersCreationData&, 
@@ -47,7 +47,7 @@ public:
 
     MachLogGameCreationData( const MachLogGameCreationData& );
 
-    ~MachLogGameCreationData( void );
+    ~MachLogGameCreationData();
 
     void CLASS_INVARIANT;
 

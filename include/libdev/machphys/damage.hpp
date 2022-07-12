@@ -31,7 +31,7 @@ class MachPhysEntityDamage
 public:
     MachPhysEntityDamage( W4dEntity* pTarget );
     MachPhysEntityDamage( MachPhysConstruction* pTarget );
-    ~MachPhysEntityDamage( void );
+    ~MachPhysEntityDamage();
 
 	void damageLevel( const double& percent );
 	const double& damageLevel() const;

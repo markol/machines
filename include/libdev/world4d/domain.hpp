@@ -32,7 +32,7 @@ public:
     W4dDomain( W4dEntity* parent, const W4dTransform3d& localTransform );
     // Constructor attaches to parent, and stores copy of localTransform.
 
-    ~W4dDomain( void );
+    ~W4dDomain();
 
     typedef ctl_list< W4dPortal* >  W4dPortals;
 

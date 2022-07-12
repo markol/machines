@@ -40,10 +40,10 @@
 
 PER_DEFINE_PERSISTENT( MachPhysBeam );
 
-static const PhysScalarPlanPtr& waveScalarPlanPtr( void );
-static const PhysScalarPlanPtr& beamScalarPlanPtr( void );
-static PhysRelativeTime	waveExpansionTime( void );
-static PhysRelativeTime	expansionTime( void );
+static const PhysScalarPlanPtr& waveScalarPlanPtr();
+static const PhysScalarPlanPtr& beamScalarPlanPtr();
+static PhysRelativeTime	waveExpansionTime();
+static PhysRelativeTime	expansionTime();
 
 //One-time ctor
 MachPhysBeam::MachPhysBeam()

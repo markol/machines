@@ -36,8 +36,8 @@ private:
 
     friend ostream& operator <<( ostream& o, const MachGuiDbIElement& t );
 
-    MachGuiDbIElement( void );
-    ~MachGuiDbIElement( void );
+    MachGuiDbIElement();
+    ~MachGuiDbIElement();
     MachGuiDbIElement( const MachGuiDbIElement& );
     MachGuiDbIElement& operator =( const MachGuiDbIElement& );
 

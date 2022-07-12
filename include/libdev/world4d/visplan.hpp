@@ -26,7 +26,7 @@ class W4dVisibilityPlan
 public:
     //  Specify the visibility at time zero
     W4dVisibilityPlan( bool visible );
-    ~W4dVisibilityPlan( void );
+    ~W4dVisibilityPlan();
 
     //  Specify the visibility at the given time
     void add( bool visible, const PhysRelativeTime& time );
@@ -34,7 +34,7 @@ public:
     //  Return the value of the visibility flag at the given time
     bool visible( const PhysRelativeTime& time ) const;
 
-    const PhysRelativeTime& duration( void ) const;
+    const PhysRelativeTime& duration() const;
     
     void CLASS_INVARIANT;
 

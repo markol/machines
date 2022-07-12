@@ -23,7 +23,7 @@
 static unsigned char verString[] = "$:VERSION:$ " LIBRARY "  " VERSION;
 static unsigned char dateString[] = "$:DATETIME:$ " LIBRARY "  " __DATE__ " " __TIME__;
 
-void printVersion( void )
+void printVersion()
 {
     printf( "%s\n", verString );
     printf( "%s\n", dateString );    

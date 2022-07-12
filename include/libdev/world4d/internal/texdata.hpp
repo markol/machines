@@ -31,7 +31,7 @@ public:
                          const size_t& endTexture,
                          const size_t& nRepetations);
 
-    virtual ~W4dCycleTextureData( void );
+    virtual ~W4dCycleTextureData();
 
     PER_MEMBER_PERSISTENT(W4dCycleTextureData);
     PER_FRIEND_READ_WRITE(W4dCycleTextureData);

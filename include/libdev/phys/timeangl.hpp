@@ -40,7 +40,7 @@ public:
     //PRE( times in timesPtr in ascending order )
 
     //dtor
-    ~PhysTimedAnglePlan( void );
+    ~PhysTimedAnglePlan();
 
     void CLASS_INVARIANT;
 

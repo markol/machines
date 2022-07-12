@@ -27,7 +27,7 @@ class PhysCompressedMotionChunk
 public:
     PhysCompressedMotionChunk();
     PhysCompressedMotionChunk( const PhysMotionChunk& );
-    ~PhysCompressedMotionChunk( void );
+    ~PhysCompressedMotionChunk();
 
     void CLASS_INVARIANT;
 

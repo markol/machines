@@ -94,7 +94,7 @@ class MachGuiScrollArea	: public GuiDisplayable
 {
 public:
     MachGuiScrollArea( GuiDisplayable* pParent, const Gui::Box& area, MachInGameScreen* );
-    ~MachGuiScrollArea( void );
+    ~MachGuiScrollArea();
 
 	void initialise();
 

@@ -104,8 +104,8 @@ class GXLabel
 // Canonical form revoked
 {
 public:
-    GXLabel( void );
-    ~GXLabel( void );
+    GXLabel();
+    ~GXLabel();
 
     void CLASS_INVARIANT;
 

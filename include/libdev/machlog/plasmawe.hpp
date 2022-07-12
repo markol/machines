@@ -22,7 +22,7 @@ class MachLogPlasmaWeapon : public MachLogLinearWeapon
 {
 public:
     MachLogPlasmaWeapon( MachLogRace*, MachPhysLinearWeapon*, MachActor* pOwner );
-    virtual ~MachLogPlasmaWeapon( void );
+    virtual ~MachLogPlasmaWeapon();
 
     void CLASS_INVARIANT;
 

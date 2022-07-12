@@ -39,7 +39,7 @@ public:
 		pLoadCtx_( pLoadCtx )
 	{}
 
-    ~MachGuiLoadGameListBoxItem( void )
+    ~MachGuiLoadGameListBoxItem()
 	{}
 
 	static string displayText( MachGuiDbSavedGame& savedGame )

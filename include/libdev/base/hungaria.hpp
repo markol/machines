@@ -9,7 +9,7 @@
 #define _HUNGARIA_HPP
 
 typedef int (*i_fn_i)( int );
-typedef void (*v_fn_v)( void );
+typedef void (*v_fn_v)();
 
 #endif
 

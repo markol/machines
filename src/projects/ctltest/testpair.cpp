@@ -10,7 +10,7 @@
 #include "mathex/transf3d.hpp"
 #include "mathex/point3d.hpp"
 
-void testPair( void )
+void testPair()
 {
 //	CTL_PAIR( pairTest, int, key, MexTransform3d, transform );
 	CTL_PAIR( pairTest, int, key, MexTransform3d, transform );

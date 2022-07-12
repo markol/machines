@@ -35,7 +35,7 @@ public:
                          const MexPoint3d& location, UtlId );
 
     //dtor.
-    virtual ~MachLogOreHolograph( void );
+    virtual ~MachLogOreHolograph();
 
 	//view of MachPhysObject data
 	virtual const MachPhysObjectData& objectData() const;

@@ -32,18 +32,18 @@ public:
     static  void addMaterial( Materials* pMaterials, const string& textureFileName );
 
     static  const Materials&   materials( MachPhysFireballType fireballType );
-    static  const Materials&   materials1( void );
-    static  const Materials&   materials2( void );
-    static  const Materials&   materials3( void );
-    static  const Materials&   materials4( void );
+    static  const Materials&   materials1();
+    static  const Materials&   materials2();
+    static  const Materials&   materials3();
+    static  const Materials&   materials4();
 
     static  RenMaterial initialMaterial( MachPhysFireballType );
 
     static  W4dMaterialPlanPtr materialPlanPtr( MachPhysFireballType type );
-    static  W4dMaterialPlanPtr materialPlanPtr1( void );
-    static  W4dMaterialPlanPtr materialPlanPtr2( void );
-    static  W4dMaterialPlanPtr materialPlanPtr3( void );
-    static  W4dMaterialPlanPtr materialPlanPtr4( void );
+    static  W4dMaterialPlanPtr materialPlanPtr1();
+    static  W4dMaterialPlanPtr materialPlanPtr2();
+    static  W4dMaterialPlanPtr materialPlanPtr3();
+    static  W4dMaterialPlanPtr materialPlanPtr4();
     static  const PhysRelativeTime timePerFrame();
 
     static const W4dVisibilityPlanPtr& visibilityPlanPtr( MachPhysFireballType fireballType );

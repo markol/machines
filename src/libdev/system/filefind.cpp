@@ -59,7 +59,7 @@ void	SysFileFinder::examineSubdirectories( bool examine )
 	examineSubdirectories_ = examine;
 }
 
-void    SysFileFinder::find( void )
+void    SysFileFinder::find()
 {
 	processFiles( currentDirectory_ );
 }
@@ -73,7 +73,7 @@ void	SysFileFinder::includeInSearch( SysFileFinder::SearchFor include )
 	TEST_INVARIANT;
 }
 
-SysFileFinder::SearchFor SysFileFinder::includedInSearch( void ) const
+SysFileFinder::SearchFor SysFileFinder::includedInSearch() const
 {
 	TEST_INVARIANT;
 

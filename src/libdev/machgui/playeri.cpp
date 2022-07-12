@@ -82,7 +82,7 @@ void MachGuiPlayerNameList::names( const string& player1, const string& player2,
 }
 
 // virtual
-void MachGuiPlayerNameList::doDisplay( void )
+void MachGuiPlayerNameList::doDisplay()
 {
 	const Gui::Boundary& boundary = absoluteBoundary();
 

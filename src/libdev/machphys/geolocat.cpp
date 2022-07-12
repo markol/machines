@@ -127,12 +127,12 @@ MachPhysGeoLocator::Factory& MachPhysGeoLocator::factory()
 }
 
 //virtual
-const MachPhysMachineData& MachPhysGeoLocator::machineData( void ) const
+const MachPhysMachineData& MachPhysGeoLocator::machineData() const
 {
 	return data();
 }
 
-const MachPhysGeoLocatorData& MachPhysGeoLocator::data( void ) const
+const MachPhysGeoLocatorData& MachPhysGeoLocator::data() const
 {
 	return MachPhysData::instance().geoLocatorData( bodyLevel(), brainLevel() );
 }
@@ -271,7 +271,7 @@ void MachPhysGeoLocator::move( const MachPhysMachineMoveInfo& info )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void MachPhysGeoLocator::createExplosionData( void )
+void MachPhysGeoLocator::createExplosionData()
 {
     MachPhysMachineExplosionData& dataForEdit = explosionDataForEdit();
 

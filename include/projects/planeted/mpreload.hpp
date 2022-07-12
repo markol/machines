@@ -23,7 +23,7 @@ public:
     
     MachPreload( W4dSceneManager * pManager );
 
-    ~MachPreload( void );
+    ~MachPreload();
 
     void CLASS_INVARIANT;
 

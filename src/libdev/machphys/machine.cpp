@@ -225,7 +225,7 @@ void MachPhysMachine::move( const MachPhysMachineMoveInfo& info )
 }
 
 // virtual
-PhysRelativeTime MachPhysMachine::beDestroyed( void )
+PhysRelativeTime MachPhysMachine::beDestroyed()
 {
     //Cancel its sound
     W4dSoundManager::instance().stop( this );
@@ -858,7 +858,7 @@ size_t MachPhysMachine::brainLevel() const
 	return brainLevel_;
 }
 
-PhysRelativeTime MachPhysMachine::doExplode( void )
+PhysRelativeTime MachPhysMachine::doExplode()
 {
     W4dComposite::clearAllPlans();
     PhysRelativeTime time = explodeLinks();
@@ -866,7 +866,7 @@ PhysRelativeTime MachPhysMachine::doExplode( void )
     return time;
 }
 
-PhysRelativeTime MachPhysMachine::explodeLinks( void )
+PhysRelativeTime MachPhysMachine::explodeLinks()
 {
     CB_DEPIMPL( MachPhysMachineExplosionDataPtr, explosionDataPtr_ );
     CB_DEPIMPL( MachPhysMachineExplosion*, pExplosion_ );
@@ -926,7 +926,7 @@ void MachPhysMachine::fireballEffect( PhysAbsoluteTime time )
     entityPlanForEdit().meshPlan( fireballPlanPtr, SimManager::instance().currentTime(), 0 );
 }
 
-MATHEX_SCALAR MachPhysMachine::maxTranslationSpeed( void ) const
+MATHEX_SCALAR MachPhysMachine::maxTranslationSpeed() const
 {
     CB_DEPIMPL( MATHEX_SCALAR, maxTranslationSpeed_ );
 
@@ -939,7 +939,7 @@ void    MachPhysMachine::maxTranslationSpeed( MATHEX_SCALAR newSpeed )
     maxTranslationSpeed_ = newSpeed;
 }
 
-MexRadians MachPhysMachine::maxRotationSpeed( void ) const
+MexRadians MachPhysMachine::maxRotationSpeed() const
 {
     CB_DEPIMPL( MexRadians, maxRotationSpeed_ );
     return maxRotationSpeed_;
@@ -950,13 +950,13 @@ void MachPhysMachine::CLASS_INVARIANT
     INVARIANT( this != NULL );
 }
 
-MATHEX_SCALAR MachPhysMachine::maxTranslationAcceleration( void ) const
+MATHEX_SCALAR MachPhysMachine::maxTranslationAcceleration() const
 {
     CB_DEPIMPL( MATHEX_SCALAR, maxTranslationAcceleration_ );
     return maxTranslationAcceleration_;
 }
 
-MexRadians MachPhysMachine::maxRotationAcceleration( void ) const
+MexRadians MachPhysMachine::maxRotationAcceleration() const
 {
     CB_DEPIMPL( MexRadians, maxRotationAcceleration_ );
     return maxRotationAcceleration_;
@@ -1308,13 +1308,13 @@ void MachPhysMachine::convertMaterials( const MachPhysMachineData& data, MachPhy
     changer.applyOverrides( this );
 }
 
-const MachPhysMachineExplosionData& MachPhysMachine::explosionData( void ) const
+const MachPhysMachineExplosionData& MachPhysMachine::explosionData() const
 {
     CB_DEPIMPL( MachPhysMachineExplosionDataPtr, explosionDataPtr_ );
     return *explosionDataPtr_;
 }
 
-MachPhysMachineExplosionData& MachPhysMachine::explosionDataForEdit( void )
+MachPhysMachineExplosionData& MachPhysMachine::explosionDataForEdit()
 {
     CB_DEPIMPL( MachPhysMachineExplosionDataPtr, explosionDataPtr_ );
     return *explosionDataPtr_;
@@ -1326,7 +1326,7 @@ MachPhysMachineExplosionData& MachPhysMachine::explosionDataForEdit( void )
 //    explosionDataPtr_ = data;
 //}
 
-void MachPhysMachine::defaultExplosionData( void )
+void MachPhysMachine::defaultExplosionData()
 {
     CB_DEPIMPL( MachPhysMachineExplosionDataPtr, explosionDataPtr_ );
 

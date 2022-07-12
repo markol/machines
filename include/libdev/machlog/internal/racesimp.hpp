@@ -24,8 +24,8 @@ class MachLogRacesDataImpl
 // Canonical form revoked
 {
 public:
-    MachLogRacesDataImpl( void );
-    ~MachLogRacesDataImpl( void );
+    MachLogRacesDataImpl();
+    ~MachLogRacesDataImpl();
 
     void CLASS_INVARIANT;
 	PER_MEMBER_PERSISTENT_DEFAULT( MachLogRacesDataImpl );

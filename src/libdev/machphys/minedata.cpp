@@ -28,7 +28,7 @@ MachPhysMineData::~MachPhysMineData()
 
 }
 
-MachPhys::SizeUnits MachPhysMineData::capacity( void ) const
+MachPhys::SizeUnits MachPhysMineData::capacity() const
 {
 	return capacity_;
 }
@@ -38,7 +38,7 @@ void MachPhysMineData::capacity( const MachPhys::SizeUnits& newCapacity )
 	capacity_ = newCapacity;
 }
 
-MachPhys::BuildingMaterialUnits MachPhysMineData::extractionRate( void ) const
+MachPhys::BuildingMaterialUnits MachPhysMineData::extractionRate() const
 {
 	return extractionRate_;
 }
@@ -48,7 +48,7 @@ void MachPhysMineData::extractionRate( const MachPhys::BuildingMaterialUnits& ne
 	extractionRate_ = newExtractionRate;
 }
 
-MATHEX_SCALAR MachPhysMineData::sqrMineralDistance( void ) const
+MATHEX_SCALAR MachPhysMineData::sqrMineralDistance() const
 {
 	return mineralDistance_;
 }

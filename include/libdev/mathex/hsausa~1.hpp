@@ -22,23 +22,23 @@ class MexTransform3d;
 class MexHierSausage3d : public MexHierShape3d
 {
 public:
-    MexHierSausage3d( void );
+    MexHierSausage3d();
     MexHierSausage3d( const MexPoint3d&, const MexPoint3d&, MATHEX_SCALAR );
     MexHierSausage3d( const MexHierSausage3d& );
     const MexHierSausage3d& operator =( const MexHierSausage3d& );
-    virtual ~MexHierSausage3d( void );
+    virtual ~MexHierSausage3d();
 
     void CLASS_INVARIANT;
 
-   virtual bool hasZeroVolume( void ) const { return ray_==0; }
+   virtual bool hasZeroVolume() const { return ray_==0; }
 
    // set/get
-   MATHEX_SCALAR ray( void ) const { return ray_; }
+   MATHEX_SCALAR ray() const { return ray_; }
    void ray( MATHEX_SCALAR newRay ) { ray_=newRay; }
-   MATHEX_SCALAR length( void ) const { return length_; }
-   const MexPoint3d& startPoint( void ) const { return startPoint_; }
+   MATHEX_SCALAR length() const { return length_; }
+   const MexPoint3d& startPoint() const { return startPoint_; }
    void startPoint( const MexPoint3d& newStartPoint ); 
-   const MexPoint3d& endPoint( void ) const { return endPoint_; }
+   const MexPoint3d& endPoint() const { return endPoint_; }
    void endPoint( const MexPoint3d& newEndPoint );
 
    virtual void transform(const MexTransform3d& transform );

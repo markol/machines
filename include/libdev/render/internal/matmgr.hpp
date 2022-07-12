@@ -23,8 +23,8 @@ class RenIMatManager
 {
 public:
     //  Singleton class
-    static RenIMatManager& instance( void );
-    ~RenIMatManager( void );
+    static RenIMatManager& instance();
+    ~RenIMatManager();
 
 	// Update the Direct3D parts of all materials in the system.
 	void forceUpdateAll();

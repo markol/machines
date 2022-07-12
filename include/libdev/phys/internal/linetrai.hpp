@@ -43,8 +43,8 @@ private:
       const PhysMotionPlan::TransformsPtr& transformsPtr,
       const PhysMotionPlan::RampAccelerationsPtr& rampAccelerationsPtr );
 
-    PhysLinearTravelPlanImpl( void );
-    ~PhysLinearTravelPlanImpl( void );
+    PhysLinearTravelPlanImpl();
+    ~PhysLinearTravelPlanImpl();
 
     PhysLinearTravelPlanImpl( const PhysLinearTravelPlanImpl& );
     PhysLinearTravelPlanImpl& operator =( const PhysLinearTravelPlanImpl& );

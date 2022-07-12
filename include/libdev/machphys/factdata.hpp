@@ -19,12 +19,12 @@ class MexTransform3d;
 class MachPhysFactoryData : public MachPhysConstructionData
 {
 public:
-    MachPhysFactoryData( void );
+    MachPhysFactoryData();
     MachPhysFactoryData( const MachPhysFactoryData&, const MexTransform3d& );
-    ~MachPhysFactoryData( void );
+    ~MachPhysFactoryData();
 
 	//Get mthods public
-	MachPhys::BuildingMaterialUnits buildRate( void ) const;
+	MachPhys::BuildingMaterialUnits buildRate() const;
 
     void CLASS_INVARIANT;
 

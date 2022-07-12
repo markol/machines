@@ -23,20 +23,20 @@ class MachGuiInternetNetworkMode : public MachGuiNetworkProtocolMode
 {
 public:
     MachGuiInternetNetworkMode( GuiDisplayable* , MachGuiStartupScreens* );
-    ~MachGuiInternetNetworkMode( void );
+    ~MachGuiInternetNetworkMode();
 
     void CLASS_INVARIANT;
 
-	virtual void setNetworkDetails( void );
+	virtual void setNetworkDetails();
 
 	virtual bool validNetworkDetails( bool isHost );
 
-	virtual void updateGUI( void );
+	virtual void updateGUI();
 
-	virtual void charFocus( void );
+	virtual void charFocus();
 
 protected:
-	virtual void readNetworkDetails( void );
+	virtual void readNetworkDetails();
 
 private:
     friend ostream& operator <<( ostream& o, const MachGuiInternetNetworkMode& t );

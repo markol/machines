@@ -21,7 +21,7 @@ class MachLogElectroCharger : public MachLogLinearWeapon
 {
 public:
     MachLogElectroCharger( MachLogRace*, MachPhysLinearWeapon*, MachActor* pOwner );
-    virtual ~MachLogElectroCharger( void );
+    virtual ~MachLogElectroCharger();
 
     void CLASS_INVARIANT;
 

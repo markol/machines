@@ -38,10 +38,10 @@ public:
     enum State { UNDEFINED, RUNNING, FINISHED };
 
     //ctor
-    GraAStarAlg( void );
+    GraAStarAlg();
 
     //dtor.
-    virtual ~GraAStarAlg( void );
+    virtual ~GraAStarAlg();
 
     //Start/restart the algorithm finding a path from startVertex to endVertex in graph.
     void start( const Graph& graph, const VertexId& startVertex, const VertexId& endVertex );
@@ -50,14 +50,14 @@ public:
     //PRE( startVertex != endVertex )
 
     //Advance the algorithm a little, returning its resulting state
-    State update( void );
+    State update();
     //PRE( isDefined() )
 
     //The algorithm's current state
-    State state( void ) const;
-    bool isFinished( void ) const;
-    bool isRunning( void ) const;
-    bool isDefined( void ) const;
+    State state() const;
+    bool isFinished() const;
+    bool isRunning() const;
+    bool isDefined() const;
 
     //Derived class must supply the estimated cost of getting from from to to.
     //Ensure not an overestimate, or the algorithm may not find the best route.
@@ -67,7 +67,7 @@ public:
     //  is available for path finding.
     virtual bool vertexAvailable( const VertexItem& vertex ) const = 0;
 
-    Vertices output( void ) const;
+    Vertices output() const;
     //PRE( isFinished() )
 
     void CLASS_INVARIANT;

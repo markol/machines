@@ -37,7 +37,7 @@ public:
     W4dSimpleEmColPlan( const RenMaterial& mat, uint nMaterialsInVector,
     const W4dColourPlanDataPtr& colourDataPtr, W4dLOD maxLOD );
 
-    virtual ~W4dSimpleEmColPlan( void );
+    virtual ~W4dSimpleEmColPlan();
 
     virtual bool isLODDefined( W4dLOD lodId ) const;
     

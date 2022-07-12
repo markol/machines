@@ -20,8 +20,8 @@ class GXGen
 // Canonical form revoked
 {
 public:
-    GXGen( void );
-    ~GXGen( void );
+    GXGen();
+    ~GXGen();
 
     void CLASS_INVARIANT;
 

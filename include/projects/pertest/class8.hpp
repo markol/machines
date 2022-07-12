@@ -19,10 +19,10 @@
 class Class8
 {
 public:
-    Class8( void );
+    Class8();
     Class8( const Class8& );
 
-    ~Class8( void );
+    ~Class8();
     Class8& operator =( const Class8& );
 
     void CLASS_INVARIANT;

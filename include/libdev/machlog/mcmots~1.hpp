@@ -73,7 +73,7 @@ public:
                                    MATHEX_SCALAR highClearance, MATHEX_SCALAR lowClearance );
 
     //dtor
-    ~MachLogMachineMotionSequencer( void );
+    ~MachLogMachineMotionSequencer();
 
     //The associated logical mobile
     MachLogMobile& logMobile();

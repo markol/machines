@@ -46,7 +46,7 @@ bool&    PerOstream::logWrite()
     return logWrite_;
 }
 
-// PerOstreamBuffer* PerOstream::pFilterBuffer( void )
+// PerOstreamBuffer* PerOstream::pFilterBuffer()
 // {
 //     pBuffer_ = _NEW( PerOstreamBuffer( this ) );
 //     return pBuffer_;

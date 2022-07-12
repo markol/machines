@@ -31,7 +31,7 @@ class PhysCS2dFindPath
 {
 public:
     //Default ctor for collections etc.
-    PhysCS2dFindPath( void );
+    PhysCS2dFindPath();
 
     typedef PhysConfigSpace2d::ObstacleFlags ObstacleFlags;
 
@@ -44,7 +44,7 @@ public:
                       PhysPathFindingPriority priority );
 
     //dtor
-    ~PhysCS2dFindPath( void );
+    ~PhysCS2dFindPath();
 
     //Useful types
     typedef PhysConfigSpace2d::PolygonIds PolygonIds;
@@ -57,7 +57,7 @@ public:
     void ignorePolygons( const PolygonIds& polygons );
 
     //True if the algorithm is finished
-    bool isFinished( void ) const;
+    bool isFinished() const;
 
     //Run the algorithm (for no longer than maxTime)
     void update( const PhysRelativeTime& maxTime );
@@ -91,7 +91,7 @@ private:
     };
 
     //Updates at various stages
-    void start( void );
+    void start();
 
     //tell the config space to ignore/not ignore the registered ignore polygons
     void ignorePolygons( bool doIgnore );
@@ -100,7 +100,7 @@ private:
 
     //Tries to initiate a search using the expansion space's visibility
     //graph. If successful enters PATHFIND state. Otherwise remains in pending state.
-    void startPathSearch( void );
+    void startPathSearch();
     //PRE( state_ == PENDING_PATHFIND );
 
     //True if the current path is contained in the config space.
@@ -110,7 +110,7 @@ private:
     bool checkPath( size_t* nExtraPolygons );
 
     //True if the current path visibility graph search is complete
-    bool isPathSearchFinished( void ) const;
+    bool isPathSearchFinished() const;
     //PRE( state_ == PATHFIND );
 
     //Advance the path search algorithm (for no longer than maxTime)

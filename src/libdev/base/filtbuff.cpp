@@ -35,7 +35,7 @@ int BaseFilterBuffer::overflow( int c )
 }
 
 // virtual
-int BaseFilterBuffer::underflow( void )
+int BaseFilterBuffer::underflow()
 {
 //    cout << "underflow" << endl;
     return EOF;

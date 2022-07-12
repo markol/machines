@@ -22,7 +22,7 @@ class MachGuiMapArea : public GuiDisplayable
 {
 public:
     MachGuiMapArea( GuiDisplayable* pParent, const Gui::Box& );
-    ~MachGuiMapArea( void );
+    ~MachGuiMapArea();
 
     void CLASS_INVARIANT;
 

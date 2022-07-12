@@ -37,7 +37,7 @@ public:
 	// PRE( listOfSuppliers.size() > 0 );
     MachLogScavengeOperation( MachLogResourceCarrier* , const Suppliers& );
 	
-    ~MachLogScavengeOperation( void );
+    ~MachLogScavengeOperation();
 
 	virtual	bool beNotified( W4dSubject* pSubject,
 	                         W4dSubject::NotificationEvent event, int clientData );

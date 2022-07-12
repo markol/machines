@@ -21,8 +21,8 @@ class MachLogSquareSpiral
 // Canonical form revoked
 {
 public:
-    MachLogSquareSpiral( void );
-    ~MachLogSquareSpiral( void );
+    MachLogSquareSpiral();
+    ~MachLogSquareSpiral();
 
     int x() const;
     int y() const;

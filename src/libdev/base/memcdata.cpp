@@ -15,7 +15,7 @@ DbgMemChkData::~DbgMemChkData()
 {
 }
 
-size_t  DbgMemChkData::nNewCalls( void ) const
+size_t  DbgMemChkData::nNewCalls() const
 {
     return nNewCalls_;
 }
@@ -25,7 +25,7 @@ void    DbgMemChkData::nNewCalls( size_t newNNewCalls )
     nNewCalls_ = newNNewCalls;
 }
 
-size_t  DbgMemChkData::nDeleteCalls( void ) const
+size_t  DbgMemChkData::nDeleteCalls() const
 {
     return nDeleteCalls_;
 }
@@ -35,7 +35,7 @@ void    DbgMemChkData::nDeleteCalls( size_t newNDeleteCalls )
     nDeleteCalls_ = newNDeleteCalls;
 }
 
-size_t  DbgMemChkData::nNewArrayCalls( void ) const
+size_t  DbgMemChkData::nNewArrayCalls() const
 {
     return nNewArrayCalls_;
 }
@@ -45,7 +45,7 @@ void    DbgMemChkData::nNewArrayCalls( size_t newNNewArrayCalls )
     nNewArrayCalls_ = newNNewArrayCalls;
 }
 
-size_t  DbgMemChkData::nDeleteArrayCalls( void ) const
+size_t  DbgMemChkData::nDeleteArrayCalls() const
 {
     return nDeleteArrayCalls_;
 }
@@ -55,7 +55,7 @@ void    DbgMemChkData::nDeleteArrayCalls( size_t newNDeleteArrayCalls )
     nDeleteArrayCalls_ = newNDeleteArrayCalls;
 }
 
-size_t  DbgMemChkData::totalMemoryNewed( void ) const
+size_t  DbgMemChkData::totalMemoryNewed() const
 {
     return totalMemoryNewed_;
 }
@@ -65,7 +65,7 @@ void    DbgMemChkData::totalMemoryNewed( size_t newTotalMemoryNewed )
     totalMemoryNewed_ = newTotalMemoryNewed;
 }
 
-size_t  DbgMemChkData::totalMemoryDeleted( void ) const
+size_t  DbgMemChkData::totalMemoryDeleted() const
 {
     return totalMemoryDeleted_;
 }
@@ -75,7 +75,7 @@ void    DbgMemChkData::totalMemoryDeleted( size_t newTotalMemoryDeleted )
     totalMemoryDeleted_ = newTotalMemoryDeleted;
 }
 
-size_t  DbgMemChkData::maxMemoryNewed( void ) const
+size_t  DbgMemChkData::maxMemoryNewed() const
 {
     return maxMemoryNewed_;
 }
@@ -85,17 +85,17 @@ void    DbgMemChkData::maxMemoryNewed( size_t newMaxMemoryNewed )
     maxMemoryNewed_ = newMaxMemoryNewed;
 }
 
-int32  DbgMemChkData::nOutstandingNewCalls( void ) const
+int32  DbgMemChkData::nOutstandingNewCalls() const
 {
     return  (int32)nNewCalls_ - (int32)nDeleteCalls_;
 }
 
-int32  DbgMemChkData::nOutstandingNewArrayCalls( void ) const
+int32  DbgMemChkData::nOutstandingNewArrayCalls() const
 {
     return  (int32)nNewArrayCalls_ - (int32)nDeleteArrayCalls_;
 }
 
-int32   DbgMemChkData::currentMemoryNewed( void ) const
+int32   DbgMemChkData::currentMemoryNewed() const
 {
     return  (int32)totalMemoryNewed_ - (int32)totalMemoryDeleted_;
 }

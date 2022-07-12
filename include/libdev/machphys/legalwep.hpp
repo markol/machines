@@ -25,8 +25,8 @@ class MachPhysLegalWeapons
 {
 public:
     //  Singleton class
-    static MachPhysLegalWeapons& instance( void );
-    ~MachPhysLegalWeapons( void );
+    static MachPhysLegalWeapons& instance();
+    ~MachPhysLegalWeapons();
 
     //Useful typedefs
     typedef ctl_vector< MachPhys::Mounting > Mountings;
@@ -56,7 +56,7 @@ private:
     MachPhysLegalWeapons& operator =( const MachPhysLegalWeapons& );
     bool operator ==( const MachPhysLegalWeapons& );
 
-    MachPhysLegalWeapons( void );
+    MachPhysLegalWeapons();
 };
 
 

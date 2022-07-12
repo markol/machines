@@ -25,7 +25,7 @@ public:
 
     MachLogGotoLabOperation( MachLogTechnician* );
 
-    ~MachLogGotoLabOperation( void );
+    ~MachLogGotoLabOperation();
 
 	PER_MEMBER_PERSISTENT_VIRTUAL( MachLogGotoLabOperation );
 	PER_FRIEND_READ_WRITE( MachLogGotoLabOperation );

@@ -23,7 +23,7 @@ class GuiSingleLineEditBox : public GuiDisplayable
 {
 public:
     GuiSingleLineEditBox( GuiDisplayable* pParent, const Gui::Box& box, const GuiBmpFont& font );
-    ~GuiSingleLineEditBox( void );
+    ~GuiSingleLineEditBox();
 
 	 // Sets the maximum number of characters that can be typed into the edit box.
 	 // zero = no limit

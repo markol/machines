@@ -29,7 +29,7 @@ public:
 
     MachGuiMenuText( GuiDisplayable* pParent, const Gui::Box& box, unsigned int stringId, const SysPathName& fontPath, Justification = CENTRE_JUSTIFY );
 	MachGuiMenuText( GuiDisplayable* pParent, const Gui::Box& box, const string&, const SysPathName& fontPath, Justification = CENTRE_JUSTIFY );
-    ~MachGuiMenuText( void );
+    ~MachGuiMenuText();
 
     void CLASS_INVARIANT;
 

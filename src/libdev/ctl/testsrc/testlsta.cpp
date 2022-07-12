@@ -30,7 +30,7 @@ TestListAssert::~TestListAssert()
 
 }
 
-void    TestListAssert::initialiseTestFunctions( void )
+void    TestListAssert::initialiseTestFunctions()
 {
     #define ADD_FUNCTION( fn )      \
         addTestFunction( #fn, fn );
@@ -51,7 +51,7 @@ void    TestListAssert::initialiseTestFunctions( void )
     ADD_FUNCTION( constFrontAndBack );
 }
 
-void    TestListAssert::initialiseLists( void )
+void    TestListAssert::initialiseLists()
 {
     size_t  size1;
     size_t  size2;
@@ -77,31 +77,31 @@ void    TestListAssert::initialiseLists( void )
 }
 
 // static
-TestListAssert::TestListType& TestListAssert::list1( void )
+TestListAssert::TestListType& TestListAssert::list1()
 {
     return  instance().list1_;
 }
 
 // static
-TestListAssert::TestListType& TestListAssert::list2( void )
+TestListAssert::TestListType& TestListAssert::list2()
 {
     return  instance().list2_;
 }
 
 // static
-size_t  TestListAssert::list1Size( void )
+size_t  TestListAssert::list1Size()
 {
     return  instance().list1_.size();
 }
 
 // static
-size_t  TestListAssert::list2Size( void )
+size_t  TestListAssert::list2Size()
 {
     return  instance().list2_.size();
 }
 
 // static
-size_t  TestListAssert::randomIndex1( void )
+size_t  TestListAssert::randomIndex1()
 {
     //  The index will not necessarily be valid
 
@@ -116,7 +116,7 @@ size_t  TestListAssert::randomIndex1( void )
 }
 
 // static
-size_t  TestListAssert::randomIndex2( void )
+size_t  TestListAssert::randomIndex2()
 {
     //  The index will not necessarily be valid
 
@@ -131,7 +131,7 @@ size_t  TestListAssert::randomIndex2( void )
 }
 
 // static
-void    TestListAssert::iteratorInvalidation( void )
+void    TestListAssert::iteratorInvalidation()
 {
     //  This function can only work correctly if list1 has at least one element in it.
 

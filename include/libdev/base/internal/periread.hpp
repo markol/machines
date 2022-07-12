@@ -28,8 +28,8 @@ class BasePoolAllocator;
 class PersistenceImplementationRead
 {
 public:
-    PersistenceImplementationRead( void );
-    ~PersistenceImplementationRead( void );
+    PersistenceImplementationRead();
+    ~PersistenceImplementationRead();
 
     typedef std::pair< PerIdentifier, uint >  PerReadIdentifier;
 
@@ -45,7 +45,7 @@ public:
     void fixupOutstandingPointers();
 
     //  Clear out all of the internal tables used for pointer fixup.
-    void    clear( void );
+    void    clear();
 
     //  Read in an object whose name has been written to the stream.
     //  This means that the object is a derived class object that was
@@ -69,8 +69,8 @@ public:
 
     void readPointerAbstract( PerIstream&, void** ptr, const char* className );
 
-    void startRead( void );
-    void finishRead( void );
+    void startRead();
+    void finishRead();
 
     void readRawData( PerIstream& istr, char* ptr, size_t nBytes );
 

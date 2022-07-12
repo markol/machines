@@ -8,7 +8,7 @@
 #include "render/internal/texseti.hpp"
 #include "render/texset.hpp"
 
-RenTextureSet::RenTextureSet( void )
+RenTextureSet::RenTextureSet()
 : pImpl_( _NEW( RenTextureSetImpl( ) ) )
 {
     TEST_INVARIANT;

@@ -104,12 +104,12 @@ MachPhysSpyLocator::Factory& MachPhysSpyLocator::factory()
 }
 
 //virtual
-const MachPhysMachineData& MachPhysSpyLocator::machineData( void ) const
+const MachPhysMachineData& MachPhysSpyLocator::machineData() const
 {
 	return data();
 }
 
-const MachPhysSpyLocatorData& MachPhysSpyLocator::data( void ) const
+const MachPhysSpyLocatorData& MachPhysSpyLocator::data() const
 {
 	return MachPhysData::instance().spyLocatorData( bodyLevel(), brainLevel() );
 }
@@ -194,7 +194,7 @@ void MachPhysSpyLocator::move( const MachPhysMachineMoveInfo& info )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void MachPhysSpyLocator::createExplosionData( void )
+void MachPhysSpyLocator::createExplosionData()
 {
     MachPhysMachineExplosionData& dataForEdit = explosionDataForEdit();
 

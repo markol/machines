@@ -24,7 +24,7 @@
 class MexAngle
 {
 public:
-    MexAngle( void );
+    MexAngle();
     MexAngle( MATHEX_SCALAR );
     MexAngle( const MexAngle& );
 
@@ -50,11 +50,11 @@ protected:
 	//	Only allow angles to be destructed by their
 	//  derived classes i.e. you cannot create a MexAngle directly.
 
-    ~MexAngle( void );
+    ~MexAngle();
 
     MexAngle& operator =( MATHEX_SCALAR );
 
-    MATHEX_SCALAR   angleInRadians( void ) const;
+    MATHEX_SCALAR   angleInRadians() const;
 
 private:
 

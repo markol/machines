@@ -26,7 +26,7 @@ public:
 		LOCATOR_CONVOY
 	};
 
-    ~MachLogConvoyOffsets( void );
+    ~MachLogConvoyOffsets();
 	
 	static const MexPoint2d convoyOffset( const ConvoyType&, const size_t& index, const MATHEX_SCALAR& clearence );
 
@@ -40,7 +40,7 @@ private:
     MachLogConvoyOffsets& operator =( const MachLogConvoyOffsets& );
     bool operator ==( const MachLogConvoyOffsets& );
 
-    MachLogConvoyOffsets( void );
+    MachLogConvoyOffsets();
 };
 
 

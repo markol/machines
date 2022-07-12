@@ -30,7 +30,7 @@ public:
         size_t level,
         MachPhys::Race race );
 
-    virtual ~MachPhysGarrison( void );
+    virtual ~MachPhysGarrison();
 
 	//return MachPhysData object for this building
 	virtual const MachPhysConstructionData& constructionData() const;

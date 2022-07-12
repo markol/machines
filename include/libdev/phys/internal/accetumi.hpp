@@ -41,7 +41,7 @@ private:
 							      const PhysMotionPlan::TimesPtr& segmentTimesPtr,
 							      const MexVec3& acceleration );
 
-    ~PhysAccelerateTumblePlanImpl( void );
+    ~PhysAccelerateTumblePlanImpl();
 
     void CLASS_INVARIANT;
 

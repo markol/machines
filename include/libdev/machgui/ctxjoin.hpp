@@ -26,7 +26,7 @@ class MachGuiCtxJoin : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxJoin( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxJoin( void );
+    ~MachGuiCtxJoin();
 
 	virtual void buttonEvent( MachGuiStartupScreens::ButtonEvent );
 
@@ -34,7 +34,7 @@ public:
 
 	virtual void update();
 	
-	void changeFocus( void );
+	void changeFocus();
 
 	bool validNetworkSettings( bool isHost );
 

@@ -22,9 +22,9 @@ class MexCompressedAlignedBox2d
 // Canonical form revoked
 {
 public:
-    MexCompressedAlignedBox2d( void );
+    MexCompressedAlignedBox2d();
     MexCompressedAlignedBox2d( const MexAlignedBox2d& );
-    ~MexCompressedAlignedBox2d( void );
+    ~MexCompressedAlignedBox2d();
 
     void CLASS_INVARIANT;
 

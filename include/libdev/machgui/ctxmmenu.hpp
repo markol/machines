@@ -21,7 +21,7 @@ class MachGuiCtxMainMenu : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxMainMenu( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxMainMenu( void );
+    ~MachGuiCtxMainMenu();
 
     void CLASS_INVARIANT;
 

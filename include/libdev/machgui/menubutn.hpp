@@ -23,7 +23,7 @@ class MachGuiMenuButton	: public GuiDisplayable, public MachGuiFocusCapableContr
 public:
     MachGuiMenuButton( MachGuiStartupScreens* pParent, const Gui::Box& box, unsigned int stringId, MachGuiStartupScreens::ButtonEvent );
     MachGuiMenuButton( MachGuiStartupScreens*, const Gui::Box& box, unsigned int stringId, MachGuiStartupScreens::ButtonEvent, GuiDisplayable* pParent );
-    ~MachGuiMenuButton( void );
+    ~MachGuiMenuButton();
 
     void CLASS_INVARIANT;
 

@@ -24,8 +24,8 @@ class PhysCS2dDomainFindPathCache
 {
 public:
     //  Singleton class
-    static PhysCS2dDomainFindPathCache& instance( void );
-    ~PhysCS2dDomainFindPathCache( void );
+    static PhysCS2dDomainFindPathCache& instance();
+    ~PhysCS2dDomainFindPathCache();
 
     typedef PhysConfigSpace2d::PortalPoints PortalPoints;
 
@@ -57,7 +57,7 @@ private:
     PhysCS2dDomainFindPathCache( const PhysCS2dDomainFindPathCache& );
     PhysCS2dDomainFindPathCache& operator =( const PhysCS2dDomainFindPathCache& );
 
-    PhysCS2dDomainFindPathCache( void );
+    PhysCS2dDomainFindPathCache();
 
     //  To allow template instantiation
     friend void PhysDummyFunction2();

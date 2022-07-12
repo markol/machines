@@ -21,12 +21,12 @@ class ErrorHandler
 {
 public:
     //  Singleton class
-    static ErrorHandler& instance( void );
-    ~ErrorHandler( void );
+    static ErrorHandler& instance();
+    ~ErrorHandler();
 
-    void    initialise( void );
-    size_t  nTests( void ) const;
-    size_t  nFailures( void ) const;
+    void    initialise();
+    size_t  nTests() const;
+    size_t  nFailures() const;
     
     static  BaseAssertion::AssertionAction assertionHandler( const BaseAssertion::AssertionInfo& );
     
@@ -48,14 +48,14 @@ private:
     // Operation deliberately revoked
     bool operator ==( const ErrorHandler& );
 
-    ErrorHandler( void );
+    ErrorHandler();
 
     size_t  nFailures_;
     size_t  nTests_;
     bool    assertionFailed_;
 };
 
-ErrorHandler& ERROR_HANDLER( void )
+ErrorHandler& ERROR_HANDLER()
 {
     return ErrorHandler::instance();
 }

@@ -22,7 +22,7 @@ class BaseDualOstream : public BaseFilterOstream
 {
 public:
     BaseDualOstream( ostream&, ostream& );
-    ~BaseDualOstream( void );
+    ~BaseDualOstream();
 
     void CLASS_INVARIANT;
 

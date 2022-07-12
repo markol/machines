@@ -125,20 +125,20 @@ void MachPhysFlame::startFlame( const PhysRelativeTime& startTime )
 }
 
 // static
-MachPhysFlameType MachPhysFlame::randomFlame( void )
+MachPhysFlameType MachPhysFlame::randomFlame()
 {
     MachPhysFlameType    result = FLAME_1;
     return result;
 }
 
 // static
-void MachPhysFlame::preload( void )
+void MachPhysFlame::preload()
 {
     materials1Ptr();
 }
 
 // static
-const MachPhysFlame::MaterialsPtr&   MachPhysFlame::materials1Ptr( void )
+const MachPhysFlame::MaterialsPtr&   MachPhysFlame::materials1Ptr()
 {
     static MaterialsPtr materialsPtr;
     static bool once = true;

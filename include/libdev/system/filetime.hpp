@@ -18,7 +18,7 @@
 class SysFileTime
 {
 public:
-    SysFileTime( void );
+    SysFileTime();
     //  POST( !hoursSet() );
     //  POST( !minutesSet() );
     //  POST( !secondsSet() );
@@ -37,20 +37,20 @@ public:
 
     SysFileTime& operator =( const SysFileTime& copyMe );
 
-    ~SysFileTime( void );
+    ~SysFileTime();
 
-    bool    timeSet( void ) const;
-    bool    hoursSet( void ) const;
-    bool    minutesSet( void ) const;
-    bool    secondsSet( void ) const;
+    bool    timeSet() const;
+    bool    hoursSet() const;
+    bool    minutesSet() const;
+    bool    secondsSet() const;
 
-    size_t  hours( void ) const;
+    size_t  hours() const;
     //  PRE( hoursSet() );
 
-    size_t  minutes( void ) const;
+    size_t  minutes() const;
     //  PRE( minutesSet() );
 
-    size_t  seconds( void ) const;
+    size_t  seconds() const;
     //  PRE( secondsSet() );
 
     void CLASS_INVARIANT

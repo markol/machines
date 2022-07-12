@@ -29,9 +29,9 @@ template <class T> class ctl_pvector;
 class Master
 {
 public:
-    Master( void );
+    Master();
     Master( PerIstream& istr );
-    ~Master( void );
+    ~Master();
 
     void CLASS_INVARIANT;
 

@@ -210,7 +210,7 @@ void PersistenceImplementationRead::fixupOutstandingPointers()
     }
 }
 
-void    PersistenceImplementationRead::clear( void )
+void    PersistenceImplementationRead::clear()
 {
     if( pIdMapAllocator_ )
         pushCurrentPoolAllocator( pIdMapAllocator_ );
@@ -306,7 +306,7 @@ void    PersistenceImplementationRead::readObjectPost( const void* pOb, const ch
     FINISH_TIMING_OBJECT( className );
 }
 
-void	PersistenceImplementationRead::startRead( void )
+void	PersistenceImplementationRead::startRead()
 {
 	if( inputCount_ == 0 )
 	{
@@ -321,7 +321,7 @@ void	PersistenceImplementationRead::startRead( void )
         indentStream_.indentString( "  ", inputCount_ );
 }
 
-void	PersistenceImplementationRead::finishRead( void )
+void	PersistenceImplementationRead::finishRead()
 {
 	PRE( inputCount_ != 0 );
 
@@ -453,7 +453,7 @@ void PersistenceImplementationRead::readAsRaw( bool raw )
     }
 }
 
-bool PersistenceImplementationRead::readAsRaw( void ) const
+bool PersistenceImplementationRead::readAsRaw() const
 {
     return readAsRawCount_ > 0;
 }

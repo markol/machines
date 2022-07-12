@@ -106,7 +106,7 @@ MachPhysTrailedProjectile::~MachPhysTrailedProjectile()
 }
 
 
-void MachPhysTrailedProjectile::update( void )
+void MachPhysTrailedProjectile::update()
 {
 	//CB_DEPIMPL(MachPhysVapourTrail*, pVapourTrail_ );
 	//CB_DEPIMPL(MexVec3, vapourTrailOffset_ );

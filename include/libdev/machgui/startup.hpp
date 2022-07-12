@@ -40,7 +40,7 @@ class MachGuiStartupScreens	: public GuiRoot
 {
 public:
     MachGuiStartupScreens( W4dSceneManager* pSceneManager, W4dRoot* pRoot, BaseProgressReporter* );
-    ~MachGuiStartupScreens( void );
+    ~MachGuiStartupScreens();
 
 	void setGuiViewport();
 
@@ -202,10 +202,10 @@ public:
    	// PRE( anim != NULL )
 
  	// clears list of smacker files
-	void clearAllSmackerAnimations( void );
+	void clearAllSmackerAnimations();
 
 	// plays any non full screen smacker animations associated with screen
-	void playSmackerAnimations( void );
+	void playSmackerAnimations();
 
 	//these will be called if there is a MachGuiSystemMessageHandler and the appropriate
 	//network system message is isssued.

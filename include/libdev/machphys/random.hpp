@@ -19,8 +19,8 @@
 class MachPhysRandom
 {
 public:
-    MachPhysRandom( void );
-    ~MachPhysRandom( void );
+    MachPhysRandom();
+    ~MachPhysRandom();
 
     static  double randomDouble( MATHEX_SCALAR lowerLimit, MATHEX_SCALAR upperLimit );
     //  PRE( lowerLimit <= upperLimit );

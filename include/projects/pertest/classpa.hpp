@@ -21,8 +21,8 @@ class ClassPair
 // Canonical form revoked
 {
 public:
-    ClassPair( void );
-    ~ClassPair( void );
+    ClassPair();
+    ~ClassPair();
 
     void CLASS_INVARIANT;
 

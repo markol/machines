@@ -21,7 +21,7 @@
 
 struct MachGuiInternetNetworkModeImpl
 {
-	MachGuiInternetNetworkModeImpl( void )
+	MachGuiInternetNetworkModeImpl()
 	:	pIPAddressEntryBox_( NULL )
 	{}
 	MachGuiSingleLineEditBox* pIPAddressEntryBox_;
@@ -50,7 +50,7 @@ void MachGuiInternetNetworkMode::CLASS_INVARIANT
 }
 
 // virtual
-void MachGuiInternetNetworkMode::setNetworkDetails( void )
+void MachGuiInternetNetworkMode::setNetworkDetails()
 {
 	// This function will use the settings from the drop downs to configure network settings
 	string ipAddress = pimpl_->pIPAddressEntryBox_->text();
@@ -67,14 +67,14 @@ bool MachGuiInternetNetworkMode::validNetworkDetails( bool /*isHost*/ )
 }
 
 // virtual
-void MachGuiInternetNetworkMode::updateGUI( void )
+void MachGuiInternetNetworkMode::updateGUI()
 {
 	// Flash caret
 	pimpl_->pIPAddressEntryBox_->update();
 }
 
 // virtual
-void MachGuiInternetNetworkMode::charFocus( void )
+void MachGuiInternetNetworkMode::charFocus()
 {
 	GuiManager::instance().charFocus( pimpl_->pIPAddressEntryBox_ );
 }
@@ -84,7 +84,7 @@ void MachGuiInternetNetworkMode::charFocus( void )
 #define INM_WIDTH 110
 #define INM_MAX_ADDRESS_NO 30
 
-void MachGuiInternetNetworkMode::readNetworkDetails( void )
+void MachGuiInternetNetworkMode::readNetworkDetails()
 {
 	GuiResourceString IPAddressHeading( IDS_MENU_IPADDRESS );
   	GuiBmpFont font( GuiBmpFont::getFont("gui/menu/smalwfnt.bmp") );

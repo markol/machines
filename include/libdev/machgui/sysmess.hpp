@@ -23,7 +23,7 @@ class MachGuiSystemMessageHandler : public MachLogSystemMessageHandler
 {
 public:
     MachGuiSystemMessageHandler( MachGuiStartupScreens* );
-    virtual ~MachGuiSystemMessageHandler( void );
+    virtual ~MachGuiSystemMessageHandler();
 
 	//return code indicates whether or not the handler has handled the function or if the network
 	//library should terminate.

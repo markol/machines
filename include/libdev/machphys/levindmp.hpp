@@ -23,7 +23,7 @@ class MachPhysLevelIndexMap
 public:
     MachPhysLevelIndexMap& operator =( const MachPhysLevelIndexMap& );
     MachPhysLevelIndexMap( const MachPhysLevelIndexMap& );
-    ~MachPhysLevelIndexMap( void );
+    ~MachPhysLevelIndexMap();
 
     size_t  nLevels() const;
     

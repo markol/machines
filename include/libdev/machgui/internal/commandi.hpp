@@ -22,7 +22,7 @@ class MachGuiCommandImpl
 {
 public:
     MachGuiCommandImpl( MachInGameScreen* );
-    ~MachGuiCommandImpl( void );
+    ~MachGuiCommandImpl();
 
     void add( const MachLogMachineOperation& );
 

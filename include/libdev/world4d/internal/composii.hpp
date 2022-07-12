@@ -35,7 +35,7 @@ class W4dCompositeImpl
 {
 public:
 
-    ~W4dCompositeImpl( void );
+    ~W4dCompositeImpl();
 
     //Persistence
     PER_MEMBER_PERSISTENT( W4dCompositeImpl );

@@ -28,7 +28,7 @@ class MachGuiCtxScenario : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxScenario( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxScenario( void );
+    ~MachGuiCtxScenario();
 
     void CLASS_INVARIANT;
 

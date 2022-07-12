@@ -24,7 +24,7 @@ class DiagOstreamPrepend : public ostream
 {
 public:
     DiagOstreamPrepend( ostream* pOstr );
-    DiagOstreamPrepend( void );
+    DiagOstreamPrepend();
 
     void stream( ostream* pOstr );
 
@@ -40,7 +40,7 @@ public:
     //  used.
     void    nSpacesToIndent( int nSpaces );
 
-    virtual ~DiagOstreamPrepend( void );
+    virtual ~DiagOstreamPrepend();
 
 protected:
 
@@ -59,7 +59,7 @@ private:
     friend class DiagPrependBuffer;
 
     void    streamData( const char* pBuf, size_t nChars );
-    void    doPrepend( void );
+    void    doPrepend();
 
     DiagPrependBuffer   buffer_;
     ostream* pOstr_;

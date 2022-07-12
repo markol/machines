@@ -23,7 +23,7 @@ class MachGuiCtxStatistics : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxStatistics(  MachGuiStartupScreens* pStartupScreens  );
-    ~MachGuiCtxStatistics( void );
+    ~MachGuiCtxStatistics();
 
     void CLASS_INVARIANT;
 

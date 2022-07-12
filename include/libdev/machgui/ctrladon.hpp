@@ -23,7 +23,7 @@ class MachGuiControlPanelAddOn : public GuiDisplayable
 {
 public:
     MachGuiControlPanelAddOn( GuiDisplayable* pParent, const Gui::Coord& coord, MachInGameScreen* pInGameScreen );
-    ~MachGuiControlPanelAddOn( void );
+    ~MachGuiControlPanelAddOn();
 
 	virtual void doDisplay();
 

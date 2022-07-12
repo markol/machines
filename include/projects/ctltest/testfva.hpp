@@ -23,20 +23,20 @@
 class TestFixedVectorAssert : public SoakTestAssert
 {
 public:
-    static TestFixedVectorAssert& instance( void );
-    ~TestFixedVectorAssert( void );
+    static TestFixedVectorAssert& instance();
+    ~TestFixedVectorAssert();
 
     typedef int                         TestType;
     typedef ctl_fixed_vector< TestType >      TestFixedVectorType;
 
-    static  TestFixedVectorType& vector1( void );
-    static  TestFixedVectorType& vector2( void );
+    static  TestFixedVectorType& vector1();
+    static  TestFixedVectorType& vector2();
 
-    static  size_t  vector1Size( void );
-    static  size_t  vector2Size( void );
+    static  size_t  vector1Size();
+    static  size_t  vector2Size();
 
-    static  size_t  randomIndex1( void );
-    static  size_t  randomIndex2( void );
+    static  size_t  randomIndex1();
+    static  size_t  randomIndex2();
 
     static  void invalidateIterator( const TestFixedVectorType::iterator& i, TestFixedVectorType& vector );
     static  void invalidateIterator( const TestFixedVectorType::const_iterator& i, TestFixedVectorType& vector );
@@ -65,10 +65,10 @@ private:
     // Operation deliberately revoked
     TestFixedVectorAssert& operator =( const TestFixedVectorAssert& );
 
-    TestFixedVectorAssert( void );
+    TestFixedVectorAssert();
 
-    void    initialiseTestFunctions( void );
-    void    initialiseVectors( void );
+    void    initialiseTestFunctions();
+    void    initialiseVectors();
 
     // Operation deliberately revoked
     bool operator ==( const TestFixedVectorAssert& );

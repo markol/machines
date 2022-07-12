@@ -29,7 +29,7 @@ BaseCircularStreamBuffer::~BaseCircularStreamBuffer()
 }
 
 // virtual
-void    BaseCircularStreamBuffer::clear( void )
+void    BaseCircularStreamBuffer::clear()
 {
     setp( pBuffer_, pBuffer_ + bufferSize_ );
     bufferWrapped_ = false;
@@ -37,7 +37,7 @@ void    BaseCircularStreamBuffer::clear( void )
 }
 
 // virtual
-size_t    BaseCircularStreamBuffer::nCharactersInBuffer( void ) const
+size_t    BaseCircularStreamBuffer::nCharactersInBuffer() const
 {
     size_t  result;
 
@@ -60,7 +60,7 @@ int BaseCircularStreamBuffer::overflow( int c )
 }
 
 // virtual
-int BaseCircularStreamBuffer::underflow( void )
+int BaseCircularStreamBuffer::underflow()
 {
     return EOF;
 }

@@ -22,7 +22,7 @@ class BaseFilterBuffer : public std::streambuf
 {
 public:
     BaseFilterBuffer( BaseFilterOstream* pFilter );
-    ~BaseFilterBuffer( void );
+    ~BaseFilterBuffer();
 
     virtual int     overflow( int c );
     virtual int     underflow();

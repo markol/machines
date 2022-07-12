@@ -24,7 +24,7 @@ public:
 	//public constructor
     MachPhysLightSting( W4dEntity* pParent, const MexTransform3d& localTransform );
 
-    virtual ~MachPhysLightSting( void );
+    virtual ~MachPhysLightSting();
 
 	static const MachPhysLightSting& exemplar();
 
@@ -57,7 +57,7 @@ private:
 	friend class MachPhysOtherPersistence;
 
 	//one time constructor
-    MachPhysLightSting( void );
+    MachPhysLightSting();
 };
 
 PER_DECLARE_PERSISTENT( MachPhysLightSting );

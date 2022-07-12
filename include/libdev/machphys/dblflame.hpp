@@ -26,7 +26,7 @@ class MachPhysDoublesidedFlame : public W4dEntity
 {
 public:
     MachPhysDoublesidedFlame( W4dEntity* pParent, const MexTransform3d& localTransform);
-    ~MachPhysDoublesidedFlame( void );
+    ~MachPhysDoublesidedFlame();
 
 	static const MachPhysDoublesidedFlame& exemplar();
 

@@ -20,8 +20,8 @@ class NetSystemMessageHandler
 // Canonical form revoked
 {
 public:
-    NetSystemMessageHandler( void );
-    virtual ~NetSystemMessageHandler( void ) = 0;
+    NetSystemMessageHandler();
+    virtual ~NetSystemMessageHandler() = 0;
 	virtual bool	handleHostMessage() = 0;
 	virtual bool	handleDestroyPlayerMessage( const string& ) = 0;
 	virtual bool	handleSessionLostMessage() = 0;

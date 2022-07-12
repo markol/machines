@@ -38,7 +38,7 @@ public:
 	// PRE( pMotionConstraint );
 	PhysZenithFlyControl( PhysMotionControlled*, PhysMotionConstraint*, const MexVec2& forwards );
   
-    virtual ~PhysZenithFlyControl( void );
+    virtual ~PhysZenithFlyControl();
 
 	// The speed at which the motionControlled object will accelerate
 	UtlProperty<double> metresPerSecond;
@@ -46,7 +46,7 @@ public:
 	// Controls the rotation acceleration of the motionControlled object
 	UtlProperty<MexDegrees> degreesPerSecond;
 
-	virtual void update( void );
+	virtual void update();
 
 	void pitchAngle( MexRadians& );
 
@@ -58,8 +58,8 @@ private:
     PhysZenithFlyControl& operator =( const PhysZenithFlyControl& );
     bool operator ==( const PhysZenithFlyControl& );
 
-    void updateMotion( void );
-	void setupDefaultKeyboardMapping( void );
+    void updateMotion();
+	void setupDefaultKeyboardMapping();
 	void ctor(PhysMotionControlled* pMotionControlled);
 
 	// data members

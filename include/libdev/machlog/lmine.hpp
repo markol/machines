@@ -31,7 +31,7 @@ public:
     MachLogLandMine( MachLogRace* pRace, const MexPoint3d& location, UtlId );
 
     //dtor.
-    virtual ~MachLogLandMine( void );
+    virtual ~MachLogLandMine();
 
 	//view of MachPhysObject data
 	virtual const MachPhysObjectData& objectData() const;

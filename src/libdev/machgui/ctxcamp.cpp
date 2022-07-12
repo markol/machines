@@ -50,7 +50,7 @@ public:
 		}
 	}
 
-    ~MachGuiPlayerListBoxItem( void )
+    ~MachGuiPlayerListBoxItem()
 	{}
 
     void CLASS_INVARIANT;
@@ -341,7 +341,7 @@ void MachGuiCtxCampaign::deletePlayer()
 	updatePlayersList();
 }
 
-void MachGuiCtxCampaign::displayCurrentStatus( void )
+void MachGuiCtxCampaign::displayCurrentStatus()
 {
 	const int CURRENTSTATUS_MINX = 378;
 	const int CURRENTSTATUS_MINY = 260;

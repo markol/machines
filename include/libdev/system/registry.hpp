@@ -22,8 +22,8 @@ class SysRegistry
 {
 public:
     //  Singleton class
-    static SysRegistry& instance( void );
-    ~SysRegistry( void );
+    static SysRegistry& instance();
+    ~SysRegistry();
 
 	//complex interface for accessing the registry properly but with no windows dependancies
 	enum ReturnValue { SUCCESS, FAILED };
@@ -72,7 +72,7 @@ private:
     // Query is now public. F the recorder. =)
 	ReturnValue	closeKeyNoRecord( KeyHandle );
 
-    SysRegistry( void );
+    SysRegistry();
 	SysRegistryImpl*		pImpl_;
 };
 

@@ -215,7 +215,7 @@ void PedPolygonEditor::processPaste( bool tempPaste )
 	}
 }
 
-void PedPolygonEditor::highlightVertex( void )
+void PedPolygonEditor::highlightVertex()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -256,7 +256,7 @@ void PedPolygonEditor::highlightVertex( void )
 }
 
 // virtual
-void PedPolygonEditor::preRenderUpdate( void )
+void PedPolygonEditor::preRenderUpdate()
 {
 	highlightVertex();
 	updatePolygon();
@@ -266,7 +266,7 @@ void PedPolygonEditor::preRenderUpdate( void )
 		processPaste( true );
 }
 
-void PedPolygonEditor::displayVertexCoords( void )
+void PedPolygonEditor::displayVertexCoords()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -280,7 +280,7 @@ void PedPolygonEditor::displayVertexCoords( void )
 }
 
 // virtual
-void PedPolygonEditor::changingMode( void )
+void PedPolygonEditor::changingMode()
 {
 	PedEditorMode::changingMode();
 
@@ -675,7 +675,7 @@ size_t PedPolygonEditor::vertexSpacingY() const
 }
 
 // virtual
-void PedPolygonEditor::activateMode( void )
+void PedPolygonEditor::activateMode()
 {
 	PedEditorMode::activateMode();
 
@@ -703,7 +703,7 @@ void PedPolygonEditor::writeCspFile( std::ofstream& out )
 	}
 }
 
-void PedPolygonEditor::processFlattenPolygons( void )
+void PedPolygonEditor::processFlattenPolygons()
 {
 	flattenPolygons_ = not flattenPolygons_;
 	for (	Polygons::iterator polyIter = polygons_.begin();

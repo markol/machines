@@ -20,8 +20,8 @@ class MachGuiMapAreaImpl
 // Canonical form revoked
 {
 public:
-    MachGuiMapAreaImpl( void );
-    ~MachGuiMapAreaImpl( void );
+    MachGuiMapAreaImpl();
+    ~MachGuiMapAreaImpl();
 
     void CLASS_INVARIANT;
 

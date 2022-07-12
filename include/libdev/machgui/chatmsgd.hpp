@@ -23,7 +23,7 @@ class MachGuiInGameChatMessagesDisplay : public GuiDisplayable
 public:
     MachGuiInGameChatMessagesDisplay( GuiDisplayable*, const Gui::Box& );
     MachGuiInGameChatMessagesDisplay( GuiDisplayable*, const Gui::Box&, GuiDisplayable* );
-    ~MachGuiInGameChatMessagesDisplay( void );
+    ~MachGuiInGameChatMessagesDisplay();
 
     void CLASS_INVARIANT;
 

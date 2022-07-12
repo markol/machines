@@ -29,7 +29,7 @@ public:
     BaseFilterOstream();
     BaseFilterOstream( ostream& ostr );
 
-    virtual ~BaseFilterOstream( void );
+    virtual ~BaseFilterOstream();
 
     //  Set a new output stream
     void stream( ostream& ostr );
@@ -55,7 +55,7 @@ private:
 
     virtual void    doFilterCharacters( const char* pBuf, size_t nChars ) = 0;
 
-    BaseFilterBuffer* pFilterBuffer( void );
+    BaseFilterBuffer* pFilterBuffer();
 
     BaseFilterBuffer*   pBuffer_;
     ostream* pOstr_;

@@ -103,7 +103,7 @@ public:
 		isSwitchedOn_( false )
 	{}
 
-    ~MachGuiNavButtonWithCounter( void )
+    ~MachGuiNavButtonWithCounter()
 	{}
 
 	void buttonNumber( size_t num )
@@ -209,7 +209,7 @@ public:
     					MachLog::ObjectType ot, size_t subType,
     					MachInGameScreen* pInGameScreen, MachGuiNavigatorBase* pNavigator,
     					GuiResourceString::Id stringId );
-    virtual ~MachGuiNavButton( void )
+    virtual ~MachGuiNavButton()
 	{}
 
 	static size_t reqWidth()
@@ -656,7 +656,7 @@ public:
 		isSwitchedOn( true );
 	}
 
-    ~MachGuiSelectAllNavButton( void )
+    ~MachGuiSelectAllNavButton()
 	{}
 
 	static size_t reqWidth()
@@ -792,7 +792,7 @@ public:
 
 	{}
 
-    ~MachGuiNavRow( void )
+    ~MachGuiNavRow()
 	{}
 
 	void selectAll()

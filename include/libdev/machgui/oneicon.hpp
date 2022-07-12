@@ -27,7 +27,7 @@ class MachGuiCorralSingleIconInfo : public GuiDisplayable
 {
 public:
     MachGuiCorralSingleIconInfo( GuiDisplayable* pParent, Gui::Coord rel, MachInGameScreen* pInGameScreen );
-    ~MachGuiCorralSingleIconInfo( void );
+    ~MachGuiCorralSingleIconInfo();
 
     void CLASS_INVARIANT;
 

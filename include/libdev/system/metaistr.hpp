@@ -37,7 +37,7 @@ public:
         std::ios::open_mode );
     // PRE( metaFile.hasFile( filename ) );
 
-    ~SysMetaFileIstream( void );
+    ~SysMetaFileIstream();
 
     void CLASS_INVARIANT;
 

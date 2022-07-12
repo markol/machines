@@ -36,7 +36,7 @@ public:
                          const MexPoint3d& location, const MexAlignedBox2d& boundary, UtlId );
 
     //dtor.
-    virtual ~MachLogDebris( void );
+    virtual ~MachLogDebris();
 
 	//view of MachPhysObject data
 	virtual const MachPhysObjectData& objectData() const;

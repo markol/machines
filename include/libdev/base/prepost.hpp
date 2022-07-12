@@ -36,7 +36,7 @@
     #define INVARIANT_INFO( exp )
     #define INVARIANT( exp )
     #define TEST_INVARIANT
-    #define CLASS_INVARIANT    invariant( void ) const
+    #define CLASS_INVARIANT    invariant() const
     #define ASSERT_FILE_EXISTS( f )
 #else
 
@@ -65,7 +65,7 @@
 
 		enum	InfoType { PRE_TYPE, POST_TYPE, ASSERT_TYPE, INVARIANT_TYPE };
 
-		static	size_t	nextIndex( void );
+		static	size_t	nextIndex();
 
 	    static	void    logFilePositionInfo( size_t index, const char* file, size_t line, InfoType type );
 		static	std::ostringstream&	str( size_t index );
@@ -128,12 +128,12 @@
 		class InfoEntry
 		{
 		public:
-			InfoEntry( void );
+			InfoEntry();
 
-			std::ostringstream& str( void );
+			std::ostringstream& str();
 		    void    logFilePositionInfo( const char* file, size_t line, InfoType type );
 
-			bool	containsData( void ) const;
+			bool	containsData() const;
 
 			friend std::ostream& operator <<( std::ostream&, const BaseAssertion::InfoEntry& );
 
@@ -162,7 +162,7 @@
         static  AssertionAction_fn_AssertionInfo    assertionHandler_;
 
     	// revoked...
-		BaseAssertion( void );
+		BaseAssertion();
         BaseAssertion( const BaseAssertion& );
         BaseAssertion& operator =( const BaseAssertion& );
 
@@ -252,7 +252,7 @@
                 BaseTrace::instance().log( __FILE__, __LINE__ );            \
             }
 
-        #define CLASS_INVARIANT    invariant( void ) const
+        #define CLASS_INVARIANT    invariant() const
 
     #endif
 

@@ -19,7 +19,7 @@ class PedAvailableTileLods : public SysFileEnumerator
 {
 public:
     //  Singleton class
-    static PedAvailableTileLods& instance( void );
+    static PedAvailableTileLods& instance();
     
 	void initialise( const SysPathName& );
 	// POST( not isEmpty() );
@@ -36,10 +36,10 @@ private:
     PedAvailableTileLods& operator =( const PedAvailableTileLods& );
     bool operator ==( const PedAvailableTileLods& );
 
-    PedAvailableTileLods( void );
+    PedAvailableTileLods();
 	// POST( lodIndex == 0 );
 
-    ~PedAvailableTileLods( void );
+    ~PedAvailableTileLods();
 
     friend ostream& operator <<( ostream& o, const PedAvailableTileLods& t );
 

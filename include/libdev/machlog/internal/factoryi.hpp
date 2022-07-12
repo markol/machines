@@ -22,7 +22,7 @@ class MachLogFactoryImpl
 {
 public:
     MachLogFactoryImpl( MachPhys::FactorySubType );
-    ~MachLogFactoryImpl( void );
+    ~MachLogFactoryImpl();
 
     void CLASS_INVARIANT;
 	PER_MEMBER_PERSISTENT( MachLogFactoryImpl );

@@ -23,15 +23,15 @@ class wdebug
 {
 public:
     wdebug( W4dSceneManager* pSourceSceneManager );
-    ~wdebug( void );
+    ~wdebug();
 
     void CLASS_INVARIANT;
 	void add( const string& error );
-	void display( void );
+	void display();
 
 private:
 
-	wdebug( void );
+	wdebug();
 
     friend ostream& operator <<( ostream& o, const wdebug& t );
 

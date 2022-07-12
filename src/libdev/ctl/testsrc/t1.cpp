@@ -2,7 +2,7 @@
 
 #include "ctl/vector.hpp"
 
-void dummyFunction( void )
+void dummyFunction()
 {
     ctl_vector< int* > v1;
 

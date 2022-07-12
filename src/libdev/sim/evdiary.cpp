@@ -16,7 +16,7 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-SimEventDiary::SimEventDiary( void )
+SimEventDiary::SimEventDiary()
 : eventsSorted_( true )
 {
     TEST_INVARIANT;

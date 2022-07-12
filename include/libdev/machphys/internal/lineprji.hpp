@@ -31,8 +31,8 @@ public:
     PER_FRIEND_READ_WRITE( MachPhysLinearProjectileImpl );
 
 private:
-    MachPhysLinearProjectileImpl( void );
-    ~MachPhysLinearProjectileImpl( void );
+    MachPhysLinearProjectileImpl();
+    ~MachPhysLinearProjectileImpl();
 
     MachPhysLinearProjectileImpl( const MachPhysLinearProjectileImpl& );
     MachPhysLinearProjectileImpl& operator =( const MachPhysLinearProjectileImpl& );

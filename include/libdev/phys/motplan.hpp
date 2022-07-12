@@ -44,10 +44,10 @@ public:
     //type specifies whether motion is absolute or relative.
     PhysMotionPlan( const PhysRelativeTime& duration );
 
-    virtual ~PhysMotionPlan( void );
+    virtual ~PhysMotionPlan();
 
     //Return the motion duration
-    const PhysRelativeTime& duration( void ) const;
+    const PhysRelativeTime& duration() const;
 
     //Override to define result as a function of timeOffset.
     //If time is greater than duration, the transform at time duration is to be returned.

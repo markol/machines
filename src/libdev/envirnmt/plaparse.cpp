@@ -228,7 +228,7 @@ EnvDynamicSky* EnvIPlanetParser::createDynamicSky()
 	return planet_->createDynamicSky();
 }
 
-W4dStars* EnvIPlanetParser::pStars( void ) const
+W4dStars* EnvIPlanetParser::pStars() const
 {
 	return pStars_;
 }

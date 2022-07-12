@@ -19,8 +19,8 @@ class MachLogResearchItemImpl
 // Canonical form revoked
 {
 public:
-    MachLogResearchItemImpl( void );
-    ~MachLogResearchItemImpl( void );
+    MachLogResearchItemImpl();
+    ~MachLogResearchItemImpl();
 
     void CLASS_INVARIANT;
 

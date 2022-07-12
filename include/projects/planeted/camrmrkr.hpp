@@ -27,13 +27,13 @@ class PedCameraMarker : public W4dCustom
 {
 public:
     PedCameraMarker( W4dEntity*, const MexTransform3d&, MachLogCamera::Type, const RenColour& );
-    ~PedCameraMarker( void );
+    ~PedCameraMarker();
 
     void CLASS_INVARIANT;
 
-	void draw( void );
+	void draw();
 
-	MachLogCamera::Type cameraType( void ) const { return cameraType_; }
+	MachLogCamera::Type cameraType() const { return cameraType_; }
 
 private:
     friend ostream& operator <<( ostream& o, const PedCameraMarker& t );

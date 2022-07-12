@@ -22,8 +22,8 @@ class MachLogVoiceMailImpl
 // Canonical form revoked
 {
 public:
-    MachLogVoiceMailImpl( void );
-    ~MachLogVoiceMailImpl( void );
+    MachLogVoiceMailImpl();
+    ~MachLogVoiceMailImpl();
 
     void CLASS_INVARIANT;
 

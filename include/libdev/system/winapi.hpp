@@ -18,7 +18,7 @@ class SysWindowsAPI
 // Canonical form revoked
 {
 public:
-    ~SysWindowsAPI( void );
+    ~SysWindowsAPI();
 
     void CLASS_INVARIANT;
 
@@ -34,7 +34,7 @@ public:
 private:
     friend ostream& operator <<( ostream& o, const SysWindowsAPI& t );
 
-    SysWindowsAPI( void );
+    SysWindowsAPI();
     SysWindowsAPI( const SysWindowsAPI& );
     SysWindowsAPI& operator =( const SysWindowsAPI& );
 

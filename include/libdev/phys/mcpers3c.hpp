@@ -42,7 +42,7 @@ public:
     PhysThirdPersonCameraConstraint( PhysThirdPerson* );
 	//PRE( pThirdPerson );
 
-    virtual ~PhysThirdPersonCameraConstraint( void );
+    virtual ~PhysThirdPersonCameraConstraint();
 
     virtual void move( MexTransform3d&, PhysMotion&, double elapsedTime );
 

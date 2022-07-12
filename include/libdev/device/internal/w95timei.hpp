@@ -20,8 +20,8 @@ class DevW95TimeInternal
 {
 public:
     //  Singleton class
-    static DevW95TimeInternal& instance( void );
-    ~DevW95TimeInternal( void );
+    static DevW95TimeInternal& instance();
+    ~DevW95TimeInternal();
 
     double  resolution() const;
 
@@ -30,7 +30,7 @@ public:
     
     TimeMethod method() const;
 
-    double pentiumTicks( void ) const;
+    double pentiumTicks() const;
 
     void CLASS_INVARIANT;
 
@@ -40,7 +40,7 @@ private:
     DevW95TimeInternal( const DevW95TimeInternal& );
     DevW95TimeInternal& operator =( const DevW95TimeInternal& );
 
-    DevW95TimeInternal( void );
+    DevW95TimeInternal();
 
     bool rdtscAvailable() const;
     void calibrateRdtsc();

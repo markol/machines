@@ -77,7 +77,7 @@ void MachGuiCheckBox::CLASS_INVARIANT
 }
 
 // virtual
-void MachGuiCheckBox::doDisplay( void )
+void MachGuiCheckBox::doDisplay()
 {
 	uint x = absoluteCoord().x();
 	uint y = absoluteCoord().y();

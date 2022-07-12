@@ -24,7 +24,7 @@ public:
     GuiSingleSelectionListBox( 	GuiDisplayable* pParent, const Gui::Box&, 
     							size_t horizontalSpacing, size_t verticalSpacing,
     							size_t scrollInc );
-    ~GuiSingleSelectionListBox( void );
+    ~GuiSingleSelectionListBox();
 
     void CLASS_INVARIANT;
 

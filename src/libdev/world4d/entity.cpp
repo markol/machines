@@ -156,7 +156,7 @@ W4dEntity::W4dEntity(
 
 // This constructor only used for constructing W4dRoots
 
-W4dEntity::W4dEntity( void )
+W4dEntity::W4dEntity()
 : pImpl_( _NEW( W4dEntityImpl() ) )
 {
 	CB_W4dEntity_DEPIMPL();
@@ -303,7 +303,7 @@ void W4dEntity::attachTo( W4dEntity* pNewParent )
     TEST_INVARIANT;
 }
 
-bool W4dEntity::hasParent( void ) const
+bool W4dEntity::hasParent() const
 {
     TEST_INVARIANT;
     return pImpl_->hasParent();
@@ -334,7 +334,7 @@ void W4dEntity::removeChild( const W4dEntity* pChild )
     TEST_INVARIANT;
 }
 
-W4dDomain* W4dEntity::containingDomain( void ) const
+W4dDomain* W4dEntity::containingDomain() const
 {
     TEST_INVARIANT;
         CB_W4dEntity_DEPIMPL();
@@ -368,7 +368,7 @@ W4dDomain* W4dEntity::containingDomain( void ) const
     return result;
 }
 
-bool W4dEntity::isDomain( void ) const
+bool W4dEntity::isDomain() const
 {
     TEST_INVARIANT;
 
@@ -387,7 +387,7 @@ void W4dEntity::isDomain( bool newFlag )
     pImpl_->isDomain_ = newFlag;
 }
 
-W4dDomain* W4dEntity::getAsDomain( void )
+W4dDomain* W4dEntity::getAsDomain()
 {
     TEST_INVARIANT;
 
@@ -455,7 +455,7 @@ bool W4dEntity::intersects( const W4dDomain& domain ) const
     return result;
 }
 
-const W4dEntity::W4dDomains& W4dEntity::intersectingDomains( void ) const
+const W4dEntity::W4dDomains& W4dEntity::intersectingDomains() const
 {
     TEST_INVARIANT;
 
@@ -624,7 +624,7 @@ const W4dTransform3d& W4dEntity::localTransform() const
     return localTransform_;
 }
 
-bool W4dEntity::isHeld( void ) const
+bool W4dEntity::isHeld() const
 // true iff this object is being held by a composite object
 {
     TEST_INVARIANT;
@@ -1216,7 +1216,7 @@ const W4dEntityPlan& W4dEntity::entityPlan() const
     return *pPlan_;
 }
 
-bool    W4dEntity::hasPlan( void ) const
+bool    W4dEntity::hasPlan() const
 {
     TEST_INVARIANT;
 
@@ -1226,7 +1226,7 @@ bool    W4dEntity::hasPlan( void ) const
 }
 
 
-bool W4dEntity::clearPlanIfDone( void )
+bool W4dEntity::clearPlanIfDone()
 {
     TEST_INVARIANT;
 
@@ -1460,13 +1460,13 @@ void W4dEntity::passId( ulong id )
     pImpl_->passId( id );
 }
 
-ulong W4dEntity::passId( void ) const
+ulong W4dEntity::passId() const
 {
     TEST_INVARIANT;
     return pImpl_->passId();
 }
 
-void W4dEntity::clearPlan( void )
+void W4dEntity::clearPlan()
 {
     TEST_INVARIANT;
         CB_W4dEntity_DEPIMPL();
@@ -1575,7 +1575,7 @@ void W4dEntity::boundingVolume( const MexAlignedBox3d& newBoundingVolume )
         boundingVolume_ = _NEW( MexAlignedBox3d( newBoundingVolume ) );
 }
 
-const MexAlignedBox3d& W4dEntity::boundingVolume( void ) const
+const MexAlignedBox3d& W4dEntity::boundingVolume() const
 {
     TEST_INVARIANT;
         CB_W4dEntity_DEPIMPL();

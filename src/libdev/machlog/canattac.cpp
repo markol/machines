@@ -130,13 +130,13 @@ void MachLogCanAttack::currentTarget( MachActor* p )
     }
 }
 
-const MachActor& MachLogCanAttack::currentTarget( void ) const
+const MachActor& MachLogCanAttack::currentTarget() const
 {
 	CB_MachLogCanAttack_DEPIMPL();
 	return *pCurrentTarget_;
 }
 
-MachActor& MachLogCanAttack::currentTarget( void )
+MachActor& MachLogCanAttack::currentTarget()
 {
 	CB_MachLogCanAttack_DEPIMPL();
 	return *pCurrentTarget_;

@@ -62,7 +62,7 @@ public:
     MexConvexPolygon2d( const MexConvexPolygon2d& );
 
     //dtor.
-    virtual ~MexConvexPolygon2d( void );
+    virtual ~MexConvexPolygon2d();
 
     //The ith vertex
 	virtual const MexPoint2d& vertex( size_t i ) const;

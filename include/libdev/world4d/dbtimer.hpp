@@ -23,23 +23,23 @@ class W4dDebugTimer
 {
 public:
     // Singleton class
-    ~W4dDebugTimer( void ) {
+    ~W4dDebugTimer() {
        for( int i =0; i< textSnaps_.size(); ++i )
 	   {
 	     LIONEL_STREAM( textSnaps_[i] << timeSnaps_[i] << endl);
 	   }
     }
 
-    static W4dDebugTimer& instance( void )
+    static W4dDebugTimer& instance()
 	{
     	static W4dDebugTimer instance_;
     	return instance_;
 	}
 	UtlDebugTimer& timer() { return timer_;	}
 
-	bool output( void ) const { return output_; }
+	bool output() const { return output_; }
 	void output( bool doOutput ) { output_ = doOutput; }
-	bool outputL2( void ) const { return outputL2_; }
+	bool outputL2() const { return outputL2_; }
 	void outputL2( bool doOutput ) { outputL2_ = doOutput; }
 
 	void snapshot( const string& id )
@@ -54,7 +54,7 @@ public:
 private:
     friend ostream& operator <<( ostream& o, const W4dDebugTimer& t );
 
-    W4dDebugTimer( void )  { 
+    W4dDebugTimer()  { 
 		timer_.calibrate();
     	timer_.pause();
 		output_=false;

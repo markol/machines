@@ -11,7 +11,7 @@
 #include "base/internal/cstrbuff.hpp"
 #include "base/internal/infsbuff.hpp"
 
-BaseLogBuffer::BaseLogBuffer( void )
+BaseLogBuffer::BaseLogBuffer()
 //: ostream( pInfiniteStreamBuffer() )
 {
 
@@ -28,14 +28,14 @@ BaseLogBuffer::~BaseLogBuffer()
 //    _DELETE( pStreamBuffer_ );
 }
 
-void BaseLogBuffer::clear( void )
+void BaseLogBuffer::clear()
 {
 
 //    pStreamBuffer_->clear();
     this->str("");
 }
 
-BaseLogStreamBuffer* BaseLogBuffer::pInfiniteStreamBuffer( void )
+BaseLogStreamBuffer* BaseLogBuffer::pInfiniteStreamBuffer()
 {
     pStreamBuffer_ = _NEW( BaseInfiniteStreamBuffer() );
     return pStreamBuffer_;
@@ -48,7 +48,7 @@ BaseLogStreamBuffer* BaseLogBuffer::pCircularStreamBuffer( size_t bufferSize )
     return pStreamBuffer_;
 }
 
-std::string BaseLogBuffer::dataAsString( void ) const
+std::string BaseLogBuffer::dataAsString() const
 {
     /*size_t  length = pStreamBuffer_->nCharactersInBuffer() + 1;
     char* str = _NEW_ARRAY( char, length );

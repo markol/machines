@@ -23,8 +23,8 @@ class MachLogConstructionImpl
 // Canonical form revoked
 {
 public:
-    MachLogConstructionImpl( void );
-    ~MachLogConstructionImpl( void );
+    MachLogConstructionImpl();
+    ~MachLogConstructionImpl();
 	PER_MEMBER_PERSISTENT_DEFAULT( MachLogConstructionImpl );
 	PER_FRIEND_READ_WRITE( MachLogConstructionImpl );
 

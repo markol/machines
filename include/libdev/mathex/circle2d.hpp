@@ -30,7 +30,7 @@ public:
     //PRE( radius >= 0.0 )
 
     //dtor
-    ~MexCircle2d( void );
+    ~MexCircle2d();
 
     //Accessors
     const MexPoint2d& centre() const;

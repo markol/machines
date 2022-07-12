@@ -41,7 +41,7 @@ public:
     virtual ~MexPolygon2d();
 
     //The vertex count
-	size_t nVertices( void ) const;
+	size_t nVertices() const;
 
     //The ith vertex
 	virtual const MexPoint2d& vertex( size_t i ) const = 0;
@@ -51,10 +51,10 @@ public:
     //methods like testing for intersection with a line, expansion ctor.
     //Default is false.
     void isCachingData( bool doCache ) const;
-    bool isCachingData( void ) const;
+    bool isCachingData() const;
 
     //Returns lengths of the edges. NB must be caching data.
-    const Lengths& edgeLengths( void ) const;
+    const Lengths& edgeLengths() const;
     //PRE( isCachingData() )
 
     //Fills directions with unit direction vectors for each edge
@@ -113,10 +113,10 @@ private:
 	bool operator!=( const MexPolygon2d& );
 
     //Compute and cache the polygon edge lengths
-    void computeEdgeLengths( void ) const;
+    void computeEdgeLengths() const;
 
     //Delet any data cached in extra RAM
-    void clearCachedData( void ) const;
+    void clearCachedData() const;
 
 	size_t nVertices_; //Vertex count
     Lengths* pEdgeLengths_; //Optional vector caching the polygon side lengths

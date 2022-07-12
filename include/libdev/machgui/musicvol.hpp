@@ -22,7 +22,7 @@ class MachGuiMusicVolumeSlideBar : public MachGuiSlideBar
 {
 public:
     MachGuiMusicVolumeSlideBar( MachGuiStartupScreens* pStartupScreens, GuiDisplayable* pParent, Gui::Coord topLeft, size_t width );
-    ~MachGuiMusicVolumeSlideBar( void );
+    ~MachGuiMusicVolumeSlideBar();
 
 	// Sets new CD volume. Called when slide button is moved.
 	virtual void valueChanged( float value );

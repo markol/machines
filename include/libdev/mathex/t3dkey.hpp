@@ -29,7 +29,7 @@ class MexTransform3dKey
 {
 public:
     //Constructors
-    MexTransform3dKey( void );
+    MexTransform3dKey();
     MexTransform3dKey( const MexTransform3dKey& );
 
     //Operator overloads

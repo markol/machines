@@ -34,7 +34,7 @@ public:
 		const MachPhysWeaponData&,
         MachActor* pOwner );
 
-    ~MachLogVortexBomb( void );									
+    ~MachLogVortexBomb();									
 								 									 
     void CLASS_INVARIANT;
 

@@ -44,7 +44,7 @@ public:
     	const W4dCompositePlanPtr& stopWalkingPlanPtr );
 
     //dtor
-    ~MachPhysSpiderLegs( void );
+    ~MachPhysSpiderLegs();
 
     virtual MachPhysLocomotionMethod* clone( MachPhysMachine* pMachine,
         const W4dLinks& links );

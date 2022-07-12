@@ -27,8 +27,8 @@ class MachPhysComplexityManager
 {
 public:
     //  Singleton class
-    static MachPhysComplexityManager& instance( void );
-    ~MachPhysComplexityManager( void );
+    static MachPhysComplexityManager& instance();
+    ~MachPhysComplexityManager();
 
     void CLASS_INVARIANT;
 
@@ -51,7 +51,7 @@ public:
 	MachPhysPlanetSurface* planetSurface();
 
 	void vapourTrailsEnabled( bool );
-	bool vapourTrailsEnabled( void ) const;
+	bool vapourTrailsEnabled() const;
 
 private:
     friend ostream& operator <<( ostream& o, const MachPhysComplexityManager& t );
@@ -59,7 +59,7 @@ private:
     MachPhysComplexityManager( const MachPhysComplexityManager& );
     MachPhysComplexityManager& operator =( const MachPhysComplexityManager& );
 
-    MachPhysComplexityManager( void );
+    MachPhysComplexityManager();
 
 	BooleanItems 			booleanItems_;
 	ChoiceItems 			choiceItems_;

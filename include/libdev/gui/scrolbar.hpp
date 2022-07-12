@@ -34,7 +34,7 @@ public:
     GuiVerticalScrollBar( GuiDisplayable* pParent, const Gui::Box& area, GuiSimpleScrollableList* pList );
 	// PRE( pList )
 
-    ~GuiVerticalScrollBar( void );
+    ~GuiVerticalScrollBar();
 
     void CLASS_INVARIANT;
 

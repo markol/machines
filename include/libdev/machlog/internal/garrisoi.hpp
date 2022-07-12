@@ -20,8 +20,8 @@ class MachLogGarrisonImpl
 // Canonical form revoked
 {
 public:
-    MachLogGarrisonImpl( void );
-    ~MachLogGarrisonImpl( void );
+    MachLogGarrisonImpl();
+    ~MachLogGarrisonImpl();
 
     void CLASS_INVARIANT;
 	PER_MEMBER_PERSISTENT_DEFAULT( MachLogGarrisonImpl );

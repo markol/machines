@@ -32,7 +32,7 @@ class W4dCycleMultiTextureData: public  W4dAnimationData
 public:
     W4dCycleMultiTextureData( const size_t& nData );
 
-    virtual ~W4dCycleMultiTextureData( void );
+    virtual ~W4dCycleMultiTextureData();
 
 	//apply the texture cucling animation to pEntity  start at statTime
 	virtual void apply( W4dEntity* pEntity, const PhysAbsoluteTime& startTime);

@@ -22,8 +22,8 @@ class MachPhysLevels
 {
 public:
     //  Singleton class
-    static MachPhysLevels& instance( void );
-    ~MachPhysLevels( void );
+    static MachPhysLevels& instance();
+    ~MachPhysLevels();
 
     size_t  nHardwareLevels( MachPhys::MachineType type ) const;
     //  PRE( type == GEO_LOCATOR or type == SPY_LOCATOR or
@@ -179,7 +179,7 @@ public:
     size_t  nHardwareIndices( MachPhys::ConstructionType type ) const;
 
     //  Return the maximum number of software indices for any machine type
-    size_t  nSoftwareIndices( void ) const;
+    size_t  nSoftwareIndices() const;
 
     //  Return the name used to reference this particular type / subtype
     //  as part of the filename for models, icons etc.
@@ -239,7 +239,7 @@ private:
     bool  subTyped( MachPhys::MachineType type ) const;
     bool  subTyped( MachPhys::ConstructionType type ) const;
 
-    MachPhysLevels( void );
+    MachPhysLevels();
 };
 
 

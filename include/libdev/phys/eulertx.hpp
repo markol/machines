@@ -26,18 +26,18 @@ class MexTransform3d;
 class PhysEulerTransform3d
 {
 public:
-    PhysEulerTransform3d( void );
+    PhysEulerTransform3d();
     PhysEulerTransform3d( const MexEulerAngles& );
     PhysEulerTransform3d( const MexEulerAngles&, const MexPoint3d& );
     PhysEulerTransform3d( const PhysEulerTransform3d& );
     PhysEulerTransform3d( const MexTransform3d& );
 
-    ~PhysEulerTransform3d( void );
+    ~PhysEulerTransform3d();
 
     PhysEulerTransform3d& operator =( const PhysEulerTransform3d& );
 
-    const MexEulerAngles& rotation( void ) const;
-    const MexPoint3d& position( void ) const;
+    const MexEulerAngles& rotation() const;
+    const MexPoint3d& position() const;
 
     void transform( MexTransform3d* pTransform ) const;
         

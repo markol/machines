@@ -49,8 +49,8 @@ public:
 
 
     //  Singleton class
-    static SndWaveManager& instance( void );
-    ~SndWaveManager( void );
+    static SndWaveManager& instance();
+    ~SndWaveManager();
 	void shutdown( );
 
     void CLASS_INVARIANT;
@@ -65,14 +65,14 @@ public:
 
 	bool isLoaded( const SndWaveformId& id );
 
-	void freeAll( void );
+	void freeAll();
 
 private:
     SndWaveManager( const SndWaveManager& );
     SndWaveManager& operator =( const SndWaveManager& );
     bool operator ==( const SndWaveManager& );
 
-    SndWaveManager( void );
+    SndWaveManager();
 
 	WaveFormMap loadedWaveForms_;
 	ALBufferMap loadedSoundBuffers_;

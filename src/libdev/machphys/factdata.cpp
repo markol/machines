@@ -30,7 +30,7 @@ void MachPhysFactoryData::buildRate( const MachPhys::BuildingMaterialUnits& newB
 	buildRate_ = newBuildRate;
 }
 
-MachPhys::BuildingMaterialUnits MachPhysFactoryData::buildRate( void ) const
+MachPhys::BuildingMaterialUnits MachPhysFactoryData::buildRate() const
 {
 	return buildRate_;
 }

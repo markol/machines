@@ -58,12 +58,12 @@ public:
 
 private:
     //Revoked
-    MachPhysPreload( void );
-    ~MachPhysPreload( void );
+    MachPhysPreload();
+    ~MachPhysPreload();
     MachPhysPreload( const MachPhysPreload& );
     MachPhysPreload& operator =( const MachPhysPreload& );
     bool operator ==( const MachPhysPreload& );
-	static SysPathName& storedPersistentFileName( void );
+	static SysPathName& storedPersistentFileName();
 
 };
 

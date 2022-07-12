@@ -28,7 +28,7 @@ class MachLogPressurePads
 {
 public:
     MachLogPressurePads( const MexPoint2d& minBound, const MexPoint2d& maxBound );
-    ~MachLogPressurePads( void );
+    ~MachLogPressurePads();
 
     void    add(
         const MexPoint2d& p1,

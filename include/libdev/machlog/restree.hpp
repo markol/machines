@@ -29,7 +29,7 @@ public:
 	typedef ctl_pvector< MachLogNotifiable > Notifiables;
 
     MachLogResearchTree();
-    ~MachLogResearchTree( void );
+    ~MachLogResearchTree();
 
     void CLASS_INVARIANT;
 

@@ -552,7 +552,7 @@ void MachActor::objectType( const MachLog::ObjectType& ot )
 	objectType_ = ot;
 }
 
-MachPhys::ArmourUnits MachActor::armour( void ) const
+MachPhys::ArmourUnits MachActor::armour() const
 {
 	CB_DEPIMPL( MachPhys::ArmourUnits, armour_ );
 	return armour_;
@@ -564,7 +564,7 @@ void MachActor::armour( const MachPhys::ArmourUnits& newArmour )
 	armour_ = newArmour;
 }
 
-MachPhys::HitPointUnits MachActor::hp( void ) const
+MachPhys::HitPointUnits MachActor::hp() const
 {
 	CB_DEPIMPL( MachPhys::HitPointUnits, hp_ );
 	return hp_;
@@ -1221,7 +1221,7 @@ void MachActor::setHPAndArmour( MachPhys::HitPointUnits newHp, MachPhys::ArmourU
 	}
 }
 
-MachPhys::HitPointUnits MachActor::maximumhp( void ) const
+MachPhys::HitPointUnits MachActor::maximumhp() const
 {
 	return objectData().hitPoints();
 }

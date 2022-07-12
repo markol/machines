@@ -56,7 +56,7 @@ public:
                                  const W4dComplexity& complexity ) const;
 
     //Duration of the plan
-    PhysRelativeTime duration( void ) const;
+    PhysRelativeTime duration() const;
 
     PER_MEMBER_PERSISTENT_DEFAULT( W4dMeshPlan );
     PER_FRIEND_READ_WRITE( W4dMeshPlan );

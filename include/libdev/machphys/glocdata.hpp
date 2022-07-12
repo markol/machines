@@ -17,11 +17,11 @@
 class MachPhysGeoLocatorData : public MachPhysMachineData
 {
 public:
-    ~MachPhysGeoLocatorData( void );
+    ~MachPhysGeoLocatorData();
 
     void CLASS_INVARIANT;
 
-	MachPhys::MineralGrade		mineralGrade( void ) const;
+	MachPhys::MineralGrade		mineralGrade() const;
 
     friend ostream& operator <<( ostream& o, const MachPhysGeoLocatorData& t );
 
@@ -38,7 +38,7 @@ private:
 
 	void mineralGrade( const MachPhys::MineralGrade& );
 
-    MachPhysGeoLocatorData( void );
+    MachPhysGeoLocatorData();
 	MachPhys::MineralGrade		mineralGrade_;
 
 };

@@ -26,8 +26,8 @@ class BaseCrashInternal
 {
 public:
     //  Singleton class
-    static BaseCrashInternal& instance( void );
-    ~BaseCrashInternal( void );
+    static BaseCrashInternal& instance();
+    ~BaseCrashInternal();
 
     typedef void (*PFn)();
     //  Add a function to the list of functions to be
@@ -49,7 +49,7 @@ private:
     BaseCrashInternal( const BaseCrashInternal& );
     BaseCrashInternal& operator =( const BaseCrashInternal& );
 
-    BaseCrashInternal( void );
+    BaseCrashInternal();
 
     //  Functions to be called in the event of a crash
     ctl_vector< PFn >       functions_;

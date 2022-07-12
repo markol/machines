@@ -189,7 +189,7 @@ void W4dGenericRepository::add( const string& key, W4dGenericComposite* pGeneric
 	compositeEntries_.push_back(CompositeEntry(key, pGeneric));
 }
 
-uint W4dGenericRepository::nGenerics( void ) const
+uint W4dGenericRepository::nGenerics() const
 {
 	return simpleEntries_.size() + compositeEntries_.size();
 }

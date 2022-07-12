@@ -24,7 +24,7 @@ public:
 	enum SequencingType	{ BY_LOD, BY_PRIORITY };
 
     W4dComplexity( uint nPriorities = 2 );
-    ~W4dComplexity( void );
+    ~W4dComplexity();
 
     void CLASS_INVARIANT;
 

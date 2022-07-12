@@ -33,7 +33,7 @@ void wdebug::add( const string& error )
 	errors.push_back( error );
 }
 
-void wdebug::display( void )
+void wdebug::display()
 {
 	const char* tab = "\t";
 

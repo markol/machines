@@ -19,8 +19,8 @@ class MachGuiStatistics
 // Canonical form revoked
 {
 public:
-    MachGuiStatistics( void );
-    virtual ~MachGuiStatistics( void );
+    MachGuiStatistics();
+    virtual ~MachGuiStatistics();
 
     void CLASS_INVARIANT;
 

@@ -157,7 +157,7 @@ void PhysConfigSpace2d::removeDomain( const DomainId& id )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-PhysConfigSpace2d::Mode PhysConfigSpace2d::mode( void ) const
+PhysConfigSpace2d::Mode PhysConfigSpace2d::mode() const
 {
     return impl_.mode();
 }
@@ -697,7 +697,7 @@ void PhysConfigSpace2d::isMaintainingVisibilityGraph
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-bool PhysConfigSpace2d::isMaintainingVisibilityGraph( void ) const
+bool PhysConfigSpace2d::isMaintainingVisibilityGraph() const
 {
     return impl_.pVisibilityGraph() != NULL;
 }

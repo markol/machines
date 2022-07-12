@@ -23,26 +23,26 @@ class TestVector
 {
 public:
     //  Singleton class
-    static TestVector& instance( void );
-    ~TestVector( void );
+    static TestVector& instance();
+    ~TestVector();
 
     void CLASS_INVARIANT;
 
     friend ostream& operator <<( ostream& o, const TestVector< VECTOR, ITERATOR >& t );
 
-    static void    testVectorOperatorSquareBrackets( void );
-    static void    testVectorIteratorOperatorAddition( void );
-    static void    testVectorIteratorOperatorAddEquals( void );
-    static void    testVectorIteratorOperatorSubtraction( void );
-    static void    testVectorIteratorOperatorSubtractEquals( void );
-    static void    testVectorIteratorOperatorPlusPlusPrefix( void );
-    static void    testVectorIteratorOperatorPlusPlusPostfix( void );
-    static void    testVectorIteratorOperatorMinusMinusPrefix( void );
-    static void    testVectorIteratorOperatorMinusMinusPostfix( void );
-    static void    testVectorIteratorOperatorSquareBrackets( void );
-    static void    testVectorIteratorDereference( void );
-    static void    testVectorIteratorComparison( void );
-    static void    iteratorInvalidation( void );
+    static void    testVectorOperatorSquareBrackets();
+    static void    testVectorIteratorOperatorAddition();
+    static void    testVectorIteratorOperatorAddEquals();
+    static void    testVectorIteratorOperatorSubtraction();
+    static void    testVectorIteratorOperatorSubtractEquals();
+    static void    testVectorIteratorOperatorPlusPlusPrefix();
+    static void    testVectorIteratorOperatorPlusPlusPostfix();
+    static void    testVectorIteratorOperatorMinusMinusPrefix();
+    static void    testVectorIteratorOperatorMinusMinusPostfix();
+    static void    testVectorIteratorOperatorSquareBrackets();
+    static void    testVectorIteratorDereference();
+    static void    testVectorIteratorComparison();
+    static void    iteratorInvalidation();
 
 private:
     // Operation deliberately revoked
@@ -54,10 +54,10 @@ private:
     // Operation deliberately revoked
     bool operator ==( const TestVector& );
 
-    TestVector( void );
+    TestVector();
 
-    void    initialiseVectors( void );
-    void    initialiseTestFunctions( void );
+    void    initialiseVectors();
+    void    initialiseTestFunctions();
 
     typedef int                         TestType;
     typedef ctl_vector< TestType >      TestVectorType;

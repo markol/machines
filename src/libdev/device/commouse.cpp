@@ -5,7 +5,7 @@
 #ifndef _SDLAPP
 
 // static 
-DevMouse& DevMouse::instance( void )
+DevMouse& DevMouse::instance()
 {
     static DevMouse instance;
     return instance;

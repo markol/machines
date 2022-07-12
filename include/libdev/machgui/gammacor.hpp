@@ -23,7 +23,7 @@ class MachGuiGammaCorrectionSlideBar : public MachGuiSlideBar
 public:
     MachGuiGammaCorrectionSlideBar( MachGuiStartupScreens* pStartupScreens, GuiDisplayable* pParent, Gui::Coord topLeft, size_t width, 
    				 					float minVal, float maxVal );
-    ~MachGuiGammaCorrectionSlideBar( void );
+    ~MachGuiGammaCorrectionSlideBar();
 
     void CLASS_INVARIANT;
 

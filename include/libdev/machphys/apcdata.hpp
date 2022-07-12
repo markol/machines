@@ -17,10 +17,10 @@
 class MachPhysAPCData : public MachPhysMachineData
 {
 public:
-    ~MachPhysAPCData( void );
+    ~MachPhysAPCData();
 
 	//Get methods public
-	MachPhys::SizeUnits capacity( void ) const;
+	MachPhys::SizeUnits capacity() const;
 
     void CLASS_INVARIANT;
 
@@ -37,7 +37,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const MachPhysAPCData& );
 
-    MachPhysAPCData( void );
+    MachPhysAPCData();
 
 	//set methods private
 	void capacity( const MachPhys::SizeUnits& );

@@ -20,8 +20,8 @@ class MachLogMachineConvoyImpl
 // Canonical form revoked
 {
 public:
-    MachLogMachineConvoyImpl( void );
-    ~MachLogMachineConvoyImpl( void );
+    MachLogMachineConvoyImpl();
+    ~MachLogMachineConvoyImpl();
 
     void CLASS_INVARIANT;
 

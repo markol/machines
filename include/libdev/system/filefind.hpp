@@ -45,11 +45,11 @@ public:
 	// Specifies if Files and/or Directories should be included in the search
 	void	includeInSearch( SearchFor );
 
-	SearchFor includedInSearch( void ) const;
+	SearchFor includedInSearch() const;
 
 	// Start the finding of files matching file specification. This function calls
 	// processFile every time a matching file is found.
-    void    find( void );
+    void    find();
 
 	void CLASS_INVARIANT;
 

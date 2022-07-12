@@ -27,8 +27,8 @@ public:
 
     enum ButtonState { NO_CHANGE, PRESSED, RELEASED };
 
-    const Position& minRange( void ) const;
-    const Position& maxRange( void ) const;
+    const Position& minRange() const;
+    const Position& maxRange() const;
 
         // Clip the mouse coordinates to be within the given range.  If the mouse
         // is moved outside this area, then coordinates on the edge are returned.

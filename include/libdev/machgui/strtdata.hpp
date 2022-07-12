@@ -40,7 +40,7 @@ public:
 	enum InitialiseConnection: uint8 { INITIALISE_CONNECTION, DO_NOT_INITIALISE_CONNECTION };
 
     MachGuiStartupData( MachGuiStartupScreens* );
-    ~MachGuiStartupData( void );
+    ~MachGuiStartupData();
 
     void CLASS_INVARIANT;
 
@@ -110,7 +110,7 @@ public:
 	// Network message handling
 	void receivedJoinMessage( const string& playerName, int uniqueMachineNumber );
 	void receivedImReadyMessage( const string& playerName, bool ready );
-	void receivedUpdatePlayersMessage( void );
+	void receivedUpdatePlayersMessage();
 	void receivedRaceChangeRequest( const string& playerName, size_t playerIndex, MachPhys::Race );
 	void receivedHostCancelMessage();
 	void receivedClientCancelMessage( const string& playerName );
@@ -239,7 +239,7 @@ public:
 	int randomStartSeed() const;
 
 	// Get/set flag to specify if transtion flics wil be played
-	bool transitionFlicsOn( void ) const;
+	bool transitionFlicsOn() const;
 	void transitionFlicsOn( bool flicOn );
 
 	int uniqueMachineNumber() const;

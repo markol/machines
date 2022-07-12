@@ -24,7 +24,7 @@ class PhysScalarPlan
 public:
 	PhysScalarPlan();
     PhysScalarPlan( const PhysRelativeTime& duration );
-    virtual ~PhysScalarPlan( void );
+    virtual ~PhysScalarPlan();
 
 	const PhysRelativeTime& duration() const; 
 	virtual MATHEX_SCALAR scalar(const PhysRelativeTime& timeOffset) const = 0; 

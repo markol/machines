@@ -27,12 +27,12 @@ W4dLogger::~W4dLogger()
 
 }
 
-bool    W4dLogger::logTextureData( void ) const
+bool    W4dLogger::logTextureData() const
 {
     return true;
 }
 
-std::ofstream& W4dLogger::textureLogStream( void )
+std::ofstream& W4dLogger::textureLogStream()
 {
     return renderLogStream_;
 }

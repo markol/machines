@@ -22,8 +22,8 @@ class MachLogArtefactsImpl
 // Canonical form revoked
 {
 public:
-    MachLogArtefactsImpl( void );
-    ~MachLogArtefactsImpl( void );
+    MachLogArtefactsImpl();
+    ~MachLogArtefactsImpl();
 
     void CLASS_INVARIANT;
 

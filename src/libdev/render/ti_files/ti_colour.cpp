@@ -2,7 +2,7 @@
 #include "ctl/vector.ctp"
 #include "render/colour.hpp"
 
-dummyFunctionColourVector( void )
+dummyFunctionColourVector()
 {
 	static ctl_vector<RenColour> vec1;
 }

@@ -19,7 +19,7 @@ MachPhysAggressorData::~MachPhysAggressorData()
 
 }
 
-MATHEX_SCALAR MachPhysAggressorData::accuracy( void ) const
+MATHEX_SCALAR MachPhysAggressorData::accuracy() const
 {
 	return accuracy_;
 }
@@ -29,7 +29,7 @@ void MachPhysAggressorData::accuracy( const MATHEX_SCALAR& newAccuracy)
 	accuracy_ = newAccuracy;
 }
 
-MATHEX_SCALAR MachPhysAggressorData::nWeapons( void ) const
+MATHEX_SCALAR MachPhysAggressorData::nWeapons() const
 {
 	return nWeapons_;
 }

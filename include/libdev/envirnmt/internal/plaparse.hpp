@@ -70,7 +70,7 @@ public:
 	void skylineController(const string*);
 	void skylineColourTable(const string*);
 
-	W4dStars* pStars( void ) const;
+	W4dStars* pStars() const;
 	void createStars(RenStars::Configuration, MATHEX_SCALAR radius, int nStars);
 
 	EnvPlanetEnvironment* planet()	{ return planet_; }

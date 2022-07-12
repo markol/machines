@@ -21,7 +21,7 @@ class MachPhysLinearWeapon : public MachPhysWeapon
 {
 public:
     //dtor.
-    virtual ~MachPhysLinearWeapon( void );
+    virtual ~MachPhysLinearWeapon();
 
     //Construct and return a new projectile of the appropriate ttype for this weapon.
     //It is the index'th projectile in a burst starting at burstStartTime.

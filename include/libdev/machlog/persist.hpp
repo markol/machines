@@ -28,8 +28,8 @@ class MachLogPersistence
 {
 public:
     //  Singleton class
-    static MachLogPersistence& instance( void );
-    ~MachLogPersistence( void );
+    static MachLogPersistence& instance();
+    ~MachLogPersistence();
 
 	const MachLogMachinePersistence& machines() const;
 	MachLogMachinePersistence& machines();
@@ -60,7 +60,7 @@ private:
     MachLogPersistence( const MachLogPersistence& );
     MachLogPersistence& operator =( const MachLogPersistence& );
 
-    MachLogPersistence( void );
+    MachLogPersistence();
 	W4dSceneManager*										pSceneManager_;
 	ctl_pvector< MachLogController >						controllers_;
 	MachLogLoadSaveGameExtras*								pExtras_;

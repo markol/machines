@@ -20,12 +20,12 @@ class MachLogGroupMoveInfo
 // Memberwise canonical
 {
 public:
-    MachLogGroupMoveInfo( void );
+    MachLogGroupMoveInfo();
     //  POST( not valid() );
     MachLogGroupMoveInfo( const MexVec2& offset, MATHEX_SCALAR groupRadius );
     //  POST( valid() );
 
-    ~MachLogGroupMoveInfo( void );
+    ~MachLogGroupMoveInfo();
 
     bool valid() const;
     const MexVec2& offset() const;

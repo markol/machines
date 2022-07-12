@@ -37,16 +37,16 @@ public:
         const char* environmentVariable,
         const char* defaultSetting );
 
-    ~DiagStream( void );
+    ~DiagStream();
 
     //  Return the ostream associated with this DiagStream
-    ostream&    ostr( void );
+    ostream&    ostr();
 
     //  True iff this stream is going to a file
-    bool    hasDestination( void ) const;
+    bool    hasDestination() const;
 
     //  Close any file associated with this stream
-    void    close( void );
+    void    close();
 
     void    indent( int nSpaces );
 
@@ -63,18 +63,18 @@ private:
     void interpretEnvironmentVariable(
         const char* environmentVariable,
         const char* defaultSetting );
-    void setupStream( void );
-    const char* name( void ) const;
+    void setupStream();
+    const char* name() const;
 
-    DiagStream* pNextStream( void );
+    DiagStream* pNextStream();
     void pNextStream( DiagStream* pNext );
 
-    bool append( void ) const;
-    void forceAppendFile( void );
+    bool append() const;
+    void forceAppendFile();
 
-    static  DiagStream*& pFirstStream( void );
+    static  DiagStream*& pFirstStream();
 
-    ostream&    nonPrependOstr( void );
+    ostream&    nonPrependOstr();
 
     std::ofstream    ostr_;
     BaseAppendOstream    appendOstr_;

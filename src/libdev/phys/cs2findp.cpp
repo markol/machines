@@ -111,7 +111,7 @@ bool PhysCS2dFindPath::spaceIntersections( const MexPoint2d& p1, const MexPoint2
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void PhysCS2dFindPath::start( void )
+void PhysCS2dFindPath::start()
 {
     CS2VGRA_STREAM("PhysCS2dFindPath::start entry " << (void*)this << std::endl);
     CS2VGRA_INDENT( 2 );
@@ -261,7 +261,7 @@ void PhysCS2dFindPath::update( const PhysRelativeTime& maxTime )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void PhysCS2dFindPath::startPathSearch( void )
+void PhysCS2dFindPath::startPathSearch()
 {
     CS2VGRA_STREAM( "PhysCS2dFindPath::startPathSearch enter " << (void*)this << std::endl );
     CS2VGRA_INDENT( 2 );
@@ -380,7 +380,7 @@ bool PhysCS2dFindPath::checkPath( size_t* nExtraPolygons )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-bool PhysCS2dFindPath::isPathSearchFinished( void ) const
+bool PhysCS2dFindPath::isPathSearchFinished() const
 {
     CS2VGRA_STREAM( "PhysCS2dFindPath::isPathSearchFinished enter " << (void*)this << std::endl );
     CS2VGRA_INDENT( 2 );

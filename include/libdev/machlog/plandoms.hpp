@@ -76,8 +76,8 @@ private:
     bool operator ==( const MachLogPlanetDomains& );
 
     //No instantiation allowed - all methods static
-    MachLogPlanetDomains( void );
-    ~MachLogPlanetDomains( void );
+    MachLogPlanetDomains();
+    ~MachLogPlanetDomains();
 };
 
 

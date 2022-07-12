@@ -19,7 +19,7 @@ MachPhysGeoLocatorData::~MachPhysGeoLocatorData()
 
 }
 
-MachPhys::MineralGrade MachPhysGeoLocatorData::mineralGrade( void ) const
+MachPhys::MineralGrade MachPhysGeoLocatorData::mineralGrade() const
 {
 	return mineralGrade_;
 }

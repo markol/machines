@@ -68,7 +68,7 @@ MachPhysAggressor::~MachPhysAggressor()
 
 }
 
-MachPhys::AggressorSubType MachPhysAggressor::subType( void ) const
+MachPhys::AggressorSubType MachPhysAggressor::subType() const
 {
     return subType_;
 }
@@ -187,12 +187,12 @@ MachPhysAggressor::Factory& MachPhysAggressor::factory()
 }
 
 //virtual
-const MachPhysMachineData& MachPhysAggressor::machineData( void ) const
+const MachPhysMachineData& MachPhysAggressor::machineData() const
 {
 	return data();
 }
 
-const MachPhysAggressorData& MachPhysAggressor::data( void ) const
+const MachPhysAggressorData& MachPhysAggressor::data() const
 {
 	return MachPhysData::instance().aggressorData( subType_, bodyLevel(), brainLevel() );
 }
@@ -225,7 +225,7 @@ const W4dComposite& MachPhysAggressor::asComposite() const
 
 // should only be called by one time constructor
 // to overide default settings of MachPhysMachine::defaultExplosionData()
-void MachPhysAggressor::createExplosionData( void )
+void MachPhysAggressor::createExplosionData()
 {
 
     switch( subType() )

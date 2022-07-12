@@ -51,7 +51,7 @@ PerIstream::~PerIstream()
 }
 
 //  Read a single character
-int PerIstream::get( void )
+int PerIstream::get()
 {
     pImpl_->logDataRead( 1 );
 

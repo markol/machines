@@ -29,7 +29,7 @@ class MachPhysLightStingWeapon : public MachPhysLinearWeapon
 public:
 	//public constructor
     MachPhysLightStingWeapon( W4dEntity* pParent, const MexTransform3d& localTransform );
-    virtual ~MachPhysLightStingWeapon( void );
+    virtual ~MachPhysLightStingWeapon();
 
 	static const MachPhysLightStingWeapon& exemplar();
 
@@ -69,7 +69,7 @@ private:
     static const char* compositeFilePath();
 
 	//one time constructor
-    MachPhysLightStingWeapon( void );
+    MachPhysLightStingWeapon();
 
     friend class MachPhysWeaponPersistence;
 

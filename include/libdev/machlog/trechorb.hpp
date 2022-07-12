@@ -28,7 +28,7 @@ public:
         MachActor* pOwner,
         const MachPhysWeaponData& );
 
-    ~MachLogTreacheryOrb( void );
+    ~MachLogTreacheryOrb();
 
     void CLASS_INVARIANT;
 

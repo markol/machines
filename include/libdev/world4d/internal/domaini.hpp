@@ -28,8 +28,8 @@ class W4dDomainImpl
 // Canonical form revoked
 {
 public:
-    W4dDomainImpl( void );
-    ~W4dDomainImpl( void );
+    W4dDomainImpl();
+    ~W4dDomainImpl();
 
     void CLASS_INVARIANT;
 
@@ -39,7 +39,7 @@ public:
 private:
 //    friend void W4dPortal::partner( W4dDomain* );
 //    friend W4dPortal::W4dPortal(W4dDomain*, W4dDomain*, const MexQuad3d&, const W4dTransform3d&);
-//    friend W4dPortal::~W4dPortal( void );
+//    friend W4dPortal::~W4dPortal();
     friend class W4dDomain;
             
     friend ostream& operator <<( ostream& o, const W4dDomainImpl& t );

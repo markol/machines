@@ -34,7 +34,7 @@ public:
 								MATHEX_SCALAR blastRadius_,
 								MachLogExpandingBlast::CanHitAirUnits canHitAirUnits );
 								
-    virtual ~MachLogExpandingBlastImpl( void );
+    virtual ~MachLogExpandingBlastImpl();
 
     void CLASS_INVARIANT;
 

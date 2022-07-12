@@ -43,8 +43,8 @@ public:
     //PRE( pConstruction == pAttacker );
 
 private:
-    MachPhysArmourer( void );
-    ~MachPhysArmourer( void );
+    MachPhysArmourer();
+    ~MachPhysArmourer();
     MachPhysArmourer( const MachPhysArmourer& );
     MachPhysArmourer& operator =( const MachPhysArmourer& );
     bool operator ==( const MachPhysArmourer& );

@@ -57,7 +57,7 @@ public:
 	//
 	// POST	A global tree of construction items is created, all not activated.
 	
-    ~MachLogConstructionTree( void );
+    ~MachLogConstructionTree();
 
     void CLASS_INVARIANT;
 

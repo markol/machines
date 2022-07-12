@@ -43,7 +43,7 @@ public:
 //         const MachPhysResourceCarrier& copyMe,
 //         const W4dLink& faceplate );
 
-    virtual ~MachPhysResourceCarrier( void );
+    virtual ~MachPhysResourceCarrier();
 
 	virtual const MachPhysMachineData& machineData() const;
 
@@ -96,7 +96,7 @@ private:
     static  MachPhysResourceCarrier&    part( size_t bodyLevel );
     static  Factory& factory();
 
-    void createExplosionData( void );
+    void createExplosionData();
 
 	size_t bodyLevel_;
 };

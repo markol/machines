@@ -17,10 +17,10 @@
 class MachPhysResourceCarrierData : public MachPhysMachineData
 {
 public:
-    ~MachPhysResourceCarrierData( void );
+    ~MachPhysResourceCarrierData();
 
 	//Get methods public
-	MachPhys::SizeUnits capacity( void ) const;
+	MachPhys::SizeUnits capacity() const;
 
     void CLASS_INVARIANT;
 
@@ -37,7 +37,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const MachPhysResourceCarrierData& );
 
-    MachPhysResourceCarrierData( void );
+    MachPhysResourceCarrierData();
 
 	//set methods private
 	void capacity( const MachPhys::SizeUnits& );

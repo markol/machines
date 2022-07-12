@@ -24,7 +24,7 @@ class PedVerticalPolygonMarker : public W4dCustom
 {
 public:
     PedVerticalPolygonMarker( W4dEntity*, const MexTransform3d&, const MexPoint3d&, const MexPoint3d&, const MexPoint3d& );
-    ~PedVerticalPolygonMarker( void );
+    ~PedVerticalPolygonMarker();
 
 	void display( bool display );
 

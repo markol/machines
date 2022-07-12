@@ -22,10 +22,10 @@ class W4dFloatValuePlan
 {
 public:
     W4dFloatValuePlan( const PhysRelativeTime& duration );
-    virtual ~W4dFloatValuePlan( void );
+    virtual ~W4dFloatValuePlan();
 
     //Return the plan's duration
-    const PhysRelativeTime& duration( void ) const;
+    const PhysRelativeTime& duration() const;
 
     //Override to define result as a function of timeOffset.
     //If time is greater than duration, the value at time duration is to be returned.

@@ -23,16 +23,16 @@ class MachGuiIPXNetworkMode	: public MachGuiNetworkProtocolMode
 {
 public:
     MachGuiIPXNetworkMode( GuiDisplayable*, MachGuiStartupScreens* );
-    ~MachGuiIPXNetworkMode( void );
+    ~MachGuiIPXNetworkMode();
 
     void CLASS_INVARIANT;
 
-	virtual void setNetworkDetails( void );
+	virtual void setNetworkDetails();
 
 	virtual bool validNetworkDetails( bool isHost );
 
 protected:
-	virtual void readNetworkDetails( void );
+	virtual void readNetworkDetails();
 
 private:
     friend ostream& operator <<( ostream& o, const MachGuiIPXNetworkMode& t );

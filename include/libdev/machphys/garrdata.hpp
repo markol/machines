@@ -19,11 +19,11 @@ class MexTransform3d;
 class MachPhysGarrisonData : public MachPhysConstructionData
 {
 public:
-    MachPhysGarrisonData( void );
+    MachPhysGarrisonData();
     MachPhysGarrisonData( const MachPhysGarrisonData&, const MexTransform3d& );
-    ~MachPhysGarrisonData( void );
+    ~MachPhysGarrisonData();
 	
-	MachPhys::HitPointUnits repairRate( void ) const;
+	MachPhys::HitPointUnits repairRate() const;
 
 	void repairRate( MachPhys::HitPointUnits newRepairRate );
 

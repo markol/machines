@@ -22,7 +22,7 @@ class MexAlignedBox2d
 {
 public:
 
-    MexAlignedBox2d( void );
+    MexAlignedBox2d();
 
     //Constructs the aligend box bounding both p1 and p2
 	MexAlignedBox2d( const MexPoint2d& p1, const MexPoint2d& p2 );

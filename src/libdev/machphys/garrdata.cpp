@@ -25,7 +25,7 @@ MachPhysGarrisonData::~MachPhysGarrisonData()
 
 }
 
-MachPhys::HitPointUnits MachPhysGarrisonData::repairRate( void ) const
+MachPhys::HitPointUnits MachPhysGarrisonData::repairRate() const
 {
 	return repairRate_;
 }

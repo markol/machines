@@ -36,7 +36,7 @@ class NetNodeImpl
 // Canonical form revoked
 {
 public:
-    ~NetNodeImpl( void );
+    ~NetNodeImpl();
 
     void CLASS_INVARIANT;
 
@@ -44,7 +44,7 @@ private:
     friend ostream& operator <<( ostream& o, const NetNodeImpl& t );
 	friend class NetNode;
 
-    NetNodeImpl( void );
+    NetNodeImpl();
     NetNodeImpl( const NetNodeImpl& );
     NetNodeImpl& operator =( const NetNodeImpl& );
 

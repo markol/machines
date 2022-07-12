@@ -33,7 +33,7 @@ public:
                                const PhysAbsoluteTime& time );
 
     //dtor
-    ~SimDestructW4dEntityEvent( void );
+    ~SimDestructW4dEntityEvent();
 
     virtual void execute();
 

@@ -23,11 +23,11 @@ class MexTransform3d;
 class MachPhysStations
 {
 public:
-    MachPhysStations( void );
+    MachPhysStations();
     MachPhysStations( const MachPhysStations& );
     //  Copy and transform the statiions
     MachPhysStations( const MachPhysStations&, const MexTransform3d& );
-    ~MachPhysStations( void );
+    ~MachPhysStations();
 
     MachPhysStations& operator =( const MachPhysStations& );
 

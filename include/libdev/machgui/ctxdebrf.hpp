@@ -24,7 +24,7 @@ class MachGuiCtxDeBriefing : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxDeBriefing( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxDeBriefing( void );
+    ~MachGuiCtxDeBriefing();
 
     void CLASS_INVARIANT;
 
@@ -35,8 +35,8 @@ public:
 	virtual void buttonEvent( MachGuiStartupScreens::ButtonEvent );
 
 protected:
-	void playDeBriefingVoicemail( void );
-	void stopPlayingDeBriefingVoicemail( void );
+	void playDeBriefingVoicemail();
+	void stopPlayingDeBriefingVoicemail();
 
 private:
     friend ostream& operator <<( ostream& o, const MachGuiCtxDeBriefing& t );
@@ -44,7 +44,7 @@ private:
     MachGuiCtxDeBriefing( const MachGuiCtxDeBriefing& );
     MachGuiCtxDeBriefing& operator =( const MachGuiCtxDeBriefing& );
 
-	void displayDeBriefImage( void );
+	void displayDeBriefImage();
 
 	// Data members...
 	MachGuiAnimations animations_;

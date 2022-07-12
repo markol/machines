@@ -50,7 +50,7 @@ public:
                             TerminateFlag terminateFlag = DONT_TERMINATE );
     
     //dtor
-    ~MachLogFollowOperation( void );
+    ~MachLogFollowOperation();
 	
 	virtual	bool beNotified( W4dSubject* pSubject,
 	                         W4dSubject::NotificationEvent event, int clientData );

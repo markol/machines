@@ -42,7 +42,7 @@ public:
         MachPhys::Race race,
         MachPhys::WeaponCombo combo );
 
-    virtual ~MachPhysAdministrator( void );
+    virtual ~MachPhysAdministrator();
 
     ///////////////////////////////////////////////////////
     //Inherited from MachPhysCanAttack
@@ -68,7 +68,7 @@ public:
 
 	const MachPhysAdministratorData& data() const;
 
-    MachPhys::AdministratorSubType subType( void ) const;
+    MachPhys::AdministratorSubType subType() const;
 
     void CLASS_INVARIANT;
 
@@ -104,7 +104,7 @@ private:
     static  MachPhysAdministrator& part( MachPhys::AdministratorSubType subType, size_t bodyLevel );
     static  Factory& factory();
 
-	void createExplosionData( void );
+	void createExplosionData();
     SysPathName compositeFileName( MachPhys::AdministratorSubType, size_t bodyLevel ) const;
 
     //  This is the constructor that is used by the factory. It is the

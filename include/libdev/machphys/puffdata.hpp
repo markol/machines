@@ -20,7 +20,7 @@ class PuffData
 {
 public:
     //  Constructor only supplied for ctl_vector
-    PuffData( void )
+    PuffData()
     : pSmokePuff_( NULL),
       pPlan_( NULL )
     {
@@ -36,23 +36,23 @@ public:
     {
     }
     
-    ~PuffData( void ){}
+    ~PuffData(){}
 
-    MachPhysSmokePuff* pSmokePuff( void ) const
+    MachPhysSmokePuff* pSmokePuff() const
     {
         PRE( pSmokePuff_ != NULL );
         
         return pSmokePuff_;
     }
     
-	W4dEntityPlan*	pPlan( void ) const
+	W4dEntityPlan*	pPlan() const
 	{
         PRE( pPlan_ != NULL );
 
 		return pPlan_;
 	}
 
-    const PhysRelativeTime& startTimeOffset( void ) const
+    const PhysRelativeTime& startTimeOffset() const
     {
         return startTimeOffset_;
     }

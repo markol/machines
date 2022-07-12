@@ -77,7 +77,7 @@ public:
 
     /////////////////////////////////////////////////////
     //Access to the domain graph
-    const PhysCS2dDomainGraph& domainGraph( void ) const;
+    const PhysCS2dDomainGraph& domainGraph() const;
 
     //Add a DomainArc joining domainVertexId to each other
     //DomainVertex on domain domainId's portals, except the portal which
@@ -98,7 +98,7 @@ public:
     //Clients should delay editing the graph when in use if possible.
     //The set method is incremental so if 2 clients flag as in use, they must both free
     //it, or it will be permanently set in use.
-    bool domainGraphInUse( void ) const;
+    bool domainGraphInUse() const;
     void domainGraphInUse( bool inUse );
 
     //Update the domain vertex graph with respect to any permanent polygons added
@@ -114,7 +114,7 @@ public:
                                 MATHEX_SCALAR clearance );
 
     //Remove the visibility graph
-    void deleteVisibilityGraph( void );
+    void deleteVisibilityGraph();
     /////////////////////////////////////////////////////
 
     //Ensure an expansion space is created with specified clearance.
@@ -133,7 +133,7 @@ public:
     bool expansionSpaceIsOpen( MATHEX_SCALAR expansionDistance ) const;
 
     //True if a space with any expansion distance is open
-    bool expansionSpaceIsOpen( void ) const;
+    bool expansionSpaceIsOpen() const;
 
     //The PhysConfigSpace maintained by the expansion space with specified distance
     PhysConfigSpace2d* expansionSpace( MATHEX_SCALAR expansionDistance );
@@ -174,7 +174,7 @@ private:
                   ObstacleFlags allObstacleFlags );
 
     //dtor
-    ~PhysCS2dImpl( void );
+    ~PhysCS2dImpl();
 
     // Operation deliberately revoked
     PhysCS2dImpl( const PhysCS2dImpl& );
@@ -312,33 +312,33 @@ private:
     void listArcs( ostream& ostr ) const;
 
     //Data access methods
-    const PhysConfigSpace2d::Mode& mode( void ) const;
-    DomainMap& domains( void );
-    DomainTree& domainTree( void );
-    FtlSerialIdGenerator& domainIdGenerator( void );
-    FtlSerialIdGenerator& portalIdGenerator( void );
-    PortalMap& portals( void );
-    PhysCS2dDomainGraph* pDomainGraph( void );
-    FtlReusingIdGenerator& domainVertexIdGenerator( void );
-    FtlReusingIdGenerator& domainArcIdGenerator( void );
-    FtlReusingIdGenerator& polygonIdGenerator( void );
-    MATHEX_SCALAR domainClearance( void );
-    PolygonTree& permanentPolygonTree( void );
-    PolygonTree& temporaryPolygonTree( void );
-    PolygonMap& polygons( void );
-    MexAlignedBox2d& boundary( void );
-    FtlReusingIdGenerator& findPathIdGenerator( void );
-    FtlReusingIdGenerator& domainFindPathIdGenerator( void );
-    FindPathMap& findPaths( void );
+    const PhysConfigSpace2d::Mode& mode() const;
+    DomainMap& domains();
+    DomainTree& domainTree();
+    FtlSerialIdGenerator& domainIdGenerator();
+    FtlSerialIdGenerator& portalIdGenerator();
+    PortalMap& portals();
+    PhysCS2dDomainGraph* pDomainGraph();
+    FtlReusingIdGenerator& domainVertexIdGenerator();
+    FtlReusingIdGenerator& domainArcIdGenerator();
+    FtlReusingIdGenerator& polygonIdGenerator();
+    MATHEX_SCALAR domainClearance();
+    PolygonTree& permanentPolygonTree();
+    PolygonTree& temporaryPolygonTree();
+    PolygonMap& polygons();
+    MexAlignedBox2d& boundary();
+    FtlReusingIdGenerator& findPathIdGenerator();
+    FtlReusingIdGenerator& domainFindPathIdGenerator();
+    FindPathMap& findPaths();
     FindPaths& findPathQueue();
-    DomainFindPathMap& domainFindPaths( void );
+    DomainFindPathMap& domainFindPaths();
     DomainFindPaths& domainFindPathQueue();
     PhysCS2dExpansionSpace& expansionSpace();
-    PhysCS2dVisibilityGraph* pVisibilityGraph( void );
-    size_t& nPolygons( void );
-    PhysCS2dDomainFindPath* pActiveDomainFindPath( void );
+    PhysCS2dVisibilityGraph* pVisibilityGraph();
+    size_t& nPolygons();
+    PhysCS2dDomainFindPath* pActiveDomainFindPath();
     void activeDomainFindPath( PhysCS2dDomainFindPath* pFindPath );
-    PhysCS2dFindPath* pActiveFindPath( void );
+    PhysCS2dFindPath* pActiveFindPath();
     void activeFindPath( PhysCS2dFindPath* pFindPath );
     FtlReusingIdGenerator& motionChunkIdGenerator();
     MotionChunkTree& motionChunkTree();

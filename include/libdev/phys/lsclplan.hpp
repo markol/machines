@@ -26,7 +26,7 @@ public:
 	PhysLinearScalarPlan(const ScalarVec& times, const ScalarVec& scales);
     PhysLinearScalarPlan( const PhysLinearScalarPlan& );
 	 
-    virtual ~PhysLinearScalarPlan( void );
+    virtual ~PhysLinearScalarPlan();
 
 	const ScalarVec& times() const;
 	const ScalarVec& scales() const;

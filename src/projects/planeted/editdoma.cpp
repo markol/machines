@@ -165,7 +165,7 @@ void PedDomainEditor::processInput( const DevButtonEvent& devButtonEvent )
 }
 
 // virtual
-void PedDomainEditor::displayKeyboardCtrls( void )
+void PedDomainEditor::displayKeyboardCtrls()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -190,7 +190,7 @@ void PedDomainEditor::displayKeyboardCtrls( void )
 }
 
 // virtual
-void PedDomainEditor::displayModeInfo( void )
+void PedDomainEditor::displayModeInfo()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -316,7 +316,7 @@ PedPolygon* PedDomainEditor::createDefaultPolygon() const
 }
 
 // virtual
-void PedDomainEditor::updatePolygon( void )
+void PedDomainEditor::updatePolygon()
 {
 	if (  mouseDrag_ and
 		  pSelectedPolygon_ and

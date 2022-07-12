@@ -42,7 +42,7 @@ public:
 	// PRE( pSceneManager );
 	// PRE( pRoot );
 
-    virtual ~MachCameras( void );
+    virtual ~MachCameras();
 
     void CLASS_INVARIANT;
 

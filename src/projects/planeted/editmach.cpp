@@ -33,7 +33,7 @@
 #include "planeted/strings.hpp"
 
 
-PedMachineEditor::PedMachineEditor( void )
+PedMachineEditor::PedMachineEditor()
 :	PedActorEditor( "machine" ),
 	pSelectedMachine_( NULL )
 {
@@ -79,14 +79,14 @@ void PedMachineEditor::processInput( const DevButtonEvent& devButtonEvent )
 }
 
 // virtual
-void PedMachineEditor::displayModeInfo( void )
+void PedMachineEditor::displayModeInfo()
 {
 	PedActorEditor::displayModeInfo();
 	pSceneManager_->out() << "Machine: " << (*machDataIter_)->description_ << std::endl;
 	pSceneManager_->out() << "Race: " << race_ << std::endl;
 }
 
-void PedMachineEditor::displayKeyboardCtrls( void )
+void PedMachineEditor::displayKeyboardCtrls()
 {
 	PRE( pSceneManager_ != NULL );
 	pSceneManager_->out() << "C : race " << std::endl;
@@ -147,7 +147,7 @@ void PedMachineEditor::writeScnFile( PedScenarioFile& scenarioFile )
 }
 
 // virtual
-W4dEntity* PedMachineEditor::currentActor( void )
+W4dEntity* PedMachineEditor::currentActor()
 {
 	return pSelectedMachine_;
 }
@@ -179,7 +179,7 @@ void PedMachineEditor::processCycle( PedActorEditor::CycleDir dir)
 }
 
 // virtual
-void PedMachineEditor::processSelection( void )
+void PedMachineEditor::processSelection()
 {
 	W4dEntity* actor = NULL;
 
@@ -231,7 +231,7 @@ void PedMachineEditor::processSelection( void )
 }
 
 // virtual
-void PedMachineEditor::processDelete( void )
+void PedMachineEditor::processDelete()
 {
 	if ( pSelectedMachine_ != NULL )
 	{
@@ -248,7 +248,7 @@ void PedMachineEditor::processDelete( void )
 }
 
 // virtual
-void PedMachineEditor::processRace( void )
+void PedMachineEditor::processRace()
 {
 	PedActorEditor::processRace();
 
@@ -261,7 +261,7 @@ void PedMachineEditor::processRace( void )
 }
 
 // virtual
-void PedMachineEditor::rotateAfterMove( void )
+void PedMachineEditor::rotateAfterMove()
 {
 	// A bit naughty...
 }
@@ -283,7 +283,7 @@ void PedMachineEditor::changeAllSolidities( W4dEntity::Solidity solidity)
 
 }
 
-void PedMachineEditor::initialiseActors( void )
+void PedMachineEditor::initialiseActors()
 {
 	AfxResourceLib resourceLib("machstrg.xml");
 

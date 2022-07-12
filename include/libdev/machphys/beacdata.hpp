@@ -19,9 +19,9 @@ class MexTransform3d;
 class MachPhysBeaconData : public MachPhysConstructionData
 {
 public:
-    MachPhysBeaconData( void );
+    MachPhysBeaconData();
     MachPhysBeaconData( const MachPhysBeaconData&, const MexTransform3d& );
-    ~MachPhysBeaconData( void );
+    ~MachPhysBeaconData();
 
     void CLASS_INVARIANT;
 

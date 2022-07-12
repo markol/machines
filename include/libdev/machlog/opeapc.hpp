@@ -28,7 +28,7 @@ public:
     MachLogEnterAPCOperation( MachLogMachine* , MachLogAPC* );
     MachLogEnterAPCOperation( MachLogMachine* , MachLogAPC*, PhysPathFindingPriority );
 
-    ~MachLogEnterAPCOperation( void );
+    ~MachLogEnterAPCOperation();
 
 	virtual	bool beNotified( W4dSubject* pSubject,
 	                         W4dSubject::NotificationEvent event, int clientData );

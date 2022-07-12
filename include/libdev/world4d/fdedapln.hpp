@@ -37,7 +37,7 @@ public:
                             MATHEX_SCALAR minAlpha,
                             MATHEX_SCALAR maxAlpha );
 
-    virtual ~W4dSolidFadedAlphaPlan( void );
+    virtual ~W4dSolidFadedAlphaPlan();
 
     ///////////////////////////////////////////////////
     //Inherited from W4dMaterialPlan
@@ -61,7 +61,7 @@ private:
     W4dSolidFadedAlphaPlan( const W4dSolidFadedAlphaPlan& );
     W4dSolidFadedAlphaPlan& operator =( const W4dSolidFadedAlphaPlan& );
 
-	bool isFaded( void ) const;
+	bool isFaded() const;
 
 	uint nFadedFrames_;
 	uint nFrames_;				  //faded + solid

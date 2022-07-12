@@ -42,7 +42,7 @@ public:
     MexPoint2d( const MexCompressedPoint2d& p );
 
     //dtor.
-    ~MexPoint2d( void );
+    ~MexPoint2d();
 
     // Operator overloads
     MexPoint2d& operator =( const MexPoint2d& rhs );
@@ -50,8 +50,8 @@ public:
     bool operator !=( const MexPoint2d& ) const;
 
     //Get/Set coordinates
-    MATHEX_SCALAR x( void ) const;
-    MATHEX_SCALAR y( void ) const;
+    MATHEX_SCALAR x() const;
+    MATHEX_SCALAR y() const;
     void x( MATHEX_SCALAR xNew );
     void y( MATHEX_SCALAR yNew );
 

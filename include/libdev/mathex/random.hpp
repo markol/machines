@@ -21,8 +21,8 @@ class MexBasicRandom
 // Memberwise canonical
 {
 public:
-    MexBasicRandom( void );
-    ~MexBasicRandom( void );
+    MexBasicRandom();
+    ~MexBasicRandom();
 
     //  The client should not call this method directly, the
     //  client should be using the accessor functions.

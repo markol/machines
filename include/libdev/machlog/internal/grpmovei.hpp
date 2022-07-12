@@ -43,7 +43,7 @@ public:
       size_t commandId,
       string* pReason,
       PhysPathFindingPriority pathFindingPriority );
-    ~MachLogGroupSimpleMoveImplementation( void );
+    ~MachLogGroupSimpleMoveImplementation();
 
     //  Return true iff the move command was successful
     bool    moveOK() const;

@@ -22,8 +22,8 @@ class MachPhysPlanetSurfaceImpl
 // Canonical form revoked
 {
 public:
-    MachPhysPlanetSurfaceImpl( void );
-    ~MachPhysPlanetSurfaceImpl( void );
+    MachPhysPlanetSurfaceImpl();
+    ~MachPhysPlanetSurfaceImpl();
 
     void CLASS_INVARIANT;
 

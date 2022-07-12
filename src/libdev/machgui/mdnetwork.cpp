@@ -31,12 +31,12 @@ void MachGuiNetworkProtocolMode::CLASS_INVARIANT
     INVARIANT( this != NULL );
 }
 
-bool MachGuiNetworkProtocolMode::connectionSet( void )
+bool MachGuiNetworkProtocolMode::connectionSet()
 {
 	return connectionSetHelper( NetNetwork::instance().currentStatus() );
 }
 
-bool MachGuiNetworkProtocolMode::connectionSetNoRecord( void )
+bool MachGuiNetworkProtocolMode::connectionSetNoRecord()
 {
 	return connectionSetHelper( NetNetwork::instance().currentStatusNoRecord() );
 }

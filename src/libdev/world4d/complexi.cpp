@@ -83,7 +83,7 @@ W4dComplexity::~W4dComplexity()
 
 }
 
-uint W4dComplexity::nPriorities( void )	const
+uint W4dComplexity::nPriorities()	const
 {
  return rangeModifiers_.size();
 }
@@ -98,7 +98,7 @@ void W4dComplexity::reset()
   highestComplexityReachedUptodate_=false;
 }
 
-bool W4dComplexity::highestComplexityReached( void ) const
+bool W4dComplexity::highestComplexityReached() const
 {
    if( not highestComplexityReachedUptodate_ )
    {
@@ -108,7 +108,7 @@ bool W4dComplexity::highestComplexityReached( void ) const
 	return highestComplexityReached_;
 }
 
-bool W4dComplexity::lowestComplexityReached( void )	const
+bool W4dComplexity::lowestComplexityReached()	const
 {
    if( not lowestComplexityReachedUptodate_ )
    {
@@ -118,7 +118,7 @@ bool W4dComplexity::lowestComplexityReached( void )	const
    return lowestComplexityReached_;
 }
 
-void W4dComplexity::updateHighestComplexityReached( void )
+void W4dComplexity::updateHighestComplexityReached()
 {
 
 	highestComplexityReached_=true;
@@ -129,7 +129,7 @@ void W4dComplexity::updateHighestComplexityReached( void )
 	highestComplexityReachedUptodate_=true;
 }
 
-void W4dComplexity::updateLowestComplexityReached( void )
+void W4dComplexity::updateLowestComplexityReached()
 {
 
 	lowestComplexityReached_=true;

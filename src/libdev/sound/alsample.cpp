@@ -175,7 +175,7 @@ ALSample::ALSample( const SndSampleParameters& params )
 }
 
 /** VIRTUAL **/
-ALSample::~ALSample( void )
+ALSample::~ALSample()
 {
 	static unsigned int sampleDCount = 0;
 	stop();
@@ -330,7 +330,7 @@ void ALSample::stopAtEnd()
 	}
 }
 
-void ALSample::stop( void )
+void ALSample::stop()
 {
 	ASSERT(alSource_, "Bad Sample")
 	//Immediatly treminate buffer playback
@@ -385,14 +385,14 @@ void ALSample::volume( int v )
     alTestError("source gain");
 }
 
-void ALSample::silence( void )
+void ALSample::silence()
 {
 //	ASSERT(false, "Unused at present");)
 //	internalTimer_->time(0);
 //	pause();
 }
 
-void ALSample::unsilence( void )
+void ALSample::unsilence()
 {
 //	ASSERT(false, "Unused at present");)
 //	double elapsedTimeSecs = internalTimer_->time();

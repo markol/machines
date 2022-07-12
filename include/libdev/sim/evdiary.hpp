@@ -25,10 +25,10 @@ class SimEventDiary
 {
 public:
     //Constructor initialises with empty event list
-    SimEventDiary( void );
+    SimEventDiary();
 
     //Disassociates all members of the event list from the diary
-    ~SimEventDiary( void );
+    ~SimEventDiary();
 
     // Adds event to the diary
     void add (const SimDiscreteEventPtr& event);
@@ -47,7 +47,7 @@ public:
     SimDiscreteEventPtr takeNextEvent();
 
     //  Clear all events out of the diary without executing them
-    void clear( void );
+    void clear();
     // POST( isEmpty() );
 
     void CLASS_INVARIANT;

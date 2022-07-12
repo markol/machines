@@ -50,7 +50,7 @@ public:
                        size_t likelySegmentCount );
 
     //dtor.
-    ~PhysTimedSpinPlan( void );
+    ~PhysTimedSpinPlan();
 
     //Add another segment to the plan of duration segmentDuration, during which time
     //the spin rate changes with specified acceleration, which may be negative to
@@ -73,7 +73,7 @@ public:
     //PRE( timeOffset >= 0 )
 
     //Inherited from PhysMotionPlan
-    //const PhysRelativeTime& duration( void ) const;
+    //const PhysRelativeTime& duration() const;
     //bool isDone( const PhysRelativeTime& timeOffset ) const;
 
     void CLASS_INVARIANT;

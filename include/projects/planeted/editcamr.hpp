@@ -28,8 +28,8 @@ class PedCameraEditor : public PedEditorMode
 // Canonical form revoked
 {
 public:
-    PedCameraEditor( void );
-    virtual ~PedCameraEditor( void );
+    PedCameraEditor();
+    virtual ~PedCameraEditor();
 
     void CLASS_INVARIANT;
 
@@ -39,20 +39,20 @@ public:
 
 	virtual void processInput( const DevButtonEvent& );
 	
-	virtual void changingMode( void );
+	virtual void changingMode();
 	
-	virtual void preRenderUpdate( void );
+	virtual void preRenderUpdate();
 	
-	virtual void displayKeyboardCtrls( void );
+	virtual void displayKeyboardCtrls();
 	
-	virtual void displayModeInfo( void );
+	virtual void displayModeInfo();
 
 	virtual void readScnFile( PedScenarioFile& );
 	// PRE( cspFileName.existsAsFile() );
 
 	virtual void writeScnFile( PedScenarioFile& );
 
-	virtual void activateMode( void );
+	virtual void activateMode();
 
 
 private:
@@ -63,7 +63,7 @@ private:
 
     friend ostream& operator <<( ostream& o, const PedCameraEditor& t );
 
-	void processDrop( void );
+	void processDrop();
 
 	PedCameraMarker* processChangeRace( PedCameraMarker* );
 

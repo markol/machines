@@ -77,13 +77,13 @@ void MexPolygon2d::isCachingData( bool doCache ) const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-bool MexPolygon2d::isCachingData( void ) const
+bool MexPolygon2d::isCachingData() const
 {
     return isCachingData_;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void MexPolygon2d::computeEdgeLengths( void ) const
+void MexPolygon2d::computeEdgeLengths() const
 {
     //See if we already have a vector
     if( pEdgeLengths_ == NULL )
@@ -113,7 +113,7 @@ void MexPolygon2d::computeEdgeLengths( void ) const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void MexPolygon2d::clearCachedData( void ) const
+void MexPolygon2d::clearCachedData() const
 {
     MexPolygon2d* nonConstThis = (MexPolygon2d*)this;
 
@@ -126,7 +126,7 @@ void MexPolygon2d::clearCachedData( void ) const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-const MexPolygon2d::Lengths& MexPolygon2d::edgeLengths( void ) const
+const MexPolygon2d::Lengths& MexPolygon2d::edgeLengths() const
 {
     PRE( isCachingData() );
 

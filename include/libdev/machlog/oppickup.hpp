@@ -30,7 +30,7 @@ public:
     MachLogPickUpOperation( MachLogResourceCarrier* );
 	// PRE( pActor_->isNormalResourceCarrier() );	
 	
-    ~MachLogPickUpOperation( void );
+    ~MachLogPickUpOperation();
 							 
 	void CLASS_INVARIANT;							 
 							 

@@ -21,8 +21,8 @@ class MachLogAPCImpl
 // Canonical form revoked
 {
 public:
-    MachLogAPCImpl( void );
-    ~MachLogAPCImpl( void );
+    MachLogAPCImpl();
+    ~MachLogAPCImpl();
 
     void CLASS_INVARIANT;
 

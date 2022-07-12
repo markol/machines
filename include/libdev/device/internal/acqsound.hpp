@@ -17,9 +17,9 @@ class AcquireAILSound
 
 {
 public:
-    static  void    instance( void );
+    static  void    instance();
     
-    ~AcquireAILSound( void );
+    ~AcquireAILSound();
 
 private:
     // Operation deliberately revoked
@@ -32,7 +32,7 @@ private:
     bool operator ==( const AcquireAILSound& ) const;
 
     //  Singleton class
-    AcquireAILSound( void );
+    AcquireAILSound();
 };
 
 #endif

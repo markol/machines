@@ -27,7 +27,7 @@ public:
         const PhysRelativeTime& time );
      // PRE( time > 0 );
         
-    ~W4dLinearFloatValuePlan( void );
+    ~W4dLinearFloatValuePlan();
 
     void add( MATHEX_SCALAR value, const PhysRelativeTime& time );
     // PRE( time > duration() );
@@ -54,7 +54,7 @@ private:
         MATHEX_SCALAR   value_; // The value
 
         //  This constructor here purely to keep ctl_vector happy
-        Entry( void )
+        Entry()
         {
         }
         

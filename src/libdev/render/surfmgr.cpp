@@ -255,7 +255,7 @@ bool RenSurfaceManager::restoreAll()
 	return success;
 }
 
-const RenSurfaceManager::PathNames&  RenSurfaceManager::searchList( void )
+const RenSurfaceManager::PathNames&  RenSurfaceManager::searchList()
 {
 	CB_REN_SURFACE_MANAGER_DEPIMPL;
 

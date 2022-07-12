@@ -227,7 +227,7 @@ void MachLogSquadron::removeFromControl( const MachLogMachine* p )
     squadronHasChanged_ = true;
 }
 
-void MachLogSquadron::releaseAllMachines( void )
+void MachLogSquadron::releaseAllMachines()
 {
 	CB_MachLogSquadron_DEPIMPL();
 	HAL_STREAM("MLSquadron::releaseAllMachines\n" );

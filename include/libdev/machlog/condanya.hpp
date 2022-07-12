@@ -30,7 +30,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogAnyAllCondition( void );
+    virtual ~MachLogAnyAllCondition();
 
     void CLASS_INVARIANT;
 

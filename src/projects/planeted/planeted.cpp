@@ -118,7 +118,7 @@ void PedPlanetEditor::initialise( W4dSceneManager* pSceneManager, MachLogPlanet*
 	pCameraMode_->initialise( pSceneManager, pPlanet );
 }
 
-void PedPlanetEditor::preRenderUpdate( void )
+void PedPlanetEditor::preRenderUpdate()
 {
 	// Must wait until scene has been rendered once.
 	static bool firstTime = true;
@@ -172,7 +172,7 @@ void PedPlanetEditor::preRenderUpdate( void )
 	firstTime = false;
 }
 
-void PedPlanetEditor::displayKeyboardCtrls( void )
+void PedPlanetEditor::displayKeyboardCtrls()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -200,7 +200,7 @@ void PedPlanetEditor::displayKeyboardCtrls( void )
 	TEST_INVARIANT;
 }
 
-void PedPlanetEditor::processSave( void )
+void PedPlanetEditor::processSave()
 {
 	PRE( pPlanet_ != NULL );
 
@@ -231,7 +231,7 @@ void PedPlanetEditor::processSave( void )
 	}
 }
 
-void PedPlanetEditor::displaySavedStatus( void )
+void PedPlanetEditor::displaySavedStatus()
 {
 	if ( saved_ )
 	{
@@ -279,7 +279,7 @@ void PedPlanetEditor::readArfFile( const SysPathName& arfFileName )
 	}
 }
 
-void PedPlanetEditor::initDeviceEvents( void )
+void PedPlanetEditor::initDeviceEvents()
 {
 	// Setup event queue to respond to certain key pressed
 	DevEventQueue::instance().queueEvents(DevKey::LEFT_MOUSE, DevButtonEvent::PRESS);

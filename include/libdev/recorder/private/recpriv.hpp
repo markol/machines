@@ -36,8 +36,8 @@ class RecRecorderPrivate
 {
 public:
     //  Singleton class
-    static RecRecorderPrivate& instance( void );
-    ~RecRecorderPrivate( void );
+    static RecRecorderPrivate& instance();
+    ~RecRecorderPrivate();
 
     //  Recording functions -------------------------------------
 
@@ -136,7 +136,7 @@ private:
     RecRecorderPrivate( const RecRecorderPrivate& );
     RecRecorderPrivate& operator =( const RecRecorderPrivate& );
 
-    RecRecorderPrivate( void );
+    RecRecorderPrivate();
 };
 
 /* *******************************************************

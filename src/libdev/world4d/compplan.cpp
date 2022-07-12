@@ -68,28 +68,28 @@ void W4dCompositePlan::linkPlan( W4dLinkId id, const W4dEntityPlan& plan )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-const W4dCompositePlan::Entries& W4dCompositePlan::entries( void ) const
+const W4dCompositePlan::Entries& W4dCompositePlan::entries() const
 {
 	CB_W4dCompositePlan_DEPIMPL();
 	return entries_;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-bool W4dCompositePlan::hasCompositePlan( void ) const
+bool W4dCompositePlan::hasCompositePlan() const
 {
 	CB_W4dCompositePlan_DEPIMPL();
 	return pCompositePlan_ != NULL;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-const W4dEntityPlan& W4dCompositePlan::compositePlan( void ) const
+const W4dEntityPlan& W4dCompositePlan::compositePlan() const
 {
 	CB_W4dCompositePlan_DEPIMPL();
 	return *pCompositePlan_;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-PhysRelativeTime W4dCompositePlan::finishTime( void ) const
+PhysRelativeTime W4dCompositePlan::finishTime() const
 {
     TEST_INVARIANT;
 	CB_W4dCompositePlan_DEPIMPL();
@@ -114,7 +114,7 @@ PhysRelativeTime W4dCompositePlan::finishTime( void ) const
     return cachedFinishTime_;
 }
 
-const string& W4dCompositePlan::name( void ) const
+const string& W4dCompositePlan::name() const
 {
 	CB_W4dCompositePlan_DEPIMPL();
     return name_;

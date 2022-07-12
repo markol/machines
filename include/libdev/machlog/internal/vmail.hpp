@@ -25,7 +25,7 @@ class MachLogVoiceMail
 // Canonical form revoked
 {
 private:
-    ~MachLogVoiceMail( void );
+    ~MachLogVoiceMail();
 
 	//Construct with VoiceMailID
     MachLogVoiceMail( VoiceMailID );

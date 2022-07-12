@@ -29,7 +29,7 @@ public:
 
 	virtual bool doHasConditionBeenMet() const;
 
-    virtual ~MachLogTimerCondition( void );
+    virtual ~MachLogTimerCondition();
 
     void CLASS_INVARIANT;
 

@@ -12,7 +12,7 @@
 #include "mathex/mathex.hpp"
 #include "mathex/abox2d.hpp"
 
-MexLine2d::MexLine2d( void ):
+MexLine2d::MexLine2d():
 	end1_(),
 	end2_()
 {

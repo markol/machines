@@ -36,8 +36,8 @@ private:
 
     friend ostream& operator <<( ostream& o, const MachGuiDbIPlayer& t );
 
-    MachGuiDbIPlayer( void );
-    ~MachGuiDbIPlayer( void );
+    MachGuiDbIPlayer();
+    ~MachGuiDbIPlayer();
     MachGuiDbIPlayer( const MachGuiDbIPlayer& );
     MachGuiDbIPlayer& operator =( const MachGuiDbIPlayer& );
 

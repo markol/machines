@@ -23,7 +23,7 @@ public:
     PedMapCreator( 	const PedPolygonEditor& domainEditor,
     				const PedPolygonEditor& portalEditor, 
 					const PedPolygonEditor& obstacleEditor );
-    ~PedMapCreator( void );
+    ~PedMapCreator();
 
 	void createBmp();
 

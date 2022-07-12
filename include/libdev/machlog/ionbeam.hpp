@@ -34,7 +34,7 @@ public:
 		const MachPhysWeaponData&,
         MachActor* pOwner );
 
-    ~MachLogIonBeam( void );
+    ~MachLogIonBeam();
 									 								 									 
     void CLASS_INVARIANT;
 

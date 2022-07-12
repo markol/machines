@@ -21,7 +21,7 @@ class MachLogVortexWeapon : public MachLogWeapon
 {
 public:
     MachLogVortexWeapon( MachLogRace*, MachPhysWeapon*, MachActor* pOwner );
-    virtual ~MachLogVortexWeapon( void );
+    virtual ~MachLogVortexWeapon();
 
     void CLASS_INVARIANT;
 

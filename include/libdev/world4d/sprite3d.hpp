@@ -45,7 +45,7 @@ public:
       const RenMaterial& materialPtr,
       const MexVec2& uv0, const MexVec2& uv1, const MexVec2& uv2, const MexVec2& uv3 );
 
-    ~W4dSprite3d( void );
+    ~W4dSprite3d();
 
     void depthOffset( MATHEX_SCALAR offset );
 

@@ -47,7 +47,7 @@ public:
 					 const GuiBitmap& enabledBitmap,
 					 const GuiBitmap& disabledBitmap );
 
-    ~GuiScrollButton( void );
+    ~GuiScrollButton();
 
     void CLASS_INVARIANT;
 

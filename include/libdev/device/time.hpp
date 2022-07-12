@@ -20,10 +20,10 @@
 class DevTime
 {
 public:
-    static DevTime& instance( void );
+    static DevTime& instance();
 
-	double time( void ) const;
-    double resolution( void ) const;
+	double time() const;
+    double resolution() const;
 
 	// Multiply time by a scalar, so we can make it proceed faster
 	// or slower than real-time as maintained by the OS.
@@ -31,8 +31,8 @@ public:
 	double rate() const;
 
 	// Start and stop time.
-	void pause( void );
-	void resume( void );
+	void pause();
+	void resume();
 
     ~DevTime();
 
@@ -50,7 +50,7 @@ private:
     //  to work without making any non-repeatable recorded calls to the
     //  timers.
     friend class DevTimer;
-	double timeNoRecord( void ) const;
+	double timeNoRecord() const;
 
     double rate_;
     bool   paused_;

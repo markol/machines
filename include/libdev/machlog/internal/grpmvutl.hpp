@@ -32,7 +32,7 @@ public:
     MachLogGroupMoverUtility( const Machines& actors, MATHEX_SCALAR distance );
     // PRE( actors.size() != 0 );
     
-    ~MachLogGroupMoverUtility( void );
+    ~MachLogGroupMoverUtility();
 
     uint nClumps() const;
     

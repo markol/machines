@@ -253,7 +253,7 @@ void EnvPlanetEnvironment::updateFog()
 }
 
 // virtual
-double EnvPlanetEnvironment::fogVisibility( void ) const
+double EnvPlanetEnvironment::fogVisibility() const
 {
 	PRE( fogOn() );
 	return fogVisibility_;
@@ -429,7 +429,7 @@ EnvUniformSky* EnvPlanetEnvironment::createUniformSky()
 	return _NEW(EnvUniformSky());
 }
 
-EnvStaticSky* EnvPlanetEnvironment::createStaticSky( void )
+EnvStaticSky* EnvPlanetEnvironment::createStaticSky()
 {
 	return _NEW(EnvStaticSky(skyRoot_));
 }

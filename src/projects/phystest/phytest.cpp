@@ -458,7 +458,7 @@ bool PhysTest::testAlignedBSPTree2d( ostream& out ) const
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-void    bobTest( void )
+void    bobTest()
 {
     MATHEX_SCALAR   height = 10.0;
 

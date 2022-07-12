@@ -24,7 +24,7 @@ class MachLogVortexBombImpl
 {
 public:
     MachLogVortexBombImpl( const MachPhysWeaponData* const );
-    virtual ~MachLogVortexBombImpl( void );
+    virtual ~MachLogVortexBombImpl();
 
     void CLASS_INVARIANT;
 

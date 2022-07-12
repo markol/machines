@@ -131,7 +131,7 @@ void PedPortalEditor::processInput( const DevButtonEvent& devButtonEvent )
 }
 
 // virtual
-void PedPortalEditor::displayKeyboardCtrls( void )
+void PedPortalEditor::displayKeyboardCtrls()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -155,7 +155,7 @@ void PedPortalEditor::displayKeyboardCtrls( void )
 }
 
 // virtual
-void PedPortalEditor::displayModeInfo( void )
+void PedPortalEditor::displayModeInfo()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -234,7 +234,7 @@ void PedPortalEditor::processVertexDown()
 }
 
 // virtual
-void PedPortalEditor::updatePolygon( void )
+void PedPortalEditor::updatePolygon()
 {
 	if (  mouseDrag_ and
 		  pSelectedPolygon_ and
@@ -408,7 +408,7 @@ void deletePolygons(PedPolygon* pPolygon)
 	_DELETE(pPolygon);
 }
 
-void PedPortalEditor::processCreatePortalsFromDomains( void )
+void PedPortalEditor::processCreatePortalsFromDomains()
 {
 	Polygons domains = pDomainEditor_->polygons();
 	uint nDomains = domains.size();

@@ -388,7 +388,7 @@ void MachGuiCtxOptions::update()
 }
 
 // virtual
-bool MachGuiCtxOptions::okayToSwitchContext( void )
+bool MachGuiCtxOptions::okayToSwitchContext()
 {
 	return true;
 }
@@ -454,7 +454,7 @@ void MachGuiCtxOptions::buttonEvent( MachGuiStartupScreens::ButtonEvent buttonEv
 	}
 }
 
-void MachGuiCtxOptions::getOptions( void )
+void MachGuiCtxOptions::getOptions()
 {
 	// Used to set current game settings to be that of gui items
 
@@ -564,7 +564,7 @@ void MachGuiCtxOptions::getOptions( void )
 //	pDriverSelector_->updateDriverRegistries();
 }
 
-void MachGuiCtxOptions::setOptions( void )
+void MachGuiCtxOptions::setOptions()
 {
 	// Used to set gui items to reflect current game settings
 	SysRegistry::KeyHandle handle;

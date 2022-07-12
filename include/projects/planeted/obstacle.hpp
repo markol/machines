@@ -24,7 +24,7 @@ public:
 	enum CspType { NORMAL, LOW, WATER };
 
     PedObstacle( const PolyVerticies& , MATHEX_SCALAR height, bool selected, CspType cspType );
-    ~PedObstacle( void );
+    ~PedObstacle();
 
     void CLASS_INVARIANT;
 
@@ -38,7 +38,7 @@ public:
 
 	void cspType( CspType cspType ) { cspType_ = cspType; }
 
-	static CspType highlightedType( void ) { return highlightedType_; }
+	static CspType highlightedType() { return highlightedType_; }
 
 	static void highlightedType( CspType cspType ) { highlightedType_ = cspType; }
 

@@ -63,8 +63,8 @@ class GXFile
 {
 public:
 
-    GXFile( void );
-    ~GXFile( void );
+    GXFile();
+    ~GXFile();
 
     void CLASS_INVARIANT;
 
@@ -76,14 +76,14 @@ public:
 	// POST(iff(isOpen(),result!=NULL)
 
     // Test whether file is opened or not
-    bool isOpen( void );
+    bool isOpen();
 
     // Close the file
-    void close( void );
+    void close();
     // POST(not isOpen())
 
     // Skip header section
-    GXError skipHeader( void );
+    GXError skipHeader();
 	// PRE(isOpen());
 
 	// Find AGT section tag '{' '}' '&' '@'
@@ -179,10 +179,10 @@ private:
 
 
     // Skip spaces and comments until first valid character is found
-    GXError skipSpaces( void );
+    GXError skipSpaces();
 
     // Get current char then increment cursor
-    char getCharMoveToNext( void );
+    char getCharMoveToNext();
 
     // Get current char
     char getChar(void);
@@ -191,7 +191,7 @@ private:
     char moveToNextGetChar(void);
 
 	// Increment column cursor (+1)
-    void moveToNext( void );
+    void moveToNext();
 
  	// Increment column cursor (amount)
     void moveCursor(short );
@@ -199,7 +199,7 @@ private:
 	GXError getNextValidChar(char, bool);
 
     // Read a line from file in buffer
-    GXError readLine( void );
+    GXError readLine();
 	// POST(lineCount_==old(lineCount_+1));
 
     GXError readChar(char *);

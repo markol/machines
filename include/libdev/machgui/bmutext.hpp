@@ -27,7 +27,7 @@ class MachGuiBmuText : public GuiDisplayable
 {
 public:
     MachGuiBmuText( GuiDisplayable* pParent, const Gui::Coord& relPos );
-    ~MachGuiBmuText( void );
+    ~MachGuiBmuText();
 
     void CLASS_INVARIANT;
 

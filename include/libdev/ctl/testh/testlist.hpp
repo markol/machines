@@ -23,18 +23,18 @@ class TestList
 {
 public:
     //  Singleton class
-    static TestList& instance( void );
-    ~TestList( void );
+    static TestList& instance();
+    ~TestList();
 
     void CLASS_INVARIANT;
 
     friend ostream& operator <<( ostream& o, const TestList< VECTOR, ITERATOR >& t );
 
-    static void    operatorPlusPlusPrefix( void );
-    static void    operatorPlusPlusPostfix( void );
-    static void    operatorMinusMinusPrefix( void );
-    static void    operatorMinusMinusPostfix( void );
-    static void    iteratorInvalidation( void );
+    static void    operatorPlusPlusPrefix();
+    static void    operatorPlusPlusPostfix();
+    static void    operatorMinusMinusPrefix();
+    static void    operatorMinusMinusPostfix();
+    static void    iteratorInvalidation();
 
 private:
     // Operation deliberately revoked
@@ -46,10 +46,10 @@ private:
     // Operation deliberately revoked
     bool operator ==( const TestList& );
 
-    TestList( void );
+    TestList();
 
-    void    initialiseLists( void );
-    void    initialiseTestFunctions( void );
+    void    initialiseLists();
+    void    initialiseTestFunctions();
 
     typedef int                         TestType;
     typedef ctl_list< TestType >        TestListType;

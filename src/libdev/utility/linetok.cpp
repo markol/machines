@@ -94,7 +94,7 @@ UtlLineTokeniser::~UtlLineTokeniser()
     TEST_INVARIANT;
 }
 
-void    UtlLineTokeniser::parseNextLine( void )
+void    UtlLineTokeniser::parseNextLine()
 {
     PRE( not finished() );
 
@@ -136,7 +136,7 @@ void    UtlLineTokeniser::parseNextLine( void )
 }
 
 //  Get the next line from the file ( blank or non blank ) and split it into tokens.
-void    UtlLineTokeniser::getNextLine( void )
+void    UtlLineTokeniser::getNextLine()
 {
     PRE( not finished() );
 
@@ -185,12 +185,12 @@ void    UtlLineTokeniser::getNextLine( void )
     splitIntoTokens();
 }
 
-bool    UtlLineTokeniser::finished( void ) const
+bool    UtlLineTokeniser::finished() const
 {
     return streamExhausted_;
 }
 
-void    UtlLineTokeniser::repeatLine( void )
+void    UtlLineTokeniser::repeatLine()
 {
     repeatCurrentLine_ = true;
 }
@@ -202,28 +202,28 @@ void    UtlLineTokeniser::lineNumber( size_t currentLineNumber )
     lineNumber_ = currentLineNumber;
 }
 
-size_t  UtlLineTokeniser::lineNumber( void ) const
+size_t  UtlLineTokeniser::lineNumber() const
 {
     PRE( not finished() );
 
     return lineNumber_;
 }
 
-const UtlLineTokeniser::Tokens& UtlLineTokeniser::tokens( void ) const
+const UtlLineTokeniser::Tokens& UtlLineTokeniser::tokens() const
 {
     PRE( not finished() );
 
     return tokens_;
 }
 
-const std::string &    UtlLineTokeniser::line( void ) const
+const std::string &    UtlLineTokeniser::line() const
 {
     PRE( not finished() );
 
     return line_;
 }
 
-void    UtlLineTokeniser::splitIntoTokens( void )
+void    UtlLineTokeniser::splitIntoTokens()
 {
     enum State { IN_TOKEN, NOT_IN_TOKEN, READ_DELIMITER };
 

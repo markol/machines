@@ -25,8 +25,8 @@ class PedObstacleEditor	: public PedPolygonEditor
 // Canonical form revoked
 {
 public:
-    PedObstacleEditor( void );
-    ~PedObstacleEditor( void );
+    PedObstacleEditor();
+    ~PedObstacleEditor();
 
     void CLASS_INVARIANT;
 
@@ -38,9 +38,9 @@ public:
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 	
-	virtual void displayKeyboardCtrls( void );
+	virtual void displayKeyboardCtrls();
 
-	virtual void displayModeInfo( void );
+	virtual void displayModeInfo();
 
 	virtual void readCspFile( const SysPathName& );
 	// PRE( cspFileName.existsAsFile() );
@@ -50,18 +50,18 @@ public:
 protected:
 	virtual PedPolygon* createPolygon( const PolyVerticies& verticies, MATHEX_SCALAR height, bool selected ) const;
 	virtual PedPolygon* createDefaultPolygon() const;
-	virtual void updatePolygon( void );
-	virtual void processVertexRight( void );
-	virtual void processVertexLeft( void );
-	virtual void processVertexUp( void );
-	virtual void processVertexDown( void );
-	void processInsertVertex( void );
-	void processDeleteVertex( void );
+	virtual void updatePolygon();
+	virtual void processVertexRight();
+	virtual void processVertexLeft();
+	virtual void processVertexUp();
+	virtual void processVertexDown();
+	void processInsertVertex();
+	void processDeleteVertex();
 	void processDisplayVerticalPolygons( bool displayPolygons );
 	void processComputeVerticalPolygons();
-	void highlightAllObstacles( void );
+	void highlightAllObstacles();
 	void processSelectPolygon();
-	void processChangeObstacleType( void );
+	void processChangeObstacleType();
 
 private:
 	// Operations deliberately revoked

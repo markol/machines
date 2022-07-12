@@ -74,8 +74,8 @@ public:
     );
 
 private:
-    MachPhysEffects( void );
-    ~MachPhysEffects( void );
+    MachPhysEffects();
+    ~MachPhysEffects();
     MachPhysEffects( const MachPhysEffects& );
     MachPhysEffects& operator =( const MachPhysEffects& );
     bool operator ==( const MachPhysEffects& );

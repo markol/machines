@@ -42,8 +42,8 @@ class MachLogPlanet
 public:	
 
     //The singleton instance
-    static MachLogPlanet& instance( void );
-    ~MachLogPlanet( void );
+    static MachLogPlanet& instance();
+    ~MachLogPlanet();
 
     //construct the planet surface using the psf file specified.
     //To be displayed in window represented by pSceneManager.
@@ -51,10 +51,10 @@ public:
     //PRE( not hasSurface() )
 
     //True if a surface is defined
-    bool hasSurface( void ) const;
+    bool hasSurface() const;
 
     //Export the planet surface
-    MachPhysPlanetSurface* surface( void ) const;
+    MachPhysPlanetSurface* surface() const;
     //PRE( hasSurface() )
 
     //Clear out the current planet surface and any associated data structures. After this call
@@ -63,10 +63,10 @@ public:
     //POST( not hasSurface() )
 
     //True iff the world entity is defined
-    bool hasWorld( void ) const;
+    bool hasWorld() const;
 
     //The world entity
-    W4dEntity* pWorld( void ) const;
+    W4dEntity* pWorld() const;
 
     //Exports the planet's configuration space
     PhysConfigSpace2d& configSpace();
@@ -114,7 +114,7 @@ public:
 
 private:
     //ctor
-    MachLogPlanet( void );
+    MachLogPlanet();
 	friend class MachLogPlanetImpl;
 
     // Operations deliberately revoked

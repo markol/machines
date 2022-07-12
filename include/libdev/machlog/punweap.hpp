@@ -24,7 +24,7 @@ class MachLogPunchWeapon : public MachLogWeapon
 {
 public:
     MachLogPunchWeapon( MachLogRace*, MachPhysPunchWeapon*, MachActor* pOwner );
-    virtual ~MachLogPunchWeapon( void );
+    virtual ~MachLogPunchWeapon();
 
 	//the persistence mechanism has to reset which weapons go where
 	//so we have to allow it to remount the weapons.

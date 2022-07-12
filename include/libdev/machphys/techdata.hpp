@@ -17,10 +17,10 @@
 class MachPhysTechnicianData : public MachPhysMachineData
 {
 public:
-    ~MachPhysTechnicianData( void );
+    ~MachPhysTechnicianData();
 
 	//get methods public
-	MachPhys::ResearchUnits researchRate( void ) const;
+	MachPhys::ResearchUnits researchRate() const;
 
     void CLASS_INVARIANT;
 
@@ -37,7 +37,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const MachPhysTechnicianData& );
 
-    MachPhysTechnicianData( void );
+    MachPhysTechnicianData();
 
 	//set methods private
 	void researchRate( const MachPhys::ResearchUnits& );

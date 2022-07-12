@@ -30,7 +30,7 @@ public:
         W4dEntity* pParent,
         const W4dTransform3d& localTransform,
         MATHEX_SCALAR size, size_t missile_level );
-    ~MachPhysVapourPuff( void );
+    ~MachPhysVapourPuff();
 
     static  size_t  nFrames( size_t missile_level );
     static  void preload();

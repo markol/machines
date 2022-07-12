@@ -47,12 +47,12 @@ void CommandLineArguments::parseArguments( int argc, char** argv )
     srand( seed_ );
 }
 
-size_t  CommandLineArguments::seed( void ) const
+size_t  CommandLineArguments::seed() const
 {
     return  seed_;
 }
 
-bool    CommandLineArguments::displayLogInfo( void ) const
+bool    CommandLineArguments::displayLogInfo() const
 {
     return  displayLogInfo_;
 }
@@ -70,7 +70,7 @@ ostream& operator <<( ostream& o, const CommandLineArguments& t )
     return o;
 }
 
-CommandLineArguments& ARGS( void )
+CommandLineArguments& ARGS()
 {
     return CommandLineArguments::instance();
 }

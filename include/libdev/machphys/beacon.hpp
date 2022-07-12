@@ -31,7 +31,7 @@ public:
         size_t level,
         MachPhys::Race race );
 
-    virtual ~MachPhysBeacon( void );
+    virtual ~MachPhysBeacon();
 
 	//return MachPhysData object for this building
 	virtual const MachPhysConstructionData& constructionData() const;

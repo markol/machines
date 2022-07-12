@@ -38,7 +38,7 @@ public:
 //    MachLogSquadron( const int& id );
 	MachLogSquadron( MachLogRace* logRace, W4dEntity* pPhysObject, int squadronId );
 	MachLogSquadron( MachLogRace* logRace, W4dEntity* pPhysObject, int squadronId, UtlId );
-    virtual ~MachLogSquadron( void );
+    virtual ~MachLogSquadron();
 
 	int squadronId() const;
 

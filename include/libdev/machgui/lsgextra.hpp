@@ -22,7 +22,7 @@ class MachGuiLoadSaveGameExtras : public MachLogLoadSaveGameExtras
 {
 public:
     MachGuiLoadSaveGameExtras( MachInGameScreen* pInGameScreen );
-    virtual ~MachGuiLoadSaveGameExtras( void );
+    virtual ~MachGuiLoadSaveGameExtras();
 	virtual void perReadExtras( PerIstream& );
 	virtual void perWriteExtras( PerOstream& );
 

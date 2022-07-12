@@ -35,7 +35,7 @@ public:
     				const PhysRelativeTime& overallDuration
     				);
 
-    virtual ~MachPhysDebrisUnit( void );
+    virtual ~MachPhysDebrisUnit();
 
 	void startBurning();
 

@@ -96,7 +96,7 @@ static void usage()
 	SysWindowsAPI::messageBox( usage.c_str(),"Machines" );
 }
 
-static  void    newHandler( void )
+static  void    newHandler()
 {
     WHERE_STREAM( "Aborting in new handler " << std::endl );
     ASSERT_FAIL( "Aborting in new handler" );

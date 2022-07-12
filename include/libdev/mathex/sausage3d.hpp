@@ -23,21 +23,21 @@ class MexSphere3d;
 class MexSausage3d 
 {
 public:
-    MexSausage3d( void );
+    MexSausage3d();
     MexSausage3d( const MexPoint3d&, const MexPoint3d&, MATHEX_SCALAR );
-    virtual ~MexSausage3d( void );
+    virtual ~MexSausage3d();
 
     void CLASS_INVARIANT;
 
    void transform( const MexTransform3d& transform );
 
    // set/get
-   MATHEX_SCALAR radius( void ) const { return radius_; }
+   MATHEX_SCALAR radius() const { return radius_; }
    void radius( MATHEX_SCALAR newradius ) { radius_=newradius; }
-   MATHEX_SCALAR length( void ) const { return length_; }
-   const MexPoint3d& startPoint( void ) const { return startPoint_; }
+   MATHEX_SCALAR length() const { return length_; }
+   const MexPoint3d& startPoint() const { return startPoint_; }
    void startPoint( const MexPoint3d& newStartPoint ); 
-   const MexPoint3d& endPoint( void ) const { return endPoint_; }
+   const MexPoint3d& endPoint() const { return endPoint_; }
    void endPoint( const MexPoint3d& newEndPoint );
 
    // true if the first argument intersects this 

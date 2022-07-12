@@ -54,7 +54,7 @@ public:
 
 	// MachGuiAnimationCells* must be newed and will be deleted by this class.
     MachGuiAnimation( GuiDisplayable* pParent, const Gui::Box&, Cells* );
-    ~MachGuiAnimation( void );
+    ~MachGuiAnimation();
 
     void CLASS_INVARIANT;
 

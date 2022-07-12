@@ -2627,7 +2627,7 @@ void MachGuiStartupScreens::addSmackerAnimation( AniSmacker* animation )
     smackerAnims_.push_back( animation );
 }
 
-void MachGuiStartupScreens::clearAllSmackerAnimations( void )
+void MachGuiStartupScreens::clearAllSmackerAnimations()
 {
 	CB_DEPIMPL(	MachGuiStartupScreensImpl::SmackerAnims, smackerAnims_ );
 
@@ -2641,7 +2641,7 @@ void MachGuiStartupScreens::clearAllSmackerAnimations( void )
 	smackerAnims_.erase( smackerAnims_.begin(), smackerAnims_.end() );
 }
 
-void MachGuiStartupScreens::playSmackerAnimations( void )
+void MachGuiStartupScreens::playSmackerAnimations()
 {
 	CB_DEPIMPL(	MachGuiStartupScreensImpl::SmackerAnims, smackerAnims_ );
 

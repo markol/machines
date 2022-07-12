@@ -83,7 +83,7 @@ MachLogConstructionItem::MachLogConstructionItem( 	MachLog::ObjectType consType,
 
 /* //////////////////////////////////////////////////////////////////////////// */
 
-MachLogConstructionItem::~MachLogConstructionItem( void )
+MachLogConstructionItem::~MachLogConstructionItem()
 {
 	TEST_INVARIANT;
 

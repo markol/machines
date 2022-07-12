@@ -26,11 +26,11 @@ public:
         const  TestVec3& chasedDirection,
         double chasedSpeed );
         
-    ~CalculateInterception( void );
+    ~CalculateInterception();
 
-    bool    interceptionFound( void ) const;
+    bool    interceptionFound() const;
 
-    TestVec3    chaserDirection( void ) const;
+    TestVec3    chaserDirection() const;
 
     friend ostream& operator <<( ostream& o, const CalculateInterception& t );
 

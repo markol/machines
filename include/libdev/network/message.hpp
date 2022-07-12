@@ -27,7 +27,7 @@ public:
 
     NetMessage( const NetMessageHeader& , const NetMessageBody& );
     NetMessage( const NetMessage& );
-    ~NetMessage( void );
+    ~NetMessage();
 
 	const NetMessageHeader& header() const;
 	const NetMessageBody& body() const;

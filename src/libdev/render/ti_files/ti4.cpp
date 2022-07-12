@@ -6,7 +6,7 @@ class RenITriangleGroup;
 class RenTTFPolygon;
 class RenSpinTFPolygon;
 
-dummyFunction4( void )
+dummyFunction4()
 {
 	static ctl_min_memory_vector<RenITriangleGroup*>	triangles;
 	static ctl_min_memory_vector<RenTTFPolygon*>		ttfs;

@@ -19,8 +19,8 @@ class Class13
 // Canonical form revoked
 {
 public:
-    Class13( void );
-    ~Class13( void );
+    Class13();
+    ~Class13();
 
     Class13*    ptr_;
     int         i1_;

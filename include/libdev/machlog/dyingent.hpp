@@ -45,7 +45,7 @@ public:
     					MachLogConstruction* );
 
 
-    ~MachLogDyingEntityEvent( void );
+    ~MachLogDyingEntityEvent();
 
     void CLASS_INVARIANT;
 

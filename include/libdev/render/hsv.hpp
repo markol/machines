@@ -22,20 +22,20 @@ class RenColour;
 class RenColourHSV
 {
 public:
-    RenColourHSV( void );
-    ~RenColourHSV( void );
+    RenColourHSV();
+    ~RenColourHSV();
 
     RenColourHSV( const RenColour& rgb );
 
-    RenColour rgb( void ) const;
+    RenColour rgb() const;
 
-    bool    hueDefined( void ) const;
-    double  hue( void ) const;
+    bool    hueDefined() const;
+    double  hue() const;
     // PRE( hueDefined );
     // POST( 0.0 <= result and result <= 360.0 );
     
-    double  saturation( void ) const;
-    double  value( void ) const;
+    double  saturation() const;
+    double  value() const;
 
     void    hue( double newHue );
     void    saturation( double newSaturation );

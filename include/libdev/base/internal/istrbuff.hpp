@@ -22,7 +22,7 @@ class PerIstreamBuffer : public std::streambuf
 {
 public:
     PerIstreamBuffer( PerIstream* pStream );
-    ~PerIstreamBuffer( void );
+    ~PerIstreamBuffer();
 
     virtual int     overflow( int c );
     virtual int     underflow();

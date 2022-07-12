@@ -42,7 +42,7 @@ public:
         MATHEX_SCALAR depthOffset,
         const PhysRelativeTime& duration );
         
-    ~MachPhysFireball( void );
+    ~MachPhysFireball();
 
     //  Start the fireball at the given time
     void startFireball( const PhysAbsoluteTime& startTime );
@@ -50,10 +50,10 @@ public:
     //  Load all of the fireball bitmaps in advance so that the
     //  fireball can be created 'instantly'
     
-    static  void preload( void );
+    static  void preload();
 
     //  return a random fireball type out of those available
-    static  MachPhysFireballType randomFireball( void );
+    static  MachPhysFireballType randomFireball();
     
     void CLASS_INVARIANT;
 

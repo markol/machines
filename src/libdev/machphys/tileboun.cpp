@@ -115,7 +115,7 @@ void MachPhysTileBoundary::add( const MexPoint3d& v1, const MexPoint3d& v2,
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void MachPhysTileBoundary::doneBuilding( void )
+void MachPhysTileBoundary::doneBuilding()
 {
     //Check the correct number of tiles have been registered
     PRE( nextTriangleId_ == nTriangles_ );

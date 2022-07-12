@@ -53,7 +53,7 @@ public:
 	typedef ctl_pvector< MachLogBuildPoint >	BuildPoints;	
 		
     //dtor.
-    virtual~MachLogConstruction( void );
+    virtual~MachLogConstruction();
 
     //Inherited from MachLogCanBeDestroyed
     virtual PhysRelativeTime beDestroyed();
@@ -178,7 +178,7 @@ public:
 
 	//return the physConstruction interior domain
 	//Note that returns non-const reference quite deliberately.
-	W4dDomain& interiorDomain( void ) const;
+	W4dDomain& interiorDomain() const;
 
 	//return the interior config space
 	//Note that returns non-const reference quite deliberately.

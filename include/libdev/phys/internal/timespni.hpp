@@ -37,7 +37,7 @@ private:
     PhysTimedSpinPlanImpl( const MexVec3& axis, const MexPoint3d& position, const MexRadians& startAngle, const MexRadians& startSpeed );
     PhysTimedSpinPlanImpl( const MexVec3& axis, const MexTransform3d& baseTransform, const MexRadians& startAngle, const MexRadians& startSpeed );
 
-    ~PhysTimedSpinPlanImpl( void );
+    ~PhysTimedSpinPlanImpl();
 
     PhysTimedSpinPlanImpl( const PhysTimedSpinPlanImpl& );
     PhysTimedSpinPlanImpl& operator =( const PhysTimedSpinPlanImpl& );

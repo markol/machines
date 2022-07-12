@@ -54,7 +54,7 @@ private:
     W4dGarbageCollector& operator =( const W4dGarbageCollector& );
     bool operator ==( const W4dGarbageCollector& );
 
-    W4dGarbageCollector( void );
+    W4dGarbageCollector();
 
     //data members
     PhysAbsoluteTime nextDeleteTime_; //Earliest scheduled time of a deletion

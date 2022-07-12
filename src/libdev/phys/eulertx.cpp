@@ -51,12 +51,12 @@ PhysEulerTransform3d::~PhysEulerTransform3d()
 
 }
 
-const MexEulerAngles& PhysEulerTransform3d::rotation( void ) const
+const MexEulerAngles& PhysEulerTransform3d::rotation() const
 {
     return angles_;
 }
 
-const MexPoint3d& PhysEulerTransform3d::position( void ) const
+const MexPoint3d& PhysEulerTransform3d::position() const
 {
     return position_;
 }

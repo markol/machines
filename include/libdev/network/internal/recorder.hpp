@@ -113,8 +113,8 @@ private:
     NetIRecorder( const NetIRecorder& );
     NetIRecorder& operator =( const NetIRecorder& );
 
-    NetIRecorder( void );
-    ~NetIRecorder( void );
+    NetIRecorder();
+    ~NetIRecorder();
 
     bool reachedEndOfMessageBufferUpdate() const;
     size_t readMessageBufferSize() const;

@@ -66,7 +66,7 @@ public:
 
 	PlaneSide pointRelativeToPlane( const MexPoint3d& ) const;
 
-    const MexTransform3d& planeTransform( void ) const;
+    const MexTransform3d& planeTransform() const;
 
     //  Return the X coordinate of a point on the plane given the Y and Z coordinates
     MATHEX_SCALAR   x( MATHEX_SCALAR y, MATHEX_SCALAR z ) const;

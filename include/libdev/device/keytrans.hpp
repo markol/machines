@@ -41,8 +41,8 @@ public:
 	};
 	typedef ctl_vector< Command > CommandList; // Index pos is commandId
 
-    DevKeyToCommandTranslator( void );
-    ~DevKeyToCommandTranslator( void );
+    DevKeyToCommandTranslator();
+    ~DevKeyToCommandTranslator();
 
 	void addTranslation( const DevKeyToCommand& );
 

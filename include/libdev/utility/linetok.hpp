@@ -44,29 +44,29 @@ public:
     //  PRE( not finished() );
 
     //  Get the current line number
-    size_t  lineNumber( void ) const;
+    size_t  lineNumber() const;
     //  PRE( not finished() );
 
     //  Parse in the next non blank line into the internal buffers
-    void    parseNextLine( void );
+    void    parseNextLine();
     //  PRE( not finished() );
 
     // Forces the current line to be tokenised again when parseNextLine is called again.
-    void    repeatLine( void );
+    void    repeatLine();
 
     //  Returns true if there are no more lines to be
     //  read from the input stream
-    bool    finished( void ) const;
+    bool    finished() const;
 
     //  Return the current line untokenised
-    const   std::string& line( void ) const;
+    const   std::string& line() const;
     //  PRE( not finished() );
 
     typedef ctl_vector< std::string >    Tokens;
 
     //  Returns the current set of tokens. Tokens are delimited by white space
     //  and token delimiters
-    const Tokens& tokens( void ) const;
+    const Tokens& tokens() const;
     //  PRE( not finished() );
 
     //  Add a character that will be treated as white space in the input stream.
@@ -99,7 +99,7 @@ public:
 
     void removeFixedToken( const std::string& token );
 
-    ~UtlLineTokeniser( void );
+    ~UtlLineTokeniser();
 
     void CLASS_INVARIANT;
 
@@ -113,8 +113,8 @@ private:
     // Operation deliberately revoked
     bool operator ==( const UtlLineTokeniser& );
 
-    void    getNextLine( void );
-    void    splitIntoTokens( void );
+    void    getNextLine();
+    void    splitIntoTokens();
     bool    startOfComment( const std::string& line, size_t i );
     bool    matchesFixedToken( const std::string& line, size_t* pIndex );
 
@@ -143,7 +143,7 @@ private:
     std::string  tokenDelimiterCharacters_;
     bool    repeatCurrentLine_;
 
-    friend void utlDummyFunction1( void );
+    friend void utlDummyFunction1();
 
     struct FileData
     {

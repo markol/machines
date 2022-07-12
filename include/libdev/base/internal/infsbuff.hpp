@@ -21,10 +21,10 @@
 class BaseInfiniteStreamBuffer : public BaseLogStreamBuffer
 {
 public:
-    BaseInfiniteStreamBuffer( void );
-    ~BaseInfiniteStreamBuffer( void );
+    BaseInfiniteStreamBuffer();
+    ~BaseInfiniteStreamBuffer();
 
-    virtual void    clear( void );
+    virtual void    clear();
 
     virtual int     overflow( int c );
     virtual int     underflow();
@@ -43,8 +43,8 @@ private:
     // Operation deliberately revoked
     bool operator ==( const BaseInfiniteStreamBuffer& );
 
-    virtual size_t  nCharactersInBuffer( void ) const;
-    static  size_t  bufferIncrement( void );
+    virtual size_t  nCharactersInBuffer() const;
+    static  size_t  bufferIncrement();
 
     char*   pBuffer_;
     size_t  bufferSize_;

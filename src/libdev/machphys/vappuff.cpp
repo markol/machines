@@ -214,7 +214,7 @@ W4dMaterialPlanPtr MachPhysVapourPuff::materialPlanPtr( size_t missile_level )
 }
 
 // static
-void MachPhysVapourPuff::preload( void )
+void MachPhysVapourPuff::preload()
 {
     materialPlanPtr(MachPhysTrailedProjectile::MISSILE1 );
     materialPlanPtr(MachPhysTrailedProjectile::MISSILE2 );

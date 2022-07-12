@@ -36,7 +36,7 @@ public:
       string* pReason,
       PhysPathFindingPriority pathFindingPriority );
 
-    ~MachLogGroupSimpleMove( void );
+    ~MachLogGroupSimpleMove();
 
     //  Return true iff the move command was successful
     bool    moveOK() const;

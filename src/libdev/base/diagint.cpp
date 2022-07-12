@@ -83,7 +83,7 @@ void DiagInternal::enableFPException()
 }
 
 // static
-void    DiagInternal::initialiseSignalHandler( void )
+void    DiagInternal::initialiseSignalHandler()
 {
     if( checkFpException() )
         signal( SIGFPE, signalHandler );

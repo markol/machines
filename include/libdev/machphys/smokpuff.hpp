@@ -30,11 +30,11 @@ public:
         MATHEX_SCALAR size,
         MATHEX_SCALAR depthOffset );
 
-    ~MachPhysSmokePuff( void );
+    ~MachPhysSmokePuff();
 
-    static  void preload( void );
+    static  void preload();
 
-    static  MachPhysPuffType randomPuff( void );
+    static  MachPhysPuffType randomPuff();
 
     void CLASS_INVARIANT;
 
@@ -54,12 +54,12 @@ private:
 
     static  RenMaterial material( MachPhysPuffType puffType );
 
-    static  RenMaterial puff1( void );
-    static  RenMaterial puff2( void );
-    static  RenMaterial puff3( void );
-    static  RenMaterial puff4( void );
-    static  RenMaterial puff5( void );
-    static  RenMaterial puff6( void );
+    static  RenMaterial puff1();
+    static  RenMaterial puff2();
+    static  RenMaterial puff3();
+    static  RenMaterial puff4();
+    static  RenMaterial puff5();
+    static  RenMaterial puff6();
 
     static  RenMaterial puff( const RenColour& colour );
 

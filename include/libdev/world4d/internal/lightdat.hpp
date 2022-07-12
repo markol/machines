@@ -30,7 +30,7 @@ class W4dLightData: public  W4dAnimationData
 {
 public:
     W4dLightData( const string& DummyMeshName, W4dLOD maxLod );
-    virtual ~W4dLightData( void );
+    virtual ~W4dLightData();
 
 	enum Scope : unsigned char {LOCAL_LIGHT, DOMAIN_LIGHT, DOMAIN_COMPOSITE, GLOBAL_LIGHT, DYNAMIC_LIGHT};
 	enum Type : unsigned char {POINT, UNIFORM, DIRECTIONAL};

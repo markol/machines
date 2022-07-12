@@ -20,7 +20,7 @@ class LinkData
 {
 public:
     //  Void constructor here purely to keep ctl_vector happy
-    LinkData( void );
+    LinkData();
     //  POST( not initialised_ );
 
     //  shootOffProbability is the probability that the link
@@ -42,22 +42,22 @@ public:
 
     LinkData& operator =( const LinkData& copyMe );
 
-    ~LinkData( void );
+    ~LinkData();
 
     //  Return the link to which this data refers        
-    W4dLinkId linkId( void ) const;
+    W4dLinkId linkId() const;
     //  PRE( initialised_ );
     //  POST( result != NULL );
          
     //  Return the size of the link
-    MATHEX_SCALAR size( void ) const;
+    MATHEX_SCALAR size() const;
     //  PRE( initialised_ );
 
     void size( MATHEX_SCALAR newSize );
          
     //  Return the size as one of 10 discrete sizes. All parts
     //  will be categorised in one of these sizes
-    uint    discreteSize( void ) const;
+    uint    discreteSize() const;
     // POST( 1 <= result and result <= 10 );
 
     void discreteSize( uint newDiscreteSize );
@@ -65,7 +65,7 @@ public:
         
     //  Return the probability of this link becoming detached
     //  from its parent and shooting off
-    MATHEX_SCALAR   shootOffProbability( void ) const;
+    MATHEX_SCALAR   shootOffProbability() const;
     //  PRE( initialised_ );
     // POST( 0.0 <= result and result <= 1.0 );
 
@@ -73,13 +73,13 @@ public:
     // PRE( 0.0 <= newProbability and newProbability <= 1.0 );
 
     //  Return the earliest time at which the link should explode
-    const PhysRelativeTime& minExplosionTime( void ) const;
+    const PhysRelativeTime& minExplosionTime() const;
     //  PRE( initialised_ );
 
     void minExplosionTime( const PhysRelativeTime& newTime );
 
     //  Return the latest time at which the link should explode
-    const PhysRelativeTime& maxExplosionTime( void ) const;
+    const PhysRelativeTime& maxExplosionTime() const;
     //  PRE( initialised_ );
 
     void maxExplosionTime( const PhysRelativeTime& newTime );

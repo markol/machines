@@ -20,20 +20,20 @@
 
 #include "mathex/double.hpp"
 
-void	testDeque( void );
-void	testQueue( void );
-void	testList( void );
-void	testMap( void );
-void    testMultiMap( void );
-void    testSet( void );
-void    testMultiSet( void );
-void    testFixedVector( void );
-void    testVector( void );
-void    testVectorP( void );
-void    testMinMemoryVector( void );
-void    testSort( void );
+void	testDeque();
+void	testQueue();
+void	testList();
+void	testMap();
+void    testMultiMap();
+void    testSet();
+void    testMultiSet();
+void    testFixedVector();
+void    testVector();
+void    testVectorP();
+void    testMinMemoryVector();
+void    testSort();
 
-int main( void )
+int main()
 {
 //     testDeque();
 // 	testQueue();
@@ -52,7 +52,7 @@ int main( void )
 	return 0;
 }
 
-// void	testDeque( void )
+// void	testDeque()
 // {
 //     ctl_deque< int >    d;
 //     
@@ -66,7 +66,7 @@ int main( void )
 //     d.pop_back();
 // }
 // 
-// void	testQueue( void )
+// void	testQueue()
 // {
 //     ctl_queue< ctl_deque< int > >  q;
 //     
@@ -86,7 +86,7 @@ int main( void )
 //     
 // }
 // 
-// void	testMap( void )
+// void	testMap()
 // {
 // 	ctl_map< int, string, less< int > >	intToString;
 // 
@@ -117,7 +117,7 @@ int main( void )
 // }
 // 
 // 
-// void	testMultiMap( void )
+// void	testMultiMap()
 // {
 // 	ctl_multimap< int, string, less< int > >	intToString;
 // 
@@ -146,7 +146,7 @@ int main( void )
 //     cout << endl;
 // }
 // 
-// void	testSet( void )
+// void	testSet()
 // {
 // 	ctl_set< int, less< int > >	intSet;
 // 
@@ -168,7 +168,7 @@ int main( void )
 // }
 // 
 // 
-// void	testMultiSet( void )
+// void	testMultiSet()
 // {
 // 	ctl_multiset< int, less< int > >	intSet;
 // 
@@ -187,7 +187,7 @@ int main( void )
 //         cout << (*i) << endl;
 // }
 // 
-// void    testFixedVector( void )
+// void    testFixedVector()
 // {
 //   
 //     ctl_fixed_vector< int >    v1( 10 );
@@ -196,7 +196,7 @@ int main( void )
 //     v1[ 1 ] = 20;
 // }
 // 
-void    testVector( void )
+void    testVector()
 {
     ctl_vector< int >    *v1 = _NEW( ctl_vector< int >() );
 
@@ -244,7 +244,7 @@ ASSERT( m1.size() == m1.end() - m1.begin(), "" );
 //         cout << *i << endl;
 }
 // 
-// void    testMinMemoryVector( void )
+// void    testMinMemoryVector()
 // {
 //     ctl_min_memory_vector< int >    v1;
 // 
@@ -252,7 +252,7 @@ ASSERT( m1.size() == m1.end() - m1.begin(), "" );
 //     v1.push_back( 20 );
 // }
 // 
-// void    testSort( void )
+// void    testSort()
 // {
 //     ctl_vector< int >   vec;
 //     
@@ -265,7 +265,7 @@ ASSERT( m1.size() == m1.end() - m1.begin(), "" );
 //     sort( vec.begin(), vec.end(), less< int >() );
 // }
 // 
-void    testList( void )
+void    testList()
 {
     MEMORY_STREAM( "a" << endl );
     ctl_list< int > l1;
@@ -277,7 +277,7 @@ void    testList( void )
     l2.push_back( 2 );
 }
 
-void    testvectorP( void )
+void    testvectorP()
 {
     ctl_pvector< int > v1;
 
@@ -373,7 +373,7 @@ void    testvectorP( void )
         cout << "Vectors are not equal" << endl;
 }
 
-void    test2( void )
+void    test2()
 {
     ctl_nb_vector< float* >    fv;
     float   f;

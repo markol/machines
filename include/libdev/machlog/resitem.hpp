@@ -34,7 +34,7 @@ public:
     					MachPhys::HardwareLabSubType hardwareLabSubType,
     					MachPhys::WeaponCombo wc = MachPhys::N_WEAPON_COMBOS );
 
-    ~MachLogResearchItem( void );
+    ~MachLogResearchItem();
 
 	const MachLog::ObjectType&		objectType() const;
 	int									subType() const;

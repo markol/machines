@@ -23,8 +23,8 @@ class   DiagPointerTrackerImpl;
 class DiagPointerTracker
 {
 public:
-    DiagPointerTracker( void );
-    ~DiagPointerTracker( void );
+    DiagPointerTracker();
+    ~DiagPointerTracker();
 
     void    addPointer( void* ptr );
     bool    pointerPresent( void* ptr ) const;

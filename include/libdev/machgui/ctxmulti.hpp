@@ -23,7 +23,7 @@ class MachGuiCtxMultiplayer	: public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxMultiplayer( MachGuiStartupScreens* );
-    ~MachGuiCtxMultiplayer( void );
+    ~MachGuiCtxMultiplayer();
 
 	virtual bool okayToSwitchContext();
 	virtual void update();

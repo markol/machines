@@ -34,13 +34,13 @@ public:
         size_t level,
         MachPhys::Race race );
 
-    virtual ~MachPhysHardwareLab( void );
+    virtual ~MachPhysHardwareLab();
 
 	//return MachPhysData object for this building
 	virtual const MachPhysConstructionData& constructionData() const;
 	const MachPhysHardwareLabData& data() const;
 
-    MachPhys::HardwareLabSubType subType( void ) const;
+    MachPhys::HardwareLabSubType subType() const;
 
 	virtual void damageLevel( const double& percent );
 

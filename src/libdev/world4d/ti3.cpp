@@ -3,7 +3,7 @@
 #include "ctl/map.hpp"
 #include "string.hpp";
 
-W4dDummyFunction3( void )
+W4dDummyFunction3()
 {
 	ctl_map< string, uint, less< string > > dummySoundIDMap;
 }
@@ -19,7 +19,7 @@ W4dDummyFunction3( void )
 //#include "world4d/objtrack.hpp"
 //
 //
-//W4dDummyFunction3( void )
+//W4dDummyFunction3()
 //{
 //    static CtlCountedPtr<W4dMaterialPlan> dummy;
 //    static CtlCountedPtr<W4dVisibilityPlan> dummy1;

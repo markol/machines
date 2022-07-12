@@ -42,8 +42,8 @@ class SimManager
 {
 public:
     //  Singleton class
-    static SimManager& instance( void );
-    ~SimManager( void );
+    static SimManager& instance();
+    ~SimManager();
 
     // Current simulation time
     const PhysAbsoluteTime& currentTime() const;
@@ -57,7 +57,7 @@ public:
 	void setSimulationTime( const PhysAbsoluteTime& );
 
     // Perform a cycle of updating the simulation and refreshing the display
-    void cycle( void );
+    void cycle();
 
     // Suspend simulation activities, simulation time stops advancing
     void suspend();
@@ -77,10 +77,10 @@ public:
 
     friend ostream& operator <<( ostream& o, const SimManager& t );
 
-	void deleteAllProcesses( void );
+	void deleteAllProcesses();
 
     //  Clear all events out of the diary without executing them
-    void clearDiary( void );
+    void clearDiary();
 
 	void addAction( SimAction* );
 	void enableAction( const string& );
@@ -101,13 +101,13 @@ private:
     bool operator ==( const SimManager& );
 
     // We only want a single instance
-    SimManager( void );
+    SimManager();
 
     // Update the stored current time
-    void updateCurrentTime( void );
+    void updateCurrentTime();
 
     // Execute all the discrete events due by the current time
-    void executeDiscreteEvents( void );
+    void executeDiscreteEvents();
 
     // Add pProcess to collection
     void add( SimProcess* pProcess );

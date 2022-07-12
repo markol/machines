@@ -27,7 +27,7 @@ class MachGuiGeneralStatistics
 public:
     MachGuiGeneralStatistics( GuiDisplayable *pParent, Gui::Coord topLeft, uint titleString, MachPhys::Race race );
     MachGuiGeneralStatistics( GuiDisplayable *pParent, Gui::Coord topLeft, uint titleString, MachPhys::Race race, const string& player );
-    ~MachGuiGeneralStatistics( void );
+    ~MachGuiGeneralStatistics();
 
     void CLASS_INVARIANT;
 
@@ -35,7 +35,7 @@ public:
 
 	virtual void setStatistics( int, int, int, int );
 
-	virtual void doDisplay( void );
+	virtual void doDisplay();
 
 private:
 	// Truncate player's name if it will not fit in bounding box.

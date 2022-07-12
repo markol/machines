@@ -19,13 +19,13 @@ class CommandLineArguments
 {
 public:
     //  Singleton class
-    static CommandLineArguments& instance( void );
-    ~CommandLineArguments( void );
+    static CommandLineArguments& instance();
+    ~CommandLineArguments();
 
     void parseArguments( int argc, char** argv );
     
-    size_t  seed( void ) const;
-    bool    displayLogInfo( void ) const;
+    size_t  seed() const;
+    bool    displayLogInfo() const;
     
     void CLASS_INVARIANT;
 
@@ -41,13 +41,13 @@ private:
     // Operation deliberately revoked
     bool operator ==( const CommandLineArguments& );
 
-    CommandLineArguments( void );
+    CommandLineArguments();
     
     size_t  seed_;
     bool    displayLogInfo_;
 };
 
-CommandLineArguments& ARGS( void );
+CommandLineArguments& ARGS();
 
 #define LOG_DATA( var )   ARGS().displayLogInfo() ?     \
 ( cout << __FILE__ << ", " << __LINE__ << "   " << #var " :\t" << (var) << endl ) : \

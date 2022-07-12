@@ -27,7 +27,7 @@ class MexQuaternion
 {
 public:
     //Default constructor initialises to null rotation
-    MexQuaternion( void );
+    MexQuaternion();
 
     //Set the euler parameters directly.
     MexQuaternion( MATHEX_SCALAR x, MATHEX_SCALAR y, MATHEX_SCALAR z, MATHEX_SCALAR s );
@@ -38,8 +38,8 @@ public:
     // PRE( d.modulus() > 0.0 );
 
     //Export the vector and scalar values
-    const MexVec3& vector( void ) const;
-    const MATHEX_SCALAR& scalar( void ) const;
+    const MexVec3& vector() const;
+    const MATHEX_SCALAR& scalar() const;
 
     //Return the direction of the rotation axis in pUnitVector, and the angle of
     //rotation in radians as result

@@ -95,9 +95,9 @@ public:
 
 	EnvOrbit* createOrbit(EnvIOrbitParams*);
 	EnvSatellite* createSatellite(EnvISatelliteParams*);
-	EnvUniformSky* createUniformSky( void );
-	EnvStaticSky* createStaticSky( void );
-	EnvDynamicSky* createDynamicSky( void );
+	EnvUniformSky* createUniformSky();
+	EnvStaticSky* createStaticSky();
+	EnvDynamicSky* createDynamicSky();
 	W4dStars* createStars(RenStars::Configuration, MATHEX_SCALAR radius, int nStars);
 	EnvSkyline* createSkyline(const SysPathName& meshFile);
 

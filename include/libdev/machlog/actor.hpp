@@ -125,10 +125,10 @@ public:
 
 	MachLog::ObjectType	objectType() const;
 
-	MachPhys::ArmourUnits armour( void ) const;
-	MachPhys::HitPointUnits hp( void ) const;
-	MachPhys::HitPointUnits maximumhp( void ) const;
-	MATHEX_SCALAR hpRatio( void ) const;
+	MachPhys::ArmourUnits armour() const;
+	MachPhys::HitPointUnits hp() const;
+	MachPhys::HitPointUnits maximumhp() const;
+	MATHEX_SCALAR hpRatio() const;
 
 
 	///////////////////////////////

@@ -107,7 +107,7 @@ void PhysCS2dDomainFindPath::CLASS_INVARIANT
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void PhysCS2dDomainFindPath::start( void )
+void PhysCS2dDomainFindPath::start()
 {
     CS2PATH_ENTER( "start" );
 
@@ -122,7 +122,7 @@ void PhysCS2dDomainFindPath::start( void )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-bool PhysCS2dDomainFindPath::needMacroSearch( void )
+bool PhysCS2dDomainFindPath::needMacroSearch()
 {
     CS2PATH_ENTER( "needMacroSearch" );
     PRE( state_ == NOT_STARTED );
@@ -159,7 +159,7 @@ bool PhysCS2dDomainFindPath::needMacroSearch( void )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void PhysCS2dDomainFindPath::startMacroSearch( void )
+void PhysCS2dDomainFindPath::startMacroSearch()
 {
     CS2PATH_ENTER( "startMacroSearch" );
 
@@ -246,7 +246,7 @@ void PhysCS2dDomainFindPath::updateMacroSearch( const PhysRelativeTime& maxTime 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-bool PhysCS2dDomainFindPath::isMacroSearchFinished( void ) const
+bool PhysCS2dDomainFindPath::isMacroSearchFinished() const
 {
     PRE( state_ == MACRO );
     PRE( pDomainAlg_ != NULL );
@@ -255,7 +255,7 @@ bool PhysCS2dDomainFindPath::isMacroSearchFinished( void ) const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void PhysCS2dDomainFindPath::endMacroSearch( void )
+void PhysCS2dDomainFindPath::endMacroSearch()
 {
     CS2PATH_ENTER( "endMacroSearch" );
 

@@ -53,9 +53,9 @@ public:
     MATHEX_SCALAR operator []( size_t i ) const;
     MATHEX_SCALAR& operator []( size_t i );
 
-    MATHEX_SCALAR x( void ) const;
-    MATHEX_SCALAR y( void ) const;
-    MATHEX_SCALAR z( void ) const;
+    MATHEX_SCALAR x() const;
+    MATHEX_SCALAR y() const;
+    MATHEX_SCALAR z() const;
 
     void x( MATHEX_SCALAR );
     void y( MATHEX_SCALAR );

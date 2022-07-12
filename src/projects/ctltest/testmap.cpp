@@ -4,10 +4,10 @@
 
 #include "ctl/map.hpp"
 
-void	testMap( void );
-void	testMultiMap( void );
+void	testMap();
+void	testMultiMap();
 
-int main( void )
+int main()
 {
 	testMap();
 	testMultiMap();
@@ -18,7 +18,7 @@ int main( void )
 using std::string;
 using std::less;
 
-void	testMap( void )
+void	testMap()
 {
 	ctl_map< int, string, less< int > >	intToString;
 
@@ -38,7 +38,7 @@ void	testMap( void )
 }
 
 
-void	testMultiMap( void )
+void	testMultiMap()
 {
 	ctl_multimap< int, string, less< int > >	intToString;
 

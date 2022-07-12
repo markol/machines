@@ -38,7 +38,7 @@ public:
     MachLogSmelter( MachLogRace* pRace, uint level,
                     const MexPoint3d& location, const MexRadians& angle, UtlId );
 
-    ~MachLogSmelter( void );
+    ~MachLogSmelter();
 
     //Inherited from SimActor
     virtual PhysRelativeTime update( const PhysRelativeTime& maxCPUTime,

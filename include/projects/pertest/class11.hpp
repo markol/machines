@@ -22,8 +22,8 @@ class Class11
 // Canonical form revoked
 {
 public:
-    Class11( void );
-    ~Class11( void );
+    Class11();
+    ~Class11();
 
     int i_;
     

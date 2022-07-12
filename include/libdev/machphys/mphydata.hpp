@@ -45,8 +45,8 @@ class MachPhysData
 {
 public:
     //  Singleton class
-    static MachPhysData& instance( void );
-    ~MachPhysData( void );
+    static MachPhysData& instance();
+    ~MachPhysData();
 
 	//Machine Types
 	const MachPhysAggressorData& aggressorData( MachPhys::AggressorSubType, size_t hwLevel , size_t swLevel ) const;
@@ -88,7 +88,7 @@ private:
     // Operation deliberately revoked
     bool operator ==( const MachPhysData& );
 
-    MachPhysData( void );
+    MachPhysData();
 
 };
 

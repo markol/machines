@@ -23,8 +23,8 @@ class MachLogStatsImpl
 // Canonical form revoked
 {
 public:
-    MachLogStatsImpl( void );
-    ~MachLogStatsImpl( void );
+    MachLogStatsImpl();
+    ~MachLogStatsImpl();
 
     void CLASS_INVARIANT;
 

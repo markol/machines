@@ -35,7 +35,7 @@ private:
 	std::string 		meshName_;
 	double		scale_;
 
-    static char separator( void );
+    static char separator();
 };
 
 ostream& operator <<( ostream& o, const RenIMeshID& id );

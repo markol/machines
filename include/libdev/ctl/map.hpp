@@ -57,7 +57,7 @@ public:
 
     using std::map< KEY, T, COMPARE >::map;
 
-    virtual ~ctl_map( void ) { /* Intentionally empty */ }
+    virtual ~ctl_map() { /* Intentionally empty */ }
 
     using std::map< KEY, T, COMPARE >::insert;
     std::pair<typename ctl_map<KEY,T,COMPARE>::iterator,bool>  insert (KEY key, T val)
@@ -88,7 +88,7 @@ public:
 
     using std::multimap< KEY, T, COMPARE >::multimap;
 
-    virtual ~ctl_multimap( void ) { /* Intentionally empty */ }
+    virtual ~ctl_multimap() { /* Intentionally empty */ }
 
     //ctl_multimap< KEY, T, COMPARE >&
     //operator =( const ctl_multimap< KEY, T, COMPARE >& );

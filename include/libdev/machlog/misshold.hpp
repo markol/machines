@@ -25,7 +25,7 @@ class MachLogMissileHolder : public SimProjectile
 {
 public:
     MachLogMissileHolder( SimProcess* pProcess, W4dEntity* pPhysObject, const PhysAbsoluteTime& destroyAtTime );
-    ~MachLogMissileHolder( void );
+    ~MachLogMissileHolder();
 
     void CLASS_INVARIANT;
 

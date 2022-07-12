@@ -24,7 +24,7 @@ class MachPhysGlider : public MachPhysLocomotionMethod
 {
 public:
     MachPhysGlider( MachPhysMachine* pMachine, MATHEX_SCALAR height );
-    virtual ~MachPhysGlider( void );
+    virtual ~MachPhysGlider();
 
     virtual MachPhysLocomotionMethod* clone( MachPhysMachine* pMachine, const W4dLinks& links );
 

@@ -30,7 +30,7 @@ public:
         MachLogConstruction* pConstruction,
         PhysConfigSpace2d* pInteriorConfigSpace );
 
-    ~MachLogEntrance( void );
+    ~MachLogEntrance();
 
     //  Try and lock this entrance, return true if successful
     bool    lock();

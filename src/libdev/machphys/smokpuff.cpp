@@ -43,7 +43,7 @@ MachPhysSmokePuff::~MachPhysSmokePuff()
 }
 
 // static
-void MachPhysSmokePuff::preload( void )
+void MachPhysSmokePuff::preload()
 {
     material( PUFF_1 );
     material( PUFF_2 );
@@ -295,7 +295,7 @@ RenMaterial MachPhysSmokePuff::material( MachPhysPuffType puffType )
 }
 
 // static
-MachPhysPuffType MachPhysSmokePuff::randomPuff( void )
+MachPhysPuffType MachPhysSmokePuff::randomPuff()
 {
     MachPhysPuffType    result = PUFF_1;
 
@@ -320,18 +320,18 @@ MachPhysPuffType MachPhysSmokePuff::randomPuff( void )
 }
 
 // static
-RenMaterial MachPhysSmokePuff::puff1( void )
+RenMaterial MachPhysSmokePuff::puff1()
 {
     return material( "smk03_bt.bmp" );
 }
 
 // static
-RenMaterial MachPhysSmokePuff::puff2( void )
+RenMaterial MachPhysSmokePuff::puff2()
 {
     return material( "smk02_bt.bmp" );
 }
 // static
-RenMaterial MachPhysSmokePuff::puff3( void )
+RenMaterial MachPhysSmokePuff::puff3()
 {
 	RenColour yellow(0.882353, 0.888235, 0.003922);
     RenMaterial mat=material( "smk03_bt.bmp" );
@@ -341,7 +341,7 @@ RenMaterial MachPhysSmokePuff::puff3( void )
 }
 
 // static
-RenMaterial MachPhysSmokePuff::puff4( void )
+RenMaterial MachPhysSmokePuff::puff4()
 {
 	RenColour rust( 0.470588, 0.002922, 0.009608 );
     RenMaterial mat=material( "smk02_bt.bmp" );
@@ -351,7 +351,7 @@ RenMaterial MachPhysSmokePuff::puff4( void )
 }
 
 // static
-RenMaterial MachPhysSmokePuff::puff5( void )
+RenMaterial MachPhysSmokePuff::puff5()
 {
 	RenColour civilianWhite( 0.862745, 0.870588, 0.8784314 );
     RenMaterial mat=material( "smk03_bt.bmp" );
@@ -361,7 +361,7 @@ RenMaterial MachPhysSmokePuff::puff5( void )
 }
 
 // static
-RenMaterial MachPhysSmokePuff::puff6( void )
+RenMaterial MachPhysSmokePuff::puff6()
 {
 	RenColour militaryRed( 66.0/255.0, 0, 0);
     RenMaterial mat=material( "smk02_bt.bmp" );

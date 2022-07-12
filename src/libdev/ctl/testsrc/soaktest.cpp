@@ -24,7 +24,7 @@ SoakTestAssert::SoakTestAssert()
     updateFailureCount();
 }
 
-void SoakTestAssert::runSoakTestAssert( void )
+void SoakTestAssert::runSoakTestAssert()
 {
     bool    finished = false;
     while( not finished )
@@ -72,7 +72,7 @@ void SoakTestAssert::runSoakTestAssert( void )
     }
 }
 
-void SoakTestAssert::readCount( void )
+void SoakTestAssert::readCount()
 {
     FILE* fp = fopen( "count.dat", "r" );
     if( fp )
@@ -82,7 +82,7 @@ void SoakTestAssert::readCount( void )
     }
 }
 
-void SoakTestAssert::writeCount( void )
+void SoakTestAssert::writeCount()
 {
     FILE* fp = fopen( "count.dat", "w" );
     if( fp )
@@ -92,7 +92,7 @@ void SoakTestAssert::writeCount( void )
     }
 }
 
-void SoakTestAssert::updateFailureCount( void )
+void SoakTestAssert::updateFailureCount()
 {
     FILE* fp = fopen( "failure.dat", "r" );
     if( fp )
@@ -141,7 +141,7 @@ void    SoakTestAssert::expectedResult( ExpectedResult result )
     writeSucceedFailFiles( expectedResult_ );
 }
 
-SoakTestAssert::ExpectedResult    SoakTestAssert::expectedResult( void ) const
+SoakTestAssert::ExpectedResult    SoakTestAssert::expectedResult() const
 {
     return expectedResult_;
 }

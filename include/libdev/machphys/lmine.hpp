@@ -42,7 +42,7 @@ public:
 
     //  Destroy yourself
     //  Return the time that will be taken for the animation
-    virtual PhysRelativeTime beDestroyed( void );
+    virtual PhysRelativeTime beDestroyed();
 
     friend ostream& operator <<( ostream& o, const MachPhysLandMine& t );
 

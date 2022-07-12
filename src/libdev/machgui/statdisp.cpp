@@ -93,14 +93,14 @@ void MachGuiStatisticsDisplay::setStatistics( int stat1, int stat2, int stat3, i
 	}
 }
 
-void MachGuiStatisticsDisplay::update( void )
+void MachGuiStatisticsDisplay::update()
 {
 	// Force object to be redrawn ( will indirectly call doDisplay() )
 	changed();
 }
 
 // virtual
-void MachGuiStatisticsDisplay::doDisplay( void )
+void MachGuiStatisticsDisplay::doDisplay()
 {
 	PRE( statBars_.size() == stats_.size() );
 

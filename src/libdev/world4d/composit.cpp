@@ -276,13 +276,13 @@ void W4dComposite::renderLinks( const W4dCamera& camera,
 	}
 }
 
-bool W4dComposite::hasHeldEntities( void ) const
+bool W4dComposite::hasHeldEntities() const
 {
   CB_W4dComposite_DEPIMPL();
   return  pHeldEntities_!=NULL;
 }
 
-const W4dComposite::HeldEntities& W4dComposite::heldEntities( void )
+const W4dComposite::HeldEntities& W4dComposite::heldEntities()
 {
   CB_W4dComposite_DEPIMPL();
   PRE(hasHeldEntities());
@@ -491,13 +491,13 @@ bool W4dComposite::cycleAnims(W4dCompositePlanPtr* pPlanPtr) const
 
 
 
-const W4dComposite::W4dLinks& W4dComposite::links( void ) const
+const W4dComposite::W4dLinks& W4dComposite::links() const
 {
 	CB_W4dComposite_DEPIMPL();
     return links_;
 }
 
-void W4dComposite::clearAllPlans( void )
+void W4dComposite::clearAllPlans()
 {
 	CB_W4dComposite_DEPIMPL();
     //Clear the composite's plans
@@ -508,7 +508,7 @@ void W4dComposite::clearAllPlans( void )
         (*it)->clearPlan();
 }
 
-void W4dComposite::storeLinkTransforms( void ) const
+void W4dComposite::storeLinkTransforms() const
 {
 	CB_W4dComposite_DEPIMPL();
     //We want to mutate our mutables
@@ -529,7 +529,7 @@ void W4dComposite::storeLinkTransforms( void ) const
     }
 }
 
-void W4dComposite::restoreLinkTransforms( void )
+void W4dComposite::restoreLinkTransforms()
 {
 	CB_W4dComposite_DEPIMPL();
     //Check stored

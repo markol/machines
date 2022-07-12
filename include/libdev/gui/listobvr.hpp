@@ -24,7 +24,7 @@ public:
     GuiListObserver( GuiSimpleScrollableList* pList );
 	// PRE( pList );
 
-    virtual ~GuiListObserver( void );
+    virtual ~GuiListObserver();
 
 	virtual void listUpdated() = 0;
 	virtual void listDeleted();

@@ -455,14 +455,14 @@ void W4dSceneManager::highEnoughFrameRate( const double& sethighEnoughFrameRate 
   highEnoughFrameRate_ = sethighEnoughFrameRate;
 }
 
-const W4dComplexity& W4dSceneManager::complexity( void ) const
+const W4dComplexity& W4dSceneManager::complexity() const
 {
   CB_SCENEMANAGER_DEPIMPL;
 
   return complexity_;
 }
 
-W4dComplexity& W4dSceneManager::complexity( void )
+W4dComplexity& W4dSceneManager::complexity()
 {
   CB_SCENEMANAGER_DEPIMPL;
 
@@ -707,7 +707,7 @@ ostream& W4dSceneManager::out()
     return pImpl_->device_->out();
 }
 
-RenDevice* W4dSceneManager::pDevice( void )
+RenDevice* W4dSceneManager::pDevice()
 {
     return pImpl_->device_;
 }
@@ -837,7 +837,7 @@ W4dDomainAssignor* W4dSceneManager::domainAssignor() const
 	return pImpl_->domainAssignor_;
 }
 
-bool W4dSceneManager::dynamicLightsEnabled( void ) const
+bool W4dSceneManager::dynamicLightsEnabled() const
 {
 	return pImpl_->dynamicLightsEnabled_;
 }

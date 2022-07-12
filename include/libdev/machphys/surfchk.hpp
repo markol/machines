@@ -28,7 +28,7 @@ class MachPhysPlanetSurfaceChecker
 {
 public:
     MachPhysPlanetSurfaceChecker( const MachPhysPlanetSurface& );
-    ~MachPhysPlanetSurfaceChecker( void );
+    ~MachPhysPlanetSurfaceChecker();
 
     CTL_TRIPLE( Triangle, MexPoint3d, point1, MexPoint3d, point2, MexPoint3d, point3 );
     typedef ctl_vector< Triangle >  Triangles;

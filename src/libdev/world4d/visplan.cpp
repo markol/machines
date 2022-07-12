@@ -66,7 +66,7 @@ bool W4dVisibilityPlan::visible( const PhysRelativeTime& time ) const
     return result;
 }
 
-const PhysRelativeTime& W4dVisibilityPlan::duration( void ) const
+const PhysRelativeTime& W4dVisibilityPlan::duration() const
 {
     return duration_;
 }

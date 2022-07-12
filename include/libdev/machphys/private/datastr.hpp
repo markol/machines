@@ -22,14 +22,14 @@ class MachPhysDataStream
 // Canonical form revoked
 {
 public:
-    ~MachPhysDataStream( void );
+    ~MachPhysDataStream();
 
 	static ctl_vector< MATHEX_SCALAR > data(const SysPathName& fileName);
 
     void CLASS_INVARIANT;
 
 private:
-    MachPhysDataStream( void );
+    MachPhysDataStream();
     friend ostream& operator <<( ostream& o, const MachPhysDataStream& t );
 
     MachPhysDataStream( const MachPhysDataStream& );

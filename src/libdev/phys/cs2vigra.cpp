@@ -331,7 +331,7 @@ void PhysCS2dVisibilityGraph::startProcessingPolygon( ObstacleFlags flags )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-bool PhysCS2dVisibilityGraph::processOldArcs( void )
+bool PhysCS2dVisibilityGraph::processOldArcs()
 {
     PRE( processingState_ == POLYGON );
     PRE( processingOldArcs_ );
@@ -562,7 +562,7 @@ bool PhysCS2dVisibilityGraph::processNewVertexWithNewVertex( ObstacleFlags flags
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void PhysCS2dVisibilityGraph::endProcessingPolygon( void )
+void PhysCS2dVisibilityGraph::endProcessingPolygon()
 {
     PRE( processingState_ == POLYGON );
 
@@ -696,7 +696,7 @@ void PhysCS2dVisibilityGraph::setFindPath
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void PhysCS2dVisibilityGraph::clearFindPath( void )
+void PhysCS2dVisibilityGraph::clearFindPath()
 {
     //Nothing to do unless we have one
     if( findPathIsDefined_ )
@@ -718,7 +718,7 @@ void PhysCS2dVisibilityGraph::clearFindPath( void )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void PhysCS2dVisibilityGraph::startProcessingFindPathVertex( void )
+void PhysCS2dVisibilityGraph::startProcessingFindPathVertex()
 {
     PRE( findPathIsDefined_ );
 
@@ -887,7 +887,7 @@ bool PhysCS2dVisibilityGraph::updateFindPath( const PhysRelativeTime& maxTime,
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void PhysCS2dVisibilityGraph::invalidateFindPath( void )
+void PhysCS2dVisibilityGraph::invalidateFindPath()
 {
     //Delete the algorithm if it exists
     if( pFindPathAlg_ != NULL )
@@ -905,7 +905,7 @@ void PhysCS2dVisibilityGraph::invalidateFindPath( void )
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-PhysConfigSpace2d::Path PhysCS2dVisibilityGraph::findPath( void ) const
+PhysConfigSpace2d::Path PhysCS2dVisibilityGraph::findPath() const
 {
     PRE( isFindPathFinished() );
 

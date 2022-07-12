@@ -279,7 +279,7 @@ bool MachGuiCtxBriefing::okayToSwitchContext()
 	return true;
 }
 
-void MachGuiCtxBriefing::displayBriefingImage( void )
+void MachGuiCtxBriefing::displayBriefingImage()
 {
 	if ( pBriefImage_ )
 	{
@@ -339,7 +339,7 @@ void MachGuiCtxBriefing::displayBriefingImage( void )
 	}
 }
 
-void MachGuiCtxBriefing::playBriefingVoicemail( void )
+void MachGuiCtxBriefing::playBriefingVoicemail()
 {
 	stopPlayingBriefingVoicemail();
 
@@ -359,7 +359,7 @@ void MachGuiCtxBriefing::playBriefingVoicemail( void )
 	}
 }
 
-void MachGuiCtxBriefing::stopPlayingBriefingVoicemail( void )
+void MachGuiCtxBriefing::stopPlayingBriefingVoicemail()
 {
 	if (playedMail_ && SndMixer::instance().isActive( briefVoicemail_ ) )
 	{

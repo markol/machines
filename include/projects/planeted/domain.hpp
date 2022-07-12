@@ -24,7 +24,7 @@ class PedDomain : public PedPolygon
 {
 public:
     PedDomain( const PolyVerticies& , MATHEX_SCALAR height, bool selected );
-    ~PedDomain( void );
+    ~PedDomain();
 
     void CLASS_INVARIANT;
 

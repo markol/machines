@@ -101,7 +101,7 @@ public:
 		pScenarioCtx_( pScenarioCtx )
 	{}
 
-    ~MachGuiPlanetListBoxItem( void )
+    ~MachGuiPlanetListBoxItem()
 	{}
 
 	static bool allScenariosCompleted( MachGuiDbPlanet& planet )
@@ -186,7 +186,7 @@ public:
 		pScenarioCtx_( pScenarioCtx )
 	{}
 
-    ~MachGuiSystemListBoxItem( void )
+    ~MachGuiSystemListBoxItem()
 	{}
 
 protected:
@@ -259,7 +259,7 @@ public:
 		pScenarioCtx_( pScenarioCtx )
 	{}
 
-    ~MachGuiScenarioListBoxItem( void )
+    ~MachGuiScenarioListBoxItem()
 	{}
 
 protected:

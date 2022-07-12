@@ -33,7 +33,7 @@ void MachPhysPodData::CLASS_INVARIANT
     INVARIANT( this != NULL );
 }
 
-MachPhys::SizeUnits MachPhysPodData::capacity( void ) const
+MachPhys::SizeUnits MachPhysPodData::capacity() const
 {
 	return capacity_;
 }
@@ -43,7 +43,7 @@ void MachPhysPodData::capacity( const MachPhys::SizeUnits& newCapacity )
 	capacity_ = newCapacity;
 }
 
-MachPhys::BuildingMaterialUnits MachPhysPodData::extractionRate( void ) const
+MachPhys::BuildingMaterialUnits MachPhysPodData::extractionRate() const
 {
 	return extractionRate_;
 }

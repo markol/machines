@@ -53,13 +53,13 @@ public:
     };
 
     //Constructor initialises to no plans, and no W4dEntity
-    W4dEntityPlan( void );
+    W4dEntityPlan();
 
     //Copy ctor
     W4dEntityPlan( const W4dEntityPlan& );
 
     //Destructor
-    ~W4dEntityPlan( void );
+    ~W4dEntityPlan();
 
     //Modify this plan to use any motion or other plans defined in rhs, applying
     //an additional time offset startTime to each plan.
@@ -68,7 +68,7 @@ public:
                uint nRepetitions = 0, uint animId = 0 );
 
     //  Return the latest finish time for all plans
-    PhysRelativeTime    endTime( void ) const;
+    PhysRelativeTime    endTime() const;
 
     //True iff the plan is complete at time time
     bool isDone( const PhysAbsoluteTime& time ) const;

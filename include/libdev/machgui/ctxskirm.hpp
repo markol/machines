@@ -30,7 +30,7 @@ class MachGuiCtxSkirmish : public MachGuiStartupScreenContext
 {
 public:
     MachGuiCtxSkirmish( MachGuiStartupScreens* pStartupScreens );
-    ~MachGuiCtxSkirmish( void );
+    ~MachGuiCtxSkirmish();
 
     void CLASS_INVARIANT;
 

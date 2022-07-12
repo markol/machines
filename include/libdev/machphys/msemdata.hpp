@@ -20,14 +20,14 @@ class MexTransform3d;
 class MachPhysMissileEmplacementData : public MachPhysConstructionData
 {
 public:
-    MachPhysMissileEmplacementData( void );
+    MachPhysMissileEmplacementData();
     MachPhysMissileEmplacementData( const MachPhysMissileEmplacementData&, const MexTransform3d& );
-    ~MachPhysMissileEmplacementData( void );
+    ~MachPhysMissileEmplacementData();
 
 	//Get methods public
-	MATHEX_SCALAR nWeapons( void ) const;
-	MATHEX_SCALAR accuracy( void ) const;
-	MexRadians maxRotation( void ) const;
+	MATHEX_SCALAR nWeapons() const;
+	MATHEX_SCALAR accuracy() const;
+	MexRadians maxRotation() const;
 
     void CLASS_INVARIANT;
 

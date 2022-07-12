@@ -22,7 +22,7 @@ class MachGuiStartupScreenContext
 {
 public:
     MachGuiStartupScreenContext( MachGuiStartupScreens* );
-    virtual ~MachGuiStartupScreenContext( void );
+    virtual ~MachGuiStartupScreenContext();
 
 	// Called every frame.
 	virtual void update();

@@ -58,21 +58,21 @@ class ALSample : public Sample
 
 		ALSample( const SndSampleParameters& params );
 
-		virtual ~ALSample( void );
+		virtual ~ALSample();
 
-		virtual void 			play( void );
-		virtual void 			stop( void );
-		virtual void 			stopAtEnd( void );
-		virtual bool 			isPlaying( void );
-		virtual Snd::RelativeTime	length( void ) const;
+		virtual void 			play();
+		virtual void 			stop();
+		virtual void 			stopAtEnd();
+		virtual bool 			isPlaying();
+		virtual Snd::RelativeTime	length() const;
 		virtual void 			volume( int newVolume );
 		Sample::SampleState		update();
 		virtual void			pause(void);
 		virtual void			restart(void);
 		virtual void 			restart( int offset );
 
-		virtual void			silence( void );
-		virtual void			unsilence( void );
+		virtual void			silence();
+		virtual void			unsilence();
 
 		virtual void			newPosition(const MexVec3& newPos);
 		virtual void 			position3D( MexVec3* newPos );

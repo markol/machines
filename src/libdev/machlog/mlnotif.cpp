@@ -22,7 +22,7 @@ race_( r )
 
 //////////////////////////////////////////////////////////////////////////////
   
-MachLogNotifiable::~MachLogNotifiable ( void ) 
+MachLogNotifiable::~MachLogNotifiable () 
 {
 	TEST_INVARIANT;
 }	   

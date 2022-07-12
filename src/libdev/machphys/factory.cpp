@@ -151,7 +151,7 @@ MachPhysFactory::Factory& MachPhysFactory::factory()
     return factory_;
 }
 
-MachPhys::FactorySubType MachPhysFactory::subType( void ) const
+MachPhys::FactorySubType MachPhysFactory::subType() const
 {
     return subType_;
 }

@@ -35,13 +35,13 @@ public:
                     std::auto_ptr< MexPolygon2d >& polygonAPtr );
 
     //dtor.
-    ~PhysCS2dDomain( void );
+    ~PhysCS2dDomain();
 
     //Returns aligned bounding box in pBox
     void boundary( MexAlignedBox2d* pBox ) const;
 
     //The domain's id
-    const PhysConfigSpace2d::DomainId& id( void ) const;
+    const PhysConfigSpace2d::DomainId& id() const;
 
     //////////////////////////////
     //Maintain portal list
@@ -54,9 +54,9 @@ public:
 
     bool containsPortal( const PhysConfigSpace2d::PortalId& id ) const;
 
-    size_t nPortals( void ) const;
+    size_t nPortals() const;
 
-    const ctl_vector< PhysConfigSpace2d::PortalId >& portals( void ) const;
+    const ctl_vector< PhysConfigSpace2d::PortalId >& portals() const;
 
     //////////////////////////////
 

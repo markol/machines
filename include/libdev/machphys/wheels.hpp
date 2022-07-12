@@ -29,7 +29,7 @@ public:
         MachPhysMachine* pMachine,
         MATHEX_SCALAR wheelRadius, const W4dLinks& leftWheels, const W4dLinks& rightWheels );
 
-    ~MachPhysWheels( void );
+    ~MachPhysWheels();
 
     virtual MachPhysLocomotionMethod* clone( MachPhysMachine* pMachine, const W4dLinks& links );
 

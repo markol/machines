@@ -25,8 +25,8 @@ class PedPolygonEditor : public PedEditorMode
 // Canonical form revoked
 {
 public:
-    PedPolygonEditor( void );
-    ~PedPolygonEditor( void );
+    PedPolygonEditor();
+    ~PedPolygonEditor();
 
     void CLASS_INVARIANT;
 
@@ -34,13 +34,13 @@ public:
 	// PRE( pSceneManager_ != NULL );
 	// PRE( pPlanet_ != NULL );
 
-	virtual void preRenderUpdate( void );
+	virtual void preRenderUpdate();
 
 	virtual void writeCspFile( std::ofstream& );
 
-	virtual void changingMode( void );
+	virtual void changingMode();
 
-	virtual void activateMode( void );
+	virtual void activateMode();
 
 	typedef ctl_pvector< PedPolygon > Polygons;
 	typedef ctl_vector< MexPoint2d > PolyVerticies;
@@ -51,34 +51,34 @@ public:
 	bool polygonsHidden() const;
 
 protected:
-	void highlightVertex( void );
+	void highlightVertex();
 	// PRE( pSceneManager_ != NULL );
 
-	void clearSelectedPolygon( void );
-	void selectFirstPolygon( void );
-	void displayVertexCoords( void );
-	void processSelectPolygon( void );
-	void processDropPolygon( void );
-	void processDeletePolygon( void );
-	void processPrevPolygon( void );
-	void processPrevVertex( void );
-	void processNextPolygon( void );
-	void processNextVertex( void );
-	void processPolygonRight( void );
-	void processPolygonLeft( void );
-	void processPolygonUp( void );
-	void processPolygonDown( void );
-	void processFlattenPolygons( void );
+	void clearSelectedPolygon();
+	void selectFirstPolygon();
+	void displayVertexCoords();
+	void processSelectPolygon();
+	void processDropPolygon();
+	void processDeletePolygon();
+	void processPrevPolygon();
+	void processPrevVertex();
+	void processNextPolygon();
+	void processNextVertex();
+	void processPolygonRight();
+	void processPolygonLeft();
+	void processPolygonUp();
+	void processPolygonDown();
+	void processFlattenPolygons();
 	void processPaste( bool tempPaste );
 	void hidePolygons( bool );
 	void numberPolygons();
-	virtual void processVertexRight( void ) = 0;
-	virtual void processVertexLeft( void ) = 0;
-	virtual void processVertexUp( void ) = 0;
-	virtual void processVertexDown( void ) = 0;
+	virtual void processVertexRight() = 0;
+	virtual void processVertexLeft() = 0;
+	virtual void processVertexUp() = 0;
+	virtual void processVertexDown() = 0;
 	virtual PedPolygon* createPolygon( const PolyVerticies& verticies, MATHEX_SCALAR height, bool selected) const = 0;
 	virtual PedPolygon* createDefaultPolygon() const = 0;
-	virtual void updatePolygon( void ) = 0;
+	virtual void updatePolygon() = 0;
 	size_t vertexSpacingX() const;
 	size_t vertexSpacingY() const;
 

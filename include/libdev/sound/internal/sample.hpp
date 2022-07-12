@@ -48,16 +48,16 @@ class Sample
 
 		Sample( const SndSampleParameters& params );
 
-		virtual ~Sample( void );
+		virtual ~Sample();
 
-		virtual void 			play( void ) = 0;
-		virtual void 			stop( void ) = 0;
-		virtual void 			stopAtEnd( void ) = 0;
-		virtual bool 			isPlaying( void ) = 0;
-		virtual Snd::RelativeTime	length( void ) const = 0;
+		virtual void 			play() = 0;
+		virtual void 			stop() = 0;
+		virtual void 			stopAtEnd() = 0;
+		virtual bool 			isPlaying() = 0;
+		virtual Snd::RelativeTime	length() const = 0;
 		virtual SampleState 	update() = 0;
 		virtual void 			volume( int newVolume ) = 0;
-		virtual void 			pause( void ) = 0;
+		virtual void 			pause() = 0;
 		virtual void			restart(void) = 0;
 		virtual void 			restart( int offset) = 0;
 		virtual void 			newPosition( const MexVec3& newPos ) = 0;
@@ -65,23 +65,23 @@ class Sample
 
 		//Set and get methods for mainting resource responibility
 		void setResourceResponsibility(Participant owner);
-		Participant getResourceResponsibility( void );
+		Participant getResourceResponsibility();
 
-		const char*			path( void ) const;
-		int 				volume( void ) const;
+		const char*			path() const;
+		int 				volume() const;
 		bool				isPaused() const;
 		bool				isSilenced() const;
 		bool				isAudible() const;
 		bool				is3D() const;
-    	Snd::SamplePriority priority( void ) const;
+    	Snd::SamplePriority priority() const;
 		size_t 				id() const;
 		bool				loopForever() const;
 		SampleState 		state() const;
 		bool				stopPending() const;
 		void				stopPending(bool);
 
-		virtual void		silence( void );
-		virtual void		unsilence( void );
+		virtual void		silence();
+		virtual void		unsilence();
 
 
 		bool operator ==(const Sample& rhs);

@@ -25,7 +25,7 @@ public:
     UtlBoundedIdPMap( UtlId upperBound );
 
     //dtor.
-    ~UtlBoundedIdPMap( void );
+    ~UtlBoundedIdPMap();
 
     //////////////////////////////////////
     //Inherited from implementation class

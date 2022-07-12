@@ -148,7 +148,7 @@ void PhysAccelerateTumblePlan::setRotation( const PhysRelativeTime& timeFromStar
     pResult->rotation( MexEulerAngles( azimuth, elevation, roll ) );
 }
 
-PhysRelativeTime    PhysAccelerateTumblePlan::currentSegmentDuration( void ) const
+PhysRelativeTime    PhysAccelerateTumblePlan::currentSegmentDuration() const
 {
     CB_DEPIMPL(size_t, currentSegmentIndex_);
     CB_DEPIMPL(TimesPtr, segmentTimesPtr_);

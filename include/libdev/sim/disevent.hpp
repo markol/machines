@@ -33,7 +33,7 @@ public:
     SimDiscreteEvent( const PhysAbsoluteTime& time );
 
     //Destructor
-    virtual ~SimDiscreteEvent( void );
+    virtual ~SimDiscreteEvent();
     //PRE( not in a diary )
 
     /* Executes the action defined by the event. This action must compute very quickly,
@@ -71,7 +71,7 @@ private:
 
     //Set/get the SimEventDiary of which the event is a member
     void diary( SimEventDiary* pDiary );
-    SimEventDiary* diary( void ) const;
+    SimEventDiary* diary() const;
 
     //Data members
     PhysAbsoluteTime time_; //Time at which the event occurs

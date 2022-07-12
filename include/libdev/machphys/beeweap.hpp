@@ -30,7 +30,7 @@ public:
 	//public constructor
     MachPhysBeeBomber( W4dEntity* pParent, const MexTransform3d& localTransform );
 
-    virtual ~MachPhysBeeBomber( void );
+    virtual ~MachPhysBeeBomber();
 
     static const MachPhysBeeBomber& exemplar();
 
@@ -63,7 +63,7 @@ private:
     MachPhysBeeBomber& operator =( const MachPhysBeeBomber& );
 
 	//one tiem constructor
-    MachPhysBeeBomber( void );
+    MachPhysBeeBomber();
 
     friend class MachPhysWeaponPersistence;
 

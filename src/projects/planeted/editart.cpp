@@ -93,7 +93,7 @@ void PedArtefactEditor::processInput( const DevButtonEvent& devButtonEvent )
 }
 
 // virtual
-void PedArtefactEditor::displayModeInfo( void )
+void PedArtefactEditor::displayModeInfo()
 {
 	PedActorEditor::displayModeInfo();
 	if ( artefactStore_.nGenerics() )
@@ -105,7 +105,7 @@ void PedArtefactEditor::displayModeInfo( void )
 }
 
 // virtual
-void PedArtefactEditor::displayKeyboardCtrls( void )
+void PedArtefactEditor::displayKeyboardCtrls()
 {
 	PRE( pSceneManager_ != NULL );
 
@@ -188,7 +188,7 @@ void PedArtefactEditor::readArfFile( const SysPathName& arfFileName )
 }
 
 // virtual
-W4dEntity* PedArtefactEditor::currentActor( void )
+W4dEntity* PedArtefactEditor::currentActor()
 {
 	return pSelectedArtefact_;
 }
@@ -225,7 +225,7 @@ void PedArtefactEditor::processCycle( PedActorEditor::CycleDir dir)
 }
 
 // virtual
-void PedArtefactEditor::processSelection( void )
+void PedArtefactEditor::processSelection()
 {
 	if ( artefactStore_.nGenerics() )
 	{
@@ -286,7 +286,7 @@ void PedArtefactEditor::processRotation( bool clockwise )
 }
 
 // virtual
-void PedArtefactEditor::processDelete( void )
+void PedArtefactEditor::processDelete()
 {
 	if ( artefactStore_.nGenerics() )
 	{
@@ -307,7 +307,7 @@ void PedArtefactEditor::processDelete( void )
 }
 
 // virtual
-void PedArtefactEditor::processRace( void )
+void PedArtefactEditor::processRace()
 {
 }
 
@@ -321,7 +321,7 @@ void PedArtefactEditor::processHide( bool hidden )
 }
 
 // virtual
-void PedArtefactEditor::rotateAfterMove( void )
+void PedArtefactEditor::rotateAfterMove()
 {
 	if ( artefactStore_.nGenerics() )
 	{
@@ -338,7 +338,7 @@ void PedArtefactEditor::rotateAfterMove( void )
 	}
 }
 
-void PedArtefactEditor::initialiseActors( void )
+void PedArtefactEditor::initialiseActors()
 {
 }
 
@@ -419,7 +419,7 @@ ostream& operator <<( ostream& o, const PedArtefactEditor& t )
     return o;
 }
 
-void PedArtefactEditor::deleteArtefacts( void )
+void PedArtefactEditor::deleteArtefacts()
 {
 	if ( artefactStore_.nGenerics() )
 	{

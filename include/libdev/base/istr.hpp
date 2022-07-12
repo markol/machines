@@ -30,10 +30,10 @@ public:
     PerIstream( istream& istr, PerIstreamReporter* );
     // PRE( pReporter != NULL );
 
-    virtual ~PerIstream( void );
+    virtual ~PerIstream();
 
     //  Read a single character
-    int get( void );
+    int get();
 
     static  bool&   logRead();
 

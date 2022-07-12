@@ -38,7 +38,7 @@ ostream& operator <<( ostream& o, const GXLabel& t )
     return o;
 }
 
-void GXLabel::init( void )
+void GXLabel::init()
 {
   type_=NOLABEL;
   name_="";

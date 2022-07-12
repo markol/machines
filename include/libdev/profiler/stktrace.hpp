@@ -28,8 +28,8 @@ class ProStackTracer
 // Canonical form revoked
 {
 public:
-    ProStackTracer( void );
-    ~ProStackTracer( void );
+    ProStackTracer();
+    ~ProStackTracer();
 
     void CLASS_INVARIANT;
 

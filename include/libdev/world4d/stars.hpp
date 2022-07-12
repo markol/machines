@@ -39,7 +39,7 @@ public:
 		uint nStars);
 	W4dStars(const W4dStars& copyMe, W4dEntity* pParent);
 
-	virtual ~W4dStars( void );
+	virtual ~W4dStars();
 
 	// Have to provide this.
     virtual bool intersectsLine(

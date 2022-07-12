@@ -51,7 +51,7 @@ public:
 		joinContext_( joinContext )
 	{}
 
-    ~MachGuiCurGamesListBoxItem( void )
+    ~MachGuiCurGamesListBoxItem()
 	{
 //		joinContext_.joinGameSelected( false ); // This produced some freed memory references
 	}
@@ -403,7 +403,7 @@ void MachGuiCtxJoin::update()
 }
 
 
-void MachGuiCtxJoin::changeFocus( void )
+void MachGuiCtxJoin::changeFocus()
 {
 	pNetworkProtocol_->charFocus();
 }
