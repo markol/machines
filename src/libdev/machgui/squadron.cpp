@@ -305,7 +305,7 @@ void MachGuiSquadronBank::selectSquad( size_t squadIndex )
 			MachLogSquadron *pSquadron = races.squadrons( race )[ squadIndex ];
 			MachLogMachine *pPickedMachine = pSquadron->getStrongestMachine();
 			if(pPickedMachine)
-				pInGameScreen_->cameras()->lookAt(*pPickedMachine);
+				pInGameScreen_->cameras()->setFollowTarget(pPickedMachine);
 
 			return;
 		}
