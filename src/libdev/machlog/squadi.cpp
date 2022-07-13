@@ -70,6 +70,9 @@ void perRead( PerIstream& istr, MachLogSquadronImpl& actorImpl )
 	istr >> actorImpl.totalDesiredMachines_;
 	istr >> actorImpl.setDefCon_;
 	istr >> actorImpl.defCon_;
+
+	actorImpl.pStrongestMachine_ = nullptr;
+	actorImpl.squadronHasChanged_ = true;
 }
 
 MachLogSquadronImpl::MachLogSquadronImpl( PerConstructor )
