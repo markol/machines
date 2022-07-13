@@ -19,6 +19,8 @@
 #include "device/butevent.hpp"
 #include "gui/gui.hpp"
 
+#include "world4d/observer.hpp"
+
 //class DevButtonEvent;
 class DevKeyToCommandTranslator;
 class PhysFlyControl;
@@ -32,7 +34,7 @@ class W4dSceneManager;
 class W4dRoot;
 class GuiMouseEvent;
 
-class MachCameras
+class MachCameras : public W4dObserver
 // Canonical form revoked
 {
 public:
@@ -64,6 +66,12 @@ public:
 	// Make camera move to new position ( assuming camera can move without
 	// ending up inside an obstacle etc ).
 	void moveTo( const MexPoint2d& );
+
+	// Make camera move into a position where it can look at the MachActor.
+	// Note that the camera can automatically switch between ground,
+	// zenith and 3rd person depending upon the actor type.
+	void setFollowTarget( MachActor* pActor);
+	void resetFollowTarget();
 
 	// Make camera move into a position where it can look at the MachActor.
 	// Note that the camera can automatically switch between ground,
@@ -112,6 +120,9 @@ public:
 	// Configure pitch up/down keys for ground camera
 	void reversePitchUpDownKeys( bool );
 
+	bool beNotified( W4dSubject* pSubject, W4dSubject::NotificationEvent event, int clientData);
+	void domainDeleted( W4dDomain* pDomain );
+
 private:
 	// Operations revoked
     MachCameras( const MachCameras& );
@@ -128,6 +139,8 @@ private:
 
 	// Restore fog to default setting when switching from zenith view.
 	void restoreFog();
+
+	void internalLookAt( const MachActor& );
 
 	// Return the position that the zenith camera would have to be in in order for
 	// "lookAt" to be the centre of the sceen.
@@ -172,6 +185,7 @@ private:
  	MachLogCamera*							pGroundCamera_;
  	MachLogCamera*							pZenithCamera_;
  	MachLogCamera*							pCurrentCamera_;
+	MachActor*								pFollowTarget_ = nullptr;
 	W4dSceneManager*						pSceneManager_;
 	W4dRoot*								pRoot_;
 	CameraSave								save1_;

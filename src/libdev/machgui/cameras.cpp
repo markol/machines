@@ -205,6 +205,7 @@ void MachCameras::loadGame()
 
 	cameraMoved_ = false;
 	groundCameraMoved_ = true;
+	resetFollowTarget();
 }
 
 void MachCameras::saveGame( PerOstream& outStream )
@@ -424,6 +425,11 @@ void MachCameras::switchToZenith( const MexPoint3d& lookAt )
 
 void MachCameras::updateCameras()
 {
+	if ( pFollowTarget_ )
+	{
+		internalLookAt( *pFollowTarget_ );
+	}
+
 	if ( isGroundCameraActive() )
 	{
 		pGroundControl_->update();
@@ -503,6 +509,8 @@ void MachCameras::saveCamera( CameraSave* pCameraSave )
 
 void MachCameras::restoreCamera( const CameraSave& cameraSave )
 {
+	resetFollowTarget();
+
 	if ( cameraSave.saved_ == CameraSave::GROUNDVIEW )
 	{
 		restoreFog();
@@ -559,6 +567,8 @@ MexPoint3d MachCameras::zenithLookAt( const MexPoint3d& lookAt )
 // ending up inside an obstacle etc ).
 void MachCameras::moveTo( const MexPoint2d& newPos )
 {
+	resetFollowTarget();
+
 	pZenithControl_->snapTo( MexPoint3d( newPos.x(), newPos.y(), pZenithCamera_->globalTransform().position().z() ) );
 	pGroundControl_->snapTo( MexPoint3d( newPos.x(), newPos.y(), pGroundCamera_->globalTransform().position().z() ) );
 	pFreeControl_->snapTo( MexPoint3d( newPos.x(), newPos.y(), pFreeCamera_->globalTransform().position().z() ) );
@@ -567,8 +577,38 @@ void MachCameras::moveTo( const MexPoint2d& newPos )
 	updateCameras();
 }
 
+void MachCameras::setFollowTarget(MachActor *pActor)
+{
+	if ( pFollowTarget_ == pActor )
+		return;
+
+	if ( pFollowTarget_ )
+	{
+		pFollowTarget_->detach( this );
+	}
+
+	pFollowTarget_ = pActor;
+
+	if ( pActor )
+	{
+		pFollowTarget_->attach( this );
+	}
+}
+
+void MachCameras::resetFollowTarget()
+{
+	setFollowTarget( nullptr );
+}
+
 // Make camera move into a position where it can look at the MachActor.
 void MachCameras::lookAt( const MachActor& actor )
+{
+	resetFollowTarget();
+	internalLookAt( actor );
+}
+
+// Make camera move into a position where it can look at the MachActor.
+void MachCameras::internalLookAt( const MachActor& actor )
 {
 	MexTransform3d actorTrans = actor.globalTransform();
 	MexPoint3d actorPos = actorTrans.position();
@@ -633,6 +673,8 @@ void MachCameras::lookAt( const MachActor& actor )
 
 void MachCameras::scroll( ScrollDir scrollDir, const GuiMouseEvent& event )
 {
+	setFollowTarget(nullptr);
+
 	if ( pCurrentCamera_ == pZenithCamera_ )
 	{
 		switch ( scrollDir )
@@ -880,6 +922,8 @@ void readZenithDataFile( MATHEX_SCALAR* pZenithMinHeight, MATHEX_SCALAR* pZenith
 
 void MachCameras::lookAt( const MexPoint2d& newPos )
 {
+	resetFollowTarget();
+
 	if ( isZenithCameraActive() )
 	{
 		switchToZenith( newPos );
@@ -918,6 +962,8 @@ MATHEX_SCALAR MachCameras::zenithMaximumEarHeight() const
 
 void MachCameras::use1stPersonCamera()
 {
+	resetFollowTarget();
+
 	useCamera( pFirstPersonCamera_ );
 	pFirstPersonCamera_->update();
 	pFirstPersonControl_->enableInput();
@@ -1013,6 +1059,27 @@ Gui::Coord MachCameras::positionOnTerrainThatZenithCameraIsLookingAt() const
 void MachCameras::reversePitchUpDownKeys( bool newValue )
 {
 	pGroundControl_->reversePitchUpDownKeys( newValue );
+}
+
+bool MachCameras::beNotified(W4dSubject *pSubject, W4dSubject::NotificationEvent event, int clientData)
+{
+	bool stayAttached = true;
+
+	if (pSubject != pFollowTarget_)
+		return stayAttached;
+
+	if (event != W4dSubject::DELETED)
+		return stayAttached;
+
+	resetFollowTarget();
+	stayAttached = false;
+
+	return stayAttached;
+}
+
+void MachCameras::domainDeleted(W4dDomain *)
+{
+	resetFollowTarget();
 }
 
 /* End CAMERAS.CPP **************************************************/
