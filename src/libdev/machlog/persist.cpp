@@ -126,7 +126,11 @@ void MachLogPersistence::setDataForWrite() const
 	{
 		if( MachLogRaces::instance().raceObjects( i ).size() > 0 )
 		{
-			nonConstPer.controllers_.push_back( &MachLogRaces::instance().controller( i ) );
+			MachLogController *pController = &MachLogRaces::instance().controller( i );
+			if ( !pController )
+				continue;
+
+			nonConstPer.controllers_.push_back( pController );
 		}
 	}
 }
