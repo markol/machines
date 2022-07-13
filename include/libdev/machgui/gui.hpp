@@ -78,6 +78,8 @@ public:
 	static int promptTextYOffset();
 	static int mapAreaHeight();
 
+	static double doubleClickInterval();
+
     //Context enumerations
     enum ControlPanelContext
     {

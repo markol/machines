@@ -64,6 +64,8 @@ private:
 
     //Data members
 	MachInGameScreen* pInGameScreen_;
+	double squadSelectedTime_ = 0;
+	size_t selectedSquad_ = -1;
 	MachSquadronIcon* pNavButton_;
 	DevKeyToCommandTranslator* pKeyTranslator_;
 };

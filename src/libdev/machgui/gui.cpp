@@ -693,6 +693,12 @@ int MachGui::mapAreaHeight()
 }
 
 //static
+double MachGui::doubleClickInterval()
+{
+	return 0.250; // 250 ms
+}
+
+//static
 int MachGui::convertNetworkError( int errorCode )
 {
 	switch( (NetNetwork::NetNetworkStatus)errorCode )

@@ -11,6 +11,7 @@
 #include "machlog/squad.hpp"
 #include "machlog/administ.hpp"
 
+#include "machgui/cameras.hpp"
 #include "machgui/gui.hpp"
 #include "machgui/ingame.hpp"
 #include "machgui/squadron.hpp"
@@ -296,8 +297,25 @@ void MachGuiSquadronBank::selectSquad( size_t squadIndex )
    	MachLogRaces& races = MachLogRaces::instance();
    	MachPhys::Race race = races.pcController().race();
 
+	if (selectedSquad_ == squadIndex)
+	{
+		double currentT = DevTime::instance().time();
+		if ( currentT - squadSelectedTime_ < MachGui::doubleClickInterval() )
+		{
+			MachLogSquadron *pSquadron = races.squadrons( race )[ squadIndex ];
+			MachLogMachine *pPickedMachine = pSquadron->getStrongestMachine();
+			if(pPickedMachine)
+				pInGameScreen_->cameras()->lookAt(*pPickedMachine);
+
+			return;
+		}
+	}
+
     //Select the squadron members
 	pInGameScreen_->deselectAll();
+
+	selectedSquad_ = squadIndex;
+	squadSelectedTime_ = DevTime::instance().time();
 
 	MachLogSquadron::Machines& machines = races.squadrons( race )[ squadIndex ]->machines();
 	for( MachLogSquadron::Machines::iterator i = machines.begin(); i != machines.end(); ++i )
