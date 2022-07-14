@@ -57,6 +57,8 @@ public:
 	
 	friend class MachLogMineralSite;
 
+	void assignToDifferentRace( MachLogRace& newRace );
+
 protected:
 	virtual void doStartExplodingAnimation();
 	virtual void doEndExplodingAnimation();
