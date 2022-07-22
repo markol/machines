@@ -1,8 +1,65 @@
 
-
-file(GLOB BASE_SOURCES *.cpp)
-list(REMOVE_ITEM BASE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/basver.cpp)
-list(REMOVE_ITEM BASE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp)
-list(REMOVE_ITEM BASE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/ti1.cpp)
+set(BASE_SOURCES
+    appbuff.cpp
+    append.cpp
+    base.cpp
+    base.hpp
+    cballoc.cpp
+    cballoc.hpp
+    compiler.hpp
+    crashi.cpp
+    cstrbuff.cpp
+    diag.cpp
+    diag.hpp
+    diagint.cpp
+    diagstr.cpp
+    diagstrs.cpp
+    error.cpp
+    error.hpp
+    filtbuff.cpp
+    filter.cpp
+    hungaria.hpp
+    indent.cpp
+    infsbuff.cpp
+    istr.cpp
+    istr.hpp
+    istrbuff.cpp
+    istrimpl.cpp
+    istrrep.cpp
+    istrrep.hpp
+    lessptr.hpp
+    limitw16.hpp
+    limitw32.hpp
+    limitw64.hpp
+    logbuff.cpp
+    logbuff.hpp
+    lstrbuff.cpp
+    memcdata.cpp
+    memcdata.hpp
+    memchk.cpp
+    memchk.hpp
+    memwatch.cpp
+    memwatch.hpp
+    ostr.cpp
+    ostr.hpp
+    periread.cpp
+    periwrit.cpp
+    perolog.cpp
+    persist.cpp
+    persist.hpp
+    poolallo.cpp
+    poolallo.hpp
+    prepbuff.cpp
+    prepend.cpp
+    prepost.cpp
+    prepost.hpp
+    trace.cpp
+    tracker.cpp
+    tracker.hpp
+    trackeri.cpp
+    watc1000.hpp
+    watc1050.hpp
+    watc1060.hpp
+)
 
 add_library(base OBJECT ${BASE_SOURCES})
