@@ -18,10 +18,6 @@ file(GLOB AFX_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/afx/*.cpp)
 set(AFX_LITE_SOURCES ${AFX_SOURCES})
 list(REMOVE_ITEM AFX_LITE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/afx/AfxSdlApp.cpp)
 
-file(GLOB BASE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/base/*.cpp)
-list(REMOVE_ITEM BASE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/base/basver.cpp)
-list(REMOVE_ITEM BASE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/base/test.cpp)
-list(REMOVE_ITEM BASE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/base/ti1.cpp)
 
 file(GLOB UTILITY_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/utility/*.cpp)
 file(GLOB PROFILER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/profiler/*.cpp)
@@ -256,7 +252,6 @@ link_directories(
 
 # Targets
 
-add_library(base        OBJECT ${BASE_SOURCES})
 add_library(mathex      OBJECT ${MATHEX_SOURCES})
 add_library(afx         OBJECT ${AFX_SOURCES})
 add_library(afx_lite    OBJECT ${AFX_LITE_SOURCES}) # For the tests
@@ -282,6 +277,7 @@ add_library(machlog     OBJECT ${MACHLOG_SOURCES})
 add_library(libsmacker  OBJECT ${LIBSMACKER_SOURCES})
 add_library(libaudio    STATIC ${LIBAUDIO_SOURCES})
 
+add_subdirectory(libdev/base)
 add_subdirectory(libdev/ctl)
 add_subdirectory(libdev/phys)
 
