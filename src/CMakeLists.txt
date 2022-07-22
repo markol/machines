@@ -139,12 +139,6 @@ list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/pchm
 list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/malver.cpp)
 #set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/persist.cpp PROPERTIES COMPILE_FLAGS -O0)
 
-file(GLOB MATHEX_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/mathex/*.cpp)
-list(REMOVE_ITEM MATHEX_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/mathex/ti.cpp)
-list(REMOVE_ITEM MATHEX_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/mathex/invxform.cpp)
-list(REMOVE_ITEM MATHEX_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/mathex/mexver.cpp)
-
-
 set(MACHINES_SOURCES
     projects/machines/sdlapp.cpp
     projects/machines/loadplan.cpp
@@ -252,7 +246,6 @@ link_directories(
 
 # Targets
 
-add_library(mathex      OBJECT ${MATHEX_SOURCES})
 add_library(afx         OBJECT ${AFX_SOURCES})
 add_library(afx_lite    OBJECT ${AFX_LITE_SOURCES}) # For the tests
 add_library(utility     OBJECT ${UTILITY_SOURCES})
@@ -279,6 +272,7 @@ add_library(libaudio    STATIC ${LIBAUDIO_SOURCES})
 
 add_subdirectory(libdev/base)
 add_subdirectory(libdev/ctl)
+add_subdirectory(libdev/mathex)
 add_subdirectory(libdev/phys)
 
 add_library(libs INTERFACE)
