@@ -1,6 +1,86 @@
-file(GLOB PHYS_SOURCES *.cpp)
-list(REMOVE_ITEM PHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/ti1.cpp)
-list(REMOVE_ITEM PHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/ti_coptr.cpp)
-list(REMOVE_ITEM PHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/physver.cpp)
+
+set(PHYS_SOURCES
+    absp2d.hpp
+    accetumb.cpp
+    accetumb.hpp
+    accetumi.cpp
+    asclplai.cpp
+    asclplan.cpp
+    asclplan.hpp
+    brake.cpp
+    brake.hpp
+    cmotchun.cpp
+    cmotchun.hpp
+    crampacc.cpp
+    crampacc.hpp
+    cs2data1.cpp
+    cs2dmarc.cpp
+    cs2dmcac.cpp
+    cs2dmfnd.cpp
+    cs2dmgra.cpp
+    cs2dmvtx.cpp
+    cs2domai.cpp
+    cs2expsp.cpp
+    cs2findp.cpp
+    cs2impl.cpp
+    cs2mochu.cpp
+    cs2polyg.cpp
+    cs2porta.cpp
+    cs2qwrit.cpp
+    cs2qwrit.hpp
+    cs2vigra.cpp
+    cspace2.cpp
+    cspace2.hpp
+    eulertx.cpp
+    eulertx.hpp
+    jonvec.hpp
+    linemoti.cpp
+    linemoti.hpp
+    linemtii.cpp
+    linetrai.cpp
+    linetrav.cpp
+    linetrav.hpp
+    lsclplai.cpp
+    lsclplan.cpp
+    lsclplan.hpp
+    mcfly.cpp
+    mcfly.hpp
+    mcground.cpp
+    mcground.hpp
+    mcmotion.cpp
+    mcmotion.hpp
+    mcpers3c.cpp
+    mcpers3c.hpp
+    mcwtrans.cpp
+    mcwtrans.hpp
+    mczenith.cpp
+    mczenith.hpp
+    motchunk.cpp
+    motchunk.hpp
+    motplan.cpp
+    motplan.hpp
+    movespii.cpp
+    movespin.cpp
+    movespin.hpp
+    persist.cpp
+    persist.hpp
+    phys.cpp
+    phys.hpp
+    precomp_.hpp
+    rampacce.cpp
+    rampacce.hpp
+    sclplan.cpp
+    sclplan.hpp
+    ti2.cpp
+    ti_motn.cpp
+    timeangi.cpp
+    timeangl.cpp
+    timeangl.hpp
+    timespin.cpp
+    timespin.hpp
+    timespni.cpp
+    tiphys.cpp
+    trace.hpp
+)
 
 add_library(phys OBJECT ${PHYS_SOURCES})
