@@ -5,6 +5,8 @@
 
 //  Definitions of non-inline template methods
 
+#include "absp2d.hpp"
+
 #include <iostream>
 #include "mathex/point2d.hpp"
 #include "mathex/epsilon.hpp"
