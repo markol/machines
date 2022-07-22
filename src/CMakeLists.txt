@@ -72,8 +72,6 @@ list(REMOVE_ITEM NETWORK_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/network/node
 list(REMOVE_ITEM NETWORK_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/network/session.cpp)
 list(REMOVE_ITEM NETWORK_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/network/sessioni.cpp)
 
-file(GLOB CTL_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/ctl/*.cpp)
-
 file(GLOB SIM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/sim/*.cpp)
 list(REMOVE_ITEM SIM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/sim/tisim.cpp)
 
@@ -273,7 +271,6 @@ add_library(stdlib      OBJECT ${STDLIB_SOURCES})
 add_library(render      OBJECT ${RENDER_SOURCES})
 add_library(sound       OBJECT ${SOUND_SOURCES})
 add_library(network     OBJECT ${NETWORK_SOURCES})
-add_library(ctl         OBJECT ${CTL_SOURCES})
 add_library(sim         OBJECT ${SIM_SOURCES})
 add_library(machgui     OBJECT ${MACHGUI_SOURCES})
 add_library(gui         OBJECT ${GUI_SOURCES})
@@ -285,6 +282,7 @@ add_library(machlog     OBJECT ${MACHLOG_SOURCES})
 add_library(libsmacker  OBJECT ${LIBSMACKER_SOURCES})
 add_library(libaudio    STATIC ${LIBAUDIO_SOURCES})
 
+add_subdirectory(libdev/ctl)
 add_subdirectory(libdev/phys)
 
 add_library(libs INTERFACE)
