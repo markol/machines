@@ -13,11 +13,6 @@ set(CMAKE_CXX_FLAGS_DEBUG ${MACHINES_CXX_FLAGS_DEBUG})
 
 # Source files
 # GLOB is sometimes considered anti pattern but watever
-file(GLOB AFX_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/afx/*.cpp)
-# # # afx_lite is used with test suite
-set(AFX_LITE_SOURCES ${AFX_SOURCES})
-list(REMOVE_ITEM AFX_LITE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/afx/AfxSdlApp.cpp)
-
 
 file(GLOB UTILITY_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/utility/*.cpp)
 file(GLOB PROFILER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/profiler/*.cpp)
@@ -246,8 +241,6 @@ link_directories(
 
 # Targets
 
-add_library(afx         OBJECT ${AFX_SOURCES})
-add_library(afx_lite    OBJECT ${AFX_LITE_SOURCES}) # For the tests
 add_library(utility     OBJECT ${UTILITY_SOURCES})
 add_library(profiler    OBJECT ${PROFILER_SOURCES})
 add_library(system      OBJECT ${SYSTEM_SOURCES})
@@ -269,6 +262,7 @@ add_library(machlog     OBJECT ${MACHLOG_SOURCES})
 add_library(libsmacker  OBJECT ${LIBSMACKER_SOURCES})
 add_library(libaudio    STATIC ${LIBAUDIO_SOURCES})
 
+add_subdirectory(libdev/afx)
 add_subdirectory(libdev/base)
 add_subdirectory(libdev/ctl)
 add_subdirectory(libdev/mathex)
