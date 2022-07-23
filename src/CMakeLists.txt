@@ -16,7 +16,6 @@ set(CMAKE_CXX_FLAGS_DEBUG ${MACHINES_CXX_FLAGS_DEBUG})
 
 file(GLOB UTILITY_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/utility/*.cpp)
 file(GLOB PROFILER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/profiler/*.cpp)
-file(GLOB SYSTEM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/system/*.cpp)
 
 file(GLOB DEVICE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/device/*.cpp)
 list(REMOVE_ITEM DEVICE_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/device/commouse.cpp)
@@ -243,7 +242,6 @@ link_directories(
 
 add_library(utility     OBJECT ${UTILITY_SOURCES})
 add_library(profiler    OBJECT ${PROFILER_SOURCES})
-add_library(system      OBJECT ${SYSTEM_SOURCES})
 add_library(device      OBJECT ${DEVICE_SOURCES})
 add_library(world4d     OBJECT ${WORLD4D_SOURCES})
 add_library(gxin        OBJECT ${GXIN_SOURCES})
@@ -268,6 +266,7 @@ add_subdirectory(libdev/ctl)
 add_subdirectory(libdev/mathex)
 add_subdirectory(libdev/phys)
 add_subdirectory(libdev/stdlib)
+add_subdirectory(libdev/system)
 
 add_library(libs INTERFACE)
 target_sources(libs
