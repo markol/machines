@@ -53,12 +53,6 @@
 
 #include "base/base.hpp"
 
-//  TBD: Remove this #include. It is not necessary however it cannot
-//  be taken out because that will cause a full recompile - even
-//  with cheating
-
-#include "base/debugstr.hpp"
-
 #include <iostream>
 #include <fstream>
 
