@@ -165,17 +165,6 @@ if(PLATFORM_WINDOWS)
   )
 endif()
 
-# TODO: move to another subdirectory
-set(LIBSMACKER_SOURCES
-    ../external/libsmack/smacker.c
-    ../external/libsmack/smk_bitstream.c
-    ../external/libsmack/smk_hufftree.c
-)
-set(LIBAUDIO_SOURCES
-    ../external/audio/fileutil.c
-    ../external/audio/wave.c
-)
-
 # Libraries
 set(LIBS
     ${LIBS}
@@ -257,8 +246,6 @@ add_library(ani         OBJECT ${ANI_SOURCES})
 add_library(recorder    OBJECT ${RECORDER_SOURCES})
 add_library(envirnmt    OBJECT ${ENVIRNMT_SOURCES})
 add_library(machlog     OBJECT ${MACHLOG_SOURCES})
-add_library(libsmacker  OBJECT ${LIBSMACKER_SOURCES})
-add_library(libaudio    STATIC ${LIBAUDIO_SOURCES})
 
 add_subdirectory(libdev/afx)
 add_subdirectory(libdev/base)
