@@ -112,27 +112,6 @@ list(REMOVE_ITEM ENVIRNMT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/envirnmt/ti
 list(REMOVE_ITEM ENVIRNMT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/envirnmt/ti_map2.cpp)
 list(REMOVE_ITEM ENVIRNMT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/envirnmt/ti_clut.cpp)
 
-file(GLOB MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/*.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/ti1.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/ti2.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/ti3.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/ti4.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/ti5.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/ti6.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/ti7.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/ti8.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/tipch.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/reductio.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/consdata.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/opconsti.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/machdesc.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/oplandoms.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/swlab.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/dbgstuff.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/pchml.cpp)
-list(REMOVE_ITEM MACHLOG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/malver.cpp)
-#set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/libdev/machlog/persist.cpp PROPERTIES COMPILE_FLAGS -O0)
-
 set(MACHINES_SOURCES
     projects/machines/sdlapp.cpp
     projects/machines/loadplan.cpp
@@ -245,7 +224,6 @@ add_library(machphys    OBJECT ${MACHPHYS_SOURCES})
 add_library(ani         OBJECT ${ANI_SOURCES})
 add_library(recorder    OBJECT ${RECORDER_SOURCES})
 add_library(envirnmt    OBJECT ${ENVIRNMT_SOURCES})
-add_library(machlog     OBJECT ${MACHLOG_SOURCES})
 
 add_subdirectory(libdev/afx)
 add_subdirectory(libdev/base)
@@ -254,6 +232,7 @@ add_subdirectory(libdev/mathex)
 add_subdirectory(libdev/phys)
 add_subdirectory(libdev/stdlib)
 add_subdirectory(libdev/system)
+add_subdirectory(libdev/machlog)
 
 add_library(libs INTERFACE)
 target_sources(libs
