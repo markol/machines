@@ -1,0 +1,46 @@
+
+set(DEVICE_SOURCES
+    DevCDImpl.hpp
+    SdlDelegate.hpp
+    butevent.cpp
+    butevent.hpp
+    cd.cpp
+    cd.hpp
+    cd_helper.cpp
+    cd_helper.hpp
+    cddefs.hpp
+    cdlist.cpp
+    cdlist.hpp
+    eventq.cpp
+    eventq.hpp
+    internal/sdltimei.hpp
+    key.hpp
+    keyboard.hpp
+    keycomnd.cpp
+    keycomnd.hpp
+    keytrans.cpp
+    keytrans.hpp
+    mouse.hpp
+    private/sdlkeybd.hpp
+    private/sdlmouse.hpp
+    private/sdltime.hpp
+    private/shrkeybd.hpp
+    private/shrmouse.hpp
+    private/w95keybd.hpp
+    private/w95mouse.hpp
+    private/w95time.hpp
+    rate.cpp
+    rate.hpp
+    sdlkeybd.cpp
+    sdlmouse.cpp
+    sdltime.cpp
+    sdltimei.cpp
+    shrkeybd.cpp
+    shrmouse.cpp
+    time.cpp
+    time.hpp
+    timer.cpp
+    timer.hpp
+)
+
+add_library(device OBJECT ${DEVICE_SOURCES})
