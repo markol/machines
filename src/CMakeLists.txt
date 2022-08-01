@@ -14,7 +14,6 @@ set(CMAKE_CXX_FLAGS_DEBUG ${MACHINES_CXX_FLAGS_DEBUG})
 # Source files
 # GLOB is sometimes considered anti pattern but watever
 
-file(GLOB UTILITY_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/utility/*.cpp)
 file(GLOB PROFILER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/profiler/*.cpp)
 
 file(GLOB WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/*.cpp)
@@ -202,7 +201,6 @@ link_directories(
 
 # Targets
 
-add_library(utility     OBJECT ${UTILITY_SOURCES})
 add_library(profiler    OBJECT ${PROFILER_SOURCES})
 add_library(world4d     OBJECT ${WORLD4D_SOURCES})
 add_library(gxin        OBJECT ${GXIN_SOURCES})
@@ -225,6 +223,7 @@ add_subdirectory(libdev/phys)
 add_subdirectory(libdev/stdlib)
 add_subdirectory(libdev/system)
 add_subdirectory(libdev/device)
+add_subdirectory(libdev/utility)
 add_subdirectory(libdev/ani)
 add_subdirectory(libdev/machlog)
 
