@@ -102,9 +102,6 @@ list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti
 list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti5.cpp)
 list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti13.cpp)
 
-file(GLOB ANI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/ani/*.cpp)
-list(REMOVE_ITEM ANI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/ani/smackmock.cpp)
-
 file(GLOB RECORDER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/recorder/*.cpp)
 
 file(GLOB ENVIRNMT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/envirnmt/*.cpp)
@@ -221,7 +218,6 @@ add_library(sim         OBJECT ${SIM_SOURCES})
 add_library(machgui     OBJECT ${MACHGUI_SOURCES})
 add_library(gui         OBJECT ${GUI_SOURCES})
 add_library(machphys    OBJECT ${MACHPHYS_SOURCES})
-add_library(ani         OBJECT ${ANI_SOURCES})
 add_library(recorder    OBJECT ${RECORDER_SOURCES})
 add_library(envirnmt    OBJECT ${ENVIRNMT_SOURCES})
 
@@ -232,6 +228,7 @@ add_subdirectory(libdev/mathex)
 add_subdirectory(libdev/phys)
 add_subdirectory(libdev/stdlib)
 add_subdirectory(libdev/system)
+add_subdirectory(libdev/ani)
 add_subdirectory(libdev/machlog)
 
 add_library(libs INTERFACE)
