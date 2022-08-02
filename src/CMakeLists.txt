@@ -22,33 +22,6 @@ list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigu
 list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigui3.cpp)
 list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigui4.cpp)
 
-file(GLOB_RECURSE MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/**.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/tt.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/scorch.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/beeblast.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/idebris.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/swlab.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/weaplab.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/mapver.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/test.cpp)
-# Exclude unnecessary template instantions
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti_data.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/tipch.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti_cdata.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ticomp.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti_links.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti_data2.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti_data2.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti_data2.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti_face.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti_sw.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti1.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti2.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti3.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti4.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti5.cpp)
-list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti13.cpp)
-
 set(MACHINES_SOURCES
     projects/machines/sdlapp.cpp
     projects/machines/loadplan.cpp
@@ -146,7 +119,6 @@ link_directories(
 # Targets
 
 add_library(machgui     OBJECT ${MACHGUI_SOURCES})
-add_library(machphys    OBJECT ${MACHPHYS_SOURCES})
 
 add_subdirectory(libdev/afx)
 add_subdirectory(libdev/base)
@@ -168,6 +140,7 @@ add_subdirectory(libdev/network)
 add_subdirectory(libdev/render)
 add_subdirectory(libdev/gui)
 add_subdirectory(libdev/sim)
+add_subdirectory(libdev/machphys)
 add_subdirectory(libdev/envirnmt)
 add_subdirectory(libdev/ani)
 add_subdirectory(libdev/machlog)
