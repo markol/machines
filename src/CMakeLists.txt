@@ -62,8 +62,6 @@ list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti
 list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti5.cpp)
 list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti_files/ti13.cpp)
 
-file(GLOB RECORDER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/recorder/*.cpp)
-
 set(MACHINES_SOURCES
     projects/machines/sdlapp.cpp
     projects/machines/loadplan.cpp
@@ -167,7 +165,6 @@ add_library(sim         OBJECT ${SIM_SOURCES})
 add_library(machgui     OBJECT ${MACHGUI_SOURCES})
 add_library(gui         OBJECT ${GUI_SOURCES})
 add_library(machphys    OBJECT ${MACHPHYS_SOURCES})
-add_library(recorder    OBJECT ${RECORDER_SOURCES})
 
 add_subdirectory(libdev/afx)
 add_subdirectory(libdev/base)
@@ -180,6 +177,7 @@ add_subdirectory(libdev/profiler)
 add_subdirectory(libdev/system)
 add_subdirectory(libdev/device)
 add_subdirectory(libdev/utility)
+add_subdirectory(libdev/recorder)
 add_subdirectory(libdev/world4d)
 add_subdirectory(libdev/network)
 add_subdirectory(libdev/render)
