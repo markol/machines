@@ -20,8 +20,6 @@ list(REMOVE_ITEM GXIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/gxin/gxerror.cp
 file(GLOB XIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/xin/*.cpp)
 file(GLOB STDLIB_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/stdlib/*.cpp)
 
-file(GLOB SOUND_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/sound/*.cpp)
-
 file(GLOB MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/*.cpp)
 list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigui.cpp)
 list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigui2.cpp)
@@ -157,7 +155,6 @@ link_directories(
 
 add_library(gxin        OBJECT ${GXIN_SOURCES})
 add_library(xin         OBJECT ${XIN_SOURCES})
-add_library(sound       OBJECT ${SOUND_SOURCES})
 add_library(machgui     OBJECT ${MACHGUI_SOURCES})
 add_library(gui         OBJECT ${GUI_SOURCES})
 add_library(machphys    OBJECT ${MACHPHYS_SOURCES})
@@ -173,6 +170,7 @@ add_subdirectory(libdev/profiler)
 add_subdirectory(libdev/system)
 add_subdirectory(libdev/device)
 add_subdirectory(libdev/utility)
+add_subdirectory(libdev/sound)
 add_subdirectory(libdev/recorder)
 add_subdirectory(libdev/world4d)
 add_subdirectory(libdev/network)
