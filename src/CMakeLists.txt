@@ -22,10 +22,6 @@ list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigu
 list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigui3.cpp)
 list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigui4.cpp)
 
-file(GLOB GUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/gui/*.cpp)
-list(REMOVE_ITEM GUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/gui/ti1.cpp)
-list(REMOVE_ITEM GUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/gui/guiver.cpp)
-
 file(GLOB_RECURSE MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/**.cpp)
 list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/tt.cpp)
 list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/scorch.cpp)
@@ -150,7 +146,6 @@ link_directories(
 # Targets
 
 add_library(machgui     OBJECT ${MACHGUI_SOURCES})
-add_library(gui         OBJECT ${GUI_SOURCES})
 add_library(machphys    OBJECT ${MACHPHYS_SOURCES})
 
 add_subdirectory(libdev/afx)
@@ -171,6 +166,7 @@ add_subdirectory(libdev/recorder)
 add_subdirectory(libdev/world4d)
 add_subdirectory(libdev/network)
 add_subdirectory(libdev/render)
+add_subdirectory(libdev/gui)
 add_subdirectory(libdev/sim)
 add_subdirectory(libdev/envirnmt)
 add_subdirectory(libdev/ani)

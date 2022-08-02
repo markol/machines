@@ -1,0 +1,54 @@
+
+set(GUI_SOURCES
+    border.cpp
+    border.hpp
+    button.cpp
+    button.hpp
+    displaya.cpp
+    displaya.hpp
+    editbox.cpp
+    editbox.hpp
+    event.cpp
+    event.hpp
+    font.cpp
+    font.hpp
+    gui.cpp
+    gui.hpp
+    icon.cpp
+    icon.hpp
+    iconseq.cpp
+    iconseq.hpp
+    image.cpp
+    image.hpp
+    internal/displayi.hpp
+    internal/fontcore.hpp
+    internal/iconsei.hpp
+    internal/managei.hpp
+    internal/scrolisi.hpp
+    listobvr.cpp
+    listobvr.hpp
+    manager.cpp
+    manager.hpp
+    mouse.cpp
+    mouse.hpp
+    painter.cpp
+    painter.hpp
+    progress.cpp
+    progress.hpp
+    restring.cpp
+    restring.hpp
+    root.cpp
+    root.hpp
+    scrolbar.cpp
+    scrolbar.hpp
+    scrolbut.cpp
+    scrolbut.hpp
+    scrolist.cpp
+    scrolist.hpp
+    sslistbx.cpp
+    sslistbx.hpp
+    sslistit.cpp
+    sslistit.hpp
+)
+
+add_library(gui OBJECT ${GUI_SOURCES})
