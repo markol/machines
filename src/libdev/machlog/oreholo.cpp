@@ -136,6 +136,16 @@ const MachLogMineralSite& MachLogOreHolograph::mineralSite() const
 	return *pRetVal;
 }
 
+void MachLogOreHolograph::assignToDifferentRace(MachLogRace &newRace)
+{
+	// OreHolograph race change does not work:
+	// Save files do not have Holographes but only MineralSites
+	// During the load MineralSites create Holographes for the 'Race discoveredBy_'
+
+	// See void perRead( PerIstream& istr, MachLogMineralSiteImpl& siteImpl ) in minesiti.cpp:64 for details
+	return;
+}
+
 void MachLogOreHolograph::removeMe()
 {
 	isDead( true );
