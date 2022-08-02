@@ -1,0 +1,39 @@
+
+set(NETWORK_SOURCES
+    buffer.cpp
+    buffer.hpp
+    buffer.ipp
+    comport.cpp
+    comport.hpp
+    compound.cpp
+    internal/compound.hpp
+    internal/mapping.hpp
+    internal/netinet.hpp
+    internal/nodei.hpp
+    internal/recorder.hpp
+    internal/sessioni.hpp
+    mapping.cpp
+    message.cpp
+    message.hpp
+    messbody.cpp
+    messbody.hpp
+    messhead.cpp
+    messhead.hpp
+    netdefs.hpp
+    netinet.cpp
+    netnet.cpp
+    netnet.hpp
+    nodeuid.cpp
+    nodeuid.hpp
+    pinghelp.cpp
+    pinghelp.hpp
+    priority.cpp
+    priority.hpp
+    recorder.cpp
+    sessuid.cpp
+    sessuid.hpp
+    sysmess.cpp
+    sysmess.hpp
+)
+
+add_library(network OBJECT ${NETWORK_SOURCES})

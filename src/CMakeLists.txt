@@ -22,12 +22,6 @@ file(GLOB STDLIB_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/stdlib/*.cpp)
 
 file(GLOB SOUND_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/sound/*.cpp)
 
-file(GLOB NETWORK_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/network/*.cpp)
-list(REMOVE_ITEM NETWORK_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/network/node.cpp)
-list(REMOVE_ITEM NETWORK_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/network/nodei.cpp)
-list(REMOVE_ITEM NETWORK_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/network/session.cpp)
-list(REMOVE_ITEM NETWORK_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/network/sessioni.cpp)
-
 file(GLOB SIM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/sim/*.cpp)
 list(REMOVE_ITEM SIM_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/sim/tisim.cpp)
 
@@ -169,7 +163,6 @@ link_directories(
 add_library(gxin        OBJECT ${GXIN_SOURCES})
 add_library(xin         OBJECT ${XIN_SOURCES})
 add_library(sound       OBJECT ${SOUND_SOURCES})
-add_library(network     OBJECT ${NETWORK_SOURCES})
 add_library(sim         OBJECT ${SIM_SOURCES})
 add_library(machgui     OBJECT ${MACHGUI_SOURCES})
 add_library(gui         OBJECT ${GUI_SOURCES})
@@ -188,6 +181,7 @@ add_subdirectory(libdev/system)
 add_subdirectory(libdev/device)
 add_subdirectory(libdev/utility)
 add_subdirectory(libdev/world4d)
+add_subdirectory(libdev/network)
 add_subdirectory(libdev/render)
 add_subdirectory(libdev/envirnmt)
 add_subdirectory(libdev/ani)
