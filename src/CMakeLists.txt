@@ -17,7 +17,6 @@ set(CMAKE_CXX_FLAGS_DEBUG ${MACHINES_CXX_FLAGS_DEBUG})
 file(GLOB GXIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/gxin/*.cpp)
 list(REMOVE_ITEM GXIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/gxin/gxerror.cpp)
 
-file(GLOB XIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/xin/*.cpp)
 file(GLOB STDLIB_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/stdlib/*.cpp)
 
 file(GLOB MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/*.cpp)
@@ -154,7 +153,6 @@ link_directories(
 # Targets
 
 add_library(gxin        OBJECT ${GXIN_SOURCES})
-add_library(xin         OBJECT ${XIN_SOURCES})
 add_library(machgui     OBJECT ${MACHGUI_SOURCES})
 add_library(gui         OBJECT ${GUI_SOURCES})
 add_library(machphys    OBJECT ${MACHPHYS_SOURCES})
@@ -164,6 +162,7 @@ add_subdirectory(libdev/base)
 add_subdirectory(libdev/ctl)
 add_subdirectory(libdev/ftl)
 add_subdirectory(libdev/mathex)
+add_subdirectory(libdev/xin)
 add_subdirectory(libdev/phys)
 add_subdirectory(libdev/stdlib)
 add_subdirectory(libdev/profiler)
