@@ -1,0 +1,41 @@
+
+set(GXIN_SOURCES
+    gxcolor.cpp
+    gxcolor.hpp
+    gxdata.hpp
+    gxerror.hpp
+    gxfile.cpp
+    gxfile.hpp
+    gxgen.hpp
+    gxhier.cpp
+    gxhier.hpp
+    gx.hpp
+    gxidpos.cpp
+    gxidpos.hpp
+    gxlabel.cpp
+    gxlabel.hpp
+    gxmat.cpp
+    gxmat.hpp
+    gxmatrix3.cpp
+    gxmatrix3.hpp
+    gxmesh.cpp
+    gxmesh.hpp
+    gxname.hpp
+    gxpoint3.cpp
+    gxpoint3.hpp
+    gxpolygon3.cpp
+    gxpolygon3.hpp
+    gxpolyvert3.cpp
+    gxpolyvert3.hpp
+    gxtexture.cpp
+    gxtexture.hpp
+    gxtextures.hpp
+    gxuvcoords.cpp
+    gxuvcoords.hpp
+    gxvect3.cpp
+    gxvect3.hpp
+    gxvect4.cpp
+    gxvect4.hpp
+)
+
+add_library(gxin OBJECT ${GXIN_SOURCES})
