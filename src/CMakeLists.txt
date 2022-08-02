@@ -14,14 +14,6 @@ set(CMAKE_CXX_FLAGS_DEBUG ${MACHINES_CXX_FLAGS_DEBUG})
 # Source files
 # GLOB is sometimes considered anti pattern but watever
 
-file(GLOB STDLIB_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/stdlib/*.cpp)
-
-file(GLOB MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/*.cpp)
-list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigui.cpp)
-list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigui2.cpp)
-list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigui3.cpp)
-list(REMOVE_ITEM MACHGUI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machgui/tigui4.cpp)
-
 set(MACHINES_SOURCES
     projects/machines/sdlapp.cpp
     projects/machines/loadplan.cpp
@@ -118,8 +110,6 @@ link_directories(
 
 # Targets
 
-add_library(machgui     OBJECT ${MACHGUI_SOURCES})
-
 add_subdirectory(libdev/afx)
 add_subdirectory(libdev/base)
 add_subdirectory(libdev/ctl)
@@ -144,6 +134,7 @@ add_subdirectory(libdev/machphys)
 add_subdirectory(libdev/envirnmt)
 add_subdirectory(libdev/ani)
 add_subdirectory(libdev/machlog)
+add_subdirectory(libdev/machgui)
 
 add_library(libs INTERFACE)
 target_sources(libs
