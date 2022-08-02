@@ -14,28 +14,6 @@ set(CMAKE_CXX_FLAGS_DEBUG ${MACHINES_CXX_FLAGS_DEBUG})
 # Source files
 # GLOB is sometimes considered anti pattern but watever
 
-file(GLOB WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/*.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti1.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti2.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti3.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti4.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti5.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti6.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti7.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti8.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti9.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti10.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti11.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti12.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti13.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti_comp.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ticouptr.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti_penty.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti_pplan.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti_set.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/ti_smgr.cpp)
-list(REMOVE_ITEM WORLD4D_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/world4d/w4dver.cpp)
-
 file(GLOB GXIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/gxin/*.cpp)
 list(REMOVE_ITEM GXIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/gxin/gxerror.cpp)
 
@@ -194,7 +172,6 @@ link_directories(
 
 # Targets
 
-add_library(world4d     OBJECT ${WORLD4D_SOURCES})
 add_library(gxin        OBJECT ${GXIN_SOURCES})
 add_library(xin         OBJECT ${XIN_SOURCES})
 add_library(render      OBJECT ${RENDER_SOURCES})
@@ -217,6 +194,7 @@ add_subdirectory(libdev/profiler)
 add_subdirectory(libdev/system)
 add_subdirectory(libdev/device)
 add_subdirectory(libdev/utility)
+add_subdirectory(libdev/world4d)
 add_subdirectory(libdev/envirnmt)
 add_subdirectory(libdev/ani)
 add_subdirectory(libdev/machlog)
