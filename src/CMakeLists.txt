@@ -20,12 +20,6 @@ list(REMOVE_ITEM GXIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/gxin/gxerror.cp
 file(GLOB XIN_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/xin/*.cpp)
 file(GLOB STDLIB_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/stdlib/*.cpp)
 
-file(GLOB RENDER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/render/*.cpp)
-list(REMOVE_ITEM RENDER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/render/devidi.cpp)
-list(REMOVE_ITEM RENDER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/render/renerror.cpp)
-list(REMOVE_ITEM RENDER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/render/backgrnd.cpp)
-#set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/libdev/render/mesh.cpp PROPERTIES COMPILE_FLAGS -O0)
-
 file(GLOB SOUND_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/sound/*.cpp)
 
 file(GLOB NETWORK_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/network/*.cpp)
@@ -174,7 +168,6 @@ link_directories(
 
 add_library(gxin        OBJECT ${GXIN_SOURCES})
 add_library(xin         OBJECT ${XIN_SOURCES})
-add_library(render      OBJECT ${RENDER_SOURCES})
 add_library(sound       OBJECT ${SOUND_SOURCES})
 add_library(network     OBJECT ${NETWORK_SOURCES})
 add_library(sim         OBJECT ${SIM_SOURCES})
@@ -195,6 +188,7 @@ add_subdirectory(libdev/system)
 add_subdirectory(libdev/device)
 add_subdirectory(libdev/utility)
 add_subdirectory(libdev/world4d)
+add_subdirectory(libdev/render)
 add_subdirectory(libdev/envirnmt)
 add_subdirectory(libdev/ani)
 add_subdirectory(libdev/machlog)
