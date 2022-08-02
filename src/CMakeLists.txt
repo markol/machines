@@ -98,11 +98,6 @@ list(REMOVE_ITEM MACHPHYS_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/machphys/ti
 
 file(GLOB RECORDER_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/recorder/*.cpp)
 
-file(GLOB ENVIRNMT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/envirnmt/*.cpp)
-list(REMOVE_ITEM ENVIRNMT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/envirnmt/ti_map1.cpp)
-list(REMOVE_ITEM ENVIRNMT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/envirnmt/ti_map2.cpp)
-list(REMOVE_ITEM ENVIRNMT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/libdev/envirnmt/ti_clut.cpp)
-
 set(MACHINES_SOURCES
     projects/machines/sdlapp.cpp
     projects/machines/loadplan.cpp
@@ -210,7 +205,6 @@ add_library(machgui     OBJECT ${MACHGUI_SOURCES})
 add_library(gui         OBJECT ${GUI_SOURCES})
 add_library(machphys    OBJECT ${MACHPHYS_SOURCES})
 add_library(recorder    OBJECT ${RECORDER_SOURCES})
-add_library(envirnmt    OBJECT ${ENVIRNMT_SOURCES})
 
 add_subdirectory(libdev/afx)
 add_subdirectory(libdev/base)
@@ -223,6 +217,7 @@ add_subdirectory(libdev/profiler)
 add_subdirectory(libdev/system)
 add_subdirectory(libdev/device)
 add_subdirectory(libdev/utility)
+add_subdirectory(libdev/envirnmt)
 add_subdirectory(libdev/ani)
 add_subdirectory(libdev/machlog)
 
